@@ -13,7 +13,8 @@ type coefType = {
 
 type calculatePriceType = {
     totalPrice: number,
-    addition: extraPricesType
+    addition: extraPricesType,
+    coef: coefType
 }
 
 export const getPriceData = (basePriceType: basePriceTypes): pricePart[] | undefined => {
@@ -25,15 +26,11 @@ export const getInitialPrice = (priceData: pricePart[], widthRangeData: number[]
     return priceData.find(el => el.width === minWidth)?.price
 }
 
-export const getCoefs = (options: string[], boxMaterialCoefs: getBoxMaterialCoefsType, premiumCoef: number): number => {
-    const isBoxPTO = options.includes("Box from finish material");
-    return premiumCoef * (isBoxPTO ? boxMaterialCoefs.boxMaterialPTOCoef : boxMaterialCoefs.boxMaterialCoef);
-}
-
-export function calculatePrice(width: number, height: number, depth: number, customWidth: number, customHeight: number, customDepth: number, options: string[], profileVal: string, doorSquare: number, attributes: attrItem[], prodType: productTypings, allCoefs: number, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], pvcPrice: number): calculatePriceType {
+export function calculatePrice(width: number, height: number, depth: number, customWidth: number, customHeight: number, customDepth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[]): calculatePriceType {
     const minWidth = widthRangeData[0];
     const maxWidth = widthRangeData[widthRangeData.length - 2];
-    const initialPriceWithCoef = Math.round(initialPrice * allCoefs);
+    const allCoefs = extraPrices.boxMaterialCoef*extraPrices.premiumCoef;
+    const initialPriceWithCoef = +(initialPrice * allCoefs).toFixed(2);
     const coef: coefType = {
         width: 0,
         height: 0,
@@ -43,7 +40,7 @@ export function calculatePrice(width: number, height: number, depth: number, cus
     // WIDTH
     const tableWidthPrice = priceData.find(el => el.width === width)?.price
     const widthPrice: number = tableWidthPrice
-        ? Math.round(tableWidthPrice * allCoefs) || 0
+        ? +(tableWidthPrice * allCoefs).toFixed(2) || 0
         : getWidthPrice(customWidth, priceData, initialPriceWithCoef, minWidth, maxWidth, coef, allCoefs);
 
     if (!height) coef.height = addHeightPriceCoef(customHeight);
@@ -53,21 +50,22 @@ export function calculatePrice(width: number, height: number, depth: number, cus
     if (options.includes('PTO for drawers')) extraPrices.ptoDrawers = addPTODrawerPrice(attributes, prodType)
     if (options.includes('PTO for Trash Bins')) extraPrices.ptoTrashBins = addPTOTrashBinsPrice()
     if (options.includes('Glass Shelf')) extraPrices.glassShelf = addGlassShelfPrice()
-    if (options.includes('Glass Door') && profileVal) extraPrices.glassDoor = addGlassDoorPrice(doorSquare, profileVal);
+    if (options.includes('Glass Door') && profileVal) extraPrices.glassDoor = addGlassDoorPrice(extraPrices.doorSquare, profileVal);
 
     const coefExtra = 1 + (coef.width + coef.height + coef.depth);
 
-    const totalWidthPrice = Math.round(widthPrice * (coef.width + 1))
-    const totalHeightPrice = Math.round(initialPriceWithCoef * (coef.height + 1))
-    const totalDepthPrice = Math.round(initialPriceWithCoef * (coef.depth + 1))
+    const totalWidthPrice = +(widthPrice * (coef.width + 1)).toFixed(2)
+    const totalHeightPrice = +(initialPriceWithCoef * (coef.height + 1)).toFixed(2)
+    const totalDepthPrice = +(initialPriceWithCoef * (coef.depth + 1)).toFixed(2)
 
-    extraPrices.width = totalWidthPrice ? totalWidthPrice - initialPriceWithCoef : 0;
-    extraPrices.height = totalHeightPrice - initialPriceWithCoef;
-    extraPrices.depth = totalDepthPrice - initialPriceWithCoef;
+    extraPrices.width = totalWidthPrice ? +(totalWidthPrice - initialPriceWithCoef).toFixed(2) : 0;
+    extraPrices.height = +(totalHeightPrice - initialPriceWithCoef).toFixed(2);
+    extraPrices.depth = +(totalDepthPrice - initialPriceWithCoef).toFixed(2);
 
     return {
-        totalPrice: Math.round(widthPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + pvcPrice),
-        addition: extraPrices
+        totalPrice: +(widthPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice).toFixed(2),
+        addition: extraPrices,
+        coef: coef
     };
 }
 
@@ -81,11 +79,11 @@ function getWidthPrice(customWidth: number, priceData: pricePart[], initialPrice
     }
     if (customWidth > minWidth && customWidth <= maxWidth) {
         const dataPrice = priceData.find(el => el.width >= customWidth)?.price;
-        return dataPrice ? Math.round(dataPrice * allCoefs) : 0
+        return dataPrice ? +(dataPrice * allCoefs).toFixed(2) : 0
     }
     if (customWidth > maxWidth && maxWidthPrice) {
         coef.width = Math.ceil((customWidth - maxWidth) / 3) / 10;
-        return Math.round(maxWidthPrice * allCoefs)
+        return +(maxWidthPrice * allCoefs).toFixed(2)
     }
     return 0
 }
@@ -142,7 +140,7 @@ function addGlassDoorPrice(square: number = 0, profileVal: string): number {
     const multiplier = settingItem?.multiplier
     if (minPrice && multiplier) {
         const price = square / 144 * multiplier;
-        return Math.round(price > minPrice ? price : minPrice)
+        return +(price > minPrice ? price : minPrice).toFixed(2)
     }
     return 0
 }
@@ -150,7 +148,7 @@ function addGlassDoorPrice(square: number = 0, profileVal: string): number {
 export function getDoorSquare(width: number, height: number, customWidth: number = 0, customHeight: number = 0): number {
     const trueWidth: number = (width || customWidth);
     const trueHeight: number = (height || customHeight) - 4.5
-    if (trueWidth > 0 && trueHeight > 0) return Math.round(trueWidth * trueHeight);
+    if (trueWidth > 0 && trueHeight > 0) return +(trueWidth * trueHeight).toFixed(2);
     return 0;
 }
 
@@ -165,6 +163,11 @@ export function getType(width: number, customWidth: number, divider: number): pr
 }
 
 export function getPvcPrice(realWidth: number, realHeight: number, isAcrylic = false): number {
-    const pvcPrice = realWidth && realHeight ? Math.round((realWidth * 2 + (realHeight - 4.5) * 2) / 12 * 2.5) : 0
+    const pvcPrice = realWidth && realHeight ? +((realWidth * 2 + (realHeight - 4.5) * 2) / 12 * 2.5).toFixed(2) : 0
     return isAcrylic ? pvcPrice * 1.1 : pvcPrice
+}
+
+
+export function getDoorPrice(realWidth: number, realHeight: number, doorPriceMultiplier: number): number {
+    return +((realWidth*(realHeight-4.5)/144)*doorPriceMultiplier).toFixed(2);
 }

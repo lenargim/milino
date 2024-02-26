@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import {Form, Formik, FormikValues} from "formik";
 import settings from './../../api/settings.json'
 import {
@@ -9,15 +9,14 @@ import {
     TextInput
 } from "../../common/Form";
 import s from './product.module.sass'
-import SelectField, {optionType} from '../../common/SelectField';
+import SelectField from '../../common/SelectField';
 import {BaseCabinetsSchema} from "./ProductSchema";
-import {useAppDispatch} from "../../helpers/helpers";
+import {getSelectValfromVal, useAppDispatch} from "../../helpers/helpers";
 import {addToCart, CartItemType, updateProduct} from "../../store/reducers/generalSlice";
 import {v4 as uuidv4} from "uuid";
 import {productType, widthTypes} from "../../helpers/productTypes";
 import {
-    calculatePrice,
-    getCoefs,
+    calculatePrice, getDoorPrice,
     getDoorSquare,
     getInitialPrice, getPriceData, getPvcPrice,
     getType
@@ -31,22 +30,27 @@ type BaseCabinetFormType = {
     boxMaterialCoefs: getBoxMaterialCoefsType,
     doorsQty: number,
     isAcrylic: boolean,
-    drawer: string
+    drawer: string,
+    doorPriceMultiplier: number
 }
 
-export type extraPricesType = {
+export interface extraPricesType {
     width: number,
     height: number,
     depth: number,
     ptoDoors: number,
-    boxFromFinish: number,
     ptoDrawers: number,
     ptoTrashBins: number,
     glassShelf: number,
-    glassDoor: number
+    glassDoor: number,
+    pvcPrice: number,
+    doorPrice: number,
+    doorSquare: number,
+    premiumCoef: number,
+    boxMaterialCoef: number
 }
 
-const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premiumCoef, boxMaterialCoefs, doorsQty, isAcrylic, drawer}) => {
+const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premiumCoef, boxMaterialCoefs, doorsQty, isAcrylic, drawer, doorPriceMultiplier}) => {
     const dispatch = useAppDispatch();
     const {id, name, images, type, widthRange, attributes, options} = product;
     const widthData: widthTypes | undefined = settings.width.types.find(el => el.type === widthRange);
@@ -124,7 +128,7 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                     resetForm();
                 }}
         >
-            {({values, setFieldValue, errors}) => {
+            {({values, setFieldValue}) => {
                 const {
                     ['Width']: width,
                     ['Height']: height,
@@ -149,10 +153,7 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                     ['Glass Color']: glassColor,
                 } = glassDoor;
 
-                function getSelectValfromVal(val: string, options: optionType[]): optionType | null {
-                    const option = options.find(el => el.value === val)
-                    return option || null
-                }
+
                 const realWidth: number = +width || customWidth || 0;
                 const realHeight: number = +height || customHeight || 0;
 
@@ -161,26 +162,36 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                 const newType = getType(+width, +customWidth, widthDivider);
                 const priceData = getPriceData(basePriceType);
                 const initialPrice = priceData && getInitialPrice(priceData, widthRangeData) || 0;
-                const allCoefs = initialPrice ? getCoefs(chosenOptions, boxMaterialCoefs, premiumCoef) : 1;
-                const extraPrices: extraPricesType = {
+                const boxMaterialCoef = chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef;
+                const pvcPrice = getPvcPrice(realWidth, realHeight, isAcrylic)
+                const doorPrice = getDoorPrice(realWidth, realHeight, doorPriceMultiplier)
+                let extraPrices: extraPricesType = {
                     width: 0,
                     height: 0,
                     depth: 0,
                     ptoDoors: 0,
                     ptoDrawers: 0,
                     ptoTrashBins: 0,
-                    boxFromFinish: 0,
                     glassShelf: 0,
-                    glassDoor: 0
+                    glassDoor: 0,
+                    pvcPrice: pvcPrice,
+                    doorPrice: doorPrice,
+                    boxMaterialCoef: boxMaterialCoef,
+                    premiumCoef: premiumCoef,
+                    doorSquare: doorSquare
                 }
-                const pvcPrice = getPvcPrice(realWidth, realHeight, isAcrylic)
                 const calculatedData = priceData ?
-                    calculatePrice(+width, +height, +depth, +customWidth, +customHeight, +customDepth, chosenOptions, profileVal, doorSquare, attributes, type, allCoefs, initialPrice, priceData, extraPrices, widthRangeData, pvcPrice)
+                    calculatePrice(+width, +height, +depth, +customWidth, +customHeight, +customDepth, chosenOptions, profileVal, attributes, type, initialPrice, priceData, extraPrices, widthRangeData)
                     : {
                         totalPrice: 0,
-                        addition: extraPrices
+                        addition: extraPrices,
+                        coef: {
+                            width: 0,
+                            height: 0,
+                            depth: 0
+                        }
                     }
-                const {addition, totalPrice} = calculatedData
+                const {addition, totalPrice, coef } = calculatedData;
                 const additionOptions = addition.glassShelf + addition.glassDoor + addition.ptoDoors + addition.ptoDrawers + addition.ptoTrashBins;
 
                 setTimeout(() => {
@@ -276,6 +287,16 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                             <input type="number" name="itemTotalPrice" readOnly={true}/>
                         </div>
                         <button type="submit" className={['button yellow'].join(' ')}>Add to cart</button>
+                        <h2>Test. Extra prices</h2>
+                        {
+                            Object.entries(addition).map((el, index) => <div key={index}>{el[0]}: {el[1]}.</div>)
+
+                        }
+                        <h2>Additional coefs for custom sizes</h2>
+                        {
+                            Object.entries(coef).map((el, index) => <div key={index}>{el[0]}: {el[1]}.</div>)
+
+                        }
                     </Form>
                 )
             }}

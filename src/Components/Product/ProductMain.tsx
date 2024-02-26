@@ -10,7 +10,7 @@ export type basePriceTypes = 1 | 2 | 3
 
 export type getBoxMaterialCoefsType = {
     boxMaterialCoef: number,
-    boxMaterialPTOCoef: number
+    boxMaterialFinishCoef: number
 }
 
 const getBasePriceType = (doorType: string,doorFinish: string): basePriceTypes => {
@@ -35,8 +35,19 @@ const getGrainCoef = (doorGrain: string): number => {
 const getBoxMaterialCoefs = (boxMaterial: string, doorFinish: string): getBoxMaterialCoefsType => {
     return {
         boxMaterialCoef: boxMaterial.includes('Plywood') ? 1.2 : 1,
-        boxMaterialPTOCoef: doorFinish === 'Cleaf' || doorFinish === 'Syncron' ? 1.845 : 2.706
+        boxMaterialFinishCoef: doorFinish === 'Cleaf' || doorFinish === 'Syncron' ? 1.845 : 2.706
     }
+}
+
+const getDoorPriceMultiplier = (doorType: string,doorFinish: string): number => {
+    if (doorType === 'Slab') return 0
+    if (doorType === 'Painted' || doorType === 'Slatted') return 37.8
+    if (doorType === 'Micro Shaker') return 36
+    if (doorType === 'No Doors') return -8
+    if (doorFinish === 'Syncron') return 30
+    if (doorFinish === 'Luxe') return 36
+    if (doorFinish === 'Zenit') return (36*1.03)
+    return 0
 }
 
 const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
@@ -64,6 +75,7 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
     const boxMaterialCoefs = getBoxMaterialCoefs(boxMaterial, doorFinish)
     const doorsQty = attrArr.find(el => el.name === 'Door')?.value || 0;
     const isAcrylic = doorFinish === 'Ultrapan Acrylic';
+    const doorPriceMultiplier = getDoorPriceMultiplier(doorType,doorFinish)
 
     return (
         product ?
@@ -81,16 +93,17 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
                                 </div>
                             )
                         })}
-                        {doorSquare ? <div>
-                            <span>Door Square: </span><span>{(doorSquare/144).toFixed(2)}ft</span>
-                        </div> : null}
                     </div>
                     <div className={s.materials}>
-                        {dataMaterialsArr.map((material, index) => <div key={index}>
-                            <span>{material[0]}: </span>
-                            <span>{material[1]}</span>
-                        </div>)}
-                        {}
+                        {dataMaterialsArr.map((material, index) => {
+                            if (!material[1]) return;
+                            return (
+                                <div key={index}>
+                                    <span>{material[0]}: </span>
+                                    <span>{material[1]}</span>
+                                </div>
+                            )
+                        })}
                     </div>
 
                 </div>
@@ -103,6 +116,7 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
                       doorsQty={doorsQty}
                       isAcrylic={isAcrylic}
                       drawer={drawer}
+                      doorPriceMultiplier={doorPriceMultiplier}
                     />}
                 </div>
             </div>
