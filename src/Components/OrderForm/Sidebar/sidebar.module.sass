@@ -1,0 +1,72 @@
+@use 'src/styles/variables' as *
+.sidebar
+  box-shadow: 4px 4px 10px rgba(0,0,0,.4)
+  position: relative
+  h2
+    margin-bottom: 2em
+
+.sidebarContent
+  padding: 30px 15px 150px 15px
+  height: calc(100vh - 150px)
+  overflow-y: auto
+
+.block
+  display: grid
+  grid-template-columns: 1fr
+  gap: 10px
+  margin-bottom: 1.8em
+
+.choose
+  display: inline-block
+  font: 500 18px/1.2 $mainFont
+  margin-bottom: 1em
+
+.chooseItem
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 5px
+  &:not(:last-of-type)
+    margin-bottom: 10px
+  span:first-child
+    letter-spacing: -0.02em
+  span:nth-child(2)
+    font-weight: 500
+
+.back
+  position: absolute
+  left: 15px
+  right: 15px
+  bottom: 30px
+
+
+.sidebarImg
+  width: 30px
+  height: 30px
+  flex-shrink: 0
+
+
+.total
+  position: absolute
+  bottom: 100px
+  right: 30px
+  font: 600 24px/1.2 $mainFont
+
+.cartItem
+  display: flex
+  align-items: center
+  gap: 10px
+
+.cartItemTotal
+  font: 500 17px/1.2 $mainFont
+.cartItemCode
+  font: 500 17px/1.2 $mainFont
+
+.submit
+  position: absolute
+  z-index: 1
+  bottom: 30px
+  right: 15px
+  &.disabled
+    background-color: #E6E6E6
+    color: initial

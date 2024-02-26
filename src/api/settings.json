@@ -1,0 +1,553 @@
+{
+  "minWidth": 9,
+  "maxWidth": 48,
+  "minHeight": 10.5,
+  "maxHeight": 54,
+  "minDepth": 9,
+  "maxDepth": 48,
+  "width": {
+    "label": "Width",
+    "types": [
+      {
+        "type": 1,
+        "divider": 24,
+        "values": [9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 0]
+      },
+      {
+        "type": 2,
+        "divider": 24,
+        "values": [12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 0]
+      },
+      {
+        "type": 3,
+        "divider": 15,
+        "values": [ 15, 18, 21, 24, 0]
+      }
+    ]
+  },
+  "height": {
+    "label": "Height",
+    "values": [34.5, 0]
+  },
+  "depth": {
+    "label": "Depth",
+    "values": [24, 0]
+  },
+  "Hinge opening": [
+    "Left",
+    "Right"
+  ],
+  "Glass Door": {
+    "Profile": [
+      {
+        "value": "Wood Shaker",
+        "label": "Wood Shaker",
+        "glassDoorType": 1
+      },
+      {
+        "value": "1021 Black",
+        "label": "1021 Black",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1021 Champagne",
+        "label": "1021 Champagne",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1021 Clear Anodized",
+        "label": "1021 Clear Anodized",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1021 Polished",
+        "label": "1021 Polished",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1021 Graphite",
+        "label": "1021 Graphite",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1021 Sepia",
+        "label": "1021 Sepia",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1022 Black",
+        "label": "1022 Black",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1022 Champagne",
+        "label": "1022 Champagne",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1022 Clear Anodized",
+        "label": "1022 Clear Anodized",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1040 Black",
+        "label": "1040 Black",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1040 Champagne",
+        "label": "1040 Champagne",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1040 Clear Anodized",
+        "label": "1040 Clear Anodized",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1040 Polished",
+        "label": "1040 Polished",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1040 Graphite",
+        "label": "1040 Graphite",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1040 Sepia",
+        "label": "1040 Sepia",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1040 White",
+        "label": "1040 White",
+        "glassDoorType": 2
+      },
+      {
+        "value": "1042 Black",
+        "label": "1042 Black",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1042 Champagne",
+        "label": "1042 Champagne",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1042 Clear Anodized",
+        "label": "1042 Clear Anodized",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1042 Polished",
+        "label": "1042 Polished",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1042 Gold",
+        "label": "1042 Gold",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1042 Graphite",
+        "label": "1042 Graphite",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1042 Sepia",
+        "label": "1042 Sepia",
+        "glassDoorType": 3
+      },
+      {
+        "value": "1042 White",
+        "label": "1042 White",
+        "glassDoorType": 3
+      }
+    ],
+    "Glass Type": [
+      {
+        "value": "Glass",
+        "label": "Glass"
+      },
+      {
+        "value": "Mirror",
+        "label": "Mirror"
+      },
+      {
+        "value": "Colored",
+        "label": "Colored"
+      }
+    ],
+    "Glass Color": [
+      {
+        "value": "Clear",
+        "label": "Clear",
+        "type": "Glass"
+      },
+      {
+        "value": "Frosted",
+        "label": "Frosted",
+        "type": "Glass"
+      },
+      {
+        "value": "Bronze Translucent",
+        "label": "Bronze Translucent",
+        "type": "Glass"
+      },
+      {
+        "value": "Gray Translucent",
+        "label": "Gray Translucent",
+        "type": "Glass"
+      },
+      {
+        "value": "Acid Etch",
+        "label": "Acid Etch",
+        "type": "Mirror"
+      },
+      {
+        "value": "Bronze",
+        "label": "Bronze",
+        "type": "Mirror"
+      },
+      {
+        "value": "Clear",
+        "label": "Clear",
+        "type": "Mirror"
+      },
+      {
+        "value": "Gray",
+        "label": "Gray",
+        "type": "Mirror"
+      },
+      {
+        "value": "One-way",
+        "label": "One-way",
+        "type": "Mirror"
+      },
+      {
+        "value": "White 010",
+        "label": "White 010",
+        "type": "Colored"
+      },
+      {
+        "value": "Golden Yellow 020",
+        "label": "Golden Yellow 020",
+        "type": "Colored"
+      },
+      {
+        "value": "Yellow 021",
+        "label": "Yellow 021",
+        "type": "Colored"
+      },
+      {
+        "value": "Light Yellow 022",
+        "label": "Light Yellow 022",
+        "type": "Colored"
+      },
+      {
+        "value": "Cream 023",
+        "label": "Cream 023",
+        "type": "Colored"
+      },
+      {
+        "value": "Brimstone Yellow 025",
+        "label": "Brimstone Yellow 025",
+        "type": "Colored"
+      },
+      {
+        "value": "Purple Red 026",
+        "label": "Purple Red 026",
+        "type": "Colored"
+      },
+      {
+        "value": "Red 031",
+        "label": "Red 031",
+        "type": "Colored"
+      },
+      {
+        "value": "Light Red 032",
+        "label": "Light Red 032",
+        "type": "Colored"
+      },
+      {
+        "value": "Orange 034",
+        "label": "Orange 034",
+        "type": "Colored"
+      },
+      {
+        "value": "Pastel Orange 036",
+        "label": "Pastel Orange 036",
+        "type": "Colored"
+      },
+      {
+        "value": "Violet 040",
+        "label": "Violet 040",
+        "type": "Colored"
+      },
+      {
+        "value": "Pink 041",
+        "label": "Pink 041",
+        "type": "Colored"
+      },
+      {
+        "value": "Ulac 042",
+        "label": "Ulac 042",
+        "type": "Colored"
+      },
+      {
+        "value": "Lavender 043",
+        "label": "Lavender 043",
+        "type": "Colored"
+      },
+      {
+        "value": "Soft Pink 045",
+        "label": "Soft Pink 045",
+        "type": "Colored"
+      },
+      {
+        "value": "Orange Red 047",
+        "label": "Orange Red 047",
+        "type": "Colored"
+      },
+      {
+        "value": "King Blue 049",
+        "label": "King Blue 049",
+        "type": "Colored"
+      },
+      {
+        "value": "Darl Blue 050",
+        "label": "Darl Blue 050",
+        "type": "Colored"
+      },
+      {
+        "value": "Gentlan Blue 051",
+        "label": "Gentlan Blue 051",
+        "type": "Colored"
+      },
+      {
+        "value": "Azure Blue 052",
+        "label": "Azure Blue 052",
+        "type": "Colored"
+      },
+      {
+        "value": "Light Blue 053",
+        "label": "Light Blue 053",
+        "type": "Colored"
+      },
+      {
+        "value": "Turquoise 054",
+        "label": "Turquoise 054",
+        "type": "Colored"
+      },
+      {
+        "value": "Mint 055",
+        "label": "Mint 055",
+        "type": "Colored"
+      },
+      {
+        "value": "Ice Blue 056",
+        "label": "Ice Blue 056",
+        "type": "Colored"
+      },
+      {
+        "value": "Traffic Blue 057",
+        "label": "Traffic Blue 057",
+        "type": "Colored"
+      },
+      {
+        "value": "Dark Green 060",
+        "label": "Dark Green 060",
+        "type": "Colored"
+      },
+      {
+        "value": "Green 061",
+        "label": "Green 061",
+        "type": "Colored"
+      },
+      {
+        "value": "Light Green 062",
+        "label": "Light Green 062",
+        "type": "Colored"
+      },
+      {
+        "value": "Lime Green 063",
+        "label": "Lime Green 063",
+        "type": "Colored"
+      },
+      {
+        "value": "Yellow Green 064",
+        "label": "Yellow Green 064",
+        "type": "Colored"
+      },
+      {
+        "value": "Cobalt Blue 065",
+        "label": "Cobalt Blue 065",
+        "type": "Colored"
+      },
+      {
+        "value": "Turquoise Blue 066",
+        "label": "Turquoise Blue 066",
+        "type": "Colored"
+      },
+      {
+        "value": "Blue 067",
+        "label": "Blue 067",
+        "type": "Colored"
+      },
+      {
+        "value": "Grass Green 068",
+        "label": "Grass Green 068",
+        "type": "Colored"
+      },
+      {
+        "value": "Black 070",
+        "label": "Black 070",
+        "type": "Colored"
+      },
+      {
+        "value": "Gray 071",
+        "label": "Gray 071",
+        "type": "Colored"
+      },
+      {
+        "value": "Light Gray 072",
+        "label": "Light Gray 072",
+        "type": "Colored"
+      },
+      {
+        "value": "Dark Gray 073",
+        "label": "Dark Gray 073",
+        "type": "Colored"
+      },
+      {
+        "value": "Middle Gray 074",
+        "label": "Middle Gray 074",
+        "type": "Colored"
+      },
+      {
+        "value": "Telegray 076",
+        "label": "Telegray 076",
+        "type": "Colored"
+      },
+      {
+        "value": "Brown 080",
+        "label": "Brown 080",
+        "type": "Colored"
+      },
+      {
+        "value": "Light Brown 081",
+        "label": "Light Brown 081",
+        "type": "Colored"
+      },
+      {
+        "value": "Beige 082",
+        "label": "Beige 082",
+        "type": "Colored"
+      },
+      {
+        "value": "Nut Brown 083",
+        "label": "Nut Brown 083",
+        "type": "Colored"
+      },
+      {
+        "value": "Sky Blue 084",
+        "label": "Sky Blue 084",
+        "type": "Colored"
+      },
+      {
+        "value": "Brilliant Blue 086",
+        "label": "Brilliant Blue 086",
+        "type": "Colored"
+      },
+      {
+        "value": "Silver Gray 090",
+        "label": "Silver Gray 090",
+        "type": "Colored"
+      },
+      {
+        "value": "Gold 091",
+        "label": "Gold 091",
+        "type": "Colored"
+      },
+      {
+        "value": "Cooper 092",
+        "label": "Cooper 092",
+        "type": "Colored"
+      },
+      {
+        "value": "Gentlan 098",
+        "label": "Gentlan 098",
+        "type": "Colored"
+      },
+      {
+        "value": "Dark Red 030",
+        "label": "Dark Red 030",
+        "type": "Colored"
+      },
+      {
+        "value": "Burgundy 312",
+        "label": "Burgundy 312",
+        "type": "Colored"
+      },
+      {
+        "value": "Coral 341",
+        "label": "Coral 341",
+        "type": "Colored"
+      },
+      {
+        "value": "Light Orange 035",
+        "label": "Light Orange 035",
+        "type": "Colored"
+      },
+      {
+        "value": "Purple 404",
+        "label": "Purple 404",
+        "type": "Colored"
+      },
+      {
+        "value": "Steel Blue 518",
+        "label": "Steel Blue 518",
+        "type": "Colored"
+      },
+      {
+        "value": "Deep Sea Blue 562",
+        "label": "Deep Sea Blue 562",
+        "type": "Colored"
+      },
+      {
+        "value": "Forest Green 613",
+        "label": "Forest Green 613",
+        "type": "Colored"
+      },
+      {
+        "value": "Imitiation Gold 824",
+        "label": "Imitiation Gold 824",
+        "type": "Colored"
+      }
+    ],
+    "priceType": [
+      {
+        "id": 1,
+        "minPrice": 240,
+        "multiplier": 80
+      },
+      {
+        "id": 2,
+        "minPrice": 300,
+        "multiplier": 100
+      },
+      {
+        "id": 3,
+        "minPrice": 300,
+        "multiplier": 120
+      }
+    ]
+  },
+  "fixPrices": {
+    "PTO for doors": 30,
+    "PTO for drawers": 80,
+    "PTO for trash bins": 350,
+    "Glass Shelf": 170
+  }
+}

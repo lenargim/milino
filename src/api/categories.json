@@ -1,0 +1,53 @@
+{
+  "Kitchen": {
+    "defaultImg": "default-cabinets.png",
+    "categories": [
+      {
+        "name": "Base Cabinets",
+        "img": "base-cabinets.png"
+      },
+      {
+        "name": "Wall Cabinets",
+        "img": "wall-cabinets.png"
+      },
+      {
+        "name": "Tall Cabinets",
+        "img": "tall-cabinets.png"
+      }
+    ]
+  },
+  "Vanity": {
+    "defaultImg": "default-cabinets.png",
+    "categories": [
+      {
+        "name": "Base Cabinets",
+        "img": "base-cabinets.png"
+      },
+      {
+        "name": "Wall Cabinets",
+        "img": "wall-cabinets.png"
+      },
+      {
+        "name": "Tall Cabinets",
+        "img": "tall-cabinets.png"
+      }
+    ]
+  },
+  "Closet": {
+    "defaultImg": "default-cabinets.png",
+    "categories": [
+      {
+        "name": "Base Cabinets",
+        "img": "base-cabinets.png"
+      },
+      {
+        "name": "Wall Cabinets",
+        "img": "wall-cabinets.png"
+      },
+      {
+        "name": "Tall Cabinets",
+        "img": "tall-cabinets.png"
+      }
+    ]
+  }
+}

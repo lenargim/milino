@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import OrderForm from "./Components/OrderForm/OrderForm";
+import {Route, Routes} from "react-router-dom";
+import Cabinets from "./Components/Cabinets/Cabinets";
+import Product from "./Components/Product/Product";
+import WithChosenMaterials from "./common/WithChosenMaterials";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="app">
+            <Routes>
+                <Route path="/" element={<OrderForm/>}/>
+                <Route path="/cabinets" element={<WithChosenMaterials  outlet={<Cabinets />}/>}/>
+                <Route path="/product/*" element={<WithChosenMaterials  outlet={<Product />}/>}/>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

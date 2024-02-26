@@ -1,0 +1,255 @@
+[
+  {
+    "id": 1,
+    "name": "BS Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "bs9-24.png"
+      },
+      {
+        "type": 2,
+        "value": "bs27-42.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "widthRange": 1,
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door",
+      "Glass Shelf"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "BD Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "bd1.png"
+      },
+      {
+        "type": 2,
+        "value": "bd2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Rollout",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "widthRange": 2,
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "B Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "b1.png"
+      },
+      {
+        "type": 2,
+        "value": "b2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "widthRange": 2,
+    "options": [
+      "PTO for doors",
+      "PTO for drawers",
+      "Box from finish material",
+      "Glass Door",
+      "Glass Shelf"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "BID Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "bid1.png"
+      },
+      {
+        "type": 2,
+        "value": "bid2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Rollout",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "widthRange": 2,
+    "options": [
+      "PTO for doors",
+      "PTO for drawers",
+      "Box from finish material",
+      "Glass Door"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "BSG Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "bsg1.png"
+      },
+      {
+        "type": 2,
+        "value": "bsg1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Trash Bin",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "widthRange": 3,
+    "options": [
+      "PTO for doors",
+      "PTO for Trash Bins",
+      "Box from finish material",
+      "Glass Door"
+    ]
+  }
+]

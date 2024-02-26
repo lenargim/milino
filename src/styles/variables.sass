@@ -1,0 +1,42 @@
+// CUSTOM VARIABLES
+$mainFont: 'Inter', sans-serif
+$logoFont: 'Gotham Pro'
+$black: #000
+$accent: #FFCE90
+$accentLight: #FFD8A7
+$textLink: #3B9BFF
+$red: #CB4141
+
+$maxMobile: 819
+
+$maxTablet: 1279
+$minTablet: $maxMobile+1
+
+$maxSmall: 1439
+$minSmall: $maxTablet+1
+
+$maxMedium: 1563
+$minMedium: $maxSmall+1
+
+$maxLarge: 1919
+$minLarge: $maxMedium+1
+
+// BREAKPOINTS
+@mixin max($breakpoint)
+  @media screen and (max-width: ($breakpoint) + 'px')
+    @content
+
+@mixin min($breakpoint)
+  @media screen and (min-width: $breakpoint + 'px')
+    @content
+
+@mixin between($min, $max)
+  @media screen and (min-width: $min + 'px') and (max-width: $max + 'px')
+    @content
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+  @font-face
+    font-family: $fname
+    font-style: $fstyle
+    font-weight: $fweight
+    src: url($furl) format('woff2')

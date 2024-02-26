@@ -1,0 +1,4219 @@
+{
+  "rooms": [
+    {
+      "value": "Kitchen",
+      "img": "kitchen.jpeg"
+    },
+    {
+      "value": "Vanity",
+      "img": "vanity.webp"
+    },
+    {
+      "value": "Closet",
+      "img": "closet.jpeg"
+    },
+    {
+      "value": "Panels",
+      "img": "panels.jpeg"
+    }
+  ],
+  "doors": [
+    {
+      "name": "Slab",
+      "finish": [
+        {
+          "name": "Luxe",
+          "colors": [
+            {
+              "name": "Agua Marina HG",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Marino HG",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto HG",
+              "isGrain": false
+            },
+            {
+              "name": "Black HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Polar HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cotto HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cuzco Oro HG",
+              "isGrain": true
+            },
+            {
+              "name": "Euroline 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Metallic HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Perla HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Guayana HG",
+              "isGrain": true
+            },
+            {
+              "name": "Magnolia HG",
+              "isGrain": false
+            },
+            {
+              "name": "Metallo 1 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 4 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olivo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Porcelain 1 HG",
+              "isGrain": false
+            },
+            {
+              "name": "Roble Frappe HG",
+              "isGrain": true
+            },
+            {
+              "name": "Rojo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Rosales 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Textil Grafito HG",
+              "isGrain": true
+            },
+            {
+              "name": "Textil Plata HG",
+              "isGrain": true
+            },
+            {
+              "name": "Verde Salvia HG",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita PE",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto PE",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Colonial PE",
+              "isGrain": false
+            }
+
+
+
+          ]
+        },
+        {
+          "name": "Zenit",
+          "colors": [
+            {
+              "name": "Agua Marina SM",
+              "isGrain": false
+            },
+            {
+              "name": "Almagra SM",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita SM",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Índigo SM",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Marino SM",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto SM",
+              "isGrain": false
+            },
+            {
+              "name": "Black SM",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Polar SM",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco SM",
+              "isGrain": false
+            },
+            {
+              "name": "Camel SM",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere SM",
+              "isGrain": false
+            },
+            {
+              "name": "Cotto SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Perla SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo SM",
+              "isGrain": false
+            },
+            {
+              "name": "Titán 1 SM",
+              "isGrain": true
+            },
+            {
+              "name": "Tortora SM",
+              "isGrain": false
+            },
+            {
+              "name": "Verde Salvia SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalDeco Antracita SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalDeco Basalto SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalDeco Black SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalDeco Blanco SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalPlus Light Gold",
+              "isGrain": false
+            },
+            {
+              "name": "MetalPlus Titanio SM",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Syncron",
+          "colors": [
+            {
+              "name": "Anniversary 1",
+              "isGrain": false
+            },
+            {
+              "name": "Anniversary 2",
+              "isGrain": false
+            },
+            {
+              "name": "Anniversary 3",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Cashmere Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 1",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 2",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 4",
+              "isGrain": true
+            },
+            {
+              "name": "Frappe 1",
+              "isGrain": false
+            },
+            {
+              "name": "Frappe 2",
+              "isGrain": false
+            },
+            {
+              "name": "Frappe 3",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 4",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 4",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 1",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 2",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 4",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 1",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 2",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 3",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 2",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 1",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 3",
+              "isGrain": true
+            }
+          ]
+        },
+        {
+          "name": "Cleaf",
+          "colors": [
+            {
+              "name": "Ares Concrete Bianco FB03",
+              "isGrain": false
+            },
+            {
+              "name": "Ares Concrete FB11",
+              "isGrain": false
+            },
+            {
+              "name": "Ares Dark Concrete UA49",
+              "isGrain": false
+            },
+            {
+              "name": "Ares Glauco FB49",
+              "isGrain": false
+            },
+            {
+              "name": "Ares Night UB02",
+              "isGrain": false
+            },
+            {
+              "name": "Ares Rame FB60",
+              "isGrain": false
+            },
+            {
+              "name": "Ares Valleta FB68",
+              "isGrain": false
+            },
+            {
+              "name": "Azimut Fresh Gray SO27",
+              "isGrain": true
+            },
+            {
+              "name": "Azimut Lounge Brown SO28",
+              "isGrain": true
+            },
+            {
+              "name": "Cheope Total White BO73",
+              "isGrain": false
+            },
+            {
+              "name": "Engadina Engadina SO61",
+              "isGrain": true
+            },
+            {
+              "name": "Fronda Bardini S164",
+              "isGrain": true
+            },
+            {
+              "name": "Idea Argento FB81",
+              "isGrain": false
+            },
+            {
+              "name": "Idea Ottone FB86",
+              "isGrain": false
+            },
+            {
+              "name": "Idea Zirconia FB08",
+              "isGrain": false
+            },
+            {
+              "name": "Jiometori Naoshima S191",
+              "isGrain": true
+            },
+            {
+              "name": "Jiometori Teshima S192",
+              "isGrain": true
+            },
+            {
+              "name": "Matrix Aspen Oak LM67",
+              "isGrain": true
+            },
+            {
+              "name": "Matrix Barn Oak LN27",
+              "isGrain": true
+            },
+            {
+              "name": "Matrix Bianco BO11",
+              "isGrain": true
+            },
+            {
+              "name": "Matrix Carbone LM08",
+              "isGrain": true
+            },
+            {
+              "name": "Matrix City Oak LM69",
+              "isGrain": true
+            },
+            {
+              "name": "Matrix Oregon Pine LK84",
+              "isGrain": false
+            },
+            {
+              "name": "Matrix Stratos LM37",
+              "isGrain": true
+            },
+            {
+              "name": "Matrix Vineyard Oak LN30",
+              "isGrain": true
+            },
+            {
+              "name": "Mosaico Nero U129",
+              "isGrain": false
+            },
+            {
+              "name": "Okobo Meguro S160",
+              "isGrain": true
+            },
+            {
+              "name": "Okobo Nakano S162",
+              "isGrain": true
+            },
+            {
+              "name": "Okobo Shibuya S161",
+              "isGrain": true
+            },
+            {
+              "name": "Okobo Taito S159",
+              "isGrain": true
+            },
+            {
+              "name": "Poro Noce Acerno LS14",
+              "isGrain": true
+            },
+            {
+              "name": "Poro Noce Giffoni LS13",
+              "isGrain": true
+            },
+            {
+              "name": "Primofiore Ardesia UB09",
+              "isGrain": false
+            },
+            {
+              "name": "Primofiore Bianco BO11",
+              "isGrain": false
+            },
+            {
+              "name": "Primofiore Maya Bronze FA33",
+              "isGrain": false
+            },
+            {
+              "name": "Primofiore Nebia UB19",
+              "isGrain": false
+            },
+            {
+              "name": "Sable Ascari LR25",
+              "isGrain": true
+            },
+            {
+              "name": "Sable Cairo S138",
+              "isGrain": false
+            },
+            {
+              "name": "Sable Dublin S135",
+              "isGrain": false
+            },
+            {
+              "name": "Sable Fittipaldi LR29",
+              "isGrain": true
+            },
+            {
+              "name": "Sable Glasgow S136",
+              "isGrain": false
+            },
+            {
+              "name": "Sable Madrid S133",
+              "isGrain": false
+            },
+            {
+              "name": "Sable Pecan LR27",
+              "isGrain": true
+            },
+            {
+              "name": "Sherwood Brolio Oak LR09",
+              "isGrain": true
+            },
+            {
+              "name": "Sherwood Gavi Oak LN66",
+              "isGrain": true
+            },
+            {
+              "name": "Sherwood Nadir LN67",
+              "isGrain": false
+            },
+            {
+              "name": "Sherwood Peak District SO78",
+              "isGrain": true
+            },
+            {
+              "name": "Sherwood Toasted Espresso SO71",
+              "isGrain": true
+            },
+            {
+              "name": "Sherwood Tuscan Cypress SO72",
+              "isGrain": true
+            },
+            {
+              "name": "Sherwood Volterra Oak SO95",
+              "isGrain": true
+            },
+            {
+              "name": "Yosemite Burned SO12",
+              "isGrain": true
+            },
+            {
+              "name": "Yosemite Cypress Point SO13",
+              "isGrain": true
+            },
+            {
+              "name": "Yosemite Light Carbon SO15",
+              "isGrain": true
+            },
+            {
+              "name": "Yosemite Nero U129",
+              "isGrain": true
+            },
+            {
+              "name": "Yosemite Silver Sand SO11",
+              "isGrain": true
+            }
+          ]
+        },
+        {
+          "name": "OneSkin",
+          "colors": [
+            {
+              "name": "Alentejo Elm HG",
+              "isGrain": true
+            },
+            {
+              "name": "Alentejo Elm SM",
+              "isGrain": true
+            },
+            {
+              "name": "Arctic White HG",
+              "isGrain": false
+            },
+            {
+              "name": "Black HG",
+              "isGrain": false
+            },
+            {
+              "name": "Black SM",
+              "isGrain": false
+            },
+            {
+              "name": "Brown Cement HG",
+              "isGrain": false
+            },
+            {
+              "name": "Brown Cement SM",
+              "isGrain": false
+            },
+            {
+              "name": "Calcio HG",
+              "isGrain": true
+            },
+            {
+              "name": "Calcio SM",
+              "isGrain": true
+            },
+            {
+              "name": "Carbon Oak HG",
+              "isGrain": true
+            },
+            {
+              "name": "Carbon Oak SM",
+              "isGrain": true
+            },
+            {
+              "name": "Cashmere HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere SM",
+              "isGrain": false
+            },
+            {
+              "name": "Copper HG",
+              "isGrain": true
+            },
+            {
+              "name": "Copper SM",
+              "isGrain": true
+            },
+            {
+              "name": "Denim Blue HG",
+              "isGrain": false
+            },
+            {
+              "name": "Denim Blue SM",
+              "isGrain": false
+            },
+            {
+              "name": "Fossil Oak HG",
+              "isGrain": true
+            },
+            {
+              "name": "Fossil Oak SM",
+              "isGrain": true
+            },
+            {
+              "name": "Grey HG",
+              "isGrain": false
+            },
+            {
+              "name": "Grey SM",
+              "isGrain": false
+            },
+            {
+              "name": "Grey Oak HG",
+              "isGrain": true
+            },
+            {
+              "name": "Grey Oak SM",
+              "isGrain": true
+            },
+            {
+              "name": "Ivory Ash HG",
+              "isGrain": true
+            },
+            {
+              "name": "Lava Grey HG",
+              "isGrain": false
+            },
+            {
+              "name": "Lava Grey SM",
+              "isGrain": false
+            },
+            {
+              "name": "Light Grey HG",
+              "isGrain": false
+            },
+            {
+              "name": "Light Grey SM",
+              "isGrain": false
+            },
+            {
+              "name": "Luna HG",
+              "isGrain": true
+            },
+            {
+              "name": "Luna SM",
+              "isGrain": true
+            },
+            {
+              "name": "Mineral Coffee HG",
+              "isGrain": false
+            },
+            {
+              "name": "Mineral Coffee SM",
+              "isGrain": false
+            },
+            {
+              "name": "Moka Ash HG",
+              "isGrain": true
+            },
+            {
+              "name": "Moka Cement HG",
+              "isGrain": true
+            },
+            {
+              "name": "Moka Cement SM",
+              "isGrain": true
+            },
+            {
+              "name": "Natural Cement HG",
+              "isGrain": false
+            },
+            {
+              "name": "Natural Cement SM",
+              "isGrain": false
+            },
+            {
+              "name": "Natural Oak HG",
+              "isGrain": true
+            },
+            {
+              "name": "Natural Oak SM",
+              "isGrain": true
+            },
+            {
+              "name": "Old Oak HG",
+              "isGrain": true
+            },
+            {
+              "name": "Old Oak SM",
+              "isGrain": true
+            },
+            {
+              "name": "Oyster HG",
+              "isGrain": false
+            },
+            {
+              "name": "Petroleo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Petroleo SM",
+              "isGrain": false
+            },
+            {
+              "name": "Port Red HG",
+              "isGrain": false
+            },
+            {
+              "name": "Port Red SM",
+              "isGrain": false
+            },
+            {
+              "name": "Sahara HG",
+              "isGrain": false
+            },
+            {
+              "name": "Sahara SM",
+              "isGrain": false
+            },
+            {
+              "name": "Sunny White HG",
+              "isGrain": false
+            },
+            {
+              "name": "Sunny White SM",
+              "isGrain": false
+            },
+            {
+              "name": "Terracota HG",
+              "isGrain": true
+            },
+            {
+              "name": "Terracota SM",
+              "isGrain": true
+            },
+            {
+              "name": "Tormenta HG",
+              "isGrain": true
+            },
+            {
+              "name": "Tormenta SM",
+              "isGrain": true
+            },
+            {
+              "name": "Tortora HG",
+              "isGrain": false
+            },
+            {
+              "name": "Tortora SM",
+              "isGrain": false
+            },
+            {
+              "name": "Vision HG",
+              "isGrain": false
+            },
+            {
+              "name": "Vision SM",
+              "isGrain": false
+            },
+            {
+              "name": "White Birch HG",
+              "isGrain": true
+            },
+            {
+              "name": "White Birch SM",
+              "isGrain": true
+            },
+            {
+              "name": "White Concrete HG",
+              "isGrain": false
+            },
+            {
+              "name": "White Concrete SM",
+              "isGrain": true
+            }
+          ]
+        },
+        {
+          "name": "Ultrapan PET",
+          "colors": [
+            {
+              "name": "Black UG",
+              "isGrain": false
+            },
+            {
+              "name": "Bright White UG",
+              "isGrain": false
+            },
+            {
+              "name": "Citadel UG",
+              "isGrain": false
+            },
+            {
+              "name": "Flint UG",
+              "isGrain": false
+            },
+            {
+              "name": "Greystone UG",
+              "isGrain": false
+            },
+            {
+              "name": "Ivory UG",
+              "isGrain": false
+            },
+            {
+              "name": "London Fog UG",
+              "isGrain": false
+            },
+            {
+              "name": "Outer Space UG",
+              "isGrain": false
+            },
+            {
+              "name": "Red UG",
+              "isGrain": false
+            },
+            {
+              "name": "Slate Grey UG",
+              "isGrain": false
+            },
+            {
+              "name": "Utaupia UG",
+              "isGrain": false
+            },
+            {
+              "name": "White UG",
+              "isGrain": false
+            },
+            {
+              "name": "Black UM",
+              "isGrain": false
+            },
+            {
+              "name": "Bright White UM",
+              "isGrain": false
+            },
+            {
+              "name": "Citadel UM",
+              "isGrain": false
+            },
+            {
+              "name": "Flint Grey UM",
+              "isGrain": false
+            },
+            {
+              "name": "Greystone UM",
+              "isGrain": false
+            },
+            {
+              "name": "Ivory UM",
+              "isGrain": false
+            },
+            {
+              "name": "London Fog UM",
+              "isGrain": false
+            },
+            {
+              "name": "Outer Space UM",
+              "isGrain": false
+            },
+            {
+              "name": "Rainstorm UM",
+              "isGrain": false
+            },
+            {
+              "name": "Slate Grey UM",
+              "isGrain": false
+            },
+            {
+              "name": "Utaupia UM",
+              "isGrain": false
+            },
+            {
+              "name": "White UM",
+              "isGrain": false
+            },
+            {
+              "name": "Starfire Pearl UG",
+              "isGrain": false
+            },
+            {
+              "name": "Daybreak Pearl",
+              "isGrain": false
+            },
+            {
+              "name": "Lunar Pearl Surface",
+              "isGrain": false
+            },
+            {
+              "name": "Twilight Pearl UG",
+              "isGrain": false
+            },
+            {
+              "name": "Midnight Pearl UG",
+              "isGrain": false
+            },
+            {
+              "name": "Ice Matrix Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Amalfi Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Ebony Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Metallic Elm Wood",
+              "isGrain": true
+            }
+          ]
+        },
+        {
+          "name": "Ultrapan Acrylic",
+          "colors": [
+            {
+              "name": "Frost White Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Champagne Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Silver Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Dark Grey Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Black Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Diamond Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Gold Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Titanium Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Obsidian Mettalic",
+              "isGrain": false
+            },
+            {
+              "name": "Pure Arctic White Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Polar White Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Pebble Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Galactic Grey Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Comfort Grey",
+              "isGrain": false
+            },
+            {
+              "name": "Seal Grey Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Eclipse Grey Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Jet Black Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Hot Rod Red Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Royal Blue Acrylic",
+              "isGrain": false
+            },
+            {
+              "name": "Burgundy Acrylic",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Stone",
+          "colors": [
+            {
+              "name": "Silver Grey",
+              "isGrain": false
+            },
+            {
+              "name": "Galaxy Black",
+              "isGrain": false
+            },
+            {
+              "name": "Ice Pearl",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco",
+              "isGrain": false
+            },
+            {
+              "name": "Verde",
+              "isGrain": false
+            },
+            {
+              "name": "California Gold",
+              "isGrain": false
+            },
+            {
+              "name": "Mare",
+              "isGrain": false
+            },
+            {
+              "name": "D.Black",
+              "isGrain": false
+            },
+            {
+              "name": "Green Pearl",
+              "isGrain": false
+            },
+            {
+              "name": "Argento",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Milino",
+          "colors": [
+            {
+              "name": "Ash Melamine",
+              "isGrain": true
+            },
+            {
+              "name": "Beige Linen Melamine",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Wood Melamine",
+              "isGrain": true
+            },
+            {
+              "name": "Grey Linen Melamine",
+              "isGrain": false
+            },
+            {
+              "name": "Grey Melamine",
+              "isGrain": false
+            },
+            {
+              "name": "Walnut Melamine",
+              "isGrain": true
+            },
+            {
+              "name": "White Melamine",
+              "isGrain": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "No Doors",
+      "finish": [
+        {
+          "name": "No Doors No Hinges"
+        }
+      ]
+    },
+    {
+      "name": "Three Piece Door",
+      "finish": [
+        {
+          "name": "Luxe",
+          "colors": [
+            {
+              "name": "Agua Marina HG",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Marino HG",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto HG",
+              "isGrain": false
+            },
+            {
+              "name": "Black HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Polar HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cotto HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cuzco Oro HG",
+              "isGrain": true
+            },
+            {
+              "name": "Euroline 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Metallic HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Perla HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Guayana HG",
+              "isGrain": true
+            },
+            {
+              "name": "Magnolia HG",
+              "isGrain": false
+            },
+            {
+              "name": "Metallo 1 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 4 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olivo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Porcelain 1 HG",
+              "isGrain": false
+            },
+            {
+              "name": "Roble Frappe HG",
+              "isGrain": true
+            },
+            {
+              "name": "Rojo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Rosales 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Textil Grafito HG",
+              "isGrain": true
+            },
+            {
+              "name": "Textil Plata HG",
+              "isGrain": true
+            },
+            {
+              "name": "Verde Salvia HG",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita PE",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto PE",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Colonial PE",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Syncron",
+          "colors": [
+            {
+              "name": "Anniversary Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Antracita Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Cashmere Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 1",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 2",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 4",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 1",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 2",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 3",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Plomo Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 4",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 4",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 1",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 2",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 4",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 1",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 2",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 3",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 2",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 3",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 1",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 4",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 1",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 2",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 1",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 4",
+              "isGrain": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Finger Pull",
+      "finish": [
+        {
+          "name": "Luxe",
+          "colors": [
+            {
+              "name": "Antracita HGFP",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco HGFP",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Zenit",
+          "colors": [
+            {
+              "name": "Antracita SM FP",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco SM FP",
+              "isGrain": false
+            },
+            {
+              "name": "Black SM FP",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere SM FP",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Syncron",
+          "colors": [
+            {
+              "name": "Como Ash 1 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Como Ash 2 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Muratti 1 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Muratti 4 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Nocce 1 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Nocce 3 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Rosales 2 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Rosales 3 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Woodline 1 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Woodline 3 FP",
+              "isGrain": false
+            },
+            {
+              "name": "Olmo 3 FP",
+              "isGrain": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Painted",
+      "finish": [
+        {
+          "name": "Frame 3/4",
+          "colors": [
+            {
+              "name": "White Matte",
+              "isGrain": false
+            },
+            {
+              "name": "Aqua Marina",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo",
+              "isGrain": false
+            },
+            {
+              "name": "Verde Salvia",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita",
+              "isGrain": false
+            },
+            {
+              "name": "SW 0055 Light French Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6204 Sea Salt",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6211 Rainwashed",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6241 Aleutian",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6244 Naval",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6250 Granite Peak",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6253 Olympus White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6254 Lazy Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6258 Tricorn Black",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6385 Dover White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7004 Snowbound",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7005 Pure White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7006 Extra White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7007 Ceiling Bright White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7008 Alabaster",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7009 Pearly White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7012 Creamy",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7014 Eider White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7015 Repose Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7016 Mindful Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7019 Gauntlet Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7029 Agreeable Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7035 Aesthetic White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7036 Accessible Beige",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7042 Shoji White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7043 Worldly Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7048 Urbane Bronze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7064 Passive",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7069 Iron Ore",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7071 Gray Screen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7551 Greek Villa",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7566 Westhighland White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7602 Indigo Batik",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7631 City Loft",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7632 Modern Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7636 Origami White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7646 First Star",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7647 Crushed Ice",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7661 Reflection",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7669 Summit Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7674 Peppercorn",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7730 Forestwood",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7757 High Reflective White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9104 Woven Wicker",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9109 Natural Linen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9130 Evergreen Fog",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9132 Acacia Haze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9144 Moonmist",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9165 Gossamer Veil",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9166 Drift of Mist",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Frame 1",
+          "colors": [
+            {
+              "name": "White Matte",
+              "isGrain": false
+            },
+            {
+              "name": "Aqua Marina",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo",
+              "isGrain": false
+            },
+            {
+              "name": "Verde Salvia",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita",
+              "isGrain": false
+            },
+            {
+              "name": "SW 0055 Light French Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6204 Sea Salt",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6211 Rainwashed",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6241 Aleutian",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6244 Naval",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6250 Granite Peak",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6253 Olympus White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6254 Lazy Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6258 Tricorn Black",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6385 Dover White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7004 Snowbound",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7005 Pure White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7006 Extra White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7007 Ceiling Bright White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7008 Alabaster",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7009 Pearly White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7012 Creamy",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7014 Eider White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7015 Repose Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7016 Mindful Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7019 Gauntlet Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7029 Agreeable Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7035 Aesthetic White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7036 Accessible Beige",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7042 Shoji White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7043 Worldly Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7048 Urbane Bronze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7064 Passive",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7069 Iron Ore",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7071 Gray Screen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7551 Greek Villa",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7566 Westhighland White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7602 Indigo Batik",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7631 City Loft",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7632 Modern Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7636 Origami White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7646 First Star",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7647 Crushed Ice",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7661 Reflection",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7669 Summit Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7674 Peppercorn",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7730 Forestwood",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7757 High Reflective White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9104 Woven Wicker",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9109 Natural Linen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9130 Evergreen Fog",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9132 Acacia Haze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9144 Moonmist",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9165 Gossamer Veil",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9166 Drift of Mist",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Frame 1 1/2",
+          "colors": [
+            {
+              "name": "White Matte",
+              "isGrain": false
+            },
+            {
+              "name": "Aqua Marina",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo",
+              "isGrain": false
+            },
+            {
+              "name": "Verde Salvia",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita",
+              "isGrain": false
+            },
+            {
+              "name": "SW 0055 Light French Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6204 Sea Salt",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6211 Rainwashed",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6241 Aleutian",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6244 Naval",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6250 Granite Peak",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6253 Olympus White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6254 Lazy Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6258 Tricorn Black",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6385 Dover White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7004 Snowbound",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7005 Pure White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7006 Extra White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7007 Ceiling Bright White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7008 Alabaster",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7009 Pearly White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7012 Creamy",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7014 Eider White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7015 Repose Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7016 Mindful Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7019 Gauntlet Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7029 Agreeable Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7035 Aesthetic White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7036 Accessible Beige",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7042 Shoji White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7043 Worldly Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7048 Urbane Bronze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7064 Passive",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7069 Iron Ore",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7071 Gray Screen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7551 Greek Villa",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7566 Westhighland White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7602 Indigo Batik",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7631 City Loft",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7632 Modern Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7636 Origami White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7646 First Star",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7647 Crushed Ice",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7661 Reflection",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7669 Summit Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7674 Peppercorn",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7730 Forestwood",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7757 High Reflective White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9104 Woven Wicker",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9109 Natural Linen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9130 Evergreen Fog",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9132 Acacia Haze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9144 Moonmist",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9165 Gossamer Veil",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9166 Drift of Mist",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Frame 2",
+          "colors": [
+            {
+              "name": "White Matte",
+              "isGrain": false
+            },
+            {
+              "name": "Aqua Marina",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo",
+              "isGrain": false
+            },
+            {
+              "name": "Verde Salvia",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita",
+              "isGrain": false
+            },
+            {
+              "name": "SW 0055 Light French Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6204 Sea Salt",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6211 Rainwashed",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6241 Aleutian",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6244 Naval",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6250 Granite Peak",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6253 Olympus White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6254 Lazy Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6258 Tricorn Black",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6385 Dover White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7004 Snowbound",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7005 Pure White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7006 Extra White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7007 Ceiling Bright White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7008 Alabaster",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7009 Pearly White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7012 Creamy",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7014 Eider White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7015 Repose Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7016 Mindful Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7019 Gauntlet Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7029 Agreeable Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7035 Aesthetic White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7036 Accessible Beige",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7042 Shoji White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7043 Worldly Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7048 Urbane Bronze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7064 Passive",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7069 Iron Ore",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7071 Gray Screen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7551 Greek Villa",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7566 Westhighland White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7602 Indigo Batik",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7631 City Loft",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7632 Modern Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7636 Origami White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7646 First Star",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7647 Crushed Ice",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7661 Reflection",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7669 Summit Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7674 Peppercorn",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7730 Forestwood",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7757 High Reflective White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9104 Woven Wicker",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9109 Natural Linen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9130 Evergreen Fog",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9132 Acacia Haze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9144 Moonmist",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9165 Gossamer Veil",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9166 Drift of Mist",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Frame 2 1/2",
+          "colors": [
+            {
+              "name": "White Matte",
+              "isGrain": false
+            },
+            {
+              "name": "Aqua Marina",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo",
+              "isGrain": false
+            },
+            {
+              "name": "Verde Salvia",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita",
+              "isGrain": false
+            },
+            {
+              "name": "SW 0055 Light French Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6204 Sea Salt",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6211 Rainwashed",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6241 Aleutian",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6244 Naval",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6250 Granite Peak",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6253 Olympus White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6254 Lazy Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6258 Tricorn Black",
+              "isGrain": false
+            },
+            {
+              "name": "SW 6385 Dover White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7004 Snowbound",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7005 Pure White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7006 Extra White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7007 Ceiling Bright White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7008 Alabaster",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7009 Pearly White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7012 Creamy",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7014 Eider White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7015 Repose Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7016 Mindful Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7019 Gauntlet Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7029 Agreeable Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7035 Aesthetic White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7036 Accessible Beige",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7042 Shoji White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7043 Worldly Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7048 Urbane Bronze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7064 Passive",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7069 Iron Ore",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7071 Gray Screen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7551 Greek Villa",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7566 Westhighland White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7602 Indigo Batik",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7631 City Loft",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7632 Modern Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7636 Origami White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7646 First Star",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7647 Crushed Ice",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7661 Reflection",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7669 Summit Gray",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7674 Peppercorn",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7730 Forestwood",
+              "isGrain": false
+            },
+            {
+              "name": "SW 7757 High Reflective White",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9104 Woven Wicker",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9109 Natural Linen",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9130 Evergreen Fog",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9132 Acacia Haze",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9144 Moonmist",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9165 Gossamer Veil",
+              "isGrain": false
+            },
+            {
+              "name": "SW 9166 Drift of Mist",
+              "isGrain": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shaker",
+      "finish": [
+        {
+          "name": "Zenit",
+          "colors": [
+            {
+              "name": "Antracita SM",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Marino SM",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto SM",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco SM",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere SM",
+              "isGrain": false
+            },
+            {
+              "name": "Verde Salvia SM",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Syncron",
+          "colors": [
+            {
+              "name": "Como Ash 1",
+              "isGrain": true
+            },
+            {
+              "name": "Frappe 1",
+              "isGrain": true
+            },
+            {
+              "name": "Frappe 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 2",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 1",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 2",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 4",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 1",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 2",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 3",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 2",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 1",
+              "isGrain": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Micro Shaker",
+      "finish": [
+        {
+          "name": "Luxe 3/4",
+          "colors": [
+            {
+              "name": "Antracita HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Polar HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere HG",
+              "isGrain": false
+            },
+            {
+              "name": "Euroline 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Metallic HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Perla HG",
+              "isGrain": false
+            },
+            {
+              "name": "Guayana HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 1 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 4 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Colonial PE",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Zenit 3/4",
+          "colors": [
+            {
+              "name": "Antracita SM",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Índigo SM",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto SM",
+              "isGrain": false
+            },
+            {
+              "name": "Black SM",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco SM",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube SM",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Syncron 3/4",
+          "colors": [
+            {
+              "name": "Anniversary Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Antracita Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Cashmere Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 1",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 2",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 4",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 1",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 2",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 3",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Plomo Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 4",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 4",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 1",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 2",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 4",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 1",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 2",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 3",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 2",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 3",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 1",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 4",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 1",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 2",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 1",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 4",
+              "isGrain": true
+            }
+          ]
+        },
+        {
+          "name": "Luxe 1",
+          "colors": [
+            {
+              "name": "Antracita HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Polar HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere HG",
+              "isGrain": false
+            },
+            {
+              "name": "Euroline 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Metallic HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Perla HG",
+              "isGrain": false
+            },
+            {
+              "name": "Guayana HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 1 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 4 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Colonial PE",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Zenit 1",
+          "colors": [
+            {
+              "name": "Antracita SM",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Índigo SM",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto SM",
+              "isGrain": false
+            },
+            {
+              "name": "Black SM",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco SM",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube SM",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Syncron 1",
+          "colors": [
+            {
+              "name": "Anniversary Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Antracita Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Cashmere Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 1",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 2",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 4",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 1",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 2",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 3",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Plomo Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 4",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 4",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 1",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 2",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 4",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 1",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 2",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 3",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 2",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 3",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 1",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 4",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 1",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 2",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 1",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 4",
+              "isGrain": true
+            }
+          ]
+        },
+        {
+          "name": "Luxe 1 1/4",
+          "colors": [
+            {
+              "name": "Antracita HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Polar HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere HG",
+              "isGrain": false
+            },
+            {
+              "name": "Euroline 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Metallic HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Perla HG",
+              "isGrain": false
+            },
+            {
+              "name": "Guayana HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 1 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 4 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Colonial PE",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Zenit 1 1/4",
+          "colors": [
+            {
+              "name": "Antracita SM",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Índigo SM",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto SM",
+              "isGrain": false
+            },
+            {
+              "name": "Black SM",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco SM",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube SM",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Syncron 1 1/4",
+          "colors": [
+            {
+              "name": "Anniversary Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Antracita Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Cashmere Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 1",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 2",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 4",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 1",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 2",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 3",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Plomo Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 4",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 4",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 1",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 2",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 4",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 1",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 2",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 3",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 2",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 3",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 1",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 4",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 1",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 2",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 1",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 4",
+              "isGrain": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Slatted",
+      "finish": [
+        {
+          "name": "Luxe",
+          "colors": [
+            {
+              "name": "Agua Marina HG",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Indigo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Marino HG",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto HG",
+              "isGrain": false
+            },
+            {
+              "name": "Black HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco HG",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Polar HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cotto HG",
+              "isGrain": false
+            },
+            {
+              "name": "Cuzco Oro HG",
+              "isGrain": true
+            },
+            {
+              "name": "Euroline 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Metallic HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Perla HG",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Guayana HG",
+              "isGrain": true
+            },
+            {
+              "name": "Magnolia HG",
+              "isGrain": false
+            },
+            {
+              "name": "Metallo 1 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Metallo 4 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olivo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo HG",
+              "isGrain": true
+            },
+            {
+              "name": "Porcelain 1 HG",
+              "isGrain": false
+            },
+            {
+              "name": "Roble Frappe HG",
+              "isGrain": true
+            },
+            {
+              "name": "Rojo HG",
+              "isGrain": false
+            },
+            {
+              "name": "Rosales 3 HG",
+              "isGrain": true
+            },
+            {
+              "name": "Textil Grafito HG",
+              "isGrain": true
+            },
+            {
+              "name": "Textil Plata HG",
+              "isGrain": true
+            },
+            {
+              "name": "Verde Salvia HG",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita PE",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto PE",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Colonial PE",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Zenit",
+          "colors": [
+            {
+              "name": "Agua Marina SM",
+              "isGrain": false
+            },
+            {
+              "name": "Almagra SM",
+              "isGrain": false
+            },
+            {
+              "name": "Antracita SM",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Índigo SM",
+              "isGrain": false
+            },
+            {
+              "name": "Azul Marino SM",
+              "isGrain": false
+            },
+            {
+              "name": "Basalto SM",
+              "isGrain": false
+            },
+            {
+              "name": "Black SM",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Polar SM",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco SM",
+              "isGrain": false
+            },
+            {
+              "name": "Camel SM",
+              "isGrain": false
+            },
+            {
+              "name": "Cashmere SM",
+              "isGrain": false
+            },
+            {
+              "name": "Cotto SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Nube SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Perla SM",
+              "isGrain": false
+            },
+            {
+              "name": "Gris Plomo SM",
+              "isGrain": false
+            },
+            {
+              "name": "Titán 1 SM",
+              "isGrain": true
+            },
+            {
+              "name": "Tortora SM",
+              "isGrain": false
+            },
+            {
+              "name": "Verde Salvia SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalDeco Antracita SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalDeco Basalto SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalDeco Black SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalDeco Blanco SM",
+              "isGrain": false
+            },
+            {
+              "name": "MetalPlus Light Gold",
+              "isGrain": false
+            },
+            {
+              "name": "MetalPlus Titanio SM",
+              "isGrain": false
+            }
+          ]
+        },
+        {
+          "name": "Syncron",
+          "colors": [
+            {
+              "name": "Anniversary Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Anniversary Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Antracita Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Blanco Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Cashmere Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 1",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 2",
+              "isGrain": true
+            },
+            {
+              "name": "Como Ash 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 3",
+              "isGrain": true
+            },
+            {
+              "name": "Evora 4",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 1",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 2",
+              "isGrain": true
+            },
+            {
+              "name": "Frappé 3",
+              "isGrain": true
+            },
+            {
+              "name": "Gris Plomo Solid Wood",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ice 4",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 1",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 2",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 3",
+              "isGrain": true
+            },
+            {
+              "name": "Ida 4",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 1",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 2",
+              "isGrain": true
+            },
+            {
+              "name": "Lakeland Oak 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 1",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 2",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 3",
+              "isGrain": true
+            },
+            {
+              "name": "Muratti 4",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 1",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 2",
+              "isGrain": true
+            },
+            {
+              "name": "Nocce 3",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 2",
+              "isGrain": true
+            },
+            {
+              "name": "Olmo 3",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 1",
+              "isGrain": true
+            },
+            {
+              "name": "Oxid 4",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 1",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 2",
+              "isGrain": true
+            },
+            {
+              "name": "Rosales 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 1",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 3",
+              "isGrain": true
+            },
+            {
+              "name": "Woodline 4",
+              "isGrain": true
+            }
+          ]
+        },
+        {
+          "name": "Milino",
+          "colors": [
+            {
+              "name": "Ash Melamine",
+              "isGrain": true
+            },
+            {
+              "name": "Beige Linen Melamine",
+              "isGrain": false
+            },
+            {
+              "name": "Blanco Wood Melamine",
+              "isGrain": true
+            },
+            {
+              "name": "Grey Linen Melamine",
+              "isGrain": false
+            },
+            {
+              "name": "Grey Melamine",
+              "isGrain": false
+            },
+            {
+              "name": "Walnut Melamine",
+              "isGrain": true
+            },
+            {
+              "name": "White Melamine",
+              "isGrain": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "boxMaterial": [
+    {
+      "value": "Natural Plywood",
+      "img": "naturalPlywood.jpeg"
+    },
+    {
+      "value": "White Plywood",
+      "img": ""
+    },
+    {
+      "value": "Gray Plywood",
+      "img": ""
+    },
+    {
+      "value": "Gray Melamine",
+      "img": ""
+    },
+    {
+      "value": "Ash Melamine",
+      "img": ""
+    },
+    {
+      "value": "Beige Linen Melamine",
+      "img": ""
+    },
+    {
+      "value": "Blanco Wood Melamine",
+      "img": ""
+    },
+    {
+      "value": "Gray Linen Melamine",
+      "img": ""
+    },
+    {
+      "value": "Gray Melamine",
+      "img": ""
+    },
+    {
+      "value": "Walnut Melamine",
+      "img": ""
+    },
+    {
+      "value": "White Melamine",
+      "img": ""
+    }
+  ],
+  "drawers": [
+    {
+      "value": "BLUM",
+      "img": "blum.png",
+      "types": [
+        {
+          "value": "Undermount",
+          "img": "",
+          "colors": [
+            "Plywood",
+            "Melamine"
+          ]
+        },
+        {
+          "value": "Legrabox",
+          "img": "",
+          "colors": [
+            "Orion Gray",
+            "Stainless Steel"
+          ]
+        },
+        {
+          "value": "Dovetail",
+          "img": "",
+          "colors": [
+            "Maple",
+            "Walnut"
+          ]
+        }
+      ]
+    },
+    {
+      "value": "Milino",
+      "img": "",
+      "types": [
+        {
+          "value": "Undermount",
+          "img": "",
+          "colors": [
+            "Plywood",
+            "Melamine"
+          ]
+        },
+        {
+          "value": "Legrabox",
+          "img": "",
+          "colors": [
+            "LED",
+            "Gray",
+            "White"
+          ]
+        },
+        {
+          "value": "Dovetail",
+          "img": "",
+          "colors": [
+            "Maple",
+            "Walnut"
+          ]
+        }
+      ]
+    }
+  ]
+}
