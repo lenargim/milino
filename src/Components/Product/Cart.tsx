@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {getImg, useAppDispatch, useAppSelector} from "../../helpers/helpers";
 import s from './product.module.sass'
 import {CartItemType, deleteItemFromCart} from "../../store/reducers/generalSlice";
+import {NavLink} from "react-router-dom";
 
 const Cart = () => {
     const cart = useAppSelector(state => state.general.cart)
@@ -20,6 +21,7 @@ const Cart = () => {
                             <span>Total: </span>
                             <span>{cartTotal}$</span>
                         </div>
+                        <NavLink to={'/cabinets'} className={['button yellow'].join(' ')}>← Back to cabinets</NavLink>
                     </div>
                 </>
                 : <div className={s.cartEmpty}>Your cart is empty</div>

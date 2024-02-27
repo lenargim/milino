@@ -2,7 +2,7 @@ import {attrItem, pricePart, productTypings, profileItem} from "./productTypes";
 import prices from './../api/prices.json';
 import settings from './../api/settings.json'
 import {getAttributes} from "./helpers";
-import {basePriceTypes, getBoxMaterialCoefsType} from "../Components/Product/ProductMain";
+import {basePriceTypes, drawerType} from "../Components/Product/ProductMain";
 import {extraPricesType} from "../Components/Product/BaseCabinetForm";
 
 type coefType = {
@@ -63,7 +63,7 @@ export function calculatePrice(width: number, height: number, depth: number, cus
     extraPrices.depth = +(totalDepthPrice - initialPriceWithCoef).toFixed(2);
 
     return {
-        totalPrice: +(widthPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice).toFixed(2),
+        totalPrice: +(widthPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice + extraPrices.drawerPrice).toFixed(2),
         addition: extraPrices,
         coef: coef
     };
@@ -135,7 +135,7 @@ function addGlassDoorPrice(square: number = 0, profileVal: string): number {
     const {Profile, priceType} = glassDoor
     const profileData: profileItem | undefined = Profile.find(el => el.value === profileVal)
     const glassDoorType = profileData && profileData?.glassDoorType;
-    const settingItem = glassDoorType && priceType.find(el => el.id === glassDoorType) || undefined
+    const settingItem = (glassDoorType && priceType.find(el => el.id === glassDoorType)) || undefined
     const minPrice = settingItem?.minPrice
     const multiplier = settingItem?.multiplier
     if (minPrice && multiplier) {
@@ -170,4 +170,35 @@ export function getPvcPrice(realWidth: number, realHeight: number, isAcrylic = f
 
 export function getDoorPrice(realWidth: number, realHeight: number, doorPriceMultiplier: number): number {
     return +((realWidth*(realHeight-4.5)/144)*doorPriceMultiplier).toFixed(2);
+}
+
+export function getDrawerPrice(qty: number, drawer: drawerType, width: number): number {
+    const {drawerBrand, drawerType, drawerColor} = drawer
+    if (!qty) return 0
+    if (drawerBrand === 'Milino') {
+        if (drawerType === 'Undermount') return qty*20;
+        if (drawerType === 'Legrabox') {
+            if (drawerColor === 'LED') {
+                return qty*150;
+            }
+            return qty*38;
+        }
+        if (drawerType === 'Dovetail') {
+            if (drawerColor === 'Maple') return +(qty*(width*2+25)).toFixed(2);
+            if (drawerColor === 'Walnut') return +(qty*(width*2+45)).toFixed(2);
+        }
+    }
+
+    if (drawerBrand === 'BLUM') {
+        if (drawerType === 'Undermount') return qty*40+20;
+        if (drawerType === 'Legrabox') {
+         if (drawerColor === 'Orion Gray') return qty*150;
+         if (drawerColor === 'Stainless Steel') return qty*200;
+        }
+        if (drawerType === 'Dovetail') {
+            if (drawerColor === 'Maple') return +(qty*(width*2+65)).toFixed(2);
+            if (drawerColor === 'Walnut') return +(qty*(width*2+85)).toFixed(2);
+        }
+    }
+    return 0
 }

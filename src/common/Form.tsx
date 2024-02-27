@@ -23,17 +23,6 @@ interface textInputInterface extends InputInterface {
     type: 'text' | 'number' | 'email' | 'password' | 'date',
     label: string,
 }
-type option = {
-    value: string,
-    img?: string
-}
-
-type selectType = {
-    name: string,
-    label: string,
-    options: option[],
-    filter?: object,
-}
 
 interface RadioInterface extends InputInterface {
     img?: string,
@@ -117,7 +106,7 @@ export const RadioInputGrain: FC<RadioInterface> = ({name, value, className, img
 
 
 export const ProductRadioInputDimentions: FC<ProductDimensionRadioCustomInterface> = ({name, value, className}) => {
-    const [field, , helpers] = useField(name)
+    const [, , helpers] = useField(name)
 
 
     function convert(input: HTMLInputElement): void {

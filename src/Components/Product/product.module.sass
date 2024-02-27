@@ -68,7 +68,7 @@
   box-shadow: -13px 10px 32px -3px rgba(0,0,0,.41)
 
 .cartList
-  height: calc(100vh - 100px)
+  height: calc(100vh - 200px)
   display: flex
   flex-direction: column
   gap: 8px
@@ -76,12 +76,16 @@
   padding: 20px 15px
 
 .cartBottom
-  height: 100px
+  height: 200px
   position: absolute
   left: 0
   right: 0
   bottom: 0
   padding: 20px 15px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  border-top: 3px solid $accent
 
 .cartItem
   padding-bottom: 10px
@@ -126,8 +130,10 @@
   font: 500 20px/1.2 $mainFont
 
 .cartTotal
-  font: 400 17px/1.2 $mainFont
-  span
+  font: 400 18px/1.2 $mainFont
+  text-transform: uppercase
+  span:last-child
+    font-size: 20px
     font-weight: 500
 
 .cartEmpty

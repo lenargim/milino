@@ -17,7 +17,7 @@ export const BaseCabinetsSchema = Yup.object({
                     "is-decimal",
                     "Maximum two digits after comma",
                     (val: any) => {
-                        if (val != undefined) {
+                        if (val !== undefined) {
                             return patterntwodigisaftercomma.test(val);
                         }
                         return true;
@@ -38,7 +38,7 @@ export const BaseCabinetsSchema = Yup.object({
                     "is-decimal",
                     "Maximum two digits after comma",
                     (val: any) => {
-                        if (val != undefined) {
+                        if (val !== undefined) {
                             return patterntwodigisaftercomma.test(val);
                         }
                         return true;
@@ -59,7 +59,7 @@ export const BaseCabinetsSchema = Yup.object({
                     "is-decimal",
                     "Maximum two digits after comma",
                     (val: any) => {
-                        if (val != undefined) {
+                        if (val !== undefined) {
                             return patterntwodigisaftercomma.test(val);
                         }
                         return true;

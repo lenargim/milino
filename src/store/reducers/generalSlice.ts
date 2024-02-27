@@ -36,7 +36,6 @@ const initialState: GeneralState = {
 
 type updateProductType = {
     type: productTypings,
-    doorSquare: number,
 }
 
 export const generalSlice = createSlice({
@@ -56,10 +55,9 @@ export const generalSlice = createSlice({
             state.cart = state.cart.filter(item => item.uuid !== action.payload)
         },
         updateProduct: (state, action: PayloadAction<updateProductType>) => {
-            const {type, doorSquare} = action.payload
+            const {type} = action.payload
             if (state.product) {
                 state.product.type = type;
-                state.product.doorSquare = doorSquare
             }
         }
     }

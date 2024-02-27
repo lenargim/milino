@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import s from './OrderForm.module.sass'
 import {RadioInput} from "../../common/Form";
 import {useField} from "formik";

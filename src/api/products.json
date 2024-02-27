@@ -251,5 +251,62 @@
       "Box from finish material",
       "Glass Door"
     ]
+  },
+  {
+    "id": 6,
+    "name": "BG Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "bg1.png"
+      },
+      {
+        "type": 2,
+        "value": "bg1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Trash Bin",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "widthRange": 3,
+    "options": [
+      "PTO for doors",
+      "PTO for drawers",
+      "PTO for Trash Bins",
+      "Box from finish material",
+      "Glass Door"
+    ]
   }
 ]
