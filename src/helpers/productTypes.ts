@@ -1,51 +1,53 @@
 export type productTypings = 1 | 2
+export type pricesTypings = 1 | 2 | 3
 
-export type productType = {
+export type productDataType = {
     id: number,
     name: string,
-    type: productTypings,
-    room: "Kitchen" | "Vanity" | "Closet",
+    room: string,
     category: string,
     images: itemImg[],
-    height: {
-        "label": string,
-        "values": number[]
-    },
-    depth: {
-        "label": string,
-        "values": number[]
-    },
-    attributes: attrItem[]
-    options: string[]
-    doorSquare: number,
-    widthRange: number,
+    attributes: attrItem[],
+    options: string[],
+}
+
+export interface productType extends productDataType{
+    type: productTypings,
+    height: number,
+    depth: number,
+    doorSquare?: number,
+    widthDivider?: number,
+    heightRange?: number,
+    price?: number,
 }
 
 
 export interface attrItem {
     name: string,
-    values: item[],
+    values: widthItemType[],
 }
 
 export type pricePart = {
-    "width": number,
-    "price": number
+    width: number,
+    price: number
 }
 
 export type priceItem = {
-    type: number,
+    type: pricesTypings,
     data: pricePart[]
 }
 
 export type prices = priceItem[]
 
-export type item = {
-    type: number,
-    value: number
+export type widthItemType = {
+    type: productTypings,
+    value: number,
+    minWidth?: number,
+    maxWidth?: number
 }
 
 export type itemImg = {
-    type: number,
+    type: productTypings,
     value: string
 }
 
@@ -60,8 +62,16 @@ export type settingItemType = {
 export type profileItem = { value: string, label: string, glassDoorType: number }
 
 
-export type widthTypes = {
-    "type": number,
-    "divider": number,
-    "values": number[]
+export type settingSizesType = {
+    [key: string]: {
+        width: number[],
+        height: number[],
+        depth: number[]
+    }
+}
+
+export type sizeLimitsType = {
+    width: number[],
+    height: number[],
+    depth: number[]
 }

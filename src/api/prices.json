@@ -1,160 +1,2423 @@
 [
   {
-    "type": 1,
-    "data": [
+    "id": 1,
+    "prices": [
       {
-        "width": 9,
-        "price": 176
+        "type": 1,
+        "data": [
+          {
+            "width": 9,
+            "price": 176
+          },
+          {
+            "width": 12,
+            "price": 194
+          },
+          {
+            "width": 15,
+            "price": 210
+          },
+          {
+            "width": 18,
+            "price": 224
+          },
+          {
+            "width": 21,
+            "price": 236
+          },
+          {
+            "width": 24,
+            "price": 254
+          },
+          {
+            "width": 27,
+            "price": 284
+          },
+          {
+            "width": 30,
+            "price": 296
+          },
+          {
+            "width": 33,
+            "price": 310
+          },
+          {
+            "width": 36,
+            "price": 326
+          },
+          {
+            "width": 39,
+            "price": 390
+          },
+          {
+            "width": 42,
+            "price": 469
+          }
+        ]
       },
       {
-        "width": 12,
-        "price": 194
+        "type": 2,
+        "data": [
+          {
+            "width": 9,
+            "price": 192
+          },
+          {
+            "width": 12,
+            "price": 212
+          },
+          {
+            "width": 15,
+            "price": 242
+          },
+          {
+            "width": 18,
+            "price": 256
+          },
+          {
+            "width": 21,
+            "price": 276
+          },
+          {
+            "width": 24,
+            "price": 296
+          },
+          {
+            "width": 27,
+            "price": 334
+          },
+          {
+            "width": 30,
+            "price": 350
+          },
+          {
+            "width": 33,
+            "price": 370
+          },
+          {
+            "width": 36,
+            "price": 392
+          },
+          {
+            "width": 39,
+            "price": 470
+          },
+          {
+            "width": 42,
+            "price": 564
+          }
+        ]
       },
       {
-        "width": 15,
-        "price": 210
-      },
-      {
-        "width": 18,
-        "price": 224
-      },
-      {
-        "width": 21,
-        "price": 236
-      },
-      {
-        "width": 24,
-        "price": 254
-      },
-      {
-        "width": 27,
-        "price": 284
-      },
-      {
-        "width": 30,
-        "price": 296
-      },
-      {
-        "width": 33,
-        "price": 310
-      },
-      {
-        "width": 36,
-        "price": 326
-      },
-      {
-        "width": 39,
-        "price": 390
-      },
-      {
-        "width": 42,
-        "price": 469
+        "type": 3,
+        "data": [
+          {
+            "width": 9,
+            "price": 211
+          },
+          {
+            "width": 12,
+            "price": 233
+          },
+          {
+            "width": 15,
+            "price": 266
+          },
+          {
+            "width": 18,
+            "price": 282
+          },
+          {
+            "width": 21,
+            "price": 304
+          },
+          {
+            "width": 24,
+            "price": 326
+          },
+          {
+            "width": 27,
+            "price": 367
+          },
+          {
+            "width": 30,
+            "price": 385
+          },
+          {
+            "width": 33,
+            "price": 407
+          },
+          {
+            "width": 36,
+            "price": 431
+          },
+          {
+            "width": 39,
+            "price": 517
+          },
+          {
+            "width": 42,
+            "price": 620
+          }
+        ]
       }
     ]
   },
   {
-    "type": 2,
-    "data": [
+    "id": 2,
+    "prices": [
       {
-        "width": 9,
-        "price": 192
+        "type": 1,
+        "data": [
+          {
+            "width": 12,
+            "price": 392
+          },
+          {
+            "width": 15,
+            "price": 422
+          },
+          {
+            "width": 18,
+            "price": 442
+          },
+          {
+            "width": 21,
+            "price": 464
+          },
+          {
+            "width": 24,
+            "price": 490
+          },
+          {
+            "width": 27,
+            "price": 500
+          },
+          {
+            "width": 30,
+            "price": 524
+          },
+          {
+            "width": 33,
+            "price": 548
+          },
+          {
+            "width": 36,
+            "price": 572
+          },
+          {
+            "width": 39,
+            "price": 686
+          },
+          {
+            "width": 42,
+            "price": 824
+          }
+        ]
       },
       {
-        "width": 12,
-        "price": 212
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 412
+          },
+          {
+            "width": 15,
+            "price": 450
+          },
+          {
+            "width": 18,
+            "price": 476
+          },
+          {
+            "width": 21,
+            "price": 504
+          },
+          {
+            "width": 24,
+            "price": 534
+          },
+          {
+            "width": 27,
+            "price": 550
+          },
+          {
+            "width": 30,
+            "price": 578
+          },
+          {
+            "width": 33,
+            "price": 608
+          },
+          {
+            "width": 36,
+            "price": 636
+          },
+          {
+            "width": 39,
+            "price": 763
+          },
+          {
+            "width": 42,
+            "price": 915
+          }
+        ]
       },
       {
-        "width": 15,
-        "price": 242
-      },
-      {
-        "width": 18,
-        "price": 256
-      },
-      {
-        "width": 21,
-        "price": 276
-      },
-      {
-        "width": 24,
-        "price": 296
-      },
-      {
-        "width": 27,
-        "price": 334
-      },
-      {
-        "width": 30,
-        "price": 350
-      },
-      {
-        "width": 33,
-        "price": 370
-      },
-      {
-        "width": 36,
-        "price": 392
-      },
-      {
-        "width": 39,
-        "price": 470
-      },
-      {
-        "width": 42,
-        "price": 564
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 453
+          },
+          {
+            "width": 15,
+            "price": 495
+          },
+          {
+            "width": 18,
+            "price": 524
+          },
+          {
+            "width": 21,
+            "price": 554
+          },
+          {
+            "width": 24,
+            "price": 587
+          },
+          {
+            "width": 27,
+            "price": 605
+          },
+          {
+            "width": 30,
+            "price": 636
+          },
+          {
+            "width": 33,
+            "price": 669
+          },
+          {
+            "width": 36,
+            "price": 700
+          },
+          {
+            "width": 39,
+            "price": 840
+          },
+          {
+            "width": 42,
+            "price": 1008
+          }
+        ]
       }
     ]
   },
   {
-    "type": 3,
-    "data": [
+    "id": 3,
+    "prices": [
       {
-        "width": 9,
-        "price": 211
+        "type": 1,
+        "data": [
+          {
+            "width": 12,
+            "price": 286
+          },
+          {
+            "width": 15,
+            "price": 304
+          },
+          {
+            "width": 18,
+            "price": 320
+          },
+          {
+            "width": 21,
+            "price": 338
+          },
+          {
+            "width": 24,
+            "price": 346
+          },
+          {
+            "width": 27,
+            "price": 410
+          },
+          {
+            "width": 30,
+            "price": 432
+          },
+          {
+            "width": 33,
+            "price": 450
+          },
+          {
+            "width": 36,
+            "price": 466
+          },
+          {
+            "width": 39,
+            "price": 559
+          },
+          {
+            "width": 42,
+            "price": 671
+          }
+        ]
       },
       {
-        "width": 12,
-        "price": 233
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 304
+          },
+          {
+            "width": 15,
+            "price": 332
+          },
+          {
+            "width": 18,
+            "price": 352
+          },
+          {
+            "width": 21,
+            "price": 376
+          },
+          {
+            "width": 24,
+            "price": 390
+          },
+          {
+            "width": 27,
+            "price": 460
+          },
+          {
+            "width": 30,
+            "price": 486
+          },
+          {
+            "width": 33,
+            "price": 510
+          },
+          {
+            "width": 36,
+            "price": 532
+          },
+          {
+            "width": 39,
+            "price": 638
+          },
+          {
+            "width": 42,
+            "price": 766
+          }
+        ]
       },
       {
-        "width": 15,
-        "price": 266
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 334
+          },
+          {
+            "width": 15,
+            "price": 365
+          },
+          {
+            "width": 18,
+            "price": 387
+          },
+          {
+            "width": 21,
+            "price": 414
+          },
+          {
+            "width": 24,
+            "price": 429
+          },
+          {
+            "width": 27,
+            "price": 506
+          },
+          {
+            "width": 30,
+            "price": 535
+          },
+          {
+            "width": 33,
+            "price": 561
+          },
+          {
+            "width": 36,
+            "price": 585
+          },
+          {
+            "width": 39,
+            "price": 702
+          },
+          {
+            "width": 42,
+            "price": 842
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 12,
+            "price": 466
+          },
+          {
+            "width": 15,
+            "price": 496
+          },
+          {
+            "width": 18,
+            "price": 518
+          },
+          {
+            "width": 21,
+            "price": 540
+          },
+          {
+            "width": 24,
+            "price": 566
+          },
+          {
+            "width": 27,
+            "price": 598
+          },
+          {
+            "width": 30,
+            "price": 622
+          },
+          {
+            "width": 33,
+            "price": 646
+          },
+          {
+            "width": 36,
+            "price": 668
+          },
+          {
+            "width": 39,
+            "price": 801
+          },
+          {
+            "width": 42,
+            "price": 960
+          }
+        ]
       },
       {
-        "width": 18,
-        "price": 282
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 488
+          },
+          {
+            "width": 15,
+            "price": 524
+          },
+          {
+            "width": 18,
+            "price": 550
+          },
+          {
+            "width": 21,
+            "price": 578
+          },
+          {
+            "width": 24,
+            "price": 608
+          },
+          {
+            "width": 27,
+            "price": 648
+          },
+          {
+            "width": 30,
+            "price": 676
+          },
+          {
+            "width": 33,
+            "price": 706
+          },
+          {
+            "width": 36,
+            "price": 734
+          },
+          {
+            "width": 39,
+            "price": 880
+          },
+          {
+            "width": 42,
+            "price": 1056
+          }
+        ]
       },
       {
-        "width": 21,
-        "price": 304
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 537
+          },
+          {
+            "width": 15,
+            "price": 576
+          },
+          {
+            "width": 18,
+            "price": 605
+          },
+          {
+            "width": 21,
+            "price": 636
+          },
+          {
+            "width": 24,
+            "price": 669
+          },
+          {
+            "width": 27,
+            "price": 713
+          },
+          {
+            "width": 30,
+            "price": 744
+          },
+          {
+            "width": 33,
+            "price": 777
+          },
+          {
+            "width": 36,
+            "price": 807
+          },
+          {
+            "width": 39,
+            "price": 968
+          },
+          {
+            "width": 42,
+            "price": 1162
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 15,
+            "price": 490
+          },
+          {
+            "width": 18,
+            "price": 504
+          },
+          {
+            "width": 21,
+            "price": 516
+          },
+          {
+            "width": 24,
+            "price": 619
+          }
+        ]
       },
       {
-        "width": 24,
-        "price": 326
+        "type": 2,
+        "data": [
+          {
+            "width": 15,
+            "price": 522
+          },
+          {
+            "width": 18,
+            "price": 536
+          },
+          {
+            "width": 21,
+            "price": 554
+          },
+          {
+            "width": 24,
+            "price": 665
+          }
+        ]
       },
       {
-        "width": 27,
-        "price": 367
+        "type": 3,
+        "data": [
+          {
+            "width": 15,
+            "price": 574
+          },
+          {
+            "width": 18,
+            "price": 590
+          },
+          {
+            "width": 21,
+            "price": 609
+          },
+          {
+            "width": 24,
+            "price": 730
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 15,
+            "price": 604
+          },
+          {
+            "width": 18,
+            "price": 622
+          },
+          {
+            "width": 21,
+            "price": 638
+          },
+          {
+            "width": 24,
+            "price": 657
+          }
+        ]
       },
       {
-        "width": 30,
-        "price": 385
+        "type": 2,
+        "data": [
+          {
+            "width": 15,
+            "price": 632
+          },
+          {
+            "width": 18,
+            "price": 654
+          },
+          {
+            "width": 21,
+            "price": 678
+          },
+          {
+            "width": 24,
+            "price": 683
+          }
+        ]
       },
       {
-        "width": 33,
-        "price": 407
+        "type": 3,
+        "data": [
+          {
+            "width": 15,
+            "price": 695
+          },
+          {
+            "width": 18,
+            "price": 719
+          },
+          {
+            "width": 21,
+            "price": 746
+          },
+          {
+            "width": 24,
+            "price": 783
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 8,
+            "price": 508
+          },
+          {
+            "width": 9,
+            "price": 516
+          },
+          {
+            "width": 10,
+            "price": 538
+          },
+          {
+            "width": 11,
+            "price": 546
+          },
+          {
+            "width": 12,
+            "price": 572
+          },
+          {
+            "width": 15,
+            "price": 614
+          }
+        ]
       },
       {
-        "width": 36,
-        "price": 431
+        "type": 2,
+        "data": [
+          {
+            "width": 8,
+            "price": 534
+          },
+          {
+            "width": 9,
+            "price": 542
+          },
+          {
+            "width": 10,
+            "price": 564
+          },
+          {
+            "width": 11,
+            "price": 572
+          },
+          {
+            "width": 12,
+            "price": 598
+          },
+          {
+            "width": 15,
+            "price": 638
+          }
+        ]
       },
       {
-        "width": 39,
-        "price": 517
+        "type": 3,
+        "data": [
+          {
+            "width": 8,
+            "price": 561
+          },
+          {
+            "width": 9,
+            "price": 569
+          },
+          {
+            "width": 10,
+            "price": 592
+          },
+          {
+            "width": 11,
+            "price": 601
+          },
+          {
+            "width": 12,
+            "price": 628
+          },
+          {
+            "width": 15,
+            "price": 670
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 27,
+            "price": 512
+          },
+          {
+            "width": 30,
+            "price": 536
+          },
+          {
+            "width": 33,
+            "price": 560
+          },
+          {
+            "width": 36,
+            "price": 582
+          },
+          {
+            "width": 39,
+            "price": 698
+          },
+          {
+            "width": 42,
+            "price": 838
+          }
+        ]
       },
       {
-        "width": 42,
-        "price": 620
+        "type": 2,
+        "data": [
+          {
+            "width": 27,
+            "price": 562
+          },
+          {
+            "width": 30,
+            "price": 590
+          },
+          {
+            "width": 33,
+            "price": 620
+          },
+          {
+            "width": 36,
+            "price": 648
+          },
+          {
+            "width": 39,
+            "price": 777
+          },
+          {
+            "width": 42,
+            "price": 933
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 27,
+            "price": 618
+          },
+          {
+            "width": 30,
+            "price": 649
+          },
+          {
+            "width": 33,
+            "price": 682
+          },
+          {
+            "width": 36,
+            "price": 713
+          },
+          {
+            "width": 39,
+            "price": 855
+          },
+          {
+            "width": 42,
+            "price": 1026
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 12,
+            "price": 348
+          },
+          {
+            "width": 15,
+            "price": 374
+          },
+          {
+            "width": 18,
+            "price": 396
+          },
+          {
+            "width": 21,
+            "price": 418
+          },
+          {
+            "width": 24,
+            "price": 438
+          },
+          {
+            "width": 27,
+            "price": 462
+          },
+          {
+            "width": 30,
+            "price": 486
+          },
+          {
+            "width": 33,
+            "price": 510
+          },
+          {
+            "width": 36,
+            "price": 534
+          },
+          {
+            "width": 39,
+            "price": 640
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 370
+          },
+          {
+            "width": 15,
+            "price": 402
+          },
+          {
+            "width": 18,
+            "price": 428
+          },
+          {
+            "width": 21,
+            "price": 456
+          },
+          {
+            "width": 24,
+            "price": 482
+          },
+          {
+            "width": 27,
+            "price": 512
+          },
+          {
+            "width": 30,
+            "price": 540
+          },
+          {
+            "width": 33,
+            "price": 570
+          },
+          {
+            "width": 36,
+            "price": 598
+          },
+          {
+            "width": 39,
+            "price": 717
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 407
+          },
+          {
+            "width": 15,
+            "price": 442
+          },
+          {
+            "width": 18,
+            "price": 471
+          },
+          {
+            "width": 21,
+            "price": 502
+          },
+          {
+            "width": 24,
+            "price": 530
+          },
+          {
+            "width": 27,
+            "price": 563
+          },
+          {
+            "width": 30,
+            "price": 594
+          },
+          {
+            "width": 33,
+            "price": 627
+          },
+          {
+            "width": 36,
+            "price": 658
+          },
+          {
+            "width": 39,
+            "price": 789
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 12,
+            "price": 424
+          },
+          {
+            "width": 15,
+            "price": 450
+          },
+          {
+            "width": 18,
+            "price": 470
+          },
+          {
+            "width": 21,
+            "price": 492
+          },
+          {
+            "width": 24,
+            "price": 514
+          },
+          {
+            "width": 27,
+            "price": 538
+          },
+          {
+            "width": 30,
+            "price": 562
+          },
+          {
+            "width": 33,
+            "price": 584
+          },
+          {
+            "width": 36,
+            "price": 608
+          },
+          {
+            "width": 39,
+            "price": 729
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 446
+          },
+          {
+            "width": 15,
+            "price": 478
+          },
+          {
+            "width": 18,
+            "price": 504
+          },
+          {
+            "width": 21,
+            "price": 532
+          },
+          {
+            "width": 24,
+            "price": 556
+          },
+          {
+            "width": 27,
+            "price": 586
+          },
+          {
+            "width": 30,
+            "price": 614
+          },
+          {
+            "width": 33,
+            "price": 646
+          },
+          {
+            "width": 36,
+            "price": 672
+          },
+          {
+            "width": 39,
+            "price": 806
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 491
+          },
+          {
+            "width": 15,
+            "price": 526
+          },
+          {
+            "width": 18,
+            "price": 554
+          },
+          {
+            "width": 21,
+            "price": 585
+          },
+          {
+            "width": 24,
+            "price": 612
+          },
+          {
+            "width": 27,
+            "price": 645
+          },
+          {
+            "width": 30,
+            "price": 675
+          },
+          {
+            "width": 33,
+            "price": 711
+          },
+          {
+            "width": 36,
+            "price": 739
+          },
+          {
+            "width": 39,
+            "price": 886
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+
+          {
+            "width": 12,
+            "price": 424
+          },
+          {
+            "width": 15,
+            "price": 450
+          },
+          {
+            "width": 18,
+            "price": 470
+          },
+          {
+            "width": 21,
+            "price": 492
+          },
+          {
+            "width": 24,
+            "price": 514
+          },
+          {
+            "width": 27,
+            "price": 538
+          },
+          {
+            "width": 30,
+            "price": 562
+          },
+          {
+            "width": 33,
+            "price": 584
+          },
+          {
+            "width": 36,
+            "price": 608
+          },
+          {
+            "width": 39,
+            "price": 729
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 446
+          },
+          {
+            "width": 15,
+            "price": 478
+          },
+          {
+            "width": 18,
+            "price": 504
+          },
+          {
+            "width": 21,
+            "price": 532
+          },
+          {
+            "width": 24,
+            "price": 556
+          },
+          {
+            "width": 27,
+            "price": 586
+          },
+          {
+            "width": 30,
+            "price": 614
+          },
+          {
+            "width": 33,
+            "price": 646
+          },
+          {
+            "width": 36,
+            "price": 672
+          },
+          {
+            "width": 39,
+            "price": 806
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 491
+          },
+          {
+            "width": 15,
+            "price": 526
+          },
+          {
+            "width": 18,
+            "price": 554
+          },
+          {
+            "width": 21,
+            "price": 585
+          },
+          {
+            "width": 24,
+            "price": 612
+          },
+          {
+            "width": 27,
+            "price": 645
+          },
+          {
+            "width": 30,
+            "price": 675
+          },
+          {
+            "width": 33,
+            "price": 711
+          },
+          {
+            "width": 36,
+            "price": 739
+          },
+          {
+            "width": 39,
+            "price": 886
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+
+          {
+            "width": 12,
+            "price": 424
+          },
+          {
+            "width": 15,
+            "price": 450
+          },
+          {
+            "width": 18,
+            "price": 470
+          },
+          {
+            "width": 21,
+            "price": 492
+          },
+          {
+            "width": 24,
+            "price": 514
+          },
+          {
+            "width": 27,
+            "price": 538
+          },
+          {
+            "width": 30,
+            "price": 562
+          },
+          {
+            "width": 33,
+            "price": 584
+          },
+          {
+            "width": 36,
+            "price": 608
+          },
+          {
+            "width": 39,
+            "price": 729
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 446
+          },
+          {
+            "width": 15,
+            "price": 478
+          },
+          {
+            "width": 18,
+            "price": 504
+          },
+          {
+            "width": 21,
+            "price": 532
+          },
+          {
+            "width": 24,
+            "price": 556
+          },
+          {
+            "width": 27,
+            "price": 586
+          },
+          {
+            "width": 30,
+            "price": 614
+          },
+          {
+            "width": 33,
+            "price": 646
+          },
+          {
+            "width": 36,
+            "price": 672
+          },
+          {
+            "width": 39,
+            "price": 806
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 491
+          },
+          {
+            "width": 15,
+            "price": 526
+          },
+          {
+            "width": 18,
+            "price": 554
+          },
+          {
+            "width": 21,
+            "price": 585
+          },
+          {
+            "width": 24,
+            "price": 612
+          },
+          {
+            "width": 27,
+            "price": 645
+          },
+          {
+            "width": 30,
+            "price": 675
+          },
+          {
+            "width": 33,
+            "price": 711
+          },
+          {
+            "width": 36,
+            "price": 739
+          },
+          {
+            "width": 39,
+            "price": 886
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+
+          {
+            "width": 12,
+            "price": 424
+          },
+          {
+            "width": 15,
+            "price": 450
+          },
+          {
+            "width": 18,
+            "price": 470
+          },
+          {
+            "width": 21,
+            "price": 492
+          },
+          {
+            "width": 24,
+            "price": 514
+          },
+          {
+            "width": 27,
+            "price": 538
+          },
+          {
+            "width": 30,
+            "price": 562
+          },
+          {
+            "width": 33,
+            "price": 584
+          },
+          {
+            "width": 36,
+            "price": 608
+          },
+          {
+            "width": 39,
+            "price": 729
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 446
+          },
+          {
+            "width": 15,
+            "price": 478
+          },
+          {
+            "width": 18,
+            "price": 504
+          },
+          {
+            "width": 21,
+            "price": 532
+          },
+          {
+            "width": 24,
+            "price": 556
+          },
+          {
+            "width": 27,
+            "price": 586
+          },
+          {
+            "width": 30,
+            "price": 614
+          },
+          {
+            "width": 33,
+            "price": 646
+          },
+          {
+            "width": 36,
+            "price": 672
+          },
+          {
+            "width": 39,
+            "price": 806
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 491
+          },
+          {
+            "width": 15,
+            "price": 526
+          },
+          {
+            "width": 18,
+            "price": 554
+          },
+          {
+            "width": 21,
+            "price": 585
+          },
+          {
+            "width": 24,
+            "price": 612
+          },
+          {
+            "width": 27,
+            "price": 645
+          },
+          {
+            "width": 30,
+            "price": 675
+          },
+          {
+            "width": 33,
+            "price": 711
+          },
+          {
+            "width": 36,
+            "price": 739
+          },
+          {
+            "width": 39,
+            "price": 886
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+
+          {
+            "width": 12,
+            "price": 510
+          },
+          {
+            "width": 15,
+            "price": 536
+          },
+          {
+            "width": 18,
+            "price": 556
+          },
+          {
+            "width": 21,
+            "price": 578
+          },
+          {
+            "width": 24,
+            "price": 600
+          },
+          {
+            "width": 27,
+            "price": 624
+          },
+          {
+            "width": 30,
+            "price": 648
+          },
+          {
+            "width": 33,
+            "price": 670
+          },
+          {
+            "width": 36,
+            "price": 694
+          },
+          {
+            "width": 39,
+            "price": 832
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 532
+          },
+          {
+            "width": 15,
+            "price": 564
+          },
+          {
+            "width": 18,
+            "price": 590
+          },
+          {
+            "width": 21,
+            "price": 618
+          },
+          {
+            "width": 24,
+            "price": 642
+          },
+          {
+            "width": 27,
+            "price": 672
+          },
+          {
+            "width": 30,
+            "price": 700
+          },
+          {
+            "width": 33,
+            "price": 732
+          },
+          {
+            "width": 36,
+            "price": 758
+          },
+          {
+            "width": 39,
+            "price": 909
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 585
+          },
+          {
+            "width": 15,
+            "price": 620
+          },
+          {
+            "width": 18,
+            "price": 649
+          },
+          {
+            "width": 21,
+            "price": 680
+          },
+          {
+            "width": 24,
+            "price": 706
+          },
+          {
+            "width": 27,
+            "price": 739
+          },
+          {
+            "width": 30,
+            "price": 770
+          },
+          {
+            "width": 33,
+            "price": 805
+          },
+          {
+            "width": 36,
+            "price": 834
+          },
+          {
+            "width": 39,
+            "price": 1000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+
+          {
+            "width": 12,
+            "price": 510
+          },
+          {
+            "width": 15,
+            "price": 536
+          },
+          {
+            "width": 18,
+            "price": 556
+          },
+          {
+            "width": 21,
+            "price": 578
+          },
+          {
+            "width": 24,
+            "price": 600
+          },
+          {
+            "width": 27,
+            "price": 624
+          },
+          {
+            "width": 30,
+            "price": 648
+          },
+          {
+            "width": 33,
+            "price": 670
+          },
+          {
+            "width": 36,
+            "price": 694
+          },
+          {
+            "width": 39,
+            "price": 832
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 12,
+            "price": 532
+          },
+          {
+            "width": 15,
+            "price": 564
+          },
+          {
+            "width": 18,
+            "price": 590
+          },
+          {
+            "width": 21,
+            "price": 618
+          },
+          {
+            "width": 24,
+            "price": 642
+          },
+          {
+            "width": 27,
+            "price": 672
+          },
+          {
+            "width": 30,
+            "price": 700
+          },
+          {
+            "width": 33,
+            "price": 732
+          },
+          {
+            "width": 36,
+            "price": 758
+          },
+          {
+            "width": 39,
+            "price": 909
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 12,
+            "price": 585
+          },
+          {
+            "width": 15,
+            "price": 620
+          },
+          {
+            "width": 18,
+            "price": 649
+          },
+          {
+            "width": 21,
+            "price": 680
+          },
+          {
+            "width": 24,
+            "price": 706
+          },
+          {
+            "width": 27,
+            "price": 739
+          },
+          {
+            "width": 30,
+            "price": 770
+          },
+          {
+            "width": 33,
+            "price": 805
+          },
+          {
+            "width": 36,
+            "price": 834
+          },
+          {
+            "width": 39,
+            "price": 1000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 27,
+            "price": 664
+          },
+          {
+            "width": 30,
+            "price": 688
+          },
+          {
+            "width": 33,
+            "price": 712
+          },
+          {
+            "width": 36,
+            "price": 736
+          },
+          {
+            "width": 39,
+            "price": 883
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 27,
+            "price": 714
+          },
+          {
+            "width": 30,
+            "price": 742
+          },
+          {
+            "width": 33,
+            "price": 772
+          },
+          {
+            "width": 36,
+            "price": 800
+          },
+          {
+            "width": 39,
+            "price": 960
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 27,
+            "price": 785
+          },
+          {
+            "width": 30,
+            "price": 816
+          },
+          {
+            "width": 33,
+            "price": 849
+          },
+          {
+            "width": 36,
+            "price": 880
+          },
+          {
+            "width": 39,
+            "price": 1056
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+
+          {
+            "width": 24,
+            "price": 262
+          },
+          {
+            "width": 27,
+            "price": 276
+          },
+          {
+            "width": 30,
+            "price": 288
+          },
+          {
+            "width": 33,
+            "price": 296
+          },
+          {
+            "width": 36,
+            "price": 310
+          },
+          {
+            "width": 39,
+            "price": 372
+          },
+          {
+            "width": 42,
+            "price": 446
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 24,
+            "price": 308
+          },
+          {
+            "width": 27,
+            "price": 324
+          },
+          {
+            "width": 30,
+            "price": 342
+          },
+          {
+            "width": 33,
+            "price": 356
+          },
+          {
+            "width": 36,
+            "price": 374
+          },
+          {
+            "width": 39,
+            "price": 448
+          },
+          {
+            "width": 42,
+            "price": 538
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 24,
+            "price": 339
+          },
+          {
+            "width": 27,
+            "price": 356
+          },
+          {
+            "width": 30,
+            "price": 376
+          },
+          {
+            "width": 33,
+            "price": 392
+          },
+          {
+            "width": 36,
+            "price": 411
+          },
+          {
+            "width": 39,
+            "price": 493
+          },
+          {
+            "width": 42,
+            "price": 591
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 24,
+            "price": 352
+          },
+          {
+            "width": 27,
+            "price": 366
+          },
+          {
+            "width": 30,
+            "price": 378
+          },
+          {
+            "width": 33,
+            "price": 388
+          },
+          {
+            "width": 36,
+            "price": 400
+          },
+          {
+            "width": 39,
+            "price": 480
+          },
+          {
+            "width": 42,
+            "price": 576
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 24,
+            "price": 396
+          },
+          {
+            "width": 27,
+            "price": 412
+          },
+          {
+            "width": 30,
+            "price": 430
+          },
+          {
+            "width": 33,
+            "price": 446
+          },
+          {
+            "width": 36,
+            "price": 462
+          },
+          {
+            "width": 39,
+            "price": 554
+          },
+          {
+            "width": 42,
+            "price": 665
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 24,
+            "price": 436
+          },
+          {
+            "width": 27,
+            "price": 453
+          },
+          {
+            "width": 30,
+            "price": 473
+          },
+          {
+            "width": 33,
+            "price": 491
+          },
+          {
+            "width": 36,
+            "price": 508
+          },
+          {
+            "width": 39,
+            "price": 609
+          },
+          {
+            "width": 42,
+            "price": 731
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 24,
+            "price": 360
+          },
+          {
+            "width": 27,
+            "price": 372
+          },
+          {
+            "width": 30,
+            "price": 384
+          },
+          {
+            "width": 33,
+            "price": 394
+          },
+          {
+            "width": 36,
+            "price": 406
+          },
+          {
+            "width": 39,
+            "price": 487
+          },
+          {
+            "width": 42,
+            "price": 584
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 24,
+            "price": 404
+          },
+          {
+            "width": 27,
+            "price": 422
+          },
+          {
+            "width": 30,
+            "price": 438
+          },
+          {
+            "width": 33,
+            "price": 454
+          },
+          {
+            "width": 36,
+            "price": 470
+          },
+          {
+            "width": 39,
+            "price": 564
+          },
+          {
+            "width": 42,
+            "price": 676
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 24,
+            "price": 444
+          },
+          {
+            "width": 27,
+            "price": 464
+          },
+          {
+            "width": 30,
+            "price": 482
+          },
+          {
+            "width": 33,
+            "price": 499
+          },
+          {
+            "width": 36,
+            "price": 517
+          },
+          {
+            "width": 39,
+            "price": 620
+          },
+          {
+            "width": 42,
+            "price": 744
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "prices": [
+      {
+        "type": 1,
+        "data": [
+          {
+            "width": 24,
+            "price": 450
+          },
+          {
+            "width": 27,
+            "price": 462
+          },
+          {
+            "width": 30,
+            "price": 476
+          },
+          {
+            "width": 33,
+            "price": 484
+          },
+          {
+            "width": 36,
+            "price": 496
+          },
+          {
+            "width": 39,
+            "price": 595
+          },
+          {
+            "width": 42,
+            "price": 714
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "data": [
+          {
+            "width": 24,
+            "price": 494
+          },
+          {
+            "width": 27,
+            "price": 512
+          },
+          {
+            "width": 30,
+            "price": 528
+          },
+          {
+            "width": 33,
+            "price": 544
+          },
+          {
+            "width": 36,
+            "price": 562
+          },
+          {
+            "width": 39,
+            "price": 674
+          },
+          {
+            "width": 42,
+            "price": 809
+          }
+        ]
+      },
+      {
+        "type": 3,
+        "data": [
+          {
+            "width": 24,
+            "price": 543
+          },
+          {
+            "width": 27,
+            "price": 563
+          },
+          {
+            "width": 30,
+            "price": 581
+          },
+          {
+            "width": 33,
+            "price": 598
+          },
+          {
+            "width": 36,
+            "price": 618
+          },
+          {
+            "width": 39,
+            "price": 741
+          },
+          {
+            "width": 42,
+            "price": 889
+          }
+        ]
       }
     ]
   }

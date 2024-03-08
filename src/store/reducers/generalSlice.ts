@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {OrderFormType} from "../../helpers/types";
-import {productType, productTypings} from "../../helpers/productTypes";
+import {productDataType, productType, productTypings} from "../../helpers/productTypes";
 
 
 interface GeneralState {
@@ -19,6 +19,7 @@ export interface CartItemType {
     height: number,
     depth: number,
     price: number,
+    doors: number,
     hinge?: 'Left' | 'Right',
     options: string[],
     profile?: string,
@@ -36,6 +37,7 @@ const initialState: GeneralState = {
 
 type updateProductType = {
     type: productTypings,
+    price: number
 }
 
 export const generalSlice = createSlice({
@@ -54,15 +56,18 @@ export const generalSlice = createSlice({
         deleteItemFromCart: (state, action: PayloadAction<string>) => {
             state.cart = state.cart.filter(item => item.uuid !== action.payload)
         },
+        removeCart: (state) => {
+          state.cart = []
+        },
         updateProduct: (state, action: PayloadAction<updateProductType>) => {
-            const {type} = action.payload
-            if (state.product) {
-                state.product.type = type;
+            if (state.product ) {
+                state.product.price = action.payload.price;
+                state.product.type = action.payload.type;
             }
-        }
+        },
     }
 })
 
-export const {setMaterials, setProduct, addToCart, deleteItemFromCart, updateProduct} = generalSlice.actions
+export const {setMaterials, setProduct, addToCart, deleteItemFromCart, updateProduct,removeCart} = generalSlice.actions
 
 export default generalSlice.reducer

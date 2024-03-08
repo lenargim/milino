@@ -1,38 +1,18 @@
 {
-  "minWidth": 9,
-  "maxWidth": 48,
-  "minHeight": 10.5,
-  "maxHeight": 54,
-  "minDepth": 9,
-  "maxDepth": 48,
-  "width": {
-    "label": "Width",
-    "types": [
-      {
-        "type": 1,
-        "divider": 24,
-        "values": [9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 0]
-      },
-      {
-        "type": 2,
-        "divider": 24,
-        "values": [12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 0]
-      },
-      {
-        "type": 3,
-        "divider": 15,
-        "values": [ 15, 18, 21, 24, 0]
-      }
-    ]
-  },
-  "height": {
-    "label": "Height",
-    "values": [34.5, 0]
-  },
-  "depth": {
-    "label": "Depth",
-    "values": [24, 0]
-  },
+  "heightRange": [34.5],
+  "depthRange": [24],
+  "doorsRange": [
+    {
+      "doors": 1,
+      "min": 6,
+      "max": 24
+    },
+    {
+      "doors": 2,
+      "min": 21,
+      "max": 56
+    }
+  ],
   "Hinge opening": [
     "Left",
     "Right"

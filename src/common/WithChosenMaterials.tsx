@@ -1,7 +1,6 @@
 import {Navigate} from "react-router-dom";
 
 export type WithChosenMaterialsProps = {
-    // materials: OrderFormType | null,
     outlet: JSX.Element;
 };
 

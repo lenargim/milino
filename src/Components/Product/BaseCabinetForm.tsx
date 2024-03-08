@@ -1,38 +1,41 @@
 import React, {FC} from 'react';
 import {Form, Formik, FormikValues} from "formik";
 import settings from './../../api/settings.json'
+import sizes from './../../api/sizes.json'
 import {
     ProductOptionsInput,
     ProductRadioInput,
+    ProductInputCustom,
     ProductRadioInputCustom,
-    ProductRadioInputDimentions,
     TextInput
 } from "../../common/Form";
 import s from './product.module.sass'
 import SelectField from '../../common/SelectField';
-import {BaseCabinetsSchema} from "./ProductSchema";
-import {getSelectValfromVal, useAppDispatch} from "../../helpers/helpers";
-import {addToCart, CartItemType, updateProduct} from "../../store/reducers/generalSlice";
-import {v4 as uuidv4} from "uuid";
-import {productType, widthTypes} from "../../helpers/productTypes";
+import {getProductSchema} from "./ProductSchema";
+import {getAttributes, getSelectValfromVal, useAppDispatch} from "../../helpers/helpers";
 import {
-    calculatePrice, getDoorPrice,
+    addToCart,
+    CartItemType, updateProduct,
+} from "../../store/reducers/generalSlice";
+import {v4 as uuidv4} from "uuid";
+import {pricesTypings, productType, sizeLimitsType} from "../../helpers/productTypes";
+import {
+    calculatePrice, getDoorMinMaxValuesArr, getDoorPrice,
     getDoorSquare, getDrawerPrice,
     getInitialPrice, getPriceData, getPvcPrice,
     getType
 } from "../../helpers/calculatePrice";
-import {basePriceTypes, drawerType, getBoxMaterialCoefsType} from "./ProductMain";
+import {drawerType, getBoxMaterialCoefsType} from "./ProductMain";
 
 type BaseCabinetFormType = {
     product: productType,
-    basePriceType: basePriceTypes,
+    basePriceType: pricesTypings,
     premiumCoef: number,
     boxMaterialCoefs: getBoxMaterialCoefsType,
-    doorsQty: number,
     drawer: drawerType,
-    drawersQty: number
-    isAcrylic: boolean,
     doorPriceMultiplier: number
+    doorType: string
+    doorFinish: string
 }
 
 export interface extraPricesType {
@@ -52,35 +55,54 @@ export interface extraPricesType {
     boxMaterialCoef: number
 }
 
-const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premiumCoef, boxMaterialCoefs, doorsQty, drawersQty, isAcrylic, drawer, doorPriceMultiplier}) => {
+const BaseCabinetForm: FC<BaseCabinetFormType> = ({
+                                                      product,
+                                                      basePriceType,
+                                                      premiumCoef,
+                                                      boxMaterialCoefs,
+                                                      drawer,
+                                                      doorPriceMultiplier, doorType, doorFinish
+                                                  }) => {
     const dispatch = useAppDispatch();
-    const {id, name, images, type, widthRange, attributes, options} = product;
-    const widthData: widthTypes | undefined = settings.width.types.find(el => el.type === widthRange);
-    const widthRangeData = widthData && widthData?.values;
-    const widthDivider = widthData?.divider || Infinity
-    const initialWidth = widthRangeData && widthRangeData[0]
-    if (!initialWidth && !widthRangeData) return <div>Cannot find initial width</div>;
+    const {id, name, images, type, attributes, options, price, widthDivider, height, depth} = product;
+    const priceData = getPriceData(id, basePriceType);
+    const widthRange = priceData?.map(el => el.width)
+    widthRange && widthRange.push(0);
+    const sizeLimit: sizeLimitsType | undefined = sizes.find(size => size.productIds.includes(product.id))?.limits;
+    const heightRangeData = settings.heightRange.concat([0]);
+    const depthRangeData = settings.depthRange.concat([0])
+    const initialWidth = widthRange && widthRange[0]
+    const attrArr = getAttributes(attributes, type);
+    const doorValues = attributes.find(el => el.name === 'Door')?.values;
+    const drawersQty = attrArr.reduce((acc, current) => {
+        const qty = current.name.includes('Drawer') ? current.value : 0
+        return acc + qty;
+    },0);
+    if (!initialWidth) return <div>Cannot find initial width</div>;
+    if (!sizeLimit) return <div>Cannot find size limit</div>;
+    const initialDoorsQty: number = doorValues && doorValues[0]?.value || 0
+
     const initialValues = {
         ['Width']: initialWidth,
-        ['Height']: settings.height.values[0],
-        ['Depth']: settings.depth.values[0],
+        ['Height']: height,
+        ['Depth']: depth,
         ['Custom Width']: '',
         ['Custom Height']: '',
         ['Custom Depth']: '',
-        ['Hinge opening']: doorsQty === 1 ? settings["Hinge opening"][0] : '',
+        ['Doors']: initialDoorsQty,
+        ['Hinge opening']: settings["Hinge opening"][0],
         ['Options']: [],
         ['Profile']: '',
         ['Glass Type']: '',
         ['Glass Color']: '',
         ['Glass Shelf']: '',
         ['Note']: '',
-        itemTotalPrice: 0
     };
     const filteredOptions = options.filter(option => (option !== 'PTO for drawers' || drawer.drawerBrand !== 'Milino'));
-
+    const isAcrylic = doorFinish === 'Ultrapan Acrylic';
     return (
         <Formik initialValues={initialValues}
-                validationSchema={BaseCabinetsSchema}
+                validationSchema={getProductSchema(sizeLimit)}
                 onSubmit={(values: FormikValues, {resetForm}) => {
                     const {
                         ['Width']: width,
@@ -89,6 +111,7 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                         ['Custom Width']: customWidth,
                         ['Custom Height']: customHeight,
                         ['Custom Depth']: customDepth,
+                        ['Doors']: doors,
                         ['Hinge opening']: hinge,
                         Options: chosenOptions,
                         Profile: profileVal,
@@ -96,23 +119,24 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                         ['Glass Color']: glassColorVal,
                         ['Glass Shelf']: glassShelfVal,
                         ['Note']: note,
-                        itemTotalPrice,
                     } = values;
 
                     const realWidth = width || customWidth
 
+                    const img = images[type - 1].value || ''
                     const cartData: CartItemType = {
                         id: id,
                         uuid: uuidv4(),
                         name: name,
-                        img: realWidth <= widthDivider ? images[0].value : images[1].value,
+                        img: img,
                         width: realWidth,
                         height: height || customHeight,
                         depth: depth || customDepth,
-                        hinge: doorsQty === 1 ? hinge : '',
+                        hinge: doors === 1 ? hinge : '',
+                        doors,
                         options: chosenOptions,
                         amount: 1,
-                        price: itemTotalPrice,
+                        price: price ? price : 0,
                         note
                     }
 
@@ -138,12 +162,12 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                     ['Custom Width']: customWidth,
                     ['Custom Height']: customHeight,
                     ['Custom Depth']: customDepth,
+                    ['Doors']: doors,
                     Options: chosenOptions,
                     Profile: profileVal,
                     ['Glass Type']: glassTypeVal,
                     ['Glass Color']: glassColorVal,
                     ['Glass Shelf']: glassShelfVal,
-                    itemTotalPrice
                 } = values
 
                 const {
@@ -155,20 +179,31 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                     ['Glass Color']: glassColor,
                 } = glassDoor;
 
-
                 const realWidth: number = +width || customWidth || 0;
                 const realHeight: number = +height || customHeight || 0;
+                const realDepth: number = +depth || customDepth || 0;
+                const doorArr = doorValues ? getDoorMinMaxValuesArr(realWidth, doorValues) : null;
 
+                if (doorArr) {
+                    if (!doorValues) {
+                        setFieldValue('Doors', 0);
+                    } else {
+                        if (doorArr.length === 1) {
+                            if (width <= 24 && doors === 2) setFieldValue('Doors', 1)
+                            if (width > 24 && doors === 1) setFieldValue('Doors', 2)
+                        }
+                    }
+                }
                 const glassColorFiltered = glassColor.filter(el => el.type === glassTypeVal);
                 const doorSquare = getDoorSquare(+width, +height, +customWidth, +customHeight)
-                const newType = getType(+width, +customWidth, widthDivider);
-                const priceData = getPriceData(basePriceType);
-                const initialPrice = (priceData && getInitialPrice(priceData, widthRangeData)) || 0;
+                const newType = getType(realWidth, widthDivider, doorValues, doors);
+                const initialPrice = priceData && getInitialPrice(priceData, widthRange);
+                if (!initialPrice) return <div>Cannot find initial price</div>
                 const boxMaterialCoef = chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef;
-                const pvcPrice = getPvcPrice(realWidth, realHeight, isAcrylic)
+                const pvcPrice = getPvcPrice(realWidth, realHeight, isAcrylic, doorType, doorFinish)
                 const doorPrice = getDoorPrice(realWidth, realHeight, doorPriceMultiplier)
                 const drawerPrice = getDrawerPrice(drawersQty, drawer, realWidth)
-                let extraPrices: extraPricesType = {
+                const extraPrices: extraPricesType = {
                     width: 0,
                     height: 0,
                     depth: 0,
@@ -184,55 +219,59 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                     premiumCoef: premiumCoef,
                     doorSquare: doorSquare
                 }
-                const calculatedData = priceData ?
-                    calculatePrice(+width, +height, +depth, +customWidth, +customHeight, +customDepth, chosenOptions, profileVal, attributes, type, initialPrice, priceData, extraPrices, widthRangeData)
-                    : {
-                        totalPrice: 0,
-                        addition: extraPrices,
-                        coef: {
-                            width: 0,
-                            height: 0,
-                            depth: 0
-                        }
-                    }
-                const {addition, totalPrice, coef } = calculatedData;
+                const calculatedData = calculatePrice(realWidth, realHeight, realDepth,  chosenOptions, profileVal, attributes, type, initialPrice, priceData, extraPrices, widthRange, heightRangeData, depthRangeData, sizeLimit, drawersQty)
+                const {addition, totalPrice, coef} = calculatedData;
                 const additionOptions = addition.glassShelf + addition.glassDoor + addition.ptoDoors + addition.ptoDrawers + addition.ptoTrashBins;
-                addition.doorSquare = +(addition.doorSquare/144).toFixed(2)
+                addition.doorSquare = +(addition.doorSquare / 144).toFixed(2)
 
                 setTimeout(() => {
-                    dispatch(updateProduct({type: newType}))
-                }, 0);
-                if (itemTotalPrice !== totalPrice) setFieldValue('itemTotalPrice', totalPrice);
+                    if (price !== totalPrice || type !== newType) dispatch(updateProduct({
+                        type: newType,
+                        price: totalPrice
+                    }));
+                }, 0)
+
                 return (
                     <Form>
                         <div className={s.block}>
                             <h3>Width {addition.width ? `+${addition.width}$` : null}</h3>
                             <div className={s.options}>
-                                {widthRangeData.map((w, index) => <ProductRadioInputDimentions key={index}
-                                                                                               name={'Width'}
-                                                                                               value={w}/>)}
-                                {!width && <ProductRadioInputCustom value={null} name={'Custom Width'}/>}
+                                {widthRange.map((w, index) => <ProductRadioInputCustom key={index}
+                                                                                           name={'Width'}
+                                                                                           value={w}/>)}
+                                {!width && <ProductInputCustom value={null} name={'Custom Width'}/>}
                             </div>
                         </div>
+                        {doorArr && doorArr.length > 1 &&
+                          <div className={s.block}>
+                            <h3>Doors</h3>
+                            <div className={s.options}>
+                                {doorArr.map((w, index) => <ProductRadioInputCustom key={index}
+                                                                                    nullable={true}
+                                                                                    name={'Doors'}
+                                                                                    value={w}/>)}
+                            </div>
+                          </div>
+                        }
                         <div className={s.block}>
                             <h3>Height {addition.height ? `+${addition.height}$` : null}</h3>
                             <div className={s.options}>
-                                {settings.height.values.map((w, index) => <ProductRadioInputDimentions key={index}
-                                                                                                       name={'Height'}
-                                                                                                       value={w}/>)}
-                                {!height && <ProductRadioInputCustom value={null} name={'Custom Height'}/>}
+                                {heightRangeData.map((w, index) => <ProductRadioInputCustom key={index}
+                                                                                            name={'Height'}
+                                                                                            value={w}/>)}
+                                {!height && <ProductInputCustom value={null} name={'Custom Height'}/>}
                             </div>
                         </div>
                         <div className={s.block}>
                             <h3>Depth {addition.depth ? `+${addition.depth}$` : null}</h3>
                             <div className={s.options}>
-                                {settings.depth.values.map((w, index) => <ProductRadioInputDimentions key={index}
-                                                                                                      name={'Depth'}
-                                                                                                      value={w}/>)}
-                                {!depth && <ProductRadioInputCustom value={null} name={'Custom Depth'}/>}
+                                {depthRangeData.map((w, index) => <ProductRadioInputCustom key={index}
+                                                                                                  name={'Depth'}
+                                                                                                  value={w}/>)}
+                                {!depth && <ProductInputCustom value={null} name={'Custom Depth'}/>}
                             </div>
                         </div>
-                        {doorsQty === 1 ?
+                        {doors === 1 ?
                             <div className={s.block}>
                                 <h3>Hinge opening</h3>
                                 <div className={s.options}>
@@ -244,10 +283,10 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                         }
                         {filteredOptions.length
                             ? <div className={s.block}>
-                                <h3>Options {additionOptions ? `+${additionOptions}$` : null}</h3>
+                                <h3>Options</h3>
                                 <div className={s.options} role="group">
                                     {filteredOptions.map((w, index) => <ProductOptionsInput key={index} name={`Options`}
-                                                                                    value={w}/>)}
+                                                                                            value={w}/>)}
                                 </div>
                             </div> : null
                         }
@@ -289,7 +328,6 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({product, basePriceType, premi
                         <div className={s.total}>
                             <span>Total: </span>
                             <span>{totalPrice}$</span>
-                            <input type="number" name="itemTotalPrice" readOnly={true}/>
                         </div>
                         <button type="submit" className={['button yellow'].join(' ')}>Add to cart</button>
                         <h2>Test:</h2>

@@ -23,7 +23,7 @@ const CabinetsMain: FC<CabinetsMainType> = ({values}) => {
             <Header/>
             <h1>Cabinets</h1>
             <Slider categoriesData={categories} room={room} category={category} setCategory={setCategory}/>
-            {category && <List category={category} room={room}/>}
+            {category && <List category={category} />}
         </div>
     );
 

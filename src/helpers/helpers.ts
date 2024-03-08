@@ -1,8 +1,9 @@
 import {AppDispatch, RootState} from "../store/store";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import noImg from './../assets/img/noPhoto.png'
-import {attrItem, item, itemImg} from "./productTypes";
+import {attrItem, itemImg, productTypings, widthItemType} from "./productTypes";
 import {optionType} from "../common/SelectField";
+import {CartItemType} from "../store/reducers/generalSlice";
 
 
 export const useAppDispatch: () => AppDispatch = useDispatch
@@ -18,9 +19,9 @@ export const getImg = (folder: string, img: string = ''): string => {
 }
 
 
-export const getAttributes = (attributes: attrItem[], type: number = 1) => {
+export const getAttributes = (attributes: attrItem[], type: productTypings = 1) => {
     return attributes.map(attribute => {
-        const val:item = attribute.values.find(v => v.type === type) || attribute.values[0]
+        const val: widthItemType = attribute.values.find(v => v.type === type) || attribute.values[0]
         return {
             name: attribute.name,
             value: val.value
@@ -28,7 +29,7 @@ export const getAttributes = (attributes: attrItem[], type: number = 1) => {
     })
 }
 
-export const getProductImage = (images: itemImg[], type: number = 1): string => {
+export const getProductImage = (images: itemImg[], type: productTypings = 1): string => {
     const img = images.find(img => img.type === type)
     return img ? img.value.toString() : ''
 }
@@ -36,4 +37,10 @@ export const getProductImage = (images: itemImg[], type: number = 1): string => 
 export function getSelectValfromVal(val: string, options: optionType[]): optionType | null {
     const option = options.find(el => el.value === val)
     return option || null
+}
+
+export const getCartTotal = (cart: CartItemType[]): number => {
+    return cart.reduce(
+        (acc, currentVal) => acc + (currentVal.price * currentVal.amount), 0
+    )
 }

@@ -6,8 +6,6 @@ import {getImg} from "../../helpers/helpers";
 
 const Slider: FC<SliderType> = ({setCategory, room, categoriesData, category}) => {
     const {categories, defaultImg} = categoriesData[room];
-
-
     const currentCat = categories.find(cat => cat.name === category);
 
     return (

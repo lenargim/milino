@@ -20,11 +20,13 @@
         "values": [
           {
             "type": 1,
-            "value": 1
+            "value": 1,
+            "maxWidth": 24
           },
           {
             "type": 2,
-            "value": 2
+            "value": 2,
+            "minWidth": 21
           }
         ]
       },
@@ -38,7 +40,6 @@
         ]
       }
     ],
-    "widthRange": 1,
     "options": [
       "PTO for doors",
       "Box from finish material",
@@ -54,11 +55,11 @@
     "images": [
       {
         "type": 1,
-        "value": "bd1.png"
+        "value": "BD_1.png"
       },
       {
         "type": 2,
-        "value": "bd2.png"
+        "value": "BD_2.png"
       }
     ],
     "attributes": [
@@ -67,11 +68,13 @@
         "values": [
           {
             "type": 1,
-            "value": 1
+            "value": 1,
+            "maxWidth": 24
           },
           {
             "type": 2,
-            "value": 2
+            "value": 2,
+            "minWidth": 21
           }
         ]
       },
@@ -85,7 +88,6 @@
         ]
       }
     ],
-    "widthRange": 2,
     "options": [
       "PTO for doors",
       "Box from finish material",
@@ -113,11 +115,13 @@
         "values": [
           {
             "type": 1,
-            "value": 1
+            "value": 1,
+            "maxWidth": 24
           },
           {
             "type": 2,
-            "value": 2
+            "value": 2,
+            "minWidth": 21
           }
         ]
       },
@@ -140,7 +144,6 @@
         ]
       }
     ],
-    "widthRange": 2,
     "options": [
       "PTO for doors",
       "PTO for drawers",
@@ -170,11 +173,13 @@
         "values": [
           {
             "type": 1,
-            "value": 1
+            "value": 1,
+            "maxWidth": 24
           },
           {
             "type": 2,
-            "value": 2
+            "value": 2,
+            "minWidth": 21
           }
         ]
       },
@@ -197,7 +202,6 @@
         ]
       }
     ],
-    "widthRange": 2,
     "options": [
       "PTO for doors",
       "PTO for drawers",
@@ -244,7 +248,7 @@
         ]
       }
     ],
-    "widthRange": 3,
+    "widthDivider": 15,
     "options": [
       "PTO for doors",
       "PTO for Trash Bins",
@@ -260,11 +264,11 @@
     "images": [
       {
         "type": 1,
-        "value": "bg1.png"
+        "value": "BG.png"
       },
       {
         "type": 2,
-        "value": "bg1.png"
+        "value": "BG.png"
       }
     ],
     "attributes": [
@@ -300,13 +304,533 @@
         ]
       }
     ],
-    "widthRange": 3,
+    "widthDivider": 15,
     "options": [
       "PTO for doors",
       "PTO for drawers",
       "PTO for Trash Bins",
       "Box from finish material",
       "Glass Door"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "BSP Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "bsp.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Sliding Wire Basket",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "BD2 Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BD2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "AS",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door",
+      "PTO for drawers"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "B2DE Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "B2DE.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Equal Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "B3DI Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "B3DI.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Equal Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Rollout",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "B3D Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "B3D.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Equal Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Small Top Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "B3DE Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "B3DE.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Equal Top Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Large Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "B3ED Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "B3ED.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Equal Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 3
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "B4D Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "B4D.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Equal Top Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 3
+          }
+        ]
+      },
+      {
+        "name": "Large Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "B4DE Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "B4DE.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Equal Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 4
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "SB2D Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "SB2D.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Equal Drawer with Sink cut-offs",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "SB Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "SB.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Sink Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "SB Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "SBD.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Rollout",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Sink Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "SBT Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "SBT.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Tilt-out Tray",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "name": "Sink Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "SBDT Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "SBDT.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Rollout",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Tilt-out Tray",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "name": "Sink Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
     ]
   }
 ]

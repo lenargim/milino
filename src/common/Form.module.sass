@@ -126,3 +126,33 @@
     max-width: 300px
     background-color: transparent
     font: 400 16px/1.2 $mainFont
+
+.loader
+  width: 92px
+  height: 92px
+  border-radius: 50%
+  display: inline-block
+  position: absolute
+  left: calc(50% - 46px)
+  top: calc(50% - 46px)
+  background: linear-gradient(0deg, black 50%, $accentLight 100%)
+  box-sizing: border-box
+  animation: rotation 1s linear infinite
+
+  &::after
+    content: ''
+    box-sizing: border-box
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 89px
+    height: 89px
+    border-radius: 50%
+    background: #fafafa
+
+@keyframes rotation
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)

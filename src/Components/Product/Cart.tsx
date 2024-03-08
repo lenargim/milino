@@ -1,14 +1,12 @@
 import React, {FC} from 'react';
-import {getImg, useAppDispatch, useAppSelector} from "../../helpers/helpers";
+import {getCartTotal, getImg, useAppDispatch, useAppSelector} from "../../helpers/helpers";
 import s from './product.module.sass'
 import {CartItemType, deleteItemFromCart} from "../../store/reducers/generalSlice";
 import {NavLink} from "react-router-dom";
 
 const Cart = () => {
     const cart = useAppSelector(state => state.general.cart)
-    const cartTotal = cart.reduce(
-        (acc, currentVal) => acc + (currentVal.price * currentVal.amount), 0
-    )
+    const cartTotal = getCartTotal(cart);
     return (
         <div className={s.cart}>
             {cart.length
@@ -19,12 +17,18 @@ const Cart = () => {
                     <div className={s.cartBottom}>
                         <div className={s.cartTotal}>
                             <span>Total: </span>
-                            <span>{cartTotal}$</span>
+                            <span>{cartTotal.toFixed(2)}$</span>
                         </div>
                         <NavLink to={'/cabinets'} className={['button yellow'].join(' ')}>← Back to cabinets</NavLink>
+                        <NavLink to={'/checkout'} className={['button yellow'].join(' ')}>Proceed →</NavLink>
                     </div>
                 </>
-                : <div className={s.cartEmpty}>Your cart is empty</div>
+                : <div className={s.cartEmpty}>
+                    <span>Your cart is empty</span>
+                    <div className={[s.cartBottom, s.low].join(' ')}>
+                        <NavLink to={'/cabinets'} className={['button yellow'].join(' ')}>← Back to cabinets</NavLink>
+                    </div>
+                </div>
             }
         </div>
     );
@@ -32,7 +36,7 @@ const Cart = () => {
 
 export default Cart;
 
-const CartItem: FC<{ item: CartItemType }> = ({item}) => {
+export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item, isCheckout= false}) => {
     const {
         uuid,
         name,
@@ -48,20 +52,22 @@ const CartItem: FC<{ item: CartItemType }> = ({item}) => {
         glassType,
         glassColor,
         glassShelf,
-        note
+        note,
+        doors
     } = item;
-const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
+    const doorsText = doors ? `(${doors} door${doors>1 ? 's':''})` : ''
 
     return (
         <div className={s.cartItem} data-uuid={uuid}>
             <div className={s.cartItemTop}>
-                <button onClick={() => dispatch(deleteItemFromCart(uuid))} className={s.itemClose} type={"button"}>×</button>
+                {isCheckout ? null :<button onClick={() => dispatch(deleteItemFromCart(uuid))} className={s.itemClose} type={"button"}>×</button>}
                 <img className={s.itemimg} src={getImg('products', img)} alt={name}/>
                 <div className={s.itemName}>{name}</div>
             </div>
             <div className={s.itemOptions}>
                 <div className={s.itemOption}>
-                    <span>Width:</span>
+                    <span>Width {doorsText}:</span>
                     <span>{width}</span>
                 </div>
                 <div className={s.itemOption}>
@@ -72,7 +78,7 @@ const dispatch = useAppDispatch()
                     <span>Depth:</span>
                     <span>{depth}</span>
                 </div>
-                {hinge ?<div className={s.itemOption}>
+                {hinge ? <div className={s.itemOption}>
                     <span>Hinge opening:</span>
                     <span>{hinge}</span>
                 </div> : null}

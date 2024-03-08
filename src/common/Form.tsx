@@ -3,6 +3,7 @@ import styles from './Form.module.sass'
 import {useField, ErrorMessage, Field} from "formik";
 import CheckSvg from "../assets/img/CheckSvg";
 import noImg from "../assets/img/noPhoto.png"
+import Input from 'react-phone-number-input/input'
 
 function handleFocus(input: HTMLInputElement): void {
     input.classList.add(`${styles.focused}`);
@@ -28,7 +29,6 @@ interface RadioInterface extends InputInterface {
     img?: string,
     value: string,
     checked?: boolean,
-    a?: number
 }
 
 interface ProductRadioInterface extends InputInterface {
@@ -37,6 +37,7 @@ interface ProductRadioInterface extends InputInterface {
 
 interface ProductDimensionRadioCustomInterface extends InputInterface {
     value: null | number,
+    nullable?: boolean
 }
 
 interface ProductOptionsRadioInterface extends InputInterface {
@@ -71,7 +72,42 @@ export const TextInput: FC<textInputInterface> = ({
     );
 };
 
-export const RadioInput: FC<RadioInterface> = ({name, value, className, img = noImg, checked = false, a}) => {
+export const PhoneInput: FC<textInputInterface> = ({
+                                                       className = '',
+                                                       name,
+                                                       label,
+                                                       disabled = false,
+                                                       type = 'text',
+                                                   }) => {
+    const [field, meta, helpers] = useField(name);
+    const {error, touched} = meta;
+    const length = field?.value?.length ?? 0;
+
+    return (
+        <div className={[styles.row, error && touched ? 'error' : null, className].join(' ')}>
+            <Field name={name}>
+                {() => <Input
+                    country="US"
+                    onChange={(value) => {
+                        helpers.setValue(value);
+                        helpers.setTouched(true);
+                    }}
+                    className={[styles.input, length ? `${styles.focused}` : null, error && touched ? styles.inputError : null,].join(' ')}
+                    type={type}
+                    id={name}
+                    disabled={disabled}
+                    onFocus={(e: any) => handleFocus(e.target)}
+                    onBlur={(e: any) => handleBlur(e.target, helpers.setTouched)}
+                />}
+
+            </Field>
+            <label className={styles.label} htmlFor={name}>{label}</label>
+            <ErrorMessage name={name} component="div" className={styles.error}/>
+        </div>
+    );
+};
+
+export const RadioInput: FC<RadioInterface> = ({name, value, className, img = noImg, checked = false}) => {
     const [field] = useField(name)
     return (
         <div className={[className, styles.checkboxSelect].join(' ')}>
@@ -85,8 +121,7 @@ export const RadioInput: FC<RadioInterface> = ({name, value, className, img = no
     )
 }
 
-export const RadioInputGrain: FC<RadioInterface> = ({name, value, className, img = noImg, checked = false, a}) => {
-    console.log(`${value} ${checked}`)
+export const RadioInputGrain: FC<RadioInterface> = ({name, value, className, img = noImg, checked = false}) => {
     const [field, , helpers] = useField(name);
 
     const handleChange = (inputElement: HTMLInputElement) => {
@@ -94,7 +129,8 @@ export const RadioInputGrain: FC<RadioInterface> = ({name, value, className, img
     }
     return (
         <div className={[className, styles.checkboxSelect].join(' ')}>
-            <Field type="radio" checked={checked} onChange={(e:any) => handleChange(e.target)} name={name} value={value} id={`${name}_${value}`}/>
+            <Field type="radio" checked={checked} onChange={(e: any) => handleChange(e.target)} name={name}
+                   value={value} id={`${name}_${value}`}/>
             <label htmlFor={`${name}_${value}`} className={styles.radioLabel}>
                 <img src={img} alt={value} className={styles.radioImg}/>
                 <span>{value}</span>
@@ -104,10 +140,9 @@ export const RadioInputGrain: FC<RadioInterface> = ({name, value, className, img
     )
 }
 
-
-export const ProductRadioInputDimentions: FC<ProductDimensionRadioCustomInterface> = ({name, value, className}) => {
+export const ProductRadioInputCustom: FC<ProductDimensionRadioCustomInterface> = ({name, value, className, nullable= false}) => {
     const [, , helpers] = useField(name)
-
+const label = nullable ? value : value ? value : `Custom ${name}`;
 
     function convert(input: HTMLInputElement): void {
         helpers.setValue(+input.value)
@@ -120,7 +155,7 @@ export const ProductRadioInputDimentions: FC<ProductDimensionRadioCustomInterfac
                 type="radio" name={name} value={value}
                 id={`${name}_${value}`}/>
             <label htmlFor={`${name}_${value}`}
-                   className={styles.radioLabel}><span>{value ? value : `Custom ${name}`}</span></label>
+                   className={styles.radioLabel}><span>{label}</span></label>
         </div>
     )
 }
@@ -138,7 +173,7 @@ export const ProductRadioInput: FC<ProductRadioInterface> = ({name, value, class
     )
 }
 
-export const ProductRadioInputCustom: FC<ProductDimensionRadioCustomInterface> = ({name, value, className}) => {
+export const ProductInputCustom: FC<ProductDimensionRadioCustomInterface> = ({name, value, className}) => {
     return (
         <div className={[className, styles.productText].join(' ')}>
             <label htmlFor={name}>

@@ -2,11 +2,10 @@ import React, {FC} from 'react';
 import {OrderFormType} from "../../helpers/types";
 import s from './product.module.sass'
 import BaseCabinetForm from "./BaseCabinetForm";
-import {getAttributes, getImg, getProductImage, useAppSelector} from "../../helpers/helpers";
-import {Navigate} from 'react-router-dom';
-import {productType} from "../../helpers/productTypes";
-
-export type basePriceTypes = 1 | 2 | 3
+import {getImg, getProductImage, useAppSelector} from "../../helpers/helpers";
+import {pricesTypings} from "../../helpers/productTypes";
+import {AtrrsList} from "../Cabinets/List";
+import {Navigate} from "react-router-dom";
 
 export type getBoxMaterialCoefsType = {
     boxMaterialCoef: number,
@@ -19,7 +18,7 @@ export type drawerType = {
     drawerColor: string
 }
 
-const getBasePriceType = (doorType: string, doorFinish: string): basePriceTypes => {
+const getBasePriceType = (doorType: string, doorFinish: string): pricesTypings => {
     if (doorType === 'Painted' || doorType === 'Slatted' || doorType === 'Micro Shaker') return 3
     if (doorFinish.includes('Milino') || doorFinish.includes('No Doors')) return 1;
     if (doorFinish.includes('Syncron') || doorFinish === 'Cleaf') return 2
@@ -57,14 +56,12 @@ const getDoorPriceMultiplier = (doorType: string, doorFinish: string): number =>
 }
 
 const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
-    const product = useAppSelector<productType | null>(state => state.general.product);
-    if (!product) return <Navigate to={{pathname: '/cabinets'}}/>;
     const {room, ...data} = Object.assign({}, materials);
+    const product = useAppSelector(state => state.general.product);
+    if (!product) return <Navigate to={{pathname: '/cabinets'}}/>;
     const dataMaterialsArr = Object.entries(data);
     const {type, attributes, name, category, images} = product;
-    const img = getProductImage(images, type)
-    const attrArr = getAttributes(attributes, type);
-
+    const img = getProductImage(images, type);
     const {
         ['Door Type']: doorType,
         ['Door Finish Material']: doorFinish,
@@ -80,34 +77,19 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
         drawerType,
         drawerColor
     }
-
-    const basePriceType: basePriceTypes = getBasePriceType(doorType, doorFinish);
+    const basePriceType: pricesTypings = getBasePriceType(doorType, doorFinish);
     const baseCoef = basePriceType === 3 ? getPremiumCoef(doorType, doorFinish) : 1;
     const grainCoef = doorGrain ? getGrainCoef(doorGrain) : 1;
     const premiumCoef = baseCoef * grainCoef
     const boxMaterialCoefs = getBoxMaterialCoefs(boxMaterial, doorFinish)
-    const doorsQty = attrArr.find(el => el.name === 'Door')?.value || 0;
-    const drawersQty = attrArr.find(el => el.name === 'Drawer')?.value || 0;
-    const isAcrylic = doorFinish === 'Ultrapan Acrylic';
     const doorPriceMultiplier = getDoorPriceMultiplier(doorType, doorFinish)
-
     return (
         product ?
             <div className={s.productWrap}>
                 <div className={s.left}>
                     <h2>{name}</h2>
                     <div className={s.img}><img src={getImg('products', img)} alt={product.name}/></div>
-                    <div className={s.attributes}>
-                        {attrArr.map((attr, index) => {
-                            const isMultiple = attr.value > 1;
-                            return (
-                                <div key={index}>
-                                    <span>{attr.name}{isMultiple ? 's' : ''}: </span>
-                                    <span>{attr.value}</span>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    <AtrrsList attributes={attributes} type={type} />
                     <div className={s.materials}>
                         {dataMaterialsArr.map((material, index) => {
                             if (!material[1]) return null;
@@ -119,7 +101,6 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
                             )
                         })}
                     </div>
-
                 </div>
                 <div className={s.right}>
                     {category === 'Base Cabinets' && <BaseCabinetForm
@@ -127,11 +108,10 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
                       basePriceType={basePriceType}
                       premiumCoef={premiumCoef}
                       boxMaterialCoefs={boxMaterialCoefs}
-                      doorsQty={doorsQty}
-                      drawersQty={drawersQty}
-                      isAcrylic={isAcrylic}
                       drawer={drawer}
                       doorPriceMultiplier={doorPriceMultiplier}
+                      doorType={doorType}
+                      doorFinish={doorFinish}
                     />}
                 </div>
             </div>

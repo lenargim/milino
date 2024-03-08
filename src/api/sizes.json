@@ -1,0 +1,34 @@
+[
+  {
+    "productIds": [1,2,3,4,5,6, 9, 10, 11,12,13,14,15],
+    "limits": {
+      "width": [9, 48],
+      "height": [10.5, 54],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [7],
+    "limits": {
+      "width": [6, 48],
+      "height": [10.5, 54],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [8, 16],
+    "limits": {
+      "width": [27, 48],
+      "height": [10.5, 54],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [17, 18,19,20],
+    "limits": {
+      "width": [24, 48],
+      "height": [10.5, 54],
+      "depth": [9, 48]
+    }
+  }
+]
