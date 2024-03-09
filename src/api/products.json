@@ -832,5 +832,78 @@
       "Glass Door",
       "Box from finish material"
     ]
+  },
+  {
+    "id": 101,
+    "name": "W Series",
+    "room": "Kitchen",
+    "category": "Wall Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "W_1.png"
+      },
+      {
+        "type": 2,
+        "value": "W_1.png"
+      },
+      {
+        "type": 3,
+        "value": "W_2.png"
+      },
+      {
+        "type": 4,
+        "value": "W_2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 1
+          },
+          {
+            "type": 3,
+            "value": 2
+          },
+          {
+            "type": 4,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          },
+          {
+            "type": 2,
+            "value": 3
+          },
+          {
+            "type": 3,
+            "value": 2
+          },
+          {
+            "type": 4,
+            "value": 3
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
   }
 ]

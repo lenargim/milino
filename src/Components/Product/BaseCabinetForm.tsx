@@ -66,7 +66,7 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
     const dispatch = useAppDispatch();
     const {id, name, images, type, attributes, options, price, widthDivider, height, depth} = product;
     const priceData = getPriceData(id, basePriceType);
-    const widthRange = priceData?.map(el => el.width)
+    const widthRange = priceData?.map(el => el.width);
     widthRange && widthRange.push(0);
     const sizeLimit: sizeLimitsType | undefined = sizes.find(size => size.productIds.includes(product.id))?.limits;
     const heightRangeData = settings.heightRange.concat([0]);

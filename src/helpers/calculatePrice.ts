@@ -52,6 +52,7 @@ export function calculatePrice(width: number, height: number, depth: number, opt
         ? +(tableWidthPrice * allCoefs).toFixed(2) || 0
         : getWidthPrice(width, priceData, initialPriceWithCoef, minWidth, maxWidth, coef, allCoefs, sizeLimit);
 
+
     if (settings.heightRange[0] !== height) coef.height = addHeightPriceCoef(height, heightRangeData);
     if (settings.depthRange[0] !== depth) coef.depth = addDepthPriceCoef(depth, depthRangeData)
 
@@ -166,8 +167,8 @@ export function getType(width: number, divider: number | undefined, doorValues: 
     let res: productTypings = 1;
 
     const currentTypeArr = doorValues.filter(val => {
-        if (val?.maxWidth && val.maxWidth >= width) return true;
-        if (val?.minWidth && val.minWidth <= width) return true;
+        if (val?.maxWidth && val.maxWidth >= width) return val.value;
+        if (val?.minWidth && val.minWidth <= width) return val.value;
     })
     if (currentTypeArr.length === 1) return currentTypeArr[0].type;
     const doorsVal = currentTypeArr.find(el => el.value === doors);

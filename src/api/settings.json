@@ -1,18 +1,6 @@
 {
   "heightRange": [34.5],
   "depthRange": [24],
-  "doorsRange": [
-    {
-      "doors": 1,
-      "min": 6,
-      "max": 24
-    },
-    {
-      "doors": 2,
-      "min": 21,
-      "max": 56
-    }
-  ],
   "Hinge opening": [
     "Left",
     "Right"
