@@ -1,4 +1,4 @@
-export type productTypings = 1 | 2
+export type productTypings = 1 | 2 | 3 | 4
 export type pricesTypings = 1 | 2 | 3
 
 export type productDataType = {
@@ -29,6 +29,7 @@ export interface attrItem {
 
 export type pricePart = {
     width: number,
+    height?: number,
     price: number
 }
 

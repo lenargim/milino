@@ -60,7 +60,7 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
     const product = useAppSelector(state => state.general.product);
     if (!product) return <Navigate to={{pathname: '/cabinets'}}/>;
     const dataMaterialsArr = Object.entries(data);
-    const {type, attributes, name, images} = product;
+    const {type, attributes, name, images, height} = product;
     const img = getProductImage(images, type);
     const {
         ['Door Type']: doorType,

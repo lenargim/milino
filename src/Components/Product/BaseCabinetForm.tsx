@@ -21,9 +21,9 @@ import {v4 as uuidv4} from "uuid";
 import {pricesTypings, productType, sizeLimitsType} from "../../helpers/productTypes";
 import {
     calculatePrice, getDoorMinMaxValuesArr, getDoorPrice,
-    getDoorSquare, getDrawerPrice,
+    getDoorSquare, getDrawerPrice, getHeightRange,
     getInitialPrice, getPriceData, getPvcPrice,
-    getType
+    getType, getWidthRange
 } from "../../helpers/calculatePrice";
 import {drawerType, getBoxMaterialCoefsType} from "./ProductMain";
 
@@ -55,6 +55,9 @@ export interface extraPricesType {
     boxMaterialCoef: number
 }
 
+
+
+
 const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                                                       product,
                                                       basePriceType,
@@ -64,12 +67,11 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                                                       doorPriceMultiplier, doorType, doorFinish
                                                   }) => {
     const dispatch = useAppDispatch();
-    const {id, name, images, type, attributes, options, price, widthDivider, height, depth} = product;
+    const {id, name, images, type, attributes, options, price, widthDivider, height, depth, category} = product;
     const priceData = getPriceData(id, basePriceType);
-    const widthRange = priceData?.map(el => el.width);
-    widthRange && widthRange.push(0);
+    const widthRange = getWidthRange(priceData);
+    const heightRange = getHeightRange(priceData, category);
     const sizeLimit: sizeLimitsType | undefined = sizes.find(size => size.productIds.includes(product.id))?.limits;
-    const heightRangeData = settings.heightRange.concat([0]);
     const depthRangeData = settings.depthRange.concat([0])
     const initialWidth = widthRange && widthRange[0]
     const attrArr = getAttributes(attributes, type);
@@ -81,10 +83,9 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
     if (!initialWidth) return <div>Cannot find initial width</div>;
     if (!sizeLimit) return <div>Cannot find size limit</div>;
     const initialDoorsQty: number = doorValues && doorValues[0]?.value || 0
-
     const initialValues = {
         ['Width']: initialWidth,
-        ['Height']: height,
+        ['Height']: heightRange[0],
         ['Depth']: depth,
         ['Custom Width']: '',
         ['Custom Height']: '',
@@ -219,7 +220,7 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                     premiumCoef: premiumCoef,
                     doorSquare: doorSquare
                 }
-                const calculatedData = calculatePrice(realWidth, realHeight, realDepth,  chosenOptions, profileVal, attributes, type, initialPrice, priceData, extraPrices, widthRange, heightRangeData, depthRangeData, sizeLimit, drawersQty)
+                const calculatedData = calculatePrice(realWidth, realHeight, realDepth,  chosenOptions, profileVal, attributes, type, initialPrice, priceData, extraPrices, widthRange, heightRange, depthRangeData, sizeLimit, drawersQty, category)
                 const {addition, totalPrice, coef} = calculatedData;
                 const additionOptions = addition.glassShelf + addition.glassDoor + addition.ptoDoors + addition.ptoDrawers + addition.ptoTrashBins;
                 addition.doorSquare = +(addition.doorSquare / 144).toFixed(2)
@@ -256,7 +257,7 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                         <div className={s.block}>
                             <h3>Height {addition.height ? `+${addition.height}$` : null}</h3>
                             <div className={s.options}>
-                                {heightRangeData.map((w, index) => <ProductRadioInputCustom key={index}
+                                {heightRange.map((w, index) => <ProductRadioInputCustom key={index}
                                                                                             name={'Height'}
                                                                                             value={w}/>)}
                                 {!height && <ProductInputCustom value={null} name={'Custom Height'}/>}

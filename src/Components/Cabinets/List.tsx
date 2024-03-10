@@ -1,11 +1,23 @@
 import React, {FC} from 'react';
 import s from './cabinets.module.sass'
-import products from './../../api/products.json'
+import baseCabinetProducts from './../../api/products.json'
+import wallCabinetProducts from './../../api/productsWall.json'
 import {NavLink} from "react-router-dom";
 import {getAttributes, getImg, getProductImage} from "../../helpers/helpers";
 import {attrItem, productDataType, productTypings} from "../../helpers/productTypes";
 
 const List: FC<{ category: string }> = ({category}) => {
+    let products;
+    switch (category) {
+        case 'Base Cabinets':
+            products = baseCabinetProducts as productDataType[];
+            break;
+        case 'Wall Cabinets':
+            products= wallCabinetProducts as productDataType[];
+            break
+        default:
+            products = [] as productDataType[]
+    }
     const categorizedProduct: productDataType[] = products.filter(product => product.category === category) as productDataType[];
 
     return (
@@ -20,11 +32,11 @@ export default List;
 
 
 const Item: FC<{ product: productDataType }> = ({product}) => {
-    const {name, attributes, images, id} = product;
+    const {name, attributes, images, id, category} = product;
     const initialType: productTypings = 1;
     const img = getProductImage(images, initialType)
     return (
-        <NavLink to={`/product/${id}`} className={s.item}
+        <NavLink to={`/product/${category}/${id}`} className={s.item}
         >
             <div className={s.itemImg}><img src={getImg('products', img)} alt={name}/></div>
             <div className={s.itemData}>

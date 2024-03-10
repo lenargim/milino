@@ -26,7 +26,7 @@ type calculatePriceType = {
 }
 
 export const getPriceData = (id: number, basePriceType: pricesTypings): pricePart[] | undefined => {
-    const productPrices = prices.find(el => el.id === id)?.prices;
+    const productPrices = prices && prices.find(el => el.id === id)?.prices;
     return productPrices && productPrices.find(el => el.type === basePriceType)?.data;
 }
 
@@ -35,9 +35,10 @@ export const getInitialPrice = (priceData: pricePart[], widthRangeData: number[]
     return priceData.find(el => el.width === minWidth)?.price
 }
 
-export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData:number[], sizeLimit: sizeLimitsType, drawersQty: number): calculatePriceType {
+export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData: number[], sizeLimit: sizeLimitsType, drawersQty: number, category: string): calculatePriceType {
     const minWidth = widthRangeData[0];
     const maxWidth = widthRangeData[widthRangeData.length - 2];
+    const maxHeight = heightRangeData[heightRangeData.length - 2];
     const allCoefs = extraPrices.boxMaterialCoef * extraPrices.premiumCoef;
     const initialPriceWithCoef = +(initialPrice * allCoefs).toFixed(2);
     const coef: coefType = {
@@ -46,14 +47,25 @@ export function calculatePrice(width: number, height: number, depth: number, opt
         depth: 0
     }
 
-    // WIDTH
-    const tableWidthPrice = priceData.find(el => el.width === width)?.price
-    const widthPrice: number = tableWidthPrice
-        ? +(tableWidthPrice * allCoefs).toFixed(2) || 0
-        : getWidthPrice(width, priceData, initialPriceWithCoef, minWidth, maxWidth, coef, allCoefs, sizeLimit);
+    const getTablePrice = (width: number, height: number, priceData: pricePart[], category: string): number | undefined => {
+        switch (category) {
+            case 'Base Cabinets':
+                return priceData.find(el => el.width === width)?.price;
+            case 'Wall Cabinets':
+                return priceData.find(el => el.width === width && el.height === height)?.price;
+            default:
+                return undefined;
+        }
+    }
+
+    const tablePrice = getTablePrice(width, height, priceData, category);
+    const widthPrice: number = tablePrice
+        ? +(tablePrice * allCoefs).toFixed(2) || 0
+        : getWidthPrice(width, height, priceData, initialPriceWithCoef, minWidth, maxWidth, coef, allCoefs, sizeLimit, category);
 
 
-    if (settings.heightRange[0] !== height) coef.height = addHeightPriceCoef(height, heightRangeData);
+    if (maxWidth < width) coef.width = addWidthPriceCoef(width, maxWidth);
+    if (maxHeight < height) coef.height = addHeightPriceCoef(height, maxHeight);
     if (settings.depthRange[0] !== depth) coef.depth = addDepthPriceCoef(depth, depthRangeData)
 
     if (options.includes('PTO for doors')) extraPrices.ptoDoors = addPTODoorsPrice(attributes, prodType)
@@ -79,33 +91,43 @@ export function calculatePrice(width: number, height: number, depth: number, opt
     };
 }
 
-function getWidthPrice(customWidth: number, priceData: pricePart[], initialPriceWithCoef: number, minWidth: number, maxWidth: number, coef: { width: number }, allCoefs: number, sizeLimit: sizeLimitsType): number {
-    const settingMinWidth = sizeLimit.width[0]
-    const settingMaxWidth = sizeLimit.width[1]
+function getWidthPrice(customWidth: number, customHeight: number, priceData: pricePart[], initialPriceWithCoef: number, minWidth: number, maxWidth: number, coef: { width: number }, allCoefs: number, sizeLimit: sizeLimitsType, category: string): number {
+    const settingMinWidth = sizeLimit.width[0];
+    const settingMaxWidth = sizeLimit.width[1];
+    const settingMinHeight = sizeLimit.height[0];
+    const settingMaxHeight = sizeLimit.height[1];
     const maxWidthPrice = priceData.find(el => el.width === maxWidth)?.price;
-    if (customWidth < settingMinWidth || customWidth > settingMaxWidth) {
-        return 0;
-    }
-    if (customWidth <= minWidth) {
-        return initialPriceWithCoef
-    }
-    if (customWidth > minWidth && customWidth <= maxWidth) {
-        const dataPrice = priceData.find(el => el.width >= customWidth)?.price;
-        return dataPrice ? +(dataPrice * allCoefs).toFixed(2) : 0
-    }
-    if (customWidth > maxWidth && maxWidthPrice) {
-        coef.width = Math.ceil((customWidth - maxWidth) / 3) / 10;
-        return +(maxWidthPrice * allCoefs).toFixed(2)
+    switch (category) {
+        case 'Base Cabinets':
+            if (customWidth < settingMinWidth || customWidth > settingMaxWidth ) {
+                return 0;
+            }
+            if (customWidth <= minWidth) {
+                return initialPriceWithCoef
+            }
+            if (customWidth > minWidth && customWidth <= maxWidth) {
+                const dataPrice = priceData.find(el => el.width >= customWidth)?.price;
+                return dataPrice ? +(dataPrice * allCoefs).toFixed(2) : 0
+            }
+            if (customWidth > maxWidth && maxWidthPrice) {
+                return +(maxWidthPrice * allCoefs).toFixed(2)
+            }
+            break;
+        case 'Wall Cabinets':
+            if (customWidth && customWidth < settingMinWidth || customWidth && customWidth > settingMaxWidth || customHeight && customHeight < settingMinHeight || customHeight && customHeight > settingMaxHeight) {
+                return 0;
+            }
+            console.log('wall cabinets price logic')
     }
     return 0
 }
 
-function addHeightPriceCoef(customHeight: number, heightRangeData: number[]) {
-    const maxHeight = heightRangeData[heightRangeData.length - 2];
-    if (customHeight > maxHeight) {
-        return Math.ceil((customHeight - maxHeight) / 3) / 10
-    }
-    return 0
+function addWidthPriceCoef(width: number, maxWidth: number) {
+    return Math.ceil((width - maxWidth) / 3) / 10;
+}
+
+function addHeightPriceCoef(customHeight: number, maxHeight: number) {
+    return Math.ceil((customHeight - maxHeight) / 3) / 10
 }
 
 function addDepthPriceCoef(customDepth: number, depthRangeData: number[]) {
@@ -162,7 +184,7 @@ export function getDoorSquare(width: number, height: number, customWidth: number
     return 0;
 }
 
-export function getType(width: number, divider: number | undefined, doorValues: widthItemType[] = [], doors: number ): productTypings {
+export function getType(width: number, divider: number | undefined, doorValues: widthItemType[] = [], doors: number): productTypings {
     if (divider) return width <= divider ? 1 : 2;
     let res: productTypings = 1;
 
@@ -217,7 +239,8 @@ export function getDrawerPrice(qty: number, drawer: drawerType, width: number): 
     }
     return 0
 }
-export function getDoorMinMaxValuesArr(realWidth: number, doorValues: widthItemType[]): number[]{
+
+export function getDoorMinMaxValuesArr(realWidth: number, doorValues: widthItemType[]): number[] {
     const filter = Object.values(doorValues).filter(el => {
         if (el?.minWidth && realWidth >= el.minWidth) return true;
         if (el?.maxWidth && realWidth <= el.maxWidth) return true;
@@ -225,3 +248,33 @@ export function getDoorMinMaxValuesArr(realWidth: number, doorValues: widthItemT
     })
     return filter.map(el => el.value)
 }
+
+
+export function getWidthRange(priceData: pricePart[] | undefined): number[] {
+    const arr: number[] = priceData && priceData.map(el => el.width) || [];
+    const filter = [...new Set<number>(arr)];
+    return filter.concat([0]);
+
+}
+
+export function getHeightRange(priceData: pricePart[] | undefined, category: string): number[] {
+    switch (category) {
+        case 'Base Cabinets':
+            return [34.5, 0];
+        case 'Wall Cabinets':
+            let arr: number[] = []
+            priceData && priceData.forEach((el) => {
+                if (el.height) arr.push(el.height)
+            })
+            return [...new Set<number>(arr)].concat([0]);
+        default:
+            return [0]
+    }
+}
+
+
+
+
+
+
+

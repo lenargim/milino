@@ -7,9 +7,10 @@ import {Navigate, useParams} from "react-router-dom";
 import {OrderFormType} from "../../helpers/types";
 import {useAppDispatch} from "../../helpers/helpers";
 import {productDataType, productType, productTypings} from "../../helpers/productTypes";
-import products from './../../api/products.json'
 import {setProduct} from "../../store/reducers/generalSlice";
 import settings from './../../api/settings.json'
+import baseCabinetProducts from "../../api/products.json";
+import wallCabinetProducts from "../../api/productsWall.json";
 type initialDataType = {
     type: productTypings,
     height: number,
@@ -20,11 +21,22 @@ const Product: FC = () => {
     const dispatch = useAppDispatch()
     const materialsString = localStorage.getItem('materials');
     const materials: OrderFormType = materialsString ? JSON.parse(materialsString) : <Navigate to={{pathname: '/'}}/>;
-    let {productId} = useParams();
+    let {productId, category} = useParams();
+    let products;
+    switch (category) {
+        case 'Base Cabinets':
+            products = baseCabinetProducts as productDataType[];
+            break;
+        case 'Wall Cabinets':
+            products= wallCabinetProducts as productDataType[];
+            break
+        default:
+            products = [] as productDataType[]
+    }
     const product: productDataType | undefined = products.find(product => (product.id).toString() === productId) as productType
     if (!product) return <Navigate to={{pathname: '/cabinets'}}/>;
-    const {heightRange, depthRange} = settings
-    const initialData: initialDataType = {type: 1, height: heightRange[0], depth: depthRange[0]}
+    const {depthRange} = settings
+    const initialData: initialDataType = {type: 1, height: 0, depth: depthRange[0]}
     dispatch(setProduct({...product, ...initialData}))
     return (
         <div className={s.wrap}>
