@@ -1,5 +1,5 @@
 import {
-    attrItem,
+    attrItem, heightItemType,
     pricePart,
     pricesTypings,
     productTypings,
@@ -30,17 +30,21 @@ export const getPriceData = (id: number, basePriceType: pricesTypings): pricePar
     return productPrices && productPrices.find(el => el.type === basePriceType)?.data;
 }
 
-export const getInitialPrice = (priceData: pricePart[], widthRangeData: number[]): number | undefined => {
-    const minWidth = widthRangeData[0];
-    return priceData.find(el => el.width === minWidth)?.price
+export const getInitialPrice = (priceData: pricePart[], minWidth: number, minHeight: number, category: string): number | undefined => {
+    switch (category) {
+        case 'Base Cabinets':
+            return priceData.find(el => el.width === minWidth)?.price;
+        case 'Wall Cabinets':
+            return priceData.find(el => el.width === minWidth && el.height === minHeight)?.price;
+        default:
+            return undefined;
+    }
 }
 
-export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData: number[], sizeLimit: sizeLimitsType, drawersQty: number, category: string): calculatePriceType {
-    const minWidth = widthRangeData[0];
+export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData: number[], sizeLimit: sizeLimitsType, drawersQty: number, category: string, depthInitial:number): calculatePriceType {
     const maxWidth = widthRangeData[widthRangeData.length - 2];
     const maxHeight = heightRangeData[heightRangeData.length - 2];
     const allCoefs = extraPrices.boxMaterialCoef * extraPrices.premiumCoef;
-    const initialPriceWithCoef = +(initialPrice * allCoefs).toFixed(2);
     const coef: coefType = {
         width: 0,
         height: 0,
@@ -48,25 +52,37 @@ export function calculatePrice(width: number, height: number, depth: number, opt
     }
 
     const getTablePrice = (width: number, height: number, priceData: pricePart[], category: string): number | undefined => {
+        const maxData = priceData[priceData.length - 1];
         switch (category) {
             case 'Base Cabinets':
-                return priceData.find(el => el.width === width)?.price;
+                const widthTablePrice: number | undefined = priceData.find(el => el.width >= width)?.price;
+                if (widthTablePrice) return widthTablePrice;
+                if (width > maxData.width) return maxData.price;
+                return undefined
             case 'Wall Cabinets':
-                return priceData.find(el => el.width === width && el.height === height)?.price;
+                const widthAndHeightTablePrice: number | undefined = priceData.find(el => (el.width >= width) && (el.height && el.height >= height))?.price;
+                if (widthAndHeightTablePrice) return widthAndHeightTablePrice;
+                if (width > maxData.width && maxData.height && height > maxData.height) {
+                    return maxData.price
+                }
+                if (width > maxData.width) {
+                    return priceData.find(el => (el.width === maxData.width) && (el.height && el.height >= height))?.price;
+                }
+                if (maxData.height && height > maxData.height) {
+                    return priceData.find(el => (el.height === maxData.width) && (el.width && el.width >= width))?.price;
+                }
+                return undefined
             default:
                 return undefined;
         }
     }
-
     const tablePrice = getTablePrice(width, height, priceData, category);
-    const widthPrice: number = tablePrice
-        ? +(tablePrice * allCoefs).toFixed(2) || 0
-        : getWidthPrice(width, height, priceData, initialPriceWithCoef, minWidth, maxWidth, coef, allCoefs, sizeLimit, category);
+    const startPrice: number = tablePrice ? getStartPrice(width, height, depth, allCoefs, sizeLimit, tablePrice) : 0;
 
 
     if (maxWidth < width) coef.width = addWidthPriceCoef(width, maxWidth);
     if (maxHeight < height) coef.height = addHeightPriceCoef(height, maxHeight);
-    if (settings.depthRange[0] !== depth) coef.depth = addDepthPriceCoef(depth, depthRangeData)
+    if (depthInitial !== depth) coef.depth = addDepthPriceCoef(depth, depthRangeData)
 
     if (options.includes('PTO for doors')) extraPrices.ptoDoors = addPTODoorsPrice(attributes, prodType)
     if (options.includes('PTO for drawers')) extraPrices.ptoDrawers = addPTODrawerPrice(prodType, drawersQty)
@@ -76,50 +92,72 @@ export function calculatePrice(width: number, height: number, depth: number, opt
 
     const coefExtra = 1 + (coef.width + coef.height + coef.depth);
 
-    const totalWidthPrice = +(widthPrice * (coef.width + 1)).toFixed(2)
+    const initialPriceWithCoef = +(initialPrice * allCoefs).toFixed(2);
+
+
+    // const totalWidthPrice = +(initialPriceWithCoef * (coef.width + 1)).toFixed(2)
     const totalHeightPrice = +(initialPriceWithCoef * (coef.height + 1)).toFixed(2)
     const totalDepthPrice = +(initialPriceWithCoef * (coef.depth + 1)).toFixed(2)
 
-    extraPrices.width = totalWidthPrice ? +(totalWidthPrice - initialPriceWithCoef).toFixed(2) : 0;
-    extraPrices.height = +(totalHeightPrice - initialPriceWithCoef).toFixed(2);
+    const getPriceForExtraWidth = (initialPriceWithCoef: number, priceData: pricePart[], width: number, widthCoef: number, allCoefs: number): number => {
+        const maxData = priceData[priceData.length - 1];
+        let maxWidth: number = 0;
+        const widthTablePrice: number | undefined = priceData.find(el => el.width >= width)?.price;
+        if (widthTablePrice) maxWidth = widthTablePrice;
+        if (width > maxData.width) maxWidth = maxData.price * (widthCoef + 1);
+        if (maxWidth) {
+            return +(maxWidth * allCoefs - initialPriceWithCoef).toFixed(2)
+        }
+        return 0
+    }
+
+    const getPriceForExtraHeight = (priceData: pricePart[], initialPriceWithCoef: number, width: number, height: number): number => {
+        const maxData = priceData[priceData.length - 1];
+        if ( !maxData.height) {
+            return +(initialPriceWithCoef * (coef.height + 1) - initialPriceWithCoef).toFixed(2);
+        }
+        const checkedWidth = priceData.filter(el => maxData.width >= width ? el.width === width : el.width === maxData.width);
+        const initialPrice = checkedWidth.length && checkedWidth[0].price * allCoefs;
+        if (initialPrice) {
+            const currentHeightPrice = checkedWidth.find(el => el.height && el.height >=height)?.price;
+            return currentHeightPrice ? +(currentHeightPrice*allCoefs - initialPrice).toFixed(2) : 0
+        }
+        return 0
+    }
+
+
+    // extraPrices.width = startPrice ? +(startPrice - initialPriceWithCoef).toFixed(2) : 0;
+    extraPrices.width = getPriceForExtraWidth(initialPriceWithCoef, priceData, width, coef.width, allCoefs)
+    // extraPrices.height = +(totalHeightPrice - initialPriceWithCoef).toFixed(2);
+    extraPrices.height = getPriceForExtraHeight(priceData, initialPriceWithCoef, width, height)
     extraPrices.depth = +(totalDepthPrice - initialPriceWithCoef).toFixed(2);
 
+
+    const totalPrice = startPrice ? +(startPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice + extraPrices.drawerPrice).toFixed(2) : 0
+
     return {
-        totalPrice: +(widthPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice + extraPrices.drawerPrice).toFixed(2),
+        totalPrice: totalPrice,
         addition: extraPrices,
         coef: coef
     };
 }
 
-function getWidthPrice(customWidth: number, customHeight: number, priceData: pricePart[], initialPriceWithCoef: number, minWidth: number, maxWidth: number, coef: { width: number }, allCoefs: number, sizeLimit: sizeLimitsType, category: string): number {
+function getStartPrice(customWidth: number, customHeight: number, customDepth: number, allCoefs: number, sizeLimit: sizeLimitsType, tablePrice: number): number {
     const settingMinWidth = sizeLimit.width[0];
     const settingMaxWidth = sizeLimit.width[1];
     const settingMinHeight = sizeLimit.height[0];
     const settingMaxHeight = sizeLimit.height[1];
-    const maxWidthPrice = priceData.find(el => el.width === maxWidth)?.price;
-    switch (category) {
-        case 'Base Cabinets':
-            if (customWidth < settingMinWidth || customWidth > settingMaxWidth ) {
-                return 0;
-            }
-            if (customWidth <= minWidth) {
-                return initialPriceWithCoef
-            }
-            if (customWidth > minWidth && customWidth <= maxWidth) {
-                const dataPrice = priceData.find(el => el.width >= customWidth)?.price;
-                return dataPrice ? +(dataPrice * allCoefs).toFixed(2) : 0
-            }
-            if (customWidth > maxWidth && maxWidthPrice) {
-                return +(maxWidthPrice * allCoefs).toFixed(2)
-            }
-            break;
-        case 'Wall Cabinets':
-            if (customWidth && customWidth < settingMinWidth || customWidth && customWidth > settingMaxWidth || customHeight && customHeight < settingMinHeight || customHeight && customHeight > settingMaxHeight) {
-                return 0;
-            }
-            console.log('wall cabinets price logic')
+    const settingMinDepth = sizeLimit.depth[0];
+    const settingMaxDepth = sizeLimit.depth[1];
+
+    const isFitMinMaxWidth = (customWidth >= settingMinWidth) && (customWidth <= settingMaxWidth);
+    const isFitMinMaxHeight = (customHeight >= settingMinHeight) && (customHeight <= settingMaxHeight);
+    const isFitMinMaxDepth = (customDepth >= settingMinDepth) && (customDepth <= settingMaxDepth);
+
+    if (!isFitMinMaxWidth || !isFitMinMaxHeight || !isFitMinMaxDepth) {
+        return 0;
     }
-    return 0
+    return +(tablePrice * allCoefs).toFixed(2)
 }
 
 function addWidthPriceCoef(width: number, maxWidth: number) {
@@ -184,18 +222,56 @@ export function getDoorSquare(width: number, height: number, customWidth: number
     return 0;
 }
 
-export function getType(width: number, divider: number | undefined, doorValues: widthItemType[] = [], doors: number): productTypings {
-    if (divider) return width <= divider ? 1 : 2;
-    let res: productTypings = 1;
+export function getType(width: number, height:number, divider: number | undefined, doorValues: widthItemType[] = [], shelfValues: heightItemType[] | undefined ,doors: number, category: string): productTypings {
 
-    const currentTypeArr = doorValues.filter(val => {
-        if (val?.maxWidth && val.maxWidth >= width) return val.value;
-        if (val?.minWidth && val.minWidth <= width) return val.value;
-    })
-    if (currentTypeArr.length === 1) return currentTypeArr[0].type;
-    const doorsVal = currentTypeArr.find(el => el.value === doors);
+    switch (category) {
+        case 'Base Cabinets':
+            if (divider) return width <= divider ? 1 : 2;
+            let res: productTypings = 1;
+            const currentTypeArr = doorValues.filter(val => {
+                if (val?.maxWidth && val.maxWidth >= width) return val.value;
+                if (val?.minWidth && val.minWidth <= width) return val.value;
+            })
+            if (currentTypeArr.length === 1) return currentTypeArr[0].type;
+            const doorsVal = currentTypeArr.find(el => el.value === doors);
 
-    return doorsVal ? doorsVal.type : res
+            return doorsVal ? doorsVal.type : res;
+        case 'Wall Cabinets':
+            if (!shelfValues) return 1;
+            const doorsArr = doorValues.length === 1 ? doorValues : doorValues.filter(val => {
+                if ((val?.maxWidth && val.maxWidth >= width) && val.value === doors) return val.value;
+                if ((val?.minWidth && val.minWidth <= width) && val.value === doors) return val.value;
+                if (!val.minWidth && !val.maxWidth) return val.value
+            })
+
+            const shelfsArr = shelfValues.filter(val => {
+                const isMaxHeight = val.maxHeight
+                const isMinHeight = val.minHeight
+                const isMaxWidth = val.maxWidth
+                const isMinWidth = val.minWidth
+
+
+                // if (isMaxHeight && isMaxHeight > height) return val.value;
+                // if (isMinHeight && isMinHeight <= height) return val.value;
+
+                if (isMaxHeight && isMaxHeight <= height) return false;
+                if (isMinHeight && isMinHeight > height) return false;
+                if (isMaxWidth && isMaxWidth <= width) return false;
+                if (isMinWidth && isMinWidth > width) return false;
+
+                return true
+
+            })
+
+            console.log(shelfsArr)
+
+            let doorTypes = doorsArr.map(el => el.type);
+            const currentType = shelfsArr.find(el => doorTypes.includes(el.type));
+            return currentType ? currentType.type : 1
+
+        default:
+            return 1
+    }
 }
 
 export function getPvcPrice(realWidth: number, realHeight: number, isAcrylic = false, doorType: string, doorFinish: string): number {
@@ -246,7 +322,7 @@ export function getDoorMinMaxValuesArr(realWidth: number, doorValues: widthItemT
         if (el?.maxWidth && realWidth <= el.maxWidth) return true;
         if (!el.minWidth && !el.maxWidth) return true;
     })
-    return filter.map(el => el.value)
+    return [...new Set<number>(filter.map(el => el.value))]
 }
 
 

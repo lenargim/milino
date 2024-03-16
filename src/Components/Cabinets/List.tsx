@@ -53,10 +53,11 @@ export const AtrrsList: FC<{ attributes: attrItem[], type: productTypings }> = (
     return (
         <div className={s.attrs}>
             {attrs.map((attr, index) => {
-                const hasValue = !!attr.value;
+                let hasValue = !!attr.value;
                 const isMultiple = attr.value > 1;
                 const oneOf = ['Door', 'Drawer', 'Rollout', 'Shelf'];
                 let name = attr.name;
+                if (name === 'Adjustable Shelf' && attr.value === 0) return;
                 if (isMultiple) name = name.split(' ').find(el => oneOf.includes(el)) + 's' || name;
                 return (
                     <div key={index}>

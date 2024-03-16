@@ -47,6 +47,15 @@ export type widthItemType = {
     maxWidth?: number
 }
 
+export type heightItemType = {
+    type: productTypings,
+    value: number,
+    minHeight?: number,
+    maxHeight?: number,
+    minWidth?: number,
+    maxWidth?: number
+}
+
 export type itemImg = {
     type: productTypings,
     value: string

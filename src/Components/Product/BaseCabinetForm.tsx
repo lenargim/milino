@@ -38,6 +38,10 @@ type BaseCabinetFormType = {
     doorFinish: string
 }
 
+export type DepthRangeType = {
+    [key: string]:number,
+}
+
 export interface extraPricesType {
     width: number,
     height: number,
@@ -72,10 +76,12 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
     const widthRange = getWidthRange(priceData);
     const heightRange = getHeightRange(priceData, category);
     const sizeLimit: sizeLimitsType | undefined = sizes.find(size => size.productIds.includes(product.id))?.limits;
-    const depthRangeData = settings.depthRange.concat([0])
+    const depthRange: DepthRangeType = settings.depthRange;
+    const depthRangeData = [depthRange[category], 0];
     const initialWidth = widthRange && widthRange[0]
     const attrArr = getAttributes(attributes, type);
     const doorValues = attributes.find(el => el.name === 'Door')?.values;
+    const shelfValues = category === 'Wall Cabinets' ? attributes.find(el => el.name === 'Adjustable Shelf')?.values : undefined;
     const drawersQty = attrArr.reduce((acc, current) => {
         const qty = current.name.includes('Drawer') ? current.value : 0
         return acc + qty;
@@ -184,6 +190,7 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                 const realHeight: number = +height || customHeight || 0;
                 const realDepth: number = +depth || customDepth || 0;
                 const doorArr = doorValues ? getDoorMinMaxValuesArr(realWidth, doorValues) : null;
+                // const shelfArr = shelfValues ? getDoorMinMaxValuesArr(realWidth, shelfValues) : null;
 
                 if (doorArr) {
                     if (!doorValues) {
@@ -197,8 +204,8 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                 }
                 const glassColorFiltered = glassColor.filter(el => el.type === glassTypeVal);
                 const doorSquare = getDoorSquare(+width, +height, +customWidth, +customHeight)
-                const newType = getType(realWidth, widthDivider, doorValues, doors);
-                const initialPrice = priceData && getInitialPrice(priceData, widthRange);
+                const newType = getType(realWidth, realHeight, widthDivider, doorValues, shelfValues, doors, category);
+                const initialPrice = priceData && getInitialPrice(priceData, widthRange[0], heightRange[0], category);
                 if (!initialPrice) return <div>Cannot find initial price</div>
                 const boxMaterialCoef = chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef;
                 const pvcPrice = getPvcPrice(realWidth, realHeight, isAcrylic, doorType, doorFinish)
@@ -220,9 +227,9 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                     premiumCoef: premiumCoef,
                     doorSquare: doorSquare
                 }
-                const calculatedData = calculatePrice(realWidth, realHeight, realDepth,  chosenOptions, profileVal, attributes, type, initialPrice, priceData, extraPrices, widthRange, heightRange, depthRangeData, sizeLimit, drawersQty, category)
+                const calculatedData = calculatePrice(realWidth, realHeight, realDepth,  chosenOptions, profileVal, attributes, type, initialPrice, priceData, extraPrices, widthRange, heightRange, depthRangeData, sizeLimit, drawersQty, category, depthRangeData[0])
                 const {addition, totalPrice, coef} = calculatedData;
-                const additionOptions = addition.glassShelf + addition.glassDoor + addition.ptoDoors + addition.ptoDrawers + addition.ptoTrashBins;
+                // const additionOptions = addition.glassShelf + addition.glassDoor + addition.ptoDoors + addition.ptoDrawers + addition.ptoTrashBins;
                 addition.doorSquare = +(addition.doorSquare / 144).toFixed(2)
 
                 setTimeout(() => {

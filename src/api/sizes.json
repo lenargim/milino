@@ -38,5 +38,21 @@
       "height": [30,42],
       "depth": [9, 48]
     }
+  },
+  {
+    "productIds": [102, 103],
+    "limits": {
+      "width": [27, 48],
+      "height": [30,42],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [104,105,106,107,108],
+    "limits": {
+      "width": [30, 36],
+      "height": [12,24],
+      "depth": [9, 48]
+    }
   }
 ]
