@@ -35,6 +35,7 @@ export const getInitialPrice = (priceData: pricePart[], minWidth: number, minHei
         case 'Base Cabinets':
             return priceData.find(el => el.width === minWidth)?.price;
         case 'Wall Cabinets':
+        case 'Tall Cabinets':
             return priceData.find(el => el.width === minWidth && el.height === minHeight)?.price;
         default:
             return undefined;
@@ -60,6 +61,7 @@ export function calculatePrice(width: number, height: number, depth: number, opt
                 if (width > maxData.width) return maxData.price;
                 return undefined
             case 'Wall Cabinets':
+            case 'Tall Cabinets':
                 const widthAndHeightTablePrice: number | undefined = priceData.find(el => (el.width >= width) && (el.height && el.height >= height))?.price;
                 if (widthAndHeightTablePrice) return widthAndHeightTablePrice;
                 if (width > maxData.width && maxData.height && height > maxData.height) {
@@ -94,9 +96,6 @@ export function calculatePrice(width: number, height: number, depth: number, opt
 
     const initialPriceWithCoef = +(initialPrice * allCoefs).toFixed(2);
 
-
-    // const totalWidthPrice = +(initialPriceWithCoef * (coef.width + 1)).toFixed(2)
-    const totalHeightPrice = +(initialPriceWithCoef * (coef.height + 1)).toFixed(2)
     const totalDepthPrice = +(initialPriceWithCoef * (coef.depth + 1)).toFixed(2)
 
     const getPriceForExtraWidth = (initialPriceWithCoef: number, priceData: pricePart[], width: number, widthCoef: number, allCoefs: number): number => {
@@ -126,9 +125,7 @@ export function calculatePrice(width: number, height: number, depth: number, opt
     }
 
 
-    // extraPrices.width = startPrice ? +(startPrice - initialPriceWithCoef).toFixed(2) : 0;
     extraPrices.width = getPriceForExtraWidth(initialPriceWithCoef, priceData, width, coef.width, allCoefs)
-    // extraPrices.height = +(totalHeightPrice - initialPriceWithCoef).toFixed(2);
     extraPrices.height = getPriceForExtraHeight(priceData, initialPriceWithCoef, width, height)
     extraPrices.depth = +(totalDepthPrice - initialPriceWithCoef).toFixed(2);
 
@@ -215,15 +212,12 @@ function addGlassDoorPrice(square: number = 0, profileVal: string): number {
     return 0
 }
 
-export function getDoorSquare(width: number, height: number, customWidth: number = 0, customHeight: number = 0): number {
-    const trueWidth: number = (width || customWidth);
-    const trueHeight: number = (height || customHeight) - 4.5
-    if (trueWidth > 0 && trueHeight > 0) return +(trueWidth * trueHeight).toFixed(2);
+export function getDoorSquare(width: number, height: number): number {
+    if (width > 0 && height > 0) return +(width * height).toFixed(2);
     return 0;
 }
 
 export function getType(width: number, height:number, divider: number | undefined, doorValues: widthItemType[] = [], shelfValues: heightItemType[] | undefined ,doors: number, category: string): productTypings {
-
     switch (category) {
         case 'Base Cabinets':
             if (divider) return width <= divider ? 1 : 2;
@@ -237,11 +231,15 @@ export function getType(width: number, height:number, divider: number | undefine
 
             return doorsVal ? doorsVal.type : res;
         case 'Wall Cabinets':
+        case 'Tall Cabinets':
             if (!shelfValues) return 1;
             const doorsArr = doorValues.length === 1 ? doorValues : doorValues.filter(val => {
-                if ((val?.maxWidth && val.maxWidth >= width) && val.value === doors) return val.value;
-                if ((val?.minWidth && val.minWidth <= width) && val.value === doors) return val.value;
-                if (!val.minWidth && !val.maxWidth) return val.value
+                const maxWidth = val.maxWidth;
+                const minWidth = val.minWidth;
+                if (maxWidth && maxWidth < width) return false;
+                if (minWidth && minWidth > width) return false;
+                if (val.value !== doors) return false;
+                return true;
             })
 
             const shelfsArr = shelfValues.filter(val => {
@@ -250,20 +248,12 @@ export function getType(width: number, height:number, divider: number | undefine
                 const isMaxWidth = val.maxWidth
                 const isMinWidth = val.minWidth
 
-
-                // if (isMaxHeight && isMaxHeight > height) return val.value;
-                // if (isMinHeight && isMinHeight <= height) return val.value;
-
                 if (isMaxHeight && isMaxHeight <= height) return false;
                 if (isMinHeight && isMinHeight > height) return false;
                 if (isMaxWidth && isMaxWidth <= width) return false;
                 if (isMinWidth && isMinWidth > width) return false;
-
                 return true
-
             })
-
-            console.log(shelfsArr)
 
             let doorTypes = doorsArr.map(el => el.type);
             const currentType = shelfsArr.find(el => doorTypes.includes(el.type));
@@ -276,13 +266,13 @@ export function getType(width: number, height:number, divider: number | undefine
 
 export function getPvcPrice(realWidth: number, realHeight: number, isAcrylic = false, doorType: string, doorFinish: string): number {
     if (doorType === 'No Doors' || doorFinish === 'Milino') return 0;
-    const pvcPrice = realWidth && realHeight ? +((realWidth * 2 + (realHeight - 4.5) * 2) / 12 * 2.5).toFixed(2) : 0
+    const pvcPrice = realWidth && realHeight ? +((realWidth * 2 + realHeight * 2) / 12 * 2.5).toFixed(2) : 0
     return isAcrylic ? pvcPrice * 1.1 : pvcPrice
 }
 
 
 export function getDoorPrice(realWidth: number, realHeight: number, doorPriceMultiplier: number): number {
-    return +((realWidth * (realHeight - 4.5) / 144) * doorPriceMultiplier).toFixed(2);
+    return +((realWidth * realHeight / 144) * doorPriceMultiplier).toFixed(2);
 }
 
 export function getDrawerPrice(qty: number, drawer: drawerType, width: number): number {
@@ -338,6 +328,7 @@ export function getHeightRange(priceData: pricePart[] | undefined, category: str
         case 'Base Cabinets':
             return [34.5, 0];
         case 'Wall Cabinets':
+        case 'Tall Cabinets':
             let arr: number[] = []
             priceData && priceData.forEach((el) => {
                 if (el.height) arr.push(el.height)
@@ -347,10 +338,3 @@ export function getHeightRange(priceData: pricePart[] | undefined, category: str
             return [0]
     }
 }
-
-
-
-
-
-
-

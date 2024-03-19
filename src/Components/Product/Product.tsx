@@ -12,6 +12,7 @@ import settings from './../../api/settings.json'
 import baseCabinetProducts from "../../api/products.json";
 import wallCabinetProducts from "../../api/productsWall.json";
 import {DepthRangeType} from "./BaseCabinetForm";
+import tallCabinetProducts from "../../api/productsTall.json";
 type initialDataType = {
     type: productTypings,
     height: number,
@@ -30,7 +31,10 @@ const Product: FC = () => {
             break;
         case 'Wall Cabinets':
             products= wallCabinetProducts as productDataType[];
-            break
+            break;
+        case 'Tall Cabinets':
+            products= tallCabinetProducts as productDataType[];
+            break;
         default:
             products = [] as productDataType[]
     }

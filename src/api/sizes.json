@@ -54,5 +54,13 @@
       "height": [12,24],
       "depth": [9, 48]
     }
+  },
+  {
+    "productIds": [201],
+    "limits": {
+      "width": [12, 48],
+      "height": [84,96],
+      "depth": [9, 48]
+    }
   }
 ]

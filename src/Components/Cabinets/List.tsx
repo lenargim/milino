@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import s from './cabinets.module.sass'
 import baseCabinetProducts from './../../api/products.json'
 import wallCabinetProducts from './../../api/productsWall.json'
+import tallCabinetProducts from './../../api/productsTall.json'
 import {NavLink} from "react-router-dom";
 import {getAttributes, getImg, getProductImage} from "../../helpers/helpers";
 import {attrItem, productDataType, productTypings} from "../../helpers/productTypes";
@@ -14,7 +15,10 @@ const List: FC<{ category: string }> = ({category}) => {
             break;
         case 'Wall Cabinets':
             products= wallCabinetProducts as productDataType[];
-            break
+            break;
+        case 'Tall Cabinets':
+            products= tallCabinetProducts as productDataType[];
+            break;
         default:
             products = [] as productDataType[]
     }

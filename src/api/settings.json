@@ -1,7 +1,8 @@
 {
   "depthRange": {
     "Base Cabinets": 24,
-    "Wall Cabinets": 13
+    "Wall Cabinets": 13,
+    "Tall Cabinets": 24
   },
   "Hinge opening": [
     "Left",

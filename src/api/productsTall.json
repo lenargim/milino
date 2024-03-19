@@ -1,0 +1,83 @@
+[
+  {
+    "id": 201,
+    "name": "PC Series",
+    "room": "Kitchen",
+    "category": "Tall Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      },
+      {
+        "type": 2,
+        "value": "PC_2.png"
+      },
+      {
+        "type": 3,
+        "value": "PC_1.png"
+      },
+      {
+        "type": 4,
+        "value": "PC_2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 2,
+            "maxWidth": 27
+          },
+          {
+            "type": 2,
+            "value": 4,
+            "minWidth": 24
+          },
+          {
+            "type": 3,
+            "value": 2,
+            "maxWidth": 27
+          },
+          {
+            "type": 4,
+            "value": 4,
+            "minWidth": 24
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 5,
+            "maxHeight": 96
+          },
+          {
+            "type": 2,
+            "value": 5,
+            "maxHeight": 96
+          },
+          {
+            "type": 3,
+            "value": 6,
+            "minHeight": 96
+          },
+          {
+            "type": 4,
+            "value": 6,
+            "minHeight": 96
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  }
+]

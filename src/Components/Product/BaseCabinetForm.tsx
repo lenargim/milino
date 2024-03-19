@@ -71,7 +71,7 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                                                       doorPriceMultiplier, doorType, doorFinish
                                                   }) => {
     const dispatch = useAppDispatch();
-    const {id, name, images, type, attributes, options, price, widthDivider, height, depth, category} = product;
+    const {id, name, images, type, attributes, options, price, widthDivider, depth, category} = product;
     const priceData = getPriceData(id, basePriceType);
     const widthRange = getWidthRange(priceData);
     const heightRange = getHeightRange(priceData, category);
@@ -81,7 +81,8 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
     const initialWidth = widthRange && widthRange[0]
     const attrArr = getAttributes(attributes, type);
     const doorValues = attributes.find(el => el.name === 'Door')?.values;
-    const shelfValues = category === 'Wall Cabinets' ? attributes.find(el => el.name === 'Adjustable Shelf')?.values : undefined;
+    const isShelfTypings = category === 'Wall Cabinets' || category === 'Tall Cabinets'
+    const shelfValues = isShelfTypings ? attributes.find(el => el.name === 'Adjustable Shelf')?.values : undefined;
     const drawersQty = attrArr.reduce((acc, current) => {
         const qty = current.name.includes('Drawer') ? current.value : 0
         return acc + qty;
@@ -187,29 +188,36 @@ const BaseCabinetForm: FC<BaseCabinetFormType> = ({
                 } = glassDoor;
 
                 const realWidth: number = +width || customWidth || 0;
-                const realHeight: number = +height || customHeight || 0;
+                const hasCabinetLegs = category === 'Base Cabinets' || category === 'Tall Cabinets';
+                const realHeight = +height || customHeight || 0;
+                const doorHeight: number = realHeight ? hasCabinetLegs ? realHeight - 4.5 : realHeight  : 0;
                 const realDepth: number = +depth || customDepth || 0;
                 const doorArr = doorValues ? getDoorMinMaxValuesArr(realWidth, doorValues) : null;
+
+                console.log(doorArr)
                 // const shelfArr = shelfValues ? getDoorMinMaxValuesArr(realWidth, shelfValues) : null;
 
+                // ?????
                 if (doorArr) {
                     if (!doorValues) {
                         setFieldValue('Doors', 0);
                     } else {
-                        if (doorArr.length === 1) {
-                            if (width <= 24 && doors === 2) setFieldValue('Doors', 1)
-                            if (width > 24 && doors === 1) setFieldValue('Doors', 2)
+                        if (doorArr.length === 1 && doors !== doorArr[0]) {
+                            // if (width <= 24 && doors === 2) setFieldValue('Doors', 1)
+                            // if (width > 24 && doors === 1) setFieldValue('Doors', 2)
+                            setFieldValue('Doors', doorArr[0])
                         }
                     }
                 }
+
                 const glassColorFiltered = glassColor.filter(el => el.type === glassTypeVal);
-                const doorSquare = getDoorSquare(+width, +height, +customWidth, +customHeight)
+                const doorSquare = getDoorSquare(realWidth, doorHeight)
                 const newType = getType(realWidth, realHeight, widthDivider, doorValues, shelfValues, doors, category);
                 const initialPrice = priceData && getInitialPrice(priceData, widthRange[0], heightRange[0], category);
                 if (!initialPrice) return <div>Cannot find initial price</div>
                 const boxMaterialCoef = chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef;
-                const pvcPrice = getPvcPrice(realWidth, realHeight, isAcrylic, doorType, doorFinish)
-                const doorPrice = getDoorPrice(realWidth, realHeight, doorPriceMultiplier)
+                const pvcPrice = getPvcPrice(realWidth, doorHeight, isAcrylic, doorType, doorFinish)
+                const doorPrice = getDoorPrice(realWidth, doorHeight, doorPriceMultiplier)
                 const drawerPrice = getDrawerPrice(drawersQty, drawer, realWidth)
                 const extraPrices: extraPricesType = {
                     width: 0,
