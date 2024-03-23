@@ -1,6 +1,9 @@
 [
   {
     "id": 101,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
     "name": "W Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -82,6 +85,9 @@
   },
   {
     "id": 102,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
     "name": "WDA Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -142,6 +148,9 @@
   },
   {
     "id": 103,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
     "name": "WDA Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -179,6 +188,9 @@
   },
   {
     "id": 104,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
     "name": "WBL Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -216,6 +228,9 @@
   },
   {
     "id": 105,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
     "name": "WBA Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -253,6 +268,9 @@
   },
   {
     "id": 106,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
     "name": "WB Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -313,6 +331,9 @@
   },
   {
     "id": 107,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
     "name": "WRF Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -373,6 +394,9 @@
   },
   {
     "id": 108,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
     "name": "WRFA Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -428,6 +452,221 @@
     "options": [
       "PTO for doors",
       "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 109,
+    "legsHeight": 0,
+    "isBlind": true,
+    "isAngle":true,
+    "customDepth": 24,
+    "name": "WC Series",
+    "room": "Kitchen",
+    "category": "Wall Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "WC_1.png"
+      },
+      {
+        "type": 2,
+        "value": "WC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 2,
+            "maxHeight": 42
+          },
+          {
+            "type": 2,
+            "value": 3,
+            "minHeight": 42
+          }
+        ]
+      },
+      {
+        "name": "90° Corner Wall",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 110,
+    "legsHeight": 0,
+    "isBlind": true,
+    "isAngle":true,
+    "customDepth": 24,
+    "name": "WCA Series",
+    "room": "Kitchen",
+    "category": "Wall Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "WCA_1.png"
+      },
+      {
+        "type": 2,
+        "value": "WCA_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 2,
+            "maxHeight": 42
+          },
+          {
+            "type": 2,
+            "value": 3,
+            "minHeight": 42
+          }
+        ]
+      },
+      {
+        "name": "45° Corner Wall",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 111,
+    "legsHeight": 0,
+    "isBlind": true,
+    "isAngle":false,
+    "name": "WCB Series",
+    "room": "Kitchen",
+    "category": "Wall Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "WCB_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Wall Blind Corner",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 112,
+    "legsHeight": 0,
+    "isBlind": true,
+    "isAngle":true,
+    "name": "WDC Series",
+    "room": "Kitchen",
+    "category": "Wall Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "WDC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "False Front",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Dead Wall Corner",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
       "Box from finish material"
     ]
   }

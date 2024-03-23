@@ -8,7 +8,7 @@
     }
   },
   {
-    "productIds": [7],
+    "productIds": [7,35],
     "limits": {
       "width": [6, 48],
       "height": [10.5, 54],
@@ -24,13 +24,63 @@
     }
   },
   {
-    "productIds": [17, 18,19,20],
+    "productIds": [17, 18,19,20, 29],
     "limits": {
       "width": [24, 48],
       "height": [10.5, 54],
       "depth": [9, 48]
     }
   },
+  {
+    "productIds": [21],
+    "limits": {
+      "width": [40, 46],
+      "height": [10.5, 54],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [22],
+    "limits": {
+      "width": [44, 50],
+      "height": [10.5, 54],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [23,24,25,26],
+    "limits": {
+      "width": [33,36],
+      "height": [10.5, 54],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [27,28],
+    "limits": {
+      "width": [30,39],
+      "height": [10.5, 54],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [31],
+    "limits": {
+      "width": [24,36],
+      "height": [6,54],
+      "depth": [9, 48]
+    }
+  },
+
+  {
+    "productIds": [36],
+    "limits": {
+      "width": [24,36],
+      "height": [6,54],
+      "depth": [24, 36]
+    }
+  },
+
   {
     "productIds": [101],
     "limits": {
@@ -48,7 +98,7 @@
     }
   },
   {
-    "productIds": [104,105,106,107,108],
+    "productIds": [33,104,105,106,107,108],
     "limits": {
       "width": [30, 36],
       "height": [12,24],
@@ -56,9 +106,66 @@
     }
   },
   {
-    "productIds": [201],
+    "productIds": [109,110],
+    "limits": {
+      "width": [24, 36],
+      "height": [30,42],
+      "depth": [24, 36]
+    }
+  },
+  {
+    "productIds": [111],
+    "limits": {
+      "width": [27, 36],
+      "height": [30,42],
+      "depth": [9,48]
+    }
+  },
+  {
+    "productIds": [112],
+    "limits": {
+      "width": [16, 48],
+      "height": [30,42],
+      "depth": [16,48]
+    }
+  },
+
+  {
+    "productIds": [201,202, 203,204],
     "limits": {
       "width": [12, 48],
+      "height": [84,96],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [205,206],
+    "limits": {
+      "width": [40,50],
+      "height": [84,96],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [207,208],
+    "limits": {
+      "width": [30,36],
+      "height": [84,96],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [209,210],
+    "limits": {
+      "width": [12,36],
+      "height": [49,61],
+      "depth": [9, 48]
+    }
+  },
+  {
+    "productIds": [211],
+    "limits": {
+      "width": [15,21],
       "height": [84,96],
       "depth": [9, 48]
     }

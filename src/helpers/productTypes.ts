@@ -1,6 +1,7 @@
 export type productTypings = 1 | 2 | 3 | 4
 export type pricesTypings = 1 | 2 | 3
 
+
 export type productDataType = {
     id: number,
     name: string,
@@ -9,6 +10,11 @@ export type productDataType = {
     images: itemImg[],
     attributes: attrItem[],
     options: string[],
+    legsHeight: number,
+    isBlind: boolean,
+    isAngle: boolean,
+    customHeight?: number,
+    customDepth?: number
 }
 
 export interface productType extends productDataType{

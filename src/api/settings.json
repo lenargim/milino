@@ -520,5 +520,11 @@
     "PTO for drawers": 80,
     "PTO for trash bins": 350,
     "Glass Shelf": 170
-  }
+  },
+  "blindRange": {
+    "Base Cabinets": 27,
+    "Wall Cabinets": 16
+  },
+  "blindDoor": [9,27],
+  "angleDoor": [9,27]
 }

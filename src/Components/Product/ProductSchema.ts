@@ -1,10 +1,17 @@
 import * as Yup from 'yup';
 import settings from './../../api/settings.json'
-import { sizeLimitsType} from "../../helpers/productTypes";
+import {sizeLimitsType} from "../../helpers/productTypes";
 
 const patterntwodigisaftercomma = /^\d+(\.\d{0,2})?$/;
 
-export function getProductSchema(sizeLimit: sizeLimitsType): Yup.InferType<any> {
+export function getProductSchema(sizeLimit: sizeLimitsType, isAngle: boolean): Yup.InferType<any> {
+    const blindDoorMinMax = settings.blindDoor;
+    const minWidth = sizeLimit.width[0];
+    const maxWidth = sizeLimit.width[1];
+    const minHeight = sizeLimit.height[0];
+    const maxHeight = sizeLimit.height[1];
+    const minDepth = !isAngle ? sizeLimit.depth[0] : sizeLimit.width[0];
+    const maxDepth = !isAngle ? sizeLimit.depth[1] : sizeLimit.width[1];
 
     const schema = Yup.object({
         'Width': Yup.number()
@@ -14,8 +21,8 @@ export function getProductSchema(sizeLimit: sizeLimitsType): Yup.InferType<any> 
                 is: 0,
                 then: (schema) => schema
                     .required('Please wright down width')
-                    .min(sizeLimit.width[0], `Min ${sizeLimit.width[0]} inches`)
-                    .max(sizeLimit.width[1], `Max ${sizeLimit.width[1]} inches`)
+                    .min(minWidth, `Min ${minWidth} inches`)
+                    .max(maxWidth, `Max ${maxWidth} inches`)
                     .typeError('Invalid Input: numbers please')
                     .test(
                         "is-decimal",
@@ -28,6 +35,56 @@ export function getProductSchema(sizeLimit: sizeLimitsType): Yup.InferType<any> 
                         }
                     )
             }),
+        isBlind: Yup.boolean(),
+        'Blind Width': Yup.number()
+            .when('isBlind', {
+                is: true,
+                then: (schema) => schema.required()
+            }),
+        'Custom Blind Width': Yup.number()
+            .when(['isBlind', 'Blind Width'], {
+                is: (isBlind: boolean, blindWidth: number) => isBlind && blindWidth === 0,
+                then: (schema) => schema
+                    .required('Please wright down blind width')
+                    .typeError('Invalid Input: numbers please')
+                    .test(
+                        "is-decimal",
+                        "Maximum two digits after comma",
+                        (val: any) => {
+                            if (val !== undefined) {
+                                return patterntwodigisaftercomma.test(val);
+                            }
+                            return true;
+                        }
+                    )
+                    .test(
+                        "is-min",
+                        `Width is too small`,
+                        (val: any, {parent}) => {
+                            const fullWidth = parent['Width'] || parent['Custom Width'];
+                            if (isAngle) {
+                                const maxCorner = blindDoorMinMax[1]*Math.cos(45);
+                                return val >= Math.floor(fullWidth - maxCorner)
+                            } else {
+                                return val >= fullWidth - blindDoorMinMax[1]
+                            }
+                        }
+                    )
+                    .test(
+                        "is-max",
+                        `Width is too big`,
+                        (val: any, {parent}) => {
+                            const fullWidth = parent['Width'] || parent['Custom Width'];
+                            if (isAngle) {
+                                const minCorner = blindDoorMinMax[0]*Math.cos(45);
+                                return val <= Math.floor(fullWidth - minCorner)
+                            } else {
+                                return val <= (fullWidth - blindDoorMinMax[0])
+                            }
+                        }
+                    )
+
+            }),
         'Height': Yup.number()
             .required(),
         'Custom Height': Yup.number()
@@ -35,8 +92,8 @@ export function getProductSchema(sizeLimit: sizeLimitsType): Yup.InferType<any> 
                 is: 0,
                 then: (schema) => schema
                     .required('Please wright down height')
-                    .min(sizeLimit.height[0], `Min ${sizeLimit.height[0]} inches`)
-                    .max(sizeLimit.height[1], `Max ${sizeLimit.height[1]} inches`)
+                    .min(minHeight, `Min ${minHeight} inches`)
+                    .max(maxHeight, `Max ${maxHeight} inches`)
                     .typeError('Invalid Input: numbers please')
                     .test(
                         "is-decimal",
@@ -56,8 +113,8 @@ export function getProductSchema(sizeLimit: sizeLimitsType): Yup.InferType<any> 
                 is: 0,
                 then: (schema) => schema
                     .required('Please wright down depth')
-                    .min(sizeLimit.depth[0], `Min ${sizeLimit.depth[0]} inches`)
-                    .max(sizeLimit.depth[1], `Max ${sizeLimit.depth[1]} inches`)
+                    .min(minDepth, `Min ${minDepth} inches`)
+                    .max(maxDepth, `Max ${maxDepth} inches`)
                     .typeError('Invalid Input: numbers please')
                     .test(
                         "is-decimal",
@@ -96,5 +153,5 @@ export function getProductSchema(sizeLimit: sizeLimitsType): Yup.InferType<any> 
         'Note': Yup.string(),
     })
 
-    return schema
+    return schema;
 }

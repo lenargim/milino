@@ -80,7 +80,7 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
     const basePriceType: pricesTypings = getBasePriceType(doorType, doorFinish);
     const baseCoef = basePriceType === 3 ? getPremiumCoef(doorType, doorFinish) : 1;
     const grainCoef = doorGrain ? getGrainCoef(doorGrain) : 1;
-    const premiumCoef = baseCoef * grainCoef
+    const premiumCoef = +(baseCoef * grainCoef).toFixed(3)
     const boxMaterialCoefs = getBoxMaterialCoefs(boxMaterial, doorFinish)
     const doorPriceMultiplier = getDoorPriceMultiplier(doorType, doorFinish)
     return (

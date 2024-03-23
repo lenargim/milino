@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {OrderFormType} from "./../../../helpers/types";
+import {OrderFormType} from "../../../helpers/types";
 import s from './sidebar.module.sass'
 import {NavLink, useLocation} from "react-router-dom";
 

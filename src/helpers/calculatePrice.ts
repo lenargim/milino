@@ -42,7 +42,7 @@ export const getInitialPrice = (priceData: pricePart[], minWidth: number, minHei
     }
 }
 
-export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData: number[], sizeLimit: sizeLimitsType, drawersQty: number, category: string, depthInitial:number): calculatePriceType {
+export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData: number[], sizeLimit: sizeLimitsType, drawersQty: number, category: string): calculatePriceType {
     const maxWidth = widthRangeData[widthRangeData.length - 2];
     const maxHeight = heightRangeData[heightRangeData.length - 2];
     const allCoefs = extraPrices.boxMaterialCoef * extraPrices.premiumCoef;
@@ -84,7 +84,7 @@ export function calculatePrice(width: number, height: number, depth: number, opt
 
     if (maxWidth < width) coef.width = addWidthPriceCoef(width, maxWidth);
     if (maxHeight < height) coef.height = addHeightPriceCoef(height, maxHeight);
-    if (depthInitial !== depth) coef.depth = addDepthPriceCoef(depth, depthRangeData)
+    if (depthRangeData[0] !== depth) coef.depth = addDepthPriceCoef(depth, depthRangeData)
 
     if (options.includes('PTO for doors')) extraPrices.ptoDoors = addPTODoorsPrice(attributes, prodType)
     if (options.includes('PTO for drawers')) extraPrices.ptoDrawers = addPTODrawerPrice(prodType, drawersQty)
@@ -112,14 +112,14 @@ export function calculatePrice(width: number, height: number, depth: number, opt
 
     const getPriceForExtraHeight = (priceData: pricePart[], initialPriceWithCoef: number, width: number, height: number): number => {
         const maxData = priceData[priceData.length - 1];
-        if ( !maxData.height) {
+        if (!maxData.height) {
             return +(initialPriceWithCoef * (coef.height + 1) - initialPriceWithCoef).toFixed(2);
         }
         const checkedWidth = priceData.filter(el => maxData.width >= width ? el.width === width : el.width === maxData.width);
         const initialPrice = checkedWidth.length && checkedWidth[0].price * allCoefs;
         if (initialPrice) {
-            const currentHeightPrice = checkedWidth.find(el => el.height && el.height >=height)?.price;
-            return currentHeightPrice ? +(currentHeightPrice*allCoefs - initialPrice).toFixed(2) : 0
+            const currentHeightPrice = checkedWidth.find(el => el.height && el.height >= height)?.price;
+            return currentHeightPrice ? +(currentHeightPrice * allCoefs - initialPrice).toFixed(2) : 0
         }
         return 0
     }
@@ -217,7 +217,7 @@ export function getDoorSquare(width: number, height: number): number {
     return 0;
 }
 
-export function getType(width: number, height:number, divider: number | undefined, doorValues: widthItemType[] = [], shelfValues: heightItemType[] | undefined ,doors: number, category: string): productTypings {
+export function getType(width: number, height: number, divider: number | undefined, doorValues: widthItemType[] = [], shelfValues: heightItemType[] | undefined, doors: number, category: string): productTypings {
     switch (category) {
         case 'Base Cabinets':
             if (divider) return width <= divider ? 1 : 2;
@@ -264,15 +264,15 @@ export function getType(width: number, height:number, divider: number | undefine
     }
 }
 
-export function getPvcPrice(realWidth: number, realHeight: number, isAcrylic = false, doorType: string, doorFinish: string): number {
+export function getPvcPrice(width: number, height: number, isAcrylic = false, doorType: string, doorFinish: string): number {
     if (doorType === 'No Doors' || doorFinish === 'Milino') return 0;
-    const pvcPrice = realWidth && realHeight ? +((realWidth * 2 + realHeight * 2) / 12 * 2.5).toFixed(2) : 0
+    const pvcPrice = width && height ? +((width * 2 + height * 2) / 12 * 2.5).toFixed(2) : 0
     return isAcrylic ? pvcPrice * 1.1 : pvcPrice
 }
 
 
-export function getDoorPrice(realWidth: number, realHeight: number, doorPriceMultiplier: number): number {
-    return +((realWidth * realHeight / 144) * doorPriceMultiplier).toFixed(2);
+export function getDoorPrice(doorSquare: number, doorPriceMultiplier: number): number {
+    return +(doorSquare / 144 * doorPriceMultiplier).toFixed(2);
 }
 
 export function getDrawerPrice(qty: number, drawer: drawerType, width: number): number {
@@ -323,18 +323,46 @@ export function getWidthRange(priceData: pricePart[] | undefined): number[] {
 
 }
 
-export function getHeightRange(priceData: pricePart[] | undefined, category: string): number[] {
+export function getHeightRange(priceData: pricePart[] | undefined, category: string, customHeight: number|undefined): number[] {
+    if (customHeight) return [customHeight, 0];
+    const isHeightData = priceData && priceData.find((el) => el.height)
+    if (isHeightData) {
+        let arr: number[] = []
+        priceData && priceData.forEach((el) => {
+            if (el.height) arr.push(el.height)
+        })
+        return [...new Set<number>(arr)].concat([0]);
+    }
     switch (category) {
         case 'Base Cabinets':
             return [34.5, 0];
-        case 'Wall Cabinets':
-        case 'Tall Cabinets':
-            let arr: number[] = []
-            priceData && priceData.forEach((el) => {
-                if (el.height) arr.push(el.height)
-            })
-            return [...new Set<number>(arr)].concat([0]);
         default:
             return [0]
     }
+}
+
+export function getDepthRange(customDepth: number|undefined, category:string):number[] {
+    if (customDepth) return [customDepth, 0];
+    const settingsRange:rangeType = settings.depthRange;
+    if (settingsRange[category]) return [settingsRange[category], 0];
+    return [0]
+}
+
+type rangeType = {
+    [key: string]: number
+}
+
+export function getBlindArr(category: string, isAngle: boolean): number[] {
+    const range: rangeType = settings.blindRange;
+    return range[category] ? [range[category], 0] : [0];
+
+}
+
+export function getDoorWidth(realWidth: number, realBlindWidth: number, isBlind: boolean, isAngle: boolean): number {
+    if (isBlind && isAngle) {
+        const leg = realWidth - realBlindWidth;
+        return +(Math.sqrt(Math.pow(leg,2)*2)).toFixed(2)
+    }
+    if (isBlind) return realWidth - realBlindWidth;
+    return realWidth
 }

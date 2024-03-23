@@ -16,6 +16,7 @@ export interface CartItemType {
     img?: string,
     amount: number,
     width: number,
+    blindWidth?: number,
     height: number,
     depth: number,
     price: number,

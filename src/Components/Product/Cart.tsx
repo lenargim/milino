@@ -53,7 +53,8 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
         glassColor,
         glassShelf,
         note,
-        doors
+        doors,
+        blindWidth
     } = item;
     const dispatch = useAppDispatch();
     const doorsText = doors ? `(${doors} door${doors>1 ? 's':''})` : ''
@@ -70,6 +71,12 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
                     <span>Width {doorsText}:</span>
                     <span>{width}</span>
                 </div>
+                {blindWidth ?
+                    <div className={s.itemOption}>
+                        <span>Blind Width:</span>
+                        <span>{blindWidth}</span>
+                    </div>
+                : null}
                 <div className={s.itemOption}>
                     <span>Height:</span>
                     <span>{height}</span>

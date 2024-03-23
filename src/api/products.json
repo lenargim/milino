@@ -1,6 +1,9 @@
 [
   {
     "id": 1,
+    "legsHeight": 4.5,
+    "isBlind": false,
+    "isAngle":false,
     "name": "BS Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -49,6 +52,9 @@
   },
   {
     "id": 2,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "BD Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -96,6 +102,9 @@
   },
   {
     "id": 3,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "B Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -154,6 +163,9 @@
   },
   {
     "id": 4,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "BID Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -211,6 +223,9 @@
   },
   {
     "id": 5,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "BSG Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -258,6 +273,9 @@
   },
   {
     "id": 6,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "BG Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -315,6 +333,9 @@
   },
   {
     "id": 7,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "BSP Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -352,6 +373,9 @@
   },
   {
     "id": 8,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "BD2 Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -399,6 +423,9 @@
   },
   {
     "id": 9,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "B2DE Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -426,6 +453,9 @@
   },
   {
     "id": 10,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "B3DI Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -462,6 +492,9 @@
   },
   {
     "id": 11,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "B3D Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -498,6 +531,9 @@
   },
   {
     "id": 12,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "B3DE Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -534,6 +570,9 @@
   },
   {
     "id": 13,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "B3ED Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -561,6 +600,9 @@
   },
   {
     "id": 14,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "B4D Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -597,6 +639,9 @@
   },
   {
     "id": 15,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "B4DE Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -624,6 +669,9 @@
   },
   {
     "id": 16,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "SB2D Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -651,6 +699,9 @@
   },
   {
     "id": 17,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "SB Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -688,6 +739,9 @@
   },
   {
     "id": 18,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "SB Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -734,6 +788,9 @@
   },
   {
     "id": 19,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "SBT Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -780,6 +837,9 @@
   },
   {
     "id": 20,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
     "name": "SBDT Series",
     "room": "Kitchen",
     "category": "Base Cabinets",
@@ -819,6 +879,584 @@
       },
       {
         "name": "Sink Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 21,
+    "legsHeight": 4.5,
+    "isBlind":  true,
+    "isAngle": false,
+    "name": "BCB Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BCB_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Blind Corner",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 22,
+    "legsHeight": 4.5,
+    "isBlind":  true,
+    "isAngle": false,
+    "name": "BCBL Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BCBL_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "LeMans System",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "name": "Blind Corner",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 23,
+    "legsHeight": 4.5,
+    "isBlind":  true,
+    "isAngle": true,
+    "name": "BCA Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BCA_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "45° Angle Corner",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 24,
+    "legsHeight": 4.5,
+    "isBlind":  true,
+    "isAngle": true,
+    "name": "BCAL Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BCAL_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Lazy Susan",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "name": "45° Angle Corner",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 25,
+    "legsHeight": 4.5,
+    "isBlind":  true,
+    "isAngle": true,
+    "name": "BC Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "90° Angle Corner",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 26,
+    "legsHeight": 4.5,
+    "isBlind":  true,
+    "isAngle": true,
+    "name": "BCL Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BCL_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Lazy Susan",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "name": "90° Angle Corner",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Glass Door",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 27,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
+    "name": "CTB Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "CTB_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "False Front",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Cook Top",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 28,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
+    "name": "COB Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "COB_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Front Panel",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "name": "Empty",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "name": "Oven Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 29,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
+    "name": "MB Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "MB_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Front Panel",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      },
+      {
+        "name": "For Microwave",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+
+  {
+    "id": 31,
+    "legsHeight": 0,
+    "isBlind":  false,
+    "isAngle": false,
+    "customHeight": 6,
+    "name": "B1KD Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "B1KD_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Floating Drawer Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+
+  {
+    "id": 33,
+    "legsHeight": 0,
+    "isBlind":  false,
+    "isAngle": false,
+    "name": "DDC Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "DDC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Empty Drop Down Door Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 35,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": false,
+    "customDepth": 13,
+    "name": "BW Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BW_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Wine Cells Cabinet",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 36,
+    "legsHeight": 4.5,
+    "isBlind":  false,
+    "isAngle": true,
+    "name": "BEAC Series",
+    "room": "Kitchen",
+    "category": "Base Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "BEAC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Triangle Corner Base",
         "values": [
           {
             "type": 1,
