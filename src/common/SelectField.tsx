@@ -57,7 +57,7 @@ const SelectField: FC<SelectFieldType> = ({options, name, val}) => {
         }),
         valueContainer: (baseStyles) => ({
             ...baseStyles,
-            padding: '7.5px 10px'
+            padding: '5.5px 10px'
         }),
         placeholder: (baseStyles) => ({
             ...baseStyles,

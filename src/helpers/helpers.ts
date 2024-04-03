@@ -44,3 +44,17 @@ export const getCartTotal = (cart: CartItemType[]): number => {
         (acc, currentVal) => acc + (currentVal.price * currentVal.amount), 0
     )
 }
+
+
+export const getFraction = (number: number):string => {
+    if (Number.isInteger(number)) return number.toString();
+    const floor = Math.floor(number);
+    const reminder = (number - floor);
+    const quarters = {
+        0.25: '¼',
+        0.5: '½',
+        0.75: '¾'
+    };
+    const currQ = Object.entries(quarters).find((el) => el[0] === reminder.toString());
+    return currQ ? `${floor} ${currQ[1]}` : number.toString()
+}

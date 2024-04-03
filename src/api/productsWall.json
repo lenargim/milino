@@ -141,7 +141,6 @@
       }
     ],
     "options": [
-      "PTO for doors",
       "Glass Door",
       "Box from finish material"
     ]
@@ -151,7 +150,7 @@
     "legsHeight": 0,
     "isBlind": false,
     "isAngle":false,
-    "name": "WDA Series",
+    "name": "WA Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
     "images": [
@@ -221,7 +220,6 @@
       }
     ],
     "options": [
-      "PTO for doors",
       "Glass Door",
       "Box from finish material"
     ]
@@ -635,8 +633,9 @@
   {
     "id": 112,
     "legsHeight": 0,
-    "isBlind": true,
+    "isBlind": false,
     "isAngle":true,
+    "hasSolidWidth": true,
     "name": "WDC Series",
     "room": "Kitchen",
     "category": "Wall Cabinets",
@@ -666,8 +665,6 @@
         ]
       }
     ],
-    "options": [
-      "Box from finish material"
-    ]
+    "options": []
   }
 ]

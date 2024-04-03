@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {getCartTotal, getImg, useAppDispatch, useAppSelector} from "../../helpers/helpers";
+import {getCartTotal, getFraction, getImg, useAppDispatch, useAppSelector} from "../../helpers/helpers";
 import s from './product.module.sass'
 import {CartItemType, deleteItemFromCart} from "../../store/reducers/generalSlice";
 import {NavLink} from "react-router-dom";
@@ -48,16 +48,19 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
         amount,
         hinge,
         options,
-        profile,
-        glassType,
-        glassColor,
-        glassShelf,
+        doorProfile,
+        doorGlassType,
+        doorGlassColor,
+        shelfProfile,
+        shelfGlassType,
+        shelfGlassColor,
         note,
-        doors,
-        blindWidth
+        blindWidth,
+        middleSection,
+        led
     } = item;
     const dispatch = useAppDispatch();
-    const doorsText = doors ? `(${doors} door${doors>1 ? 's':''})` : ''
+
 
     return (
         <div className={s.cartItem} data-uuid={uuid}>
@@ -68,54 +71,58 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
             </div>
             <div className={s.itemOptions}>
                 <div className={s.itemOption}>
-                    <span>Width {doorsText}:</span>
-                    <span>{width}</span>
+                    <span>Width:</span>
+                    <span>{getFraction(width)}</span>
                 </div>
                 {blindWidth ?
                     <div className={s.itemOption}>
                         <span>Blind Width:</span>
-                        <span>{blindWidth}</span>
+                        <span>{getFraction(blindWidth)}</span>
                     </div>
                 : null}
                 <div className={s.itemOption}>
                     <span>Height:</span>
-                    <span>{height}</span>
+                    <span>{getFraction(height)}</span>
                 </div>
+                {middleSection ?
+                    <div className={s.itemOption}>
+                        <span>Middle Section Height:</span>
+                        <span>{getFraction(middleSection)}</span>
+                    </div> : null
+                }
                 <div className={s.itemOption}>
                     <span>Depth:</span>
-                    <span>{depth}</span>
+                    <span>{getFraction(depth)}</span>
                 </div>
-                {hinge ? <div className={s.itemOption}>
+                <div className={s.itemOption}>
                     <span>Hinge opening:</span>
                     <span>{hinge}</span>
-                </div> : null}
+                </div>
+                {led ?
+                    <div className={s.itemOption}>
+                        <span>LED:</span>
+                        <span>{`${led.border.map(el => el)}. ${led.alignment} ${led.indent ? led.indent + '"' : ''}`}</span>
+                    </div> : null
+                }
+
                 {options.length ?
                     <>
                         <div className={s.optionsTitle}>Options:</div>
-                        {profile &&
-                          <div className={s.itemOption}>
-                            <span>Profile:</span>
-                            <span>{profile}</span>
-                          </div>
+                        {options.includes('Glass Door') ?
+                            <div className={s.itemOption}>
+                                <span>Glass Door:</span>
+                                <span>{`${doorProfile}|${doorGlassType}|${doorGlassColor}`}</span>
+                            </div> : null
                         }
-                        {glassType &&
-                          <div className={s.itemOption}>
-                            <span>Glass Type:</span>
-                            <span>{glassType}</span>
-                          </div>
+
+                        {options.includes('Glass Shelf') ?
+                            <div className={s.itemOption}>
+                                <span>Glass Door:</span>
+                                <span>{`${shelfProfile}|${shelfGlassType}|${shelfGlassColor}`}</span>
+                            </div> : null
                         }
-                        {glassColor &&
-                          <div className={s.itemOption}>
-                            <span>Glass Color:</span>
-                            <span>{glassColor}</span>
-                          </div>
-                        }
-                        {glassShelf &&
-                          <div className={s.itemOption}>
-                            <span>Glass Shelf:</span>
-                            <span>{glassShelf}</span>
-                          </div>
-                        }
+
+
                         {options.filter(option => option !== 'Glass Door' && option !== 'Glass Shelf').map((el, index) =>
                             <div className={s.itemOption} key={index}>
                                 <span>{el}:</span>

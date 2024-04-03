@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {OrderFormType} from "../../helpers/types";
-import {productDataType, productType, productTypings} from "../../helpers/productTypes";
+import { productType, productTypings} from "../../helpers/productTypes";
 
 
 interface GeneralState {
@@ -20,13 +20,21 @@ export interface CartItemType {
     height: number,
     depth: number,
     price: number,
-    doors: number,
-    hinge?: 'Left' | 'Right',
+    // doors: number,
+    hinge: 'Left' | 'Right' | 'Double Doors',
     options: string[],
-    profile?: string,
-    glassType?: string,
-    glassColor?: string,
-    glassShelf?: string,
+    doorProfile?: string,
+    doorGlassType?: string,
+    doorGlassColor?: string,
+    shelfProfile?: string,
+    shelfGlassType?: string,
+    shelfGlassColor?: string,
+    middleSection?: number,
+    led?: {
+      border: string[],
+      alignment: string,
+      indent?: number
+    },
     note: string
 }
 

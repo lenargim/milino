@@ -11,7 +11,9 @@ import prices from './../api/prices.json';
 import settings from './../api/settings.json'
 import {getAttributes} from "./helpers";
 import {drawerType} from "../Components/Product/ProductMain";
-import {extraPricesType} from "../Components/Product/BaseCabinetForm";
+import {extraPricesType} from "../Components/Product/CabinetForm";
+import {array} from "yup";
+import {borderType} from "../Components/Product/LED";
 
 type coefType = {
     width: number,
@@ -42,7 +44,7 @@ export const getInitialPrice = (priceData: pricePart[], minWidth: number, minHei
     }
 }
 
-export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData: number[], sizeLimit: sizeLimitsType, drawersQty: number, category: string): calculatePriceType {
+export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData: number[], sizeLimit: sizeLimitsType, drawersQty: number, category: string, ledPrice: number): calculatePriceType {
     const maxWidth = widthRangeData[widthRangeData.length - 2];
     const maxHeight = heightRangeData[heightRangeData.length - 2];
     const allCoefs = extraPrices.boxMaterialCoef * extraPrices.premiumCoef;
@@ -79,6 +81,7 @@ export function calculatePrice(width: number, height: number, depth: number, opt
         }
     }
     const tablePrice = getTablePrice(width, height, priceData, category);
+    extraPrices.tablePrice = tablePrice;
     const startPrice: number = tablePrice ? getStartPrice(width, height, depth, allCoefs, sizeLimit, tablePrice) : 0;
 
 
@@ -130,7 +133,7 @@ export function calculatePrice(width: number, height: number, depth: number, opt
     extraPrices.depth = +(totalDepthPrice - initialPriceWithCoef).toFixed(2);
 
 
-    const totalPrice = startPrice ? +(startPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice + extraPrices.drawerPrice).toFixed(2) : 0
+    const totalPrice = startPrice ? +(startPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice + extraPrices.drawerPrice + extraPrices.ledPrice).toFixed(2) : 0
 
     return {
         totalPrice: totalPrice,
@@ -198,7 +201,7 @@ function addGlassShelfPrice(): number {
 }
 
 function addGlassDoorPrice(square: number = 0, profileVal: string): number {
-    const glassDoor = settings["Glass Door"];
+    const glassDoor = settings["Glass"];
     const {Profile, priceType} = glassDoor
     const profileData: profileItem | undefined = Profile.find(el => el.value === profileVal)
     const glassDoorType = profileData && profileData?.glassDoorType;
@@ -323,7 +326,7 @@ export function getWidthRange(priceData: pricePart[] | undefined): number[] {
 
 }
 
-export function getHeightRange(priceData: pricePart[] | undefined, category: string, customHeight: number|undefined): number[] {
+export function getHeightRange(priceData: pricePart[] | undefined, category: string, customHeight: number | undefined): number[] {
     if (customHeight) return [customHeight, 0];
     const isHeightData = priceData && priceData.find((el) => el.height)
     if (isHeightData) {
@@ -341,9 +344,9 @@ export function getHeightRange(priceData: pricePart[] | undefined, category: str
     }
 }
 
-export function getDepthRange(customDepth: number|undefined, category:string):number[] {
+export function getDepthRange(customDepth: number | undefined, category: string): number[] {
     if (customDepth) return [customDepth, 0];
-    const settingsRange:rangeType = settings.depthRange;
+    const settingsRange: rangeType = settings.depthRange;
     if (settingsRange[category]) return [settingsRange[category], 0];
     return [0]
 }
@@ -361,8 +364,32 @@ export function getBlindArr(category: string, isAngle: boolean): number[] {
 export function getDoorWidth(realWidth: number, realBlindWidth: number, isBlind: boolean, isAngle: boolean): number {
     if (isBlind && isAngle) {
         const leg = realWidth - realBlindWidth;
-        return +(Math.sqrt(Math.pow(leg,2)*2)).toFixed(2)
+        return +(Math.sqrt(Math.pow(leg, 2) * 2)).toFixed(2)
     }
     if (isBlind) return realWidth - realBlindWidth;
     return realWidth
+}
+
+
+export function getHingeArr(doorArr: number[], category: string): string[] {
+    const cases = settings["Hinge opening"];
+    const [left, right, double, singleDoor] = cases;
+    let arr = []
+    switch (category) {
+        case 'Tall Cabinets':
+            return [left, right, singleDoor];
+        default:
+            if (doorArr.includes(1)) arr.push(left, right);
+            if ([1, 2].every(i => doorArr.includes(i))) arr.push(double);
+            return arr
+    }
+}
+
+export function getLedPrice(realWidth: number, realHeight: number, ledBorders: borderType[]): number {
+    if (!ledBorders.length) return 0;
+    let sum:number = 0;
+    if (ledBorders.includes('Sides')) sum = realHeight*2*2.55
+    if (ledBorders.includes('Top')) sum += (realWidth - 1.5)*2.55
+    if (ledBorders.includes('Bottom')) sum += (realWidth - 1.5)*2.55
+    return Math.round(sum)
 }

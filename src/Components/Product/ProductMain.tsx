@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {OrderFormType} from "../../helpers/types";
 import s from './product.module.sass'
-import BaseCabinetForm from "./BaseCabinetForm";
+import CabinetForm from "./CabinetForm";
 import {getImg, getProductImage, useAppSelector} from "../../helpers/helpers";
 import {pricesTypings} from "../../helpers/productTypes";
 import {AtrrsList} from "../Cabinets/List";
@@ -103,7 +103,7 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
                     </div>
                 </div>
                 <div className={s.right}>
-                    {room === 'Kitchen' && <BaseCabinetForm
+                    {room === 'Kitchen' && <CabinetForm
                       product={product}
                       basePriceType={basePriceType}
                       premiumCoef={premiumCoef}

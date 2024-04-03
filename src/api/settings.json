@@ -6,9 +6,11 @@
   },
   "Hinge opening": [
     "Left",
-    "Right"
+    "Right",
+    "Double Door",
+    "Single Door"
   ],
-  "Glass Door": {
+  "Glass": {
     "Profile": [
       {
         "value": "Wood Shaker",

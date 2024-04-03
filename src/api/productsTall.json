@@ -390,6 +390,7 @@
     "name": "TDO Series",
     "room": "Kitchen",
     "category": "Tall Cabinets",
+    "hasMiddleSection": true,
     "images": [
       {
         "type": 1,
@@ -436,6 +437,7 @@
     "legsHeight": 4.5,
     "isBlind": false,
     "isAngle":false,
+    "hasMiddleSection": true,
     "name": "TSO Series",
     "room": "Kitchen",
     "category": "Tall Cabinets",

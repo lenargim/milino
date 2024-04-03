@@ -4,6 +4,7 @@ import {useField, ErrorMessage, Field} from "formik";
 import CheckSvg from "../assets/img/CheckSvg";
 import noImg from "../assets/img/noPhoto.png"
 import Input from 'react-phone-number-input/input'
+import {getFraction} from "../helpers/helpers";
 
 function handleFocus(input: HTMLInputElement): void {
     input.classList.add(`${styles.focused}`);
@@ -37,7 +38,8 @@ interface ProductRadioInterface extends InputInterface {
 
 interface ProductDimensionRadioCustomInterface extends InputInterface {
     value: null | number,
-    nullable?: boolean
+    nullable?: boolean,
+    label?: string
 }
 
 interface ProductOptionsRadioInterface extends InputInterface {
@@ -140,13 +142,20 @@ export const RadioInputGrain: FC<RadioInterface> = ({name, value, className, img
     )
 }
 
-export const ProductRadioInputCustom: FC<ProductDimensionRadioCustomInterface> = ({name, value, className, nullable= false}) => {
+export const  ProductRadioInputCustom: FC<ProductDimensionRadioCustomInterface> = ({
+                                                                                      name,
+                                                                                      value,
+                                                                                      className,
+                                                                                      nullable = false
+                                                                                  }) => {
     const [, , helpers] = useField(name)
-const label = nullable ? value : value ? value : `Custom ${name}`;
+    const label = nullable ? value : value ? getFraction(value) : `Custom ${name}`;
 
     function convert(input: HTMLInputElement): void {
         helpers.setValue(+input.value)
     }
+
+
 
     return (
         <div className={[className, styles.productRadio].join(' ')}>
@@ -173,7 +182,28 @@ export const ProductRadioInput: FC<ProductRadioInterface> = ({name, value, class
     )
 }
 
-export const ProductInputCustom: FC<ProductDimensionRadioCustomInterface> = ({name, value, className}) => {
+type checkboxType = {
+    name: string,
+    value: string,
+    className?: string,
+    inputIndex: number
+}
+export const ProductCheckboxInput: FC<checkboxType> = ({name, value, className, inputIndex}) => {
+
+    const [, meta, ] = useField(name);
+    return (
+        <div className={[className, styles.productRadio].join(' ')}>
+            <Field
+                type="checkbox" name={name} value={value}
+                id={`${name}_${value}`}/>
+            <label htmlFor={`${name}_${value}`}
+                   className={styles.radioLabel}><span>{value}</span></label>
+            {inputIndex === 0 && meta.error  && <div className={styles.error}>{meta.error}</div>}
+        </div>
+    )
+}
+
+export const ProductInputCustom: FC<ProductDimensionRadioCustomInterface> = ({name, value, className, label}) => {
     return (
         <div className={[className, styles.productText].join(' ')}>
             <label htmlFor={name}>
@@ -181,7 +211,7 @@ export const ProductInputCustom: FC<ProductDimensionRadioCustomInterface> = ({na
                     type="number"
                     name={name}
                     id={name}
-                    placeholder={name}
+                    placeholder={label || name}
                 />
             </label>
             <ErrorMessage name={name} component="div" className={styles.error}/>
@@ -201,3 +231,4 @@ export const ProductOptionsInput: FC<ProductOptionsRadioInterface> = ({name, cla
         </div>
     )
 }
+

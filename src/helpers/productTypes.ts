@@ -14,7 +14,9 @@ export type productDataType = {
     isBlind: boolean,
     isAngle: boolean,
     customHeight?: number,
-    customDepth?: number
+    customDepth?: number,
+    hasSolidWidth?: true,
+    hasMiddleSection?: true
 }
 
 export interface productType extends productDataType{
