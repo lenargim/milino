@@ -1,33 +1,15 @@
 import React, {FC} from 'react';
 import s from './cabinets.module.sass'
-import baseCabinetProducts from './../../api/products.json'
-import wallCabinetProducts from './../../api/productsWall.json'
-import tallCabinetProducts from './../../api/productsTall.json'
 import {NavLink} from "react-router-dom";
-import {getAttributes, getImg, getProductImage} from "../../helpers/helpers";
-import {attrItem, productDataType, productTypings} from "../../helpers/productTypes";
+import {getAttributes, getImg, getProductImage, getProductsByCategory} from "../../helpers/helpers";
+import {attrItem, productCategory, productDataType, productTypings} from "../../helpers/productTypes";
 
-const List: FC<{ category: string }> = ({category}) => {
-    let products;
-    switch (category) {
-        case 'Base Cabinets':
-            products = baseCabinetProducts as productDataType[];
-            break;
-        case 'Wall Cabinets':
-            products= wallCabinetProducts as productDataType[];
-            break;
-        case 'Tall Cabinets':
-            products= tallCabinetProducts as productDataType[];
-            break;
-        default:
-            products = [] as productDataType[]
-    }
-    const categorizedProduct: productDataType[] = products.filter(product => product.category === category) as productDataType[];
-
+const List: FC<{ category: productCategory }> = ({category}) => {
+    let products = getProductsByCategory(category);
     return (
-        categorizedProduct.length ?
+        products.length ?
             <div className={s.list}>
-                {categorizedProduct.map((el, index) => <Item key={index} product={el}/>)}
+                {products.map((el, index) => <Item key={index} product={el}/>)}
             </div> : <div>Sorry, there are no products yet</div>
     );
 };

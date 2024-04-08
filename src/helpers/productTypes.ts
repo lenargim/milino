@@ -2,11 +2,12 @@ export type productTypings = 1 | 2 | 3 | 4
 export type pricesTypings = 1 | 2 | 3
 
 
+export type productCategory = 'Base Cabinets' | 'Wall Cabinets' | 'Tall Cabinets' | 'Regular Vanities' | 'Floating Vanities' | 'Handleless Vanities' | 'Handleless Floating Vanities'
 export type productDataType = {
     id: number,
     name: string,
     room: string,
-    category: string,
+    category: productCategory,
     images: itemImg[],
     attributes: attrItem[],
     options: string[],
@@ -19,7 +20,7 @@ export type productDataType = {
     hasMiddleSection?: true
 }
 
-export interface productType extends productDataType{
+export interface productType extends productDataType {
     type: productTypings,
     height: number,
     depth: number,
@@ -89,6 +90,70 @@ export type settingSizesType = {
 }
 
 export type sizeLimitsType = {
+    width: number[],
+    height: number[],
+    depth: number[]
+}
+
+export type getBoxMaterialCoefsType = {
+    boxMaterialCoef: number,
+    boxMaterialFinishCoef: number
+}
+
+export interface drawerInterface {
+    drawerBrand: string,
+    drawerType: string,
+    drawerColor: string
+}
+
+
+export type CabinetType = {
+    product: productType,
+    basePriceType: pricesTypings,
+    premiumCoef: number,
+    boxMaterialCoefs: getBoxMaterialCoefsType,
+    drawer: drawerInterface,
+    doorPriceMultiplier: number
+    doorType: string
+    doorFinish: string
+}
+
+export interface CabinetFormType extends CabinetType {
+    drawersQty: number,
+    rolloutsQty: number,
+    doorValues?: widthItemType[],
+    blindArr?: number[],
+    filteredOptions: string[],
+    isAcrylic: boolean,
+    priceData: pricePart[],
+    productRange:productRangeType,
+    sizeLimit:sizeLimitsType
+}
+
+export type DepthRangeType = {
+    [key: string]: number,
+}
+
+export interface extraPricesType {
+    width: number,
+    height: number,
+    depth: number,
+    ptoDoors: number,
+    ptoDrawers: number,
+    ptoTrashBins: number,
+    glassShelf: number,
+    glassDoor: number,
+    pvcPrice: number,
+    doorPrice: number,
+    drawerPrice: number,
+    ledPrice: number,
+    doorSquare: number,
+    premiumCoef: number,
+    boxMaterialCoef: number,
+    tablePrice?: number
+}
+
+export type productRangeType = {
     width: number[],
     height: number[],
     depth: number[]

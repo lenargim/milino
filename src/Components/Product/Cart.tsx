@@ -94,10 +94,11 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
                     <span>Depth:</span>
                     <span>{getFraction(depth)}</span>
                 </div>
+                {hinge ?
                 <div className={s.itemOption}>
                     <span>Hinge opening:</span>
                     <span>{hinge}</span>
-                </div>
+                </div> : null}
                 {led ?
                     <div className={s.itemOption}>
                         <span>LED:</span>

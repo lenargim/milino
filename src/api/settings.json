@@ -2,7 +2,11 @@
   "depthRange": {
     "Base Cabinets": 24,
     "Wall Cabinets": 13,
-    "Tall Cabinets": 24
+    "Tall Cabinets": 24,
+    "Regular Vanities": 21,
+    "Floating Vanities": 21,
+    "Handleless Vanities": 21,
+    "Handleless Floating Vanities": 21
   },
   "Hinge opening": [
     "Left",

@@ -1,11 +1,9 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import Header from "../../common/Header/Header";
-import Slider from "./Slider";
 import s from './cabinets.module.sass'
-import List from "./List";
 import {OrderFormType} from "../../helpers/types";
-import categories from "../../api/categories.json"
 import {Navigate} from "react-router-dom";
+import Room from "./Room";
 
 
 export type CabinetsMainType = {
@@ -13,17 +11,14 @@ export type CabinetsMainType = {
 }
 
 const CabinetsMain: FC<CabinetsMainType> = ({values}) => {
-    const [category, setCategory] = useState<string>('')
     const {room} = values;
-
-    if (!room) return <Navigate to={{ pathname: '/' }} />;
+    if (!room) return <Navigate to={{pathname: '/'}}/>;
 
     return (
         <div className={s.container}>
             <Header/>
-            <h1>Cabinets</h1>
-            <Slider categoriesData={categories} room={room} category={category} setCategory={setCategory}/>
-            {category && <List category={category} />}
+            <h1>{room}</h1>
+            <Room room={room}  />
         </div>
     );
 

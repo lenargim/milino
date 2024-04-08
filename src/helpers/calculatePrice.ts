@@ -1,7 +1,7 @@
 import {
-    attrItem, heightItemType,
+    attrItem, drawerInterface, extraPricesType, getBoxMaterialCoefsType, heightItemType,
     pricePart,
-    pricesTypings,
+    pricesTypings, productCategory, productRangeType,
     productTypings,
     profileItem,
     sizeLimitsType,
@@ -10,12 +10,9 @@ import {
 import prices from './../api/prices.json';
 import settings from './../api/settings.json'
 import {getAttributes} from "./helpers";
-import {drawerType} from "../Components/Product/ProductMain";
-import {extraPricesType} from "../Components/Product/CabinetForm";
-import {array} from "yup";
 import {borderType} from "../Components/Product/LED";
 
-type coefType = {
+export type coefType = {
     width: number,
     height: number,
     depth: number
@@ -32,21 +29,25 @@ export const getPriceData = (id: number, basePriceType: pricesTypings): pricePar
     return productPrices && productPrices.find(el => el.type === basePriceType)?.data;
 }
 
-export const getInitialPrice = (priceData: pricePart[], minWidth: number, minHeight: number, category: string): number | undefined => {
+export const getInitialPrice = (priceData: pricePart[], productRange:productRangeType, category: productCategory): number | undefined => {
     switch (category) {
         case 'Base Cabinets':
-            return priceData.find(el => el.width === minWidth)?.price;
+        case "Regular Vanities":
+        case "Floating Vanities":
+        case "Handleless Vanities":
+        case "Handleless Floating Vanities":
+            return priceData.find(el => el.width === productRange.width[0])?.price;
         case 'Wall Cabinets':
         case 'Tall Cabinets':
-            return priceData.find(el => el.width === minWidth && el.height === minHeight)?.price;
+            return priceData.find(el => el.width === productRange.width[0] && el.height === productRange.height[0])?.price;
         default:
             return undefined;
     }
 }
 
-export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, widthRangeData: number[], heightRangeData: number[], depthRangeData: number[], sizeLimit: sizeLimitsType, drawersQty: number, category: string, ledPrice: number): calculatePriceType {
-    const maxWidth = widthRangeData[widthRangeData.length - 2];
-    const maxHeight = heightRangeData[heightRangeData.length - 2];
+export function calculatePrice(width: number, height: number, depth: number, options: string[], profileVal: string, attributes: attrItem[], prodType: productTypings, initialPrice: number, priceData: pricePart[], extraPrices: extraPricesType, productRange:productRangeType, sizeLimit: sizeLimitsType, drawersQty: number, category: productCategory, ledPrice: number): calculatePriceType {
+    const maxWidth = productRange.width[productRange.width.length - 2]
+    const maxHeight = productRange.height[productRange.height.length - 2];
     const allCoefs = extraPrices.boxMaterialCoef * extraPrices.premiumCoef;
     const coef: coefType = {
         width: 0,
@@ -54,10 +55,14 @@ export function calculatePrice(width: number, height: number, depth: number, opt
         depth: 0
     }
 
-    const getTablePrice = (width: number, height: number, priceData: pricePart[], category: string): number | undefined => {
+    const getTablePrice = (width: number, height: number, priceData: pricePart[], category: productCategory): number | undefined => {
         const maxData = priceData[priceData.length - 1];
         switch (category) {
             case 'Base Cabinets':
+            case "Regular Vanities":
+            case "Floating Vanities":
+            case "Handleless Vanities":
+            case "Handleless Floating Vanities":
                 const widthTablePrice: number | undefined = priceData.find(el => el.width >= width)?.price;
                 if (widthTablePrice) return widthTablePrice;
                 if (width > maxData.width) return maxData.price;
@@ -87,7 +92,7 @@ export function calculatePrice(width: number, height: number, depth: number, opt
 
     if (maxWidth < width) coef.width = addWidthPriceCoef(width, maxWidth);
     if (maxHeight < height) coef.height = addHeightPriceCoef(height, maxHeight);
-    if (depthRangeData[0] !== depth) coef.depth = addDepthPriceCoef(depth, depthRangeData)
+    if (productRange.depth[0] !== depth) coef.depth = addDepthPriceCoef(depth, productRange.depth)
 
     if (options.includes('PTO for doors')) extraPrices.ptoDoors = addPTODoorsPrice(attributes, prodType)
     if (options.includes('PTO for drawers')) extraPrices.ptoDrawers = addPTODrawerPrice(prodType, drawersQty)
@@ -220,9 +225,15 @@ export function getDoorSquare(width: number, height: number): number {
     return 0;
 }
 
-export function getType(width: number, height: number, divider: number | undefined, doorValues: widthItemType[] = [], shelfValues: heightItemType[] | undefined, doors: number, category: string): productTypings {
+export function getType(width: number, height: number, divider: number | undefined, doorValues: widthItemType[] = [], doors: number, category: productCategory, attributes:attrItem[]): productTypings {
+    const isShelfTypings = category === 'Wall Cabinets' || category === 'Tall Cabinets'
+    const shelfValues:heightItemType[]|undefined = isShelfTypings ? attributes.find(el => el.name === 'Adjustable Shelf')?.values : undefined;
     switch (category) {
         case 'Base Cabinets':
+        case "Regular Vanities":
+        case "Floating Vanities":
+        case "Handleless Vanities":
+        case "Handleless Floating Vanities":
             if (divider) return width <= divider ? 1 : 2;
             let res: productTypings = 1;
             const currentTypeArr = doorValues.filter(val => {
@@ -278,11 +289,11 @@ export function getDoorPrice(doorSquare: number, doorPriceMultiplier: number): n
     return +(doorSquare / 144 * doorPriceMultiplier).toFixed(2);
 }
 
-export function getDrawerPrice(qty: number, drawer: drawerType, width: number): number {
+export function getDrawerPrice(qty: number, drawer: drawerInterface, width: number): number {
     const {drawerBrand, drawerType, drawerColor} = drawer
     if (!qty) return 0
     if (drawerBrand === 'Milino') {
-        if (drawerType === 'Undermount') return qty * 20;
+        if (drawerType === 'Undermount') return qty * 15;
         if (drawerType === 'Legrabox') {
             if (drawerColor === 'LED') {
                 return qty * 150;
@@ -296,7 +307,7 @@ export function getDrawerPrice(qty: number, drawer: drawerType, width: number): 
     }
 
     if (drawerBrand === 'BLUM') {
-        if (drawerType === 'Undermount') return qty * 40 + 20;
+        if (drawerType === 'Undermount') return qty * 40 + 15;
         if (drawerType === 'Legrabox') {
             if (drawerColor === 'Orion Gray') return qty * 150;
             if (drawerColor === 'Stainless Steel') return qty * 200;
@@ -326,7 +337,7 @@ export function getWidthRange(priceData: pricePart[] | undefined): number[] {
 
 }
 
-export function getHeightRange(priceData: pricePart[] | undefined, category: string, customHeight: number | undefined): number[] {
+export function getHeightRange(priceData: pricePart[] | undefined, category: productCategory, customHeight: number | undefined): number[] {
     if (customHeight) return [customHeight, 0];
     const isHeightData = priceData && priceData.find((el) => el.height)
     if (isHeightData) {
@@ -338,13 +349,18 @@ export function getHeightRange(priceData: pricePart[] | undefined, category: str
     }
     switch (category) {
         case 'Base Cabinets':
+        case "Regular Vanities":
+        case "Handleless Vanities":
             return [34.5, 0];
+        case "Floating Vanities":
+        case "Handleless Floating Vanities":
+            return [25.5, 0]
         default:
             return [0]
     }
 }
 
-export function getDepthRange(customDepth: number | undefined, category: string): number[] {
+export function getDepthRange(category: productCategory, customDepth: number | undefined): number[] {
     if (customDepth) return [customDepth, 0];
     const settingsRange: rangeType = settings.depthRange;
     if (settingsRange[category]) return [settingsRange[category], 0];
@@ -387,9 +403,55 @@ export function getHingeArr(doorArr: number[], category: string): string[] {
 
 export function getLedPrice(realWidth: number, realHeight: number, ledBorders: borderType[]): number {
     if (!ledBorders.length) return 0;
-    let sum:number = 0;
-    if (ledBorders.includes('Sides')) sum = realHeight*2*2.55
-    if (ledBorders.includes('Top')) sum += (realWidth - 1.5)*2.55
-    if (ledBorders.includes('Bottom')) sum += (realWidth - 1.5)*2.55
+    let sum: number = 0;
+    if (ledBorders.includes('Sides')) sum = realHeight * 2 * 2.55
+    if (ledBorders.includes('Top')) sum += (realWidth - 1.5) * 2.55
+    if (ledBorders.includes('Bottom')) sum += (realWidth - 1.5) * 2.55
     return Math.round(sum)
+}
+
+
+export const getBasePriceType = (doorType: string, doorFinish: string): pricesTypings => {
+    if (doorType === 'Painted' || doorType === 'Slatted' || doorType === 'Micro Shaker') return 3
+    if (doorFinish.includes('Milino') || doorFinish.includes('No Doors')) return 1;
+    if (doorFinish.includes('Syncron') || doorFinish === 'Cleaf') return 2
+    return 3
+}
+
+export const getPremiumCoef = (doorType: string, doorFinish: string): number => {
+    if (doorType === 'Painted' || doorType === 'Slatted' || doorType === 'Micro Shaker') return 1.05;
+    if (doorFinish === 'Stone') return 1.69
+    if (doorFinish === 'Zenit') return 1.03
+    if (doorFinish === 'Ultrapan Acrylic') return 1.1
+    return 1
+}
+
+export const getGrainCoef = (doorGrain: string): number => {
+    return doorGrain === 'Gorizontal' ? 1.1 : 1
+}
+
+export const getBoxMaterialCoefs = (boxMaterial: string, doorFinish: string): getBoxMaterialCoefsType => {
+    return {
+        boxMaterialCoef: boxMaterial.includes('Plywood') ? 1.2 : 1,
+        boxMaterialFinishCoef: doorFinish === 'Cleaf' || doorFinish === 'Syncron' ? 1.845 : 2.706
+    }
+}
+
+export const getDoorPriceMultiplier = (doorType: string, doorFinish: string): number => {
+    if (doorType === 'Slab') return 0
+    if (doorType === 'Painted' || doorType === 'Slatted') return 37.8
+    if (doorType === 'Micro Shaker') return 36
+    if (doorType === 'No Doors') return -8
+    if (doorFinish === 'Syncron') return 30
+    if (doorFinish === 'Luxe') return 36
+    if (doorFinish === 'Zenit') return (36 * 1.03)
+    return 0
+}
+
+export const getProductRange = (priceData: pricePart[] | undefined, category: productCategory, customHeight: number | undefined, customDepth: number | undefined): productRangeType => {
+    return {
+        width: getWidthRange(priceData),
+        height: getHeightRange(priceData, category, customHeight),
+        depth: getDepthRange(category, customDepth)
+    }
 }

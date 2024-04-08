@@ -1,3 +1,5 @@
+import {productCategory} from "./productTypes";
+
 export type category = {
     name: string,
     img: string
@@ -11,15 +13,10 @@ export type roomType = {
 }
 
 
-export type setCategoryType = (value: string) => void;
+export type setCategoryType = (value: productCategory) => void;
 
 export type SliderType = {
-    category: string,
+    category: productCategory | '',
     setCategory: setCategoryType,
-    room: room,
-    categoriesData: {
-        "Kitchen": roomType,
-        "Vanity": roomType,
-        "Closet": roomType,
-    }
+    room: room
 }

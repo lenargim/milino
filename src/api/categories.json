@@ -20,15 +20,19 @@
     "defaultImg": "default-cabinets.png",
     "categories": [
       {
-        "name": "Base Cabinets",
+        "name": "Regular Vanities",
         "img": "base-cabinets.png"
       },
       {
-        "name": "Wall Cabinets",
+        "name": "Floating Vanities",
         "img": "wall-cabinets.png"
       },
       {
-        "name": "Tall Cabinets",
+        "name": "Handleless Vanities",
+        "img": "tall-cabinets.png"
+      },
+      {
+        "name": "Handleless Floating Vanities",
         "img": "tall-cabinets.png"
       }
     ]
@@ -36,18 +40,7 @@
   "Closet": {
     "defaultImg": "default-cabinets.png",
     "categories": [
-      {
-        "name": "Base Cabinets",
-        "img": "base-cabinets.png"
-      },
-      {
-        "name": "Wall Cabinets",
-        "img": "wall-cabinets.png"
-      },
-      {
-        "name": "Tall Cabinets",
-        "img": "tall-cabinets.png"
-      }
+
     ]
   }
 }
