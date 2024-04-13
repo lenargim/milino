@@ -17,6 +17,7 @@ const OrderForm = () => {
         dispatch(setMaterials(null));
         dispatch(setProduct(null));
         localStorage.removeItem('materials');
+        localStorage.removeItem('category');
     }, [])
 
     const initialValues: OrderFormType = {

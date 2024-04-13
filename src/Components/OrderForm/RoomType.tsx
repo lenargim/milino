@@ -7,7 +7,7 @@ import {room} from "../../helpers/materialsTypes";
 
 const RoomType: FC<{rooms: room[]}>  = ({rooms}) => {
     return (
-        <div className={s.type} role="group">
+        <div className={s.room} role="group">
             {rooms.map((room, key) => <RadioInput img={getImg('rooms', room.img)} key={key} value={room.value} name="room" className={s.typeItem} />)}
         </div>
     );

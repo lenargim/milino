@@ -82,6 +82,7 @@ const EmailWasSended: FC<{ status: string }> = ({status}) => {
     setTimeout(() => {
         console.log('timeout');
         localStorage.removeItem('materials')
+        localStorage.removeItem('category')
         dispatch(setMaterials(null));
         dispatch(removeCart())
     }, 2000)

@@ -91,10 +91,15 @@
   white-space: nowrap
 
 
+.room
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 20px
+  padding-bottom: 50px
 .type
   display: grid
-  grid-template-columns: repeat(5, 1fr)
-  gap: 20px
+  grid-template-columns: repeat(4, 1fr)
+  gap: 10px
   padding-bottom: 50px
 
 .typeItem
@@ -103,6 +108,8 @@
     &:checked + label
       box-shadow: 20px 20px 120px 0 rgba(255, 255, 255, 0.9)
       transform: scale(1.1)
+      border-radius: 6px
+      background: rgba(255, 255, 255, 0.9)
       z-index: 2
       opacity: 1
       span
@@ -110,7 +117,6 @@
   img
     aspect-ratio: 16/9
     transition: all .2s ease
-    border-radius: 5px
   label
     cursor: pointer
     position: relative
@@ -141,6 +147,15 @@
       text-transform: uppercase
       transition: all .2s ease
       background-color: rgba(255, 255, 255, .6)
+.color label
+  transition: transform .25s ease
+  &:hover
+    z-index: 2
+    transform: scale(1.15)
+    box-shadow: 2px 2px 12px 0 rgba(255, 255, 255, 0.9)
+  img
+    aspect-ratio: 4/3
+    transition: all .2s ease
 
 @keyframes wave
   0%

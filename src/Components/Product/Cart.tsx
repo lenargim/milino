@@ -1,8 +1,10 @@
 import React, {FC} from 'react';
 import {getCartTotal, getFraction, getImg, useAppDispatch, useAppSelector} from "../../helpers/helpers";
 import s from './product.module.sass'
-import {CartItemType, deleteItemFromCart} from "../../store/reducers/generalSlice";
+import {CartItemType, deleteItemFromCart, updateProductAmount} from "../../store/reducers/generalSlice";
 import {NavLink} from "react-router-dom";
+import {Simulate} from "react-dom/test-utils";
+import change = Simulate.change;
 
 const Cart = () => {
     const cart = useAppSelector(state => state.general.cart)
@@ -36,6 +38,8 @@ const Cart = () => {
 
 export default Cart;
 
+type changeAmountType = 'plus' | 'minus'
+
 export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item, isCheckout= false}) => {
     const {
         uuid,
@@ -60,6 +64,14 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
         led
     } = item;
     const dispatch = useAppDispatch();
+
+    function changeAmount(type:changeAmountType) {
+        if (type === 'minus' && amount>1) {
+            dispatch(updateProductAmount({uuid: uuid, amount:amount -1}))
+        } else if (type === 'plus') {
+            dispatch(updateProductAmount({uuid: uuid, amount:amount +1}))
+        }
+    }
 
 
     return (
@@ -141,6 +153,10 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
             <div className={s.itemPriceBlock}>
                 <div className={s.itemSubPrice}>
                     {`${price}$ x ${amount}`}
+                </div>
+                <div className={s.buttons}>
+                    <button value="minus" onClick={() =>changeAmount('minus')} type={"button"}>-</button>
+                    <button value="plus" onClick={() =>changeAmount('plus')} type={"button"}>+</button>
                 </div>
                 <div className={s.itemTotalPrice}>{price * amount}$</div>
             </div>

@@ -48,6 +48,10 @@ type updateProductType = {
     type: productTypings,
     price: number
 }
+type updateProductAmountType = {
+    uuid:string,
+    amount: number,
+}
 
 export const generalSlice = createSlice({
     name: 'general',
@@ -74,9 +78,16 @@ export const generalSlice = createSlice({
                 state.product.type = action.payload.type;
             }
         },
+        updateProductAmount:(state, action:PayloadAction<updateProductAmountType>) => {
+            console.log('s')
+            const product = state.cart.find(el => el.uuid === action.payload.uuid);
+            if (product) {
+                product.amount = action.payload.amount
+            }
+        }
     }
 })
 
-export const {setMaterials, setProduct, addToCart, deleteItemFromCart, updateProduct,removeCart} = generalSlice.actions
+export const {setMaterials, setProduct, addToCart, deleteItemFromCart, updateProduct,removeCart,updateProductAmount} = generalSlice.actions
 
 export default generalSlice.reducer

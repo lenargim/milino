@@ -9,7 +9,8 @@ type roomType = {
 }
 
 const Room: FC<roomType> = ({room}) => {
-    const [category, setCategory] = useState<productCategory | ''>('')
+    const storageCat = localStorage.getItem('category') ? localStorage.getItem('category') as productCategory : '';
+    const [category, setCategory] = useState<productCategory | ''>(storageCat)
     return (
         <>
             <Slider room={room} category={category} setCategory={setCategory}/>

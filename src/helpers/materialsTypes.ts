@@ -20,20 +20,24 @@ export type drawerType = {
 export type doorType = {
     name: string,
     finish: finishType[]
+    img?: string,
 }
 
 export type finishType = {
     name: string,
-    colors?: colorType[]
+    colors?: colorType[],
+    img?: string
 }
 
 export type colorType = {
     name: string,
-    isGrain: boolean
+    isGrain: boolean,
+    img?: string
 }
 
 export type grainType = {
-    name: string
+    name: string,
+    img?: string
 }
 
 export type boxMaterialType = {

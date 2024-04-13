@@ -184,8 +184,6 @@ export const addToCartData = (values:FormikValues, type:number, id:number, price
         'LED indent': ledIndent,
     } = values;
 
-    console.log(hinge)
-
     const realWidth = width || customWidth;
     const img = images[type - 1].value || ''
     const cartData: CartItemType = {
