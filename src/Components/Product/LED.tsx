@@ -6,7 +6,7 @@ import {alignmentOptions} from "./ProductSchema";
 
 export type borderType = 'Sides' | 'Top' | 'Bottom';
 export type ledType = {
-    borders: borderType[] | [],
+    borders: string[] | [],
     alignment: 'Center' | 'From Face' | 'From Back',
     indent?: number,
     error?: string

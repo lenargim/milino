@@ -17,7 +17,7 @@ const Cabinets: FC = () => {
     return (
         <div className={s.cabinets}>
             <CabinetsMain values={materials}/>
-            <Sidebar values={materials}/>
+            <Sidebar values={materials} />
         </div>
     );
 };

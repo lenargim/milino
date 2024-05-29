@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 export const OrderFormSchema = Yup.object({
     'room': Yup.string()
         .oneOf(['Kitchen' , 'Vanity' , 'Closet', ''])
+        // .oneOf(['Kitchen' , 'Vanity' , 'Closet'])
         .required(),
     'Door Type': Yup.string()
         .required('Please write down door type'),

@@ -1,17 +1,37 @@
 import React, {FC} from 'react';
 import s from './cabinets.module.sass'
 import {NavLink} from "react-router-dom";
-import {getAttributes, getImg, getProductImage, getProductsByCategory} from "../../helpers/helpers";
-import {attrItem, productCategory, productDataType, productTypings} from "../../helpers/productTypes";
+import {
+    getAttributes,
+    getcustomPartsByRoom,
+    getImg,
+    getProductImage,
+    getProductsByCategory
+} from "../../helpers/helpers";
+import {attrItem, customPartDataType, productCategory, productDataType, productTypings} from "../../helpers/productTypes";
+import {room} from "../../helpers/categoriesTypes";
 
-const List: FC<{ category: productCategory }> = ({category}) => {
-    let products = getProductsByCategory(category);
-    return (
-        products.length ?
-            <div className={s.list}>
-                {products.map((el, index) => <Item key={index} product={el}/>)}
-            </div> : <div>Sorry, there are no products yet</div>
-    );
+const List: FC<{ category: productCategory, room: room }> = ({category, room}) => {
+    switch (category) {
+        case "Custom Parts":
+            const customParts = getcustomPartsByRoom(room);
+            return (
+                customParts.length ?
+                    <div className={s.list}>
+                        {customParts.map((el, index) => <Part key={index} product={el}/>)}
+                    </div> : <div>Sorry, there are no custom parts yet</div>
+            );
+
+        default:
+            const products = getProductsByCategory(category);
+            return (
+                products.length ?
+                    <div className={s.list}>
+                        {products.map((el, index) => <Item key={index} product={el}/>)}
+                    </div> : <div>Sorry, there are no products yet</div>
+            );
+
+    }
 };
 
 export default List;
@@ -28,6 +48,19 @@ const Item: FC<{ product: productDataType }> = ({product}) => {
             <div className={s.itemData}>
                 <div className={s.name}>{name}</div>
                 <AtrrsList attributes={attributes} type={initialType}/>
+            </div>
+        </NavLink>
+    )
+}
+
+const Part: FC<{ product: customPartDataType }> = ({product}) => {
+    const {name,  image, id} = product;
+    return (
+        <NavLink to={`/custom_part/${id}`} className={s.item}
+        >
+            <div className={s.itemImg}><img src={getImg('panels', image)} alt={name}/></div>
+            <div className={s.itemData}>
+                <div className={s.name}>{name}</div>
             </div>
         </NavLink>
     )

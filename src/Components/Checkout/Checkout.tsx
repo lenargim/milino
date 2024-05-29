@@ -6,11 +6,12 @@ import CartEmpty from "./CartEmpty";
 
 const Checkout = () => {
     const cart = useAppSelector(state => state.general.cart);
+    const cartTotal = useAppSelector(state => state.general.cartTotal);
     const isCart = cart.length;
     return (
         <div className={s.checkout}>
             {isCart
-                ? <CheckoutFilled cart={cart}/>
+                ? <CheckoutFilled cart={cart} cartTotal={cartTotal}/>
                 : <CartEmpty />
             }
         </div>

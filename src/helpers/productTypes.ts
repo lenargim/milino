@@ -2,7 +2,7 @@ export type productTypings = 1 | 2 | 3 | 4
 export type pricesTypings = 1 | 2 | 3
 
 
-export type productCategory = 'Base Cabinets' | 'Wall Cabinets' | 'Tall Cabinets' | 'Regular Vanities' | 'Floating Vanities' | 'Handleless Vanities' | 'Handleless Floating Vanities'
+export type productCategory = 'Base Cabinets' | 'Wall Cabinets' | 'Tall Cabinets' | 'Regular Vanities' | 'Floating Vanities' | 'Handleless Vanities' | 'Handleless Floating Vanities' | 'Custom Parts'
 export type productDataType = {
     id: number,
     name: string,
@@ -20,6 +20,30 @@ export type productDataType = {
     hasMiddleSection?: true
 }
 
+export type customPartDataType = {
+    id: number,
+    name: string,
+    room: string,
+    category: productCategory,
+    width?:number,
+    depth?: number,
+    image: string,
+    price?: number,
+    materials?: materialsCustomPart[],
+    limits?: materialsLimitsType
+}
+
+export type materialsCustomPart = {
+    name: string,
+    limits: materialsLimitsType
+}
+
+export type materialsLimitsType = {
+    width?: number[],
+    height?: number[],
+    depth?: number[]
+}
+
 export interface productType extends productDataType {
     type: productTypings,
     height: number,
@@ -30,10 +54,28 @@ export interface productType extends productDataType {
     price?: number,
 }
 
+export type materialDataType = {
+    basePriceType: pricesTypings,
+    baseCoef: number,
+    grainCoef: number,
+    premiumCoef: number,
+    boxMaterialCoefs: getBoxMaterialCoefsType,
+    doorPriceMultiplier: number,
+    isAcrylic: boolean,
+    doorType: string,
+    doorFinish: string,
+    drawer: drawerInterface
+}
+
 
 export interface attrItem {
     name: string,
     values: widthItemType[],
+}
+
+export interface customAttrItem {
+    name: string,
+    values: customItemType[],
 }
 
 export type pricePart = {
@@ -52,6 +94,13 @@ export type prices = priceItem[]
 export type widthItemType = {
     type: productTypings,
     value: number,
+    minWidth?: number,
+    maxWidth?: number
+}
+
+export type customItemType = {
+    type: productTypings,
+    value: number | string,
     minWidth?: number,
     maxWidth?: number
 }
@@ -109,25 +158,12 @@ export interface drawerInterface {
 
 export type CabinetType = {
     product: productType,
-    basePriceType: pricesTypings,
-    premiumCoef: number,
-    boxMaterialCoefs: getBoxMaterialCoefsType,
-    drawer: drawerInterface,
-    doorPriceMultiplier: number
-    doorType: string
-    doorFinish: string
+    materialData: materialDataType
+
 }
 
 export interface CabinetFormType extends CabinetType {
-    drawersQty: number,
-    rolloutsQty: number,
-    doorValues?: widthItemType[],
-    blindArr?: number[],
-    filteredOptions: string[],
-    isAcrylic: boolean,
-    priceData: pricePart[],
-    productRange:productRangeType,
-    sizeLimit:sizeLimitsType
+    productPriceData: productDataToCalculatePriceType
 }
 
 export type DepthRangeType = {
@@ -135,9 +171,9 @@ export type DepthRangeType = {
 }
 
 export interface extraPricesType {
-    width: number,
-    height: number,
-    depth: number,
+    width?: number,
+    height?: number,
+    depth?: number,
     ptoDoors: number,
     ptoDrawers: number,
     ptoTrashBins: number,
@@ -150,11 +186,37 @@ export interface extraPricesType {
     doorSquare: number,
     premiumCoef: number,
     boxMaterialCoef: number,
-    tablePrice?: number
 }
 
 export type productRangeType = {
     width: number[],
     height: number[],
     depth: number[]
+}
+
+export type productDataToCalculatePriceType = {
+    priceData?:  pricePart[],
+    productRange: productRangeType,
+    sizeLimit?:sizeLimitsType,
+    attrArr: {name: string, value: number}[],
+    doorValues?: widthItemType[],
+    drawersQty: number,
+    rolloutsQty: number,
+    blindArr?: number[],
+    filteredOptions: string[]
+}
+
+export type customPartDataToCalculatePriceType = {
+    priceData?:  pricePart[],
+    productRange: productRangeType,
+    sizeLimit?:sizeLimitsType,
+    // attrArr: {name: string, value: number}[],
+}
+
+export type productSizesType = {
+    width: number,
+    height: number,
+    depth: number,
+    maxWidth: number,
+    maxHeight: number
 }

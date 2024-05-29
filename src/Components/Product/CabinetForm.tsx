@@ -21,37 +21,33 @@ import {
     addToCart, updateProduct,
 } from "../../store/reducers/generalSlice";
 import {
-    CabinetFormType, extraPricesType,
+    CabinetFormType, extraPricesType, productSizesType,
 } from "../../helpers/productTypes";
 import {
-    calculatePrice, getDoorMinMaxValuesArr, getDoorPrice,
-    getDoorSquare, getDoorWidth, getDrawerPrice, getHingeArr,
-    getInitialPrice, getLedPrice, getPvcPrice,
+    addGlassDoorPrice,
+    addGlassShelfPrice,
+    addPTODoorsPrice,
+    addPTODrawerPrice,
+    addPTOTrashBinsPrice,
+    calculatePrice,
+    getDoorMinMaxValuesArr,
+    getDoorPrice,
+    getDoorSquare,
+    getDoorWidth,
+    getDrawerPrice,
+    getHingeArr,
+    getInitialPrice,
+    getLedPrice,
+    getPriceForExtraHeight,
+    getPriceForExtraWidth,
+    getPvcPrice,
+    getStartPrice,
+    getTablePrice,
     getType
 } from "../../helpers/calculatePrice";
 import LedBlock from "./LED";
-import Test from "./Test";
 
-const CabinetForm: FC<CabinetFormType> = (
-    {
-        product,
-        premiumCoef,
-        boxMaterialCoefs,
-        drawer,
-        doorPriceMultiplier,
-        doorType,
-        doorFinish,
-        drawersQty,
-        rolloutsQty,
-        doorValues,
-        blindArr,
-        filteredOptions,
-        isAcrylic,
-        priceData,
-        productRange,
-        sizeLimit
-    }
-) => {
+const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceData}) => {
     const dispatch = useAppDispatch();
     const {
         id,
@@ -69,12 +65,26 @@ const CabinetForm: FC<CabinetFormType> = (
         hasSolidWidth,
         hasMiddleSection
     } = product;
+    const {premiumCoef, boxMaterialCoefs, doorPriceMultiplier, isAcrylic, doorType, doorFinish, drawer} = materialData
+    const {
+        productRange,
+        blindArr,
+        doorValues,
+        sizeLimit,
+        priceData,
+        drawersQty,
+        rolloutsQty,
+        filteredOptions
+    } = productPriceData
 
+    if (!productRange.width[0]) return <div>Cannot find initial width</div>;
+    if (!sizeLimit) return <div>Cannot find size limit</div>;
+    if (!priceData) return <div>No price table data</div>
     return (
         <Formik initialValues={getInitialProductValues(productRange, isBlind, blindArr, isAngle, depth, doorValues)}
                 validationSchema={getProductSchema(sizeLimit, isAngle, hasMiddleSection)}
                 onSubmit={(values: FormikValues, {resetForm}) => {
-                    const cartData = addToCartData(values, type, id, price, isBlind, images, name, hasMiddleSection)
+                    const cartData = addToCartData(values, type, id, price, isBlind, images, name, hasMiddleSection, category)
                     dispatch(addToCart(cartData))
                     resetForm();
                 }}
@@ -112,18 +122,14 @@ const CabinetForm: FC<CabinetFormType> = (
                     ['Glass Color']: glassColorSettings,
                 } = glassSettings;
 
-                const realWidth: number = +width || customWidth || 0;
-                const realBlindWidth: number = +blindWidth || customBlindWidth || 0;
-
-                const realHeight = +height || customHeight || 0;
+                const realWidth: number = +width || +customWidth || 0;
+                const realBlindWidth: number = +blindWidth || +customBlindWidth || 0;
+                const realHeight = +height || +customHeight || 0;
                 const doorHeight: number = realHeight ? realHeight - legsHeight : 0;
                 const realDepth: number = !isAngle ? (+depth || customDepth || 0) : realWidth;
-
                 if (isAngle && realWidth !== depth) setFieldValue('Depth', realWidth);
-
                 const doorArr = doorValues ? getDoorMinMaxValuesArr(realWidth, doorValues) : null;
                 const hingeArr = getHingeArr(doorArr || [], category)
-
                 if (doorArr) {
                     if (!doorValues) {
                         setFieldValue('Doors', 0);
@@ -133,56 +139,59 @@ const CabinetForm: FC<CabinetFormType> = (
                         }
                     }
                 }
-
-
                 if (!hingeArr.length) {
                     if (hingeOpening !== 'Double Door' && doors) setFieldValue('Hinge opening', "Double Door");
                 } else if (!hingeArr.includes("Double Door") && hingeOpening === 'Double Door') {
                     setFieldValue('Hinge opening', hingeArr[0]);
                 }
-
                 const doorWidth = getDoorWidth(realWidth, realBlindWidth, isBlind, isAngle)
                 const glassDoorColorFiltered = glassColorSettings.filter(el => el.type === doorGlassType);
                 const glassShelfColorFiltered = glassColorSettings.filter(el => el.type === shelfGlassType);
-                const ledPrice = getLedPrice(realWidth, realHeight, ledBorders);
                 const doorSquare = getDoorSquare(doorWidth, doorHeight)
                 const newType = getType(realWidth, realHeight, widthDivider, doorValues, doors, category, attributes);
-                const initialPrice = priceData && getInitialPrice(priceData, productRange, category);
+                const initialPrice = getInitialPrice(priceData, productRange, category);
                 if (!initialPrice) return <div>Cannot find initial price</div>
-                const boxMaterialCoef = chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef;
-                const pvcPrice = getPvcPrice(!isBlind ? realWidth : realWidth - realBlindWidth, doorHeight, isAcrylic, doorType, doorFinish)
-                const doorPrice = getDoorPrice(doorSquare, doorPriceMultiplier)
-                const drawerPrice = getDrawerPrice(drawersQty + rolloutsQty, drawer, realWidth)
+
                 const extraPrices: extraPricesType = {
-                    width: 0,
-                    height: 0,
-                    depth: 0,
-                    ptoDoors: 0,
-                    ptoDrawers: 0,
-                    ptoTrashBins: 0,
-                    glassShelf: 0,
-                    glassDoor: 0,
-                    pvcPrice: pvcPrice,
-                    doorPrice: doorPrice,
-                    drawerPrice: drawerPrice,
-                    ledPrice: ledPrice,
-                    boxMaterialCoef: boxMaterialCoef,
+                    ptoDoors: chosenOptions.includes('PTO for doors') ? addPTODoorsPrice(attributes, type) : 0,
+                    ptoDrawers: chosenOptions.includes('PTO for drawers') ? addPTODrawerPrice(type, drawersQty) : 0,
+                    ptoTrashBins: chosenOptions.includes('PTO for Trash Bins') ? addPTOTrashBinsPrice() : 0,
+                    glassShelf: chosenOptions.includes('Glass Shelf') ? addGlassShelfPrice() : 0,
+                    glassDoor: chosenOptions.includes('Glass Door') ? addGlassDoorPrice(doorSquare, doorProfile) : 0,
+                    pvcPrice: getPvcPrice(!isBlind ? realWidth : realWidth - realBlindWidth, doorHeight, isAcrylic, doorType, doorFinish),
+                    doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier),
+                    drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, realWidth),
+                    ledPrice: getLedPrice(realWidth, realHeight, ledBorders),
+                    boxMaterialCoef: chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef,
                     premiumCoef: premiumCoef,
                     doorSquare: doorSquare,
                 }
+                const allCoefs = extraPrices.boxMaterialCoef * premiumCoef;
+                const initialPriceWithCoef = +(initialPrice * allCoefs).toFixed(2);
+                const tablePrice:number|undefined = getTablePrice(realWidth, realHeight, priceData, category)
+                const startPrice: number = getStartPrice(realWidth, realHeight, realDepth, allCoefs, sizeLimit, tablePrice);
+                const sizes: productSizesType = {
+                    width: realWidth,
+                    height: realHeight,
+                    depth: realDepth,
+                    maxWidth: productRange.width[productRange.width.length - 2],
+                    maxHeight: productRange.height[productRange.height.length - 2],
+                }
+                const calculatedData = calculatePrice(sizes, extraPrices, productRange, startPrice);
+                const totalDepthPrice = +(initialPriceWithCoef * (calculatedData.coef.depth + 1)).toFixed(2)
 
+                extraPrices.width = getPriceForExtraWidth(initialPriceWithCoef, priceData, width, calculatedData.coef.width, allCoefs)
+                extraPrices.height = getPriceForExtraHeight(priceData, initialPriceWithCoef, width, height, allCoefs, calculatedData.coef.height)
+                extraPrices.depth = +(totalDepthPrice - initialPriceWithCoef).toFixed(2);
 
-                const calculatedData = calculatePrice(realWidth, realHeight, realDepth, chosenOptions, doorProfile, attributes, type, initialPrice, priceData, extraPrices, productRange, sizeLimit, drawersQty, category, ledPrice)
-                const {addition, totalPrice, coef} = calculatedData;
+                const {addition, totalPrice} = calculatedData;
                 addition.doorSquare = +(addition.doorSquare / 144).toFixed(2);
-
                 setTimeout(() => {
                     if (price !== totalPrice || type !== newType) dispatch(updateProduct({
                         type: newType,
                         price: totalPrice
                     }));
                 }, 0)
-
                 return (
                     <Form>
                         {!hasSolidWidth ?
@@ -315,7 +324,7 @@ const CabinetForm: FC<CabinetFormType> = (
                             <span>{totalPrice}$</span>
                         </div>
                         <button type="submit" className={['button yellow'].join(' ')}>Add to cart</button>
-                        <Test addition={addition} coef={coef}/>
+                        {/*<Test addition={addition} coef={coef}/>*/}
                     </Form>
                 )
             }}

@@ -66,6 +66,8 @@
     width: 25px
     height: 25px
     line-height: 1
+    &:disabled
+      opacity: 0.6
     &[value="minus"]
       background-color: $red
     &[value="plus"]
@@ -93,91 +95,6 @@
   gap: 2px
   input
     display: none
-
-.cart
-  position: relative
-  height: 100vh
-  box-shadow: -13px 10px 32px -3px rgba(0,0,0,.41)
-
-.cartList
-  height: calc(100vh - 200px)
-  display: flex
-  flex-direction: column
-  gap: 8px
-  overflow-y: auto
-  padding: 20px 15px
-  &.checkout
-    height: calc(100vh - 150px)
-
-.cartBottom
-  height: 200px
-  position: absolute
-  left: 0
-  right: 0
-  bottom: 0
-  padding: 20px 15px
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  border-top: 3px solid $accent
-  &.low
-    height: 150px
-
-.cartItem
-  padding-bottom: 10px
-  border-bottom: 2px solid $accentLight
-
-.cartItemTop
-  display: flex
-  align-items: center
-  justify-content: flex-start
-  gap: 10px
-
-.itemClose
-  color: $red
-  font-size: 26px
-  font-weight: 700
-
-.itemimg
-  display: block
-  width: 60px
-  height: 60px
-  border-radius: 5px
-  overflow: hidden
-  flex-shrink: 0
-  object-fit: contain
-
-.itemName
-  font: 500 18px/1.1 $mainFont
-.itemOption
-  display: flex
-  gap: 3px
-  font-size: 15px
-  span:last-child
-    font-weight: 500
-.itemPriceBlock
-  display: flex
-  align-items: center
-  justify-content: space-between
-  margin-top: .6em
-.itemSubPrice
-  font: 500 18px/1.2 $mainFont
-
-.itemTotalPrice
-  font: 500 20px/1.2 $mainFont
-
-.cartTotal
-  font: 400 18px/1.2 $mainFont
-  text-transform: uppercase
-  span:last-child
-    font-size: 20px
-    font-weight: 500
-
-.cartEmpty
-  padding: 20px
-  text-align: center
-  font-weight: 500
-
 .divider
   display: grid
   grid-template-columns: 1fr 1fr

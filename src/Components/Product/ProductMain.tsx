@@ -2,18 +2,10 @@ import React, {FC} from 'react';
 import {OrderFormType} from "../../helpers/types";
 import s from './product.module.sass'
 import {getImg, getProductImage, useAppSelector} from "../../helpers/helpers";
-import {drawerInterface, pricesTypings} from "../../helpers/productTypes";
 import {AtrrsList} from "../Cabinets/List";
 import {Navigate} from "react-router-dom";
-import {
-    getBasePriceType,
-    getBoxMaterialCoefs,
-    getDoorPriceMultiplier,
-    getGrainCoef,
-    getPremiumCoef
-} from "../../helpers/calculatePrice";
+import {getMaterialData} from "../../helpers/calculatePrice";
 import Cabinet from "./Cabinet";
-
 
 const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
     const {room, ...data} = Object.assign({}, materials);
@@ -22,27 +14,7 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
     const dataMaterialsArr = Object.entries(data);
     const {type, attributes, name, images} = product;
     const img = getProductImage(images, type);
-    const {
-        ['Door Type']: doorType,
-        ['Door Finish Material']: doorFinish,
-        ['Door Grain']: doorGrain,
-        ['Box Material']: boxMaterial,
-        ['Drawer']: drawerBrand,
-        ['Drawer Type']: drawerType,
-        ['Drawer Color']: drawerColor
-    } = materials;
-
-    const drawer: drawerInterface = {
-        drawerBrand,
-        drawerType,
-        drawerColor
-    }
-    const basePriceType: pricesTypings = getBasePriceType(doorType, doorFinish);
-    const baseCoef = basePriceType === 3 ? getPremiumCoef(doorType, doorFinish) : 1;
-    const grainCoef = doorGrain ? getGrainCoef(doorGrain) : 1;
-    const premiumCoef = +(baseCoef * grainCoef).toFixed(3)
-    const boxMaterialCoefs = getBoxMaterialCoefs(boxMaterial, doorFinish)
-    const doorPriceMultiplier = getDoorPriceMultiplier(doorType, doorFinish)
+    const materialData = getMaterialData(materials);
     return (
         <div className={s.productWrap}>
             <div className={s.left}>
@@ -64,13 +36,7 @@ const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
             <div className={s.right}>
                 <Cabinet
                     product={product}
-                    basePriceType={basePriceType}
-                    premiumCoef={premiumCoef}
-                    boxMaterialCoefs={boxMaterialCoefs}
-                    drawer={drawer}
-                    doorPriceMultiplier={doorPriceMultiplier}
-                    doorType={doorType}
-                    doorFinish={doorFinish}
+                    materialData={materialData}
                 />
             </div>
         </div>

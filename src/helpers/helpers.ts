@@ -2,8 +2,8 @@ import {AppDispatch, RootState} from "../store/store";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import noImg from './../assets/img/noPhoto.png'
 import {
-    attrItem,
-    itemImg,
+    attrItem, customPartDataType,
+    itemImg, materialsLimitsType,
     productCategory,
     productDataType,
     productRangeType,
@@ -11,7 +11,7 @@ import {
     widthItemType
 } from "./productTypes";
 import {optionType} from "../common/SelectField";
-import {CartItemType} from "../store/reducers/generalSlice";
+import {CartItemType, productExtraType} from "../store/reducers/generalSlice";
 import baseCabinetProducts from "../api/products.json";
 import wallCabinetProducts from "../api/productsWall.json";
 import tallCabinetProducts from "../api/productsTall.json";
@@ -19,9 +19,11 @@ import vanitiesRegular from "../api/vanitiesRegular.json";
 import vanitiesFloating from '../api/vanitiesFloating.json'
 import vanitiesHandleLess from '../api/vanitiesHandleless.json'
 import vanitiesHandleLessFloating from '../api/vanitiesHandlelessFloating.json'
+import customParts from '../api/customPart.json'
 import settings from "../api/settings.json";
 import {v4 as uuidv4} from "uuid";
 import {FormikValues} from "formik";
+import {room} from './categoriesTypes'
 
 
 export const useAppDispatch: () => AppDispatch = useDispatch
@@ -58,9 +60,9 @@ export function getSelectValfromVal(val: string, options: optionType[]): optionT
 }
 
 export const getCartTotal = (cart: CartItemType[]): number => {
-    return cart.reduce(
+    return +(cart.reduce(
         (acc, currentVal) => acc + (currentVal.price * currentVal.amount), 0
-    )
+    )).toFixed(2)
 }
 
 
@@ -69,16 +71,20 @@ export const getFraction = (number: number): string => {
     const floor = Math.floor(number);
     const reminder = (number - floor);
     const quarters = {
+        0.125: '⅛',
         0.25: '¼',
+        0.375: '⅜',
         0.5: '½',
-        0.75: '¾'
+        0.625: '⅝',
+        0.75: '¾',
+        0.875: '⅞'
     };
     const currQ = Object.entries(quarters).find((el) => el[0] === reminder.toString());
-    return currQ ? `${floor} ${currQ[1]}` : number.toString()
+    return currQ ? `${floor > 0 ? floor : ''} ${currQ[1]}` : number.toString()
 }
 
 
-export const getProductsByCategory = (category: productCategory): productDataType[] => {
+export const getProductsByCategory = (category: productCategory): productDataType[]  => {
     let products;
     switch (category) {
         case 'Base Cabinets':
@@ -101,11 +107,16 @@ export const getProductsByCategory = (category: productCategory): productDataTyp
             break
         case "Handleless Floating Vanities":
             products = vanitiesHandleLessFloating as productDataType[]
-            break
+            break;
         default:
             products = [] as productDataType[]
     }
     return products.filter(product => product.category === category);
+}
+
+export const getcustomPartsByRoom = (room: room): customPartDataType[] => {
+    const customPartns = customParts as customPartDataType[];
+    return customPartns.filter(panel => panel.room === room);
 }
 
 type initialValuetType = {
@@ -159,7 +170,23 @@ export const getInitialProductValues = (productRange: productRangeType, isBlind:
 }
 
 
-export const addToCartData = (values:FormikValues, type:number, id:number, price:number|undefined, isBlind:boolean, images:itemImg[], name:string, hasMiddleSection:true|undefined) => {
+export const getCustomPartInitialValues = (customPart: customPartDataType, sizeLimit: materialsLimitsType, doorFinish: string) => {
+    const {width, height, depth} = sizeLimit;
+    const {width: widthConst,depth: depthConst} = customPart;
+
+    return {
+        ['Has Width']: !!width,
+        ['Has Height']: !!height,
+        ['Has Depth']: !!depth,
+        ['Width']: widthConst || (width ? width[0] : 0),
+        ['Height']: height ? height[0] : 0,
+        ['Depth']: depthConst || (depth ? depth[0] : 0),
+        ['Material']: doorFinish,
+        ['Note']: '',
+    };
+}
+
+export const addToCartData = (values:FormikValues, type:productTypings, id:number, price:number|undefined, isBlind:boolean, images:itemImg[], name:string, hasMiddleSection:true|undefined, category: productCategory) => {
     const {
         ['Width']: width,
         ['Blind Width']: blindWidth,
@@ -189,45 +216,81 @@ export const addToCartData = (values:FormikValues, type:number, id:number, price
     const cartData: CartItemType = {
         id: id,
         uuid: uuidv4(),
+        category,
         name,
         img: img,
         width: realWidth,
         height: height || customHeight,
         depth: depth || customDepth,
-        hinge,
-        options: chosenOptions,
         amount: 1,
         price: price ? price : 0,
-        note
+        note,
     }
 
+    let extra: productExtraType = {
+        type: type,
+        hinge: hinge,
+        options: chosenOptions
+    };
+
     if (isBlind) {
-        cartData.blindWidth = blindWidth || customBlindWidth;
+        extra.blindWidth = blindWidth || customBlindWidth;
     }
 
     if (chosenOptions.includes('Glass Door')) {
-        cartData.doorProfile = doorProfile;
-        cartData.doorGlassType = doorGlassType;
-        cartData.doorGlassColor = doorGlassColor;
+        extra.doorProfile = doorProfile;
+        extra.doorGlassType = doorGlassType;
+        extra.doorGlassColor = doorGlassColor;
     }
 
     if (chosenOptions.includes('Glass Shelf')) {
-        cartData.shelfProfile = shelfProfile;
-        cartData.shelfGlassType = shelfGlassType;
-        cartData.shelfGlassColor = shelfGlassColor;
+        extra.shelfProfile = shelfProfile;
+        extra.shelfGlassType = shelfGlassType;
+        extra.shelfGlassColor = shelfGlassColor;
     }
 
     if (hasMiddleSection) {
-        cartData.middleSection = middleSection
+        extra.middleSection = middleSection
     }
 
     if (ledBorders.length) {
-        cartData.led = {
+        extra.led = {
             border: ledBorders,
             alignment: ledAlignment
         }
-        if (ledIndent) cartData.led.indent = ledIndent;
+        if (ledIndent) extra.led.indent = ledIndent;
+    }
+    cartData.productExtra = extra;
+
+    return cartData
+}
+
+
+export const addToCartCustomPart = (values:FormikValues, id:number, price:number|undefined, image: string, name:string, category: productCategory) => {
+    const {
+        ['Width']: width,
+        ['Height']: height,
+        ['Depth']: depth,
+        ['Material']: material,
+        ['Note']: note,
+    } = values;
+
+
+    const cartData: CartItemType = {
+        id: id,
+        uuid: uuidv4(),
+        category,
+        name,
+        img: image || '',
+        width:  width || 0,
+        height: height || 0,
+        depth: depth || 0,
+        amount: 1,
+        price: price ? price : 0,
+        note,
+        customPartExtra: {material}
     }
 
+    console.log(cartData)
     return cartData
 }

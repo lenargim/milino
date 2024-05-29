@@ -1,0 +1,1039 @@
+[
+  {
+    "id": 900,
+    "name": "Open Cabinet",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [6, 96],
+          "height": [6, 96],
+          "depth": [6, 96]
+        }
+      },
+      {
+        "name": "Plywood",
+        "limits": {
+          "width": [6,96],
+          "height": [6, 96],
+          "depth": [6, 96]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [6, 108],
+          "height": [6, 108],
+          "depth": [6, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [6, 108],
+          "height": [6, 108],
+          "depth": [6, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [6, 108],
+          "height": [6, 108],
+          "depth": [6, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [6, 108],
+          "height": [6, 108],
+          "depth": [6, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [6, 108],
+          "height": [6, 108],
+          "depth": [6, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [6, 108],
+          "height": [6, 108],
+          "depth": [6, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [6, 108],
+          "height": [6, 108],
+          "depth": [6, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [6, 108],
+          "height": [6, 108],
+          "depth": [6, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [6, 120],
+          "height": [6, 120],
+          "depth": [6, 120]
+        }
+      }
+    ],
+    "image": "filler.png"
+  },
+  {
+    "id": 901,
+    "name": "Floating Shelf",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [3, 96],
+          "height": [3, 96],
+          "depth": [3,48]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [3, 96],
+          "height": [3, 96],
+          "depth": [3, 48]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [3, 96],
+          "height": [3, 96],
+          "depth": [3, 48]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [3, 108],
+          "height": [3, 108],
+          "depth": [3, 48]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [3, 108],
+          "height": [3, 108],
+          "depth": [3, 48]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [3, 108],
+          "height": [3, 108],
+          "depth": [3, 48]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [3, 108],
+          "height": [3, 108],
+          "depth": [3, 48]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [3, 108],
+          "height": [3, 108],
+          "depth": [3, 48]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [3, 108],
+          "height": [3, 108],
+          "depth": [3, 48]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [3, 120],
+          "height": [3, 120],
+          "depth": [3, 48]
+        }
+      }
+    ],
+    "image": "filler.png"
+  },
+  {
+    "id": 902,
+    "name": "Filler",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [2.5, 96],
+          "height": [2.5, 96]
+        }
+      },
+      {
+        "name": "Plywood",
+        "limits": {
+          "width": [2.5,96],
+          "height": [2.5, 96]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [2.5, 120],
+          "height": [2.5, 120]
+        }
+      }
+    ],
+    "depth": 0.75,
+    "image": "filler.png"
+  },
+  {
+    "id": 903,
+    "name": "Panel",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [2.5, 96],
+          "height": [2.5, 96]
+        }
+      },
+      {
+        "name": "Plywood",
+        "limits": {
+          "width": [2.5,96],
+          "height": [2.5, 96]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [2.5, 120],
+          "height": [2.5, 120]
+        }
+      }
+    ],
+    "depth": 0.75,
+    "image": "panel.png"
+  },
+  {
+    "id": 904,
+    "name": "Wood Toe Kick",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "depth": 0.75,
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [2.5, 96],
+          "height": [2.5, 96]
+        }
+      },
+      {
+        "name": "Plywood",
+        "limits": {
+          "width": [2.5,96],
+          "height": [2.5, 96]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [2.5, 120],
+          "height": [2.5, 120]
+        }
+      }
+    ],
+    "image": "panel.png"
+  },
+  {
+    "id": 905,
+    "name": "Double Panel",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "depth": 1.5,
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [2.5, 96],
+          "height": [2.5, 96]
+        }
+      },
+      {
+        "name": "Plywood",
+        "limits": {
+          "width": [2.5,96],
+          "height": [2.5, 96]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [2.5, 108],
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [2.5, 120],
+          "height": [2.5, 120]
+        }
+      }
+    ],
+    "image": "panel.png"
+  },
+  {
+    "id": 906,
+    "name": "L Shape",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 96],
+          "depth": [4,48]
+        }
+      },
+      {
+        "name": "Plywood",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 96],
+          "depth": [4,48]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 120],
+          "depth": [4, 48]
+        }
+      }
+    ],
+    "image": "panel.png"
+  },
+  {
+    "id": 907,
+    "name": "Column",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 96],
+          "depth": [4,48]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 108],
+          "depth": [4, 48]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [3, 48],
+          "height": [6, 120],
+          "depth": [4, 48]
+        }
+      }
+    ],
+    "image": "panel.png"
+  },
+  {
+    "id": 908,
+    "name": "Wood Gola Trims",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "width": 3.625,
+    "depth": 0.75,
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "height": [2.5, 96]
+        }
+      },
+      {
+        "name": "Plywood",
+        "limits": {
+          "height": [2.5, 96]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "height": [2.5, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "height": [2.5, 120]
+        }
+      }
+    ],
+    "image": "panel.png"
+  },
+  {
+    "id": 909,
+    "name": "Backing",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "depth": 0.75,
+    "limits": {
+      "width": [3,48],
+      "height": [3,96]
+    },
+    "image": "panel.png"
+  },
+  {
+    "id": 910,
+    "name": "Shaker Panel",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "depth": 0.75,
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [5, 96],
+          "height": [5, 96]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [5, 108],
+          "height": [5, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [5, 108],
+          "height": [5, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [5, 108],
+          "height": [5, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [5, 108],
+          "height": [5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [5, 108],
+          "height": [5, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [5, 108],
+          "height": [5, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [5, 108],
+          "height": [5, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [5, 108],
+          "height": [5, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [5, 120],
+          "height": [5, 120]
+        }
+      }
+    ],
+    "image": "panel.png"
+  },
+  {
+    "id": 911,
+    "name": "Decor Panel",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "depth": 0.75,
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      }
+    ],
+    "image": "panel.png"
+  },
+  {
+    "id": 912,
+    "name": "Slatted Panel",
+    "room": "Kitchen",
+    "category": "Custom Parts",
+    "depth": 0.75,
+    "materials": [
+      {
+        "name": "Milino",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {"name": "Syncron",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Cleaf",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Luxe",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "OneSkin",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Ultrapan PET",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Ultrapan Acrilic",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Zenit",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Stone",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      },
+      {
+        "name": "Painted",
+        "limits": {
+          "width": [4, 108],
+          "height": [4, 108]
+        }
+      }
+    ],
+    "image": "panel.png"
+  }
+]

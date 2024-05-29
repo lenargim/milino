@@ -4,11 +4,142 @@
   position: relative
   h2
     margin-bottom: 2em
-
+  &.cabinets
+    .sidebarContent
+      height: calc(100vh - 200px)
+    .sidebarBottom
+      height: 200px
+  &.product
+    .sidebarContent
+      height: calc(100vh - 300px)
+    .sidebarBottom
+      height: 300px
+  &.checkout
+    .sidebarContent
+      height: calc(100vh - 200px)
+      .sidebarBottom
+        height: 200px
 .sidebarContent
-  padding: 30px 15px 150px 15px
+  padding: 30px 15px
   height: calc(100vh - 150px)
   overflow-y: auto
+  display: flex
+  flex-direction: column
+  gap: 8px
+
+.sidebarBottom
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0
+  height: 150px
+  padding: 20px 15px
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  border-top: 3px solid $accent
+
+.sidebarButtons
+  margin-top: auto
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  gap: 10px
+
+.buttons
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 10px
+  button
+    border-radius: 3px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 22px
+    color: #fff
+    width: 25px
+    height: 25px
+    line-height: 1
+    &:disabled
+      opacity: 0.6
+    &[value="minus"]
+      background-color: $red
+    &[value="plus"]
+      background-color: $green
+
+.cartList
+  display: flex
+  flex-direction: column
+  gap: 8px
+
+.cartTotal
+  font: 400 18px/1.2 $mainFont
+  text-transform: uppercase
+  span:last-child
+    font-size: 20px
+    font-weight: 500
+
+.cartEmpty
+  padding: 20px
+  text-align: center
+  font-weight: 500
+
+.cartItem
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 5px
+
+.cartItemTotal
+  font: 500 17px/1.2 $mainFont
+.cartItemCode
+  font: 500 17px/1.2 $mainFont
+
+.cartItemTop
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 10px
+
+.itemClose
+  color: $red
+  font-size: 26px
+  font-weight: 700
+
+.itemimg
+  display: block
+  width: 60px
+  height: 60px
+  border-radius: 5px
+  overflow: hidden
+  flex-shrink: 0
+  object-fit: contain
+
+.itemName
+  font: 500 18px/1.1 $mainFont
+.itemOption
+  display: flex
+  gap: 3px
+  font-size: 15px
+  span:last-child
+    font-weight: 500
+.itemPriceBlock
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 15px
+  margin-top: .6em
+
+.amount
+  display: inline-block
+  min-width: 1.6em
+.itemSubPrice
+  font: 500 18px/1.2 $mainFont
+
+.itemTotalPrice
+  margin-left: auto
+  font: 500 20px/1.2 $mainFont
 
 .block
   display: grid
@@ -26,19 +157,10 @@
   align-items: center
   justify-content: flex-start
   gap: 5px
-  &:not(:last-of-type)
-    margin-bottom: 10px
   span:first-child
     letter-spacing: -0.02em
   span:nth-child(2)
     font-weight: 500
-
-.back
-  position: absolute
-  left: 15px
-  right: 15px
-  bottom: 30px
-
 
 .sidebarImg
   width: 30px
@@ -51,16 +173,6 @@
   bottom: 100px
   right: 30px
   font: 600 24px/1.2 $mainFont
-
-.cartItem
-  display: flex
-  align-items: center
-  gap: 10px
-
-.cartItemTotal
-  font: 500 17px/1.2 $mainFont
-.cartItemCode
-  font: 500 17px/1.2 $mainFont
 
 .submit
   position: absolute

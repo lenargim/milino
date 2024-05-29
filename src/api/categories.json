@@ -13,6 +13,10 @@
       {
         "name": "Tall Cabinets",
         "img": "tall-cabinets.png"
+      },
+      {
+        "name": "Custom Parts",
+        "img": "panels-cabinets.png"
       }
     ]
   },
