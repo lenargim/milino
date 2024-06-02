@@ -1,35 +1,27 @@
 import {Form, Formik} from 'formik';
 import React, {FC} from 'react';
-import {
-    addToCartCustomPart,
+import {addToCartPVC,
     getLimit,
-    getSelectValfromVal,
-    getSelectValfromValCustomPart,
     useAppDispatch
 } from "../../helpers/helpers";
 import {customPartDataType} from "../../helpers/productTypes";
-import {getCustomPartSchema} from "./CustomPartSchema";
 import s from "../Product/product.module.sass";
 import {ProductInputCustom, ProductRadioInput, TextInput} from "../../common/Form";
-import {getCustomPartPrice} from "../../helpers/calculatePrice";
 import {OrderFormType} from "../../helpers/types";
 import {addToCart, setCustomPart} from "../../store/reducers/generalSlice";
-import SelectField from "../../common/SelectField";
+import {getPVCSchema} from "./PVCSchema";
 
-type CustomPartFormType = {
+type PVCFormType = {
     customPart: customPartDataType,
     materials: OrderFormType
 }
-export type CustomPartFormValuesType = {
+export type PVCFormValuesType = {
     Width: number,
-    Height: number,
-    Depth: number,
     Material: string,
     Note: string,
-    Profile?: number
 }
 
-const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
+const PVCForm: FC<PVCFormType> = ({customPart, materials}) => {
     const dispatch = useAppDispatch();
     const {
         name,
@@ -38,10 +30,7 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
         price,
         materials: materialsRange,
         limits,
-        width: widthConst,
-        depth: depthConst,
         category,
-        doorProfiles
     } = customPart;
 
     const {
@@ -49,28 +38,22 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
         "Door Type": doorType
     } = materials;
 
-    const sizeLimitInitial = materialsRange?.find(el => doorFinish.includes(el.name))?.limits ?? materialsRange?.find(el => doorType === el.name)?.limits ?? limits ?? {};
+    const sizeLimitInitial = materialsRange?.find(el => doorFinish.includes(el.name))?.limits || {};
     const materialArr = materialsRange ? Object.values(materialsRange).map(el => el.name) : [];
     const curMaterial = materialArr.find(el => doorFinish.includes(el)) ?? doorType;
 
-    const initialValues: CustomPartFormValuesType = {
-        'Width': widthConst ?? getLimit(sizeLimitInitial.width),
-        'Height':getLimit(sizeLimitInitial.height),
-        'Depth': depthConst ?? getLimit(sizeLimitInitial.depth),
-        'Material': curMaterial ??  materialArr[0],
-        'Note': ''
-    }
-
-    if (doorProfiles) {
-        initialValues.Profile = doorProfiles[0].value
+    const initialValues: PVCFormValuesType = {
+        Width: getLimit(sizeLimitInitial.width),
+        Material: curMaterial ?? materialArr[0],
+        Note: ''
     }
 
     return (
         <Formik
             initialValues={initialValues}
-            validationSchema={getCustomPartSchema(materialsRange, limits)}
-            onSubmit={(values: CustomPartFormValuesType, {resetForm}) => {
-                const cartData = addToCartCustomPart(values, id, price, image, name, category)
+            validationSchema={getPVCSchema(materialsRange, limits)}
+            onSubmit={(values: PVCFormValuesType, {resetForm}) => {
+                const cartData = addToCartPVC(values, id, price, image, name, category)
                 dispatch(addToCart(cartData))
                 resetForm();
             }}
@@ -78,13 +61,11 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
             {({values, errors}) => {
                 const {
                     ['Width']: width,
-                    ['Height']: height,
-                    ['Depth']: depth,
                     ['Material']: material,
                     ['Note']: note,
-                    ['Profile']: profile
                 } = values;
-                const priceCoef = +(getCustomPartPrice(name, width, height, depth, material, doorType, profile)).toFixed(2);
+
+                const priceCoef = Math.ceil(width);
 
                 setTimeout(() => {
                     if (price !== priceCoef) dispatch(setCustomPart({...customPart, price: priceCoef}));
@@ -92,29 +73,12 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
 
                 return (
                     <Form>
-                        {!widthConst ?
-                            <div className={s.block}>
-                                <h3>Width</h3>
-                                <div className={s.options}>
-                                    <ProductInputCustom value={null} name={'Width'}/>
-                                </div>
-                            </div> : null}
                         <div className={s.block}>
-                            <h3>Height</h3>
+                            <h3>PVC Width(ft)</h3>
                             <div className={s.options}>
-                                <ProductInputCustom value={null} name={'Height'}/>
+                                <ProductInputCustom value={null} name={'Width'}/>
                             </div>
                         </div>
-
-                        {!depthConst ?
-                            <div className={s.block}>
-                                <h3>Depth</h3>
-                                <div className={s.options}>
-                                    <ProductInputCustom value={null} name={'Depth'}/>
-                                </div>
-                            </div> : null
-                        }
-
                         {materialsRange &&
                           <div className={s.block}>
                             <h3>Material</h3>
@@ -125,14 +89,6 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                             </div>
                           </div>
                         }
-                        {doorProfiles && profile &&
-                          <div className={s.block}>
-                            <h3>Door Profile</h3>
-                            <SelectField name="Profile" val={getSelectValfromValCustomPart(profile, doorProfiles)}
-                                         options={doorProfiles}/>
-                          </div>
-                        }
-
                         <div className={s.block}>
                             <TextInput type={"text"} label={'Note'} name="Note"/>
                         </div>
@@ -148,4 +104,4 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
     );
 };
 
-export default CustomPartForm;
+export default PVCForm;

@@ -2,7 +2,7 @@ import {AppDispatch, RootState} from "../store/store";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import noImg from './../assets/img/noPhoto.png'
 import {
-    attrItem, customPartDataType,
+    attrItem, customPartDataType, doorProfilesType,
     itemImg, materialsLimitsType,
     productCategory,
     productDataType,
@@ -55,6 +55,11 @@ export const getProductImage = (images: itemImg[], type: productTypings = 1): st
 }
 
 export function getSelectValfromVal(val: string, options: optionType[]): optionType | null {
+    const option = options.find(el => el.value === val)
+    return option || null
+}
+
+export function getSelectValfromValCustomPart(val: number, options: doorProfilesType[]): doorProfilesType | null {
     const option = options.find(el => el.value === val)
     return option || null
 }
@@ -169,21 +174,9 @@ export const getInitialProductValues = (productRange: productRangeType, isBlind:
     };
 }
 
-
-export const getCustomPartInitialValues = (customPart: customPartDataType, sizeLimit: materialsLimitsType, doorFinish: string) => {
-    const {width, height, depth} = sizeLimit;
-    const {width: widthConst,depth: depthConst} = customPart;
-
-    return {
-        ['Has Width']: !!width,
-        ['Has Height']: !!height,
-        ['Has Depth']: !!depth,
-        ['Width']: widthConst || (width ? width[0] : 0),
-        ['Height']: height ? height[0] : 0,
-        ['Depth']: depthConst || (depth ? depth[0] : 0),
-        ['Material']: doorFinish,
-        ['Note']: '',
-    };
+export const getLimit = (d: number[] | undefined): number => {
+    if (!d) return 0;
+    return d[0];
 }
 
 export const addToCartData = (values:FormikValues, type:productTypings, id:number, price:number|undefined, isBlind:boolean, images:itemImg[], name:string, hasMiddleSection:true|undefined, category: productCategory) => {
@@ -290,7 +283,30 @@ export const addToCartCustomPart = (values:FormikValues, id:number, price:number
         note,
         customPartExtra: {material}
     }
+    return cartData
+}
 
-    console.log(cartData)
+export const addToCartPVC = (values:FormikValues, id:number, price:number|undefined, image: string, name:string, category: productCategory) => {
+    const {
+        ['Width']: pvcFeet,
+        ['Material']: material,
+        ['Note']: note,
+    } = values;
+
+
+    const cartData: CartItemType = {
+        id: id,
+        uuid: uuidv4(),
+        category,
+        name,
+        img: image || '',
+        width: 0,
+        height: 0,
+        depth: 0,
+        amount: 1,
+        price: price ? price : 0,
+        note,
+        customPartExtra: {material, pvcFeet}
+    }
     return cartData
 }

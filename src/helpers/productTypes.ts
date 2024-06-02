@@ -1,3 +1,5 @@
+import {optionType} from "../common/SelectField";
+
 export type productTypings = 1 | 2 | 3 | 4
 export type pricesTypings = 1 | 2 | 3
 
@@ -24,18 +26,26 @@ export type customPartDataType = {
     id: number,
     name: string,
     room: string,
+    type: 'custom' | 'pvc'
     category: productCategory,
     width?:number,
     depth?: number,
     image: string,
     price?: number,
     materials?: materialsCustomPart[],
-    limits?: materialsLimitsType
+    limits?: materialsLimitsType,
+    doorProfiles?: doorProfilesType[]
+}
+
+export type doorProfilesType = {
+    value: number,
+    label: string
 }
 
 export type materialsCustomPart = {
     name: string,
-    limits: materialsLimitsType
+    limits: materialsLimitsType,
+    depth?: number
 }
 
 export type materialsLimitsType = {

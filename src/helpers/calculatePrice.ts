@@ -524,53 +524,53 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
 }
 
 
-export const getCustomPartPrice = (name:string,width: number, height: number, depth: number, doorFinish: string, doorType: string): number => {
+export const getCustomPartPrice = (name: string, width: number, height: number, depth: number, doorFinish: string, doorType: string, profile: number = 0): number => {
     const area = width * height / 144;
     switch (name) {
         case "Open Cabinet":
             switch (doorFinish) {
                 case "Milino":
-                    return (width*height*depth/100)+120;
+                    return (width * height * depth / 100) + 120;
                 case "Plywood":
-                    return (width*height*depth/80)+120;
+                    return (width * height * depth / 80) + 120;
                 case "Syncron":
                 case "Cleaf":
-                    return (width*height*depth/50)+120;
+                    return (width * height * depth / 50) + 120;
                 case "Luxe":
                 case "OneSkin":
                 case "Ultrapan PET":
-                    return (width*height*depth/20)+120;
+                    return (width * height * depth / 20) + 120;
                 case "Ultrapan Acrilic":
-                    return ((width*height*depth/20)+120)*1.1;
+                    return ((width * height * depth / 20) + 120) * 1.1;
                 case "Zenit":
-                    return ((width*height*depth/20)+120)*1.03;
+                    return ((width * height * depth / 20) + 120) * 1.03;
                 case "Stone":
-                    return ((width*height*depth/20)+120)*1.3*2;
+                    return ((width * height * depth / 20) + 120) * 1.3 * 2;
                 case "Painted":
-                    return ((width*height*depth/20)+120)*1.3*1.05;
+                    return ((width * height * depth / 20) + 120) * 1.3 * 1.05;
                 default:
                     return 0;
             }
         case "Floating Shelf":
-            const opetCabinetCoef = (width*height+width*depth+height*depth)/144*2*2.3
+            const opetCabinetCoef = (width * height + width * depth + height * depth) / 144 * 2 * 2.3
             switch (doorFinish) {
                 case "Milino":
-                    return opetCabinetCoef*20
+                    return opetCabinetCoef * 20
                 case "Syncron":
                 case "Cleaf":
-                    return opetCabinetCoef*22
+                    return opetCabinetCoef * 22
                 case "Luxe":
                 case "OneSkin":
                 case "Ultrapan PET":
-                    return opetCabinetCoef*24
+                    return opetCabinetCoef * 24
                 case "Ultrapan Acrilic":
-                    return opetCabinetCoef*24*1.1
+                    return opetCabinetCoef * 24 * 1.1
                 case "Zenit":
-                    return opetCabinetCoef*24*1.03
+                    return opetCabinetCoef * 24 * 1.03
                 case "Stone":
-                    return opetCabinetCoef*31.2*2
+                    return opetCabinetCoef * 31.2 * 2
                 case "Painted":
-                    return opetCabinetCoef*31.2*1.05
+                    return opetCabinetCoef * 31.2 * 1.05
                 default:
                     return 0;
             }
@@ -581,24 +581,24 @@ export const getCustomPartPrice = (name:string,width: number, height: number, de
             const k = area > 1 ? 1 : 1.8;
             switch (doorFinish) {
                 case "Milino":
-                    return area*k*8;
+                    return area * k * 8;
                 case "Plywood":
-                    return area*k*10;
+                    return area * k * 10;
                 case "Syncron":
                 case "Cleaf":
-                    return area*k*18;
+                    return area * k * 18;
                 case "Luxe":
                 case "OneSkin":
                 case "Ultrapan PET":
-                    return area*k*24;
+                    return area * k * 24;
                 case "Ultrapan Acrilic":
-                    return area*k*24*1.1;
+                    return area * k * 24 * 1.1;
                 case "Zenit":
-                    return area*k*24*1.03;
+                    return area * k * 24 * 1.03;
                 case "Stone":
-                    return area*k*31.2*2;
+                    return area * k * 31.2 * 2;
                 case "Painted":
-                    return area*k*31.2*1.3;
+                    return area * k * 31.2 * 1.3;
                 default:
                     return 0;
             }
@@ -627,7 +627,7 @@ export const getCustomPartPrice = (name:string,width: number, height: number, de
                     return 0;
             }
         case "L Shape":
-            const lSHapeArea = (width+depth)*height/144
+            const lSHapeArea = (width + depth) * height / 144
             switch (doorFinish) {
                 case "Milino":
                     return lSHapeArea * 19;
@@ -652,7 +652,7 @@ export const getCustomPartPrice = (name:string,width: number, height: number, de
                     return 0;
             }
         case "Column":
-            const columnArea = (width*height + width*depth + height*depth)/144*2*2.3;
+            const columnArea = (width * height + width * depth + height * depth) / 144 * 2 * 2.3;
             switch (doorFinish) {
                 case "Milino":
                     return columnArea * 15.2;
@@ -675,9 +675,9 @@ export const getCustomPartPrice = (name:string,width: number, height: number, de
                     return 0;
             }
         case "Backing":
-            return area*4.6;
+            return area * 4.6;
         case "Shaker Panel":
-            if (doorType === 'MicroShaker') return area*60;
+            if (doorType === 'Micro Shaker') return area * 60;
             switch (doorFinish) {
                 case "Milino":
                     return area * 36;
@@ -700,10 +700,24 @@ export const getCustomPartPrice = (name:string,width: number, height: number, de
                     return 0;
             }
         case "Slatted Panel":
-            return area*78;
+            return area * 48;
         case "Decor Panel":
-            return area > 4 ? area*64 : 240;
-
+            let decorPrice = area > 4 ? area * 64 : 240;
+            return doorFinish === 'Ultrapan Acrilic' ? decorPrice * 1.1 : decorPrice
+        case "Shaker Glass Door":
+            let shakerDoorPrice = area * 80 > 240 ? area * 80 : 240;
+            return doorFinish === 'Ultrapan Acrilic' ? shakerDoorPrice * 1.1 : shakerDoorPrice
+        case "Glass Aluminum Door":
+            switch (profile) {
+                case 1021:
+                case 1040:
+                    return area * 100 > 300 ? area * 100 : 300
+                case 1022:
+                case 1042:
+                    return area * 120 > 300 ? area * 120 : 300
+                default:
+                    return 0;
+            }
         default:
             return 0
     }

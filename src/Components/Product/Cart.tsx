@@ -24,15 +24,16 @@ const Cart = () => {
                 }
                 <div className={s.sidebarBottom}>
                     {cartTotal ?
-                    <div className={s.cartTotal}>
-                        <span>Total: </span>
-                        <span>{cartTotal}$</span>
-                    </div> : null }
+                        <div className={s.cartTotal}>
+                            <span>Total: </span>
+                            <span>{cartTotal}$</span>
+                        </div> : null}
                     <div className={s.sidebarButtons}>
                         <NavLink to={'/'} className={['button yellow'].join(' ')}>← Change materials</NavLink>
                         <NavLink to={'/cabinets'} className={['button yellow'].join(' ')}>← Back to
                             cabinets</NavLink>
-                        {cartTotal ?<NavLink to={'/checkout'} className={['button yellow'].join(' ')}>Checkout →</NavLink> : null}
+                        {cartTotal ? <NavLink to={'/checkout'} className={['button yellow'].join(' ')}>Checkout
+                            →</NavLink> : null}
                     </div>
                 </div>
             </div>
@@ -57,7 +58,7 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
         note,
         category,
         productExtra,
-        customPartExtra
+        customPartExtra,
     } = item;
     const dispatch = useAppDispatch();
 
@@ -76,11 +77,15 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
                 <div className={s.itemName}>{name}</div>
             </div>
             <div className={s.itemOptions}>
-                <div className={s.itemOption}>
-                    <span>Dimentions:</span>
-                    <span>{getFraction(width)}"W x {getFraction(height)}"H x {getFraction(depth)}"D</span>
-                </div>
+                {width * height > 0 ?
+                    <div className={s.itemOption}>
+                        <span>Dimentions:</span>
+                        <span>{getFraction(width)}"W x {getFraction(height)}"H x {getFraction(depth)}"D</span>
+                    </div> : null
+                }
+                {
 
+                }
                 {productExtra && <CartItemExtra productExtra={productExtra}/>}
                 {customPartExtra && <CartItemCustomExtra productExtra={customPartExtra}/>}
 
@@ -178,9 +183,13 @@ const CartItemExtra: FC<{ productExtra: productExtraType }> = ({productExtra}) =
 }
 
 const CartItemCustomExtra: FC<{ productExtra: customPartExtraType }> = ({productExtra}) => {
-    const {material} = productExtra;
+    const {material, pvcFeet} = productExtra;
     return (
         <>
+            {pvcFeet && <div className={s.itemOption}>
+              <span>Width:</span>
+              <span>{pvcFeet} ft.</span>
+            </div>}
             {material &&
               <div className={s.itemOption}>
                 <span>Material:</span>

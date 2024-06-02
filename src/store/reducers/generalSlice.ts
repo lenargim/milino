@@ -56,7 +56,8 @@ export type productExtraType = {
 }
 
 export type customPartExtraType = {
-    material: string
+    material?: string,
+    pvcFeet?: number,
 }
 
 export interface productChangeMaterialType extends CartItemType {

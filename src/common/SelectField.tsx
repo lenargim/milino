@@ -4,7 +4,7 @@ import {useField} from "formik";
 import styles from "./Form.module.sass";
 
 export type optionType = {
-    value: string,
+    value: string | number,
     label: string,
     glassDoorType?: number,
     type?: string
