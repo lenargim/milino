@@ -26,7 +26,7 @@ export type customPartDataType = {
     id: number,
     name: string,
     room: string,
-    type: 'custom' | 'pvc'
+    type: 'custom' | 'pvc' | 'led-accessories' | 'door-accessories'
     category: productCategory,
     width?:number,
     depth?: number,

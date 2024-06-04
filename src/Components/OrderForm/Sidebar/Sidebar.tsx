@@ -17,7 +17,7 @@ import {
     getProductDataToCalculatePrice, getPvcPrice, getStartPrice, getTablePrice
 } from "../../../helpers/calculatePrice";
 import {extraPricesType, productDataType, productSizesType} from "../../../helpers/productTypes";
-import {CartItem} from "../../Product/Cart";
+import CartItem from "../../Product/CartItem";
 
 type SideBarType = {
     values: OrderFormType,
@@ -50,9 +50,6 @@ const Sidebar: FC<SideBarType> = ({values}) => {
                     uuid,
                     category,
                     id,
-                    width,
-                    height,
-                    depth,
                     price,
                     productExtra
                 } = cartProduct;
@@ -62,9 +59,12 @@ const Sidebar: FC<SideBarType> = ({values}) => {
                 const productData: productDataType | undefined = products.find(product => product.id === id);
                 if (productData && productExtra) {
                     const {attributes, legsHeight, isAngle, isBlind} = productData;
-                    const {led, blindWidth, type, doorProfile, options,} = productExtra
+                    const {width, height, depth,led, blindWidth, type, doorProfile, options} = productExtra
                     const defProduct: productChangeMaterialType = {
                         ...cartProduct,
+                        width,
+                        height,
+                        depth,
                         type,
                         isBlind,
                         isAngle,

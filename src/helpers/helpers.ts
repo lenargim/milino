@@ -24,6 +24,8 @@ import settings from "../api/settings.json";
 import {v4 as uuidv4} from "uuid";
 import {FormikValues} from "formik";
 import {room} from './categoriesTypes'
+import {LEDAccessoriesType, LEDFormValuesType} from "../Components/CustomPart/LEDForm";
+import alumProfile from "../Components/CustomPart/AlumProfile";
 
 
 export const useAppDispatch: () => AppDispatch = useDispatch
@@ -204,7 +206,6 @@ export const addToCartData = (values:FormikValues, type:productTypings, id:numbe
         'LED indent': ledIndent,
     } = values;
 
-    const realWidth = width || customWidth;
     const img = images[type - 1].value || ''
     const cartData: CartItemType = {
         id: id,
@@ -212,15 +213,15 @@ export const addToCartData = (values:FormikValues, type:productTypings, id:numbe
         category,
         name,
         img: img,
-        width: realWidth,
-        height: height || customHeight,
-        depth: depth || customDepth,
         amount: 1,
         price: price ? price : 0,
         note,
     }
 
     let extra: productExtraType = {
+        width: width || customWidth,
+        height: height || customHeight,
+        depth: depth || customDepth,
         type: type,
         hinge: hinge,
         options: chosenOptions
@@ -275,13 +276,15 @@ export const addToCartCustomPart = (values:FormikValues, id:number, price:number
         category,
         name,
         img: image || '',
-        width:  width || 0,
-        height: height || 0,
-        depth: depth || 0,
         amount: 1,
         price: price ? price : 0,
         note,
-        customPartExtra: {material}
+        customPartExtra: {
+            material,
+            width:  width || 0,
+            height: height || 0,
+            depth: depth || 0,
+        }
     }
     return cartData
 }
@@ -300,13 +303,31 @@ export const addToCartPVC = (values:FormikValues, id:number, price:number|undefi
         category,
         name,
         img: image || '',
-        width: 0,
-        height: 0,
-        depth: 0,
         amount: 1,
         price: price ? price : 0,
         note,
-        customPartExtra: {material, pvcFeet}
+        PVCExtra: {pvcFeet, material}
+    }
+    return cartData
+}
+
+export const addToCartLed = (values:LEDFormValuesType, id:number, image: string, name:string, category: productCategory) => {
+    const cartData: CartItemType = {
+        id: id,
+        uuid: uuidv4(),
+        category,
+        name,
+        img: image ?? '',
+        price: values.price,
+        amount: 1,
+        note: values.Note,
+        LEDAccessories: {
+            "Aluminum Profiles": values["Aluminum Profiles"],
+            "Gola Profiles": values["Gola Profiles"],
+            "Door Sensor": values["Door Sensor"],
+            "Dimmable Remote": values["Dimmable Remote"],
+            Transformer: values["Transformer"]
+        }
     }
     return cartData
 }

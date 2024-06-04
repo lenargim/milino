@@ -718,6 +718,8 @@ export const getCustomPartPrice = (name: string, width: number, height: number, 
                 default:
                     return 0;
             }
+        case "Glass shelf":
+            return 170;
         default:
             return 0
     }

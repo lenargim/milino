@@ -3,6 +3,7 @@ import {customPartDataType} from "../../helpers/productTypes";
 import CustomPartForm from "./CustomPartForm";
 import PVCForm from "./PVCForm";
 import {OrderFormType} from "../../helpers/types";
+import LEDForm from "./LEDForm";
 
 type CustomPartCabinetType = {
     customPart: customPartDataType,
@@ -16,6 +17,8 @@ const CustomPartCabinet: FC<CustomPartCabinetType> = ({customPart, materials}) =
             return <CustomPartForm customPart={customPart} materials={materials}/>
         case "pvc":
             return <PVCForm customPart={customPart} materials={materials}/>
+        case "led-accessories":
+            return <LEDForm customPart={customPart}/>
         default:
             return <></>
     }

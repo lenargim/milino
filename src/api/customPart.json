@@ -1130,5 +1130,28 @@
     ],
     "category": "Custom Parts",
     "image": "panel.png"
+  },
+
+  {
+    "id": 916,
+    "name": "Glass shelf",
+    "room": "Kitchen",
+    "type": "custom",
+    "category": "Custom Parts",
+    "depth": 0.75,
+    "limits": {
+      "width": [1, 999],
+      "height": [1, 999]
+    },
+    "image": "panel.png"
+  },
+  {
+    "id": 917,
+    "name": "LED Accessories",
+    "room": "Kitchen",
+    "type": "led-accessories",
+    "category": "Custom Parts",
+
+    "image": "panel.png"
   }
 ]

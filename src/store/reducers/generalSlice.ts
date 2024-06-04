@@ -8,6 +8,7 @@ import {
     productTypings
 } from "../../helpers/productTypes";
 import {getCartTotal} from "../../helpers/helpers";
+import {LEDAccessoriesType} from "../../Components/CustomPart/LEDForm";
 
 
 interface GeneralState {
@@ -20,23 +21,29 @@ interface GeneralState {
 
 
 export type CartItemType = {
-    id: number, // product id
-    uuid: string, // unique cart id
+    id: number,
+    uuid: string,
     name: string,
     category: productCategory,
-    img?: string,
     amount: number,
+    price: number,
+    note: string,
+    img: string,
+    productExtra?: productExtraType,
+    customPartExtra?: customPartExtraType,
+    PVCExtra?: PVCExtraType,
+    LEDAccessories?: LEDAccessoriesType,
+}
+
+export type PVCExtraType = {
+    pvcFeet: number,
+    material: string,
+}
+
+export type productExtraType = {
     width: number,
     height: number,
     depth: number,
-    price: number,
-    note: string,
-    productExtra?: productExtraType,
-    customPartExtra?: customPartExtraType
-}
-
-
-export type productExtraType = {
     type: productTypings,
     blindWidth?: number,
     hinge: 'Left' | 'Right' | 'Double Doors',
@@ -56,11 +63,16 @@ export type productExtraType = {
 }
 
 export type customPartExtraType = {
+    width: number,
+    height: number,
+    depth: number,
     material?: string,
-    pvcFeet?: number,
 }
 
 export interface productChangeMaterialType extends CartItemType {
+    width: number,
+    height: number,
+    depth: number,
     type: productTypings,
     attributes: attrItem[],
     options: string[],

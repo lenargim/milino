@@ -99,3 +99,24 @@
   display: grid
   grid-template-columns: 1fr 1fr
   gap: 30px
+
+.accessories
+  .row
+    display: flex
+    gap: 10px
+    justify-content: flex-start
+    align-items: center
+    &:not(:last-child)
+      margin-bottom: 20px
+  .close
+    color: $red
+    font-size: 26px
+    font-weight: 700
+  .number
+    display: grid
+    gap: 30px
+    grid-template-columns: 200px 100px 1fr
+    &:not(:last-child)
+      margin-bottom: 20px
+    h3
+      margin: 0
