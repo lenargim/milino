@@ -6,11 +6,11 @@ import noImg from "../assets/img/noPhoto.png"
 import Input from 'react-phone-number-input/input'
 import {getFraction} from "../helpers/helpers";
 
-function handleFocus(input: HTMLInputElement): void {
+export function handleFocus(input: HTMLInputElement): void {
     input.classList.add(`${styles.focused}`);
 }
 
-function handleBlur(input: HTMLInputElement, setTouched: (state: boolean) => void) {
+export function handleBlur(input: HTMLInputElement, setTouched: (state: boolean) => void) {
     setTouched(true)
     if (input.value === '') input.classList.remove(`${styles.focused}`);
 }

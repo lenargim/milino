@@ -7,6 +7,7 @@ import CartItemProductExtra from "./CartItemProductExtra";
 import CartItemCustomExtra from "./CartItemCustomExtra";
 import CartItemPVCExtra from "./CartItemPVCExtra";
 import CartItemLEDExtra from "./CartItemLEDExtra";
+import CartItemDoorExtra from "./CartItemDoorExtra";
 
 export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item, isCheckout = false}) => {
 
@@ -21,7 +22,8 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
         productExtra,
         customPartExtra,
         PVCExtra,
-        LEDAccessories
+        LEDAccessories,
+        DoorAccessories
     } = item;
     const dispatch = useAppDispatch();
 
@@ -46,6 +48,7 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
                 {customPartExtra && <CartItemCustomExtra productExtra={customPartExtra}/>}
                 {PVCExtra && <CartItemPVCExtra productExtra={PVCExtra}/>}
                 {LEDAccessories && <CartItemLEDExtra productExtra={LEDAccessories}/>}
+                {DoorAccessories && <CartItemDoorExtra productExtra={DoorAccessories} />}
 
                 {note &&
                   <div className={s.itemOption}>

@@ -1131,7 +1131,6 @@
     "category": "Custom Parts",
     "image": "panel.png"
   },
-
   {
     "id": 916,
     "name": "Glass shelf",
@@ -1152,6 +1151,14 @@
     "type": "led-accessories",
     "category": "Custom Parts",
 
+    "image": "panel.png"
+  },
+  {
+    "id": 918,
+    "name": "Door Accessories",
+    "room": "Kitchen",
+    "type": "door-accessories",
+    "category": "Custom Parts",
     "image": "panel.png"
   }
 ]

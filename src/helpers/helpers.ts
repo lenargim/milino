@@ -26,6 +26,7 @@ import {FormikValues} from "formik";
 import {room} from './categoriesTypes'
 import {LEDAccessoriesType, LEDFormValuesType} from "../Components/CustomPart/LEDForm";
 import alumProfile from "../Components/CustomPart/AlumProfile";
+import {DoorAccessoiresType, DoorAccessoiresValuesType} from "../Components/CustomPart/DoorAccessoiresForm";
 
 
 export const useAppDispatch: () => AppDispatch = useDispatch
@@ -327,6 +328,28 @@ export const addToCartLed = (values:LEDFormValuesType, id:number, image: string,
             "Door Sensor": values["Door Sensor"],
             "Dimmable Remote": values["Dimmable Remote"],
             Transformer: values["Transformer"]
+        }
+    }
+    return cartData
+}
+
+export const addToCartDoorAccessories = (values:DoorAccessoiresValuesType, id:number, image: string, name:string, category: productCategory) => {
+    const cartData: CartItemType = {
+        id: id,
+        uuid: uuidv4(),
+        category,
+        name,
+        img: image ?? '',
+        price: values.price,
+        amount: 1,
+        note: values.Note,
+        DoorAccessories: {
+            aventos: values.aventos,
+            hingeAngles: values.hingeAngles,
+            hingeHoles: values.hingeHoles,
+            hingeHoleCustom: values.hingeHoleCustom,
+            PTO: values.PTO,
+            servo: values.servo
         }
     }
     return cartData

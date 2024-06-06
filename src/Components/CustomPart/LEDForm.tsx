@@ -19,7 +19,7 @@ export type LEDAccessoriesType = {
     ['Transformer']: number,
 }
 
-export interface LEDFormValuesType extends LEDAccessoriesType{
+export interface LEDFormValuesType extends LEDAccessoriesType {
     price: number,
     Note: string,
 }
@@ -52,9 +52,6 @@ const LEDForm: FC<{ customPart: customPartDataType }> = ({customPart}) => {
                 const {
                     ['Aluminum Profiles']: alumProfiles,
                     ['Gola Profiles']: golaProfiles,
-                    ['Door Sensor']: doorSensor,
-                    ['Dimmable Remote']: dimRemote,
-                    ['Transformer']: transformer,
                     price
                 } = values;
 
@@ -113,9 +110,12 @@ const LEDForm: FC<{ customPart: customPartDataType }> = ({customPart}) => {
                             </button>
                         </div>
 
-                        <NumberPart name={'Door Sensor'} qty={doorSensor}/>
-                        <NumberPart name={'Dimmable Remote'} qty={dimRemote}/>
-                        <NumberPart name={'Transformer'} qty={transformer}/>
+                        <div className={s.block}>
+                            <h3>Accessories</h3>
+                            <NumberPart el={'Door Sensor'}/>
+                            <NumberPart el={'Dimmable Remote'}/>
+                            <NumberPart el={'Transformer'}/>
+                        </div>
 
                         <div className={s.block}>
                             <TextInput type={"text"} label={'Note'} name="Note"/>
