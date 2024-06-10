@@ -524,7 +524,7 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
 }
 
 
-export const getCustomPartPrice = (name: string, width: number, height: number, depth: number, doorFinish: string, doorType: string, profile: number = 0): number => {
+export const getCustomPartPrice = (name: string, width: number, height: number, depth: number, doorFinish: string, doorType?: string ): number => {
     const area = width * height / 144;
     switch (name) {
         case "Open Cabinet":
@@ -704,6 +704,28 @@ export const getCustomPartPrice = (name: string, width: number, height: number, 
         case "Decor Panel":
             let decorPrice = area > 4 ? area * 64 : 240;
             return doorFinish === 'Ultrapan Acrilic' ? decorPrice * 1.1 : decorPrice
+        // case "Shaker Glass Door":
+        //     let shakerDoorPrice = area * 80 > 240 ? area * 80 : 240;
+        //     return doorFinish === 'Ultrapan Acrilic' ? shakerDoorPrice * 1.1 : shakerDoorPrice
+        // case "Glass Aluminum Door":
+        //     switch (profile) {
+        //         case 1021:
+        //         case 1040:
+        //             return area * 100 > 300 ? area * 100 : 300
+        //         case 1022:
+        //         case 1042:
+        //             return area * 120 > 300 ? area * 120 : 300
+        //         default:
+        //             return 0;
+        //     }
+        default:
+            return 0
+    }
+}
+
+export const getGlassDoorPrice = (name: string, width: number, height: number, doorFinish: string, profile?: number ): number => {
+    const area = width * height / 144;
+    switch (name) {
         case "Shaker Glass Door":
             let shakerDoorPrice = area * 80 > 240 ? area * 80 : 240;
             return doorFinish === 'Ultrapan Acrilic' ? shakerDoorPrice * 1.1 : shakerDoorPrice
@@ -718,8 +740,6 @@ export const getCustomPartPrice = (name: string, width: number, height: number, 
                 default:
                     return 0;
             }
-        case "Glass shelf":
-            return 170;
         default:
             return 0
     }

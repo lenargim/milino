@@ -26,7 +26,7 @@ export type customPartDataType = {
     id: number,
     name: string,
     room: string,
-    type: 'custom' | 'pvc' | 'led-accessories' | 'door-accessories'
+    type: 'custom' | 'pvc' | 'glass-door' | 'glass-shelf' | 'led-accessories' | 'door-accessories'
     category: productCategory,
     width?:number,
     depth?: number,
@@ -34,12 +34,14 @@ export type customPartDataType = {
     price?: number,
     materials?: materialsCustomPart[],
     limits?: materialsLimitsType,
-    doorProfiles?: doorProfilesType[]
+    glassDoor?: glassDoorType,
+    glassShelf?: optionType[]
 }
 
-export type doorProfilesType = {
-    value: number,
-    label: string
+export type glassDoorType = {
+    doorProfiles?: optionType[],
+    doorTypes?: optionType[],
+    doorColors?: optionType[]
 }
 
 export type materialsCustomPart = {

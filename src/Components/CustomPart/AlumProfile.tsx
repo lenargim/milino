@@ -11,7 +11,7 @@ export type alProfileType = {
 }
 
 const AlumProfile: FC<{ profile: alProfileType, index: number }> = ({profile, index}) => {
-    const [{value}, , {setValue}] = useField<alProfileType[]>('Aluminum Profiles')
+    const [{value}, , {setValue}] = useField<alProfileType[]>('LED Aluminum Profiles')
     const {qty, uuid} = profile;
 
     const deleteAlItem = (uuid: string) => {
@@ -29,7 +29,7 @@ const AlumProfile: FC<{ profile: alProfileType, index: number }> = ({profile, in
         <div className={s.row}>
             <button onClick={() => deleteAlItem(uuid)} className={s.close} type={"button"}>×</button>
             <ProductInputCustom label="Length" value={null}
-                                name={`[Aluminum Profiles].${index}.length`}/>
+                                name={`[LED Aluminum Profiles].${index}.length`}/>
             <div className={s.row}>×
                 <div className={s.buttons}>
                     <button value="minus" disabled={qty <= 1} onClick={() => changeAmount('minus')}

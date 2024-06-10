@@ -1,10 +1,10 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import Select, {OnChangeValue, StylesConfig} from "react-select";
 import {useField} from "formik";
 import styles from "./Form.module.sass";
 
 export type optionType = {
-    value: string | number,
+    value: string,
     label: string,
     glassDoorType?: number,
     type?: string
@@ -20,9 +20,18 @@ const SelectField: FC<SelectFieldType> = ({options, name, val}) => {
     const [field, meta, {setValue}] = useField(name);
     const {error, touched} = meta;
 
+
+
     const onChange = (value: OnChangeValue<optionType, false>) => {
         if (value) setValue(value.value);
     };
+
+    useEffect(() => {
+        if (field.value && !val) {
+            setValue('')
+        }
+    }, [val])
+
 
 
     const customStyles: StylesConfig<optionType, false> = {
@@ -91,12 +100,14 @@ const SelectField: FC<SelectFieldType> = ({options, name, val}) => {
         <div
             className={[styles.row, styles.select, field.value && styles.active, error && touched ? 'error' : ''].join(' ')}>
             {touched && error ? <div className={styles.error}>{error}</div> : ''}
+
             <Select options={options}
                     onChange={onChange}
                     placeholder={name}
                     styles={customStyles}
                     isSearchable={false}
                     defaultValue={val}
+                    value={val}
             />
         </div>
     )

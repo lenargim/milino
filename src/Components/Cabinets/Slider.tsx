@@ -25,8 +25,9 @@ const Slider: FC<SliderType> = ({setCategory, room, category}) => {
                         <img src={getImg('categories', currentCat ? currentCat.img : defaultImg)} alt={room}/>
                     </div>
                     <div className={s.category}>
-                        {categories.map(el => <CategoryItem name={el.name} key={el.name}
-                                                            img={getImg('categories', el.img)}
+                        {categories.map(el => <CategoryItem name={el.name}
+                                                            current={currentCat?.name}
+                                                            key={el.name}
                                                             setCategory={setCategory}
                         />)
                         }
@@ -39,13 +40,17 @@ const Slider: FC<SliderType> = ({setCategory, room, category}) => {
 
 export default Slider;
 
-
-const CategoryItem: FC<{ name: productCategory, img: string, setCategory: setCategoryType }> = ({name, setCategory}) => {
+type CategoryItemType = {
+    name: productCategory,
+    current: string|undefined,
+    setCategory: setCategoryType
+}
+const CategoryItem: FC<CategoryItemType> = ({name, setCategory, current}) => {
     const handleChange = (name: productCategory) => {
         setCategory(name)
     }
     return (
-        <div className={s.item}>
+        <div className={[s.item, current === name ? s.itemChecked : ''].join(' ')}>
             <input name="category" type="radio" id={name} value={name} onInput={() => handleChange(name)}/>
             <label htmlFor={name} className="button submit">{name}</label>
         </div>

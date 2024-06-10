@@ -801,7 +801,7 @@
     "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
-    "depth": 0.75,
+    "depth": 0.25,
     "limits": {
       "width": [3,48],
       "height": [3,96]
@@ -814,27 +814,29 @@
     "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
-    "depth": 0.75,
     "materials": [
       {
         "name": "Zenit",
         "limits": {
           "width": [5, 108],
           "height": [5, 108]
-        }
+        },
+        "depth": 0.75
       },
       {"name": "Syncron",
         "limits": {
           "width": [5, 108],
           "height": [5, 108]
-        }
+        },
+        "depth": 0.75
       },
       {
         "name": "Painted",
         "limits": {
           "width": [5, 120],
           "height": [5, 120]
-        }
+        },
+        "depth": 0.875
       },
       {
         "name": "Micro Shaker",
@@ -909,20 +911,6 @@
           "width": [4, 108],
           "height": [4, 108]
         }
-      },
-      {
-        "name": "Stone",
-        "limits": {
-          "width": [4, 108],
-          "height": [4, 108]
-        }
-      },
-      {
-        "name": "Painted",
-        "limits": {
-          "width": [4, 108],
-          "height": [4, 108]
-        }
       }
     ],
     "image": "panel.png"
@@ -969,7 +957,7 @@
     "id": 913,
     "name": "Shaker Glass Door",
     "room": "Kitchen",
-    "type": "custom",
+    "type": "glass-door",
     "category": "Custom Parts",
     "depth": 0.75,
     "materials": [
@@ -1036,33 +1024,95 @@
         }
       }
     ],
+    "glassDoor": {
+      "doorTypes": [
+        {
+          "value": "Glass",
+          "label": "Glass"
+        },
+        {
+          "value": "Mirror",
+          "label": "Mirror"
+        },
+        {
+          "value": "Colored",
+          "label": "Colored"
+        }
+      ]
+    },
     "image": "panel.png"
   },
   {
     "id": 914,
     "name": "Glass Aluminum Door",
     "room": "Kitchen",
-    "type": "custom",
+    "type": "glass-door",
     "category": "Custom Parts",
     "depth": 0.75,
-    "doorProfiles": [
-      {
-        "value": 1021,
-        "label": "Profile 1021"
-      },
-      {
-        "value": 1022,
-        "label": "Profile 1022"
-      },
-      {
-        "value": 1040,
-        "label": "Profile 1040"
-      },
-      {
-        "value": 1042,
-        "label": "Profile 1042"
-      }
-    ],
+    "glassDoor": {
+      "doorProfiles": [
+        {
+          "glassDoorType": 1021,
+          "value": "Profile 1021",
+          "label": "Profile 1021"
+        },
+        {
+          "glassDoorType": 1022,
+          "value": "Profile 1022",
+          "label": "Profile 1022"
+        },
+        {
+          "glassDoorType": 1040,
+          "value": "Profile 1040",
+          "label": "Profile 1040"
+        },
+        {
+          "glassDoorType": 1042,
+          "value": "Profile 1042",
+          "label": "Profile 1042"
+        }
+      ],
+      "doorTypes": [
+        {
+          "value": "Glass",
+          "label": "Glass"
+        },
+        {
+          "value": "Mirror",
+          "label": "Mirror"
+        },
+        {
+          "value": "Colored",
+          "label": "Colored"
+        }
+      ],
+      "doorColors": [
+        {"glassDoorType": 1021, "value": "1021 Black", "label": "1021 Black"},
+        {"glassDoorType": 1021, "value": "1021 Champagne", "label": "1021 Champagne"},
+        {"glassDoorType": 1021, "value": "1021 Clear Anodized", "label": "1021 Clear Anodized"},
+        {"glassDoorType": 1021, "value": "1021 Polished", "label": "1021 Polished"},
+        {"glassDoorType": 1021, "value": "1021 Graphite", "label": "1021 Graphite"},
+        {"glassDoorType": 1021, "value": "1021 Sepia", "label": "1021 Sepia"},
+        {"glassDoorType": 1022, "value": "1022 Black", "label": "1022 Black"},
+        {"glassDoorType": 1022, "value": "1022 Champagne", "label": "1022 Champagne"},
+        {"glassDoorType": 1022, "value": "1022 Clear Anodized", "label": "1022 Clear Anodized"},
+        {"glassDoorType": 1040, "value": "1040 Black", "label": "1040 Black"},
+        {"glassDoorType": 1040, "value": "1040 Champagne", "label": "1040 Champagne"},
+        {"glassDoorType": 1040, "value": "1040 Clear Anodized", "label": "1040 Clear Anodized"},
+        {"glassDoorType": 1040, "value": "1040 Polished", "label": "1040 Polished"},
+        {"glassDoorType": 1040, "value": "1040 Graphite", "label": "1040 Graphite"},
+        {"glassDoorType": 1040, "value": "1040 Sepia", "label": "1040 Sepia"},
+        {"glassDoorType": 1040, "value": "1040 White", "label": "1040 White"},
+        {"glassDoorType": 1042, "value": "1042 Black", "label": "1042 Black"},
+        {"glassDoorType": 1042, "value": "1042 Champagne", "label": "1042 Champagne"},
+        {"glassDoorType": 1042, "value": "1042 Clear Anodized", "label": "1042 Clear Anodized"},
+        {"glassDoorType": 1042, "value": "1042 Polished", "label": "1042 Polished"},
+        {"glassDoorType": 1042, "value": "1042 Gold", "label": "1042 Gold"},
+        {"glassDoorType": 1042, "value": "1042 Graphite", "label": "1042 Graphite"},
+        {"glassDoorType": 1042, "value": "1042 Sepia", "label": "1042 Sepia"},
+        {"glassDoorType": 1042, "value": "1042 White", "label": "1042 White"}
+      ]
+    },
     "limits": {
       "width": [6,108],
       "height": [6,108]
@@ -1135,13 +1185,19 @@
     "id": 916,
     "name": "Glass shelf",
     "room": "Kitchen",
-    "type": "custom",
+    "type": "glass-shelf",
     "category": "Custom Parts",
-    "depth": 0.75,
+    "depth": 0.25,
     "limits": {
       "width": [1, 999],
       "height": [1, 999]
     },
+    "glassShelf": [
+      {"value": "Clear", "label": "Clear"},
+      {"value": "Frosted", "label": "Frosted"},
+      {"value": "Bronze Translucent", "label": "Bronze Translucent"},
+      {"value": "Gray Translucent", "label": "Gray Translucent"}
+    ],
     "image": "panel.png"
   },
   {

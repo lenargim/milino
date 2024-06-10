@@ -3,8 +3,6 @@ import React, {FC} from 'react';
 import {
     addToCartCustomPart,
     getLimit,
-    getSelectValfromVal,
-    getSelectValfromValCustomPart,
     useAppDispatch
 } from "../../helpers/helpers";
 import {customPartDataType} from "../../helpers/productTypes";
@@ -14,7 +12,6 @@ import {ProductInputCustom, ProductRadioInput, TextInput} from "../../common/For
 import {getCustomPartPrice} from "../../helpers/calculatePrice";
 import {OrderFormType} from "../../helpers/types";
 import {addToCart, setCustomPart} from "../../store/reducers/generalSlice";
-import SelectField from "../../common/SelectField";
 
 type CustomPartFormType = {
     customPart: customPartDataType,
@@ -26,7 +23,6 @@ export type CustomPartFormValuesType = {
     Depth: number,
     Material: string,
     Note: string,
-    Profile?: number
 }
 
 const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
@@ -41,7 +37,6 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
         width: widthConst,
         depth: depthConst,
         category,
-        doorProfiles
     } = customPart;
 
     const {
@@ -49,20 +44,19 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
         "Door Type": doorType
     } = materials;
 
-    const sizeLimitInitial = materialsRange?.find(el => doorFinish.includes(el.name))?.limits ?? materialsRange?.find(el => doorType === el.name)?.limits ?? limits ?? {};
+    const currentMaterialData = materialsRange?.find(el => doorFinish.includes(el.name)) ?? materialsRange?.find(el => doorType === el.name);
+    const sizeLimitInitial = currentMaterialData?.limits ?? limits ?? {};
     const materialArr = materialsRange ? Object.values(materialsRange).map(el => el.name) : [];
     const curMaterial = materialArr.find(el => doorFinish.includes(el)) ?? doorType;
+    const initialDepth = currentMaterialData?.depth ?? depthConst ?? getLimit(sizeLimitInitial.depth);
+
 
     const initialValues: CustomPartFormValuesType = {
         'Width': widthConst ?? getLimit(sizeLimitInitial.width),
-        'Height':getLimit(sizeLimitInitial.height),
-        'Depth': depthConst ?? getLimit(sizeLimitInitial.depth),
-        'Material': curMaterial ??  materialArr[0],
+        'Height': getLimit(sizeLimitInitial.height),
+        'Depth': initialDepth,
+        'Material': curMaterial ?? materialArr[0],
         'Note': ''
-    }
-
-    if (doorProfiles) {
-        initialValues.Profile = doorProfiles[0].value
     }
 
     return (
@@ -75,21 +69,26 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                 resetForm();
             }}
         >
-            {({values, errors}) => {
+            {({values, errors, setFieldValue, }) => {
                 const {
                     ['Width']: width,
                     ['Height']: height,
                     ['Depth']: depth,
                     ['Material']: material,
-                    ['Note']: note,
-                    ['Profile']: profile
                 } = values;
-                const priceCoef = +(getCustomPartPrice(name, width, height, depth, material, doorType, profile)).toFixed(2);
+                const priceCoef = +(getCustomPartPrice(name, width, height, depth, material, doorType)).toFixed(2);
 
                 setTimeout(() => {
                     if (price !== priceCoef) dispatch(setCustomPart({...customPart, price: priceCoef}));
-                }, 0)
+                }, 0);
 
+                if (currentMaterialData && currentMaterialData.depth) {
+                    const curMaterial = values.Material;
+                    const newDepth = materialsRange?.find(el => el.name === curMaterial)?.depth;
+                    if (depth !== newDepth) setFieldValue('Depth', newDepth);
+                }
+
+                console.log(errors)
                 return (
                     <Form>
                         {!widthConst ?
@@ -106,7 +105,7 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                             </div>
                         </div>
 
-                        {!depthConst ?
+                        {!initialDepth ?
                             <div className={s.block}>
                                 <h3>Depth</h3>
                                 <div className={s.options}>
@@ -125,14 +124,6 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                             </div>
                           </div>
                         }
-                        {doorProfiles && profile &&
-                          <div className={s.block}>
-                            <h3>Door Profile</h3>
-                            <SelectField name="Profile" val={getSelectValfromValCustomPart(profile, doorProfiles)}
-                                         options={doorProfiles}/>
-                          </div>
-                        }
-
                         <div className={s.block}>
                             <TextInput type={"text"} label={'Note'} name="Note"/>
                         </div>

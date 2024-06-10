@@ -5,6 +5,8 @@ import PVCForm from "./PVCForm";
 import {OrderFormType} from "../../helpers/types";
 import LEDForm from "./LEDForm";
 import DoorAccessoiresForm from "./DoorAccessoiresForm";
+import GlassDoorForm from "./GlassDoorForm";
+import GlassShelfForm from "./GlassShelfForm";
 
 type CustomPartCabinetType = {
     customPart: customPartDataType,
@@ -22,6 +24,10 @@ const CustomPartCabinet: FC<CustomPartCabinetType> = ({customPart, materials}) =
             return <LEDForm customPart={customPart}/>
         case "door-accessories":
             return <DoorAccessoiresForm customPart={customPart}/>
+        case "glass-door":
+            return <GlassDoorForm customPart={customPart} materials={materials}/>
+        case "glass-shelf":
+            return <GlassShelfForm customPart={customPart} materials={materials}/>
         default:
             return <></>
     }

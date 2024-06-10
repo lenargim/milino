@@ -7,13 +7,13 @@ import {v4 as uuidv4} from "uuid";
 import AlumProfile, {alProfileType} from "./AlumProfile";
 import GolaProfile, {golaProfileType} from "./GolaProfile";
 import NumberPart from "./NumberPart";
-import {addToCart, setCustomPart} from "../../store/reducers/generalSlice";
+import {addToCart} from "../../store/reducers/generalSlice";
 import {customPartDataType} from "../../helpers/productTypes";
 
 
 export type LEDAccessoriesType = {
-    ['Aluminum Profiles']: alProfileType[],
-    ['Gola Profiles']: golaProfileType[],
+    ['LED Aluminum Profiles']: alProfileType[],
+    ['LED Gola Profiles']: golaProfileType[],
     ['Door Sensor']: number,
     ['Dimmable Remote']: number,
     ['Transformer']: number,
@@ -28,8 +28,8 @@ const LEDForm: FC<{ customPart: customPartDataType }> = ({customPart}) => {
     const {id, image, name, category} = customPart
     const dispatch = useAppDispatch();
     const initialValues: LEDFormValuesType = {
-        ['Aluminum Profiles']: [],
-        ['Gola Profiles']: [],
+        ['LED Aluminum Profiles']: [],
+        ['LED Gola Profiles']: [],
         ['Door Sensor']: 0,
         ['Dimmable Remote']: 0,
         ['Transformer']: 0,
@@ -50,22 +50,22 @@ const LEDForm: FC<{ customPart: customPartDataType }> = ({customPart}) => {
         >
             {({values, errors, setFieldValue}) => {
                 const {
-                    ['Aluminum Profiles']: alumProfiles,
-                    ['Gola Profiles']: golaProfiles,
+                    ['LED Aluminum Profiles']: alumProfiles,
+                    ['LED Gola Profiles']: golaProfiles,
                     price
                 } = values;
 
                 const addProfile = (field: string) => {
                     switch (field) {
-                        case 'Aluminum Profiles':
-                            setFieldValue('Aluminum Profiles', [...alumProfiles, {
+                        case 'LED Aluminum Profiles':
+                            setFieldValue('LED Aluminum Profiles', [...alumProfiles, {
                                 uuid: uuidv4(),
                                 length: '',
                                 qty: 1
                             }])
                             break;
-                        case 'Gola Profile':
-                            setFieldValue('Gola Profiles', [...golaProfiles, {
+                        case 'LED Gola Profile':
+                            setFieldValue('LED Gola Profiles', [...golaProfiles, {
                                 uuid: uuidv4(),
                                 length: '',
                                 color: 'Black',
@@ -82,7 +82,7 @@ const LEDForm: FC<{ customPart: customPartDataType }> = ({customPart}) => {
                 return (
                     <Form className={s.accessories}>
                         <div className={s.block}>
-                            <h3>Aluminum Profile</h3>
+                            <h3>LED Aluminum Profile</h3>
                             {alumProfiles.length
                                 ? alumProfiles.map((profile, index) => <AlumProfile
                                     profile={profile}
@@ -91,12 +91,12 @@ const LEDForm: FC<{ customPart: customPartDataType }> = ({customPart}) => {
                                 />)
                                 : null}
                             <button type="button" className={['button yellow small'].join(' ')}
-                                    onClick={() => addProfile('Aluminum Profiles')}>+
+                                    onClick={() => addProfile('LED Aluminum Profiles')}>+
                                 Aluminum Profile
                             </button>
                         </div>
                         <div className={s.block}>
-                            <h3>Gola Profile</h3>
+                            <h3>LED Gola Profile</h3>
                             {golaProfiles.length
                                 ? golaProfiles.map((profile, index) => <GolaProfile
                                     profile={profile}
@@ -105,7 +105,7 @@ const LEDForm: FC<{ customPart: customPartDataType }> = ({customPart}) => {
                                 />)
                                 : null}
                             <button type="button" className={['button yellow small'].join(' ')}
-                                    onClick={() => addProfile('Gola Profile')}>+
+                                    onClick={() => addProfile('LED Gola Profile')}>+
                                 Gola Profile
                             </button>
                         </div>
@@ -137,8 +137,8 @@ export default LEDForm;
 
 const getPrice = (values: LEDFormValuesType): number => {
     const {
-        'Aluminum Profiles': alumProf,
-        "Gola Profiles": golaProf,
+        'LED Aluminum Profiles': alumProf,
+        "LED Gola Profiles": golaProf,
         'Dimmable Remote': dimRemote,
         "Door Sensor": doorSensor,
         "Transformer": transformer

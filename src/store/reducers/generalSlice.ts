@@ -32,9 +32,17 @@ export type CartItemType = {
     img: string,
     productExtra?: productExtraType,
     customPartExtra?: customPartExtraType,
+    glassDoorExtra?: glassDoorExtraType,
+    glassShelfExtra?: string,
     PVCExtra?: PVCExtraType,
     LEDAccessories?: LEDAccessoriesType,
     DoorAccessories?: DoorAccessoiresType
+}
+
+export type glassDoorExtraType = {
+    Profile?: string,
+    Type?: string,
+    Color?: string
 }
 
 export type PVCExtraType = {

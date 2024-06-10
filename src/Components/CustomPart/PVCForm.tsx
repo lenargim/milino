@@ -15,9 +15,13 @@ type PVCFormType = {
     customPart: customPartDataType,
     materials: OrderFormType
 }
-export type PVCFormValuesType = {
+export type PVCValuesType = {
     Width: number,
     Material: string,
+}
+
+export interface PVCFormValuesType extends PVCValuesType {
+    price: number,
     Note: string,
 }
 
@@ -45,6 +49,7 @@ const PVCForm: FC<PVCFormType> = ({customPart, materials}) => {
     const initialValues: PVCFormValuesType = {
         Width: getLimit(sizeLimitInitial.width),
         Material: curMaterial ?? materialArr[0],
+        price: 0,
         Note: ''
     }
 
@@ -53,12 +58,14 @@ const PVCForm: FC<PVCFormType> = ({customPart, materials}) => {
             initialValues={initialValues}
             validationSchema={getPVCSchema(materialsRange, limits)}
             onSubmit={(values: PVCFormValuesType, {resetForm}) => {
-                const cartData = addToCartPVC(values, id, price, image, name, category)
-                dispatch(addToCart(cartData))
-                resetForm();
+                if (values.price) {
+                    const cartData = addToCartPVC(values, id, image, name, category)
+                    dispatch(addToCart(cartData))
+                    resetForm();
+                }
             }}
         >
-            {({values, errors}) => {
+            {({values, errors, setFieldValue}) => {
                 const {
                     ['Width']: width,
                     ['Material']: material,
@@ -68,8 +75,8 @@ const PVCForm: FC<PVCFormType> = ({customPart, materials}) => {
                 const priceCoef = Math.ceil(width);
 
                 setTimeout(() => {
-                    if (price !== priceCoef) dispatch(setCustomPart({...customPart, price: priceCoef}));
-                }, 0)
+                    if (price !== priceCoef) setFieldValue('price', priceCoef);
+                }, 0);
 
                 return (
                     <Form>

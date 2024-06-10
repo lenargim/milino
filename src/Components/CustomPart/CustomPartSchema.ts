@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 import {materialsCustomPart, materialsLimitsType} from "../../helpers/productTypes";
 
 const patterntwodigisaftercomma = /^\d+(\.\d{0,2})?$/;
+const patternthreedigisaftercomma = /^\d+(\.\d{0,3})?$/;
 
 export function getCustomPartSchema(materialsRange: materialsCustomPart[] | undefined, limits: materialsLimitsType | undefined): Yup.InferType<any> {
     const schemaMain = Yup.object({
@@ -68,9 +69,9 @@ export function getCustomPartSchema(materialsRange: materialsCustomPart[] | unde
             .required('Please wright down depth')
             .typeError('Invalid Input: numbers please')
             .test("is-decimal",
-                "Maximum two digits after comma",
+                "Maximum three digits after comma",
                 (val: any) => {
-                    return val !== undefined ? patterntwodigisaftercomma.test(val) : true
+                    return val !== undefined ? patternthreedigisaftercomma.test(val) : true
                 })
             .test('min',
                 ({value}) => `It's too small size`,

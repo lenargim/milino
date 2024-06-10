@@ -4,10 +4,10 @@ import {addToCartDoorAccessories, useAppDispatch} from "../../helpers/helpers";
 import s from "../Product/product.module.sass";
 import {TextInput} from "../../common/Form";
 import {customPartDataType} from "../../helpers/productTypes";
-import NumberPartCustom from "./NumberPartCustom";
 import NumberPartArrayItem from "./NumberPartArrayItem";
 import {doorAccessoiresSchema} from "./doorAccessoiresSchema";
 import {addToCart} from "../../store/reducers/generalSlice";
+import NumberPart from "./NumberPart";
 
 
 export type HingeType = {
@@ -25,9 +25,8 @@ export type hingeHoleCustomType = {
 
 export type DoorAccessoiresType = {
     aventos: HingeType[],
-    hingeAngles: HingeType[],
-    hingeHoles: HingeType[],
-    hingeHoleCustom: hingeHoleCustomType,
+    ['Door Hinge']: number,
+    ['Hinge Holes']: number,
     PTO: HingeType[],
     servo: HingeType[]
 
@@ -62,64 +61,8 @@ const DoorAccessoiresForm: FC<{ customPart: customPartDataType }> = ({customPart
                 price: 350
             }
         ],
-        hingeAngles: [
-            {
-                title: '0',
-                label: 'Regular',
-                qty: 0,
-                price: 10
-            },
-            {
-                title: '180',
-                label: 'Blind corner 180°',
-                qty: 0,
-                price: 10
-            },
-            {
-                title: '90',
-                label: 'Corner 90°',
-                qty: 0,
-                price: 10
-            },
-            {
-                title: '45',
-                label: 'Corner 45°',
-                qty: 0,
-                price: 10
-            },
-            {
-                title: '-45',
-                label: 'Corner -45°',
-                qty: 0,
-                price: 10
-            },
-
-        ],
-        hingeHoles: [
-            {
-                title: '3',
-                label: '3"x3"',
-                qty: 0,
-                price: 6
-            },
-            {
-                title: '4',
-                label: '4"x4"',
-                qty: 0,
-                price: 6
-            },
-            {
-                title: '6',
-                label: '6"x6"',
-                qty: 0,
-                price: 6
-            }
-        ],
-        hingeHoleCustom: {
-            title: '',
-            qty: 0,
-            price: 6
-        },
+        ['Door Hinge']: 0,
+        ['Hinge Holes']: 0,
         PTO: [
             {
                 title: 'Doors',
@@ -163,7 +106,7 @@ const DoorAccessoiresForm: FC<{ customPart: customPartDataType }> = ({customPart
                 title: 'BG',
                 label: 'For BG Cab',
                 qty: 0,
-                price: 1000
+                price: 600
             }
         ],
         price: 0,
@@ -185,8 +128,6 @@ const DoorAccessoiresForm: FC<{ customPart: customPartDataType }> = ({customPart
             {({values, errors, setFieldValue}) => {
                 const {
                     aventos: aventos,
-                    hingeAngles,
-                    hingeHoles,
                     PTO: pto,
                     servo,
                     price
@@ -204,15 +145,9 @@ const DoorAccessoiresForm: FC<{ customPart: customPartDataType }> = ({customPart
                                                                              index={index}/>)}
                         </div>
                         <div className={s.block}>
-                            <h3>Door Hinge</h3>
-                            {hingeAngles.map((el, index) => <NumberPartArrayItem key={index} name="hingeAngles"
-                                                                                 index={index}/>)}
-                        </div>
-                        <div className={s.block}>
-                            <h3>Hinge Holes</h3>
-                            {hingeHoles.map((el, index) => <NumberPartArrayItem key={index} name="hingeHoles"
-                                                                                index={index}/>)}
-                            {<NumberPartCustom name="hingeHoleCustom"/>}
+                            <h3>Hinge</h3>
+                            <NumberPart el={'Door Hinge'}/>
+                            <NumberPart el={'Hinge Holes'}/>
                         </div>
 
                         <div className={s.block}>
@@ -247,12 +182,11 @@ export default DoorAccessoiresForm;
 
 
 const addToCartAccessories = (values: DoorAccessoiresValuesType): number => {
-    const {aventos, hingeAngles, hingeHoles, hingeHoleCustom, PTO, servo} = values
+    const {aventos, ['Door Hinge']:doorHinge, ['Hinge Holes']:hingeHoles, PTO, servo} = values
     const aventosPrice = aventos.reduce((acc, item) => acc + (item.price * item.qty), 0);
-    const hingeAnglesPrice = hingeAngles.reduce((acc, item) => acc + (item.price * item.qty), 0);
-    const hingeHolesPrice = hingeHoles.reduce((acc, item) => acc + (item.price * item.qty), 0);
-    const hingeHoleCustomPrice = hingeHoleCustom.price * hingeHoleCustom.qty;
+    const doorHingePrice = doorHinge*10;
+    const hingeHolesPrice = hingeHoles*6;
     const PTOPrice = PTO.reduce((acc, item) => acc + (item.price * item.qty), 0);
     const servoPrice = servo.reduce((acc, item) => acc + (item.price * item.qty), 0);
-    return +(aventosPrice+hingeAnglesPrice+hingeHolesPrice+hingeHoleCustomPrice+PTOPrice+servoPrice).toFixed(2)
+    return +(aventosPrice+doorHingePrice+hingeHolesPrice+PTOPrice+servoPrice).toFixed(2)
 }

@@ -2,8 +2,8 @@ import {AppDispatch, RootState} from "../store/store";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import noImg from './../assets/img/noPhoto.png'
 import {
-    attrItem, customPartDataType, doorProfilesType,
-    itemImg, materialsLimitsType,
+    attrItem, customPartDataType,
+    itemImg,
     productCategory,
     productDataType,
     productRangeType,
@@ -11,7 +11,7 @@ import {
     widthItemType
 } from "./productTypes";
 import {optionType} from "../common/SelectField";
-import {CartItemType, productExtraType} from "../store/reducers/generalSlice";
+import {CartItemType, glassDoorExtraType, productExtraType} from "../store/reducers/generalSlice";
 import baseCabinetProducts from "../api/products.json";
 import wallCabinetProducts from "../api/productsWall.json";
 import tallCabinetProducts from "../api/productsTall.json";
@@ -24,9 +24,11 @@ import settings from "../api/settings.json";
 import {v4 as uuidv4} from "uuid";
 import {FormikValues} from "formik";
 import {room} from './categoriesTypes'
-import {LEDAccessoriesType, LEDFormValuesType} from "../Components/CustomPart/LEDForm";
-import alumProfile from "../Components/CustomPart/AlumProfile";
-import {DoorAccessoiresType, DoorAccessoiresValuesType} from "../Components/CustomPart/DoorAccessoiresForm";
+import {LEDFormValuesType} from "../Components/CustomPart/LEDForm";
+import {DoorAccessoiresValuesType} from "../Components/CustomPart/DoorAccessoiresForm";
+import {GlassDoorFormValuesType, GlassDoorValuesType} from "../Components/CustomPart/GlassDoorForm";
+import {PVCFormValuesType} from "../Components/CustomPart/PVCForm";
+import {GlassShelfFormValuesType} from "../Components/CustomPart/GlassShelfForm";
 
 
 export const useAppDispatch: () => AppDispatch = useDispatch
@@ -57,12 +59,7 @@ export const getProductImage = (images: itemImg[], type: productTypings = 1): st
     return img ? img.value.toString() : ''
 }
 
-export function getSelectValfromVal(val: string, options: optionType[]): optionType | null {
-    const option = options.find(el => el.value === val)
-    return option || null
-}
-
-export function getSelectValfromValCustomPart(val: number, options: doorProfilesType[]): doorProfilesType | null {
+export function getSelectValfromVal(val: string | undefined, options: optionType[]): optionType | null {
     const option = options.find(el => el.value === val)
     return option || null
 }
@@ -92,7 +89,7 @@ export const getFraction = (number: number): string => {
 }
 
 
-export const getProductsByCategory = (category: productCategory): productDataType[]  => {
+export const getProductsByCategory = (category: productCategory): productDataType[] => {
     let products;
     switch (category) {
         case 'Base Cabinets':
@@ -123,8 +120,8 @@ export const getProductsByCategory = (category: productCategory): productDataTyp
 }
 
 export const getcustomPartsByRoom = (room: room): customPartDataType[] => {
-    const customPartns = customParts as customPartDataType[];
-    return customPartns.filter(panel => panel.room === room);
+    const custom = customParts as customPartDataType[];
+    return custom.filter(panel => panel.room === room);
 }
 
 type initialValuetType = {
@@ -138,7 +135,7 @@ type initialValuetType = {
     'Custom Height': string,
     'Custom Depth': string,
     'Doors': number,
-    'Hinge opening':string,
+    'Hinge opening': string,
     Options: string[],
     'Profile': string,
     'Glass Type': string,
@@ -182,7 +179,7 @@ export const getLimit = (d: number[] | undefined): number => {
     return d[0];
 }
 
-export const addToCartData = (values:FormikValues, type:productTypings, id:number, price:number|undefined, isBlind:boolean, images:itemImg[], name:string, hasMiddleSection:true|undefined, category: productCategory) => {
+export const addToCartData = (values: FormikValues, type: productTypings, id: number, price: number | undefined, isBlind: boolean, images: itemImg[], name: string, hasMiddleSection: true | undefined, category: productCategory) => {
     const {
         ['Width']: width,
         ['Blind Width']: blindWidth,
@@ -261,7 +258,7 @@ export const addToCartData = (values:FormikValues, type:productTypings, id:numbe
 }
 
 
-export const addToCartCustomPart = (values:FormikValues, id:number, price:number|undefined, image: string, name:string, category: productCategory) => {
+export const addToCartCustomPart = (values: FormikValues, id: number, price: number | undefined, image: string, name: string, category: productCategory) => {
     const {
         ['Width']: width,
         ['Height']: height,
@@ -282,7 +279,7 @@ export const addToCartCustomPart = (values:FormikValues, id:number, price:number
         note,
         customPartExtra: {
             material,
-            width:  width || 0,
+            width: width || 0,
             height: height || 0,
             depth: depth || 0,
         }
@@ -290,11 +287,16 @@ export const addToCartCustomPart = (values:FormikValues, id:number, price:number
     return cartData
 }
 
-export const addToCartPVC = (values:FormikValues, id:number, price:number|undefined, image: string, name:string, category: productCategory) => {
+export const addToCartGlassDoor = (values: GlassDoorFormValuesType, id: number, image: string, name: string, category: productCategory) => {
     const {
-        ['Width']: pvcFeet,
-        ['Material']: material,
+        ['Width']: width,
+        ['Height']: height,
+        ['Depth']: depth,
+        Profile: doorProfile,
+        Type: doorType,
+        Color: doorColor,
         ['Note']: note,
+        price
     } = values;
 
 
@@ -305,14 +307,83 @@ export const addToCartPVC = (values:FormikValues, id:number, price:number|undefi
         name,
         img: image || '',
         amount: 1,
-        price: price ? price : 0,
+        price: price,
+        note,
+        customPartExtra: {
+            // material: doorProfile,
+            width: width || 0,
+            height: height || 0,
+            depth: depth || 0,
+        },
+        glassDoorExtra: {
+            Profile: doorProfile,
+            Type: doorType,
+            Color: doorColor
+        }
+    }
+
+    return cartData
+}
+
+
+export const addToCartGlassShelf = (values: GlassShelfFormValuesType, id: number, image: string, name: string, category: productCategory) => {
+    const {
+        ['Width']: width,
+        ['Height']: height,
+        ['Depth']: depth,
+        Color: shelfColor,
+        ['Note']: note,
+        price
+    } = values;
+
+
+    const cartData: CartItemType = {
+        id: id,
+        uuid: uuidv4(),
+        category,
+        name,
+        img: image || '',
+        amount: 1,
+        price: price,
+        note,
+        customPartExtra: {
+            material: 'Glass 1/4"',
+            width: width || 0,
+            height: height || 0,
+            depth: depth || 0,
+        },
+    }
+
+    if (shelfColor) cartData.glassShelfExtra = shelfColor;
+
+    return cartData
+}
+
+export const addToCartPVC = (values: PVCFormValuesType, id: number, image: string, name: string, category: productCategory) => {
+    const {
+        ['Width']: pvcFeet,
+        ['Material']: material,
+        ['Note']: note,
+        price
+
+    } = values;
+
+
+    const cartData: CartItemType = {
+        id: id,
+        uuid: uuidv4(),
+        category,
+        name,
+        img: image || '',
+        amount: 1,
+        price: price,
         note,
         PVCExtra: {pvcFeet, material}
     }
     return cartData
 }
 
-export const addToCartLed = (values:LEDFormValuesType, id:number, image: string, name:string, category: productCategory) => {
+export const addToCartLed = (values: LEDFormValuesType, id: number, image: string, name: string, category: productCategory) => {
     const cartData: CartItemType = {
         id: id,
         uuid: uuidv4(),
@@ -323,8 +394,8 @@ export const addToCartLed = (values:LEDFormValuesType, id:number, image: string,
         amount: 1,
         note: values.Note,
         LEDAccessories: {
-            "Aluminum Profiles": values["Aluminum Profiles"],
-            "Gola Profiles": values["Gola Profiles"],
+            "LED Aluminum Profiles": values["LED Aluminum Profiles"],
+            "LED Gola Profiles": values["LED Gola Profiles"],
             "Door Sensor": values["Door Sensor"],
             "Dimmable Remote": values["Dimmable Remote"],
             Transformer: values["Transformer"]
@@ -333,7 +404,7 @@ export const addToCartLed = (values:LEDFormValuesType, id:number, image: string,
     return cartData
 }
 
-export const addToCartDoorAccessories = (values:DoorAccessoiresValuesType, id:number, image: string, name:string, category: productCategory) => {
+export const addToCartDoorAccessories = (values: DoorAccessoiresValuesType, id: number, image: string, name: string, category: productCategory) => {
     const cartData: CartItemType = {
         id: id,
         uuid: uuidv4(),
@@ -345,9 +416,8 @@ export const addToCartDoorAccessories = (values:DoorAccessoiresValuesType, id:nu
         note: values.Note,
         DoorAccessories: {
             aventos: values.aventos,
-            hingeAngles: values.hingeAngles,
-            hingeHoles: values.hingeHoles,
-            hingeHoleCustom: values.hingeHoleCustom,
+            ["Door Hinge"]: values["Door Hinge"],
+            "Hinge Holes": values["Hinge Holes"],
             PTO: values.PTO,
             servo: values.servo
         }

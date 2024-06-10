@@ -11,9 +11,6 @@ import {Navigate} from "react-router-dom";
 import {removeCart, setMaterials} from "../../store/reducers/generalSlice";
 
 
-type NominalSetState = React.Dispatch<React.SetStateAction<boolean>> &
-    { readonly __brand_setState__: unique symbol }
-
 const CheckoutForm: FC = () => {
     const initialValues: CheckoutType = {
         company: '',

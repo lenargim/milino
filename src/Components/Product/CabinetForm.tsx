@@ -89,7 +89,7 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
                     resetForm();
                 }}
         >
-            {({values, setFieldValue}) => {
+            {({values, setFieldValue, errors}) => {
                 const {
                     ['Width']: width,
                     ['Blind Width']: blindWidth,
@@ -112,6 +112,7 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
                     'LED alignment': ledAlignment,
                     'LED indent': ledIndent,
                 } = values;
+                console.log(errors)
 
                 const {
                     ['Glass']: glassSettings,

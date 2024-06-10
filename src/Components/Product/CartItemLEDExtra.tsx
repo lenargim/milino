@@ -4,8 +4,8 @@ import s from "../OrderForm/Sidebar/sidebar.module.sass";
 
 const CartItemLedExtra:FC<{productExtra: LEDAccessoriesType}> = ({productExtra}) => {
     const {
-        ['Aluminum Profiles']: alumProfiles,
-        ['Gola Profiles']: golaProfiles,
+        ['LED Aluminum Profiles']: alumProfiles,
+        ['LED Gola Profiles']: golaProfiles,
         ['Door Sensor']: doorSensor,
         ['Dimmable Remote']: dimRemote,
         ['Transformer']: transformer,
@@ -14,7 +14,7 @@ const CartItemLedExtra:FC<{productExtra: LEDAccessoriesType}> = ({productExtra})
         <>
             {alumProfiles.length ?
                 <div className={s.itemOption}>
-                    <span>Aluminum Profiles:</span>
+                    <span>LED Aluminum Profiles:</span>
                     <span>{alumProfiles.map(profile =>
                         <span className={s.profileItem} key={profile.uuid}>{profile.length}'' x {profile.qty}</span>
                     )}</span>
@@ -22,7 +22,7 @@ const CartItemLedExtra:FC<{productExtra: LEDAccessoriesType}> = ({productExtra})
                 : null}
             {golaProfiles.length ?
                 <div className={s.itemOption}>
-                    <span>Gola Profiles:</span>
+                    <span>LED Gola Profiles:</span>
                     <span>{golaProfiles.map(profile =>
                         <span className={s.profileItem} key={profile.uuid}>{profile.length}'' x {profile.qty} - {profile.color}</span>
                     )}</span>

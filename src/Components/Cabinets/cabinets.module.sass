@@ -40,9 +40,6 @@
     position: absolute
     z-index: -1
     opacity: 0
-    &:checked + label
-      box-shadow: 10px 10px 12px rgba(0,0,0,.5)
-      transform: scale(1.06)
   label
     position: relative
     text-align: center
@@ -53,6 +50,10 @@
     transition: all .2s ease
     &:hover
       box-shadow: 6px 6px 6px rgba(0,0,0,.3)
+  &.itemChecked label
+    box-shadow: 10px 10px 12px rgba(0,0,0,.5)
+    transform: scale(1.06)
+
 
 .list
   display: grid
