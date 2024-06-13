@@ -40,6 +40,7 @@ export type CartItemType = {
 }
 
 export type glassDoorExtraType = {
+    material?: string,
     Profile?: string,
     Type?: string,
     Color?: string

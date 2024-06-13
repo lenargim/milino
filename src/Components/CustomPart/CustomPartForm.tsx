@@ -44,18 +44,18 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
         "Door Type": doorType
     } = materials;
 
-    const currentMaterialData = materialsRange?.find(el => doorFinish.includes(el.name)) ?? materialsRange?.find(el => doorType === el.name);
-    const sizeLimitInitial = currentMaterialData?.limits ?? limits ?? {};
-    const materialArr = materialsRange ? Object.values(materialsRange).map(el => el.name) : [];
-    const curMaterial = materialArr.find(el => doorFinish.includes(el)) ?? doorType;
+    if (!materialsRange?.length) return <div>No material Data</div>
+    const currentMaterialData =
+        materialsRange.find(el => doorFinish.includes(el.name))
+        ?? materialsRange.find(el => doorType === el.name)
+        ?? materialsRange[0];
+    const sizeLimitInitial = currentMaterialData.limits ?? limits ?? {};
     const initialDepth = currentMaterialData?.depth ?? depthConst ?? getLimit(sizeLimitInitial.depth);
-
-
     const initialValues: CustomPartFormValuesType = {
         'Width': widthConst ?? getLimit(sizeLimitInitial.width),
         'Height': getLimit(sizeLimitInitial.height),
         'Depth': initialDepth,
-        'Material': curMaterial ?? materialArr[0],
+        'Material': currentMaterialData.name,
         'Note': ''
     }
 
@@ -76,7 +76,7 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                     ['Depth']: depth,
                     ['Material']: material,
                 } = values;
-                const priceCoef = +(getCustomPartPrice(name, width, height, depth, material, doorType)).toFixed(2);
+                const priceCoef = +(getCustomPartPrice(name, width, height, depth, material)).toFixed(2);
 
                 setTimeout(() => {
                     if (price !== priceCoef) dispatch(setCustomPart({...customPart, price: priceCoef}));
@@ -87,8 +87,6 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                     const newDepth = materialsRange?.find(el => el.name === curMaterial)?.depth;
                     if (depth !== newDepth) setFieldValue('Depth', newDepth);
                 }
-
-                console.log(errors)
                 return (
                     <Form>
                         {!widthConst ?

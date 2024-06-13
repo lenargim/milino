@@ -4,7 +4,7 @@ import {RadioInput} from "../../common/Form";
 import {grainType} from "../../helpers/materialsTypes";
 
 
-export const DoorGrain: FC<{ isGrain: boolean }> = ({isGrain}) => {
+export const DoorGrain: FC<{ value?: string, name: string }> = ({name, value}) => {
     const grainArr: grainType[] = [
         {
             name: "Gorizontal"
@@ -14,12 +14,12 @@ export const DoorGrain: FC<{ isGrain: boolean }> = ({isGrain}) => {
         }
     ]
     return (
-        <div className={s.orderBlock}>
-            <h2>Door Grain</h2>
-            <div className={s.type} role="group">
+        <div className={[s.orderBlock, value && s.checked].join(' ')}>
+            <h2>{name}</h2>
+            <div className={[s.type, value && s.checked].join(' ')} role="group">
                 {grainArr.map((doorColorEl, key) => <RadioInput
                     value={doorColorEl.name}
-                    name="Door Grain"
+                    name={name}
                     className={s.typeItem}
                     key={key}/>
                 )}

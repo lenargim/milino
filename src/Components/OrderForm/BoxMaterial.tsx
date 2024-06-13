@@ -5,16 +5,16 @@ import {getImg} from "../../helpers/helpers";
 import {boxMaterialType} from "../../helpers/materialsTypes";
 
 
-const BoxMaterial: FC<{ boxMaterial: boxMaterialType[] }> = ({boxMaterial}) => {
+const BoxMaterial: FC<{ boxMaterial: boxMaterialType[], name: string, value?: string }> = ({boxMaterial, name, value}) => {
     return (
-        <div className={s.orderBlock}>
-            <h2>Box Material</h2>
-            <div className={s.type} role="group">
+        <div className={[s.orderBlock, value && s.checked].join(' ')}>
+            <h2>{name}</h2>
+            <div className={[s.type, value && s.checked].join(' ')} role="group">
                 {boxMaterial.map((el, key) => <RadioInput
                     key={key}
                     img={getImg('boxMaterial', el.img)}
                     value={el.value}
-                    name="Box Material"
+                    name={name}
                     className={s.typeItem}/>)}
             </div>
         </div>

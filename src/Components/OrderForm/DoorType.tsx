@@ -5,30 +5,14 @@ import {doorType} from "../../helpers/materialsTypes";
 import {getImg} from "../../helpers/helpers";
 
 
-export const DoorType: FC<{ doors: doorType[] }> = ({doors}) => {
-    // const [type] = useField('Door Type');
-    // const [finish, , helpersFinish] = useField('Door Finish Material');
-    // const [color, , helpersColor] = useField('Door Color');
-    // const [grain, , helpersGrain] = useField('Door Grain');
-    // useEffect(() => {
-    //   if (finish.value) {
-    //     helpersFinish.setValue('');
-    //   }
-    //   if (color.value) {
-    //     helpersColor.setValue('');
-    //   }
-    //   if (grain.value) {
-    //     helpersGrain.setValue('');
-    //   }
-    // }, [type.value])
-
+export const DoorType: FC<{ doors: doorType[], value: string, name:string }> = ({doors, value, name}) => {
     return (
-        <div className={s.orderBlock}>
-            <h2>Door Type</h2>
-            <div className={s.type} role="group">
+        <div className={[s.orderBlock, value && s.checked].join(' ')}>
+            <h2>{name}</h2>
+            <div className={[s.type, value && s.checked].join(' ')} role="group">
                 {doors.map((doorTypeEl) => {
                     return (
-                        <RadioInput value={doorTypeEl.name} name="Door Type" img={getImg('materials', doorTypeEl.img)}
+                        <RadioInput value={doorTypeEl.name} name={name} img={getImg('materials', doorTypeEl.img)}
                                     className={s.typeItem} key={doorTypeEl.name}/>
                     )
                 })}

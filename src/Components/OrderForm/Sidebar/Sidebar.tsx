@@ -5,7 +5,7 @@ import {NavLink, useLocation} from "react-router-dom";
 import {getProductsByCategory, useAppDispatch, useAppSelector} from "../../../helpers/helpers";
 import {
     CartItemType,
-    productChangeMaterialType,
+    productChangeMaterialType, removeCart, setMaterials,
     updateProductPrice
 } from "../../../store/reducers/generalSlice";
 import {
@@ -18,11 +18,13 @@ import {
 } from "../../../helpers/calculatePrice";
 import {extraPricesType, productDataType, productSizesType} from "../../../helpers/productTypes";
 import CartItem from "../../Product/CartItem";
+import {FormikState} from "formik";
 
 type SideBarType = {
     values: OrderFormType,
+    resetForm?: (nextState?: Partial<FormikState<OrderFormType>>) => void,
 }
-const Sidebar: FC<SideBarType> = ({values}) => {
+const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
     const location = useLocation();
     const path = location.pathname.slice(1);
     const {room, ...data} = Object.assign({}, values);
@@ -113,6 +115,26 @@ const Sidebar: FC<SideBarType> = ({values}) => {
         }
     }, [values]);
 
+    const resetMaterials = () => {
+        localStorage.removeItem('materials');
+        if (resetForm) resetForm({
+            values: {
+                room: values.room,
+                'Door Type': '',
+                'Door Finish Material': '',
+                'Door Color': '',
+                'Door Grain': '',
+                'Box Material': '',
+                'Drawer': '',
+                'Drawer Type': '',
+                'Drawer Color': ''
+            },
+            submitCount: 0
+        });
+        dispatch(setMaterials(null))
+        dispatch(removeCart())
+    }
+
 
     return (
         <aside className={[s.sidebar, path === 'cabinets' ? s.cabinets : ''].join(' ')}>
@@ -138,6 +160,8 @@ const Sidebar: FC<SideBarType> = ({values}) => {
                     {path && <NavLink to={'/'} className={['button yellow'].join(' ')}>← Choose Materials</NavLink>}
                     {cartTotal && isCalcPrice ?
                         <NavLink to={'/checkout'} className={['button yellow'].join(' ')}>Checkout →</NavLink> : null}
+                    {!path &&
+                    <button type={"button"} onClick={resetMaterials} className={['button yellow'].join(' ')}>Reset materials</button>}
                 </div>
             </div>
         </aside>

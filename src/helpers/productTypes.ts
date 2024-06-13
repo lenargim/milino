@@ -39,9 +39,9 @@ export type customPartDataType = {
 }
 
 export type glassDoorType = {
-    doorProfiles?: optionType[],
-    doorTypes?: optionType[],
-    doorColors?: optionType[]
+    ['Profile']?: optionType[],
+    ['Glass Type']?: optionType[],
+    ['Glass Color']?: optionType[]
 }
 
 export type materialsCustomPart = {

@@ -6,15 +6,15 @@ import {finishType} from "../../helpers/materialsTypes";
 import {getImg} from "../../helpers/helpers";
 
 
-export const DoorFinish: FC<{ finishArr: finishType[] }> = ({finishArr}) => {
+export const DoorFinish: FC<{ finishArr: finishType[], value: string, name:string}> = ({finishArr, value, name}) => {
     return (
-        <div className={s.orderBlock}>
-            <h2>Door Finish Material</h2>
-            <div className={s.type} role="group">
+        <div className={[s.orderBlock, value && s.checked].join(' ')}>
+            <h2>{name}</h2>
+            <div className={[s.type, value && s.checked].join(' ')} role="group">
                 {finishArr.map((el, key) => <RadioInput
                     value={el.name}
                     img={getImg('materials', el.img)}
-                    name="Door Finish Material"
+                    name={name}
                     className={s.typeItem}
                     key={key}/>)}
             </div>

@@ -9,7 +9,7 @@ import {customPartDataType} from "../../helpers/productTypes";
 import {getCustomPartSchema} from "./CustomPartSchema";
 import s from "../Product/product.module.sass";
 import {ProductInputCustom, ProductRadioInput, TextInput} from "../../common/Form";
-import {getCustomPartPrice, getGlassDoorPrice} from "../../helpers/calculatePrice";
+import {getGlassDoorPrice} from "../../helpers/calculatePrice";
 import {OrderFormType} from "../../helpers/types";
 import {addToCart} from "../../store/reducers/generalSlice";
 import SelectField from "../../common/SelectField";
@@ -22,6 +22,7 @@ export type GlassDoorValuesType = {
     Width: number,
     Height: number,
     Depth: number,
+    Material?: string,
     Note: string,
     Profile?: string,
     Type?: string,
@@ -39,7 +40,6 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
         name,
         image,
         id,
-        price,
         materials: materialsRange,
         limits,
         width: widthConst,
@@ -53,18 +53,26 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
         "Door Type": doorType
     } = materials;
     if (!glassDoor) return <div>No data</div>
-    const {doorProfiles, doorTypes, doorColors} = glassDoor
+    const {Profile: doorProfiles, 'Glass Type': doorTypes, 'Glass Color': doorColors} = glassDoor
+
+    const currentMaterialData = materialsRange && (
+        materialsRange.find(el => doorFinish.includes(el.name))
+        ?? materialsRange.find(el => doorType === el.name)
+        ?? materialsRange[0]);
 
 
-    const sizeLimitInitial = materialsRange?.find(el => doorFinish.includes(el.name))?.limits ?? materialsRange?.find(el => doorType === el.name)?.limits ?? limits ?? {};
+    const sizeLimitInitial = currentMaterialData?.limits ?? limits ?? {};
 
     const initialValues: GlassDoorFormValuesType = {
         'Width': widthConst ?? getLimit(sizeLimitInitial.width),
         'Height': getLimit(sizeLimitInitial.height),
         'Depth': depthConst ?? getLimit(sizeLimitInitial.depth),
+        'Material': currentMaterialData?.name,
         price: 0,
         'Note': ''
     }
+
+
     return (
         <Formik
             initialValues={initialValues}
@@ -88,13 +96,17 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                     price
                 } = values;
                 const doorColorsFiltered = doorColors?.filter(el => {
-                    if (!el.glassDoorType || !doorProfile) return false;
-                    return doorProfile.includes(el.glassDoorType.toString())
+                    return el.type === doorType
                 });
 
+
                 const colorVal = getSelectValfromVal(doorColor, doorColorsFiltered ?? []);
+
                 const profileNumber: number | undefined = doorProfiles?.find(el => el.value === doorProfile)?.glassDoorType
+
+
                 const priceCoef = +(getGlassDoorPrice(name, width, height, doorFinish, profileNumber)).toFixed(2);
+
 
                 setTimeout(() => {
                     if (price !== priceCoef) setFieldValue('price', priceCoef);
@@ -125,6 +137,16 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                                 </div>
                             </div> : null
                         }
+                        {materialsRange &&
+                          <div className={s.block}>
+                            <h3>Material</h3>
+                            <div className={s.options}>
+                                {materialsRange.map((m, index) => <ProductRadioInput key={index}
+                                                                                     name={'Material'}
+                                                                                     value={m.name}/>)}
+                            </div>
+                          </div>
+                        }
 
                         <div className={s.blockWrap}>
                             {doorProfiles?.length ?
@@ -142,7 +164,7 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                                                  options={doorTypes}/>
                                 </div> : null}
 
-                            {doorColorsFiltered?.length && doorProfile ?
+                            {doorColorsFiltered?.length && doorType ?
                                 <div className={s.block}>
                                     <h3>Door Color</h3>
                                     <SelectField name="Color"

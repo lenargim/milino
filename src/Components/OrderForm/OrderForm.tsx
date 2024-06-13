@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {OrderFormType} from "../../helpers/types";
 import {Formik, Form} from "formik";
 import {OrderFormSchema} from "./OrderFormSchems";
@@ -6,8 +6,8 @@ import Main from "./Main";
 import Sidebar from "./Sidebar/Sidebar";
 import s from './OrderForm.module.sass';
 import { useNavigate } from "react-router-dom";
-import {setMaterials, setProduct} from "../../store/reducers/generalSlice";
-import {useAppDispatch, useAppSelector} from "../../helpers/helpers";
+import {setMaterials} from "../../store/reducers/generalSlice";
+import {useAppDispatch} from "../../helpers/helpers";
 
 const OrderForm = () => {
     const dispatch = useAppDispatch();
@@ -38,11 +38,11 @@ const OrderForm = () => {
 
             })}
         >
-            {({values, isValid, isSubmitting, setFieldValue}) => {
+            {({values, isValid, isSubmitting, setFieldValue, resetForm}) => {
                 return (
                     <Form className={s.orderForm}>
                         <Main values={values} isSubmitting={isSubmitting} isValid={isValid} setFieldValue={setFieldValue}/>
-                        <Sidebar values={values}/>
+                        <Sidebar values={values} resetForm={resetForm}/>
                     </Form>
                 )
             }}

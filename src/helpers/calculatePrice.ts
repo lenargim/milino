@@ -524,7 +524,7 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
 }
 
 
-export const getCustomPartPrice = (name: string, width: number, height: number, depth: number, doorFinish: string, doorType?: string ): number => {
+export const getCustomPartPrice = (name: string, width: number, height: number, depth: number, doorFinish: string ): number => {
     const area = width * height / 144;
     switch (name) {
         case "Open Cabinet":
@@ -677,7 +677,6 @@ export const getCustomPartPrice = (name: string, width: number, height: number, 
         case "Backing":
             return area * 4.6;
         case "Shaker Panel":
-            if (doorType === 'Micro Shaker') return area * 60;
             switch (doorFinish) {
                 case "Milino":
                     return area * 36;
@@ -696,6 +695,8 @@ export const getCustomPartPrice = (name: string, width: number, height: number, 
                     return area * 78 * 2;
                 case "Painted":
                     return area * 78;
+                case "Micro Shaker":
+                    return area * 60
                 default:
                     return 0;
             }

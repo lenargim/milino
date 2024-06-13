@@ -21,11 +21,21 @@
   position: relative
   margin: 0 30px
 .orderBlock
+  display: block
   position: relative
+  width: 100%
+  transition: all .3s ease
   &:not(:last-of-type)
-    margin-bottom: 2em
+    padding-bottom: 2em
+  &.checked
+    &:not(:last-of-type)
+      padding-bottom: 1em
+    h2
+      font-size: 20px
+      margin-bottom: .3em
   h2
     margin-bottom: .8em
+    transition: all .3s ease
   &.errorBlock
     position: relative
     &::after
@@ -46,41 +56,41 @@
   grid-template-columns: repeat(9, 1fr)
   gap: 10px 5px
 
-.radioItem
-  input
-    &:checked + label
-      box-shadow: 20px 20px 120px 0 rgba(255, 255, 255, 0.9)
-      transform: scale(1.25)
-      z-index: 2
-      opacity: 1
-      span
-        font-weight: 500
-        opacity: 1
-  label
-    border-radius: 4px
-    opacity: .9
-    img
-      aspect-ratio: 1/1
-      object-fit: cover
-    &:hover
-      transform: scale(1.2)
-      box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2)
-      cursor: pointer
-      opacity: 1
-      z-index: 1
-      span
-        opacity: .9
-  span
-    position: absolute
-    bottom: 0
-    text-align: center
-    white-space: nowrap
-    margin: 0 auto
-    width: 100%
-    font: 400 13px/1.1 $mainFont
-    opacity: .4
-    transition: all .2s ease
-    background-color: rgba(255, 255, 255, .8)
+//.radioItem
+//  input
+//    &:checked + label
+//      box-shadow: 20px 20px 120px 0 rgba(255, 255, 255, 0.9)
+//      transform: scale(1.25)
+//      z-index: 2
+//      opacity: 1
+//      span
+//        font-weight: 500
+//        opacity: 1
+//  label
+//    border-radius: 4px
+//    opacity: .9
+//    img
+//      aspect-ratio: 1/1
+//      object-fit: cover
+//    &:hover
+//      transform: scale(1.2)
+//      box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2)
+//      cursor: pointer
+//      opacity: 1
+//      z-index: 1
+//      span
+//        opacity: .9
+//  span
+//    position: absolute
+//    bottom: 0
+//    text-align: center
+//    white-space: nowrap
+//    margin: 0 auto
+//    width: 100%
+//    font: 400 13px/1.1 $mainFont
+//    opacity: .4
+//    transition: all .2s ease
+//    background-color: rgba(255, 255, 255, .8)
 
 
 .error
@@ -91,29 +101,43 @@
   white-space: nowrap
 
 
-.room
-  display: grid
-  grid-template-columns: repeat(3, 1fr)
-  gap: 20px
-  padding-bottom: 50px
 .type
-  display: grid
-  grid-template-columns: repeat(4, 1fr)
-  gap: 10px
+  display: flex
+  flex-wrap: wrap
+  gap: 15px
   padding-bottom: 50px
+  transition: all .3s ease
+  width: 100%
+  &.checked
+    gap: 10px
+    flex-wrap: nowrap
+    overflow-x: auto
+    padding: 10px 20px 15px 20px
+    position: relative
+    margin-left: -20px
+    margin-right: -20px
+    &::-webkit-scrollbar
+      display: none
+    .typeItem
+      display: inline-flex
+      width: calc(100%/8 - 80px/7)
+      min-width: calc(100%/8 - 80px/7)
+    label span
+      font-size: 14px
 
 .typeItem
   position: relative
-  input
-    &:checked + label
-      box-shadow: 20px 20px 120px 0 rgba(255, 255, 255, 0.9)
-      transform: scale(1.1)
-      border-radius: 6px
-      background: rgba(255, 255, 255, 0.9)
-      z-index: 2
+  transition: all .3s ease
+  width: calc(25% - 45px/3)
+  input:checked + label
+    box-shadow: 20px 20px 120px 0 rgba(255, 255, 255, 0.9)
+    transform: scale(1.1)
+    border-radius: 6px
+    background: rgba(255, 255, 255, 0.9)
+    z-index: 2
+    opacity: 1
+    span
       opacity: 1
-      span
-        opacity: 1
   img
     aspect-ratio: 16/9
     transition: all .2s ease
@@ -122,6 +146,7 @@
     position: relative
     overflow: hidden
     border-radius: 6px
+    opacity: .9
     &::after
       content: attr(title)
       position: absolute
@@ -133,6 +158,15 @@
       text-transform: uppercase
       border-radius: 0 0 5px 5px
       background-color: rgba(255, 255, 255, 0.8)
+
+    &:hover
+      transform: scale(1.08)
+      box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2)
+      cursor: pointer
+      opacity: 1
+      z-index: 1
+      span
+        opacity: .9
 
     span
       position: absolute
@@ -147,6 +181,8 @@
       text-transform: uppercase
       transition: all .2s ease
       background-color: rgba(255, 255, 255, .6)
+
+
 .color label
   transition: transform .25s ease
   &:hover

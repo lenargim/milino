@@ -6,15 +6,15 @@ import {getImg} from "../../helpers/helpers";
 import {drawerType} from "../../helpers/materialsTypes";
 
 
-export const DrawerType: FC<{ drawerTypesArr: drawerType[] }> = ({drawerTypesArr}) => {
+export const DrawerType: FC<{ drawerTypesArr: drawerType[], name: string, value: string }> = ({drawerTypesArr, value, name}) => {
     return (
-        <div className={s.orderBlock}>
-            <h2>Drawer Type</h2>
-            <div className={s.type} role="group">
+        <div className={[s.orderBlock, value && s.checked].join(' ')}>
+            <h2>{name}</h2>
+            <div className={[s.type, value && s.checked].join(' ')} role="group">
                 {drawerTypesArr.map((el, key) => <RadioInput
                     value={el.value}
                     img={getImg('drawers', el.img)}
-                    name="Drawer Type"
+                    name={name}
                     className={s.typeItem}
                     key={key}
                 />)}
