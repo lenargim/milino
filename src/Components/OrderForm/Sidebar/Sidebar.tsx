@@ -14,7 +14,7 @@ import {
     addPTODoorsPrice, addPTODrawerPrice, addPTOTrashBinsPrice,
     calculatePrice, getDoorMinMaxValuesArr, getDoorPrice, getDoorSquare, getDoorWidth, getDrawerPrice, getLedPrice,
     getMaterialData,
-    getProductDataToCalculatePrice, getPvcPrice, getShelfsQty, getStartPrice, getTablePrice
+    getProductDataToCalculatePrice, getPvcPrice, getStartPrice, getTablePrice
 } from "../../../helpers/calculatePrice";
 import {extraPricesType, productDataType, productSizesType} from "../../../helpers/productTypes";
 import CartItem from "../../Product/CartItem";

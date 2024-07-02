@@ -7,8 +7,10 @@ import {SidebarCart} from "../OrderForm/Sidebar/Sidebar";
 export type changeAmountType = 'plus' | 'minus'
 
 const Cart = () => {
-    const cart = useAppSelector(state => state.general.cart)
+    const {cart, product} = useAppSelector(state => state.general)
+
     const cartTotal = getCartTotal(cart);
+    console.log(cart)
     return (
         <div className={[s.sidebar, s.product].join(' ')}>
             <div className={s.sidebarContent}>

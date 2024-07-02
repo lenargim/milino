@@ -62,10 +62,10 @@ export interface productType extends productDataType {
     type: productTypings,
     height: number,
     depth: number,
+    price: number,
     doorSquare?: number,
     widthDivider?: number,
     heightRange?: number,
-    price?: number,
 }
 
 export type materialDataType = {

@@ -71,7 +71,7 @@ const Part: FC<{ product: customPartDataType }> = ({product}) => {
 }
 
 
-export const AtrrsList: FC<{ attributes: attrItem[], type: productTypings }> = ({attributes, type}) => {
+export const AtrrsList: FC<{ attributes: attrItem[], type: productTypings}> = ({attributes, type}) => {
     const attrs = getAttributes(attributes, type);
     return (
         <div className={s.attrs}>

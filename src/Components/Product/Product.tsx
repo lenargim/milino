@@ -5,35 +5,38 @@ import ProductMain from "./ProductMain";
 import Cart from "./Cart";
 import {Navigate, useParams} from "react-router-dom";
 import {OrderFormType} from "../../helpers/types";
-import {getProductsByCategory, useAppDispatch} from "../../helpers/helpers";
-import {productCategory, productDataType, productTypings} from "../../helpers/productTypes";
+import {getProductsByCategory, useAppDispatch, useAppSelector} from "../../helpers/helpers";
+import {productCategory, productDataType, productType, productTypings} from "../../helpers/productTypes";
 import {setProduct} from "../../store/reducers/generalSlice";
-import {getDepthRange} from "../../helpers/calculatePrice";
 type initialDataType = {
     type: productTypings,
     height: number,
-    depth: number
-
+    depth: number,
+    price: number
 }
+
 const Product: FC = () => {
     const dispatch = useAppDispatch()
+    let {productId, category} = useParams();
+    const storeProduct = useAppSelector(state => state.general.product);
     const materialsString = localStorage.getItem('materials');
     const materials: OrderFormType = materialsString ? JSON.parse(materialsString) : <Navigate to={{pathname: '/'}}/>;
-    let {productId, category} = useParams();
-    const trueCat = category as productCategory;
-    let products = getProductsByCategory(trueCat);
+    let products = getProductsByCategory(category as productCategory);
 
-    const product: productDataType | undefined = products.find(product => (product.id).toString() === productId)
-    if (!product || !category) return <Navigate to={{pathname: '/cabinets'}}/>;
-    // const depthRange = getDepthRange(product.category,product.customDepth);
-    const initialData: initialDataType = {type: 1, height: 0, depth: 0}
+    const productById: productDataType | undefined = products.find(product => (product.id).toString() === productId);
+    if (!productById || !category) return <Navigate to={{pathname: '/cabinets'}}/>;
     localStorage.setItem('category', category);
-    dispatch(setProduct({...product, ...initialData}))
+
+    if (!storeProduct || storeProduct.id !== productById.id) {
+        const initialData: initialDataType = {type: 1, height: 0, depth: 0, price: 0}
+        const initialProduct:productType = {...productById, ...initialData};
+        dispatch(setProduct(initialProduct));
+    }
     return (
         <div className={s.wrap}>
             <div className={s.main}>
                 <Header/>
-                <ProductMain materials={materials}/>
+                <ProductMain product={storeProduct} materials={materials}/>
             </div>
             <Cart/>
         </div>

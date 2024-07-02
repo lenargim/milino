@@ -148,10 +148,11 @@ type initialValuetType = {
     'LED borders': string[],
     'LED alignment': string,
     'LED indent': string,
+    'Leather': string,
     'Note': string,
 
 }
-export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: widthItemType[] | undefined,initialDepth:number, isCornerChoose?: boolean): initialValuetType => {
+export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: widthItemType[] | undefined,initialDepth:number, initialLeather:string,isCornerChoose?: boolean): initialValuetType => {
     return {
         ['Width']: productRange.width[0],
         isBlind: isBlind,
@@ -174,7 +175,8 @@ export const getInitialProductValues = (productRange: productRangeType, isBlind:
         'LED borders': [],
         'LED alignment': 'Center',
         'LED indent': '',
-        ['Note']: '',
+        'Leather': initialLeather,
+        ['Note']: ''
     };
 }
 
@@ -184,12 +186,16 @@ export const getInitialDepth = (productRange:productRangeType, isAngle:boolean, 
     return !isAngle ? depth : productRange.width[0]
 }
 
+export const getInitialLeather = (category:productCategory):string => {
+    return category === 'Leather' ? settings.leatherOptions[0] : ''
+}
+
 export const getLimit = (d: number[] | undefined): number => {
     if (!d) return 0;
     return d[0];
 }
 
-export const addToCartData = (values: FormikValues, type: productTypings, id: number, price: number | undefined, isBlind: boolean, images: itemImg[], name: string, hasMiddleSection: true | undefined, category: productCategory) => {
+export const addToCartData = (values: FormikValues, type: productTypings, id: number, isBlind: boolean, images: itemImg[], name: string, hasMiddleSection: true | undefined, category: productCategory,price:number) => {
     const {
         ['Width']: width,
         ['Blind Width']: blindWidth,
@@ -200,6 +206,7 @@ export const addToCartData = (values: FormikValues, type: productTypings, id: nu
         ['Custom Height']: customHeight,
         ['Custom Depth']: customDepth,
         ['Hinge opening']: hinge,
+        ['Corner']: corner,
         Options: chosenOptions,
         ['Door Profile']: doorProfile,
         ['Door Glass Type']: doorGlassType,
@@ -212,6 +219,7 @@ export const addToCartData = (values: FormikValues, type: productTypings, id: nu
         'LED borders': ledBorders,
         'LED alignment': ledAlignment,
         'LED indent': ledIndent,
+        'Leather': leather
     } = values;
 
     const img = images[type - 1].value || ''
@@ -222,7 +230,7 @@ export const addToCartData = (values: FormikValues, type: productTypings, id: nu
         name,
         img: img,
         amount: 1,
-        price: price ? price : 0,
+        price: price,
         note,
     }
 
@@ -262,6 +270,9 @@ export const addToCartData = (values: FormikValues, type: productTypings, id: nu
         }
         if (ledIndent) extra.led.indent = ledIndent;
     }
+
+    if (corner) {extra.corner = corner}
+    if (leather) {extra.leather = leather}
     cartData.productExtra = extra;
 
     return cartData

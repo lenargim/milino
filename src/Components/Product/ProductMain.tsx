@@ -6,10 +6,13 @@ import {AtrrsList} from "../Cabinets/List";
 import {Navigate} from "react-router-dom";
 import {getMaterialData} from "../../helpers/calculatePrice";
 import Cabinet from "./Cabinet";
-
-const ProductMain: FC<{ materials: OrderFormType }> = ({materials}) => {
+import {productDataType, productType} from "../../helpers/productTypes";
+type ProductMainType = {
+    product: productType|null,
+    materials: OrderFormType
+}
+const ProductMain: FC<ProductMainType> = ({product,materials}) => {
     const {room, ...data} = Object.assign({}, materials);
-    const product = useAppSelector(state => state.general.product);
     if (!product) return <Navigate to={{pathname: '/cabinets'}}/>;
     const dataMaterialsArr = Object.entries(data);
     const {type, attributes, name, images} = product;

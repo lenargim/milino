@@ -58,6 +58,7 @@ export type productExtraType = {
     type: productTypings,
     blindWidth?: number,
     hinge: 'Left' | 'Right' | 'Double Doors',
+    corner?: 'Left' | 'Right',
     options: string[],
     doorProfile?: string,
     doorGlassType?: string,
@@ -70,7 +71,8 @@ export type productExtraType = {
         border: string[],
         alignment: string,
         indent?: number
-    }
+    },
+    leather?: string
 }
 
 export type customPartExtraType = {

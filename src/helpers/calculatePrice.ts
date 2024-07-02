@@ -119,9 +119,12 @@ export const getTablePrice = (width: number, height: number, depth:number, price
             if (maxData.depth && depth > maxData.depth) {
                 return priceData.find(el => (el.depth === maxData.width) && (el.width && el.width >= width))?.price;
             }
+            if (!priceData[0]?.depth) {
+                const widthTablePrice: number | undefined = priceData.find(el => el.width >= width)?.price;
+                if (widthTablePrice) return widthTablePrice;
+                if (width > maxData.width) return maxData.price;
+            }
             return undefined
-
-
         default:
             return undefined;
     }

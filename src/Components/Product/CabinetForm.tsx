@@ -12,7 +12,7 @@ import s from './product.module.sass'
 import SelectField from '../../common/SelectField';
 import {getProductSchema} from "./ProductSchema";
 import {
-    addToCartData, getInitialDepth,
+    addToCartData, getInitialDepth, getInitialLeather,
     getInitialProductValues,
     getSelectValfromVal, isHasLeaterBlock, isHasLedBlock,
     useAppDispatch
@@ -50,6 +50,7 @@ import Leather from "./Leather";
 
 const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceData}) => {
     const dispatch = useAppDispatch();
+
     const {
         id,
         name,
@@ -86,14 +87,18 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
     const hasLedBlock = isHasLedBlock(category)
     const hasLeatherBlock = isHasLeaterBlock(category);
     const initialDepth = getInitialDepth(productRange, isAngle, depth)
+    const initialLeather = getInitialLeather(category)
     return (
-        <Formik initialValues={getInitialProductValues(productRange, isBlind, blindArr, doorValues,initialDepth, isCornerChoose)}
-                validationSchema={getProductSchema(sizeLimit, isAngle, hasMiddleSection)}
-                onSubmit={(values: FormikValues, {resetForm}) => {
-                    const cartData = addToCartData(values, type, id, price, isBlind, images, name, hasMiddleSection, category)
+        <Formik
+            initialValues={getInitialProductValues(productRange, isBlind, blindArr, doorValues, initialDepth,initialLeather,isCornerChoose)}
+            validationSchema={getProductSchema(sizeLimit, isAngle, hasMiddleSection)}
+            onSubmit={(values: FormikValues, {resetForm}) => {
+                if (price) {
+                    const cartData = addToCartData(values, type, id, isBlind, images, name, hasMiddleSection, category,price)
                     dispatch(addToCart(cartData))
                     resetForm();
-                }}
+                }
+            }}
         >
             {({values, setFieldValue, errors}) => {
                 const {
@@ -117,8 +122,8 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
                     'LED borders': ledBorders,
                     'LED alignment': ledAlignment,
                     'LED indent': ledIndent,
+                    'Leather': leather
                 } = values;
-
 
                 const {
                     ['Glass']: glassSettings,
@@ -169,7 +174,7 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
                     glassShelf: chosenOptions.includes('Glass Shelf') ? addGlassShelfPrice(shelfsQty) : 0,
                     glassDoor: chosenOptions.includes('Glass Door') ? addGlassDoorPrice(doorSquare, doorProfile) : 0,
                     pvcPrice: getPvcPrice(!isBlind ? realWidth : realWidth - realBlindWidth, doorHeight, isAcrylic, doorType, doorFinish),
-                    doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier,doorArr),
+                    doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier, doorArr),
                     drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, realWidth),
                     ledPrice: getLedPrice(realWidth, realHeight, ledBorders),
                     boxMaterialCoef: chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef,
@@ -178,7 +183,7 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
                 }
                 const allCoefs = extraPrices.boxMaterialCoef * premiumCoef;
                 const initialPriceWithCoef = +(initialPrice * allCoefs).toFixed(2);
-                const tablePrice: number | undefined = getTablePrice(realWidth, realHeight, realDepth, priceData, category)
+                const tablePrice: number | undefined = getTablePrice(realWidth, realHeight, realDepth, priceData, category);
                 const startPrice: number = getStartPrice(realWidth, realHeight, realDepth, allCoefs, sizeLimit, tablePrice);
                 const sizes: productSizesType = {
                     width: realWidth,
@@ -196,12 +201,17 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
 
                 const {addition, totalPrice} = calculatedData;
                 addition.doorSquare = +(addition.doorSquare / 144).toFixed(2);
+
                 setTimeout(() => {
-                    if (price !== totalPrice || type !== newType) dispatch(updateProduct({
-                        type: newType,
-                        price: totalPrice
-                    }));
+                    if (price !== totalPrice || type !== newType) {
+                        dispatch(updateProduct({
+                            type: newType,
+                            price: totalPrice
+                        }))
+                    }
                 }, 0)
+
+
                 return (
                     <Form>
                         {!hasSolidWidth ?
@@ -272,18 +282,17 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
                                 <h3>Corner</h3>
                                 <div className={s.options}>
                                     {cornerArr.map((w, index) => <ProductRadioInput key={index}
-                                                                                   name={'Corner'}
-                                                                                   value={w}/>)}
+                                                                                    name={'Corner'}
+                                                                                    value={w}/>)}
                                 </div>
                             </div> : null}
-
 
 
                         {hasLedBlock ?
                             <LedBlock borders={ledBorders} alignment={ledAlignment} indent={ledIndent}/>
                             : null}
 
-                        {hasLeatherBlock ? <Leather /> : null}
+                        {hasLeatherBlock ? <Leather val={leather}/> : null}
 
                         {filteredOptions.length
                             ? <div className={s.block}>
@@ -316,7 +325,6 @@ const CabinetForm: FC<CabinetFormType> = ({product, materialData, productPriceDa
                               </div>
                             </div>
                           </>}
-
 
                         {chosenOptions.includes('Glass Shelf') &&
                           <>

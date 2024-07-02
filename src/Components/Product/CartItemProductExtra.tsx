@@ -17,7 +17,7 @@ const CartItemProductExtra: FC<{ productExtra: productExtraType }> = ({productEx
         shelfProfile,
         shelfGlassType,
         shelfGlassColor,
-        width, height, depth
+        width, height, depth, leather, corner
     } = productExtra
     return (
         <>
@@ -44,6 +44,18 @@ const CartItemProductExtra: FC<{ productExtra: productExtraType }> = ({productEx
                 <div className={s.itemOption}>
                     <span>LED:</span>
                     <span>{`${led.border.map(el => el)}. ${led.alignment} ${led.indent ? led.indent + '"' : ''}`}</span>
+                </div> : null
+            }
+            {corner ?
+                <div className={s.itemOption}>
+                    <span>Corner:</span>
+                    <span>{corner}</span>
+                </div> : null
+            }
+            {leather ?
+                <div className={s.itemOption}>
+                    <span>Leather:</span>
+                    <span>{leather}</span>
                 </div> : null
             }
 
