@@ -1,0 +1,880 @@
+[
+  {
+    "id": 400,
+    "legsHeight": 4.5,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "CAS Series",
+    "room": "Closet",
+    "category": "Build In",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      },
+      {
+        "type": 2,
+        "value": "PC_2.png"
+      },
+      {
+        "type": 3,
+        "value": "PC_1.png"
+      },
+      {
+        "type": 4,
+        "value": "PC_2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1,
+            "maxWidth": 27
+          },
+          {
+            "type": 2,
+            "value": 2,
+            "minWidth": 24
+          },
+          {
+            "type": 3,
+            "value": 1,
+            "maxWidth": 27
+          },
+          {
+            "type": 4,
+            "value": 2,
+            "minWidth": 24
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 5,
+            "maxHeight": 96
+          },
+          {
+            "type": 2,
+            "value": 5,
+            "maxHeight": 96
+          },
+          {
+            "type": 3,
+            "value": 6,
+            "minHeight": 96
+          },
+          {
+            "type": 4,
+            "value": 6,
+            "minHeight": 96
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door",
+      "Glass Shelf"
+    ]
+  },
+  {
+    "id": 401,
+    "legsHeight": 4.5,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "CDH Series",
+    "room": "Closet",
+    "category": "Build In",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      },
+      {
+        "type": 2,
+        "value": "PC_2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1,
+            "maxWidth": 27
+          },
+          {
+            "type": 2,
+            "value": 2,
+            "minWidth": 24
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          },
+          {
+            "type": 2,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Double Hanging",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          },
+          {
+            "type": 2,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door",
+      "Glass Shelf"
+    ]
+  },
+  {
+    "id": 402,
+    "legsHeight": 4.5,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "CLH Series",
+    "room": "Closet",
+    "category": "Build In",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      },
+      {
+        "type": 2,
+        "value": "PC_2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1,
+            "maxWidth": 27
+          },
+          {
+            "type": 2,
+            "value": 2,
+            "minWidth": 24
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          },
+          {
+            "type": 2,
+            "value": 2
+          }
+        ]
+      },
+      {
+        "name": "Long Hanging",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          },
+          {
+            "type": 2,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door",
+      "Glass Shelf"
+    ]
+  },
+  {
+    "id": 403,
+    "legsHeight": 4.5,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "CRD Series",
+    "room": "Closet",
+    "category": "Build In",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      },
+      {
+        "type": 2,
+        "value": "PC_2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1,
+            "maxWidth": 27
+          },
+          {
+            "type": 2,
+            "value": 2,
+            "minWidth": 24
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 3
+          },
+          {
+            "type": 2,
+            "value": 3
+          }
+        ]
+      },
+      {
+        "name": "Rollout",
+        "values": [
+          {
+            "type": 1,
+            "value": 5
+          },
+          {
+            "type": 2,
+            "value": 5
+          }
+        ]
+      },
+      {
+        "name": "Closet Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          },
+          {
+            "type": 2,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door",
+      "Glass Shelf"
+    ]
+  },
+  {
+    "id": 404,
+    "legsHeight": 4.5,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "CSS Series",
+    "room": "Closet",
+    "category": "Build In",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      },
+      {
+        "type": 2,
+        "value": "PC_2.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1,
+            "maxWidth": 27
+          },
+          {
+            "type": 2,
+            "value": 2,
+            "minWidth": 24
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 8
+          },
+          {
+            "type": 2,
+            "value": 8
+          }
+        ]
+      },
+      {
+        "name": "Shoe Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          },
+          {
+            "type": 2,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door",
+      "Glass Shelf"
+    ]
+  },
+  {
+    "id": 405,
+    "legsHeight": 4.5,
+    "isBlind": true,
+    "isAngle":false,
+    "name": "CCH Series",
+    "room": "Closet",
+    "category": "Build In",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Corner 2xHanging",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door"
+    ]
+  },
+  {
+    "id": 406,
+    "legsHeight": 4.5,
+    "isBlind": true,
+    "isAngle":false,
+    "name": "CCL Series",
+    "room": "Closet",
+    "category": "Build In",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Corner Long Hanging",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door"
+    ]
+  },
+  {
+    "id": 407,
+    "legsHeight": 4.5,
+    "isBlind": true,
+    "isAngle":false,
+    "name": "CCS Series",
+    "room": "Closet",
+    "category": "Build In",
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 5
+          }
+        ]
+      },
+      {
+        "name": "Closet Corner Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for doors",
+      "Box from finish material",
+      "Glass Door",
+      "Glass Shelf"
+    ]
+  },
+
+  {
+    "id": 408,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VDH Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Fixed Shelf-Double Hanging",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 409,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VLH Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Long Hanging",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Glass Shelf",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 410,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VSS Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 6
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Glass Shelf",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 411,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VAS Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Angled Shoe Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 10
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 412,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VFSA Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 4
+          }
+        ]
+      },
+      {
+        "name": "Angled Shoe Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 4
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Glass Shelf",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 413,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VHS Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 4
+          }
+        ]
+      },
+      {
+        "name": "Hampter",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Glass Shelf",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 414,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VDS Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 4
+          }
+        ]
+      },
+      {
+        "name": "Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 5
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Glass Shelf",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 415,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VDI Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 35.5,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Drawer",
+        "values": [
+          {
+            "type": 1,
+            "value": 4
+          }
+        ]
+      }
+    ],
+    "options": [
+      "PTO for drawers",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 416,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VLC Series",
+    "room": "Closet",
+    "category": "Leather",
+    "isCornerChoose": true,
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Long Hanging",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 417,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "name": "VSC Series",
+    "room": "Closet",
+    "category": "Leather",
+    "isCornerChoose": true,
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 6
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Glass Shelf",
+      "Box from finish material"
+    ]
+  },
+  {
+    "id": 418,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":false,
+    "isCornerChoose": true,
+    "name": "VDC Series",
+    "room": "Closet",
+    "category": "Leather",
+    "customHeight": 95,
+    "images": [
+      {
+        "type": 1,
+        "value": "PC_1.png"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Double Hanging",
+        "values": [
+          {
+            "type": 1,
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "options": [
+      "Box from finish material"
+    ]
+  }
+]

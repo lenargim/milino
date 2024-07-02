@@ -52,7 +52,7 @@ const CategoryItem: FC<CategoryItemType> = ({name, setCategory, current}) => {
     return (
         <div className={[s.item, current === name ? s.itemChecked : ''].join(' ')}>
             <input name="category" type="radio" id={name} value={name} onInput={() => handleChange(name)}/>
-            <label htmlFor={name} className="button submit">{name}</label>
+            <label htmlFor={name} className="button yellow small">{name}</label>
         </div>
     )
 }

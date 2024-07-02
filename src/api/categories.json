@@ -15,6 +15,18 @@
         "img": "tall-cabinets.png"
       },
       {
+        "name": "Gola Base Cabinets",
+        "img": "base-cabinets.png"
+      },
+      {
+        "name": "Gola Wall Cabinets",
+        "img": "wall-cabinets.png"
+      },
+      {
+        "name": "Gola Tall Cabinets",
+        "img": "tall-cabinets.png"
+      },
+      {
         "name": "Custom Parts",
         "img": "panels-cabinets.png"
       }
@@ -28,23 +40,30 @@
         "img": "base-cabinets.png"
       },
       {
-        "name": "Floating Vanities",
-        "img": "wall-cabinets.png"
+        "name": "Gola Vanities",
+        "img": "base-cabinets.png"
       },
       {
-        "name": "Handleless Vanities",
-        "img": "tall-cabinets.png"
-      },
-      {
-        "name": "Handleless Floating Vanities",
-        "img": "tall-cabinets.png"
+        "name": "Custom Parts",
+        "img": "panels-cabinets.png"
       }
     ]
   },
   "Closet": {
     "defaultImg": "default-cabinets.png",
     "categories": [
-
+      {
+        "name": "Build In",
+        "img": "base-cabinets.png"
+      },
+      {
+        "name": "Leather",
+        "img": "base-cabinets.png"
+      },
+      {
+        "name": "Custom Parts",
+        "img": "panels-cabinets.png"
+      }
     ]
   }
 }

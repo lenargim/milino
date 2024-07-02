@@ -4,7 +4,7 @@ import s from '../Product/product.module.sass'
 import Cart from "../Product/Cart";
 import {Navigate, useParams} from "react-router-dom";
 import {OrderFormType} from "../../helpers/types";
-import {getcustomPartsByRoom, useAppDispatch} from "../../helpers/helpers";
+import {getcustomParts, useAppDispatch} from "../../helpers/helpers";
 import {setCustomPart} from "../../store/reducers/generalSlice";
 import CustomPartMain from "./CustomPartMain";
 
@@ -14,7 +14,7 @@ const CustomPart: FC = () => {
     const materials: OrderFormType = materialsString ? JSON.parse(materialsString) : <Navigate to={{pathname: '/'}}/>;
     const {room} = materials;
     let {productId} = useParams();
-    const customParts = room && productId ? getcustomPartsByRoom(room) : [];
+    const customParts = room && productId ? getcustomParts() : [];
     const customPart = customParts.find(part => (part.id).toString() === productId);
     if (!customPart ) return <Navigate to={{pathname: '/cabinets'}}/>;
     localStorage.setItem('category', 'Custom Parts');

@@ -1,18 +1,13 @@
 {
-  "depthRange": {
-    "Base Cabinets": 24,
-    "Wall Cabinets": 13,
-    "Tall Cabinets": 24,
-    "Regular Vanities": 21,
-    "Floating Vanities": 21,
-    "Handleless Vanities": 21,
-    "Handleless Floating Vanities": 21
-  },
   "Hinge opening": [
     "Left",
     "Right",
     "Double Door",
     "Single Door"
+  ],
+  "Corner": [
+    "Left",
+    "Right"
   ],
   "Glass": {
     "Profile": [
@@ -529,8 +524,12 @@
   },
   "blindRange": {
     "Base Cabinets": 27,
-    "Wall Cabinets": 16
+    "Gola Base Cabinets": 27,
+    "Wall Cabinets": 16,
+    "Gola Wall Cabinets": 16,
+    "Build In": 27
   },
   "blindDoor": [9,27],
-  "angleDoor": [9,27]
+  "angleDoor": [9,27],
+  "leatherOptions": ["Goya 1523", "Bright White 70300", "White Alligator 3263", "Bambino 2428", "Titanium 7694", "Monticello Med 7043", "Almond 70204", "Silver Alligator 3266", "Brown Croco 2702", "Rain 3316", "Dark Graphite 7222"]
 }

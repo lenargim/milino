@@ -15,7 +15,7 @@ const CustomPartMain: FC<{ materials: OrderFormType }> = ({materials}) => {
         <div className={s.productWrap}>
             <div className={s.left}>
                 <h2>{name}</h2>
-                <div className={s.img}><img src={getImg('panels', image)} alt={name}/></div>
+                <div className={s.img}><img src={getImg('products/custom', image)} alt={name}/></div>
                 <div className={s.materials}>
                     {dataMaterialsArr.map((material, index) => {
                         if (!material[1]) return null;

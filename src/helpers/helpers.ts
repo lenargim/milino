@@ -11,22 +11,21 @@ import {
     widthItemType
 } from "./productTypes";
 import {optionType} from "../common/SelectField";
-import {CartItemType, glassDoorExtraType, productExtraType} from "../store/reducers/generalSlice";
+import {CartItemType, productExtraType} from "../store/reducers/generalSlice";
 import baseCabinetProducts from "../api/products.json";
 import wallCabinetProducts from "../api/productsWall.json";
 import tallCabinetProducts from "../api/productsTall.json";
 import vanitiesRegular from "../api/vanitiesRegular.json";
-import vanitiesFloating from '../api/vanitiesFloating.json'
-import vanitiesHandleLess from '../api/vanitiesHandleless.json'
-import vanitiesHandleLessFloating from '../api/vanitiesHandlelessFloating.json'
+import vanitiesGola from "../api/vanitiesGola.json"
 import customParts from '../api/customPart.json'
+import golaCabinetProducts from '../api/golaProducts.json'
+import closetProducts from '../api/closets.json'
 import settings from "../api/settings.json";
 import {v4 as uuidv4} from "uuid";
 import {FormikValues} from "formik";
-import {room} from './categoriesTypes'
 import {LEDFormValuesType} from "../Components/CustomPart/LEDForm";
 import {DoorAccessoiresValuesType} from "../Components/CustomPart/DoorAccessoiresForm";
-import {GlassDoorFormValuesType, GlassDoorValuesType} from "../Components/CustomPart/GlassDoorForm";
+import {GlassDoorFormValuesType} from "../Components/CustomPart/GlassDoorForm";
 import {PVCFormValuesType} from "../Components/CustomPart/PVCForm";
 import {GlassShelfFormValuesType} from "../Components/CustomPart/GlassShelfForm";
 
@@ -104,14 +103,17 @@ export const getProductsByCategory = (category: productCategory): productDataTyp
         case "Regular Vanities":
             products = vanitiesRegular as productDataType[]
             break;
-        case "Floating Vanities":
-            products = vanitiesFloating as productDataType[]
+        case "Gola Vanities":
+            products = vanitiesGola as productDataType[]
             break;
-        case "Handleless Vanities":
-            products = vanitiesHandleLess as productDataType[]
-            break
-        case "Handleless Floating Vanities":
-            products = vanitiesHandleLessFloating as productDataType[]
+        case "Gola Base Cabinets":
+        case "Gola Wall Cabinets":
+        case "Gola Tall Cabinets":
+            products = golaCabinetProducts as productDataType[];
+            break;
+        case "Build In":
+        case "Leather":
+            products = closetProducts as productDataType[];
             break;
         default:
             products = [] as productDataType[]
@@ -119,9 +121,9 @@ export const getProductsByCategory = (category: productCategory): productDataTyp
     return products.filter(product => product.category === category);
 }
 
-export const getcustomPartsByRoom = (room: room): customPartDataType[] => {
+export const getcustomParts = (): customPartDataType[] => {
     const custom = customParts as customPartDataType[];
-    return custom.filter(panel => panel.room === room);
+    return custom;
 }
 
 type initialValuetType = {
@@ -136,6 +138,7 @@ type initialValuetType = {
     'Custom Depth': string,
     'Doors': number,
     'Hinge opening': string,
+    Corner: string,
     Options: string[],
     'Profile': string,
     'Glass Type': string,
@@ -148,19 +151,20 @@ type initialValuetType = {
     'Note': string,
 
 }
-export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, isAngle: boolean, depth: number, doorValues: widthItemType[] | undefined): initialValuetType => {
+export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: widthItemType[] | undefined,initialDepth:number, isCornerChoose?: boolean): initialValuetType => {
     return {
         ['Width']: productRange.width[0],
         isBlind: isBlind,
         ['Blind Width']: blindArr ? blindArr[0] : 0,
         ['Height']: productRange.height[0],
-        ['Depth']: !isAngle ? depth : productRange.width[0],
+        ['Depth']: initialDepth,
         ['Custom Width']: '',
         ['Custom Blind Width']: '',
         ['Custom Height']: '',
         ['Custom Depth']: '',
         ['Doors']: doorValues && doorValues[0]?.value || 0,
         ['Hinge opening']: doorValues && settings["Hinge opening"][0] || '',
+        ['Corner']: isCornerChoose ? 'Left' : '',
         ['Options']: [],
         ['Profile']: '',
         ['Glass Type']: '',
@@ -172,6 +176,12 @@ export const getInitialProductValues = (productRange: productRangeType, isBlind:
         'LED indent': '',
         ['Note']: '',
     };
+}
+
+export const getInitialDepth = (productRange:productRangeType, isAngle:boolean, depth:number):number => {
+    const tableDepth = productRange?.depth[0];
+    if (tableDepth) return tableDepth;
+    return !isAngle ? depth : productRange.width[0]
 }
 
 export const getLimit = (d: number[] | undefined): number => {
@@ -425,3 +435,14 @@ export const addToCartDoorAccessories = (values: DoorAccessoiresValuesType, id: 
     }
     return cartData
 }
+
+export const isHasLedBlock = (category: productCategory):boolean => {
+    const ledCategoryArr = ['Wall Cabinets','Gola Wall Cabinets'];
+    return ledCategoryArr.includes(category)
+}
+
+export const isHasLeaterBlock = (category: productCategory):boolean => {
+    const leatherCategoryArr = ['Leather'];
+    return leatherCategoryArr.includes(category)
+}
+

@@ -4,7 +4,8 @@ export type productTypings = 1 | 2 | 3 | 4
 export type pricesTypings = 1 | 2 | 3
 
 
-export type productCategory = 'Base Cabinets' | 'Wall Cabinets' | 'Tall Cabinets' | 'Regular Vanities' | 'Floating Vanities' | 'Handleless Vanities' | 'Handleless Floating Vanities' | 'Custom Parts'
+export type kitchenCategories = 'Base Cabinets' | 'Wall Cabinets' | 'Tall Cabinets' | 'Gola Base Cabinets' | 'Gola Wall Cabinets' | 'Gola Tall Cabinets'
+export type productCategory = kitchenCategories | 'Regular Vanities' | 'Gola Vanities' | 'Build In' | 'Leather' | 'Custom Parts'
 export type productDataType = {
     id: number,
     name: string,
@@ -19,7 +20,8 @@ export type productDataType = {
     customHeight?: number,
     customDepth?: number,
     hasSolidWidth?: true,
-    hasMiddleSection?: true
+    hasMiddleSection?: true,
+    isCornerChoose?:boolean
 }
 
 export type customPartDataType = {
@@ -93,6 +95,7 @@ export interface customAttrItem {
 export type pricePart = {
     width: number,
     height?: number,
+    depth?: number,
     price: number
 }
 
@@ -213,16 +216,16 @@ export type productDataToCalculatePriceType = {
     attrArr: {name: string, value: number}[],
     doorValues?: widthItemType[],
     drawersQty: number,
+    shelfsQty: number
     rolloutsQty: number,
     blindArr?: number[],
-    filteredOptions: string[]
+    filteredOptions: string[],
 }
 
 export type customPartDataToCalculatePriceType = {
     priceData?:  pricePart[],
     productRange: productRangeType,
     sizeLimit?:sizeLimitsType,
-    // attrArr: {name: string, value: number}[],
 }
 
 export type productSizesType = {

@@ -12,9 +12,9 @@ import {
     addGlassDoorPrice,
     addGlassShelfPrice,
     addPTODoorsPrice, addPTODrawerPrice, addPTOTrashBinsPrice,
-    calculatePrice, getDoorPrice, getDoorSquare, getDoorWidth, getDrawerPrice, getLedPrice,
+    calculatePrice, getDoorMinMaxValuesArr, getDoorPrice, getDoorSquare, getDoorWidth, getDrawerPrice, getLedPrice,
     getMaterialData,
-    getProductDataToCalculatePrice, getPvcPrice, getStartPrice, getTablePrice
+    getProductDataToCalculatePrice, getPvcPrice, getShelfsQty, getStartPrice, getTablePrice
 } from "../../../helpers/calculatePrice";
 import {extraPricesType, productDataType, productSizesType} from "../../../helpers/productTypes";
 import CartItem from "../../Product/CartItem";
@@ -74,7 +74,8 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                         options
                     }
                     const productPriceData = getProductDataToCalculatePrice(defProduct, basePriceType, drawer.drawerBrand);
-                    const {productRange, drawersQty, rolloutsQty, priceData, sizeLimit} = productPriceData
+                    const {productRange, drawersQty, rolloutsQty, priceData, sizeLimit, doorValues, shelfsQty} = productPriceData;
+
                     if (!sizeLimit || !priceData) return;
                     const sizes: productSizesType = {
                         width,
@@ -83,6 +84,7 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                         maxWidth: productRange.width[productRange.width.length - 2],
                         maxHeight: productRange.height[productRange.height.length - 2],
                     }
+                    const doorArr = getDoorMinMaxValuesArr(width, doorValues);
                     const ledBorder = led?.border
                     const realBlindWidth: number = blindWidth || 0;
                     const doorWidth = getDoorWidth(width, realBlindWidth, isBlind, isAngle)
@@ -92,10 +94,10 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                         ptoDoors: options.includes('PTO for doors') ? addPTODoorsPrice(attributes, type) : 0,
                         ptoDrawers: options.includes('PTO for drawers') ? addPTODrawerPrice(type, drawersQty) : 0,
                         ptoTrashBins: options.includes('PTO for Trash Bins') ? addPTOTrashBinsPrice() : 0,
-                        glassShelf: options.includes('Glass Shelf') ? addGlassShelfPrice() : 0,
+                        glassShelf: options.includes('Glass Shelf') ? addGlassShelfPrice(shelfsQty) : 0,
                         glassDoor: options.includes('Glass Door') ? addGlassDoorPrice(doorSquare, doorProfile) : 0,
                         pvcPrice: getPvcPrice(!isBlind ? width : width - realBlindWidth, doorHeight, isAcrylic, doorType, doorFinish),
-                        doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier),
+                        doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier,doorArr),
                         drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, width),
                         ledPrice: getLedPrice(width, height, ledBorder),
                         boxMaterialCoef: options.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef,
@@ -104,7 +106,7 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                     }
 
                     const allCoefs = extraPrices.boxMaterialCoef * premiumCoef;
-                    const tablePrice: number | undefined = getTablePrice(width, height, priceData, category)
+                    const tablePrice: number | undefined = getTablePrice(width, height, depth, priceData, category)
                     const startPrice: number = getStartPrice(width, height, depth, allCoefs, sizeLimit, tablePrice);
                     const productPrice = calculatePrice(sizes, extraPrices, productRange, startPrice);
                     if (productPrice.totalPrice !== price) {

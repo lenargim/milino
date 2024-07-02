@@ -1,10 +1,10 @@
 import {
-    attrItem, customPartDataToCalculatePriceType, customPartDataType,
+    attrItem,
     drawerInterface,
     extraPricesType,
     getBoxMaterialCoefsType,
     heightItemType,
-    materialDataType,
+    materialDataType, priceItem,
     pricePart,
     pricesTypings,
     productCategory, productDataToCalculatePriceType,
@@ -15,6 +15,8 @@ import {
     widthItemType
 } from "./productTypes";
 import prices from './../api/prices.json';
+import pricesGola from './../api/pricesGola.json'
+import pricesCloset from './../api/pricesClosets.json'
 import settings from './../api/settings.json'
 import {getAttributes} from "./helpers";
 import {OrderFormType} from "./types";
@@ -33,8 +35,26 @@ type calculatePriceType = {
     coef: coefType
 }
 
-export const getPriceData = (id: number, basePriceType: pricesTypings): pricePart[] | undefined => {
-    const productPrices = prices && prices.find(el => el.id === id)?.prices;
+export const getPriceData = (id: number, category:productCategory, basePriceType: pricesTypings): pricePart[] | undefined => {
+    type apiPartType = {
+        id: number,
+        prices: priceItem[]
+    }
+    let api;
+    switch (category) {
+        case "Gola Base Cabinets":
+        case "Gola Wall Cabinets":
+        case "Gola Tall Cabinets":
+            api = pricesGola as apiPartType[]
+            break;
+        case "Build In":
+        case "Leather":
+            api = pricesCloset as apiPartType[]
+            break
+        default:
+            api = prices as apiPartType[];
+    }
+    const productPrices = api && api.find(el => el.id === id)?.prices;
     return productPrices && productPrices.find(el => el.type === basePriceType)?.data;
 }
 
@@ -42,33 +62,38 @@ export const getInitialPrice = (priceData: pricePart[], productRange: productRan
     switch (category) {
         case 'Base Cabinets':
         case "Regular Vanities":
-        case "Floating Vanities":
-        case "Handleless Vanities":
-        case "Handleless Floating Vanities":
+        case "Gola Vanities":
         case "Custom Parts":
+        case "Gola Base Cabinets":
+        case "Leather":
             return priceData.find(el => el.width === productRange.width[0])?.price;
         case 'Wall Cabinets':
         case 'Tall Cabinets':
+        case "Gola Wall Cabinets":
+        case "Gola Tall Cabinets":
+        case "Build In":
             return priceData.find(el => el.width === productRange.width[0] && el.height === productRange.height[0])?.price;
         default:
             return undefined;
     }
 }
 
-export const getTablePrice = (width: number, height: number, priceData: pricePart[], category: productCategory): number | undefined => {
+export const getTablePrice = (width: number, height: number, depth:number, priceData: pricePart[], category: productCategory): number | undefined => {
     const maxData = priceData[priceData.length - 1];
     switch (category) {
         case 'Base Cabinets':
         case "Regular Vanities":
-        case "Floating Vanities":
-        case "Handleless Vanities":
-        case "Handleless Floating Vanities":
+        case "Gola Vanities":
+        case "Gola Base Cabinets":
             const widthTablePrice: number | undefined = priceData.find(el => el.width >= width)?.price;
             if (widthTablePrice) return widthTablePrice;
             if (width > maxData.width) return maxData.price;
             return undefined
         case 'Wall Cabinets':
+        case "Gola Wall Cabinets":
         case 'Tall Cabinets':
+        case "Gola Tall Cabinets":
+        case "Build In":
         case "Custom Parts":
             const widthAndHeightTablePrice: number | undefined = priceData.find(el => (el.width >= width) && (el.height && el.height >= height))?.price;
             if (widthAndHeightTablePrice) return widthAndHeightTablePrice;
@@ -82,6 +107,20 @@ export const getTablePrice = (width: number, height: number, priceData: pricePar
                 return priceData.find(el => (el.height === maxData.width) && (el.width && el.width >= width))?.price;
             }
             return undefined
+        case "Leather":
+            const widthAndDepthTablePrice: number | undefined = priceData.find(el => (el.width >= width) && (el.depth && el.depth >= depth))?.price;
+            if (widthAndDepthTablePrice) return widthAndDepthTablePrice;
+            if (width > maxData.width && maxData.depth && depth > maxData.depth) {
+                return maxData.price
+            }
+            if (width > maxData.width) {
+                return priceData.find(el => (el.width === maxData.width) && (el.depth && el.depth >= depth))?.price;
+            }
+            if (maxData.depth && depth > maxData.depth) {
+                return priceData.find(el => (el.depth === maxData.width) && (el.width && el.width >= width))?.price;
+            }
+            return undefined
+
 
         default:
             return undefined;
@@ -126,7 +165,6 @@ export function calculatePrice(sizes: productSizesType, extraPrices: extraPrices
     if (productRange.depth[0] !== depth) coef.depth = addDepthPriceCoef(depth, productRange.depth)
     const coefExtra = 1 + (coef.width + coef.height + coef.depth);
     const totalPrice = startPrice ? +(startPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice + extraPrices.drawerPrice + extraPrices.ledPrice).toFixed(2) : 0
-
     return {
         totalPrice: totalPrice,
         addition: extraPrices,
@@ -188,8 +226,8 @@ export function addPTOTrashBinsPrice(): number {
     return settings.fixPrices['PTO for trash bins'] || 0
 }
 
-export function addGlassShelfPrice(): number {
-    return settings.fixPrices["Glass Shelf"] || 0
+export function addGlassShelfPrice(qty:number): number {
+    return settings.fixPrices["Glass Shelf"] * qty || 0
 }
 
 export function addGlassDoorPrice(square: number = 0, profileVal: any): number {
@@ -213,14 +251,14 @@ export function getDoorSquare(width: number, height: number): number {
 }
 
 export function getType(width: number, height: number, divider: number | undefined, doorValues: widthItemType[] = [], doors: number, category: productCategory, attributes: attrItem[]): productTypings {
-    const isShelfTypings = category === 'Wall Cabinets' || category === 'Tall Cabinets'
+    const shelfCategories = ['Wall Cabinets','Tall Cabinets','Gola Wall Cabinets','Gola Tall Cabinets', 'Build In'];
+    const isShelfTypings = shelfCategories.includes(category)
     const shelfValues: heightItemType[] | undefined = isShelfTypings ? attributes.find(el => el.name === 'Adjustable Shelf')?.values : undefined;
     switch (category) {
         case 'Base Cabinets':
         case "Regular Vanities":
-        case "Floating Vanities":
-        case "Handleless Vanities":
-        case "Handleless Floating Vanities":
+        case "Gola Vanities":
+        case "Gola Base Cabinets":
             if (divider) return width <= divider ? 1 : 2;
             let res: productTypings = 1;
             const currentTypeArr = doorValues.filter(val => {
@@ -233,6 +271,10 @@ export function getType(width: number, height: number, divider: number | undefin
             return doorsVal ? doorsVal.type : res;
         case 'Wall Cabinets':
         case 'Tall Cabinets':
+        case "Gola Wall Cabinets":
+        case "Gola Tall Cabinets":
+        case "Build In":
+        case "Leather":
             if (!shelfValues) return 1;
             const doorsArr = doorValues.length === 1 ? doorValues : doorValues.filter(val => {
                 const maxWidth = val.maxWidth;
@@ -272,7 +314,8 @@ export function getPvcPrice(width: number, height: number, isAcrylic = false, do
 }
 
 
-export function getDoorPrice(doorSquare: number, doorPriceMultiplier: number): number {
+export function getDoorPrice(doorSquare: number, doorPriceMultiplier: number, doorArr: number[]|null): number {
+    if (!doorArr) return 0;
     return +(doorSquare / 144 * doorPriceMultiplier).toFixed(2);
 }
 
@@ -307,7 +350,8 @@ export function getDrawerPrice(qty: number, drawer: drawerInterface, width: numb
     return 0
 }
 
-export function getDoorMinMaxValuesArr(realWidth: number, doorValues: widthItemType[]): number[] {
+export function getDoorMinMaxValuesArr(realWidth: number, doorValues?: widthItemType[]): number[]|null {
+    if (!doorValues) return null;
     const filter = Object.values(doorValues).filter(el => {
         if (el?.minWidth && realWidth >= el.minWidth) return true;
         if (el?.maxWidth && realWidth <= el.maxWidth) return true;
@@ -338,28 +382,51 @@ export function getHeightRange(priceData: pricePart[] | undefined, category: pro
     switch (category) {
         case 'Base Cabinets':
         case "Regular Vanities":
-        case "Handleless Vanities":
+        case "Gola Base Cabinets":
             return [34.5, 0];
-        case "Floating Vanities":
-        case "Handleless Floating Vanities":
-            return [25.5, 0]
         default:
             return [0]
     }
 }
 
-export function getDepthRange(category: productCategory, customDepth: number | undefined): number[] {
+export function getDepthRange(priceData: pricePart[] | undefined,category: productCategory, customDepth: number | undefined): number[] {
     if (customDepth) return [customDepth, 0];
-    const settingsRange: rangeType = settings.depthRange;
-    if (settingsRange[category]) return [settingsRange[category], 0];
-    return [0]
+    const isDepthData = priceData && priceData.find((el) => el.depth);
+    if (isDepthData) {
+        let arr: number[] = []
+        priceData && priceData.forEach((el) => {
+            if (el.depth) arr.push(el.depth);
+            arr.sort((a, b) => a - b)
+        })
+        return [...new Set<number>(arr)].concat([0]);
+    }
+
+    switch (category) {
+        case "Base Cabinets":
+        case "Tall Cabinets":
+        case "Gola Base Cabinets":
+        case "Gola Tall Cabinets":
+            return [24,0];
+        case "Wall Cabinets":
+        case "Gola Wall Cabinets":
+            return [13,0];
+        case "Regular Vanities":
+        case "Gola Vanities":
+            return [21,0];
+        case "Build In":
+            return [23,0]
+        case "Leather":
+            return [15.5,0]
+        default:
+            return [0]
+    }
 }
 
 type rangeType = {
     [key: string]: number
 }
 
-export function getBlindArr(category: string, isAngle: boolean): number[] {
+export function getBlindArr(category: string): number[] {
     const range: rangeType = settings.blindRange;
     return range[category] ? [range[category], 0] : [0];
 
@@ -381,6 +448,7 @@ export function getHingeArr(doorArr: number[], category: string): string[] {
     let arr = []
     switch (category) {
         case 'Tall Cabinets':
+        case 'Gola Tall Cabinets':
             return [left, right, singleDoor];
         default:
             if (doorArr.includes(1)) arr.push(left, right);
@@ -440,7 +508,7 @@ export const getProductRange = (priceData: pricePart[] | undefined, category: pr
     return {
         width: getWidthRange(priceData),
         height: getHeightRange(priceData, category, customHeight),
-        depth: getDepthRange(category, customDepth)
+        depth: getDepthRange(priceData,category, customDepth)
     }
 }
 
@@ -489,11 +557,11 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
         options,
         category,
         isBlind,
-        isAngle,
         customHeight,
         customDepth,
     } = product;
-    const priceData = getPriceData(id, basePriceType);
+    const priceData = getPriceData(id, category, basePriceType);
+
     const productRange = getProductRange(priceData, category, customHeight, customDepth);
     const sizeLimit: sizeLimitsType | undefined = sizes.find(size => size.productIds.includes(product.id))?.limits;
     const attrArr = getAttributes(attributes, type);
@@ -507,8 +575,9 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
         const qty = current.name.includes('Rollout') ? current.value : 0
         return acc + qty;
     }, 0);
-    const blindArr = isBlind ? getBlindArr(category, isAngle) : undefined;
+    const blindArr = isBlind ? getBlindArr(category) : undefined;
     const filteredOptions = options.filter(option => (option !== 'PTO for drawers' || drawerBrand !== 'Milino'));
+    const shelfsQty = getShelfsQty(attrArr);
 
     return {
         priceData,
@@ -519,7 +588,8 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
         drawersQty,
         rolloutsQty,
         blindArr,
-        filteredOptions
+        filteredOptions,
+        shelfsQty
     }
 }
 
@@ -744,4 +814,9 @@ export const getGlassDoorPrice = (name: string, width: number, height: number, d
         default:
             return 0
     }
+}
+
+export const getShelfsQty = (attrArr: {name: string, value:number}[]):number => {
+    const val = attrArr.find(el => el.name ==='Adjustable Shelf')?.value;
+    return val ?? 0;
 }

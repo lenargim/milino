@@ -25,8 +25,8 @@ const Product: FC = () => {
 
     const product: productDataType | undefined = products.find(product => (product.id).toString() === productId)
     if (!product || !category) return <Navigate to={{pathname: '/cabinets'}}/>;
-    const depthRange = getDepthRange(product.category,product.customDepth);
-    const initialData: initialDataType = {type: 1, height: 0, depth: depthRange[0]}
+    // const depthRange = getDepthRange(product.category,product.customDepth);
+    const initialData: initialDataType = {type: 1, height: 0, depth: 0}
     localStorage.setItem('category', category);
     dispatch(setProduct({...product, ...initialData}))
     return (
