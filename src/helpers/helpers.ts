@@ -7,11 +7,10 @@ import {
     productCategory,
     productDataType,
     productRangeType,
-    productTypings,
-    widthItemType
+    productTypings, valueItemType
 } from "./productTypes";
 import {optionType, optionTypeDoor} from "../common/SelectField";
-import {CartItemType, productExtraType} from "../store/reducers/generalSlice";
+import {CartItemType, productExtraType, updateProduct} from "../store/reducers/generalSlice";
 import baseCabinetProducts from "../api/products.json";
 import wallCabinetProducts from "../api/productsWall.json";
 import tallCabinetProducts from "../api/productsTall.json";
@@ -48,7 +47,7 @@ export const getImg = (folder: string, img: string = ''): string => {
 
 export const getAttributes = (attributes: attrItem[], type: productTypings = 1) => {
     return attributes.map(attribute => {
-        const val: widthItemType = attribute.values.find(v => v.type === type) || attribute.values[0]
+        const val: valueItemType = attribute.values.find(v => v.type === type) || attribute.values[0]
         return {
             name: attribute.name,
             value: val.value
@@ -168,7 +167,7 @@ interface initialValuesType extends initialStandartValues {
 }
 
 
-export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: widthItemType[] | undefined,initialDepth:number, initialLeather:string,isCornerChoose?: boolean): initialValuesType => {
+export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: valueItemType[] | undefined,initialDepth:number, initialLeather:string,isCornerChoose?: boolean): initialValuesType => {
     const {widthRange, heightRange} = productRange
     return {
         ['Width']: widthRange[0],
@@ -197,7 +196,7 @@ export const getInitialProductValues = (productRange: productRangeType, isBlind:
     };
 }
 
-export const getInitialStandartProductValues = (productRange: productRangeType,initialDepth:number,doorValues: widthItemType[] | undefined, isBlind: boolean, blindArr: number[] | undefined, initialLeather:string,isCornerChoose?:boolean): initialStandartValues => {
+export const getInitialStandartProductValues = (productRange: productRangeType,initialDepth:number,doorValues: valueItemType[] | undefined, isBlind: boolean, blindArr: number[] | undefined, initialLeather:string,isCornerChoose?:boolean): initialStandartValues => {
     const {widthRange, heightRange} = productRange
     return {
         ['Width']: widthRange[0],
@@ -539,4 +538,26 @@ export const getDoorColorsArr = (doorFinishMaterial: string, room: RoomType|'',d
     }
     return finishArr?.find(el => el.name === doorFinishMaterial)?.colors
 
+}
+
+
+export const checkDoors = (doors:number, doorArr:number[]|null,hingeOpening:string,setFieldValue:Function) => {
+    if (!doorArr) setFieldValue('Doors', 0);
+    if (doorArr?.length === 1 && doors !== doorArr[0]) setFieldValue('Doors', doorArr[0]);
+    if (doors === 1 && doorArr?.includes(2) && hingeOpening === 'Double Door') setFieldValue('Doors', 2)
+    if (doors === 2 && doorArr?.includes(1) && ['Left', 'Right'].includes(hingeOpening)) setFieldValue('Doors', 1)
+}
+
+export const checkHingeOpening = (hingeOpening:string, hingeArr:string[], doors:number, setFieldValue:Function) => {
+    if (doors && !hingeArr.includes(hingeOpening)) setFieldValue('Hinge opening', hingeArr[0]);
+}
+
+
+export const checkProduct = (price:number, totalPrice:number, type:productTypings, newType:productTypings, dispatch:Function) => {
+    if (price !== totalPrice || type !== newType) {
+        dispatch(updateProduct({
+            type: newType,
+            price: totalPrice
+        }))
+    }
 }

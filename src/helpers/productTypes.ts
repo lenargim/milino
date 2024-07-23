@@ -66,7 +66,6 @@ export interface productType extends productDataType {
     price: number,
     doorSquare?: number,
     widthDivider?: number,
-    heightDivider?: number,
     heightRange?: number,
 }
 
@@ -86,7 +85,7 @@ export type materialDataType = {
 
 export interface attrItem {
     name: string,
-    values: widthItemType[],
+    values: valueItemType[],
 }
 
 export interface customAttrItem {
@@ -108,13 +107,6 @@ export type priceItem = {
 
 export type prices = priceItem[]
 
-export type widthItemType = {
-    type: productTypings,
-    value: number,
-    minWidth?: number,
-    maxWidth?: number
-}
-
 export type customItemType = {
     type: productTypings,
     value: number | string,
@@ -122,7 +114,7 @@ export type customItemType = {
     maxWidth?: number
 }
 
-export type heightItemType = {
+export type valueItemType = {
     type: productTypings,
     value: number,
     minHeight?: number,
@@ -239,7 +231,7 @@ export type productDataToCalculatePriceType = {
     productRange: productRangeType,
     sizeLimit?:sizeLimitsType,
     attrArr: {name: string, value: number}[],
-    doorValues?: widthItemType[],
+    doorValues?: valueItemType[],
     drawersQty: number,
     shelfsQty: number
     rolloutsQty: number,
@@ -250,7 +242,7 @@ export type productDataToCalculatePriceType = {
 export type standartProductDataToCalculatePriceType = {
     baseProductPrice?: pricePart[],
     productRange: productRangeType,
-    doorValues?: widthItemType[],
+    doorValues?: valueItemType[],
     blindArr?: number[],
     filteredOptions: string[],
     drawersQty: number,

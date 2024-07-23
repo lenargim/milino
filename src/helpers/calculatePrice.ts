@@ -1,9 +1,8 @@
 import {
-    attrItem, CabinetType,
+    attrItem,
     drawerInterface,
     extraPricesType, extraStandartPricesType,
     getBoxMaterialCoefsType,
-    heightItemType,
     materialDataType, priceItem,
     pricePart,
     pricesTypings,
@@ -11,8 +10,7 @@ import {
     productRangeType, productSizesType, productType,
     productTypings,
     profileItem,
-    sizeLimitsType, StandartCabinetType,
-    widthItemType
+    sizeLimitsType, StandartCabinetType, valueItemType
 } from "./productTypes";
 import prices from './../api/prices.json';
 import pricesGola from './../api/pricesGola.json'
@@ -295,25 +293,21 @@ export function getDoorSquare(width: number, height: number): number {
     return 0;
 }
 
-export function getType(width: number, height: number, widthDivider: number | undefined, doorValues: widthItemType[] = [], doors: number, category: productCategory, attributes: attrItem[]): productTypings {
-    const isShelfTypings = ['Wall Cabinets', 'Tall Cabinets', 'Standart Wall Cabinets', 'Standart Tall Cabinets', 'Gola Wall Cabinets', 'Gola Tall Cabinets', 'Build In'].includes(category);
-    const shelfValues: heightItemType[] | undefined = isShelfTypings ? attributes.find(el => el.name === 'Adjustable Shelf')?.values : undefined;
+export function getType(width: number, height: number, widthDivider: number | undefined, doors: number, category: productCategory, attributes: attrItem[]): productTypings {
+    const doorValues = attributes.find(el => el.name === 'Door')?.values ?? [];
+    const shelfValues = attributes.find(el => el.name === 'Adjustable Shelf')?.values ?? [];
+    if (attributes[0].values.length < 2) return 1;
+
     switch (category) {
         case 'Base Cabinets':
-        case "Standart Base Cabinets":
         case "Regular Vanities":
         case "Gola Vanities":
         case "Gola Base Cabinets":
+        case "Standart Base Cabinets":
             if (widthDivider) return width <= widthDivider ? 1 : 2;
-            let res: productTypings = 1;
-            const currentTypeArr = doorValues.filter(val => {
-                if (val?.maxWidth && val.maxWidth >= width) return val.value;
-                if (val?.minWidth && val.minWidth <= width) return val.value;
-            })
-            if (currentTypeArr.length === 1) return currentTypeArr[0].type;
-            const doorsVal = currentTypeArr.find(el => el.value === doors);
+            const currentDoorType = doorValues.find(el => el.value === doors)?.type
+            return currentDoorType ?? 1;
 
-            return doorsVal ? doorsVal.type : res;
         case 'Wall Cabinets':
         case 'Tall Cabinets':
         case "Gola Wall Cabinets":
@@ -397,7 +391,7 @@ export function getDrawerPrice(qty: number, drawer: drawerInterface, width: numb
     return 0
 }
 
-export function getDoorMinMaxValuesArr(realWidth: number, doorValues?: widthItemType[], widthDivider?: number): number[] | null {
+export function getDoorMinMaxValuesArr(realWidth: number, doorValues?: valueItemType[], widthDivider?: number): number[] | null {
     if (!doorValues) return null;
     if (widthDivider && doorValues.length >= 2) return realWidth <= widthDivider ? [doorValues[0].value] : [doorValues[1].value];
     const filter = Object.values(doorValues).filter(el => {
@@ -496,14 +490,15 @@ export function getDoorWidth(realWidth: number, realBlindWidth: number, isBlind:
 export function getHingeArr(doorArr: number[], category: string): string[] {
     const cases = settings["Hinge opening"];
     const [left, right, double, singleDoor] = cases;
-    let arr = []
+    let arr:string[] = []
     switch (category) {
         case 'Tall Cabinets':
         case 'Gola Tall Cabinets':
             return [left, right, singleDoor];
         default:
             if (doorArr.includes(1)) arr.push(left, right);
-            if ([1, 2].every(i => doorArr.includes(i))) arr.push(double);
+            // if ([1, 2].every(i => doorArr.includes(i))) arr.push(double);
+            if (doorArr.includes(2)) arr.push(double)
             return arr
     }
 }

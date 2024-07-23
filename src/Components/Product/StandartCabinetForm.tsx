@@ -11,13 +11,13 @@ import {
 import s from './product.module.sass'
 import SelectField from '../../common/SelectField';
 import {
-    addToCartData, getInitialDepth, getInitialLeather,
+    addToCartData, checkDoors, checkHingeOpening, checkProduct, getInitialDepth, getInitialLeather,
     getInitialStandartProductValues,
     getSelectValfromVal, isHasLeaterBlock, isHasLedBlock,
     useAppDispatch
 } from "../../helpers/helpers";
 import {
-    addToCart, updateProduct,
+    addToCart,
 } from "../../store/reducers/generalSlice";
 import {
     extraStandartPricesType, StandartCabinetFormType,
@@ -53,7 +53,6 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
         attributes,
         price,
         widthDivider,
-        heightDivider,
         depth,
         category,
         legsHeight,
@@ -143,26 +142,15 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                 const hingeArr = getHingeArr(doorArr || [], category);
                 const cornerArr = settings.Corner
 
-                if (doorArr) {
-                    if (!doorValues) {
-                        setFieldValue('Doors', 0);
-                    } else {
-                        if (doorArr.length === 1 && doors !== doorArr[0]) {
-                            setFieldValue('Doors', doorArr[0])
-                        }
-                    }
-                }
-                if (!hingeArr.length) {
-                    if (hingeOpening !== 'Double Door' && doors) setFieldValue('Hinge opening', "Double Door");
-                } else if (!hingeArr.includes("Double Door") && hingeOpening === 'Double Door') {
-                    setFieldValue('Hinge opening', hingeArr[0]);
-                }
+                checkDoors(+doors, doorArr,hingeOpening,setFieldValue)
+                checkHingeOpening(hingeOpening, hingeArr, +doors, setFieldValue)
+
                 const doorWidth = getDoorWidth(realWidth, realBlindWidth, isBlind, isAngle)
 
                 const glassDoorColorFiltered = glassColorSettings.filter(el => el.type === doorGlassType);
                 const glassShelfColorFiltered = glassColorSettings.filter(el => el.type === shelfGlassType);
                 const doorSquare = getDoorSquare(doorWidth, doorHeight);
-                const newType = getType(realWidth, realHeight, widthDivider, doorValues, doors, category, attributes);
+                const newType = getType(realWidth, realHeight, widthDivider, doors, category, attributes);
 
                 const extraPrices: extraStandartPricesType = {
                     ptoDoors: chosenOptions.includes('PTO for doors') ? addPTODoorsPrice(attributes, type) : 0,
@@ -188,12 +176,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                 extraPrices.depth = +(totalDepthPrice - initialPrice).toFixed(2);
 
                 setTimeout(() => {
-                    if (price !== totalPrice || type !== newType) {
-                        dispatch(updateProduct({
-                            type: newType,
-                            price: totalPrice
-                        }))
-                    }
+                    checkProduct(price, totalPrice, type, newType, dispatch)
                 }, 0)
 
                 return (
@@ -236,7 +219,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                             }
                         </div>
 
-                        {hingeArr.length ?
+                        {hingeArr.length > 1 ?
                             <div className={s.block}>
                                 <h3>Hinge opening</h3>
                                 <div className={s.options}>
