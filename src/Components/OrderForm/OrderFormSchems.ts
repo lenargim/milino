@@ -1,14 +1,23 @@
 import * as Yup from 'yup';
+import {RoomType} from "../../helpers/categoriesTypes";
+import {StringSchema} from "yup";
 
 export const OrderFormSchema = Yup.object({
     'room': Yup.string()
-        .oneOf(['Kitchen' , 'Vanity' , 'Closet', ''])
-        // .oneOf(['Kitchen' , 'Vanity' , 'Closet'])
-        .required(),
+        .ensure()
+        .required() as StringSchema<RoomType | ''>,
     'Door Type': Yup.string()
-        .required('Please write down door type'),
+        .ensure()
+        .when('room',  {
+            is: (val:RoomType | '') => val !== 'Standart Door',
+            then: schema => schema.required('Please write down door type'),
+        }),
     'Door Finish Material': Yup.string()
-        .required('Please write down finish material'),
+        .ensure()
+        .when('room',  {
+            is: (val:RoomType | '') => val !== 'Standart Door',
+            then: schema => schema.required('Please write down finish material'),
+        }),
     'Door Color': Yup.string()
         .when('Door Finish Material', {
             is: (val: string) => val !== 'No Doors No Hinges',

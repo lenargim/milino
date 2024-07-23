@@ -4,20 +4,24 @@ import s from './product.module.sass'
 import {getImg, getProductImage, useAppSelector} from "../../helpers/helpers";
 import {AtrrsList} from "../Cabinets/List";
 import {Navigate} from "react-router-dom";
-import {getMaterialData} from "../../helpers/calculatePrice";
+import {getMaterialData, getStandartMaterialData} from "../../helpers/calculatePrice";
 import Cabinet from "./Cabinet";
 import {productDataType, productType} from "../../helpers/productTypes";
+import StandartCabinet from "./StandartCabinet";
+
 type ProductMainType = {
-    product: productType|null,
+    product: productType | null,
     materials: OrderFormType
 }
-const ProductMain: FC<ProductMainType> = ({product,materials}) => {
+const ProductMain: FC<ProductMainType> = ({product, materials}) => {
     const {room, ...data} = Object.assign({}, materials);
-    if (!product) return <Navigate to={{pathname: '/cabinets'}}/>;
+    if (!product) return <></>
     const dataMaterialsArr = Object.entries(data);
     const {type, attributes, name, images} = product;
     const img = getProductImage(images, type);
-    const materialData = getMaterialData(materials);
+    const isStandart = 'Standart Door' === room;
+
+
     return (
         <div className={s.productWrap}>
             <div className={s.left}>
@@ -37,10 +41,15 @@ const ProductMain: FC<ProductMainType> = ({product,materials}) => {
                 </div>
             </div>
             <div className={s.right}>
-                <Cabinet
-                    product={product}
-                    materialData={materialData}
-                />
+                {isStandart ?
+                    <StandartCabinet product={product}
+                                     materialData={getStandartMaterialData(materials)}
+                    /> :
+                    <Cabinet
+                        product={product}
+                        materialData={getMaterialData(materials)}
+                    />
+                }
             </div>
         </div>
     );

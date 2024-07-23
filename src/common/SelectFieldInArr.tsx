@@ -1,41 +1,32 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import Select, {OnChangeValue, StylesConfig} from "react-select";
 import {useField} from "formik";
 import styles from "./Form.module.sass";
+import {optionTypeDoor} from "./SelectField";
 
-export type optionType = {
-    value: string,
-    label: string,
-    glassDoorType?: number,
-    type?: string
-}
 
-export type optionTypeDoor = {
-    value: string,
-    label: string,
-    width: number,
-    height: number
-}
 
 type SelectFieldType = {
-    options: optionType[],
+    options: optionTypeDoor[],
     name: string,
-    val: optionType | null
+    val: optionTypeDoor | null,
+    arrIndex: number,
+    placeholder?: string
 }
 
-const SelectField: FC<SelectFieldType> = ({options, name, val}) => {
+const SelectFieldInArr: FC<SelectFieldType> = ({options, name, val, arrIndex, placeholder = ""}) => {
     const [field, meta, {setValue}] = useField(name);
+    const {value} = field
     const {error, touched} = meta;
-    const onChange = (value: OnChangeValue<optionType, false>) => {
-        if (value) setValue(value.value);
-    };
-    useEffect(() => {
-        if (field.value && !val) {
-            setValue('')
-        }
-    }, [val])
 
-    const customStyles: StylesConfig<optionType, false> = {
+
+    const onChange = (fullVal: OnChangeValue<optionTypeDoor, false>) => {
+        const newVal = {...value[arrIndex], name: fullVal?.label, width: fullVal?.width, height: fullVal?.height};
+        value.splice(arrIndex, 1, newVal);
+        if (value) setValue(value);
+    };
+
+    const customStyles: StylesConfig<optionTypeDoor, false> = {
         control: (styles, state) => ({
             position: 'relative',
             background: 'transparent',
@@ -99,12 +90,12 @@ const SelectField: FC<SelectFieldType> = ({options, name, val}) => {
     }
     return (
         <div
-            className={[styles.row, styles.select, field.value && styles.active, error && touched ? 'error' : ''].join(' ')}>
+            className={[styles.row, styles.select, value && styles.active, error && touched ? 'error' : ''].join(' ')}>
             {touched && error ? <div className={styles.error}>{error}</div> : ''}
 
             <Select options={options}
                     onChange={onChange}
-                    placeholder={name}
+                    placeholder={placeholder}
                     styles={customStyles}
                     isSearchable={false}
                     defaultValue={val}
@@ -114,4 +105,4 @@ const SelectField: FC<SelectFieldType> = ({options, name, val}) => {
     )
 };
 
-export default SelectField;
+export default SelectFieldInArr;

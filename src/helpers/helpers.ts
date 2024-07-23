@@ -10,7 +10,7 @@ import {
     productTypings,
     widthItemType
 } from "./productTypes";
-import {optionType} from "../common/SelectField";
+import {optionType, optionTypeDoor} from "../common/SelectField";
 import {CartItemType, productExtraType} from "../store/reducers/generalSlice";
 import baseCabinetProducts from "../api/products.json";
 import wallCabinetProducts from "../api/productsWall.json";
@@ -20,6 +20,7 @@ import vanitiesGola from "../api/vanitiesGola.json"
 import customParts from '../api/customPart.json'
 import golaCabinetProducts from '../api/golaProducts.json'
 import closetProducts from '../api/closets.json'
+import standartBaseProducts from '../api/standartBaseProducts.json'
 import settings from "../api/settings.json";
 import {v4 as uuidv4} from "uuid";
 import {FormikValues} from "formik";
@@ -28,7 +29,9 @@ import {DoorAccessoiresValuesType} from "../Components/CustomPart/DoorAccessoire
 import {GlassDoorFormValuesType} from "../Components/CustomPart/GlassDoorForm";
 import {PVCFormValuesType} from "../Components/CustomPart/PVCForm";
 import {GlassShelfFormValuesType} from "../Components/CustomPart/GlassShelfForm";
-
+import {doorsizesArr, StandartDoorFormValuesType} from "../Components/CustomPart/StandartDoorForm";
+import {RoomType} from "./categoriesTypes";
+import {colorType, doorType, finishType} from "./materialsTypes";
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
@@ -61,6 +64,11 @@ export const getProductImage = (images: itemImg[], type: productTypings = 1): st
 export function getSelectValfromVal(val: string | undefined, options: optionType[]): optionType | null {
     const option = options.find(el => el.value === val)
     return option || null
+}
+
+export function getSelectDoorVal(val: string | undefined, options: doorsizesArr[]): optionTypeDoor | null {
+    const option = options.find(el => el.label === val)
+    return option ?? null
 }
 
 export const getCartTotal = (cart: CartItemType[]): number => {
@@ -115,6 +123,11 @@ export const getProductsByCategory = (category: productCategory): productDataTyp
         case "Leather":
             products = closetProducts as productDataType[];
             break;
+        case "Standart Base Cabinets":
+        case "Standart Wall Cabinets":
+        case "Standart Tall Cabinets":
+            products = standartBaseProducts as productDataType[];
+            break
         default:
             products = [] as productDataType[]
     }
@@ -122,19 +135,15 @@ export const getProductsByCategory = (category: productCategory): productDataTyp
 }
 
 export const getcustomParts = (): customPartDataType[] => {
-    const custom = customParts as customPartDataType[];
-    return custom;
+    return customParts as customPartDataType[];
 }
 
-type initialValuetType = {
+type initialStandartValues = {
     Width: number,
     isBlind: boolean,
     "Blind Width": number,
     Height: number,
     Depth: number,
-    "Custom Width": string,
-    'Custom Blind Width': string,
-    'Custom Height': string,
     'Custom Depth': string,
     'Doors': number,
     'Hinge opening': string,
@@ -150,14 +159,22 @@ type initialValuetType = {
     'LED indent': string,
     'Leather': string,
     'Note': string,
-
 }
-export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: widthItemType[] | undefined,initialDepth:number, initialLeather:string,isCornerChoose?: boolean): initialValuetType => {
+
+interface initialValuesType extends initialStandartValues {
+    "Custom Width": string,
+    'Custom Blind Width': string,
+    'Custom Height': string,
+}
+
+
+export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: widthItemType[] | undefined,initialDepth:number, initialLeather:string,isCornerChoose?: boolean): initialValuesType => {
+    const {widthRange, heightRange} = productRange
     return {
-        ['Width']: productRange.width[0],
+        ['Width']: widthRange[0],
         isBlind: isBlind,
         ['Blind Width']: blindArr ? blindArr[0] : 0,
-        ['Height']: productRange.height[0],
+        ['Height']: heightRange[0],
         ['Depth']: initialDepth,
         ['Custom Width']: '',
         ['Custom Blind Width']: '',
@@ -180,10 +197,36 @@ export const getInitialProductValues = (productRange: productRangeType, isBlind:
     };
 }
 
+export const getInitialStandartProductValues = (productRange: productRangeType,initialDepth:number,doorValues: widthItemType[] | undefined, isBlind: boolean, blindArr: number[] | undefined, initialLeather:string,isCornerChoose?:boolean): initialStandartValues => {
+    const {widthRange, heightRange} = productRange
+    return {
+        ['Width']: widthRange[0],
+        isBlind: isBlind,
+        ['Blind Width']: blindArr ? blindArr[0] : 0,
+        ['Height']: heightRange[0],
+        ['Depth']: initialDepth,
+        ['Custom Depth']: '',
+        ['Doors']: doorValues && doorValues[0]?.value || 0,
+        ['Hinge opening']: doorValues && settings["Hinge opening"][0] || '',
+        ['Corner']: isCornerChoose ? 'Left' : '',
+        ['Options']: [],
+        ['Profile']: '',
+        ['Glass Type']: '',
+        ['Glass Color']: '',
+        ['Glass Shelf']: '',
+        ['Middle Section']: '',
+        'LED borders': [],
+        'LED alignment': 'Center',
+        'LED indent': '',
+        'Leather': initialLeather,
+        ['Note']: ''
+    };
+}
+
 export const getInitialDepth = (productRange:productRangeType, isAngle:boolean, depth:number):number => {
-    const tableDepth = productRange?.depth[0];
+    const tableDepth = productRange?.depthRange[0];
     if (tableDepth) return tableDepth;
-    return !isAngle ? depth : productRange.width[0]
+    return !isAngle ? depth : productRange.widthRange[0]
 }
 
 export const getInitialLeather = (category:productCategory):string => {
@@ -191,8 +234,7 @@ export const getInitialLeather = (category:productCategory):string => {
 }
 
 export const getLimit = (d: number[] | undefined): number => {
-    if (!d) return 0;
-    return d[0];
+    return d ? d[0] : 0
 }
 
 export const addToCartData = (values: FormikValues, type: productTypings, id: number, isBlind: boolean, images: itemImg[], name: string, hasMiddleSection: true | undefined, category: productCategory,price:number) => {
@@ -457,3 +499,44 @@ export const isHasLeaterBlock = (category: productCategory):boolean => {
     return leatherCategoryArr.includes(category)
 }
 
+export const addToCartDoor = (values: StandartDoorFormValuesType, id: number, image: string, name: string, category: productCategory) => {
+    const cartData: CartItemType = {
+        id: id,
+        uuid: uuidv4(),
+        category,
+        name,
+        img: image ?? '',
+        price: values.price,
+        amount: 1,
+        note: values.Note,
+        DoorExtra: {
+            Doors: values['Doors'],
+            Color: values['Color']
+        }
+    }
+    return cartData
+}
+
+export const isDoorTypeShown = (room:RoomType | '' ):boolean => {
+    return (!!room && room !== 'Standart Door')
+}
+
+export const isDoorFinishShown = (room:RoomType | '', doorType:string, finishArr?:finishType[] ):boolean => {
+    if (!room || room === 'Standart Door') return false
+    return (!!doorType && !!finishArr)
+}
+
+export const isDoorColorShown = (room:RoomType | '', doorFinishMaterial:string, finishArr?:finishType[], colorArr?: colorType[] ):boolean => {
+    if (room === 'Standart Door') return true;
+    return (!!doorFinishMaterial && !!colorArr)
+}
+
+export const getDoorColorsArr = (doorFinishMaterial: string, room: RoomType|'',doors: doorType[],doorType:string): colorType[]|undefined => {
+    const finishArr: finishType[] | undefined = doors.find(el => el.name === doorType)?.finish;
+    if (!room) return undefined;
+    if (room === 'Standart Door') {
+        return doors.find(el => el.name === 'Painted')?.finish[0].colors;
+    }
+    return finishArr?.find(el => el.name === doorFinishMaterial)?.colors
+
+}

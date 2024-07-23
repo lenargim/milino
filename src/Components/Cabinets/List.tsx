@@ -14,9 +14,8 @@ import {
     productDataType,
     productTypings
 } from "../../helpers/productTypes";
-import {room} from "../../helpers/categoriesTypes";
 
-const List: FC<{ category: productCategory, room: room }> = ({category, room}) => {
+const List: FC<{ category: productCategory }> = ({category}) => {
     switch (category) {
         case "Custom Parts":
             const customParts = getcustomParts();
@@ -42,9 +41,11 @@ export default List;
 
 
 const Item: FC<{ product: productDataType }> = ({product}) => {
-    const {name, attributes, images, id, category} = product;
+    const {name, attributes, images, id, category, room} = product;
     const initialType: productTypings = 1;
-    const img = getProductImage(images, initialType)
+    const img = getProductImage(images, initialType);
+
+    // const link:string = room !== 'Standart Door' ? `/product/${category}/${id}` : `/standart-product/${category}/${id}`
     return (
         <NavLink to={`/product/${category}/${id}`} className={s.item}
         >

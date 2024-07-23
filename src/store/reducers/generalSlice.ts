@@ -10,6 +10,7 @@ import {
 import {getCartTotal} from "../../helpers/helpers";
 import {LEDAccessoriesType} from "../../Components/CustomPart/LEDForm";
 import {DoorAccessoiresType} from "../../Components/CustomPart/DoorAccessoiresForm";
+import {DoorType} from "../../Components/CustomPart/StandartDoorForm";
 
 
 interface GeneralState {
@@ -35,8 +36,9 @@ export type CartItemType = {
     glassDoorExtra?: glassDoorExtraType,
     glassShelfExtra?: string,
     PVCExtra?: PVCExtraType,
+    DoorExtra?: DoorType
     LEDAccessories?: LEDAccessoriesType,
-    DoorAccessories?: DoorAccessoiresType
+    DoorAccessories?: DoorAccessoiresType,
 }
 
 export type glassDoorExtraType = {

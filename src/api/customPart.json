@@ -2,7 +2,6 @@
   {
     "id": 900,
     "name": "Open Cabinet",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "materials": [
@@ -98,7 +97,6 @@
   {
     "id": 901,
     "name": "Floating Shelf",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "materials": [
@@ -187,7 +185,6 @@
   {
     "id": 902,
     "name": "Filler",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "depth": 0.75,
@@ -274,7 +271,6 @@
   {
     "id": 903,
     "name": "Panel",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "materials": [
@@ -361,7 +357,6 @@
   {
     "id": 904,
     "name": "Wood Toe Kick",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "depth": 0.75,
@@ -448,7 +443,6 @@
   {
     "id": 905,
     "name": "Double Panel",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "depth": 1.5,
@@ -535,7 +529,6 @@
   {
     "id": 906,
     "name": "L Shape",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "materials": [
@@ -632,7 +625,6 @@
   {
     "id": 907,
     "name": "Column",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "materials": [
@@ -721,7 +713,6 @@
   {
     "id": 908,
     "name": "Wood Gola Trims",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "width": 3.625,
@@ -798,8 +789,7 @@
   {
     "id": 909,
     "name": "Backing",
-    "room": "Kitchen",
-    "type": "custom",
+    "type": "backing",
     "category": "Custom Parts",
     "depth": 0.25,
     "limits": {
@@ -811,7 +801,6 @@
   {
     "id": 910,
     "name": "Shaker Panel",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "materials": [
@@ -852,7 +841,6 @@
   {
     "id": 911,
     "name": "Decor Panel",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "depth": 0.75,
@@ -918,7 +906,6 @@
   {
     "id": 912,
     "name": "Slatted Panel",
-    "room": "Kitchen",
     "type": "custom",
     "category": "Custom Parts",
     "depth": 0.75,
@@ -956,7 +943,6 @@
   {
     "id": 913,
     "name": "Shaker Glass Door",
-    "room": "Kitchen",
     "type": "glass-door",
     "category": "Custom Parts",
     "depth": 0.75,
@@ -1343,7 +1329,6 @@
   {
     "id": 914,
     "name": "Glass Aluminum Door",
-    "room": "Kitchen",
     "type": "glass-door",
     "category": "Custom Parts",
     "depth": 0.75,
@@ -1841,7 +1826,6 @@
   {
     "id": 915,
     "name": "PVC",
-    "room": "Kitchen",
     "type": "pvc",
     "materials": [
       {
@@ -1903,7 +1887,6 @@
   {
     "id": 916,
     "name": "Glass shelf",
-    "room": "Kitchen",
     "type": "glass-shelf",
     "category": "Custom Parts",
     "depth": 0.25,
@@ -1922,7 +1905,6 @@
   {
     "id": 917,
     "name": "LED Accessories",
-    "room": "Kitchen",
     "type": "led-accessories",
     "category": "Custom Parts",
 
@@ -1931,8 +1913,21 @@
   {
     "id": 918,
     "name": "Door Accessories",
-    "room": "Kitchen",
     "type": "door-accessories",
+    "category": "Custom Parts",
+    "image": "Accessories.jpg"
+  },
+  {
+    "id": 919,
+    "name": "Standart Door",
+    "type": "standart-door",
+    "category": "Custom Parts",
+    "image": "Accessories.jpg"
+  },
+  {
+    "id": 920,
+    "name": "Glass Door",
+    "type": "standart-glass-door",
     "category": "Custom Parts",
     "image": "Accessories.jpg"
   }

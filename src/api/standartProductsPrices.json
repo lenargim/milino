@@ -1,0 +1,1207 @@
+[
+  {
+    "id": 1,
+    "prices": [
+      {
+        "width": 9,
+        "price": 150
+      },
+      {
+        "width": 12,
+        "price": 165
+      },
+      {
+        "width": 15,
+        "price": 179
+      },
+      {
+        "width": 18,
+        "price": 190
+      },
+      {
+        "width": 21,
+        "price": 201
+      },
+      {
+        "width": 24,
+        "price": 216
+      },
+      {
+        "width": 27,
+        "price": 241
+      },
+      {
+        "width": 30,
+        "price": 252
+      },
+      {
+        "width": 33,
+        "price": 265
+      },
+      {
+        "width": 36,
+        "price": 281
+      },
+      {
+        "width": 39,
+        "price": 345
+      },
+      {
+        "width": 42,
+        "price": 424
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "prices": [
+      {
+        "width": 12,
+        "price": 347
+      },
+      {
+        "width": 15,
+        "price": 377
+      },
+      {
+        "width": 18,
+        "price": 397
+      },
+      {
+        "width": 21,
+        "price": 419
+      },
+      {
+        "width": 24,
+        "price": 445
+      },
+      {
+        "width": 27,
+        "price": 455
+      },
+      {
+        "width": 30,
+        "price": 479
+      },
+      {
+        "width": 33,
+        "price": 503
+      },
+      {
+        "width": 36,
+        "price": 527
+      },
+      {
+        "width": 39,
+        "price": 641
+      },
+      {
+        "width": 42,
+        "price": 779
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "prices": [
+      {
+        "width": 12,
+        "price": 243
+      },
+      {
+        "width": 15,
+        "price": 259
+      },
+      {
+        "width": 18,
+        "price": 275
+      },
+      {
+        "width": 21,
+        "price": 293
+      },
+      {
+        "width": 24,
+        "price": 301
+      },
+      {
+        "width": 27,
+        "price": 365
+      },
+      {
+        "width": 30,
+        "price": 387
+      },
+      {
+        "width": 33,
+        "price": 405
+      },
+      {
+        "width": 36,
+        "price": 421
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "prices": [
+      {
+        "width": 12,
+        "price": 421
+      },
+      {
+        "width": 15,
+        "price": 451
+      },
+      {
+        "width": 18,
+        "price": 473
+      },
+      {
+        "width": 21,
+        "price": 495
+      },
+      {
+        "width": 24,
+        "price": 521
+      },
+      {
+        "width": 27,
+        "price": 553
+      },
+      {
+        "width": 30,
+        "price": 577
+      },
+      {
+        "width": 33,
+        "price": 601
+      },
+      {
+        "width": 36,
+        "price": 623
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "prices": [
+      {
+        "width": 15,
+        "price": 445
+      },
+      {
+        "width": 18,
+        "price": 459
+      },
+      {
+        "width": 21,
+        "price": 471
+      },
+      {
+        "width": 24,
+        "price": 574
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "prices": [
+      {
+        "width": 15,
+        "price": 559
+      },
+      {
+        "width": 18,
+        "price": 577
+      },
+      {
+        "width": 21,
+        "price": 593
+      },
+      {
+        "width": 24,
+        "price": 612
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "prices": [
+      {
+        "width": 6,
+        "price": 135
+      },
+      {
+        "width": 9,
+        "price": 150
+      },
+      {
+        "width": 12,
+        "price": 165
+      },
+      {
+        "width": 15,
+        "price": 179
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "prices": [
+      {
+        "width": 30,
+        "price": 456
+      },
+      {
+        "width": 36,
+        "price": 495
+      },
+      {
+        "width": 42,
+        "price": 545
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "prices": [
+      {
+        "width": 12,
+        "price": 303
+      },
+      {
+        "width": 15,
+        "price": 329
+      },
+      {
+        "width": 18,
+        "price": 351
+      },
+      {
+        "width": 21,
+        "price": 373
+      },
+      {
+        "width": 24,
+        "price": 393
+      },
+      {
+        "width": 27,
+        "price": 417
+      },
+      {
+        "width": 30,
+        "price": 441
+      },
+      {
+        "width": 33,
+        "price": 465
+      },
+      {
+        "width": 36,
+        "price": 489
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "prices": [
+      {
+        "width": 12,
+        "price": 379
+      },
+      {
+        "width": 15,
+        "price": 405
+      },
+      {
+        "width": 18,
+        "price": 425
+      },
+      {
+        "width": 21,
+        "price": 447
+      },
+      {
+        "width": 24,
+        "price": 469
+      },
+      {
+        "width": 27,
+        "price": 493
+      },
+      {
+        "width": 30,
+        "price": 517
+      },
+      {
+        "width": 33,
+        "price": 539
+      },
+      {
+        "width": 36,
+        "price": 563
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "prices": [
+      {
+        "width": 12,
+        "price": 379
+      },
+      {
+        "width": 15,
+        "price": 405
+      },
+      {
+        "width": 18,
+        "price": 425
+      },
+      {
+        "width": 21,
+        "price": 447
+      },
+      {
+        "width": 24,
+        "price": 469
+      },
+      {
+        "width": 27,
+        "price": 493
+      },
+      {
+        "width": 30,
+        "price": 517
+      },
+      {
+        "width": 33,
+        "price": 539
+      },
+      {
+        "width": 36,
+        "price": 563
+      }
+    ]
+  },
+
+  {
+    "id": 14,
+    "prices": [
+      {
+        "width": 12,
+        "price": 449
+      },
+      {
+        "width": 15,
+        "price": 472
+      },
+      {
+        "width": 18,
+        "price": 489
+      },
+      {
+        "width": 21,
+        "price": 509
+      },
+      {
+        "width": 24,
+        "price": 528
+      },
+      {
+        "width": 27,
+        "price": 549
+      },
+      {
+        "width": 30,
+        "price": 570
+      },
+      {
+        "width": 33,
+        "price": 590
+      },
+      {
+        "width": 36,
+        "price": 611
+      }
+    ]
+  },
+
+  {
+    "id": 16,
+    "prices": [
+      {
+        "width": 27,
+        "price": 564
+      },
+      {
+        "width": 30,
+        "price": 588
+      },
+      {
+        "width": 33,
+        "price": 612
+      },
+      {
+        "width": 36,
+        "price": 636
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "prices": [
+      {
+        "width": 24,
+        "price": 223
+      },
+      {
+        "width": 27,
+        "price": 235
+      },
+      {
+        "width": 30,
+        "price": 245
+      },
+      {
+        "width": 33,
+        "price": 252
+      },
+      {
+        "width": 36,
+        "price": 265
+      },
+      {
+        "width": 39,
+        "price": 327
+      },
+      {
+        "width": 42,
+        "price": 401
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "prices": [
+      {
+        "width": 24,
+        "price": 307
+      },
+      {
+        "width": 27,
+        "price": 321
+      },
+      {
+        "width": 30,
+        "price": 333
+      },
+      {
+        "width": 33,
+        "price": 343
+      },
+      {
+        "width": 36,
+        "price": 355
+      },
+      {
+        "width": 39,
+        "price": 435
+      },
+      {
+        "width": 42,
+        "price": 531
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "prices": [
+      {
+        "width": 24,
+        "price": 324
+      },
+      {
+        "width": 27,
+        "price": 335
+      },
+      {
+        "width": 30,
+        "price": 346
+      },
+      {
+        "width": 33,
+        "price": 355
+      },
+      {
+        "width": 36,
+        "price": 365
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "prices": [
+      {
+        "width": 24,
+        "price": 405
+      },
+      {
+        "width": 27,
+        "price": 417
+      },
+      {
+        "width": 30,
+        "price": 431
+      },
+      {
+        "width": 33,
+        "price": 439
+      },
+      {
+        "width": 36,
+        "price": 451
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "prices": [
+      {
+        "width": 40,
+        "price": 322
+      },
+      {
+        "width": 42,
+        "price": 332
+      },
+      {
+        "width": 44,
+        "price": 340
+      },
+      {
+        "width": 46,
+        "price": 348
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "prices": [
+      {
+        "width": 46,
+        "price": 812
+      },
+      {
+        "width": 48,
+        "price": 856
+      },
+      {
+        "width": 50,
+        "price": 924
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "prices": [
+      {
+        "width": 33,
+        "price": 344
+      },
+      {
+        "width": 36,
+        "price": 388
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "prices": [
+      {
+        "width": 33,
+        "price": 344
+      },
+      {
+        "width": 36,
+        "price": 388
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "prices": [
+      {
+        "width": 33,
+        "price": 396
+      },
+      {
+        "width": 36,
+        "price": 438
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "prices": [
+      {
+        "width": 33,
+        "price": 396
+      },
+      {
+        "width": 36,
+        "price": 438
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "prices": [
+      {
+        "width": 30,
+        "price": 474
+      },
+      {
+        "width": 36,
+        "price": 494
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "prices": [
+      {
+        "width": 30,
+        "price": 154
+      },
+      {
+        "width": 36,
+        "price": 172
+      },
+      {
+        "width": 39,
+        "price": 206
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "prices": [
+      {
+        "width": 24,
+        "price": 380
+      },
+      {
+        "width": 27,
+        "price": 390
+      },
+      {
+        "width": 30,
+        "price": 398
+      },
+      {
+        "width": 36,
+        "price": 420
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "prices": [
+      {
+        "width": 24,
+        "height": 10.5,
+        "price": 177
+      },
+      {
+        "width": 24,
+        "height": 13.5,
+        "price": 177
+      },
+      {
+        "width": 24,
+        "height": 16.5,
+        "price": 177
+      },
+      {
+        "width": 24,
+        "height": 19.5,
+        "price": 177
+      },
+      {
+        "width": 27,
+        "height": 10.5,
+        "price": 189
+      },
+      {
+        "width": 27,
+        "height": 13.5,
+        "price": 189
+      },
+      {
+        "width": 27,
+        "height": 16.5,
+        "price": 189
+      },
+      {
+        "width": 27,
+        "height": 19.5,
+        "price": 189
+      },
+      {
+        "width": 30,
+        "height": 10.5,
+        "price": 199
+      },
+      {
+        "width": 30,
+        "height": 13.5,
+        "price": 199
+      },
+      {
+        "width": 30,
+        "height": 16.5,
+        "price": 199
+      },
+      {
+        "width": 30,
+        "height": 19.5,
+        "price": 199
+      },
+      {
+        "width": 33,
+        "height": 10.5,
+        "price": 211
+      },
+      {
+        "width": 33,
+        "height": 13.5,
+        "price": 211
+      },
+      {
+        "width": 33,
+        "height": 16.5,
+        "price": 211
+      },
+      {
+        "width": 33,
+        "height": 19.5,
+        "price": 211
+      },
+      {
+        "width": 36,
+        "height": 10.5,
+        "price": 221
+      },
+      {
+        "width": 36,
+        "height": 13.5,
+        "price": 221
+      },
+      {
+        "width": 36,
+        "height": 16.5,
+        "price": 221
+      },
+      {
+        "width": 36,
+        "height": 19.5,
+        "price": 221
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "prices": [
+      {
+        "width": 24,
+        "height": 10.5,
+        "price": 150
+      },
+      {
+        "width": 24,
+        "height": 13.5,
+        "price": 150
+      },
+      {
+        "width": 24,
+        "height": 16.5,
+        "price": 150
+      },
+      {
+        "width": 24,
+        "height": 19.5,
+        "price": 150
+      },
+      {
+        "width": 27,
+        "height": 10.5,
+        "price": 162
+      },
+      {
+        "width": 27,
+        "height": 13.5,
+        "price": 162
+      },
+      {
+        "width": 27,
+        "height": 16.5,
+        "price": 162
+      },
+      {
+        "width": 27,
+        "height": 19.5,
+        "price": 162
+      },
+      {
+        "width": 30,
+        "height": 10.5,
+        "price": 172
+      },
+      {
+        "width": 30,
+        "height": 13.5,
+        "price": 172
+      },
+      {
+        "width": 30,
+        "height": 16.5,
+        "price": 172
+      },
+      {
+        "width": 30,
+        "height": 19.5,
+        "price": 172
+      },
+      {
+        "width": 33,
+        "height": 10.5,
+        "price": 184
+      },
+      {
+        "width": 33,
+        "height": 13.5,
+        "price": 184
+      },
+      {
+        "width": 33,
+        "height": 16.5,
+        "price": 184
+      },
+      {
+        "width": 33,
+        "height": 19.5,
+        "price": 184
+      },
+      {
+        "width": 36,
+        "height": 10.5,
+        "price": 194
+      },
+      {
+        "width": 36,
+        "height": 13.5,
+        "price": 194
+      },
+      {
+        "width": 36,
+        "height": 16.5,
+        "price": 194
+      },
+      {
+        "width": 36,
+        "height": 19.5,
+        "price": 194
+      }
+    ]
+  },
+
+  {
+    "id": 33,
+    "prices": [
+      {
+        "width": 24,
+        "height": 12,
+        "price": 286
+      },
+      {
+        "width": 24,
+        "height": 15,
+        "price": 298
+      },
+      {
+        "width": 24,
+        "height": 18,
+        "price": 312
+      },
+      {
+        "width": 24,
+        "height": 21,
+        "price": 328
+      },
+      {
+        "width": 27,
+        "height": 12,
+        "price": 298
+      },
+      {
+        "width": 27,
+        "height": 15,
+        "price": 310
+      },
+      {
+        "width": 30,
+        "height": 12,
+        "price": 310
+      },
+      {
+        "width": 30,
+        "height": 15,
+        "price": 322
+      },
+      {
+        "width": 30,
+        "height": 18,
+        "price": 336
+      },
+      {
+        "width": 30,
+        "height": 21,
+        "price": 380
+      },
+      {
+        "width": 30,
+        "height": 24,
+        "price": 426
+      },
+      {
+        "width": 33,
+        "height": 12,
+        "price": 318
+      },
+      {
+        "width": 33,
+        "height": 15,
+        "price": 332
+      },
+      {
+        "width": 36,
+        "height": 12,
+        "price": 332
+      },
+      {
+        "width": 36,
+        "height": 15,
+        "price": 408
+      },
+      {
+        "width": 36,
+        "height": 18,
+        "price": 422
+      },
+      {
+        "width": 36,
+        "height": 21,
+        "price": 460
+      }
+    ]
+  },
+
+  {
+    "id": 36,
+    "prices": [
+      {
+        "width": 21,
+        "price": 388
+      }
+    ]
+  },
+
+  {
+    "id": 101,
+    "prices": [
+      {
+        "width": 9,
+        "height": 30,
+        "price": 116
+      },
+      {
+        "width": 9,
+        "height": 36,
+        "price": 140
+      },
+      {
+        "width": 9,
+        "height": 42,
+        "price": 164
+      },
+      {
+        "width": 12,
+        "height": 30,
+        "price": 134
+      },
+      {
+        "width": 12,
+        "height": 36,
+        "price": 160
+      },
+      {
+        "width": 12,
+        "height": 42,
+        "price": 184
+      },
+      {
+        "width": 15,
+        "height": 30,
+        "price": 150
+      },
+      {
+        "width": 15,
+        "height": 36,
+        "price": 174
+      },
+      {
+        "width": 15,
+        "height": 42,
+        "price": 198
+      },
+      {
+        "width": 18,
+        "height": 30,
+        "price": 164
+      },
+      {
+        "width": 18,
+        "height": 36,
+        "price": 190
+      },
+      {
+        "width": 18,
+        "height": 42,
+        "price": 216
+      },
+      {
+        "width": 21,
+        "height": 30,
+        "price": 176
+      },
+      {
+        "width": 21,
+        "height": 36,
+        "price": 204
+      },
+      {
+        "width": 21,
+        "height": 42,
+        "price": 232
+      },
+      {
+        "width": 24,
+        "height": 30,
+        "price": 194
+      },
+      {
+        "width": 24,
+        "height": 36,
+        "price": 220
+      },
+      {
+        "width": 24,
+        "height": 42,
+        "price": 246
+      },
+      {
+        "width": 27,
+        "height": 30,
+        "price": 246
+      },
+      {
+        "width": 27,
+        "height": 36,
+        "price": 274
+      },
+      {
+        "width": 27,
+        "height": 42,
+        "price": 302
+      },
+      {
+        "width": 30,
+        "height": 30,
+        "price": 254
+      },
+      {
+        "width": 30,
+        "height": 36,
+        "price": 286
+      },
+      {
+        "width": 30,
+        "height": 42,
+        "price": 318
+      },
+      {
+        "width": 33,
+        "height": 30,
+        "price": 276
+      },
+      {
+        "width": 33,
+        "height": 36,
+        "price": 304
+      },
+      {
+        "width": 33,
+        "height": 42,
+        "price": 332
+      },
+      {
+        "width": 36,
+        "height": 30,
+        "price": 288
+      },
+      {
+        "width": 36,
+        "height": 36,
+        "price": 318
+      },
+      {
+        "width": 36,
+        "height": 42,
+        "price": 348
+      },
+      {
+        "width": 39,
+        "height": 30,
+        "price": 345
+      },
+      {
+        "width": 39,
+        "height": 36,
+        "price": 381
+      },
+      {
+        "width": 39,
+        "height": 42,
+        "price": 417
+      },
+      {
+        "width": 42,
+        "height": 30,
+        "price": 414
+      },
+      {
+        "width": 42,
+        "height": 36,
+        "price": 457
+      },
+      {
+        "width": 42,
+        "height": 42,
+        "price": 500
+      }
+    ]
+  }
+]

@@ -72,7 +72,6 @@ const LEDForm: FC<{ customPart: customPartDataType }> = ({customPart}) => {
                                 qty: 1
                             }])
                             break;
-
                     }
                 }
                 const priceNew = getPrice(values);

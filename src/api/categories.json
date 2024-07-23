@@ -65,5 +65,26 @@
         "img": "panels-cabinets.png"
       }
     ]
+  },
+  "Standart Door": {
+    "defaultImg": "default-cabinets.png",
+    "categories": [
+      {
+        "name": "Standart Base Cabinets",
+        "img": "base-cabinets.png"
+      },
+      {
+        "name": "Standart Wall Cabinets",
+        "img": "wall-cabinets.png"
+      },
+      {
+        "name": "Standart Tall Cabinets",
+        "img": "tall-cabinets.png"
+      },
+      {
+        "name": "Custom Parts",
+        "img": "panels-cabinets.png"
+      }
+    ]
   }
 }

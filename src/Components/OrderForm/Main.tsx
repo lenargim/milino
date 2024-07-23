@@ -12,6 +12,7 @@ import {DrawerType} from "./DrawerType";
 import {DrawerColor} from "./DrawerColor";
 import {OrderFormType} from "../../helpers/types";
 import {colorType, finishType, MaterialsType} from "../../helpers/materialsTypes";
+import {getDoorColorsArr, isDoorColorShown, isDoorFinishShown, isDoorTypeShown} from "../../helpers/helpers";
 
 type MainType = {
     values: OrderFormType,
@@ -34,14 +35,24 @@ const Main: FC<MainType> = ({values, isSubmitting, isValid, setFieldValue}) => {
     } = values;
 
     const finishArr: finishType[] | undefined = doors.find(el => el.name === doorType)?.finish;
-    const colorArr: colorType[] | undefined = finishArr && finishArr.find(el => el.name === doorFinishMaterial)?.colors;
+    const colorArr: colorType[] | undefined = getDoorColorsArr(doorFinishMaterial, room, doors,doorType)
     const isGrain = colorArr && colorArr.find(el => el.name === doorColor)?.isGrain;
     const drawerTypesArr = drawers.find(el => el.value === drawerVal)?.types;
     const drawerColorsArr = drawerTypesArr && drawerTypesArr.find(el => el.value === drawerTypeVal)?.colors
 
+    const showDoorType = isDoorTypeShown(room)
+    const showDoorFinish = isDoorFinishShown(room, doorType, finishArr);
+    const showDoorColor = isDoorColorShown(room, doorFinishMaterial, finishArr, colorArr);
 
     // Check is values are in array
     useEffect(() => {
+        switch (room) {
+            case "Standart Door":
+                if (doorType) setFieldValue('Door Type', '');
+                if (doorFinishMaterial) setFieldValue('Door Finish Material', '');
+                if (doorGrain) setFieldValue('Door Grain', '');
+                break
+        }
         switch (finishArr?.length) {
             case 1:
                 setFieldValue('Door Finish Material', finishArr[0].name);
@@ -62,7 +73,7 @@ const Main: FC<MainType> = ({values, isSubmitting, isValid, setFieldValue}) => {
                 setFieldValue('Door Color', '');
                 break;
             default:
-                if ((doorColor && colorArr && !colorArr.some(el => el.name === doorColor) || !doorFinishMaterial)) {
+                if (!showDoorColor || (doorColor && colorArr && !colorArr.some(el => el.name === doorColor))) {
                     setFieldValue('Door Color', '');
                 }
         }
@@ -92,17 +103,17 @@ const Main: FC<MainType> = ({values, isSubmitting, isValid, setFieldValue}) => {
         }
 
         if (isGrain && !doorGrain) setFieldValue('Door Grain', 'Gorizontal');
-    }, [values])
+    }, [values]);
 
     return (
         <main id="main" className={s.main}>
             <div className={s.container}>
                 <h1 className="h1" id="anchor">ORDER FORM</h1>
                 <div>
-                    <RoomType rooms={rooms} value={room ? room : ''}/>
-                    {room && <DoorType doors={doors} value={doorType} name="Door Type" />}
-                    {doorType && finishArr && <DoorFinish finishArr={finishArr} value={doorFinishMaterial} name="Door Finish Material"/>}
-                    {doorFinishMaterial && colorArr && <DoorColor colorArr={colorArr} value={doorColor} name="Door Color"/>}
+                    <RoomType rooms={rooms} value={room ?? ''}/>
+                    {showDoorType && <DoorType doors={doors} value={doorType} name="Door Type" />}
+                    {showDoorFinish && <DoorFinish finishArr={finishArr} value={doorFinishMaterial} name="Door Finish Material"/>}
+                    {showDoorColor && <DoorColor colorArr={colorArr} value={doorColor} name="Door Color"/>}
                     {doorFinishMaterial && isGrain && <DoorGrain value={doorGrain} name="Door Grain"/>}
                     {(doorFinishMaterial === 'No Doors No Hinges' || doorColor || boxMaterialVal) &&
                       <BoxMaterial boxMaterial={boxMaterial} name="Box Material" value={boxMaterialVal}/>}
@@ -110,7 +121,7 @@ const Main: FC<MainType> = ({values, isSubmitting, isValid, setFieldValue}) => {
                     {drawerVal && drawerTypesArr && <DrawerType drawerTypesArr={drawerTypesArr} name="Drawer Type" value={drawerTypeVal}/>}
                     {drawerTypeVal && drawerColorsArr && <DrawerColor drawerColorsArr={drawerColorsArr} name="Drawer Color" value={drawerColor}/>}
                 </div>
-                {isValid && <button type="submit" className={['button yellow submit'].join(' ')}
+                {isValid && <button type="submit" className={['button yellow', s.submit].join(' ')}
                                     disabled={isSubmitting}>Submit</button>}
             </div>
         </main>

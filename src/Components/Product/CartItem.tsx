@@ -10,6 +10,7 @@ import CartItemLEDExtra from "./CartItemLEDExtra";
 import CartItemDoorExtra from "./CartItemDoorExtra";
 import CartItemGlassDoorExtra from "./CartItemGlassDoorExtra";
 import CartItemShelfExtra from "./CartItemShelfExtra";
+import CartItemDoor from "./CartItemDoor";
 
 export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item, isCheckout = false}) => {
 
@@ -27,15 +28,15 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
         LEDAccessories,
         DoorAccessories,
         glassDoorExtra,
-        glassShelfExtra
+        glassShelfExtra,
+        DoorExtra
     } = item;
     const dispatch = useAppDispatch();
 
     function changeAmount(type: changeAmountType) {
         dispatch(updateProductAmount({uuid: uuid, amount: type === 'minus' ? amount - 1 : amount + 1}))
     }
-    const image = getImg(category === 'Custom Parts' ? 'panels' : 'products', img)
-
+    const image = getImg(category === 'Custom Parts' ? 'products/custom' : 'products', img);
 
     return (
         <div className={s.cartItem} data-uuid={uuid}>
@@ -46,7 +47,6 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
                 <div className={s.itemName}>{name}</div>
             </div>
 
-
             <div className={s.itemOptions}>
                 {productExtra && <CartItemProductExtra productExtra={productExtra}/>}
                 {customPartExtra && <CartItemCustomExtra productExtra={customPartExtra}/>}
@@ -55,6 +55,7 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
                 {LEDAccessories && <CartItemLEDExtra productExtra={LEDAccessories}/>}
                 {DoorAccessories && <CartItemDoorExtra productExtra={DoorAccessories} />}
                 {glassShelfExtra && <CartItemShelfExtra productExtra={glassShelfExtra} />}
+                {DoorExtra && <CartItemDoor productExtra={DoorExtra?? ''} />}
 
                 {note &&
                   <div className={s.itemOption}>

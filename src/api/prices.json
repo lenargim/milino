@@ -2922,22 +2922,105 @@
         "data": [
           {
             "width": 24,
+            "height": 10.5,
             "price": 176
           },
           {
             "width": 27,
+            "height": 10.5,
             "price": 190
           },
           {
             "width": 30,
+            "height": 10.5,
             "price": 202
           },
           {
             "width": 33,
+            "height": 10.5,
             "price": 216
           },
           {
             "width": 36,
+            "height": 10.5,
+            "price": 228
+          },
+
+          {
+            "width": 24,
+            "height": 13.5,
+            "price": 176
+          },
+          {
+            "width": 27,
+            "height": 13.5,
+            "price": 190
+          },
+          {
+            "width": 30,
+            "height": 13.5,
+            "price": 202
+          },
+          {
+            "width": 33,
+            "height": 13.5,
+            "price": 216
+          },
+          {
+            "width": 36,
+            "height": 13.5,
+            "price": 228
+          },
+
+          {
+            "width": 24,
+            "height": 16.5,
+            "price": 176
+          },
+          {
+            "width": 27,
+            "height": 16.5,
+            "price": 190
+          },
+          {
+            "width": 30,
+            "height": 16.5,
+            "price": 202
+          },
+          {
+            "width": 33,
+            "height": 16.5,
+            "price": 216
+          },
+          {
+            "width": 36,
+            "height": 16.5,
+            "price": 228
+          },
+
+          {
+            "width": 24,
+            "height": 19.5,
+            "price": 176
+          },
+          {
+            "width": 27,
+            "height": 19.5,
+            "price": 190
+          },
+          {
+            "width": 30,
+            "height": 19.5,
+            "price": 202
+          },
+          {
+            "width": 33,
+            "height": 19.5,
+            "price": 216
+          },
+          {
+            "width": 36,
+            "height": 19.5,
             "price": 228
           }
         ]
@@ -2947,22 +3030,105 @@
         "data": [
           {
             "width": 24,
+            "height": 10.5,
             "price": 194
           },
           {
             "width": 27,
+            "height": 10.5,
             "price": 208
           },
           {
             "width": 30,
+            "height": 10.5,
             "price": 224
           },
           {
             "width": 33,
+            "height": 10.5,
             "price": 240
           },
           {
             "width": 36,
+            "height": 10.5,
+            "price": 256
+          },
+
+          {
+            "width": 24,
+            "height": 13.5,
+            "price": 194
+          },
+          {
+            "width": 27,
+            "height": 13.5,
+            "price": 208
+          },
+          {
+            "width": 30,
+            "height": 13.5,
+            "price": 224
+          },
+          {
+            "width": 33,
+            "height": 13.5,
+            "price": 240
+          },
+          {
+            "width": 36,
+            "height": 13.5,
+            "price": 256
+          },
+
+          {
+            "width": 24,
+            "height": 16.5,
+            "price": 194
+          },
+          {
+            "width": 27,
+            "height": 16.5,
+            "price": 208
+          },
+          {
+            "width": 30,
+            "height": 16.5,
+            "price": 224
+          },
+          {
+            "width": 33,
+            "height": 16.5,
+            "price": 240
+          },
+          {
+            "width": 36,
+            "height": 16.5,
+            "price": 256
+          },
+
+          {
+            "width": 24,
+            "height": 19.5,
+            "price": 194
+          },
+          {
+            "width": 27,
+            "height": 19.5,
+            "price": 208
+          },
+          {
+            "width": 30,
+            "height": 19.5,
+            "price": 224
+          },
+          {
+            "width": 33,
+            "height": 19.5,
+            "price": 240
+          },
+          {
+            "width": 36,
+            "height": 19.5,
             "price": 256
           }
         ]
@@ -2972,22 +3138,105 @@
         "data": [
           {
             "width": 24,
+            "height": 10.5,
             "price": 213
           },
           {
             "width": 27,
+            "height": 10.5,
             "price": 229
           },
           {
             "width": 30,
+            "height": 10.5,
             "price": 246
           },
           {
             "width": 33,
+            "height": 10.5,
             "price": 264
           },
           {
             "width": 36,
+            "height": 10.5,
+            "price": 282
+          },
+
+          {
+            "width": 24,
+            "height": 13.5,
+            "price": 213
+          },
+          {
+            "width": 27,
+            "height": 13.5,
+            "price": 229
+          },
+          {
+            "width": 30,
+            "height": 13.5,
+            "price": 246
+          },
+          {
+            "width": 33,
+            "height": 13.5,
+            "price": 264
+          },
+          {
+            "width": 36,
+            "height": 13.5,
+            "price": 282
+          },
+
+          {
+            "width": 24,
+            "height": 16.5,
+            "price": 213
+          },
+          {
+            "width": 27,
+            "height": 16.5,
+            "price": 229
+          },
+          {
+            "width": 30,
+            "height": 16.5,
+            "price": 246
+          },
+          {
+            "width": 33,
+            "height": 16.5,
+            "price": 264
+          },
+          {
+            "width": 36,
+            "height": 16.5,
+            "price": 282
+          },
+
+          {
+            "width": 24,
+            "height": 19.5,
+            "price": 213
+          },
+          {
+            "width": 27,
+            "height": 19.5,
+            "price": 229
+          },
+          {
+            "width": 30,
+            "height": 19.5,
+            "price": 246
+          },
+          {
+            "width": 33,
+            "height": 19.5,
+            "price": 264
+          },
+          {
+            "width": 36,
+            "height": 19.5,
             "price": 282
           }
         ]
@@ -3317,7 +3566,7 @@
         "type": 1,
         "data": [
           {
-            "width": 24,
+            "width": 21,
             "price": 388
           }
         ]
@@ -3326,7 +3575,7 @@
         "type": 2,
         "data": [
           {
-            "width": 24,
+            "width": 21,
             "price": 420
           }
         ]
@@ -3335,7 +3584,7 @@
         "type": 3,
         "data": [
           {
-            "width": 24,
+            "width": 21,
             "price": 462
           }
         ]

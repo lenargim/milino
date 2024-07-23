@@ -5,7 +5,8 @@ export type pricesTypings = 1 | 2 | 3
 
 
 export type kitchenCategories = 'Base Cabinets' | 'Wall Cabinets' | 'Tall Cabinets' | 'Gola Base Cabinets' | 'Gola Wall Cabinets' | 'Gola Tall Cabinets'
-export type productCategory = kitchenCategories | 'Regular Vanities' | 'Gola Vanities' | 'Build In' | 'Leather' | 'Custom Parts'
+export type standartCategory = 'Standart Base Cabinets' | 'Standart Wall Cabinets' | 'Standart Tall Cabinets'
+export type productCategory = kitchenCategories | standartCategory | 'Regular Vanities' | 'Gola Vanities' | 'Build In' | 'Leather' | 'Custom Parts'
 export type productDataType = {
     id: number,
     name: string,
@@ -28,7 +29,7 @@ export type customPartDataType = {
     id: number,
     name: string,
     room: string,
-    type: 'custom' | 'pvc' | 'glass-door' | 'glass-shelf' | 'led-accessories' | 'door-accessories'
+    type: 'custom' | 'pvc' | 'glass-door' | 'glass-shelf' | 'led-accessories' | 'door-accessories' | 'standart-door' | 'standart-glass-door' | 'backing'
     category: productCategory,
     width?:number,
     depth?: number,
@@ -65,6 +66,7 @@ export interface productType extends productDataType {
     price: number,
     doorSquare?: number,
     widthDivider?: number,
+    heightDivider?: number,
     heightRange?: number,
 }
 
@@ -174,11 +176,22 @@ export interface drawerInterface {
 export type CabinetType = {
     product: productType,
     materialData: materialDataType
-
 }
 
 export interface CabinetFormType extends CabinetType {
     productPriceData: productDataToCalculatePriceType
+}
+
+export type StandartCabinetType = {
+    product: productType,
+    materialData: {
+        boxMaterialCoefs: getBoxMaterialCoefsType,
+        drawer: drawerInterface
+    }
+}
+
+export interface StandartCabinetFormType extends StandartCabinetType {
+    standartProductPriceData: standartProductDataToCalculatePriceType
 }
 
 export type DepthRangeType = {
@@ -203,10 +216,22 @@ export interface extraPricesType {
     boxMaterialCoef: number,
 }
 
+export interface extraStandartPricesType {
+    depth?: number,
+    ptoDoors: number,
+    ptoDrawers: number,
+    ptoTrashBins: number,
+    glassShelf: number,
+    glassDoor: number,
+    ledPrice: number,
+    doorSquare: number,
+    boxMaterialCoef: number,
+}
+
 export type productRangeType = {
-    width: number[],
-    height: number[],
-    depth: number[]
+    widthRange: number[],
+    heightRange: number[],
+    depthRange: number[]
 }
 
 export type productDataToCalculatePriceType = {
@@ -220,6 +245,19 @@ export type productDataToCalculatePriceType = {
     rolloutsQty: number,
     blindArr?: number[],
     filteredOptions: string[],
+}
+
+export type standartProductDataToCalculatePriceType = {
+    baseProductPrice?: pricePart[],
+    productRange: productRangeType,
+    doorValues?: widthItemType[],
+    blindArr?: number[],
+    filteredOptions: string[],
+    drawersQty: number,
+    shelfsQty: number,
+    rolloutsQty: number,
+    sizeLimit?:sizeLimitsType,
+
 }
 
 export type customPartDataToCalculatePriceType = {

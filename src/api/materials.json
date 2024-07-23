@@ -11,6 +11,10 @@
     {
       "value": "Closet",
       "img": "closet.jpeg"
+    },
+    {
+      "value": "Standart Door",
+      "img": "kitchen.jpeg"
     }
   ],
   "doors": [

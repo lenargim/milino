@@ -1,6 +1,6 @@
 import materials from "../api/materials.json";
 
-export type room = {
+export type roomData = {
     value: string,
     img: string
 }
@@ -46,8 +46,8 @@ export type boxMaterialType = {
 }
 
 export type MaterialsType = {
-    rooms: room[],
-    doors: typeof materials.doors,
+    rooms: roomData[],
+    doors: doorType[],
     boxMaterial: typeof materials.boxMaterial,
     drawers: drawer[]
 }

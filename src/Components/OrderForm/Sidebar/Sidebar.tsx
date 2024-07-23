@@ -75,14 +75,15 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                     }
                     const productPriceData = getProductDataToCalculatePrice(defProduct, basePriceType, drawer.drawerBrand);
                     const {productRange, drawersQty, rolloutsQty, priceData, sizeLimit, doorValues, shelfsQty} = productPriceData;
+                    const {widthRange, heightRange} = productRange
 
                     if (!sizeLimit || !priceData) return;
                     const sizes: productSizesType = {
                         width,
                         height,
                         depth,
-                        maxWidth: productRange.width[productRange.width.length - 2],
-                        maxHeight: productRange.height[productRange.height.length - 2],
+                        maxWidth: widthRange[widthRange.length - 1],
+                        maxHeight: heightRange[heightRange.length - 1],
                     }
                     const doorArr = getDoorMinMaxValuesArr(width, doorValues);
                     const ledBorder = led?.border
@@ -108,7 +109,7 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                     const allCoefs = extraPrices.boxMaterialCoef * premiumCoef;
                     const tablePrice: number | undefined = getTablePrice(width, height, depth, priceData, category)
                     const startPrice: number = getStartPrice(width, height, depth, allCoefs, sizeLimit, tablePrice);
-                    const productPrice = calculatePrice(sizes, extraPrices, productRange, startPrice);
+                    const productPrice = calculatePrice(sizes, extraPrices, productRange, startPrice, isAngle);
                     if (productPrice.totalPrice !== price) {
                         dispatch(updateProductPrice({uuid: uuid, price: productPrice.totalPrice}))
                     }
@@ -121,7 +122,7 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
         localStorage.removeItem('materials');
         if (resetForm) resetForm({
             values: {
-                room: values.room,
+                room: '',
                 'Door Type': '',
                 'Door Finish Material': '',
                 'Door Color': '',
@@ -137,12 +138,11 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
         dispatch(removeCart())
     }
 
-
     return (
         <aside className={[s.sidebar, path === 'cabinets' ? s.cabinets : ''].join(' ')}>
             <div className={s.sidebarContent}>
                 <span className={s.choose}>Materials you choose:</span>
-                {Object.entries(data).map((el, index) => {
+                {Object.entries(data).filter(el => !!el[1]).map((el, index) => {
                     return (
                         <div key={index} className={s.chooseItem}>
                             <span>{el[0]}:</span>

@@ -1,7 +1,7 @@
 import {
-    attrItem,
+    attrItem, CabinetType,
     drawerInterface,
-    extraPricesType,
+    extraPricesType, extraStandartPricesType,
     getBoxMaterialCoefsType,
     heightItemType,
     materialDataType, priceItem,
@@ -11,7 +11,7 @@ import {
     productRangeType, productSizesType, productType,
     productTypings,
     profileItem,
-    sizeLimitsType,
+    sizeLimitsType, StandartCabinetType,
     widthItemType
 } from "./productTypes";
 import prices from './../api/prices.json';
@@ -22,6 +22,7 @@ import {getAttributes} from "./helpers";
 import {OrderFormType} from "./types";
 import sizes from "../api/sizes.json";
 import {productChangeMaterialType} from "../store/reducers/generalSlice";
+import baseProductPrices from '../api/standartProductsPrices.json'
 
 export type coefType = {
     width: number,
@@ -35,7 +36,12 @@ type calculatePriceType = {
     coef: coefType
 }
 
-export const getPriceData = (id: number, category:productCategory, basePriceType: pricesTypings): pricePart[] | undefined => {
+type calculateStandartPriceType = {
+    totalPrice: number,
+    coefDepth: number
+}
+
+export const getPriceData = (id: number, category: productCategory, basePriceType: pricesTypings): pricePart[] | undefined => {
     type apiPartType = {
         id: number,
         prices: priceItem[]
@@ -58,7 +64,8 @@ export const getPriceData = (id: number, category:productCategory, basePriceType
     return productPrices && productPrices.find(el => el.type === basePriceType)?.data;
 }
 
-export const getInitialPrice = (priceData: pricePart[], productRange: productRangeType, category: productCategory): number | undefined => {
+export const getInitialPrice = (priceData: pricePart[], productRange: productRangeType, category: productCategory, coefs: number): number | undefined => {
+    let price: number | undefined;
     switch (category) {
         case 'Base Cabinets':
         case "Regular Vanities":
@@ -66,19 +73,23 @@ export const getInitialPrice = (priceData: pricePart[], productRange: productRan
         case "Custom Parts":
         case "Gola Base Cabinets":
         case "Leather":
-            return priceData.find(el => el.width === productRange.width[0])?.price;
+        case "Standart Base Cabinets":
+            price = priceData.find(el => el.width === productRange.widthRange[0])?.price;
+            break
         case 'Wall Cabinets':
         case 'Tall Cabinets':
         case "Gola Wall Cabinets":
         case "Gola Tall Cabinets":
         case "Build In":
-            return priceData.find(el => el.width === productRange.width[0] && el.height === productRange.height[0])?.price;
-        default:
-            return undefined;
+        case "Standart Wall Cabinets":
+            price = priceData.find(el => el.width === productRange.widthRange[0] && el.height === productRange.heightRange[0])?.price;
+            break
     }
+    return price ? +(price * coefs).toFixed(2) : undefined
 }
 
-export const getTablePrice = (width: number, height: number, depth:number, priceData: pricePart[], category: productCategory): number | undefined => {
+
+export const getTablePrice = (width: number, height: number, depth: number, priceData: pricePart[], category: productCategory): number | undefined => {
     const maxData = priceData[priceData.length - 1];
     switch (category) {
         case 'Base Cabinets':
@@ -129,6 +140,13 @@ export const getTablePrice = (width: number, height: number, depth:number, price
             return undefined;
     }
 };
+
+export const getStandartTablePrice = (width: number, height: number, depth: number, priceData: pricePart[]):number|undefined => {
+    const hasHeightDependency = priceData[0].height
+    if (!hasHeightDependency) return priceData.find(el => el.width >= width)?.price;
+    return priceData.find(el => el.width === width && el.height === height)?.price;
+}
+
 export const getPriceForExtraWidth = (initialPriceWithCoef: number, priceData: pricePart[], width: number, widthCoef: number, allCoefs: number): number => {
     const maxData = priceData[priceData.length - 1];
     let maxWidth: number = 0;
@@ -155,7 +173,7 @@ export const getPriceForExtraHeight = (priceData: pricePart[], initialPriceWithC
     return 0
 }
 
-export function calculatePrice(sizes: productSizesType, extraPrices: extraPricesType, productRange: productRangeType, startPrice: number): calculatePriceType {
+export function calculatePrice(sizes: productSizesType, extraPrices: extraPricesType, productRange: productRangeType, startPrice: number, isAngle:boolean): calculatePriceType {
     const {width, height, depth, maxWidth, maxHeight} = sizes
     const coef: coefType = {
         width: 0,
@@ -165,7 +183,7 @@ export function calculatePrice(sizes: productSizesType, extraPrices: extraPrices
 
     if (maxWidth < width) coef.width = addWidthPriceCoef(width, maxWidth);
     if (maxHeight < height) coef.height = addHeightPriceCoef(height, maxHeight);
-    if (productRange.depth[0] !== depth) coef.depth = addDepthPriceCoef(depth, productRange.depth)
+    if (productRange.depthRange[0] !== depth) coef.depth = addDepthPriceCoef(depth, productRange.depthRange, isAngle)
     const coefExtra = 1 + (coef.width + coef.height + coef.depth);
     const totalPrice = startPrice ? +(startPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice + extraPrices.drawerPrice + extraPrices.ledPrice).toFixed(2) : 0
     return {
@@ -173,6 +191,17 @@ export function calculatePrice(sizes: productSizesType, extraPrices: extraPrices
         addition: extraPrices,
         coef
     };
+}
+
+export function calculateStandartData(initialPrice: number, extraPrices: extraStandartPricesType, realDepth: number, depthRange: number[], isAngle:boolean):calculateStandartPriceType {
+    let coefDepth: number = 0;
+    if (depthRange[0] !== realDepth) coefDepth = addDepthPriceCoef(realDepth, depthRange, isAngle);
+    const coefExtra = 1 + (coefDepth);
+    const totalPrice = +(initialPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.ptoTrashBins + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ledPrice).toFixed(2)
+    return {
+        totalPrice,
+        coefDepth
+    }
 }
 
 export function getStartPrice(customWidth: number, customHeight: number, customDepth: number, allCoefs: number, sizeLimit: sizeLimitsType, tablePrice: number | undefined): number {
@@ -193,6 +222,18 @@ export function getStartPrice(customWidth: number, customHeight: number, customD
     return +(tablePrice * allCoefs).toFixed(2)
 }
 
+export function getStandartStartPrice(customDepth: number, allCoefs: number, sizeLimit: sizeLimitsType, tablePrice: number | undefined): number {
+    const settingMinDepth = sizeLimit.depth[0];
+    const settingMaxDepth = sizeLimit.depth[1];
+
+    const isFitMinMaxDepth = (customDepth >= settingMinDepth) && (customDepth <= settingMaxDepth);
+
+    if ( !isFitMinMaxDepth || !tablePrice) {
+        return 0;
+    }
+    return +(tablePrice * allCoefs).toFixed(2)
+}
+
 function addWidthPriceCoef(width: number, maxWidth: number) {
     return Math.ceil((width - maxWidth) / 3) / 10;
 }
@@ -201,8 +242,9 @@ function addHeightPriceCoef(customHeight: number, maxHeight: number) {
     return Math.ceil((customHeight - maxHeight) / 3) / 10
 }
 
-function addDepthPriceCoef(customDepth: number, depthRangeData: number[]) {
-    const maxDepth = depthRangeData[depthRangeData.length - 2];
+function addDepthPriceCoef(customDepth: number, depthRangeData: number[], isAngle:boolean) {
+    if (isAngle) return 0;
+    const maxDepth = depthRangeData[depthRangeData.length - 1];
     if (customDepth > maxDepth) {
         return Math.ceil((customDepth - maxDepth) / 3) / 10
     }
@@ -229,7 +271,7 @@ export function addPTOTrashBinsPrice(): number {
     return settings.fixPrices['PTO for trash bins'] || 0
 }
 
-export function addGlassShelfPrice(qty:number): number {
+export function addGlassShelfPrice(qty: number): number {
     return settings.fixPrices["Glass Shelf"] * qty || 0
 }
 
@@ -253,16 +295,16 @@ export function getDoorSquare(width: number, height: number): number {
     return 0;
 }
 
-export function getType(width: number, height: number, divider: number | undefined, doorValues: widthItemType[] = [], doors: number, category: productCategory, attributes: attrItem[]): productTypings {
-    const shelfCategories = ['Wall Cabinets','Tall Cabinets','Gola Wall Cabinets','Gola Tall Cabinets', 'Build In'];
-    const isShelfTypings = shelfCategories.includes(category)
+export function getType(width: number, height: number, widthDivider: number | undefined, doorValues: widthItemType[] = [], doors: number, category: productCategory, attributes: attrItem[]): productTypings {
+    const isShelfTypings = ['Wall Cabinets', 'Tall Cabinets', 'Standart Wall Cabinets', 'Standart Tall Cabinets', 'Gola Wall Cabinets', 'Gola Tall Cabinets', 'Build In'].includes(category);
     const shelfValues: heightItemType[] | undefined = isShelfTypings ? attributes.find(el => el.name === 'Adjustable Shelf')?.values : undefined;
     switch (category) {
         case 'Base Cabinets':
+        case "Standart Base Cabinets":
         case "Regular Vanities":
         case "Gola Vanities":
         case "Gola Base Cabinets":
-            if (divider) return width <= divider ? 1 : 2;
+            if (widthDivider) return width <= widthDivider ? 1 : 2;
             let res: productTypings = 1;
             const currentTypeArr = doorValues.filter(val => {
                 if (val?.maxWidth && val.maxWidth >= width) return val.value;
@@ -278,6 +320,8 @@ export function getType(width: number, height: number, divider: number | undefin
         case "Gola Tall Cabinets":
         case "Build In":
         case "Leather":
+        case "Standart Wall Cabinets":
+        case "Standart Tall Cabinets":
             if (!shelfValues) return 1;
             const doorsArr = doorValues.length === 1 ? doorValues : doorValues.filter(val => {
                 const maxWidth = val.maxWidth;
@@ -310,14 +354,14 @@ export function getType(width: number, height: number, divider: number | undefin
     }
 }
 
-export function getPvcPrice(width: number, height: number, isAcrylic = false, doorType: string, doorFinish: string): number {
+export function getPvcPrice(width: number, height: number, isAcrylic = false, doorType?: string, doorFinish?: string): number {
     if (doorType === 'No Doors' || doorFinish === 'Milino') return 0;
     const pvcPrice = width && height ? +((width * 2 + height * 2) / 12 * 2.5).toFixed(2) : 0
     return isAcrylic ? pvcPrice * 1.1 : pvcPrice
 }
 
 
-export function getDoorPrice(doorSquare: number, doorPriceMultiplier: number, doorArr: number[]|null): number {
+export function getDoorPrice(doorSquare: number, doorPriceMultiplier: number, doorArr: number[] | null): number {
     if (!doorArr) return 0;
     return +(doorSquare / 144 * doorPriceMultiplier).toFixed(2);
 }
@@ -353,8 +397,9 @@ export function getDrawerPrice(qty: number, drawer: drawerInterface, width: numb
     return 0
 }
 
-export function getDoorMinMaxValuesArr(realWidth: number, doorValues?: widthItemType[]): number[]|null {
+export function getDoorMinMaxValuesArr(realWidth: number, doorValues?: widthItemType[], widthDivider?: number): number[] | null {
     if (!doorValues) return null;
+    if (widthDivider && doorValues.length >= 2) return realWidth <= widthDivider ? [doorValues[0].value] : [doorValues[1].value];
     const filter = Object.values(doorValues).filter(el => {
         if (el?.minWidth && realWidth >= el.minWidth) return true;
         if (el?.maxWidth && realWidth <= el.maxWidth) return true;
@@ -366,13 +411,12 @@ export function getDoorMinMaxValuesArr(realWidth: number, doorValues?: widthItem
 
 export function getWidthRange(priceData: pricePart[] | undefined): number[] {
     const arr: number[] = priceData && priceData.map(el => el.width) || [];
-    const filter = [...new Set<number>(arr)];
-    return filter.concat([0]);
+    return [...new Set<number>(arr)];
 
 }
 
 export function getHeightRange(priceData: pricePart[] | undefined, category: productCategory, customHeight: number | undefined): number[] {
-    if (customHeight) return [customHeight, 0];
+    if (customHeight) return [customHeight];
     const isHeightData = priceData && priceData.find((el) => el.height)
     if (isHeightData) {
         let arr: number[] = []
@@ -380,20 +424,21 @@ export function getHeightRange(priceData: pricePart[] | undefined, category: pro
             if (el.height) arr.push(el.height);
             arr.sort((a, b) => a - b)
         })
-        return [...new Set<number>(arr)].concat([0]);
+        return [...new Set<number>(arr)];
     }
     switch (category) {
         case 'Base Cabinets':
         case "Regular Vanities":
         case "Gola Base Cabinets":
-            return [34.5, 0];
+        case "Standart Base Cabinets":
+            return [34.5];
         default:
-            return [0]
+            return []
     }
 }
 
-export function getDepthRange(priceData: pricePart[] | undefined,category: productCategory, customDepth: number | undefined): number[] {
-    if (customDepth) return [customDepth, 0];
+export function getDepthRange(priceData: pricePart[] | undefined, category: productCategory, customDepth: number | undefined): number[] {
+    if (customDepth) return [customDepth];
     const isDepthData = priceData && priceData.find((el) => el.depth);
     if (isDepthData) {
         let arr: number[] = []
@@ -401,7 +446,7 @@ export function getDepthRange(priceData: pricePart[] | undefined,category: produ
             if (el.depth) arr.push(el.depth);
             arr.sort((a, b) => a - b)
         })
-        return [...new Set<number>(arr)].concat([0]);
+        return [...new Set<number>(arr)];
     }
 
     switch (category) {
@@ -409,19 +454,22 @@ export function getDepthRange(priceData: pricePart[] | undefined,category: produ
         case "Tall Cabinets":
         case "Gola Base Cabinets":
         case "Gola Tall Cabinets":
-            return [24,0];
+        case "Standart Base Cabinets":
+        case "Standart Tall Cabinets":
+            return [24];
         case "Wall Cabinets":
         case "Gola Wall Cabinets":
-            return [13,0];
+        case "Standart Wall Cabinets":
+            return [13];
         case "Regular Vanities":
         case "Gola Vanities":
-            return [21,0];
+            return [21];
         case "Build In":
-            return [23,0]
+            return [23]
         case "Leather":
-            return [15.5,0]
+            return [15.5]
         default:
-            return [0]
+            return []
     }
 }
 
@@ -496,6 +544,13 @@ export const getBoxMaterialCoefs = (boxMaterial: string, doorFinish: string): ge
     }
 }
 
+export const getStandartBoxMaterialCoefs = (boxMaterial: string, doorFinish: string): getBoxMaterialCoefsType => {
+    return {
+        boxMaterialCoef: boxMaterial.includes('Plywood') ? 1.1 : 1,
+        boxMaterialFinishCoef: doorFinish === 'Cleaf' || doorFinish === 'Syncron' ? 1.845 : 2.706
+    }
+}
+
 export const getDoorPriceMultiplier = (doorType: string, doorFinish: string): number => {
     if (doorType === 'Slab') return 0
     if (doorType === 'Painted' || doorType === 'Slatted') return 37.8
@@ -509,9 +564,9 @@ export const getDoorPriceMultiplier = (doorType: string, doorFinish: string): nu
 
 export const getProductRange = (priceData: pricePart[] | undefined, category: productCategory, customHeight: number | undefined, customDepth: number | undefined): productRangeType => {
     return {
-        width: getWidthRange(priceData),
-        height: getHeightRange(priceData, category, customHeight),
-        depth: getDepthRange(priceData,category, customDepth)
+        widthRange: getWidthRange(priceData),
+        heightRange: getHeightRange(priceData, category, customHeight),
+        depthRange: getDepthRange(priceData, category, customDepth)
     }
 }
 
@@ -552,6 +607,25 @@ export const getMaterialData = (materials: OrderFormType): materialDataType => {
     }
 }
 
+export const getStandartMaterialData = (materials: OrderFormType) => {
+    const {
+        ['Box Material']: boxMaterial,
+        ['Drawer']: drawerBrand,
+        ['Drawer Type']: drawerType,
+        ['Drawer Color']: drawerColor
+    } = materials;
+    const boxMaterialCoefs = getStandartBoxMaterialCoefs(boxMaterial, '')
+    const drawer: drawerInterface = {
+        drawerBrand,
+        drawerType,
+        drawerColor
+    };
+    return {
+        boxMaterialCoefs,
+        drawer
+    }
+}
+
 export const getProductDataToCalculatePrice = (product: productType | productChangeMaterialType, basePriceType: pricesTypings, drawerBrand: string): productDataToCalculatePriceType => {
     const {
         id,
@@ -563,8 +637,8 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
         customHeight,
         customDepth,
     } = product;
-    const priceData = getPriceData(id, category, basePriceType);
 
+    const priceData = getPriceData(id, category, basePriceType);
     const productRange = getProductRange(priceData, category, customHeight, customDepth);
     const sizeLimit: sizeLimitsType | undefined = sizes.find(size => size.productIds.includes(product.id))?.limits;
     const attrArr = getAttributes(attributes, type);
@@ -596,8 +670,46 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
     }
 }
 
+export const getStandartProductPriceData = ({product, materialData}: StandartCabinetType) => {
+    const {category, attributes, isBlind, type, options, customDepth} = product;
+    const {drawer: {drawerBrand}} = materialData;
+    const baseProductPrice = getBaseProductPrice(product.id);
+    const attrArr = getAttributes(attributes, type);
+    const productRange = getProductRange(baseProductPrice, category, undefined, undefined);
+    const sizeLimit: sizeLimitsType | undefined = sizes.find(size => size.productIds.includes(product.id))?.limits;
+    const doorValues = attributes.find(el => el.name === 'Door')?.values;
+    const drawersQty = attrArr.reduce((acc, current) => {
+        const qty = current.name.includes('Drawer') ? current.value : 0
+        return acc + qty;
+    }, 0);
+    const rolloutsQty = attrArr.reduce((acc, current) => {
+        const qty = current.name.includes('Rollout') ? current.value : 0
+        return acc + qty;
+    }, 0);
+    const blindArr = isBlind ? getBlindArr(category) : undefined;
+    const filteredOptions = options.filter(option => (option !== 'PTO for drawers' || drawerBrand !== 'Milino'));
+    const shelfsQty = getShelfsQty(attrArr);
 
-export const getCustomPartPrice = (name: string, width: number, height: number, depth: number, doorFinish: string ): number => {
+    return {
+        baseProductPrice,
+        productRange,
+        doorValues,
+        blindArr,
+        filteredOptions,
+        shelfsQty,
+        drawersQty,
+        rolloutsQty,
+        sizeLimit
+    }
+}
+
+const getBaseProductPrice = (id: number): pricePart[] | undefined => {
+    const arr = baseProductPrices
+    return arr.find(el => el.id === id)?.prices
+}
+
+
+export const getCustomPartPrice = (name: string, width: number, height: number, depth: number, doorFinish: string): number => {
     const area = width * height / 144;
     switch (name) {
         case "Open Cabinet":
@@ -747,8 +859,8 @@ export const getCustomPartPrice = (name: string, width: number, height: number, 
                 default:
                     return 0;
             }
-        case "Backing":
-            return area * 4.6;
+        // case "Backing":
+        //     return area * 4.6;
         case "Shaker Panel":
             switch (doorFinish) {
                 case "Milino":
@@ -778,26 +890,12 @@ export const getCustomPartPrice = (name: string, width: number, height: number, 
         case "Decor Panel":
             let decorPrice = area > 4 ? area * 64 : 240;
             return doorFinish === 'Ultrapan Acrilic' ? decorPrice * 1.1 : decorPrice
-        // case "Shaker Glass Door":
-        //     let shakerDoorPrice = area * 80 > 240 ? area * 80 : 240;
-        //     return doorFinish === 'Ultrapan Acrilic' ? shakerDoorPrice * 1.1 : shakerDoorPrice
-        // case "Glass Aluminum Door":
-        //     switch (profile) {
-        //         case 1021:
-        //         case 1040:
-        //             return area * 100 > 300 ? area * 100 : 300
-        //         case 1022:
-        //         case 1042:
-        //             return area * 120 > 300 ? area * 120 : 300
-        //         default:
-        //             return 0;
-        //     }
         default:
             return 0
     }
 }
 
-export const getGlassDoorPrice = (name: string, width: number, height: number, doorFinish: string, profile?: number ): number => {
+export const getGlassDoorPrice = (name: string, width: number, height: number, doorFinish: string, profile?: number): number => {
     const area = width * height / 144;
     switch (name) {
         case "Shaker Glass Door":
@@ -819,7 +917,17 @@ export const getGlassDoorPrice = (name: string, width: number, height: number, d
     }
 }
 
-export const getShelfsQty = (attrArr: {name: string, value:number}[]):number => {
-    const val = attrArr.find(el => el.name ==='Adjustable Shelf')?.value;
+export const getShelfsQty = (attrArr: { name: string, value: number }[]): number => {
+    const val = attrArr.find(el => el.name === 'Adjustable Shelf')?.value;
     return val ?? 0;
+}
+
+export const getValidHeightRange = (realWidth:number, heightRange:number[],baseProductPrice:pricePart[]): number[] => {
+    if (!baseProductPrice[0].height) return heightRange;
+    const filtered = baseProductPrice.filter(pricePart => pricePart.width === realWidth).map(el => el.height);
+    return filtered.filter(notEmpty)
+}
+
+function notEmpty<TValue>(value: TValue | undefined): value is TValue {
+    return value !== null && value !== undefined;
 }

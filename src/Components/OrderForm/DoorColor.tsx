@@ -4,7 +4,7 @@ import {RadioInput} from "../../common/Form";
 import {colorType} from "../../helpers/materialsTypes";
 import {getImg} from "../../helpers/helpers";
 
-export const DoorColor: FC<{ colorArr: colorType[], value?: string, name: string }> = ({colorArr, name, value}) => {
+export const DoorColor: FC<{ colorArr?: colorType[], value?: string, name: string }> = ({colorArr = [], name, value}) => {
     return (
         <div className={[s.orderBlock, value && s.checked].join(' ')}>
             <h2>{name}</h2>

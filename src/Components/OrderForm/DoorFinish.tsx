@@ -6,7 +6,7 @@ import {finishType} from "../../helpers/materialsTypes";
 import {getImg} from "../../helpers/helpers";
 
 
-export const DoorFinish: FC<{ finishArr: finishType[], value: string, name:string}> = ({finishArr, value, name}) => {
+export const DoorFinish: FC<{ finishArr?: finishType[], value: string, name:string}> = ({finishArr = [], value, name}) => {
     return (
         <div className={[s.orderBlock, value && s.checked].join(' ')}>
             <h2>{name}</h2>

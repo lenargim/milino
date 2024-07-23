@@ -35,7 +35,6 @@ const OrderForm = () => {
                 localStorage.setItem('materials', JSON.stringify(values));
                 dispatch(setMaterials(values))
                 history('/cabinets');
-
             })}
         >
             {({values, isValid, isSubmitting, setFieldValue, resetForm}) => {
