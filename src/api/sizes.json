@@ -122,11 +122,11 @@
     }
   },
   {
-    "productIds": [112],
+    "productIds": [112,119],
     "limits": {
-      "width": [16, 48],
+      "width": [13, 48],
       "height": [30,42],
-      "depth": [16,48]
+      "depth": [13,48]
     }
   },
 

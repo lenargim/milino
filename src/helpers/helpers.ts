@@ -495,10 +495,6 @@ export const isHasLedBlock = (category: productCategory):boolean => {
     return ledCategoryArr.includes(category)
 }
 
-export const isHasLeaterBlock = (category: productCategory):boolean => {
-    const leatherCategoryArr = ['Leather'];
-    return leatherCategoryArr.includes(category)
-}
 
 export const addToCartDoor = (values: StandartDoorFormValuesType, id: number, image: string, name: string, category: productCategory) => {
     const cartData: CartItemType = {

@@ -225,7 +225,7 @@ export interface extraStandartPricesType {
     glassDoor: number,
     ledPrice: number,
     doorSquare: number,
-    boxMaterialCoef: number,
+    tablePrice?: number
 }
 
 export type productRangeType = {

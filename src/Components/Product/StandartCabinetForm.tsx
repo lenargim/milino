@@ -40,6 +40,8 @@ import {
 } from "../../helpers/calculatePrice";
 import LedBlock from "./LED";
 import {getStandartProductSchema} from "./ProductSchema";
+import Test from "./Test";
+import TestStandart from "./TestStandart";
 
 const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standartProductPriceData, productRange, sizeLimit, baseProductPrice}) => {
     const dispatch = useAppDispatch();
@@ -143,7 +145,6 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                     ptoTrashBins: chosenOptions.includes('PTO for Trash Bins') ? addPTOTrashBinsPrice() : 0,
                     glassShelf: chosenOptions.includes('Glass Shelf') ? addGlassShelfPrice(shelfsQty) : 0,
                     glassDoor: chosenOptions.includes('Glass Door') ? addGlassDoorPrice(doorSquare, doorProfile) : 0,
-                    boxMaterialCoef: chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef,
                     ledPrice: getLedPrice(realWidth, realHeight, ledBorders),
                     doorSquare: doorSquare,
                 }
@@ -151,16 +152,16 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                 checkDoors(+doors, doorArr,hingeOpening,setFieldValue)
                 checkHingeOpening(hingeOpening, hingeArr, +doors, setFieldValue)
 
-                const allCoefs = extraPrices.boxMaterialCoef;
-                const initialPrice = getInitialPrice(baseProductPrice, productRange, category, allCoefs);
+                const initialPrice = getInitialPrice(baseProductPrice, productRange, category, 1);
                 if (!initialPrice) return <div>Cannot find initial price</div>
                 const tablePrice = getStandartTablePrice(realWidth, realHeight, realDepth, baseProductPrice);
-                const startPrice: number = getStandartStartPrice(realDepth, allCoefs, sizeLimit, tablePrice);
+                const startPrice: number = getStandartStartPrice(realDepth, 1, sizeLimit, tablePrice);
 
                 const calculatedStandartData = calculateStandartData(startPrice,extraPrices,realDepth, depthRange, isAngle);
                 const {totalPrice, coefDepth} = calculatedStandartData
                 const totalDepthPrice = initialPrice * (coefDepth + 1);
                 extraPrices.depth = +(totalDepthPrice - initialPrice).toFixed(1);
+                extraPrices.tablePrice = tablePrice
 
                 setTimeout(() => {
                     checkProduct(price, totalPrice, type, newType, dispatch)
@@ -287,6 +288,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                             <span>{totalPrice}$</span>
                         </div>
                         <button type="submit" className={['button yellow'].join(' ')}>Add to cart</button>
+                        <TestStandart extraPrices={extraPrices}/>
                     </Form>
                 )
             }}

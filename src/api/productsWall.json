@@ -674,5 +674,42 @@
       }
     ],
     "options": []
+  },
+  {
+    "id": 119,
+    "legsHeight": 0,
+    "isBlind": false,
+    "isAngle":true,
+    "hasSolidWidth": true,
+    "name": "WEAC",
+    "room": "Kitchen",
+    "category": "Wall Cabinets",
+    "images": [
+      {
+        "type": 1,
+        "value": "WC/WEAC_1.jpg"
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Door",
+        "values": [
+          {
+            "type": 1,
+            "value": 1
+          }
+        ]
+      },
+      {
+        "name": "Adjustable Shelf",
+        "values": [
+          {
+            "type": 1,
+            "value": 2
+          }
+        ]
+      }
+    ],
+    "options": []
   }
 ]
