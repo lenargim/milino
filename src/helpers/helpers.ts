@@ -19,7 +19,7 @@ import vanitiesGola from "../api/vanitiesGola.json"
 import customParts from '../api/customPart.json'
 import golaCabinetProducts from '../api/golaProducts.json'
 import closetProducts from '../api/closets.json'
-import standartBaseProducts from '../api/standartBaseProducts.json'
+import standartBaseProducts from '../api/standartProducts.json'
 import settings from "../api/settings.json";
 import {v4 as uuidv4} from "uuid";
 import {FormikValues} from "formik";
@@ -28,9 +28,10 @@ import {DoorAccessoiresValuesType} from "../Components/CustomPart/DoorAccessoire
 import {GlassDoorFormValuesType} from "../Components/CustomPart/GlassDoorForm";
 import {PVCFormValuesType} from "../Components/CustomPart/PVCForm";
 import {GlassShelfFormValuesType} from "../Components/CustomPart/GlassShelfForm";
-import {doorsizesArr, StandartDoorFormValuesType} from "../Components/CustomPart/StandartDoorForm";
+import {StandartDoorFormValuesType} from "../Components/CustomPart/StandartDoorForm";
 import {RoomType} from "./categoriesTypes";
 import {colorType, doorType, finishType} from "./materialsTypes";
+import {getDoorMinMaxValuesArr, getHingeArr} from "./calculatePrice";
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
@@ -65,7 +66,7 @@ export function getSelectValfromVal(val: string | undefined, options: optionType
     return option || null
 }
 
-export function getSelectDoorVal(val: string | undefined, options: doorsizesArr[]): optionTypeDoor | null {
+export function getSelectDoorVal(val: string | undefined, options: optionTypeDoor[]): optionTypeDoor | null {
     const option = options.find(el => el.label === val)
     return option ?? null
 }
@@ -73,7 +74,7 @@ export function getSelectDoorVal(val: string | undefined, options: doorsizesArr[
 export const getCartTotal = (cart: CartItemType[]): number => {
     return +(cart.reduce(
         (acc, currentVal) => acc + (currentVal.price * currentVal.amount), 0
-    )).toFixed(2)
+    )).toFixed(1)
 }
 
 
@@ -156,7 +157,6 @@ type initialStandartValues = {
     'LED borders': string[],
     'LED alignment': string,
     'LED indent': string,
-    'Leather': string,
     'Note': string,
 }
 
@@ -167,7 +167,7 @@ interface initialValuesType extends initialStandartValues {
 }
 
 
-export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: valueItemType[] | undefined,initialDepth:number, initialLeather:string,isCornerChoose?: boolean): initialValuesType => {
+export const getInitialProductValues = (productRange: productRangeType, isBlind: boolean, blindArr: number[] | undefined, doorValues: valueItemType[] | undefined,initialDepth:number,isCornerChoose?: boolean): initialValuesType => {
     const {widthRange, heightRange} = productRange
     return {
         ['Width']: widthRange[0],
@@ -191,13 +191,15 @@ export const getInitialProductValues = (productRange: productRangeType, isBlind:
         'LED borders': [],
         'LED alignment': 'Center',
         'LED indent': '',
-        'Leather': initialLeather,
         ['Note']: ''
     };
 }
 
-export const getInitialStandartProductValues = (productRange: productRangeType,initialDepth:number,doorValues: valueItemType[] | undefined, isBlind: boolean, blindArr: number[] | undefined, initialLeather:string,isCornerChoose?:boolean): initialStandartValues => {
+export const getInitialStandartProductValues = (productRange: productRangeType, doorValues: valueItemType[] | undefined, category:productCategory, depth:number,isBlind: boolean, blindArr: number[] | undefined, isAngle:boolean,isCornerChoose?:boolean): initialStandartValues => {
+    const initialDepth = getInitialDepth(productRange, isAngle, depth);
     const {widthRange, heightRange} = productRange
+    const doorArr = getDoorMinMaxValuesArr(widthRange[0], doorValues);
+    const hingeArr = getHingeArr(doorArr || [], category);
     return {
         ['Width']: widthRange[0],
         isBlind: isBlind,
@@ -205,8 +207,8 @@ export const getInitialStandartProductValues = (productRange: productRangeType,i
         ['Height']: heightRange[0],
         ['Depth']: initialDepth,
         ['Custom Depth']: '',
-        ['Doors']: doorValues && doorValues[0]?.value || 0,
-        ['Hinge opening']: doorValues && settings["Hinge opening"][0] || '',
+        ['Doors']: doorArr && doorArr[0] || 0,
+        ['Hinge opening']: hingeArr[0] || '',
         ['Corner']: isCornerChoose ? 'Left' : '',
         ['Options']: [],
         ['Profile']: '',
@@ -217,7 +219,6 @@ export const getInitialStandartProductValues = (productRange: productRangeType,i
         'LED borders': [],
         'LED alignment': 'Center',
         'LED indent': '',
-        'Leather': initialLeather,
         ['Note']: ''
     };
 }
@@ -228,8 +229,10 @@ export const getInitialDepth = (productRange:productRangeType, isAngle:boolean, 
     return !isAngle ? depth : productRange.widthRange[0]
 }
 
-export const getInitialLeather = (category:productCategory):string => {
-    return category === 'Leather' ? settings.leatherOptions[0] : ''
+export const getInitialHeight = (productRange:productRangeType, height:number):number => {
+    const tableDepth = productRange?.heightRange[0];
+    if (tableDepth) return tableDepth;
+    return height
 }
 
 export const getLimit = (d: number[] | undefined): number => {
@@ -259,8 +262,7 @@ export const addToCartData = (values: FormikValues, type: productTypings, id: nu
         ['Note']: note,
         'LED borders': ledBorders,
         'LED alignment': ledAlignment,
-        'LED indent': ledIndent,
-        'Leather': leather
+        'LED indent': ledIndent
     } = values;
 
     const img = images[type - 1].value || ''
@@ -313,7 +315,6 @@ export const addToCartData = (values: FormikValues, type: productTypings, id: nu
     }
 
     if (corner) {extra.corner = corner}
-    if (leather) {extra.leather = leather}
     cartData.productExtra = extra;
 
     return cartData
@@ -542,7 +543,7 @@ export const getDoorColorsArr = (doorFinishMaterial: string, room: RoomType|'',d
 
 
 export const checkDoors = (doors:number, doorArr:number[]|null,hingeOpening:string,setFieldValue:Function) => {
-    if (!doorArr) setFieldValue('Doors', 0);
+    if (!doorArr && doors) setFieldValue('Doors', 0);
     if (doorArr?.length === 1 && doors !== doorArr[0]) setFieldValue('Doors', doorArr[0]);
     if (doors === 1 && doorArr?.includes(2) && hingeOpening === 'Double Door') setFieldValue('Doors', 2)
     if (doors === 2 && doorArr?.includes(1) && ['Left', 'Right'].includes(hingeOpening)) setFieldValue('Doors', 1)
@@ -560,4 +561,13 @@ export const checkProduct = (price:number, totalPrice:number, type:productTyping
             price: totalPrice
         }))
     }
+}
+
+export const getInitialMaterialInPVCForm = (materialArr:string[], doorFinish:string, doorType:string):string => {
+    const curMaterial = materialArr.find(el => doorFinish.includes(el)) ?? doorType;
+    return materialArr.includes(curMaterial) ? curMaterial : materialArr[0];
+}
+
+export const getCustomPartPVCPrice = (width:number, material:string):number => {
+    return material === 'Ultrapan Acrilic' ? Math.ceil(width*1.1): Math.ceil(width);
 }

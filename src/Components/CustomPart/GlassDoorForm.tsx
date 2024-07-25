@@ -105,11 +105,11 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart, materials}) => {
                 const profileNumber: number | undefined = doorProfiles?.find(el => el.value === doorProfile)?.glassDoorType
 
 
-                const priceCoef = +(getGlassDoorPrice(name, width, height, doorFinish, profileNumber)).toFixed(2);
+                const priceNew = +(getGlassDoorPrice(name, width, height, doorFinish, profileNumber)).toFixed(1);
 
 
                 setTimeout(() => {
-                    if (price !== priceCoef) setFieldValue('price', priceCoef);
+                    if (price !== priceNew) setFieldValue('price', priceNew);
                 }, 0);
 
 

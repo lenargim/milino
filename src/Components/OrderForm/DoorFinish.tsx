@@ -7,6 +7,7 @@ import {getImg} from "../../helpers/helpers";
 
 
 export const DoorFinish: FC<{ finishArr?: finishType[], value: string, name:string}> = ({finishArr = [], value, name}) => {
+    console.log(finishArr)
     return (
         <div className={[s.orderBlock, value && s.checked].join(' ')}>
             <h2>{name}</h2>

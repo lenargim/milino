@@ -13,6 +13,7 @@ import {DrawerColor} from "./DrawerColor";
 import {OrderFormType} from "../../helpers/types";
 import {colorType, finishType, MaterialsType} from "../../helpers/materialsTypes";
 import {getDoorColorsArr, isDoorColorShown, isDoorFinishShown, isDoorTypeShown} from "../../helpers/helpers";
+import Leather from "./Leather";
 
 type MainType = {
     values: OrderFormType,
@@ -20,7 +21,7 @@ type MainType = {
     isValid: boolean,
     setFieldValue: (field: string, value: any) => void
 }
-const {rooms, doors, boxMaterial, drawers}: MaterialsType = materials
+const {rooms, doors, boxMaterial, drawers, leather: leatherArr }: MaterialsType = materials
 const Main: FC<MainType> = ({values, isSubmitting, isValid, setFieldValue}) => {
     const {
         room,
@@ -31,7 +32,8 @@ const Main: FC<MainType> = ({values, isSubmitting, isValid, setFieldValue}) => {
         ["Box Material"]: boxMaterialVal,
         ["Drawer"]: drawerVal,
         ["Drawer Type"]: drawerTypeVal,
-        ['Drawer Color']: drawerColor
+        ['Drawer Color']: drawerColor,
+        ['Leather']: leather
     } = values;
 
     const finishArr: finishType[] | undefined = doors.find(el => el.name === doorType)?.finish;
@@ -120,6 +122,7 @@ const Main: FC<MainType> = ({values, isSubmitting, isValid, setFieldValue}) => {
                     {boxMaterialVal && <Drawer drawers={drawers} name="Drawer" value={drawerVal}/>}
                     {drawerVal && drawerTypesArr && <DrawerType drawerTypesArr={drawerTypesArr} name="Drawer Type" value={drawerTypeVal}/>}
                     {drawerTypeVal && drawerColorsArr && <DrawerColor drawerColorsArr={drawerColorsArr} name="Drawer Color" value={drawerColor}/>}
+                    {drawerColor && <Leather name={'Leather'} value={leather} leatherArr={leatherArr} /> }
                 </div>
                 {isValid && <button type="submit" className={['button yellow', s.submit].join(' ')}
                                     disabled={isSubmitting}>Submit</button>}

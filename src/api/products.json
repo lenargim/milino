@@ -10,7 +10,7 @@
     "images": [
       {
         "type": 1,
-        "value": "bs9-24.png"
+        "value": "BC/BS_1.png"
       },
       {
         "type": 2,
@@ -24,12 +24,12 @@
           {
             "type": 1,
             "value": 1,
-            "maxWidth": 24
+            "maxWidth": 27
           },
           {
             "type": 2,
             "value": 2,
-            "minWidth": 21
+            "minWidth": 24
           }
         ]
       },
@@ -75,12 +75,12 @@
           {
             "type": 1,
             "value": 1,
-            "maxWidth": 24
+            "maxWidth": 27
           },
           {
             "type": 2,
             "value": 2,
-            "minWidth": 21
+            "minWidth": 24
           }
         ]
       },
@@ -125,12 +125,12 @@
           {
             "type": 1,
             "value": 1,
-            "maxWidth": 24
+            "maxWidth": 27
           },
           {
             "type": 2,
             "value": 2,
-            "minWidth": 21
+            "minWidth": 24
           }
         ]
       },
@@ -186,12 +186,12 @@
           {
             "type": 1,
             "value": 1,
-            "maxWidth": 24
+            "maxWidth": 27
           },
           {
             "type": 2,
             "value": 2,
-            "minWidth": 21
+            "minWidth": 24
           }
         ]
       },

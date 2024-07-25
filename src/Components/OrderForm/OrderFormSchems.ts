@@ -32,4 +32,6 @@ export const OrderFormSchema = Yup.object({
         .required('Please write down drawer type'),
     'Drawer Color': Yup.string()
         .required('Please write color'),
+    'Leather': Yup.string()
+        .required('Please write Leather'),
 })

@@ -148,5 +148,5 @@ const getPrice = (values: LEDFormValuesType): number => {
     const doorSensorPrice = doorSensor * 150;
     const transformerPrice = transformer * 50;
 
-    return +(alumProfPrice + golaProfPrice + dimRemotePrice + doorSensorPrice + transformerPrice).toFixed(2)
+    return +(alumProfPrice + golaProfPrice + dimRemotePrice + doorSensorPrice + transformerPrice).toFixed(1)
 }

@@ -219,7 +219,7 @@ export function getProductSchema(sizeLimit: sizeLimitsType, isAngle: boolean, ha
 
 
 
-export function getStandartProductSchema(sizeLimit: sizeLimitsType, isAngle: boolean, hasMiddleSection: true | undefined): Yup.InferType<any> {
+export function getStandartProductSchema(sizeLimit: sizeLimitsType, isAngle: boolean): Yup.InferType<any> {
     const minDepth = !isAngle ? sizeLimit.depth[0] : sizeLimit.width[0];
     const maxDepth = !isAngle ? sizeLimit.depth[1] : sizeLimit.width[1];
 
@@ -252,32 +252,6 @@ export function getStandartProductSchema(sizeLimit: sizeLimitsType, isAngle: boo
                                 return patterntwodigisaftercomma.test(val);
                             }
                             return true;
-                        }
-                    )
-            }),
-        'Middle Section': Yup.number()
-            .when([], {
-                is: () => hasMiddleSection === true,
-                then: (schema) => schema
-                    .required()
-                    .typeError('Invalid Input: numbers please')
-                    .positive('Should be positive number')
-                    .test(
-                        "is-decimal",
-                        "Maximum two digits after comma",
-                        (val: any) => {
-                            if (val !== undefined) {
-                                return patterntwodigisaftercomma.test(val);
-                            }
-                            return true;
-                        }
-                    )
-                    .test(
-                        "is-max",
-                        `Middle Section height should be lower than cabinet height`,
-                        (val: any, {parent}) => {
-                            const fullHeight = parent['Height'] || parent['Custom Height'];
-                            return val < fullHeight
                         }
                     )
             }),

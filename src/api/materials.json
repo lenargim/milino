@@ -1593,7 +1593,8 @@
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
-          ]
+          ],
+          "img": "luxe.jpg"
         },
         {
           "name": "Syncron",
@@ -1813,7 +1814,8 @@
               "isGrain": true,
               "img": "Woodline 4.jpg"
             }
-          ]
+          ],
+          "img": "syncron.jpg"
         }
       ]
     },
@@ -1834,7 +1836,8 @@
               "isGrain": false,
               "img": "Luxe-Blanco.jpg"
             }
-          ]
+          ],
+          "img": "luxe.jpg"
         },
         {
           "name": "Zenit",
@@ -1857,7 +1860,8 @@
               "name": "Cashmere SM FP",
               "isGrain": false
             }
-          ]
+          ],
+          "img": "zenit.jpg"
         },
         {
           "name": "Syncron",
@@ -1909,7 +1913,8 @@
               "isGrain": false,
               "img": "Syncron Olmo 3.jpg"
             }
-          ]
+          ],
+          "img": "syncron.jpg"
         }
       ]
     },
@@ -3379,7 +3384,8 @@
               "isGrain": false,
               "img": "SuperMatt Verde Salvia.jpg"
             }
-          ]
+          ],
+          "img": "zenit.jpg"
         },
         {
           "name": "Syncron",
@@ -3459,7 +3465,8 @@
               "isGrain": true,
               "img": "Woodline 1.jpg"
             }
-          ]
+          ],
+          "img": "syncron.jpg"
         }
       ]
     },
@@ -3534,7 +3541,8 @@
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
-          ]
+          ],
+          "img": "luxe.jpg"
         },
         {
           "name": "Zenit 3/4",
@@ -3574,7 +3582,8 @@
               "isGrain": false,
               "img": "Supermatt Gris Nube.jpg"
             }
-          ]
+          ],
+          "img": "zenit.jpg"
         },
         {
           "name": "Syncron 3/4",
@@ -3794,7 +3803,8 @@
               "isGrain": true,
               "img": "Woodline 4.jpg"
             }
-          ]
+          ],
+          "img": "syncron.jpg"
         },
         {
           "name": "Luxe 1",
@@ -3864,7 +3874,8 @@
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
-          ]
+          ],
+          "img": "luxe.jpg"
         },
         {
           "name": "Zenit 1",
@@ -3904,7 +3915,8 @@
               "isGrain": false,
               "img": "Supermatt Gris Nube.jpg"
             }
-          ]
+          ],
+          "img": "zenit.jpg"
         },
         {
           "name": "Syncron 1",
@@ -4124,7 +4136,8 @@
               "isGrain": true,
               "img": "Woodline 4.jpg"
             }
-          ]
+          ],
+          "img": "syncron.jpg"
         },
         {
           "name": "Luxe 1 1/4",
@@ -4194,7 +4207,8 @@
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
-          ]
+          ],
+          "img": "luxe.jpg"
         },
         {
           "name": "Zenit 1 1/4",
@@ -4234,7 +4248,8 @@
               "isGrain": false,
               "img": "Supermatt Gris Nube.jpg"
             }
-          ]
+          ],
+          "img": "zenit.jpg"
         },
         {
           "name": "Syncron 1 1/4",
@@ -4454,7 +4469,8 @@
               "isGrain": true,
               "img": "Woodline 4.jpg"
             }
-          ]
+          ],
+          "img": "syncron.jpg"
         }
       ]
     },
@@ -4624,7 +4640,8 @@
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
-          ]
+          ],
+          "img": "luxe.jpg"
         },
         {
           "name": "Zenit",
@@ -4749,7 +4766,8 @@
               "isGrain": false,
               "img": "Metal Plus Titanio SM.jpg"
             }
-          ]
+          ],
+          "img": "zenit.jpg"
         },
         {
           "name": "Syncron",
@@ -4969,7 +4987,8 @@
               "isGrain": true,
               "img": "Woodline 4.jpg"
             }
-          ]
+          ],
+          "img": "syncron.jpg"
         },
         {
           "name": "Milino",
@@ -5110,6 +5129,52 @@
           ]
         }
       ]
+    }
+  ],
+  "leather": [
+    {
+      "name": "Goya 1523",
+      "img": "Goya 1523.jpg"
+    },
+    {
+      "name": "Bright White 70300",
+      "img": ""
+    },
+    {
+      "name": "White Alligator 3263",
+      "img": ""
+    },
+    {
+      "name": "Bambino 2428",
+      "img": ""
+    },
+    {
+      "name": "Titanium 7694",
+      "img": ""
+    },
+    {
+      "name": "Monticello Med 7043",
+      "img": ""
+    },
+    {
+      "name": "Almond 70204",
+      "img": ""
+    },
+    {
+      "name": "Silver Alligator 3266",
+      "img": ""
+    },
+    {
+      "name": "Brown Croco 2702",
+      "img": ""
+    },
+    {
+      "name": "Rain 3316",
+      "img": ""
+    },
+    {
+      "name": "Dark Graphite 7222",
+      "img": ""
     }
   ]
 }

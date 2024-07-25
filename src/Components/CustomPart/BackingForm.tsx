@@ -54,16 +54,15 @@ const CustomPartForm: FC<CustomPartFormType> = ({customPart}) => {
                 resetForm();
             }}
         >
-            {({values, errors, setFieldValue,}) => {
+            {({values}) => {
                 const {
                     ['Width']: width,
-                    ['Height']: height,
-                    ['Depth']: depth,
+                    ['Height']: height
                 } = values;
-                const priceCoef = +(width * height / 144 * 4.6).toFixed(2);
+                const priceNew = +(width * height / 144 * 4.6).toFixed(1);
 
                 setTimeout(() => {
-                    if (price !== priceCoef) dispatch(setCustomPart({...customPart, price: priceCoef}));
+                    if (price !== priceNew) dispatch(setCustomPart({...customPart, price: priceNew}));
                 }, 0);
 
                 return (

@@ -16,8 +16,7 @@ type CustomPartCabinetType = {
 }
 
 const CustomPartCabinet: FC<CustomPartCabinetType> = ({customPart, materials}) => {
-    const {type} = customPart
-    switch (type) {
+    switch (customPart.type) {
         case "custom":
             return <CustomPartForm customPart={customPart} materials={materials}/>
         case "backing":

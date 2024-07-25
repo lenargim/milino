@@ -33,7 +33,7 @@ export function getPVCSchema(materialsRange: materialsCustomPart[] | undefined, 
                     return value <= maxWidth;
                 }
             ),
-        'Material': Yup.string(),
+        'Material': Yup.string().required(),
         'Note': Yup.string(),
     })
 

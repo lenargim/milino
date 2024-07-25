@@ -1,6 +1,7 @@
 import {Form, Formik} from 'formik';
 import React, {FC} from 'react';
-import {addToCartPVC,
+import {
+    addToCartPVC, getCustomPartPVCPrice, getInitialMaterialInPVCForm,
     getLimit,
     useAppDispatch
 } from "../../helpers/helpers";
@@ -8,7 +9,7 @@ import {customPartDataType} from "../../helpers/productTypes";
 import s from "../Product/product.module.sass";
 import {ProductInputCustom, ProductRadioInput, TextInput} from "../../common/Form";
 import {OrderFormType} from "../../helpers/types";
-import {addToCart, setCustomPart} from "../../store/reducers/generalSlice";
+import {addToCart} from "../../store/reducers/generalSlice";
 import {getPVCSchema} from "./PVCSchema";
 
 type PVCFormType = {
@@ -31,7 +32,6 @@ const PVCForm: FC<PVCFormType> = ({customPart, materials}) => {
         name,
         image,
         id,
-        price,
         materials: materialsRange,
         limits,
         category,
@@ -42,13 +42,13 @@ const PVCForm: FC<PVCFormType> = ({customPart, materials}) => {
         "Door Type": doorType
     } = materials;
 
-    const sizeLimitInitial = materialsRange?.find(el => doorFinish.includes(el.name))?.limits || {};
     const materialArr = materialsRange ? Object.values(materialsRange).map(el => el.name) : [];
-    const curMaterial = materialArr.find(el => doorFinish.includes(el)) ?? doorType;
+    const initialMaterial = getInitialMaterialInPVCForm(materialArr, doorFinish, doorType)
+    const sizeLimitInitial = materialsRange?.find(el => doorFinish.includes(el.name))?.limits || {};
 
     const initialValues: PVCFormValuesType = {
         Width: getLimit(sizeLimitInitial.width),
-        Material: curMaterial ?? materialArr[0],
+        Material: initialMaterial,
         price: 0,
         Note: ''
     }
@@ -65,17 +65,18 @@ const PVCForm: FC<PVCFormType> = ({customPart, materials}) => {
                 }
             }}
         >
-            {({values, errors, setFieldValue}) => {
+            {({values, setFieldValue}) => {
                 const {
                     ['Width']: width,
                     ['Material']: material,
                     ['Note']: note,
+                    price: price
                 } = values;
 
-                const priceCoef = Math.ceil(width);
+                const priceNew = getCustomPartPVCPrice(width, material);
 
                 setTimeout(() => {
-                    if (price !== priceCoef) setFieldValue('price', priceCoef);
+                    if (price !== priceNew) setFieldValue('price', priceNew);
                 }, 0);
 
                 return (

@@ -9,6 +9,8 @@ const Room: FC<{room: RoomType}> = ({room}) => {
     let initialCat: productCategory | '';
     const kichenCat = ['Base Cabinets', 'Wall Cabinets', 'Tall Cabinets', 'Gola Base Cabinets', 'Gola Wall Cabinets', 'Gola Tall Cabinets','Custom Parts'];
     const vanityCat = ['Regular Vanities', 'Gola Vanities','Custom Parts'];
+    const closetCats = ['Build In', 'Leather', 'Custom Parts'];
+    const standartCats = ['Standart Base Cabinets','Standart Wall Cabinets', 'Standart Tall Cabinets']
     if (!storageCat) {
         initialCat = ''
     } else {
@@ -20,10 +22,10 @@ const Room: FC<{room: RoomType}> = ({room}) => {
                 initialCat = vanityCat.includes(storageCat) ? storageCat : '';
                 break
             case "Closet":
-                initialCat = ['Build In', 'Leather', 'Custom Parts'].includes(storageCat)? storageCat : ''
+                initialCat = closetCats.includes(storageCat)? storageCat : ''
                 break;
             case "Standart Door":
-                initialCat = ['Standart Base Cabinets'].includes(storageCat) ? storageCat : '';
+                initialCat = standartCats.includes(storageCat) ? storageCat : '';
                 break;
             default:
                 initialCat = 'Custom Parts'

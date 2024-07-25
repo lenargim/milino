@@ -76,7 +76,7 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
                     </button>
                     <button value="plus" onClick={() => changeAmount('plus')} type={"button"}>+</button>
                 </div>
-                <div className={s.itemTotalPrice}>{(price * amount).toFixed(2)}$</div>
+                <div className={s.itemTotalPrice}>{(price * amount).toFixed(1)}$</div>
             </div>
         </div>
     )

@@ -188,5 +188,5 @@ const addToCartAccessories = (values: DoorAccessoiresValuesType): number => {
     const hingeHolesPrice = hingeHoles*6;
     const PTOPrice = PTO.reduce((acc, item) => acc + (item.price * item.qty), 0);
     const servoPrice = servo.reduce((acc, item) => acc + (item.price * item.qty), 0);
-    return +(aventosPrice+doorHingePrice+hingeHolesPrice+PTOPrice+servoPrice).toFixed(2)
+    return +(aventosPrice+doorHingePrice+hingeHolesPrice+PTOPrice+servoPrice).toFixed(1)
 }

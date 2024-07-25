@@ -23,7 +23,8 @@ const OrderForm = () => {
         'Box Material': '',
         'Drawer': '',
         'Drawer Type': '',
-        'Drawer Color': ''
+        'Drawer Color': '',
+        'Leather': ''
     }
     const initialValues: OrderFormType = parsedMaterials ? parsedMaterials : emptyMaterials;
 
@@ -41,7 +42,7 @@ const OrderForm = () => {
                 return (
                     <Form className={s.orderForm}>
                         <Main values={values} isSubmitting={isSubmitting} isValid={isValid} setFieldValue={setFieldValue}/>
-                        <Sidebar values={values} resetForm={resetForm}/>
+                        <Sidebar values={values} resetForm={resetForm} isValid={isValid}/>
                     </Form>
                 )
             }}

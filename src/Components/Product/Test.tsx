@@ -5,7 +5,6 @@ import {coefType} from "../../helpers/calculatePrice";
 const Test:FC<{addition: extraPricesType, coef: coefType}> = ({addition, coef}) => {
     return (
         <div>
-            <h2>Test:</h2>
             <h3>Extra prices</h3>
             {
                 Object.entries(addition).map((el, index) => <div key={index}>{el[0]}: {el[1]}</div>)

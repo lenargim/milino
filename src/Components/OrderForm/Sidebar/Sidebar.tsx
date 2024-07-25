@@ -4,7 +4,6 @@ import s from './sidebar.module.sass'
 import {NavLink, useLocation} from "react-router-dom";
 import {getProductsByCategory, useAppDispatch, useAppSelector} from "../../../helpers/helpers";
 import {
-    CartItemType,
     productChangeMaterialType, removeCart, setMaterials,
     updateProductPrice
 } from "../../../store/reducers/generalSlice";
@@ -13,18 +12,20 @@ import {
     addGlassShelfPrice,
     addPTODoorsPrice, addPTODrawerPrice, addPTOTrashBinsPrice,
     calculatePrice, getDoorMinMaxValuesArr, getDoorPrice, getDoorSquare, getDoorWidth, getDrawerPrice, getLedPrice,
-    getMaterialData,
-    getProductDataToCalculatePrice, getPvcPrice, getStartPrice, getTablePrice
+    getMaterialData, getPriceData,
+    getProductDataToCalculatePrice, getProductRange, getPvcPrice, getStartPrice, getTablePrice
 } from "../../../helpers/calculatePrice";
-import {extraPricesType, productDataType, productSizesType} from "../../../helpers/productTypes";
-import CartItem from "../../Product/CartItem";
+import {extraPricesType, productDataType, productSizesType, sizeLimitsType} from "../../../helpers/productTypes";
 import {FormikState} from "formik";
+import sizesArr from "../../../api/sizes.json";
+import SidebarCart from "./SidebarCart";
 
 type SideBarType = {
     values: OrderFormType,
     resetForm?: (nextState?: Partial<FormikState<OrderFormType>>) => void,
+    isValid: boolean
 }
-const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
+const Sidebar: FC<SideBarType> = ({values, resetForm, isValid}) => {
     const location = useLocation();
     const path = location.pathname.slice(1);
     const {room, ...data} = Object.assign({}, values);
@@ -34,7 +35,6 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
     const dispatch = useAppDispatch();
     const {
         isAcrylic,
-        basePriceType,
         drawer,
         doorType,
         doorFinish,
@@ -42,11 +42,10 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
         boxMaterialCoefs,
         premiumCoef
     } = materialData;
-
-    const isCalcPrice = !!doorFinish && !!doorType;
+    const shouldShowSidebarCart = isValid && cartTotal;
 
     useEffect(() => {
-        if (isCalcPrice) {
+        if (shouldShowSidebarCart) {
             cart.forEach(cartProduct => {
                 const {
                     uuid,
@@ -60,8 +59,8 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                 let products = getProductsByCategory(category);
                 const productData: productDataType | undefined = products.find(product => product.id === id);
                 if (productData && productExtra) {
-                    const {attributes, legsHeight, isAngle, isBlind} = productData;
-                    const {width, height, depth,led, blindWidth, type, doorProfile, options} = productExtra
+                    const {attributes, legsHeight, isAngle, isBlind, customHeight, customDepth, id} = productData;
+                    const {width, height, depth, led, blindWidth, type, doorProfile, options} = productExtra
                     const defProduct: productChangeMaterialType = {
                         ...cartProduct,
                         width,
@@ -73,8 +72,16 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                         attributes,
                         options
                     }
-                    const productPriceData = getProductDataToCalculatePrice(defProduct, basePriceType, drawer.drawerBrand);
-                    const {productRange, drawersQty, rolloutsQty, priceData, sizeLimit, doorValues, shelfsQty} = productPriceData;
+                    const productPriceData = getProductDataToCalculatePrice(defProduct, drawer.drawerBrand);
+                    const priceData = getPriceData(id, category, materialData.basePriceType);
+                    const productRange = getProductRange(priceData, category, customHeight, customDepth);
+                    const sizeLimit: sizeLimitsType | undefined = sizesArr.find(size => size.productIds.includes(id))?.limits;
+                    const {
+                        drawersQty,
+                        rolloutsQty,
+                        doorValues,
+                        shelfsQty
+                    } = productPriceData;
                     const {widthRange, heightRange} = productRange
 
                     if (!sizeLimit || !priceData) return;
@@ -98,7 +105,7 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                         glassShelf: options.includes('Glass Shelf') ? addGlassShelfPrice(shelfsQty) : 0,
                         glassDoor: options.includes('Glass Door') ? addGlassDoorPrice(doorSquare, doorProfile) : 0,
                         pvcPrice: getPvcPrice(!isBlind ? width : width - realBlindWidth, doorHeight, isAcrylic, doorType, doorFinish),
-                        doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier,doorArr),
+                        doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier, doorArr),
                         drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, width),
                         ledPrice: getLedPrice(width, height, ledBorder),
                         boxMaterialCoef: options.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef,
@@ -130,7 +137,8 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                 'Box Material': '',
                 'Drawer': '',
                 'Drawer Type': '',
-                'Drawer Color': ''
+                'Drawer Color': '',
+                'Leather': ''
             },
             submitCount: 0
         });
@@ -150,7 +158,7 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                         </div>
                     )
                 })}
-                {cartTotal && isCalcPrice ? <SidebarCart cart={cart}/> : null}
+                {shouldShowSidebarCart ? <SidebarCart cart={cart}/> : null}
             </div>
             <div className={[s.sidebarBottom].join(' ')}>
                 {cartTotal ?
@@ -160,10 +168,11 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
                     </div> : null}
                 <div className={s.sidebarButtons}>
                     {path && <NavLink to={'/'} className={['button yellow'].join(' ')}>← Choose Materials</NavLink>}
-                    {cartTotal && isCalcPrice ?
+                    {shouldShowSidebarCart ?
                         <NavLink to={'/checkout'} className={['button yellow'].join(' ')}>Checkout →</NavLink> : null}
                     {!path &&
-                    <button type={"button"} onClick={resetMaterials} className={['button yellow'].join(' ')}>Reset materials</button>}
+                      <button type={"button"} onClick={resetMaterials} className={['button yellow'].join(' ')}>Reset
+                        materials</button>}
                 </div>
             </div>
         </aside>
@@ -172,16 +181,4 @@ const Sidebar: FC<SideBarType> = ({values, resetForm}) => {
 
 export default Sidebar;
 
-export const SidebarCart: FC<{ cart: CartItemType[] }> = ({cart}) => {
-    return (
-        <>
-            <h3>Cart</h3>
-            {cart.map((item, key) => {
-                return (
-                    <CartItem item={item} key={key}/>
-                )
-            })}
-        </>
-    )
-}
 

@@ -1,12 +1,11 @@
 import React, {FC} from 'react';
 import {OrderFormType} from "../../helpers/types";
 import s from './product.module.sass'
-import {getImg, getProductImage, useAppSelector} from "../../helpers/helpers";
+import {getImg, getProductImage} from "../../helpers/helpers";
 import {AtrrsList} from "../Cabinets/List";
-import {Navigate} from "react-router-dom";
 import {getMaterialData, getStandartMaterialData} from "../../helpers/calculatePrice";
 import Cabinet from "./Cabinet";
-import {productDataType, productType} from "../../helpers/productTypes";
+import {productType} from "../../helpers/productTypes";
 import StandartCabinet from "./StandartCabinet";
 
 type ProductMainType = {
@@ -20,7 +19,6 @@ const ProductMain: FC<ProductMainType> = ({product, materials}) => {
     const {type, attributes, name, images} = product;
     const img = getProductImage(images, type);
     const isStandart = 'Standart Door' === room;
-
 
     return (
         <div className={s.productWrap}>

@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {getCartTotal, useAppSelector} from "../../helpers/helpers";
 import s from './../OrderForm/Sidebar/sidebar.module.sass'
 import {NavLink} from "react-router-dom";
-import {SidebarCart} from "../OrderForm/Sidebar/Sidebar";
+import SidebarCart from "../OrderForm/Sidebar/SidebarCart";
 
 export type changeAmountType = 'plus' | 'minus'
 

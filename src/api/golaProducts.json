@@ -24,12 +24,12 @@
           {
             "type": 1,
             "value": 1,
-            "maxWidth": 24
+            "maxWidth": 27
           },
           {
             "type": 2,
             "value": 2,
-            "minWidth": 21
+            "minWidth": 24
           }
         ]
       },
@@ -75,12 +75,12 @@
           {
             "type": 1,
             "value": 1,
-            "maxWidth": 24
+            "maxWidth": 27
           },
           {
             "type": 2,
             "value": 2,
-            "minWidth": 21
+            "minWidth": 24
           }
         ]
       },
@@ -672,7 +672,6 @@
     ]
   },
 
-
   {
     "id": 113,
     "legsHeight": 0,
@@ -1036,7 +1035,6 @@
       "Box from finish material"
     ]
   },
-
 
   {
     "id": 212,

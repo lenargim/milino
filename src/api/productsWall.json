@@ -302,12 +302,12 @@
           {
             "type": 1,
             "value": 0,
-            "maxHeight": 15,
-            "maxWidth": 33
+            "maxHeight": 18
           },
           {
             "type": 2,
-            "value": 1
+            "value": 1,
+            "minHeight": 18
           }
         ]
       },
@@ -365,12 +365,12 @@
           {
             "type": 1,
             "value": 0,
-            "maxHeight": 15,
-            "maxWidth": 33
+            "maxHeight": 18
           },
           {
             "type": 2,
-            "value": 1
+            "value": 1,
+            "minHeight": 18
           }
         ]
       },
@@ -379,6 +379,10 @@
         "values": [
           {
             "type": 1,
+            "value": 0
+          },
+          {
+            "type": 2,
             "value": 0
           }
         ]
@@ -428,12 +432,12 @@
           {
             "type": 1,
             "value": 0,
-            "maxHeight": 15,
-            "maxWidth": 33
+            "maxHeight": 18
           },
           {
             "type": 2,
-            "value": 1
+            "value": 1,
+            "minHeight": 18
           }
         ]
       },
@@ -442,6 +446,10 @@
         "values": [
           {
             "type": 1,
+            "value": 0
+          },
+          {
+            "type": 2,
             "value": 0
           }
         ]

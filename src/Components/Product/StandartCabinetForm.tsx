@@ -11,9 +11,9 @@ import {
 import s from './product.module.sass'
 import SelectField from '../../common/SelectField';
 import {
-    addToCartData, checkDoors, checkHingeOpening, checkProduct, getInitialDepth, getInitialLeather,
+    addToCartData, checkDoors, checkHingeOpening, checkProduct,
     getInitialStandartProductValues,
-    getSelectValfromVal, isHasLeaterBlock, isHasLedBlock,
+    getSelectValfromVal, isHasLedBlock,
     useAppDispatch
 } from "../../helpers/helpers";
 import {
@@ -39,12 +39,10 @@ import {
     getType, getValidHeightRange
 } from "../../helpers/calculatePrice";
 import LedBlock from "./LED";
-import Leather from "./Leather";
 import {getStandartProductSchema} from "./ProductSchema";
 
-const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standartProductPriceData}) => {
+const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standartProductPriceData, productRange, sizeLimit, baseProductPrice}) => {
     const dispatch = useAppDispatch();
-
     const {
         id,
         name,
@@ -59,33 +57,23 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
         isBlind,
         isAngle,
         hasMiddleSection,
-        isCornerChoose
+        isCornerChoose,
     } = product;
     const {boxMaterialCoefs} = materialData
     const {
-        baseProductPrice,
-        productRange,
         doorValues,
-        blindArr, filteredOptions, shelfsQty, drawersQty, sizeLimit
+        blindArr, filteredOptions, shelfsQty, drawersQty
     } = standartProductPriceData
     const {widthRange, heightRange, depthRange} = productRange;
 
 
-    if (!baseProductPrice) return <div>No price table data</div>
-    if (!sizeLimit) return <div>Cannot find size limit</div>;
-
-    if (!productRange.widthRange[0]) return <div>Cannot find initial width</div>;
-    const initialDepth = getInitialDepth(productRange, isAngle, depth)
-
     const hasLedBlock = isHasLedBlock(category)
-    const hasLeatherBlock = isHasLeaterBlock(category);
-    const initialLeather = getInitialLeather(category);
-
     const depthRangeWithCustom = depthRange.concat([0]);
+
     return (
         <Formik
-            initialValues={getInitialStandartProductValues(productRange, initialDepth, doorValues, isBlind, blindArr, initialLeather, isCornerChoose)}
-                validationSchema={getStandartProductSchema(sizeLimit, isAngle, hasMiddleSection)}
+            initialValues={getInitialStandartProductValues(productRange, doorValues, category, depth, isBlind, blindArr, isAngle,isCornerChoose)}
+                validationSchema={getStandartProductSchema(sizeLimit, isAngle)}
             onSubmit={(values: FormikValues, {resetForm}) => {
                 if (price) {
                     const cartData = addToCartData(values, type, id, isBlind, images, name, hasMiddleSection, category, price)
@@ -94,7 +82,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                 }
             }}
         >
-            {({values, setFieldValue, errors}) => {
+            {({values, setFieldValue}) => {
                 const {
                     ['Width']: width,
                     ['Height']: height,
@@ -112,8 +100,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                     Options: chosenOptions,
                     'LED borders': ledBorders,
                     'LED alignment': ledAlignment,
-                    'LED indent': ledIndent,
-                    'Leather': leather
+                    'LED indent': ledIndent
                 } = values;
 
                 const {
@@ -140,10 +127,8 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
 
                 const doorArr = getDoorMinMaxValuesArr(width, doorValues, widthDivider);
                 const hingeArr = getHingeArr(doorArr || [], category);
-                const cornerArr = settings.Corner
 
-                checkDoors(+doors, doorArr,hingeOpening,setFieldValue)
-                checkHingeOpening(hingeOpening, hingeArr, +doors, setFieldValue)
+                const cornerArr = settings.Corner
 
                 const doorWidth = getDoorWidth(realWidth, realBlindWidth, isBlind, isAngle)
 
@@ -163,6 +148,9 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                     doorSquare: doorSquare,
                 }
 
+                checkDoors(+doors, doorArr,hingeOpening,setFieldValue)
+                checkHingeOpening(hingeOpening, hingeArr, +doors, setFieldValue)
+
                 const allCoefs = extraPrices.boxMaterialCoef;
                 const initialPrice = getInitialPrice(baseProductPrice, productRange, category, allCoefs);
                 if (!initialPrice) return <div>Cannot find initial price</div>
@@ -171,9 +159,8 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
 
                 const calculatedStandartData = calculateStandartData(startPrice,extraPrices,realDepth, depthRange, isAngle);
                 const {totalPrice, coefDepth} = calculatedStandartData
-
-                const totalDepthPrice = +(initialPrice * (coefDepth + 1)).toFixed(2)
-                extraPrices.depth = +(totalDepthPrice - initialPrice).toFixed(2);
+                const totalDepthPrice = initialPrice * (coefDepth + 1);
+                extraPrices.depth = +(totalDepthPrice - initialPrice).toFixed(1);
 
                 setTimeout(() => {
                     checkProduct(price, totalPrice, type, newType, dispatch)
@@ -211,12 +198,6 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                                     </div>
                                 </div>
                                 : null}
-                            {hasMiddleSection &&
-                              <div className={s.block}>
-                                <h3>Middle Section Height</h3>
-                                <ProductInputCustom value={null} name={'Middle Section'}/>
-                              </div>
-                            }
                         </div>
 
                         {hingeArr.length > 1 ?
@@ -244,8 +225,6 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                         {hasLedBlock ?
                             <LedBlock borders={ledBorders} alignment={ledAlignment} indent={ledIndent}/>
                             : null}
-
-                        {hasLeatherBlock ? <Leather val={leather}/> : null}
 
                         {filteredOptions.length
                             ? <div className={s.block}>

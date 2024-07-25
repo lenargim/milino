@@ -49,5 +49,6 @@ export type MaterialsType = {
     rooms: roomData[],
     doors: doorType[],
     boxMaterial: typeof materials.boxMaterial,
-    drawers: drawer[]
+    drawers: drawer[],
+    leather: {name:string, img:string}[]
 }

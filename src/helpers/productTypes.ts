@@ -79,7 +79,8 @@ export type materialDataType = {
     isAcrylic: boolean,
     doorType: string,
     doorFinish: string,
-    drawer: drawerInterface
+    drawer: drawerInterface,
+    leather: string
 }
 
 
@@ -167,11 +168,14 @@ export interface drawerInterface {
 
 export type CabinetType = {
     product: productType,
-    materialData: materialDataType
+    materialData: materialDataType,
 }
 
 export interface CabinetFormType extends CabinetType {
-    productPriceData: productDataToCalculatePriceType
+    productPriceData: productDataToCalculatePriceType,
+    sizeLimit: sizeLimitsType,
+    priceData: pricePart[],
+    productRange: productRangeType
 }
 
 export type StandartCabinetType = {
@@ -183,7 +187,10 @@ export type StandartCabinetType = {
 }
 
 export interface StandartCabinetFormType extends StandartCabinetType {
-    standartProductPriceData: standartProductDataToCalculatePriceType
+    standartProductPriceData: standartProductDataToCalculatePriceType,
+    sizeLimit: sizeLimitsType,
+    baseProductPrice: pricePart[],
+    productRange: productRangeType
 }
 
 export type DepthRangeType = {
@@ -206,6 +213,7 @@ export interface extraPricesType {
     doorSquare: number,
     premiumCoef: number,
     boxMaterialCoef: number,
+    tablePrice?: number
 }
 
 export interface extraStandartPricesType {
@@ -227,9 +235,6 @@ export type productRangeType = {
 }
 
 export type productDataToCalculatePriceType = {
-    priceData?:  pricePart[],
-    productRange: productRangeType,
-    sizeLimit?:sizeLimitsType,
     attrArr: {name: string, value: number}[],
     doorValues?: valueItemType[],
     drawersQty: number,
@@ -240,16 +245,12 @@ export type productDataToCalculatePriceType = {
 }
 
 export type standartProductDataToCalculatePriceType = {
-    baseProductPrice?: pricePart[],
-    productRange: productRangeType,
     doorValues?: valueItemType[],
     blindArr?: number[],
     filteredOptions: string[],
     drawersQty: number,
     shelfsQty: number,
-    rolloutsQty: number,
-    sizeLimit?:sizeLimitsType,
-
+    rolloutsQty: number
 }
 
 export type customPartDataToCalculatePriceType = {
