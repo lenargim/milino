@@ -10,11 +10,11 @@
     "images": [
       {
         "type": 1,
-        "value": "bs9-24.png"
+        "value": "GC/PBS_1.jpg"
       },
       {
         "type": 2,
-        "value": "bs27-42.png"
+        "value": "GC/PBC_2.jpg"
       }
     ],
     "attributes": [
@@ -61,11 +61,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BD_1.png"
+        "value": "GC/PBD_1.jpg"
       },
       {
         "type": 2,
-        "value": "BD_2.png"
+        "value": "GC/PBD_2.jpg"
       }
     ],
     "attributes": [
@@ -111,11 +111,11 @@
     "images": [
       {
         "type": 1,
-        "value": "bsg1.png"
+        "value": "GC/PBSG1.jpg"
       },
       {
         "type": 2,
-        "value": "bsg1.png"
+        "value": "GC/PBSG1.jpg"
       }
     ],
     "attributes": [
@@ -160,11 +160,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BG.png"
+        "value": "GC/PBG_1.jpg"
       },
       {
         "type": 2,
-        "value": "BG.png"
+        "value": "GC/PBG_1.jpg"
       }
     ],
     "attributes": [
@@ -219,7 +219,7 @@
     "images": [
       {
         "type": 1,
-        "value": "bsp.png"
+        "value": "GC/PBSP_1.jpg"
       }
     ],
     "attributes": [
@@ -259,7 +259,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SB.png"
+        "value": "GC/PSB_1.jpg"
       }
     ],
     "attributes": [
@@ -299,7 +299,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SBD.png"
+        "value": "GC/PSBD_1.jpg"
       }
     ],
     "attributes": [
@@ -348,7 +348,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B2DE.png"
+        "value": "GC/PB2D_1.jpg"
       }
     ],
     "attributes": [
@@ -378,7 +378,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B3DI.png"
+        "value": "GC/PB3DI_1.jpg"
       }
     ],
     "attributes": [
@@ -417,7 +417,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SB2D.png"
+        "value": "GC/PSB2D_1.jpg"
       }
     ],
     "attributes": [
@@ -447,7 +447,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B3DE.png"
+        "value": "GC/PB3D_1.jpg"
       }
     ],
     "attributes": [
@@ -486,7 +486,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC_1.png"
+        "value": "GC/PBC_1.jpg"
       }
     ],
     "attributes": [
@@ -535,7 +535,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BCL_1.png"
+        "value": "GC/PBCL_1.jpg"
       }
     ],
     "attributes": [
@@ -584,7 +584,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BCB_1.png"
+        "value": "GC/PBCB_1.jpg"
       }
     ],
     "attributes": [
@@ -633,7 +633,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BCBL_1.png"
+        "value": "GC/PBCBL_1.jpg"
       }
     ],
     "attributes": [
@@ -684,11 +684,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC_1.png"
+        "value": "GC/PWC_1.jpg"
       },
       {
         "type": 2,
-        "value": "WC_1.png"
+        "value": "GC/PWC_1.jpg"
       }
     ],
     "attributes": [
@@ -748,11 +748,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WCA_1.png"
+        "value": "GC/PWCA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WCA_1.png"
+        "value": "GC/PWCA_1.jpg"
       }
     ],
     "attributes": [
@@ -811,19 +811,19 @@
     "images": [
       {
         "type": 1,
-        "value": "W_1.png"
+        "value": "GC/PW_1.jpg"
       },
       {
         "type": 2,
-        "value": "W_2.png"
+        "value": "GC/PW_2.jpg"
       },
       {
         "type": 3,
-        "value": "W_1.png"
+        "value": "GC/PW_1.jpg"
       },
       {
         "type": 4,
-        "value": "W_2.png"
+        "value": "GC/PW_2.jpg"
       }
     ],
     "attributes": [
@@ -895,11 +895,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WDA_1.png"
+        "value": "GC/PWDA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WDA_1.png"
+        "value": "GC/PWDA_1.jpg"
       }
     ],
     "attributes": [
@@ -957,7 +957,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WA_1.png"
+        "value": "GC/PWA_1.jpg"
       }
     ],
     "attributes": [
@@ -997,7 +997,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WCB_1.png"
+        "value": "GC/PWCB_1.jpg"
       }
     ],
     "attributes": [
@@ -1047,19 +1047,19 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "GC/PPC_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_2.png"
+        "value": "GC/PPC_2.jpg"
       },
       {
         "type": 3,
-        "value": "PC_1.png"
+        "value": "GC/PPC_1.jpg"
       },
       {
         "type": 4,
-        "value": "PC_2.png"
+        "value": "GC/PPC_2.jpg"
       }
     ],
     "attributes": [
@@ -1131,11 +1131,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC4D_1.png"
+        "value": "GC/PPCD_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC4D_2.png"
+        "value": "GC/PPCD_2.jpg"
       }
     ],
     "attributes": [
@@ -1198,11 +1198,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC4D_1.png"
+        "value": "GC/PPC4D_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC4D_2.png"
+        "value": "GC/PPC4D_2.jpg"
       }
     ],
     "attributes": [
@@ -1251,11 +1251,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "GC/PPC_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_1.png"
+        "value": "GC/PPC_1.jpg"
       }
     ],
     "attributes": [
@@ -1306,7 +1306,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TDO_1.png"
+        "value": "GC/PTDO_1.jpg"
       }
     ],
     "attributes": [
@@ -1355,7 +1355,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TBC_1.png"
+        "value": "GC/PTBC_1.jpg"
       }
     ],
     "attributes": [
@@ -1404,7 +1404,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TBCL_1.png"
+        "value": "GC/PTBCL_1.jpg"
       }
     ],
     "attributes": [
@@ -1453,7 +1453,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TBCL_1.png"
+        "value": "GC/PTBCL_1.jpg"
       }
     ],
     "attributes": [
@@ -1502,7 +1502,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TBC_1.png"
+        "value": "GC/PTBC_1.jpg"
       }
     ],
     "attributes": [

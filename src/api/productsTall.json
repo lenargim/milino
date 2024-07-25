@@ -10,19 +10,19 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "TC/PC_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_2.png"
+        "value": "TC/PC_2.jpg"
       },
       {
         "type": 3,
-        "value": "PC_1.png"
+        "value": "TC/PC_1.jpg"
       },
       {
         "type": 4,
-        "value": "PC_2.png"
+        "value": "TC/PC_2.jpg"
       }
     ],
     "attributes": [
@@ -94,11 +94,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC2D_1.png"
+        "value": "TC/PC2D_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC2D_2.png"
+        "value": "TC/PC2D_2.jpg"
       }
     ],
     "attributes": [
@@ -161,11 +161,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC3D_1.png"
+        "value": "TC/PC3D_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC3D_2.png"
+        "value": "TC/PC3D_2.jpg"
       }
     ],
     "attributes": [
@@ -228,11 +228,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC4D_1.png"
+        "value": "TC/PC4D_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC4D_2.png"
+        "value": "TC/PC4D_2.jpg"
       }
     ],
     "attributes": [
@@ -295,7 +295,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TBC_1.png"
+        "value": "TC/TBC_1.jpg"
       }
     ],
     "attributes": [
@@ -344,7 +344,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TBCL_1.png"
+        "value": "TC/TBCL_1.jpg"
       }
     ],
     "attributes": [
@@ -394,7 +394,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TDO_1.png"
+        "value": "TC/TDO_1.jpg"
       }
     ],
     "attributes": [
@@ -444,7 +444,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TSO_1.png"
+        "value": "TC/TSO_1.jpg"
       }
     ],
     "attributes": [
@@ -493,11 +493,11 @@
     "images": [
       {
         "type": 1,
-        "value": "T_1.png"
+        "value": "TC/T_1.jpg"
       },
       {
         "type": 2,
-        "value": "T_2.png"
+        "value": "TC/T_2.jpg"
       }
     ],
     "attributes": [
@@ -560,11 +560,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TD_1.png"
+        "value": "TC/TD_1.jpg"
       },
       {
         "type": 2,
-        "value": "TD_2.png"
+        "value": "TC/TD_2.jpg"
       }
     ],
     "attributes": [
@@ -640,7 +640,7 @@
     "images": [
       {
         "type": 1,
-        "value": "PCSP_1.png"
+        "value": "TC/PCSP_1.jpg"
       }
     ],
     "attributes": [

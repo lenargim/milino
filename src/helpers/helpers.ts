@@ -32,6 +32,7 @@ import {StandartDoorFormValuesType} from "../Components/CustomPart/StandartDoorF
 import {RoomType} from "./categoriesTypes";
 import {colorType, doorType, finishType} from "./materialsTypes";
 import {getDoorMinMaxValuesArr, getHingeArr} from "./calculatePrice";
+import s from "../Components/Cabinets/cabinets.module.sass";
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
@@ -570,4 +571,19 @@ export const getInitialMaterialInPVCForm = (materialArr:string[], doorFinish:str
 
 export const getCustomPartPVCPrice = (width:number, material:string):number => {
     return material === 'Ultrapan Acrilic' ? Math.ceil(width*1.1): Math.ceil(width);
+}
+
+export const getImgSize = (category:string):'s'|'m'|'l' => {
+    let imgSize:'s'|'m'|'l';
+    switch (category) {
+        case "Tall Cabinets":
+        case "Gola Tall Cabinets":
+        case "Standart Tall Cabinets":
+            imgSize = 'm';break;
+        case "Leather":
+            imgSize = 'l';break;
+        default:
+            imgSize = 's';break;
+    }
+    return imgSize
 }

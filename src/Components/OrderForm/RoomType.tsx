@@ -7,6 +7,7 @@ import {roomData} from "../../helpers/materialsTypes";
 
 const RoomType: FC<{ rooms: roomData[], value: string }> = ({rooms, value}) => {
     return (
+        <div className={s.orderBlock}>
         <div className={[s.type, value && s.checked].join(' ')} role="group">
             {rooms.map((room, key) => <RadioInput
                 img={getImg('rooms', room.img)}
@@ -15,6 +16,7 @@ const RoomType: FC<{ rooms: roomData[], value: string }> = ({rooms, value}) => {
                 name="room"
                 className={s.typeItem}
                 checked={room.value === value}/>)}
+        </div>
         </div>
     );
 };

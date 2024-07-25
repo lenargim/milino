@@ -10,11 +10,11 @@
     "images": [
       {
         "type": 1,
-        "value": "bs9-24.png"
+        "value": "VC/VBS_1.jpg"
       },
       {
         "type": 2,
-        "value": "bs27-42.png"
+        "value": "VC/VBS_2.jpg"
       }
     ],
     "attributes": [
@@ -61,7 +61,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SB.png"
+        "value": "VC/VSB_1.jpg"
       }
     ],
     "attributes": [
@@ -101,7 +101,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SBD.png"
+        "value": "VC/VSBD_1.jpg"
       }
     ],
     "attributes": [
@@ -150,7 +150,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B2DE.png"
+        "value": "VC/VB2D_1.jpg"
       }
     ],
     "attributes": [
@@ -180,7 +180,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SB2D.png"
+        "value": "VC/VSB2D_1.jpg"
       }
     ],
     "attributes": [
@@ -210,7 +210,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B3D.png"
+        "value": "VC/VB3D_1.jpg"
       }
     ],
     "attributes": [
@@ -251,11 +251,11 @@
     "images": [
       {
         "type": 1,
-        "value": "VF_1.png"
+        "value": "VC/VF_1.jpg"
       },
       {
         "type": 2,
-        "value": "VF_2.png"
+        "value": "VC/VF_2.jpg"
       }
     ],
     "attributes": [
@@ -303,7 +303,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VF2D_1.png"
+        "value": "VC/VF2D_1.jpg"
       }
     ],
     "attributes": [
@@ -334,7 +334,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VF3D_1.png"
+        "value": "VC/VF3D_1.jpg"
       }
     ],
     "attributes": [
@@ -365,7 +365,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VSF_1.png"
+        "value": "VC/VSF_1.jpg"
       }
     ],
     "attributes": [
@@ -406,7 +406,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VSFD_1.png"
+        "value": "VC/VSFD_1.jpg"
       }
     ],
     "attributes": [
@@ -456,7 +456,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VSF2D_1.png"
+        "value": "VC/VSF2D_1.jpg"
       }
     ],
     "attributes": [

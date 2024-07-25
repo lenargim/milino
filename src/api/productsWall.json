@@ -10,19 +10,19 @@
     "images": [
       {
         "type": 1,
-        "value": "W_1.png"
+        "value": "WC/W_1.jpg"
       },
       {
         "type": 2,
-        "value": "W_2.png"
+        "value": "WC/W_2.jpg"
       },
       {
         "type": 3,
-        "value": "W_1.png"
+        "value": "WC/W_1.jpg"
       },
       {
         "type": 4,
-        "value": "W_2.png"
+        "value": "WC/W_2.jpg"
       }
     ],
     "attributes": [
@@ -94,11 +94,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WDA_1.png"
+        "value": "WC/WDA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WDA_1.png"
+        "value": "WC/WDA_1.jpg"
       }
     ],
     "attributes": [
@@ -156,7 +156,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WA_1.png"
+        "value": "WC/WA_1.jpg"
       }
     ],
     "attributes": [
@@ -196,7 +196,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WBL_1.png"
+        "value": "WC/WBL_1.jpg"
       }
     ],
     "attributes": [
@@ -235,7 +235,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WBA_1.png"
+        "value": "WC/WBA_1.jpg"
       }
     ],
     "attributes": [
@@ -275,11 +275,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WB_1.png"
+        "value": "WC/WB_1.jpg"
       },
       {
         "type": 2,
-        "value": "WB_1.png"
+        "value": "WC/WB_1.jpg"
       }
     ],
     "attributes": [
@@ -338,11 +338,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WRF_1.png"
+        "value": "WC/WRF_1.jpg"
       },
       {
         "type": 2,
-        "value": "WRF_1.png"
+        "value": "WC/WRF_1.jpg"
       }
     ],
     "attributes": [
@@ -405,11 +405,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WRFA_1.png"
+        "value": "WC/WRFA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WRFA_1.png"
+        "value": "WC/WRFA_1.jpg"
       }
     ],
     "attributes": [
@@ -473,11 +473,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC_1.png"
+        "value": "WC/WC_1.jpg"
       },
       {
         "type": 2,
-        "value": "WC_1.png"
+        "value": "WC/WC_1.jpg"
       }
     ],
     "attributes": [
@@ -537,11 +537,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WCA_1.png"
+        "value": "WC/WCA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WCA_1.png"
+        "value": "WC/WCA_1.jpg"
       }
     ],
     "attributes": [
@@ -600,7 +600,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WCB_1.png"
+        "value": "WC/WCB_1.jpg"
       }
     ],
     "attributes": [
@@ -650,7 +650,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WDC_1.png"
+        "value": "WC/WDC_1.jpg"
       }
     ],
     "attributes": [

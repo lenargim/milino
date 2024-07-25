@@ -11,11 +11,11 @@
     "images": [
       {
         "type": 1,
-        "value": "bs9-24.png"
+        "value": "BC/BS_1.jpg"
       },
       {
         "type": 2,
-        "value": "bs27-42.png"
+        "value": "BC/BS_2.jpg"
       }
     ],
     "attributes": [
@@ -60,11 +60,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BD_1.png"
+        "value": "BC/BD_1.jpg"
       },
       {
         "type": 2,
-        "value": "BD_2.png"
+        "value": "BC/BD_2.jpg"
       }
     ],
     "attributes": [
@@ -108,11 +108,11 @@
     "images": [
       {
         "type": 1,
-        "value": "b1.png"
+        "value": "BC/B_1.jpg"
       },
       {
         "type": 2,
-        "value": "b2.png"
+        "value": "BC/B_2.jpg"
       }
     ],
     "attributes": [
@@ -167,11 +167,11 @@
     "images": [
       {
         "type": 1,
-        "value": "bid1.png"
+        "value": "BC/BID_1.jpg"
       },
       {
         "type": 2,
-        "value": "bid2.png"
+        "value": "BC/BID_2.jpg"
       }
     ],
     "attributes": [
@@ -225,11 +225,11 @@
     "images": [
       {
         "type": 1,
-        "value": "bsg1.png"
+        "value": "BC/BSG_1.jpg"
       },
       {
         "type": 2,
-        "value": "bsg1.png"
+        "value": "BC/BSG_1.jpg"
       }
     ],
     "attributes": [
@@ -273,11 +273,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BG.png"
+        "value": "BC/BG_1.jpg"
       },
       {
         "type": 2,
-        "value": "BG.png"
+        "value": "BC/BG_1.jpg"
       }
     ],
     "attributes": [
@@ -330,7 +330,7 @@
     "images": [
       {
         "type": 1,
-        "value": "bsp.png"
+        "value": "BC/BSP_1.jpg"
       }
     ],
     "attributes": [
@@ -369,7 +369,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BD2.png"
+        "value": "BC/BD2_1.jpg"
       }
     ],
     "attributes": [
@@ -418,7 +418,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B2DE.png"
+        "value": "BC/B2DE_1.jpg"
       }
     ],
     "attributes": [
@@ -447,7 +447,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B3DI.png"
+        "value": "BC/B3DI_1.jpg"
       }
     ],
     "attributes": [
@@ -485,7 +485,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B3D.png"
+        "value": "BC/B3D_1.jpg"
       }
     ],
     "attributes": [
@@ -524,7 +524,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B4D.png"
+        "value": "BC/B4D_1.jpg"
       }
     ],
     "attributes": [
@@ -563,7 +563,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SB2D.png"
+        "value": "BC/SB2D_1.jpg"
       }
     ],
     "attributes": [
@@ -592,7 +592,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SB.png"
+        "value": "BC/SB_1.jpg"
       }
     ],
     "attributes": [
@@ -631,7 +631,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SBD.png"
+        "value": "BC/SBD_1.jpg"
       }
     ],
     "attributes": [
@@ -679,7 +679,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SBT.png"
+        "value": "BC/SBT_1.jpg"
       }
     ],
     "attributes": [
@@ -727,7 +727,7 @@
     "images": [
       {
         "type": 1,
-        "value": "SBDT.png"
+        "value": "BC/SBDT_1.jpg"
       }
     ],
     "attributes": [
@@ -784,7 +784,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BCB_1.png"
+        "value": "BC/BCB_1.jpg"
       }
     ],
     "attributes": [
@@ -832,7 +832,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BCBL_1.png"
+        "value": "BC/BCBL_1.jpg"
       }
     ],
     "attributes": [
@@ -880,7 +880,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BCA_1.png"
+        "value": "BC/BCA_1.jpg"
       }
     ],
     "attributes": [
@@ -928,7 +928,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BCAL_1.png"
+        "value": "BC/BCAL_1.jpg"
       }
     ],
     "attributes": [
@@ -976,7 +976,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC_1.png"
+        "value": "BC/BC_1.jpg"
       }
     ],
     "attributes": [
@@ -1024,7 +1024,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BCL_1.png"
+        "value": "BC/BCL_1.jpg"
       }
     ],
     "attributes": [
@@ -1072,7 +1072,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CTB_1.png"
+        "value": "BC/CTB_1.jpg"
       }
     ],
     "attributes": [
@@ -1119,7 +1119,7 @@
     "images": [
       {
         "type": 1,
-        "value": "COB_1.png"
+        "value": "BC/COB_1.jpg"
       }
     ],
     "attributes": [
@@ -1164,7 +1164,7 @@
     "images": [
       {
         "type": 1,
-        "value": "MB_1.png"
+        "value": "BC/MB_1.jpg"
       }
     ],
     "attributes": [
@@ -1211,7 +1211,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B1D_1.png"
+        "value": "BC/B1D_1.jpg"
       }
     ],
     "attributes": [
@@ -1241,7 +1241,7 @@
     "images": [
       {
         "type": 1,
-        "value": "B1KD_1.png"
+        "value": "BC/B1KD_1.jpg"
       }
     ],
     "attributes": [
@@ -1271,7 +1271,7 @@
     "images": [
       {
         "type": 1,
-        "value": "DDC_1.png"
+        "value": "BC/DDC_1.jpg"
       }
     ],
     "attributes": [
@@ -1298,7 +1298,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BEAC_1.png"
+        "value": "BC/BEAC_1.jpg"
       }
     ],
     "attributes": [
@@ -1347,19 +1347,19 @@
     "images": [
       {
         "type": 1,
-        "value": "W_1.png"
+        "value": "WC/W_1.jpg"
       },
       {
         "type": 2,
-        "value": "W_2.png"
+        "value": "WC/W_2.jpg"
       },
       {
         "type": 3,
-        "value": "W_1.png"
+        "value": "WC/W_1.jpg"
       },
       {
         "type": 4,
-        "value": "W_2.png"
+        "value": "WC/W_2.jpg"
       }
     ],
     "attributes": [
@@ -1430,11 +1430,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WDA_1.png"
+        "value": "WC/WDA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WDA_1.png"
+        "value": "WC/WDA_1.jpg"
       }
     ],
     "attributes": [
@@ -1491,7 +1491,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WA_1.png"
+        "value": "WC/WA_1.jpg"
       }
     ],
     "attributes": [
@@ -1530,11 +1530,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WBL_1.png"
+        "value": "WC/WBL_1.jpg"
       },
       {
         "type": 2,
-        "value": "WBL_1.png"
+        "value": "WC/WBL_1.jpg"
       }
     ],
     "attributes": [
@@ -1594,11 +1594,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WBA_1.png"
+        "value": "WC/WBA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WBA_1.png"
+        "value": "WC/WBA_1.jpg"
       }
     ],
     "attributes": [
@@ -1659,11 +1659,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WB_1.png"
+        "value": "WC/WB_1.jpg"
       },
       {
         "type": 2,
-        "value": "WB_1.png"
+        "value": "WC/WB_1.jpg"
       }
     ],
     "attributes": [
@@ -1724,11 +1724,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WRF_1.png"
+        "value": "WC/WRF_1.jpg"
       },
       {
         "type": 2,
-        "value": "WRF_1.png"
+        "value": "WC/WRF_1.jpg"
       }
     ],
     "attributes": [
@@ -1789,11 +1789,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WRFA_1.png"
+        "value": "WC/WRFA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WRFA_1.png"
+        "value": "WC/WRFA_1.jpg"
       }
     ],
     "attributes": [
@@ -1855,11 +1855,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC_1.png"
+        "value": "WC/WC_1.jpg"
       },
       {
         "type": 2,
-        "value": "WC_1.png"
+        "value": "WC/WC_1.jpg"
       }
     ],
     "attributes": [
@@ -1918,11 +1918,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WCA_1.png"
+        "value": "WC/WCA_1.jpg"
       },
       {
         "type": 2,
-        "value": "WCA_1.png"
+        "value": "WC/WCA_1.jpg"
       }
     ],
     "attributes": [
@@ -1980,11 +1980,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WCB_1.png"
+        "value": "WC/WCB_1.jpg"
       },
       {
         "type": 2,
-        "value": "WCB_1.png"
+        "value": "WC/WCB_1.jpg"
       }
     ],
     "attributes": [
@@ -2047,19 +2047,19 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "TC/PC_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_2.png"
+        "value": "TC/PC_2.jpg"
       },
       {
         "type": 3,
-        "value": "PC_1.png"
+        "value": "TC/PC_1.jpg"
       },
       {
         "type": 4,
-        "value": "PC_2.png"
+        "value": "TC/PC_2.jpg"
       }
     ],
     "attributes": [
@@ -2130,19 +2130,19 @@
     "images": [
       {
         "type": 1,
-        "value": "PC2D_1.png"
+        "value": "TC/PC2D_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC2D_2.png"
+        "value": "TC/PC2D_2.jpg"
       },
       {
         "type": 3,
-        "value": "PC2D_1.png"
+        "value": "TC/PC2D_1.jpg"
       },
       {
         "type": 4,
-        "value": "PC2D_2.png"
+        "value": "TC/PC2D_2.jpg"
       }
     ],
     "attributes": [
@@ -2226,19 +2226,19 @@
     "images": [
       {
         "type": 1,
-        "value": "PC3D_1.png"
+        "value": "TC/PC3D_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC3D_2.png"
+        "value": "TC/PC3D_2.jpg"
       },
       {
         "type": 3,
-        "value": "PC3D_1.png"
+        "value": "TC/PC3D_1.jpg"
       },
       {
         "type": 4,
-        "value": "PC3D_2.png"
+        "value": "TC/PC3D_2.jpg"
       }
     ],
     "attributes": [
@@ -2322,19 +2322,19 @@
     "images": [
       {
         "type": 1,
-        "value": "PC4D_1.png"
+        "value": "TC/PC4D_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC4D_2.png"
+        "value": "TC/PC4D_2.jpg"
       },
       {
         "type": 3,
-        "value": "PC4D_1.png"
+        "value": "TC/PC4D_1.jpg"
       },
       {
         "type": 4,
-        "value": "PC4D_2.png"
+        "value": "TC/PC4D_2.jpg"
       }
     ],
     "attributes": [
@@ -2426,11 +2426,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TBC_1.png"
+        "value": "TC/TBC_1.jpg"
       },
       {
         "type": 2,
-        "value": "TBC_1.png"
+        "value": "TC/TBC_1.jpg"
       }
     ],
     "attributes": [
@@ -2488,11 +2488,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TBCL_1.png"
+        "value": "TC/TBCL_1.jpg"
       },
       {
         "type": 2,
-        "value": "TBCL_1.png"
+        "value": "TC/TBCL_1.jpg"
       }
     ],
     "attributes": [
@@ -2555,11 +2555,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TDO_1.png"
+        "value": "TC/TDO_1.jpg"
       },
       {
         "type": 2,
-        "value": "TDO_1.png"
+        "value": "TC/TDO_1.jpg"
       }
     ],
     "attributes": [
@@ -2622,11 +2622,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TSO_1.png"
+        "value": "TC/TSO_1.jpg"
       },
       {
         "type": 2,
-        "value": "TSO_1.png"
+        "value": "TC/TSO_1.jpg"
       }
     ],
     "attributes": [
@@ -2688,11 +2688,11 @@
     "images": [
       {
         "type": 1,
-        "value": "T_1.png"
+        "value": "TC/T_1.jpg"
       },
       {
         "type": 2,
-        "value": "T_2.png"
+        "value": "TC/T_2.jpg"
       }
     ],
     "attributes": [
@@ -2754,11 +2754,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TD_1.png"
+        "value": "TC/TD_1.jpg"
       },
       {
         "type": 2,
-        "value": "TD_2.png"
+        "value": "TC/TD_2.jpg"
       }
     ],
     "attributes": [

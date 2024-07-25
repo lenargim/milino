@@ -3,7 +3,7 @@ import s from './cabinets.module.sass'
 import {NavLink} from "react-router-dom";
 import {
     getAttributes, getcustomParts,
-    getImg,
+    getImg, getImgSize,
     getProductImage,
     getProductsByCategory
 } from "../../helpers/helpers";
@@ -41,15 +41,15 @@ export default List;
 
 
 const Item: FC<{ product: productDataType }> = ({product}) => {
-    const {name, attributes, images, id, category, room} = product;
+    const {name, attributes, images, id, category} = product;
     const initialType: productTypings = 1;
     const img = getProductImage(images, initialType);
+    const imgSize = getImgSize(category);
 
-    // const link:string = room !== 'Standart Door' ? `/product/${category}/${id}` : `/standart-product/${category}/${id}`
     return (
         <NavLink to={`/product/${category}/${id}`} className={s.item}
         >
-            <div className={s.itemImg}><img src={getImg('products', img)} alt={name}/></div>
+            <div className={[s.itemImg, s[imgSize]].join(' ')}><img src={getImg('products', img)} alt={name}/></div>
             <div className={s.itemData}>
                 <div className={s.name}>{name}</div>
                 <AtrrsList attributes={attributes} type={initialType}/>

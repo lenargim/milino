@@ -10,11 +10,11 @@
     "images": [
       {
         "type": 1,
-        "value": "VPBS_1.png"
+        "value": "VC/VPBS_1.jpg"
       },
       {
         "type": 2,
-        "value": "VPBS_2.png"
+        "value": "VC/VPBS_2.jpg"
       }
     ],
     "attributes": [
@@ -61,7 +61,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPSB_1.png"
+        "value": "VC/VPSB_1.jpg"
       }
     ],
     "attributes": [
@@ -110,7 +110,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VSBD_1.png"
+        "value": "VC/VSBD_1.jpg"
       }
     ],
     "attributes": [
@@ -159,7 +159,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPSB2D_1.png"
+        "value": "VC/VPSB2D_1.jpg"
       }
     ],
     "attributes": [
@@ -189,7 +189,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPB2D_1.png"
+        "value": "VC/VPB2D_1.jpg"
       }
     ],
     "attributes": [
@@ -219,7 +219,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPB3D_1.png"
+        "value": "VC/VPB3D_1.jpg"
       }
     ],
     "attributes": [
@@ -260,11 +260,11 @@
     "images": [
       {
         "type": 1,
-        "value": "VPF_1.png"
+        "value": "VC/VPF_1.jpg"
       },
       {
         "type": 2,
-        "value": "VPF_2.png"
+        "value": "VC/VPF_2.jpg"
       }
     ],
     "attributes": [
@@ -312,7 +312,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPSF_1.png"
+        "value": "VC/VPSF_1.jpg"
       }
     ],
     "attributes": [
@@ -353,7 +353,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPSFD_1.png"
+        "value": "VC/VPSFD_1.jpg"
       }
     ],
     "attributes": [
@@ -394,7 +394,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPSF2D_1.png"
+        "value": "VC/VPSF2D_1.jpg"
       }
     ],
     "attributes": [
@@ -425,7 +425,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPF2DI_1.png"
+        "value": "VC/VPF2DI_1.jpg"
       }
     ],
     "attributes": [
@@ -465,7 +465,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPF2D_1.png"
+        "value": "VC/VPF2D_1.jpg"
       }
     ],
     "attributes": [
@@ -496,7 +496,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPSF1D_1.png"
+        "value": "VC/VPSF1D_1.jpg"
       }
     ],
     "attributes": [
@@ -527,7 +527,7 @@
     "images": [
       {
         "type": 1,
-        "value": "VPF1D_1.png"
+        "value": "VC/VPF1D_1.jpg"
       }
     ],
     "attributes": [

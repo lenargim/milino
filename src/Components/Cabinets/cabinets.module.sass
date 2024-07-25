@@ -36,6 +36,9 @@
   margin: 40px auto
 .item
   position: relative
+  transition: all .2s ease
+  &:hover
+    transform: scale(1.08)
   input
     position: absolute
     z-index: -1
@@ -65,9 +68,15 @@
 .itemImg
   width: 100%
   max-width: 320px
-  aspect-ratio: 1/1
   overflow: hidden
+  &.s
+    aspect-ratio: 4/3
+  &.m
+    aspect-ratio: 5/4
+  &.l
+    aspect-ratio: 25/31
 
 .name
   font: 500 20px/1.2 $mainFont
+  margin-top: 1em
   margin-bottom: 0.6em

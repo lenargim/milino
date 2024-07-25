@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {OrderFormType} from "../../helpers/types";
 import s from './product.module.sass'
-import {getImg, getProductImage} from "../../helpers/helpers";
+import {getImg, getImgSize, getProductImage} from "../../helpers/helpers";
 import {AtrrsList} from "../Cabinets/List";
 import {getMaterialData, getStandartMaterialData} from "../../helpers/calculatePrice";
 import Cabinet from "./Cabinet";
@@ -16,15 +16,16 @@ const ProductMain: FC<ProductMainType> = ({product, materials}) => {
     const {room, ...data} = Object.assign({}, materials);
     if (!product) return <></>
     const dataMaterialsArr = Object.entries(data);
-    const {type, attributes, name, images} = product;
+    const {type, attributes, name, images, category} = product;
     const img = getProductImage(images, type);
+    const imgSize = getImgSize(category);
     const isStandart = 'Standart Door' === room;
 
     return (
         <div className={s.productWrap}>
             <div className={s.left}>
                 <h2>{name}</h2>
-                <div className={s.img}><img src={getImg('products', img)} alt={product.name}/></div>
+                <div className={[s.img,s[imgSize]].join(' ')}><img src={getImg('products', img)} alt={product.name}/></div>
                 <AtrrsList attributes={attributes} type={type}/>
                 <div className={s.materials}>
                     {dataMaterialsArr.map((material, index) => {
