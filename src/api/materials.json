@@ -2,25 +2,29 @@
   "rooms": [
     {
       "value": "Kitchen",
-      "img": "kitchen.jpeg"
+      "img": "kitchen.jpg"
     },
     {
       "value": "Vanity",
-      "img": "vanity.webp"
+      "img": "vanity.jpg"
     },
     {
-      "value": "Closet",
-      "img": "closet.jpeg"
+      "value": "Build In Closet",
+      "img": "build-in.jpg"
+    },
+    {
+      "value": "Leather Closet",
+      "img": "leather.jpg"
     },
     {
       "value": "Standart Door",
-      "img": "kitchen.jpeg"
+      "img": "standart door.jpg"
     }
   ],
   "doors": [
     {
       "name": "Slab",
-      "img": "",
+      "img": "slab.jpg",
       "finish": [
         {
           "name": "Luxe",
@@ -1386,33 +1390,42 @@
         },
         {
           "name": "Milino",
+          "img": "milino.jpg",
+
           "colors": [
             {
               "name": "Ash Melamine",
+              "img": "Ash-Melamine-1.jpg",
               "isGrain": true
             },
             {
               "name": "Beige Linen Melamine",
+              "img": "Beige-Linen-Melamine.jpg",
               "isGrain": false
             },
             {
               "name": "Blanco Wood Melamine",
+              "img": "Blanco-Wood-Melamine.jpg",
               "isGrain": true
             },
             {
               "name": "Grey Linen Melamine",
+              "img": "Gray-Linen-Melamine.jpg",
               "isGrain": false
             },
             {
               "name": "Grey Melamine",
+              "img": "Gray-Melamine.jpg",
               "isGrain": false
             },
             {
               "name": "Walnut Melamine",
+              "img": "Walnut-Melamine.jpg",
               "isGrain": true
             },
             {
               "name": "White Melamine",
+              "img": "White-Melamine.jpg",
               "isGrain": false
             }
           ]
@@ -1421,14 +1434,17 @@
     },
     {
       "name": "No Doors",
+      "img": "nodoors.jpg",
       "finish": [
         {
-          "name": "No Doors No Hinges"
+          "name": "No Doors No Hinges",
+          "img": "nodoors.jpg"
         }
       ]
     },
     {
       "name": "Three Piece Door",
+      "img": "threepeacedoor.jpg",
       "finish": [
         {
           "name": "Luxe",
@@ -1821,7 +1837,7 @@
     },
     {
       "name": "Finger Pull",
-      "img": "",
+      "img": "fingerpull.jpg",
       "finish": [
         {
           "name": "Luxe",
@@ -1920,9 +1936,11 @@
     },
     {
       "name": "Painted",
+      "img": "painted.jpg",
       "finish": [
         {
           "name": "Frame 3/4",
+          "img": "frame0.75.jpg",
           "colors": [
             {
               "name": "White Matte",
@@ -2208,6 +2226,7 @@
         },
         {
           "name": "Frame 1",
+          "img": "frame1.jpg",
           "colors": [
             {
               "name": "White Matte",
@@ -2493,6 +2512,7 @@
         },
         {
           "name": "Frame 1 1/2",
+          "img": "frame1.5.jpg",
           "colors": [
             {
               "name": "White Matte",
@@ -2778,6 +2798,7 @@
         },
         {
           "name": "Frame 2",
+          "img": "frame2.jpg",
           "colors": [
             {
               "name": "White Matte",
@@ -3063,6 +3084,7 @@
         },
         {
           "name": "Frame 2 1/2",
+          "img": "frame2.5.jpg",
           "colors": [
             {
               "name": "White Matte",
@@ -3350,6 +3372,7 @@
     },
     {
       "name": "Shaker",
+      "img": "shaker.jpg",
       "finish": [
         {
           "name": "Zenit",
@@ -3472,9 +3495,10 @@
     },
     {
       "name": "Micro Shaker",
+      "img": "microshaker.jpg",
       "finish": [
         {
-          "name": "Luxe 3/4",
+          "name": "Luxe",
           "colors": [
             {
               "name": "Antracita HG",
@@ -3545,7 +3569,7 @@
           "img": "luxe.jpg"
         },
         {
-          "name": "Zenit 3/4",
+          "name": "Zenit",
           "colors": [
             {
               "name": "Antracita SM",
@@ -3586,673 +3610,7 @@
           "img": "zenit.jpg"
         },
         {
-          "name": "Syncron 3/4",
-          "colors": [
-            {
-              "name": "Anniversary Oak 1",
-              "isGrain": true,
-              "img": "Anniversary Oak 1.jpg"
-            },
-            {
-              "name": "Anniversary Oak 2",
-              "isGrain": true,
-              "img": "Anniversary Oak 2.jpg"
-            },
-            {
-              "name": "Anniversary Oak 3",
-              "isGrain": true,
-              "img": "Anniversary Oak 3.jpg"
-            },
-            {
-              "name": "Antracita Solid Wood",
-              "isGrain": true,
-              "img": "Antracita Solid Wood.jpg"
-            },
-            {
-              "name": "Blanco Solid Wood",
-              "isGrain": true,
-              "img": "Blanco Solid Wood.jpg"
-            },
-            {
-              "name": "Cashmere Solid Wood",
-              "isGrain": true,
-              "img": "Cashmere Solid Wood.jpg"
-            },
-            {
-              "name": "Como Ash 1",
-              "isGrain": true,
-              "img": "Como Ash 1.jpg"
-            },
-            {
-              "name": "Como Ash 2",
-              "isGrain": true,
-              "img": "Como Ash 2.jpg"
-            },
-            {
-              "name": "Como Ash 3",
-              "isGrain": true,
-              "img": "Como Ash 3.jpg"
-            },
-            {
-              "name": "Evora 3",
-              "isGrain": true,
-              "img": "Evora 3.jpg"
-            },
-            {
-              "name": "Evora 4",
-              "isGrain": true,
-              "img": "Evora 4.jpg"
-            },
-            {
-              "name": "Frappé 1",
-              "isGrain": true,
-              "img": "Frappé 1.jpg"
-            },
-            {
-              "name": "Frappé 2",
-              "isGrain": true,
-              "img": "Frappé 2.jpg"
-            },
-            {
-              "name": "Frappé 3",
-              "isGrain": true,
-              "img": "Frappé 3.jpg"
-            },
-            {
-              "name": "Gris Plomo Solid Wood",
-              "isGrain": true,
-              "img": "Gris Plomo Solid Wood.jpg"
-            },
-            {
-              "name": "Ice 1",
-              "isGrain": true,
-              "img": "Ice 1.jpg"
-            },
-            {
-              "name": "Ice 2",
-              "isGrain": true,
-              "img": "Ice 2.jpg"
-            },
-            {
-              "name": "Ice 3",
-              "isGrain": true,
-              "img": "Ice 3.jpg"
-            },
-            {
-              "name": "Ice 4",
-              "isGrain": true,
-              "img": "Ice 4.jpg"
-            },
-            {
-              "name": "Ida 1",
-              "isGrain": true,
-              "img": "Ida 1.jpg"
-            },
-            {
-              "name": "Ida 2",
-              "isGrain": true,
-              "img": "Ida 2.jpg"
-            },
-            {
-              "name": "Ida 3",
-              "isGrain": true,
-              "img": "Ida 3.jpg"
-            },
-            {
-              "name": "Ida 4",
-              "isGrain": true,
-              "img": "Ida 4.jpg"
-            },
-            {
-              "name": "Lakeland Oak 1",
-              "isGrain": true,
-              "img": "Lakeland Oak 1.jpg"
-            },
-            {
-              "name": "Lakeland Oak 2",
-              "isGrain": true,
-              "img": "Lakeland Oak 2.jpg"
-            },
-            {
-              "name": "Lakeland Oak 3",
-              "isGrain": true,
-              "img": "Lakeland Oak 3.jpg"
-            },
-            {
-              "name": "Muratti 1",
-              "isGrain": true,
-              "img": "Muratti 1.jpg"
-            },
-            {
-              "name": "Muratti 2",
-              "isGrain": true,
-              "img": "Muratti 2.jpg"
-            },
-            {
-              "name": "Muratti 3",
-              "isGrain": true,
-              "img": "Muratti 3.jpg"
-            },
-            {
-              "name": "Muratti 4",
-              "isGrain": true,
-              "img": "Muratti 4.jpg"
-            },
-            {
-              "name": "Nocce 1",
-              "isGrain": true,
-              "img": "Nocce 1.jpg"
-            },
-            {
-              "name": "Nocce 2",
-              "isGrain": true,
-              "img": "Nocce 2.jpg"
-            },
-            {
-              "name": "Nocce 3",
-              "isGrain": true,
-              "img": "Nocce 3.jpg"
-            },
-            {
-              "name": "Olmo 2",
-              "isGrain": true,
-              "img": "Olmo 2.jpg"
-            },
-            {
-              "name": "Olmo 3",
-              "isGrain": true,
-              "img": "Olmo 3.jpg"
-            },
-            {
-              "name": "Oxid 1",
-              "isGrain": true,
-              "img": "Oxid 1.jpg"
-            },
-            {
-              "name": "Oxid 4",
-              "isGrain": true,
-              "img": "Oxid 4.jpg"
-            },
-            {
-              "name": "Rosales 1",
-              "isGrain": true,
-              "img": "Rosales 1.jpg"
-            },
-            {
-              "name": "Rosales 2",
-              "isGrain": true,
-              "img": "Rosales 2.jpg"
-            },
-            {
-              "name": "Rosales 3",
-              "isGrain": true,
-              "img": "Rosales 3.jpg"
-            },
-            {
-              "name": "Woodline 1",
-              "isGrain": true,
-              "img": "Woodline 1.jpg"
-            },
-            {
-              "name": "Woodline 3",
-              "isGrain": true,
-              "img": "Woodline 3.jpg"
-            },
-            {
-              "name": "Woodline 4",
-              "isGrain": true,
-              "img": "Woodline 4.jpg"
-            }
-          ],
-          "img": "syncron.jpg"
-        },
-        {
-          "name": "Luxe 1",
-          "colors": [
-            {
-              "name": "Antracita HG",
-              "isGrain": false,
-              "img": "Antracita.jpg"
-            },
-            {
-              "name": "Azul Indigo HG",
-              "isGrain": false,
-              "img": "Azul Indigo.jpg"
-            },
-            {
-              "name": "Blanco Polar HG",
-              "isGrain": false,
-              "img": "Blanco Polar.jpg"
-            },
-            {
-              "name": "Cashmere HG",
-              "isGrain": false,
-              "img": "Cashmere.jpg"
-            },
-            {
-              "name": "Euroline 3 HG",
-              "isGrain": true,
-              "img": "Euroline 3.jpg"
-            },
-            {
-              "name": "Gris Metallic HG",
-              "isGrain": false,
-              "img": "Gris Metallic.jpg"
-            },
-            {
-              "name": "Gris Nube HG",
-              "isGrain": false,
-              "img": "Gris Nube.jpg"
-            },
-            {
-              "name": "Gris Perla HG",
-              "isGrain": false,
-              "img": "Gris Perla.jpg"
-            },
-            {
-              "name": "Guayana HG",
-              "isGrain": true,
-              "img": "Guayana.jpg"
-            },
-            {
-              "name": "Metallo 1 HG",
-              "isGrain": true,
-              "img": "Metallo 1.jpg"
-            },
-            {
-              "name": "Metallo 4 HG",
-              "isGrain": true,
-              "img": "Metallo 4.jpg"
-            },
-            {
-              "name": "Olmo HG",
-              "isGrain": true,
-              "img": "Olmo.jpg"
-            },
-            {
-              "name": "Blanco Colonial PE",
-              "isGrain": false,
-              "img": "Blanco Colonial Pearl Effect.jpg"
-            }
-          ],
-          "img": "luxe.jpg"
-        },
-        {
-          "name": "Zenit 1",
-          "colors": [
-            {
-              "name": "Antracita SM",
-              "isGrain": false,
-              "img": "Supermatt Antracita.jpg"
-            },
-            {
-              "name": "Azul Índigo SM",
-              "isGrain": false,
-              "img": "Supermatt Azul Índigo.jpg"
-            },
-            {
-              "name": "Basalto SM",
-              "isGrain": false,
-              "img": "Supermatt Basalto.jpg"
-            },
-            {
-              "name": "Black SM",
-              "isGrain": false,
-              "img": "Supermatt Black.jpg"
-            },
-            {
-              "name": "Blanco SM",
-              "isGrain": false,
-              "img": "Supermatt Blanco.jpg"
-            },
-            {
-              "name": "Cashmere SM",
-              "isGrain": false,
-              "img": "Supermatt Cashmere.jpg"
-            },
-            {
-              "name": "Gris Nube SM",
-              "isGrain": false,
-              "img": "Supermatt Gris Nube.jpg"
-            }
-          ],
-          "img": "zenit.jpg"
-        },
-        {
-          "name": "Syncron 1",
-          "colors": [
-            {
-              "name": "Anniversary Oak 1",
-              "isGrain": true,
-              "img": "Anniversary Oak 1.jpg"
-            },
-            {
-              "name": "Anniversary Oak 2",
-              "isGrain": true,
-              "img": "Anniversary Oak 2.jpg"
-            },
-            {
-              "name": "Anniversary Oak 3",
-              "isGrain": true,
-              "img": "Anniversary Oak 3.jpg"
-            },
-            {
-              "name": "Antracita Solid Wood",
-              "isGrain": true,
-              "img": "Antracita Solid Wood.jpg"
-            },
-            {
-              "name": "Blanco Solid Wood",
-              "isGrain": true,
-              "img": "Blanco Solid Wood.jpg"
-            },
-            {
-              "name": "Cashmere Solid Wood",
-              "isGrain": true,
-              "img": "Cashmere Solid Wood.jpg"
-            },
-            {
-              "name": "Como Ash 1",
-              "isGrain": true,
-              "img": "Como Ash 1.jpg"
-            },
-            {
-              "name": "Como Ash 2",
-              "isGrain": true,
-              "img": "Como Ash 2.jpg"
-            },
-            {
-              "name": "Como Ash 3",
-              "isGrain": true,
-              "img": "Como Ash 3.jpg"
-            },
-            {
-              "name": "Evora 3",
-              "isGrain": true,
-              "img": "Evora 3.jpg"
-            },
-            {
-              "name": "Evora 4",
-              "isGrain": true,
-              "img": "Evora 4.jpg"
-            },
-            {
-              "name": "Frappé 1",
-              "isGrain": true,
-              "img": "Frappé 1.jpg"
-            },
-            {
-              "name": "Frappé 2",
-              "isGrain": true,
-              "img": "Frappé 2.jpg"
-            },
-            {
-              "name": "Frappé 3",
-              "isGrain": true,
-              "img": "Frappé 3.jpg"
-            },
-            {
-              "name": "Gris Plomo Solid Wood",
-              "isGrain": true,
-              "img": "Gris Plomo Solid Wood.jpg"
-            },
-            {
-              "name": "Ice 1",
-              "isGrain": true,
-              "img": "Ice 1.jpg"
-            },
-            {
-              "name": "Ice 2",
-              "isGrain": true,
-              "img": "Ice 2.jpg"
-            },
-            {
-              "name": "Ice 3",
-              "isGrain": true,
-              "img": "Ice 3.jpg"
-            },
-            {
-              "name": "Ice 4",
-              "isGrain": true,
-              "img": "Ice 4.jpg"
-            },
-            {
-              "name": "Ida 1",
-              "isGrain": true,
-              "img": "Ida 1.jpg"
-            },
-            {
-              "name": "Ida 2",
-              "isGrain": true,
-              "img": "Ida 2.jpg"
-            },
-            {
-              "name": "Ida 3",
-              "isGrain": true,
-              "img": "Ida 3.jpg"
-            },
-            {
-              "name": "Ida 4",
-              "isGrain": true,
-              "img": "Ida 4.jpg"
-            },
-            {
-              "name": "Lakeland Oak 1",
-              "isGrain": true,
-              "img": "Lakeland Oak 1.jpg"
-            },
-            {
-              "name": "Lakeland Oak 2",
-              "isGrain": true,
-              "img": "Lakeland Oak 2.jpg"
-            },
-            {
-              "name": "Lakeland Oak 3",
-              "isGrain": true,
-              "img": "Lakeland Oak 3.jpg"
-            },
-            {
-              "name": "Muratti 1",
-              "isGrain": true,
-              "img": "Muratti 1.jpg"
-            },
-            {
-              "name": "Muratti 2",
-              "isGrain": true,
-              "img": "Muratti 2.jpg"
-            },
-            {
-              "name": "Muratti 3",
-              "isGrain": true,
-              "img": "Muratti 3.jpg"
-            },
-            {
-              "name": "Muratti 4",
-              "isGrain": true,
-              "img": "Muratti 4.jpg"
-            },
-            {
-              "name": "Nocce 1",
-              "isGrain": true,
-              "img": "Nocce 1.jpg"
-            },
-            {
-              "name": "Nocce 2",
-              "isGrain": true,
-              "img": "Nocce 2.jpg"
-            },
-            {
-              "name": "Nocce 3",
-              "isGrain": true,
-              "img": "Nocce 3.jpg"
-            },
-            {
-              "name": "Olmo 2",
-              "isGrain": true,
-              "img": "Olmo 2.jpg"
-            },
-            {
-              "name": "Olmo 3",
-              "isGrain": true,
-              "img": "Olmo 3.jpg"
-            },
-            {
-              "name": "Oxid 1",
-              "isGrain": true,
-              "img": "Oxid 1.jpg"
-            },
-            {
-              "name": "Oxid 4",
-              "isGrain": true,
-              "img": "Oxid 4.jpg"
-            },
-            {
-              "name": "Rosales 1",
-              "isGrain": true,
-              "img": "Rosales 1.jpg"
-            },
-            {
-              "name": "Rosales 2",
-              "isGrain": true,
-              "img": "Rosales 2.jpg"
-            },
-            {
-              "name": "Rosales 3",
-              "isGrain": true,
-              "img": "Rosales 3.jpg"
-            },
-            {
-              "name": "Woodline 1",
-              "isGrain": true,
-              "img": "Woodline 1.jpg"
-            },
-            {
-              "name": "Woodline 3",
-              "isGrain": true,
-              "img": "Woodline 3.jpg"
-            },
-            {
-              "name": "Woodline 4",
-              "isGrain": true,
-              "img": "Woodline 4.jpg"
-            }
-          ],
-          "img": "syncron.jpg"
-        },
-        {
-          "name": "Luxe 1 1/4",
-          "colors": [
-            {
-              "name": "Antracita HG",
-              "isGrain": false,
-              "img": "Antracita.jpg"
-            },
-            {
-              "name": "Azul Indigo HG",
-              "isGrain": false,
-              "img": "Azul Indigo.jpg"
-            },
-            {
-              "name": "Blanco Polar HG",
-              "isGrain": false,
-              "img": "Blanco Polar.jpg"
-            },
-            {
-              "name": "Cashmere HG",
-              "isGrain": false,
-              "img": "Cashmere.jpg"
-            },
-            {
-              "name": "Euroline 3 HG",
-              "isGrain": true,
-              "img": "Euroline 3.jpg"
-            },
-            {
-              "name": "Gris Metallic HG",
-              "isGrain": false,
-              "img": "Gris Metallic.jpg"
-            },
-            {
-              "name": "Gris Nube HG",
-              "isGrain": false,
-              "img": "Gris Nube.jpg"
-            },
-            {
-              "name": "Gris Perla HG",
-              "isGrain": false,
-              "img": "Gris Perla.jpg"
-            },
-            {
-              "name": "Guayana HG",
-              "isGrain": true,
-              "img": "Guayana.jpg"
-            },
-            {
-              "name": "Metallo 1 HG",
-              "isGrain": true,
-              "img": "Metallo 1.jpg"
-            },
-            {
-              "name": "Metallo 4 HG",
-              "isGrain": true,
-              "img": "Metallo 4.jpg"
-            },
-            {
-              "name": "Olmo HG",
-              "isGrain": true,
-              "img": "Olmo.jpg"
-            },
-            {
-              "name": "Blanco Colonial PE",
-              "isGrain": false,
-              "img": "Blanco Colonial Pearl Effect.jpg"
-            }
-          ],
-          "img": "luxe.jpg"
-        },
-        {
-          "name": "Zenit 1 1/4",
-          "colors": [
-            {
-              "name": "Antracita SM",
-              "isGrain": false,
-              "img": "Supermatt Antracita.jpg"
-            },
-            {
-              "name": "Azul Índigo SM",
-              "isGrain": false,
-              "img": "Supermatt Azul Índigo.jpg"
-            },
-            {
-              "name": "Basalto SM",
-              "isGrain": false,
-              "img": "Supermatt Basalto.jpg"
-            },
-            {
-              "name": "Black SM",
-              "isGrain": false,
-              "img": "Supermatt Black.jpg"
-            },
-            {
-              "name": "Blanco SM",
-              "isGrain": false,
-              "img": "Supermatt Blanco.jpg"
-            },
-            {
-              "name": "Cashmere SM",
-              "isGrain": false,
-              "img": "Supermatt Cashmere.jpg"
-            },
-            {
-              "name": "Gris Nube SM",
-              "isGrain": false,
-              "img": "Supermatt Gris Nube.jpg"
-            }
-          ],
-          "img": "zenit.jpg"
-        },
-        {
-          "name": "Syncron 1 1/4",
+          "name": "Syncron",
           "colors": [
             {
               "name": "Anniversary Oak 1",
@@ -4472,10 +3830,12 @@
           ],
           "img": "syncron.jpg"
         }
-      ]
+      ],
+      "frame": [0.75, 1, 1.25]
     },
     {
       "name": "Slatted",
+      "img": "slatted.jpg",
       "finish": [
         {
           "name": "Luxe",
@@ -4992,6 +4352,7 @@
         },
         {
           "name": "Milino",
+          "img": "milino.jpg",
           "colors": [
             {
               "name": "Ash Melamine",
@@ -5033,39 +4394,39 @@
     },
     {
       "value": "White Plywood",
-      "img": ""
+      "img": "whiteplywood.jpg"
     },
     {
       "value": "Gray Plywood",
-      "img": ""
+      "img": "grayplywood.jpg"
     },
     {
       "value": "Gray Melamine",
-      "img": ""
+      "img": "greymelamine.jpg"
     },
     {
       "value": "Ash Melamine",
-      "img": ""
+      "img": "ashmelamine.jpg"
     },
     {
       "value": "Beige Linen Melamine",
-      "img": ""
+      "img": "Beige Linen Melamine.jpg"
     },
     {
       "value": "Blanco Wood Melamine",
-      "img": ""
+      "img": "Blanco Wood Melamine.jpg"
     },
     {
       "value": "Gray Linen Melamine",
-      "img": ""
+      "img": "Grey Linen Melamine.jpg"
     },
     {
       "value": "Walnut Melamine",
-      "img": ""
+      "img": "Walnut Melamine.jpg"
     },
     {
       "value": "White Melamine",
-      "img": ""
+      "img": "White Melamine.jpg"
     }
   ],
   "drawers": [
@@ -5077,55 +4438,94 @@
           "value": "Undermount",
           "img": "",
           "colors": [
-            "Plywood",
-            "Melamine"
+            {
+              "name": "Plywood",
+              "img": "Blum Undermount Plywood.jpg"
+            },
+            {
+              "name": "Melamine",
+              "img": "Blum Undermount Melamine.jpg"
+            }
           ]
         },
         {
           "value": "Legrabox",
           "img": "",
           "colors": [
-            "Orion Gray",
-            "Stainless Steel"
+            {
+              "name": "Orion Gray",
+              "img": "Blum Legrabox Orion Gray.jpg"
+            },
+            {
+              "name": "Stainless Steel",
+              "img": "Blum Legrabox Stainless Steel.jpg"
+            }
           ]
         },
         {
           "value": "Dovetail",
           "img": "",
           "colors": [
-            "Maple",
-            "Walnut"
+            {
+              "name": "Maple",
+              "img": "Blum Dovetail Maple.jpg"
+            },
+            {
+              "name": "Walnut",
+              "img": "Blum Dovetail Walnut.jpg"
+            }
           ]
         }
       ]
     },
     {
       "value": "Milino",
-      "img": "",
+      "img": "milino.jpg",
       "types": [
         {
           "value": "Undermount",
           "img": "",
           "colors": [
-            "Plywood",
-            "Melamine"
+            {
+              "name": "Plywood",
+              "img": "Milino Undermount Plywood.jpg"
+            },
+            {
+              "name": "Melamine",
+              "img": "Milino Undermount Melamine.jpg"
+            }
           ]
         },
         {
           "value": "Legrabox",
           "img": "",
           "colors": [
-            "LED",
-            "Gray",
-            "White"
+            {
+              "name": "LED",
+              "img": "Milino LED Legrabox.jpg"
+            },
+            {
+              "name": "Gray",
+              "img": "Milino Legrabox Gray.jpg"
+            },
+            {
+              "name": "White",
+              "img": "Milino Legrabox White.jpg"
+            }
           ]
         },
         {
           "value": "Dovetail",
           "img": "",
           "colors": [
-            "Maple",
-            "Walnut"
+            {
+              "name": "Maple",
+              "img": "Milino Dovetail Maple.jpg"
+            },
+            {
+              "name": "Walnut",
+              "img": "Milino Dovetail Walnut.jpg"
+            }
           ]
         }
       ]
@@ -5138,43 +4538,43 @@
     },
     {
       "name": "Bright White 70300",
-      "img": ""
+      "img": "Bright White 70300.jpg"
     },
     {
       "name": "White Alligator 3263",
-      "img": ""
+      "img": "White Alligator 3263.jpg"
     },
     {
       "name": "Bambino 2428",
-      "img": ""
+      "img": "Bambino 2428.jpg"
     },
     {
       "name": "Titanium 7694",
-      "img": ""
+      "img": "Titanium 7694.jpg"
     },
     {
       "name": "Monticello Med 7043",
-      "img": ""
+      "img": "Monticello Med 7043.jpg"
     },
     {
       "name": "Almond 70204",
-      "img": ""
+      "img": "Almond 70204.jpg"
     },
     {
       "name": "Silver Alligator 3266",
-      "img": ""
+      "img": "Silver Alligator 3266.jpg"
     },
     {
       "name": "Brown Croco 2702",
-      "img": ""
+      "img": "Brown Croco 2702.jpg"
     },
     {
       "name": "Rain 3316",
-      "img": ""
+      "img": "Rain 3316.jpg"
     },
     {
       "name": "Dark Graphite 7222",
-      "img": ""
+      "img": "Dark Graphite 7222.jpg"
     }
   ]
 }

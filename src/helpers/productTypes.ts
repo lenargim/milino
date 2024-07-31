@@ -1,4 +1,5 @@
 import {optionType} from "../common/SelectField";
+import {OrderFormType} from "./types";
 
 export type productTypings = 1 | 2 | 3 | 4
 export type pricesTypings = 1 | 2 | 3
@@ -70,6 +71,7 @@ export interface productType extends productDataType {
 }
 
 export type materialDataType = {
+    room: string,
     basePriceType: pricesTypings,
     baseCoef: number,
     grainCoef: number,
@@ -80,7 +82,7 @@ export type materialDataType = {
     doorType: string,
     doorFinish: string,
     drawer: drawerInterface,
-    leather: string
+    leather?: string
 }
 
 
@@ -168,29 +170,36 @@ export interface drawerInterface {
 
 export type CabinetType = {
     product: productType,
-    materialData: materialDataType,
+    materials: OrderFormType
 }
 
-export interface CabinetFormType extends CabinetType {
+export type CabinetFormType = {
+    product: productType,
     productPriceData: productDataToCalculatePriceType,
     sizeLimit: sizeLimitsType,
     priceData: pricePart[],
-    productRange: productRangeType
+    productRange: productRangeType,
+    materialData: materialDataType
 }
 
 export type StandartCabinetType = {
     product: productType,
-    materialData: {
-        boxMaterialCoefs: getBoxMaterialCoefsType,
-        drawer: drawerInterface
-    }
+    materials: OrderFormType,
 }
 
-export interface StandartCabinetFormType extends StandartCabinetType {
+export type standartMaterialDataType = {
+    boxMaterialCoef: number,
+    drawer: drawerInterface,
+    room: string
+}
+
+export type StandartCabinetFormType = {
+    product: productType,
     standartProductPriceData: standartProductDataToCalculatePriceType,
     sizeLimit: sizeLimitsType,
     baseProductPrice: pricePart[],
     productRange: productRangeType
+    materialData: standartMaterialDataType
 }
 
 export type DepthRangeType = {
@@ -211,6 +220,7 @@ export interface extraPricesType {
     drawerPrice: number,
     ledPrice: number,
     doorSquare: number,
+    frontSquare:number,
     premiumCoef: number,
     boxMaterialCoef: number,
     tablePrice?: number
@@ -225,7 +235,11 @@ export interface extraStandartPricesType {
     glassDoor: number,
     ledPrice: number,
     doorSquare: number,
-    tablePrice?: number
+    tablePrice?: number,
+    doorPrice: number,
+    drawerPrice: number,
+    boxMaterialCoef: number
+
 }
 
 export type productRangeType = {
@@ -235,13 +249,14 @@ export type productRangeType = {
 }
 
 export type productDataToCalculatePriceType = {
-    attrArr: {name: string, value: number}[],
     doorValues?: valueItemType[],
     drawersQty: number,
     shelfsQty: number
     rolloutsQty: number,
     blindArr?: number[],
     filteredOptions: string[],
+    hasLedBlock: boolean,
+    initialDepth: number
 }
 
 export type standartProductDataToCalculatePriceType = {

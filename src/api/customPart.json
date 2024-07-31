@@ -184,7 +184,7 @@
   },
   {
     "id": 903,
-    "name": "Panel, Filler",
+    "name": "Panel, Filler, Wood Toe Kick",
     "type": "custom",
     "category": "Custom Parts",
     "materials": [
@@ -267,92 +267,6 @@
     ],
     "depth": 0.75,
     "image": "Panel.jpg"
-  },
-  {
-    "id": 904,
-    "name": "Wood Toe Kick",
-    "type": "custom",
-    "category": "Custom Parts",
-    "depth": 0.75,
-    "materials": [
-      {
-        "name": "Milino",
-        "limits": {
-          "width": [2.5, 96],
-          "height": [2.5, 96]
-        }
-      },
-      {
-        "name": "Plywood",
-        "limits": {
-          "width": [2.5,96],
-          "height": [2.5, 96]
-        }
-      },
-      {
-        "name": "Luxe",
-        "limits": {
-          "width": [2.5, 108],
-          "height": [2.5, 108]
-        }
-      },
-      {
-        "name": "Zenit",
-        "limits": {
-          "width": [2.5, 108],
-          "height": [2.5, 108]
-        }
-      },
-      {"name": "Syncron",
-        "limits": {
-          "width": [2.5, 108],
-          "height": [2.5, 108]
-        }
-      },
-      {
-        "name": "OneSkin",
-        "limits": {
-          "width": [2.5, 108],
-          "height": [2.5, 108]
-        }
-      },
-      {
-        "name": "Cleaf",
-        "limits": {
-          "width": [2.5, 108],
-          "height": [2.5, 108]
-        }
-      },
-      {
-        "name": "Ultrapan PET",
-        "limits": {
-          "width": [2.5, 108],
-          "height": [2.5, 108]
-        }
-      },
-      {
-        "name": "Ultrapan Acrilic",
-        "limits": {
-          "width": [2.5, 108],
-          "height": [2.5, 108]
-        }
-      },
-      {
-        "name": "Stone",
-        "limits": {
-          "width": [2.5, 108],
-          "height": [2.5, 108]
-        }
-      },
-      {
-        "name": "Painted",
-        "limits": {
-          "width": [2.5, 120],
-          "height": [2.5, 120]
-        }
-      }
-    ],
-    "image": "panel.png"
   },
   {
     "id": 905,

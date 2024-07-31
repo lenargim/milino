@@ -5,7 +5,7 @@ export type category = {
     img: string
 }
 
-export type RoomType = 'Kitchen' | 'Vanity' | 'Closet' | 'Standart Door';
+export type RoomType = 'Kitchen' | 'Vanity' | 'Build In Closet' | 'Leather Closet' | 'Standart Door';
 
 export type roomType = {
     defaultImg: string,

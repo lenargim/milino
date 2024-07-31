@@ -4,7 +4,7 @@ import {RadioInput} from "../../common/Form";
 import {getImg} from "../../helpers/helpers";
 import leather from './../../api/materials.json'
 
-const Leather:FC<{name: string, value:string, leatherArr: {name:string, img:string}[]}> = ({name, value, leatherArr}) => {
+const Leather:FC<{name: string, value:string|undefined, leatherArr: {name:string, img:string}[]}> = ({name, value, leatherArr}) => {
     return (
         <div className={[s.orderBlock, value && s.checked].join(' ')}>
             <h2>{name}</h2>

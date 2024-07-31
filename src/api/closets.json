@@ -10,19 +10,19 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/CAS_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_2.png"
+        "value": "CC/CAS_2.jpg"
       },
       {
         "type": 3,
-        "value": "PC_1.png"
+        "value": "CC/CAS_1.jpg"
       },
       {
         "type": 4,
-        "value": "PC_2.png"
+        "value": "CC/CAS_2.jpg"
       }
     ],
     "attributes": [
@@ -95,11 +95,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/CDH_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_2.png"
+        "value": "CC/CDH_2.jpg"
       }
     ],
     "attributes": [
@@ -163,11 +163,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/CLH_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_2.png"
+        "value": "CC/CLH_2.jpg"
       }
     ],
     "attributes": [
@@ -231,11 +231,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/CRD_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_2.png"
+        "value": "CC/CRD_2.jpg"
       }
     ],
     "attributes": [
@@ -312,11 +312,11 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/CSS_1.jpg"
       },
       {
         "type": 2,
-        "value": "PC_2.png"
+        "value": "CC/CSS_2.jpg"
       }
     ],
     "attributes": [
@@ -380,7 +380,7 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/CCH_1.jpg"
       }
     ],
     "attributes": [
@@ -420,7 +420,7 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/CCL_1.jpg"
       }
     ],
     "attributes": [
@@ -460,7 +460,7 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/CCS_1.jpg"
       }
     ],
     "attributes": [
@@ -613,7 +613,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/"
+        "value": "CC/VAS_1.jpg"
       }
     ],
     "attributes": [
@@ -796,7 +796,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/"
+        "value": "CC/VLC_1.jpg"
       }
     ],
     "attributes": [
@@ -827,7 +827,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/"
+        "value": "CC/VSC_1.jpg"
       }
     ],
     "attributes": [
@@ -859,7 +859,7 @@
     "images": [
       {
         "type": 1,
-        "value": "PC_1.png"
+        "value": "CC/VDC_1.jpg"
       }
     ],
     "attributes": [

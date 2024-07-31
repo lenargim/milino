@@ -6,12 +6,14 @@ import {alignmentOptions} from "./ProductSchema";
 
 export type borderType = 'Sides' | 'Top' | 'Bottom';
 export type ledType = {
+    hasLedBlock: boolean,
     borders: string[] | [],
     alignment: 'Center' | 'From Face' | 'From Back',
     indent?: number,
     error?: string
 }
-const LedBlock: FC<ledType> = ({alignment, indent, borders, error}) => {
+const LedBlock: FC<ledType> = ({alignment, indent, borders, error, hasLedBlock}) => {
+    if (!hasLedBlock) return null;
     const borderOptions = ['Sides', 'Top', 'Bottom']
     const alignmentOpt: optionType[] = alignmentOptions.map(el => ({value: el, label: el}));
 

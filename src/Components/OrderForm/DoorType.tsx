@@ -12,7 +12,7 @@ export const DoorType: FC<{ doors: doorType[], value: string, name:string }> = (
             <div className={[s.type, value && s.checked].join(' ')} role="group">
                 {doors.map((doorTypeEl) => {
                     return (
-                        <RadioInput value={doorTypeEl.name} name={name} img={getImg('materials', doorTypeEl.img)}
+                        <RadioInput value={doorTypeEl.name} name={name} img={getImg('materials/door', doorTypeEl.img)}
                                     className={s.typeItem} key={doorTypeEl.name}/>
                     )
                 })}

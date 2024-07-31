@@ -33,6 +33,7 @@ import {RoomType} from "./categoriesTypes";
 import {colorType, doorType, finishType} from "./materialsTypes";
 import {getDoorMinMaxValuesArr, getHingeArr} from "./calculatePrice";
 import s from "../Components/Cabinets/cabinets.module.sass";
+import {OrderFormType} from "./types";
 
 export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
@@ -528,6 +529,11 @@ export const isDoorColorShown = (room:RoomType | '', doorFinishMaterial:string, 
     return (!!doorFinishMaterial && !!colorArr)
 }
 
+export const isDoorFrameWidth = (doorType:string,doorFinishMaterial:string, frameArr:number[]|undefined ):boolean => {
+    if (!frameArr) return false
+    if (doorType !== 'Micro Shaker') return false
+    return !!doorFinishMaterial
+}
 export const getDoorColorsArr = (doorFinishMaterial: string, room: RoomType|'',doors: doorType[],doorType:string): colorType[]|undefined => {
     const finishArr: finishType[] | undefined = doors.find(el => el.name === doorType)?.finish;
     if (!room) return undefined;
@@ -582,4 +588,57 @@ export const getImgSize = (category:string):'s'|'m'|'l' => {
             imgSize = 's';break;
     }
     return imgSize
+}
+
+
+export const getInitialMaterials = ():OrderFormType => {
+    const storageMaterials = localStorage.getItem('materials');
+    return storageMaterials ? JSON.parse(storageMaterials) : {
+        'room': '',
+        'Door Type': '',
+        'Door Finish Material': '',
+        'Door Frame Width': '',
+        'Door Color': '',
+        'Door Grain': '',
+        'Box Material': '',
+        'Drawer': '',
+        'Drawer Type': '',
+        'Drawer Color': '',
+        'Leather': ''
+    };
+}
+
+export const getDoorStr = (choosenMaterials:[string,string][]):string|null => {
+    const doorArr = choosenMaterials.filter(el => el[0].includes('Door'));
+    if (!doorArr.length) return null;
+    let str:string = '';
+    doorArr.forEach(([key, val]) => {
+        let part = `, ${val}`;
+        if (key === 'Door Type') part = val;
+        if (key === 'Door Frame Width') part = ` ${val}"`;
+        str += part;
+    })
+    return str;
+}
+
+export const getSingleStr = (choosenMaterials:[string,string][], single:string):string|null => {
+    const box = choosenMaterials.find(el => el[0].includes(single));
+    if (!box) return null;
+    return box[1];
+}
+
+export const getDrawerStr = (choosenMaterials:[string,string][]):string|null => {
+    const drawerArr = choosenMaterials.filter(el => el[0].includes('Drawer'));
+    if (!drawerArr.length) return null;
+    let str:string = '';
+    drawerArr.forEach(([key, val]) => {
+        let part = `, ${val}`;
+        if (key === 'Drawer') part = val;
+        str += part;
+    })
+    return str;
+}
+
+export const getSquare = (realWidth:number, realHeight:number):number => {
+    return +(realWidth*realHeight/144).toFixed(2)
 }

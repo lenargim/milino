@@ -1,19 +1,15 @@
 import React, {FC} from 'react';
 import {Form, Formik, FormikValues} from "formik";
-import settings from './../../api/settings.json'
 import {
-    ProductOptionsInput,
-    ProductRadioInput,
     ProductInputCustom,
     ProductRadioInputCustom,
     TextInput
 } from "../../common/Form";
 import s from './product.module.sass'
-import SelectField from '../../common/SelectField';
 import {
     addToCartData, checkDoors, checkHingeOpening, checkProduct,
     getInitialStandartProductValues,
-    getSelectValfromVal, isHasLedBlock,
+    isHasLedBlock,
     useAppDispatch
 } from "../../helpers/helpers";
 import {
@@ -29,9 +25,9 @@ import {
     addPTODrawerPrice,
     addPTOTrashBinsPrice,
     calculateStandartData,
-    getDoorMinMaxValuesArr,
+    getDoorMinMaxValuesArr, getDoorPrice,
     getDoorSquare,
-    getDoorWidth,
+    getDoorWidth, getDrawerPrice,
     getHingeArr,
     getInitialPrice,
     getLedPrice,
@@ -40,10 +36,19 @@ import {
 } from "../../helpers/calculatePrice";
 import LedBlock from "./LED";
 import {getStandartProductSchema} from "./ProductSchema";
-import Test from "./Test";
 import TestStandart from "./TestStandart";
+import OptionsBlock from "./OptionsBlock";
+import HingeBlock from "./HingeBlock";
+import CornerBlock from "./CornerBlock";
 
-const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standartProductPriceData, productRange, sizeLimit, baseProductPrice}) => {
+const CabinetForm: FC<StandartCabinetFormType> = ({
+                                                      product,
+                                                      standartProductPriceData,
+                                                      productRange,
+                                                      sizeLimit,
+                                                      baseProductPrice,
+    materialData
+                                                  }) => {
     const dispatch = useAppDispatch();
     const {
         id,
@@ -61,11 +66,11 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
         hasMiddleSection,
         isCornerChoose,
     } = product;
-    const {boxMaterialCoefs} = materialData
     const {
         doorValues,
-        blindArr, filteredOptions, shelfsQty, drawersQty
+        blindArr, filteredOptions, shelfsQty, drawersQty, rolloutsQty
     } = standartProductPriceData
+    const {room, drawer, boxMaterialCoef} = materialData
     const {widthRange, heightRange, depthRange} = productRange;
 
 
@@ -74,8 +79,8 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
 
     return (
         <Formik
-            initialValues={getInitialStandartProductValues(productRange, doorValues, category, depth, isBlind, blindArr, isAngle,isCornerChoose)}
-                validationSchema={getStandartProductSchema(sizeLimit, isAngle)}
+            initialValues={getInitialStandartProductValues(productRange, doorValues, category, depth, isBlind, blindArr, isAngle, isCornerChoose)}
+            validationSchema={getStandartProductSchema(sizeLimit, isAngle)}
             onSubmit={(values: FormikValues, {resetForm}) => {
                 if (price) {
                     const cartData = addToCartData(values, type, id, isBlind, images, name, hasMiddleSection, category, price)
@@ -105,15 +110,6 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                     'LED indent': ledIndent
                 } = values;
 
-                const {
-                    ['Glass']: glassSettings,
-                } = settings;
-                const {
-                    ['Profile']: profileSettings,
-                    ['Glass Type']: glassTypeSettings,
-                    ['Glass Color']: glassColorSettings,
-                } = glassSettings;
-
                 const realWidth: number = +width ?? 0;
                 const realBlindWidth: number = +blindWidth ?? 0;
                 const realHeight = +height ?? 0;
@@ -121,7 +117,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                 const realDepth: number = isAngle ? realWidth : (+depth || +customDepth || 0);
                 if (isAngle && realWidth !== depth) setFieldValue('Depth', realWidth);
 
-                const validHeightRange = getValidHeightRange(realWidth, heightRange,baseProductPrice);
+                const validHeightRange = getValidHeightRange(realWidth, heightRange, baseProductPrice);
 
                 if (!validHeightRange.includes(realHeight)) {
                     setFieldValue('Height', validHeightRange[0]);
@@ -130,12 +126,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                 const doorArr = getDoorMinMaxValuesArr(width, doorValues, widthDivider);
                 const hingeArr = getHingeArr(doorArr || [], category);
 
-                const cornerArr = settings.Corner
-
                 const doorWidth = getDoorWidth(realWidth, realBlindWidth, isBlind, isAngle)
-
-                const glassDoorColorFiltered = glassColorSettings.filter(el => el.type === doorGlassType);
-                const glassShelfColorFiltered = glassColorSettings.filter(el => el.type === shelfGlassType);
                 const doorSquare = getDoorSquare(doorWidth, doorHeight);
                 const newType = getType(realWidth, realHeight, widthDivider, doors, category, attributes);
 
@@ -146,18 +137,21 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                     glassShelf: chosenOptions.includes('Glass Shelf') ? addGlassShelfPrice(shelfsQty) : 0,
                     glassDoor: chosenOptions.includes('Glass Door') ? addGlassDoorPrice(doorSquare, doorProfile) : 0,
                     ledPrice: getLedPrice(realWidth, realHeight, ledBorders),
+                    doorPrice: getDoorPrice(doorSquare, 37.8),
+                    drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, realWidth, room),
+                    boxMaterialCoef: boxMaterialCoef,
                     doorSquare: doorSquare,
                 }
 
-                checkDoors(+doors, doorArr,hingeOpening,setFieldValue)
+                checkDoors(+doors, doorArr, hingeOpening, setFieldValue)
                 checkHingeOpening(hingeOpening, hingeArr, +doors, setFieldValue)
 
-                const initialPrice = getInitialPrice(baseProductPrice, productRange, category, 1);
+                const initialPrice = getInitialPrice(baseProductPrice, productRange, category, boxMaterialCoef);
                 if (!initialPrice) return <div>Cannot find initial price</div>
                 const tablePrice = getStandartTablePrice(realWidth, realHeight, realDepth, baseProductPrice);
-                const startPrice: number = getStandartStartPrice(realDepth, 1, sizeLimit, tablePrice);
+                const startPrice: number = getStandartStartPrice(realDepth, boxMaterialCoef, sizeLimit, tablePrice);
 
-                const calculatedStandartData = calculateStandartData(startPrice,extraPrices,realDepth, depthRange, isAngle);
+                const calculatedStandartData = calculateStandartData(startPrice, extraPrices, realDepth, depthRange, isAngle);
                 const {totalPrice, coefDepth} = calculatedStandartData
                 const totalDepthPrice = initialPrice * (coefDepth + 1);
                 extraPrices.depth = +(totalDepthPrice - initialPrice).toFixed(1);
@@ -182,8 +176,8 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                             <h3>Height</h3>
                             <div className={s.options}>
                                 {validHeightRange.map((w, index) => <ProductRadioInputCustom key={index}
-                                                                                        name={'Height'}
-                                                                                        value={w}/>)}
+                                                                                             name={'Height'}
+                                                                                             value={w}/>)}
                             </div>
                         </div>
 
@@ -200,86 +194,14 @@ const CabinetForm: FC<StandartCabinetFormType> = ({product, materialData, standa
                                 </div>
                                 : null}
                         </div>
-
-                        {hingeArr.length > 1 ?
-                            <div className={s.block}>
-                                <h3>Hinge opening</h3>
-                                <div className={s.options}>
-                                    {hingeArr.map((w, index) => <ProductRadioInput key={index}
-                                                                                   name={'Hinge opening'}
-                                                                                   value={w}/>)}
-                                </div>
-                            </div> : null}
-
-
-                        {isCornerChoose ?
-                            <div className={s.block}>
-                                <h3>Corner</h3>
-                                <div className={s.options}>
-                                    {cornerArr.map((w, index) => <ProductRadioInput key={index}
-                                                                                    name={'Corner'}
-                                                                                    value={w}/>)}
-                                </div>
-                            </div> : null}
-
-
-                        {hasLedBlock ?
-                            <LedBlock borders={ledBorders} alignment={ledAlignment} indent={ledIndent}/>
-                            : null}
-
-                        {filteredOptions.length
-                            ? <div className={s.block}>
-                                <h3>Options</h3>
-                                <div className={s.options} role="group">
-                                    {filteredOptions.map((w, index) => <ProductOptionsInput key={index} name={`Options`}
-                                                                                            value={w}/>)}
-                                </div>
-                            </div> : null
-                        }
-
-                        {chosenOptions.includes('Glass Door') &&
-                          <>
-                            <h3>Glass Door</h3>
-                            <div className={s.blockWrap}>
-                              <div className={s.block}>
-                                <SelectField name="Door Profile" val={getSelectValfromVal(doorProfile, profileSettings)}
-                                             options={profileSettings}/>
-                              </div>
-                              <div className={s.block}>
-                                <SelectField name="Door Glass Type"
-                                             val={getSelectValfromVal(doorGlassType, glassTypeSettings)}
-                                             options={glassTypeSettings}/>
-                              </div>
-                              <div className={s.block}>
-                                <SelectField name="Door Glass Color"
-                                             val={getSelectValfromVal(doorGlassColor, glassDoorColorFiltered)}
-                                             options={glassDoorColorFiltered}/>
-                              </div>
-                            </div>
-                          </>}
-
-                        {chosenOptions.includes('Glass Shelf') &&
-                          <>
-                            <h3>Glass Shelf</h3>
-                            <div className={s.blockWrap}>
-                              <div className={s.block}>
-                                <SelectField name="Shelf Profile"
-                                             val={getSelectValfromVal(shelfProfile, profileSettings)}
-                                             options={profileSettings}/>
-                              </div>
-                              <div className={s.block}>
-                                <SelectField name="Shelf Glass Type"
-                                             val={getSelectValfromVal(shelfGlassType, glassTypeSettings)}
-                                             options={glassTypeSettings}/>
-                              </div>
-                              <div className={s.block}>
-                                <SelectField name="Shelf Glass Color"
-                                             val={getSelectValfromVal(shelfGlassColor, glassShelfColorFiltered)}
-                                             options={glassShelfColorFiltered}/>
-                              </div>
-                            </div>
-                          </>}
-
+                        <HingeBlock hingeArr={hingeArr}/>
+                        <CornerBlock isCornerChoose={isCornerChoose}/>
+                        <LedBlock borders={ledBorders} alignment={ledAlignment} indent={ledIndent}
+                                  hasLedBlock={hasLedBlock}/>
+                        <OptionsBlock filteredOptions={filteredOptions} chosenOptions={chosenOptions}
+                                      doorProfile={doorProfile} doorGlassType={doorGlassType}
+                                      doorGlassColor={doorGlassColor} shelfProfile={shelfProfile}
+                                      shelfGlassType={shelfGlassType} shelfGlassColor={shelfGlassColor}/>
                         <div className={s.block}>
                             <TextInput type={"text"} label={'Note'} name="Note"/>
                         </div>

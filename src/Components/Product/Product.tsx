@@ -22,7 +22,6 @@ const Product: FC = () => {
     const materialsString = localStorage.getItem('materials');
     const materials: OrderFormType = materialsString ? JSON.parse(materialsString) : <Navigate to={{pathname: '/'}}/>;
     let products = getProductsByCategory(category as productCategory);
-
     const productById: productDataType | undefined = products.find(product => (product.id).toString() === productId);
     if (!productById || !category) return <Navigate to={{pathname: '/cabinets'}}/>;
     localStorage.setItem('category', category);

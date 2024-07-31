@@ -1,89 +1,98 @@
 {
   "Kitchen": {
-    "defaultImg": "default-cabinets.png",
+    "defaultImg": "Flatd_01.jpg",
     "categories": [
       {
         "name": "Base Cabinets",
-        "img": "base-cabinets.png"
+        "img": "Flatd_02.jpg"
       },
       {
         "name": "Wall Cabinets",
-        "img": "wall-cabinets.png"
+        "img": "Flatd_03.jpg"
       },
       {
         "name": "Tall Cabinets",
-        "img": "tall-cabinets.png"
+        "img": "Flatd_04.jpg"
       },
       {
         "name": "Gola Base Cabinets",
-        "img": "base-cabinets.png"
+        "img": "HL1-scaled.jpg"
       },
       {
         "name": "Gola Wall Cabinets",
-        "img": "wall-cabinets.png"
+        "img": "HL2-scaled.jpg"
       },
       {
         "name": "Gola Tall Cabinets",
-        "img": "tall-cabinets.png"
+        "img": "HL3-scaled.jpg"
       },
       {
         "name": "Custom Parts",
-        "img": "panels-cabinets.png"
+        "img": "Flatd_05.jpg"
       }
     ]
   },
   "Vanity": {
-    "defaultImg": "default-cabinets.png",
+    "defaultImg": "Flatd_01.jpg",
     "categories": [
       {
         "name": "Regular Vanities",
-        "img": "base-cabinets.png"
+        "img": "Flatd_02.jpg"
       },
       {
         "name": "Gola Vanities",
-        "img": "base-cabinets.png"
+        "img": "HL1-scaled.jpg"
       },
       {
         "name": "Custom Parts",
-        "img": "panels-cabinets.png"
+        "img": "Flatd_05.jpg"
       }
     ]
   },
-  "Closet": {
-    "defaultImg": "default-cabinets.png",
+  "Build In Closet": {
+    "defaultImg": "Built-in-Closet.jpg",
     "categories": [
       {
         "name": "Build In",
-        "img": "base-cabinets.png"
-      },
-      {
-        "name": "Leather",
-        "img": "base-cabinets.png"
+        "img": "Built-in-Closet.jpg"
       },
       {
         "name": "Custom Parts",
-        "img": "panels-cabinets.png"
+        "img": "Flatd_05.jpg"
+      }
+    ]
+  },
+  "Leather Closet": {
+    "defaultImg": "Leather-Closets.jpg",
+    "categories": [
+      {
+        "name": "Leather",
+        "img": "Leather-Closets.jpg"
+      },
+      {
+        "name": "Custom Parts",
+        "img": "Flatd_05.jpg"
       }
     ]
   },
   "Standart Door": {
-    "defaultImg": "default-cabinets.png",
+    "defaultImg": "Flatd_01.jpg",
     "categories": [
       {
         "name": "Standart Base Cabinets",
-        "img": "base-cabinets.png"
+        "img": "Flatd_02.jpg"
       },
       {
         "name": "Standart Wall Cabinets",
-        "img": "wall-cabinets.png"
+        "img": "Flatd_03.jpg"
       },
       {
         "name": "Standart Tall Cabinets",
-        "img": "tall-cabinets.png"
+        "img": "Flatd_04.jpg"
       },
       {
         "name": "Custom Parts",
-        "img": "panels-cabinets.png"
+        "img": "Flatd_05.jpg"
       }
     ]
   }

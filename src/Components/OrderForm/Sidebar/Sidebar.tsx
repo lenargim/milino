@@ -2,7 +2,11 @@ import React, {FC, useEffect} from 'react';
 import {OrderFormType} from "../../../helpers/types";
 import s from './sidebar.module.sass'
 import {NavLink, useLocation} from "react-router-dom";
-import {getProductsByCategory, useAppDispatch, useAppSelector} from "../../../helpers/helpers";
+import {
+    getProductsByCategory, getSquare,
+    useAppDispatch,
+    useAppSelector
+} from "../../../helpers/helpers";
 import {
     productChangeMaterialType, removeCart, setMaterials,
     updateProductPrice
@@ -19,6 +23,7 @@ import {extraPricesType, productDataType, productSizesType, sizeLimitsType} from
 import {FormikState} from "formik";
 import sizesArr from "../../../api/sizes.json";
 import SidebarCart from "./SidebarCart";
+import Materials from "../../../common/Materials";
 
 type SideBarType = {
     values: OrderFormType,
@@ -72,9 +77,9 @@ const Sidebar: FC<SideBarType> = ({values, resetForm, isValid}) => {
                         attributes,
                         options
                     }
-                    const productPriceData = getProductDataToCalculatePrice(defProduct, drawer.drawerBrand);
                     const priceData = getPriceData(id, category, materialData.basePriceType);
                     const productRange = getProductRange(priceData, category, customHeight, customDepth);
+                    const productPriceData = getProductDataToCalculatePrice(defProduct, drawer.drawerBrand, productRange);
                     const sizeLimit: sizeLimitsType | undefined = sizesArr.find(size => size.productIds.includes(id))?.limits;
                     const {
                         drawersQty,
@@ -98,15 +103,17 @@ const Sidebar: FC<SideBarType> = ({values, resetForm, isValid}) => {
                     const doorWidth = getDoorWidth(width, realBlindWidth, isBlind, isAngle)
                     const doorHeight: number = height ? height - legsHeight : 0;
                     const doorSquare = getDoorSquare(doorWidth, doorHeight)
+                    const frontSquare = getSquare(width, doorHeight);
                     const extraPrices: extraPricesType = {
                         ptoDoors: options.includes('PTO for doors') ? addPTODoorsPrice(attributes, type) : 0,
                         ptoDrawers: options.includes('PTO for drawers') ? addPTODrawerPrice(type, drawersQty) : 0,
                         ptoTrashBins: options.includes('PTO for Trash Bins') ? addPTOTrashBinsPrice() : 0,
                         glassShelf: options.includes('Glass Shelf') ? addGlassShelfPrice(shelfsQty) : 0,
                         glassDoor: options.includes('Glass Door') ? addGlassDoorPrice(doorSquare, doorProfile) : 0,
-                        pvcPrice: getPvcPrice(!isBlind ? width : width - realBlindWidth, doorHeight, isAcrylic, doorType, doorFinish),
-                        doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier, doorArr),
-                        drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, width),
+                        pvcPrice: getPvcPrice(width, realBlindWidth, doorHeight, isAcrylic, doorType, doorFinish),
+                        frontSquare:frontSquare,
+                        doorPrice: getDoorPrice(doorSquare, doorPriceMultiplier),
+                        drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, width, room),
                         ledPrice: getLedPrice(width, height, ledBorder),
                         boxMaterialCoef: options.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef,
                         premiumCoef: premiumCoef,
@@ -132,6 +139,7 @@ const Sidebar: FC<SideBarType> = ({values, resetForm, isValid}) => {
                 room: '',
                 'Door Type': '',
                 'Door Finish Material': '',
+                'Door Frame Width': '',
                 'Door Color': '',
                 'Door Grain': '',
                 'Box Material': '',
@@ -145,19 +153,11 @@ const Sidebar: FC<SideBarType> = ({values, resetForm, isValid}) => {
         dispatch(setMaterials(null))
         dispatch(removeCart())
     }
-
     return (
         <aside className={[s.sidebar, path === 'cabinets' ? s.cabinets : ''].join(' ')}>
             <div className={s.sidebarContent}>
-                <span className={s.choose}>Materials you choose:</span>
-                {Object.entries(data).filter(el => !!el[1]).map((el, index) => {
-                    return (
-                        <div key={index} className={s.chooseItem}>
-                            <span>{el[0]}:</span>
-                            <span>{el[1]}</span>
-                        </div>
-                    )
-                })}
+                <Materials data={values} />
+
                 {shouldShowSidebarCart ? <SidebarCart cart={cart}/> : null}
             </div>
             <div className={[s.sidebarBottom].join(' ')}>

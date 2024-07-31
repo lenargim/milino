@@ -11,16 +11,22 @@ export type drawer = {
     types: drawerType[]
 }
 
+export type drawerColor = {
+    name:string,
+    img:string
+}
+
 export type drawerType = {
     value: string,
     img: string,
-    colors: string[]
+    colors: drawerColor[]
 }
 
 export type doorType = {
     name: string,
     finish: finishType[]
     img?: string,
+    frame?: number[]
 }
 
 export type finishType = {

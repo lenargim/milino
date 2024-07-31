@@ -18,6 +18,11 @@ export const OrderFormSchema = Yup.object({
             is: (val:RoomType | '') => val !== 'Standart Door',
             then: schema => schema.required('Please write down finish material'),
         }),
+    'Door Frame Width': Yup.string()
+        .when('Door Type', {
+            is: 'Micro Shaker',
+            then: schema => schema.required('Please write Leather')
+        }),
     'Door Color': Yup.string()
         .when('Door Finish Material', {
             is: (val: string) => val !== 'No Doors No Hinges',
@@ -33,5 +38,8 @@ export const OrderFormSchema = Yup.object({
     'Drawer Color': Yup.string()
         .required('Please write color'),
     'Leather': Yup.string()
-        .required('Please write Leather'),
+        .when('room', {
+            is: 'Leather Closet',
+            then: schema => schema.required('Please write Leather')
+        })
 })

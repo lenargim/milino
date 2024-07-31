@@ -1,5 +1,4 @@
 import React from 'react';
-import {OrderFormType} from "../../helpers/types";
 import {Formik, Form} from "formik";
 import {OrderFormSchema} from "./OrderFormSchems";
 import Main from "./Main";
@@ -7,26 +6,12 @@ import Sidebar from "./Sidebar/Sidebar";
 import s from './OrderForm.module.sass';
 import { useNavigate } from "react-router-dom";
 import {setMaterials} from "../../store/reducers/generalSlice";
-import {useAppDispatch} from "../../helpers/helpers";
+import {getInitialMaterials, useAppDispatch} from "../../helpers/helpers";
 
 const OrderForm = () => {
     const dispatch = useAppDispatch();
     const history = useNavigate();
-    const storageMaterials = localStorage.getItem('materials');
-    const parsedMaterials = storageMaterials && JSON.parse(storageMaterials) as OrderFormType;
-    const emptyMaterials: OrderFormType = {
-        'room': '',
-        'Door Type': '',
-        'Door Finish Material': '',
-        'Door Color': '',
-        'Door Grain': '',
-        'Box Material': '',
-        'Drawer': '',
-        'Drawer Type': '',
-        'Drawer Color': '',
-        'Leather': ''
-    }
-    const initialValues: OrderFormType = parsedMaterials ? parsedMaterials : emptyMaterials;
+    const initialValues = getInitialMaterials()
 
     return (
         <Formik

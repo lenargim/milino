@@ -111,11 +111,11 @@
     "images": [
       {
         "type": 1,
-        "value": "GC/PBSG1.jpg"
+        "value": "GC/PBSG_1.jpg"
       },
       {
         "type": 2,
-        "value": "GC/PBSG1.jpg"
+        "value": "GC/PBSG_1.jpg"
       }
     ],
     "attributes": [
@@ -1198,11 +1198,7 @@
     "images": [
       {
         "type": 1,
-        "value": "GC/PPC4D_1.jpg"
-      },
-      {
-        "type": 2,
-        "value": "GC/PPC4D_2.jpg"
+        "value": "GC/PPCDV_1.jpg"
       }
     ],
     "attributes": [

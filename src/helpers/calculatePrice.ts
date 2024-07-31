@@ -10,13 +10,13 @@ import {
     productRangeType, productSizesType, productType,
     productTypings,
     profileItem,
-    sizeLimitsType, StandartCabinetType, valueItemType
+    sizeLimitsType, StandartCabinetType, standartMaterialDataType, valueItemType
 } from "./productTypes";
 import prices from './../api/prices.json';
 import pricesGola from './../api/pricesGola.json'
 import pricesCloset from './../api/pricesClosets.json'
 import settings from './../api/settings.json'
-import {getAttributes} from "./helpers";
+import {getAttributes, getInitialDepth, isHasLedBlock} from "./helpers";
 import {OrderFormType} from "./types";
 import sizes from "../api/sizes.json";
 import {productChangeMaterialType} from "../store/reducers/generalSlice";
@@ -30,7 +30,6 @@ export type coefType = {
 
 type calculatePriceType = {
     totalPrice: number,
-    addition: extraPricesType,
     coef: coefType
 }
 
@@ -186,7 +185,6 @@ export function calculatePrice(sizes: productSizesType, extraPrices: extraPrices
     const totalPrice = startPrice ? +(startPrice * coefExtra + extraPrices.ptoDoors + extraPrices.ptoDrawers + extraPrices.glassShelf + extraPrices.glassDoor + extraPrices.ptoTrashBins + extraPrices.pvcPrice + extraPrices.doorPrice + extraPrices.drawerPrice + extraPrices.ledPrice) : 0
     return {
         totalPrice: +totalPrice.toFixed(1),
-        addition: extraPrices,
         coef
     };
 }
@@ -359,27 +357,34 @@ export function getDoorMinMaxValuesArr(realWidth: number, doorValues?: valueItem
     return [...new Set<number>(filter.map(el => el.value))]
 }
 
-export function getPvcPrice(width: number, height: number, isAcrylic = false, doorType?: string, doorFinish?: string): number {
+export function getPvcPrice(width: number, blindWidth:number, height: number, isAcrylic = false, doorType?: string, doorFinish?: string): number {
     if (doorType === 'No Doors' || doorFinish === 'Milino') return 0;
-    const pvcPrice = width && height ? (width * 2 + height * 2) / 12 * 2.5 : 0
+    const sq = (width - blindWidth + height)*2/12
+    const pvcPrice = sq * 2.5;
     return +(isAcrylic ? pvcPrice * 1.1 : pvcPrice).toFixed(1)
 }
 
 
-export function getDoorPrice(doorSquare: number, doorPriceMultiplier: number, doorArr: number[] | null): number {
-    if (!doorArr) return 0;
-    return +(doorSquare * doorPriceMultiplier).toFixed(1);
+export function getDoorPrice(square: number, doorPriceMultiplier: number): number {
+    return +(square * doorPriceMultiplier).toFixed(1);
 }
 
-export function getDrawerPrice(qty: number, drawer: drawerInterface, width: number): number {
+export function getDrawerPrice(qty: number, drawer: drawerInterface, width: number, room:string): number {
+    const isStandartCabinet = room === "Standart Door";
     const {drawerBrand, drawerType, drawerColor} = drawer
     if (!qty) return 0
     let price:number = 0;
     switch (drawerBrand) {
         case 'Milino':
             switch (drawerType) {
-                case 'Undermount': price = qty*15;break;
-                case 'Legrabox': price = drawerColor === 'LED' ? qty*150:qty*15;break;
+                case 'Undermount': price = isStandartCabinet ? qty*10 : qty*15;
+                break;
+                case 'Legrabox':
+                    if (drawerColor === 'Led') {
+                        price = qty*150;break;
+                    }
+                    price = !isStandartCabinet ? qty*33 : 0;
+                    break;
                 case 'Dovetail':
                     if (drawerColor === 'Maple') price =  qty * (width * 2 + 25);
                     if (drawerColor === 'Walnut') price = qty * (width * 2 + 45);
@@ -545,11 +550,8 @@ export const getBoxMaterialCoefs = (boxMaterial: string, doorFinish: string): ge
     }
 }
 
-export const getStandartBoxMaterialCoefs = (boxMaterial: string, doorFinish: string): getBoxMaterialCoefsType => {
-    return {
-        boxMaterialCoef: boxMaterial.includes('Plywood') ? 1.1 : 1,
-        boxMaterialFinishCoef: doorFinish === 'Cleaf' || doorFinish === 'Syncron' ? 1.845 : 2.706
-    }
+export const getStandartBoxMaterialCoefs = (boxMaterial: string): number => {
+    return boxMaterial.includes('Plywood') ? 1.1 : 1
 }
 
 export const getDoorPriceMultiplier = (doorType: string, doorFinish: string): number => {
@@ -574,6 +576,7 @@ export const getProductRange = (priceData: pricePart[] | undefined, category: pr
 
 export const getMaterialData = (materials: OrderFormType): materialDataType => {
     const {
+        room,
         ['Door Type']: doorType,
         ['Door Finish Material']: doorFinish,
         ['Door Grain']: doorGrain,
@@ -588,7 +591,7 @@ export const getMaterialData = (materials: OrderFormType): materialDataType => {
     const grainCoef = doorGrain ? getGrainCoef(doorGrain) : 1;
     const premiumCoef = +(baseCoef * grainCoef).toFixed(3)
     const boxMaterialCoefs = getBoxMaterialCoefs(boxMaterial, doorFinish)
-    const doorPriceMultiplier = getDoorPriceMultiplier(doorType, doorFinish)
+    const doorPriceMultiplier = getDoorPriceMultiplier(doorType, doorFinish);
     const isAcrylic = doorFinish === 'Ultrapan Acrylic';
     const drawer: drawerInterface = {
         drawerBrand,
@@ -596,6 +599,7 @@ export const getMaterialData = (materials: OrderFormType): materialDataType => {
         drawerColor
     };
     return {
+        room,
         basePriceType,
         baseCoef,
         grainCoef,
@@ -610,32 +614,36 @@ export const getMaterialData = (materials: OrderFormType): materialDataType => {
     }
 }
 
-export const getStandartMaterialData = (materials: OrderFormType) => {
+export const getStandartMaterialData = (materials: OrderFormType):standartMaterialDataType  => {
     const {
+        room,
         ['Box Material']: boxMaterial,
         ['Drawer']: drawerBrand,
         ['Drawer Type']: drawerType,
         ['Drawer Color']: drawerColor
     } = materials;
-    const boxMaterialCoefs = getStandartBoxMaterialCoefs(boxMaterial, '')
+    const boxMaterialCoef = getStandartBoxMaterialCoefs(boxMaterial)
     const drawer: drawerInterface = {
         drawerBrand,
         drawerType,
         drawerColor
     };
     return {
-        boxMaterialCoefs,
-        drawer
+        boxMaterialCoef,
+        drawer,
+        room
     }
 }
 
-export const getProductDataToCalculatePrice = (product: productType | productChangeMaterialType, drawerBrand: string): productDataToCalculatePriceType => {
+export const getProductDataToCalculatePrice = (product: productType | productChangeMaterialType, drawerBrand: string, productRange:productRangeType): productDataToCalculatePriceType => {
     const {
         type,
         attributes,
         options,
         category,
         isBlind,
+        isAngle,
+        depth
     } = product;
 
     const attrArr = getAttributes(attributes, type);
@@ -652,19 +660,22 @@ export const getProductDataToCalculatePrice = (product: productType | productCha
     const blindArr = isBlind ? getBlindArr(category) : undefined;
     const filteredOptions = options.filter(option => (option !== 'PTO for drawers' || drawerBrand !== 'Milino'));
     const shelfsQty = getShelfsQty(attrArr);
+    const hasLedBlock = isHasLedBlock(category);
+    const initialDepth = getInitialDepth(productRange, isAngle, depth)
 
     return {
-        attrArr,
         doorValues,
         drawersQty,
         rolloutsQty,
         blindArr,
         filteredOptions,
-        shelfsQty
+        shelfsQty,
+        hasLedBlock,
+        initialDepth
     }
 }
 
-export const getStandartProductPriceData = ({product, materialData}: StandartCabinetType) => {
+export const getStandartProductPriceData = (product:productType, materialData:standartMaterialDataType) => {
     const {category, attributes, isBlind, type, options} = product;
     const {drawer: {drawerBrand}} = materialData;
     const attrArr = getAttributes(attributes, type);
@@ -747,8 +758,7 @@ export const getCustomPartPrice = (name: string, width: number, height: number, 
                 default:
                     return 0;
             }
-        case "Panel, Filler":
-        case "Wood Toe Kick":
+        case "Panel, Filler, Wood Toe Kick":
         case "Wood Gola Trims":
             const k = area > 1 ? 1 : 1.8;
             switch (doorFinish) {

@@ -2,18 +2,18 @@ import React from 'react';
 import s from './OrderForm.module.sass'
 import {RadioInput} from "../../common/Form";
 import {FC} from "react";
-import {finishType} from "../../helpers/materialsTypes";
-import {getImg} from "../../helpers/helpers";
+import {getFraction, getImg} from "../../helpers/helpers";
 
 
-export const DoorFinish: FC<{ finishArr?: finishType[], value: string, name:string}> = ({finishArr = [], value, name}) => {
+export const DoorFrameWidth: FC<{ frameWidth: number[]|undefined, value: string|undefined, name:string}> = ({frameWidth = [], value, name}) => {
+    if (!frameWidth) return null;
     return (
         <div className={[s.orderBlock, value && s.checked].join(' ')}>
             <h2>{name}</h2>
             <div className={[s.type, value && s.checked].join(' ')} role="group">
-                {finishArr.map((el, key) => <RadioInput
-                    value={el.name}
-                    img={getImg('materials/finish', el.img)}
+                {frameWidth.map((el, key) => <RadioInput
+                    value={getFraction(el)}
+                    img={getImg('materials', el.toString())}
                     name={name}
                     className={s.typeItem}
                     key={key}/>)}
