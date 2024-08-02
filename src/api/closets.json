@@ -10,19 +10,19 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/CAS_1.jpg"
+        "value": "CC/CAS.webp"
       },
       {
         "type": 2,
-        "value": "CC/CAS_2.jpg"
+        "value": "CC/CAS_2.webp"
       },
       {
         "type": 3,
-        "value": "CC/CAS_1.jpg"
+        "value": "CC/CAS.webp"
       },
       {
         "type": 4,
-        "value": "CC/CAS_2.jpg"
+        "value": "CC/CAS_2.webp"
       }
     ],
     "attributes": [
@@ -95,11 +95,11 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/CDH_1.jpg"
+        "value": "CC/CDH.webp"
       },
       {
         "type": 2,
-        "value": "CC/CDH_2.jpg"
+        "value": "CC/CDH_2.webp"
       }
     ],
     "attributes": [
@@ -163,11 +163,11 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/CLH_1.jpg"
+        "value": "CC/CLH.webp"
       },
       {
         "type": 2,
-        "value": "CC/CLH_2.jpg"
+        "value": "CC/CLH_2.webp"
       }
     ],
     "attributes": [
@@ -231,11 +231,11 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/CRD_1.jpg"
+        "value": "CC/CRD.webp"
       },
       {
         "type": 2,
-        "value": "CC/CRD_2.jpg"
+        "value": "CC/CRD_2.webp"
       }
     ],
     "attributes": [
@@ -312,11 +312,11 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/CSS_1.jpg"
+        "value": "CC/CSS.webp"
       },
       {
         "type": 2,
-        "value": "CC/CSS_2.jpg"
+        "value": "CC/CSS_2.webp"
       }
     ],
     "attributes": [
@@ -380,7 +380,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/CCH_1.jpg"
+        "value": "CC/CCH.webp"
       }
     ],
     "attributes": [
@@ -420,7 +420,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/CCL_1.jpg"
+        "value": "CC/CCL.webp"
       }
     ],
     "attributes": [
@@ -460,7 +460,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/CCS_1.jpg"
+        "value": "CC/CCS.webp"
       }
     ],
     "attributes": [
@@ -512,7 +512,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VDH_1.jpg"
+        "value": "CC/VDH.webp"
       }
     ],
     "attributes": [
@@ -542,7 +542,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VLH_1.jpg"
+        "value": "CC/VLH.webp"
       }
     ],
     "attributes": [
@@ -582,7 +582,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VSS_1.jpg"
+        "value": "CC/VSS.webp"
       }
     ],
     "attributes": [
@@ -613,7 +613,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VAS_1.jpg"
+        "value": "CC/VAS.webp"
       }
     ],
     "attributes": [
@@ -643,7 +643,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VFAS_1.jpg"
+        "value": "CC/VFAS.webp"
       }
     ],
     "attributes": [
@@ -683,7 +683,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VHS_1.jpg"
+        "value": "CC/VHS.webp"
       }
     ],
     "attributes": [
@@ -723,7 +723,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VDS_1.jpg"
+        "value": "CC/VDS.webp"
       }
     ],
     "attributes": [
@@ -764,7 +764,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VDI_1.jpg"
+        "value": "CC/VDI.webp"
       }
     ],
     "attributes": [
@@ -796,7 +796,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VLC_1.jpg"
+        "value": "CC/VLC.webp"
       }
     ],
     "attributes": [
@@ -827,7 +827,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VSC_1.jpg"
+        "value": "CC/VSC.webp"
       }
     ],
     "attributes": [
@@ -859,7 +859,7 @@
     "images": [
       {
         "type": 1,
-        "value": "CC/VDC_1.jpg"
+        "value": "CC/VDC.webp"
       }
     ],
     "attributes": [

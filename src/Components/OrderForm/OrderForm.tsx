@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Formik, Form} from "formik";
 import {OrderFormSchema} from "./OrderFormSchems";
 import Main from "./Main";
 import Sidebar from "./Sidebar/Sidebar";
 import s from './OrderForm.module.sass';
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {setMaterials} from "../../store/reducers/generalSlice";
 import {getInitialMaterials, useAppDispatch} from "../../helpers/helpers";
 
@@ -23,11 +23,13 @@ const OrderForm = () => {
                 history('/cabinets');
             })}
         >
-            {({values, isValid, isSubmitting, setFieldValue, resetForm}) => {
+            {({values, isValid, isSubmitting, setFieldValue}) => {
                 return (
-                    <Form className={s.orderForm}>
-                        <Main values={values} isSubmitting={isSubmitting} isValid={isValid} setFieldValue={setFieldValue}/>
-                        <Sidebar values={values} resetForm={resetForm} isValid={isValid}/>
+
+                    <Form className="page">
+                        <Main values={values} isSubmitting={isSubmitting} isValid={isValid}
+                              setFieldValue={setFieldValue}/>
+                        <Sidebar values={values} />
                     </Form>
                 )
             }}

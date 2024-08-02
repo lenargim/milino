@@ -10,19 +10,19 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/W_1.jpg"
+        "value": "WC/W.webp"
       },
       {
         "type": 2,
-        "value": "WC/W_2.jpg"
+        "value": "WC/W_2.webp"
       },
       {
         "type": 3,
-        "value": "WC/W_1.jpg"
+        "value": "WC/W.webp"
       },
       {
         "type": 4,
-        "value": "WC/W_2.jpg"
+        "value": "WC/W_2.webp"
       }
     ],
     "attributes": [
@@ -94,11 +94,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WDA_1.jpg"
+        "value": "WC/WDA.webp"
       },
       {
         "type": 2,
-        "value": "WC/WDA_1.jpg"
+        "value": "WC/WDA.webp"
       }
     ],
     "attributes": [
@@ -156,7 +156,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WA_1.jpg"
+        "value": "WC/WA.webp"
       }
     ],
     "attributes": [
@@ -196,7 +196,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WBL_1.jpg"
+        "value": "WC/WBL.webp"
       }
     ],
     "attributes": [
@@ -235,7 +235,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WBA_1.jpg"
+        "value": "WC/WBA.webp"
       }
     ],
     "attributes": [
@@ -275,11 +275,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WB_1.jpg"
+        "value": "WC/WB.webp"
       },
       {
         "type": 2,
-        "value": "WC/WB_1.jpg"
+        "value": "WC/WB.webp"
       }
     ],
     "attributes": [
@@ -338,11 +338,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WRF_1.jpg"
+        "value": "WC/WRF.webp"
       },
       {
         "type": 2,
-        "value": "WC/WRF_1.jpg"
+        "value": "WC/WRF.webp"
       }
     ],
     "attributes": [
@@ -405,11 +405,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WRFA_1.jpg"
+        "value": "WC/WRFA.webp"
       },
       {
         "type": 2,
-        "value": "WC/WRFA_1.jpg"
+        "value": "WC/WRFA.webp"
       }
     ],
     "attributes": [
@@ -473,11 +473,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WC_1.jpg"
+        "value": "WC/WC.webp"
       },
       {
         "type": 2,
-        "value": "WC/WC_1.jpg"
+        "value": "WC/WC.webp"
       }
     ],
     "attributes": [
@@ -537,11 +537,11 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WCA_1.jpg"
+        "value": "WC/WCA.webp"
       },
       {
         "type": 2,
-        "value": "WC/WCA_1.jpg"
+        "value": "WC/WCA.webp"
       }
     ],
     "attributes": [
@@ -600,7 +600,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WCB_1.jpg"
+        "value": "WC/WCB.webp"
       }
     ],
     "attributes": [
@@ -650,7 +650,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WDC_1.jpg"
+        "value": "WC/WDC.webp"
       }
     ],
     "attributes": [
@@ -687,7 +687,7 @@
     "images": [
       {
         "type": 1,
-        "value": "WC/WEAC_1.jpg"
+        "value": "WC/WEAC.webp"
       }
     ],
     "attributes": [

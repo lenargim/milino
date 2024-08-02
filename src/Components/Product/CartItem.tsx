@@ -3,17 +3,9 @@ import {CartItemType, deleteItemFromCart, updateProductAmount} from "../../store
 import {getFraction, getImg, useAppDispatch} from "../../helpers/helpers";
 import s from "../OrderForm/Sidebar/sidebar.module.sass";
 import {changeAmountType} from "./Cart";
-import CartItemProductExtra from "./CartItemProductExtra";
-import CartItemCustomExtra from "./CartItemCustomExtra";
-import CartItemPVCExtra from "./CartItemPVCExtra";
-import CartItemLEDExtra from "./CartItemLEDExtra";
-import CartItemDoorExtra from "./CartItemDoorExtra";
-import CartItemGlassDoorExtra from "./CartItemGlassDoorExtra";
-import CartItemShelfExtra from "./CartItemShelfExtra";
-import CartItemDoor from "./CartItemDoor";
+import CartItemOptions from "./CartItemOptions";
 
 export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item, isCheckout = false}) => {
-
     const {
         uuid,
         name,
@@ -22,14 +14,6 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
         amount,
         note,
         category,
-        productExtra,
-        customPartExtra,
-        PVCExtra,
-        LEDAccessories,
-        DoorAccessories,
-        glassDoorExtra,
-        glassShelfExtra,
-        DoorExtra
     } = item;
     const dispatch = useAppDispatch();
 
@@ -48,15 +32,7 @@ export const CartItem: FC<{ item: CartItemType, isCheckout?: boolean }> = ({item
             </div>
 
             <div className={s.itemOptions}>
-                {productExtra && <CartItemProductExtra productExtra={productExtra}/>}
-                {customPartExtra && <CartItemCustomExtra productExtra={customPartExtra}/>}
-                {glassDoorExtra && <CartItemGlassDoorExtra glassDoorExtra={glassDoorExtra}/>}
-                {PVCExtra && <CartItemPVCExtra productExtra={PVCExtra}/>}
-                {LEDAccessories && <CartItemLEDExtra productExtra={LEDAccessories}/>}
-                {DoorAccessories && <CartItemDoorExtra productExtra={DoorAccessories} />}
-                {glassShelfExtra && <CartItemShelfExtra productExtra={glassShelfExtra} />}
-                {DoorExtra && <CartItemDoor productExtra={DoorExtra?? ''} />}
-
+                <CartItemOptions item={item} />
                 {note &&
                   <div className={s.itemOption}>
                     <span>Note:</span>

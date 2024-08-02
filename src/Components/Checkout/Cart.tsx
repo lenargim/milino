@@ -12,16 +12,6 @@ const Cart: FC<{ cart: CartItemType[], cartTotal: number }> = ({cart, cartTotal}
                     <h3>Cart</h3>
                     {cart.map((el, index) => <CartItem isCheckout={true} key={index} item={el}/>)}
                 </div>
-                <div className={[s.sidebarBottom].join(' ')}>
-                    <div className={s.cartTotal}>
-                        <span>Total: </span>
-                        <span>{cartTotal}$</span>
-                    </div>
-                    <div className={s.sidebarButtons}>
-                        <NavLink to={'/'} className={['button yellow'].join(' ')}>← Change materials</NavLink>
-                        <NavLink to={'/cabinets'} className={['button yellow'].join(' ')}>← Back to cabinets</NavLink>
-                    </div>
-                </div>
             </div>
         </div>
 

@@ -10,19 +10,19 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/PC_1.jpg"
+        "value": "TC/PC.webp"
       },
       {
         "type": 2,
-        "value": "TC/PC_2.jpg"
+        "value": "TC/PC_2.webp"
       },
       {
         "type": 3,
-        "value": "TC/PC_1.jpg"
+        "value": "TC/PC.webp"
       },
       {
         "type": 4,
-        "value": "TC/PC_2.jpg"
+        "value": "TC/PC_2.webp"
       }
     ],
     "attributes": [
@@ -94,11 +94,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/PC2D_1.jpg"
+        "value": "TC/PC2D.webp"
       },
       {
         "type": 2,
-        "value": "TC/PC2D_2.jpg"
+        "value": "TC/PC2D_2.webp"
       }
     ],
     "attributes": [
@@ -161,11 +161,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/PC3D_1.jpg"
+        "value": "TC/PC3D.webp"
       },
       {
         "type": 2,
-        "value": "TC/PC3D_2.jpg"
+        "value": "TC/PC3D_2.webp"
       }
     ],
     "attributes": [
@@ -228,11 +228,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/PC4D_1.jpg"
+        "value": "TC/PC4D.webp"
       },
       {
         "type": 2,
-        "value": "TC/PC4D_2.jpg"
+        "value": "TC/PC4D_2.webp"
       }
     ],
     "attributes": [
@@ -295,7 +295,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/TBC_1.jpg"
+        "value": "TC/TBC.webp"
       }
     ],
     "attributes": [
@@ -344,7 +344,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/TBCL_1.jpg"
+        "value": "TC/TBCL.webp"
       }
     ],
     "attributes": [
@@ -394,7 +394,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/TDO_1.jpg"
+        "value": "TC/TDO.webp"
       }
     ],
     "attributes": [
@@ -444,7 +444,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/TSO_1.jpg"
+        "value": "TC/TSO.webp"
       }
     ],
     "attributes": [
@@ -493,11 +493,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/T_1.jpg"
+        "value": "TC/T.webp"
       },
       {
         "type": 2,
-        "value": "TC/T_2.jpg"
+        "value": "TC/T_2.webp"
       }
     ],
     "attributes": [
@@ -560,11 +560,11 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/TD_1.jpg"
+        "value": "TC/TD.webp"
       },
       {
         "type": 2,
-        "value": "TC/TD_2.jpg"
+        "value": "TC/TD_2.webp"
       }
     ],
     "attributes": [
@@ -640,7 +640,7 @@
     "images": [
       {
         "type": 1,
-        "value": "TC/PCSP_1.jpg"
+        "value": "TC/PCSP.webp"
       }
     ],
     "attributes": [

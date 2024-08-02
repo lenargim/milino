@@ -1,8 +1,7 @@
 @use 'src/styles/variables' as *
 
+
 .form
-  max-width: 800px
-  margin: 50px auto
   position: relative
   h1
     margin-bottom: .9em
@@ -13,6 +12,8 @@
   display: grid
   grid-template-columns: 1fr
   gap: 15px
+  max-width: 600px
+  margin: 50px auto 30px
 
 .notification
   position: absolute
@@ -31,3 +32,78 @@
   padding: 30px 0
   a
     max-width: 300px
+
+.cart
+  max-width: 90%
+  margin: 0 auto
+.cartTitle
+  text-align: center
+  font-size: 2em
+  margin-bottom: 0.6em
+
+.table
+  display: grid
+  grid-template-columns: 1fr
+  border: 1px solid #000
+  border-radius: 3px
+.cartItem, .header
+  display: grid
+  grid-template-columns: 1fr 4fr 1fr 1fr 1fr
+  gap: 20px
+  padding: 3px
+  &:not(:last-child)
+    border-bottom: 1px solid #000
+
+.header
+  font-size: 12px
+
+.itemPrice, .sum
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  font: 600 18px/1.2 $mainFont
+
+.total
+  text-align: right
+  font: 500 20px/1.2 $mainFont
+  padding-top: .5em
+.img
+  display: block
+
+.itemName
+  font: 500 19px/1.2 $mainFont
+  padding-bottom: 0.6em
+
+.category
+  font-size: 12.5px
+  font-style: italic
+
+.note
+  padding-top: 0.6em
+  font-size: 13px
+  font-style: italic
+
+.buttons
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 10px
+  span
+    font: 400 16px/1.2 $mainFont
+  button
+    border-radius: 3px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 22px
+    color: #fff
+    width: 25px
+    height: 25px
+    line-height: 1
+    &:disabled
+      opacity: 0.6
+    &[value="minus"]
+      background-color: $red
+    &[value="plus"]
+      background-color: $green
+

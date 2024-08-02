@@ -10,11 +10,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BS_1.jpg"
+        "value": "BC/BS.webp"
       },
       {
         "type": 2,
-        "value": "BC/BS_2.jpg"
+        "value": "BC/BS.webp"
       }
     ],
     "attributes": [
@@ -61,11 +61,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BD_1.jpg"
+        "value": "BC/BD.webp"
       },
       {
         "type": 2,
-        "value": "BC/BD_2.jpg"
+        "value": "BC/BD.webp"
       }
     ],
     "attributes": [
@@ -111,11 +111,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B_1.jpg"
+        "value": "BC/B.webp"
       },
       {
         "type": 2,
-        "value": "BC/B_2.jpg"
+        "value": "BC/B.webp"
       }
     ],
     "attributes": [
@@ -172,11 +172,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BID_1.jpg"
+        "value": "BC/BID.webp"
       },
       {
         "type": 2,
-        "value": "BC/BID_2.jpg"
+        "value": "BC/BID.webp"
       }
     ],
     "attributes": [
@@ -232,11 +232,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BSG_1.jpg"
+        "value": "BC/BSG.webp"
       },
       {
         "type": 2,
-        "value": "BC/BSG_1.jpg"
+        "value": "BC/BSG.webp"
       }
     ],
     "attributes": [
@@ -281,11 +281,11 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BG_1.jpg"
+        "value": "BC/BG.webp"
       },
       {
         "type": 2,
-        "value": "BC/BG_1.jpg"
+        "value": "BC/BG.webp"
       }
     ],
     "attributes": [
@@ -340,7 +340,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BSP_1.jpg"
+        "value": "BC/BSP.webp"
       }
     ],
     "attributes": [
@@ -380,7 +380,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BD2_1.jpg"
+        "value": "BC/BD2.webp"
       }
     ],
     "attributes": [
@@ -430,7 +430,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B2DE_1.jpg"
+        "value": "BC/B2DE.webp"
       }
     ],
     "attributes": [
@@ -460,7 +460,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B3DI_1.jpg"
+        "value": "BC/B3DI.webp"
       }
     ],
     "attributes": [
@@ -499,7 +499,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B3D_1.jpg"
+        "value": "BC/B3D.webp"
       }
     ],
     "attributes": [
@@ -538,7 +538,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B3DE_1.jpg"
+        "value": "BC/B3DE.webp"
       }
     ],
     "attributes": [
@@ -577,7 +577,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B3ED_1.jpg"
+        "value": "BC/B3ED.webp"
       }
     ],
     "attributes": [
@@ -607,7 +607,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B4D_1.jpg"
+        "value": "BC/B4D.webp"
       }
     ],
     "attributes": [
@@ -646,7 +646,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B4DE_1.jpg"
+        "value": "BC/B4DE.webp"
       }
     ],
     "attributes": [
@@ -676,7 +676,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/SB2D_1.jpg"
+        "value": "BC/SB2D.webp"
       }
     ],
     "attributes": [
@@ -706,7 +706,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/SB_1.jpg"
+        "value": "BC/SB.webp"
       }
     ],
     "attributes": [
@@ -746,7 +746,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/SBD_1.jpg"
+        "value": "BC/SBD.webp"
       }
     ],
     "attributes": [
@@ -795,7 +795,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/SBT_1.jpg"
+        "value": "BC/SBT.webp"
       }
     ],
     "attributes": [
@@ -844,7 +844,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/SBDT_1.jpg"
+        "value": "BC/SBDT.webp"
       }
     ],
     "attributes": [
@@ -902,7 +902,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BCB_1.jpg"
+        "value": "BC/BCB.webp"
       }
     ],
     "attributes": [
@@ -951,7 +951,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BCBL_1.jpg"
+        "value": "BC/BCBL.webp"
       }
     ],
     "attributes": [
@@ -1000,7 +1000,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BCA_1.jpg"
+        "value": "BC/BCA.webp"
       }
     ],
     "attributes": [
@@ -1049,7 +1049,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BCAL_1.jpg"
+        "value": "BC/BCAL.webp"
       }
     ],
     "attributes": [
@@ -1098,7 +1098,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BC_1.jpg"
+        "value": "BC/BC.webp"
       }
     ],
     "attributes": [
@@ -1147,7 +1147,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BCL_1.jpg"
+        "value": "BC/BCL.webp"
       }
     ],
     "attributes": [
@@ -1196,7 +1196,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/CTB_1.jpg"
+        "value": "BC/CTB.webp"
       }
     ],
     "attributes": [
@@ -1244,7 +1244,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/COB_1.jpg"
+        "value": "BC/COB.webp"
       }
     ],
     "attributes": [
@@ -1291,7 +1291,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/MB_1.jpg"
+        "value": "BC/MB.webp"
       }
     ],
     "attributes": [
@@ -1340,7 +1340,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/B1KD_1.jpg"
+        "value": "BC/B1KD.webp"
       }
     ],
     "attributes": [
@@ -1371,7 +1371,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/DDC_1.jpg"
+        "value": "BC/DDC.webp"
       }
     ],
     "attributes": [
@@ -1401,7 +1401,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BW_1.jpg"
+        "value": "BC/BW.webp"
       }
     ],
     "attributes": [
@@ -1430,7 +1430,7 @@
     "images": [
       {
         "type": 1,
-        "value": "BC/BEAC_1.jpg"
+        "value": "BC/BEAC.webp"
       }
     ],
     "attributes": [

@@ -582,8 +582,6 @@ export const getImgSize = (category:string):'s'|'m'|'l' => {
         case "Gola Tall Cabinets":
         case "Standart Tall Cabinets":
             imgSize = 'm';break;
-        case "Leather":
-            imgSize = 'l';break;
         default:
             imgSize = 's';break;
     }

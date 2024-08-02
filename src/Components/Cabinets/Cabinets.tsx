@@ -1,5 +1,4 @@
 import React, {FC, useEffect} from 'react';
-import s from './cabinets.module.sass'
 import CabinetsMain from "./CabinetsMain";
 import {useAppDispatch} from "../../helpers/helpers";
 import {setProduct} from "../../store/reducers/generalSlice";
@@ -15,9 +14,9 @@ const Cabinets: FC = () => {
     if (!materialsString) return <Navigate to={{pathname: '/'}}/>;
     const materials = JSON.parse(materialsString)
     return (
-        <div className={s.cabinets}>
+        <div className="page">
             <CabinetsMain values={materials}/>
-            <Sidebar values={materials} isValid={true} />
+            <Sidebar values={materials} />
         </div>
     );
 };

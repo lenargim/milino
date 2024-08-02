@@ -1,19 +1,26 @@
 import React from 'react';
 import {useAppSelector} from "../../helpers/helpers";
-import s from './checkout.module.sass'
-import CheckoutFilled from "./CheckoutFilled";
 import CartEmpty from "./CartEmpty";
+import Header from "../../common/Header/Header";
+import Sidebar from "../OrderForm/Sidebar/Sidebar";
+import {Navigate} from "react-router-dom";
+import CheckoutForm from "./CheckoutForm";
 
 const Checkout = () => {
     const cart = useAppSelector(state => state.general.cart);
-    const cartTotal = useAppSelector(state => state.general.cartTotal);
     const isCart = cart.length;
+    const materialsString = localStorage.getItem('materials');
+    if (!materialsString) return <Navigate to={{pathname: '/'}}/>;
+    const materials = JSON.parse(materialsString)
     return (
-        <div className={s.checkout}>
-            {isCart
-                ? <CheckoutFilled cart={cart} cartTotal={cartTotal}/>
-                : <CartEmpty />
-            }
+        <div className="page">
+            <div className="main">
+                <div className="container">
+                    <Header/>
+                    {isCart ? <CheckoutForm cart={cart}/> : <CartEmpty/>}
+                </div>
+            </div>
+            <Sidebar values={materials}/>
         </div>
     );
 };

@@ -4,47 +4,18 @@
   position: relative
   h2
     margin-bottom: 2em
-  &.cabinets
-    .sidebarContent
-      height: calc(100vh - 200px)
-    .sidebarBottom
-      height: 200px
-  &.product
-    .sidebarContent
-      height: calc(100vh - 300px)
-    .sidebarBottom
-      height: 300px
-  &.checkout
-    .sidebarContent
-      height: calc(100vh - 200px)
-      .sidebarBottom
-        height: 200px
+
 .sidebarContent
   padding: 30px 15px
-  height: calc(100vh - 200px)
+  height: 100vh
   overflow-y: auto
   display: flex
   flex-direction: column
   gap: 8px
 
-.sidebarBottom
-  position: absolute
-  left: 0
-  right: 0
-  bottom: 0
-  height: 200px
-  padding: 20px 15px
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
-  border-top: 3px solid $accent
-
-.sidebarButtons
-  margin-top: auto
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
-  gap: 10px
+.materials
+  position: relative
+  margin-bottom: 1em
 
 .buttons
   display: flex
@@ -71,7 +42,7 @@
 .cartList
   display: flex
   flex-direction: column
-  gap: 8px
+  gap: 5px
 
 .cartTotal
   font: 400 18px/1.2 $mainFont
@@ -90,6 +61,9 @@
   flex-direction: column
   align-items: flex-start
   gap: 5px
+  &:not(:last-child)
+    padding-bottom: 5px
+    border-bottom: 2px solid $accent
 
 .cartItemTotal
   font: 500 17px/1.2 $mainFont
@@ -148,10 +122,10 @@
   margin-bottom: 1.8em
 
 .choose
-  display: inline-block
   font: 500 18px/1.2 $mainFont
 
 .chooseItem
+  display: inline-block
   span:first-child
     display: inline-block
     margin-right: .2em

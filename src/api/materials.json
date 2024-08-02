@@ -144,7 +144,7 @@
             {
               "name": "Porcelain 1 HG",
               "isGrain": false,
-              "img": "Porcelain 1.jpeg"
+              "img": "Porcelain 1.jpg"
             },
             {
               "name": "Roble Frappe HG",
@@ -1562,7 +1562,7 @@
             {
               "name": "Porcelain 1 HG",
               "isGrain": false,
-              "img": "Porcelain 1.jpeg"
+              "img": "Porcelain 1.jpg"
             },
             {
               "name": "Roble Frappe HG",
@@ -3953,7 +3953,7 @@
             {
               "name": "Porcelain 1 HG",
               "isGrain": false,
-              "img": "Porcelain 1.jpeg"
+              "img": "Porcelain 1.jpg"
             },
             {
               "name": "Roble Frappe HG",
@@ -4390,7 +4390,7 @@
   "boxMaterial": [
     {
       "value": "Natural Plywood",
-      "img": "naturalPlywood.jpeg"
+      "img": "naturalPlywood.jpg"
     },
     {
       "value": "White Plywood",

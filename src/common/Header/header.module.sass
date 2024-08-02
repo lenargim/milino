@@ -3,8 +3,42 @@
 .header
   display: flex
   align-items: center
-  justify-content: flex-start
+  justify-content: space-between
   gap: 20px
   font: 500 16px/1.2 $mainFont
   padding: 20px 0
+  height: 70px
   margin-bottom: 20px
+
+.cart
+  position: relative
+  span
+    position: absolute
+    right: -10px
+    bottom: 0
+    width: 17px
+    height: 17px
+    background: $accentLight
+    color: #000
+    font: 500 12px/17px $mainFont
+    text-align: center
+    border-radius: 50%
+  svg
+    width: 35px
+    height: 35px
+
+
+.left
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 10px
+.right
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  gap: 10px
+
+.logo
+  img
+    max-height: 50px

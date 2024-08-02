@@ -15,7 +15,7 @@ const CabinetsMain: FC<CabinetsMainType> = ({values}) => {
     if (!room) return <Navigate to={{pathname: '/'}}/>;
 
     return (
-        <div className={s.container}>
+        <div className="container">
             <Header/>
             <h1>{room}</h1>
             <Room room={room}  />

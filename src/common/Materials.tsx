@@ -10,9 +10,10 @@ const Materials:FC<{data: OrderFormType}> = ({data}) => {
     const boxMaterialStr = getSingleStr(choosenMaterials, 'Box Material')
     const drawerStr = getDrawerStr(choosenMaterials);
     const leatherStr = getSingleStr(choosenMaterials, 'Leather')
+
     return (
-        <>
-            <span className={s.choose}>Materials you choose:</span>
+        <div className={s.materials}>
+            <h4 className={s.choose}>Materials you choose:</h4>
             {roomStr ? <span className={s.chooseItem}>
                      <span>{roomStr}</span>
                 </span> : null}
@@ -28,7 +29,7 @@ const Materials:FC<{data: OrderFormType}> = ({data}) => {
             {leatherStr ? <span className={s.chooseItem}>
                     <span>Leather:</span><span>{leatherStr}</span>
                 </span> : null}
-        </>
+        </div>
     );
 };
 
