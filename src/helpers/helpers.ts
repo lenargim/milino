@@ -10,7 +10,7 @@ import {
     productTypings, valueItemType
 } from "./productTypes";
 import {optionType, optionTypeDoor} from "../common/SelectField";
-import {CartItemType, productExtraType, updateProduct} from "../store/reducers/generalSlice";
+import {addToCart, CartItemType, fillCart, productExtraType, updateProduct} from "../store/reducers/generalSlice";
 import baseCabinetProducts from "../api/products.json";
 import wallCabinetProducts from "../api/productsWall.json";
 import tallCabinetProducts from "../api/productsTall.json";
@@ -639,4 +639,13 @@ export const getDrawerStr = (choosenMaterials:[string,string][]):string|null => 
 
 export const getSquare = (realWidth:number, realHeight:number):number => {
     return +(realWidth*realHeight/144).toFixed(2)
+}
+
+export const getCartData = (cartState:CartItemType[], dispatch:(a:any) => void):{cart: CartItemType[], total:number, length: number} => {
+    if (cartState.length) return {cart:cartState, total:getCartTotal(cartState), length:cartState.length}
+    const storCart = localStorage.getItem('cart');
+    const cart = storCart ? JSON.parse(storCart) as CartItemType[] : [] as CartItemType[];
+    if (cart.length) dispatch(fillCart(cart))
+    const total = getCartTotal(cart);
+    return {cart, total, length: cart.length}
 }

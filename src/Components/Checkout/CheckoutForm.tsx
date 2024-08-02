@@ -1,62 +1,46 @@
 import {Form, Formik} from 'formik';
 import React, {FC} from 'react';
 import {PhoneInput, TextInput} from "../../common/Form";
-import {getCartTotal, useAppDispatch} from "../../helpers/helpers";
+import {getDoorStr, getDrawerStr, getSingleStr, useAppDispatch} from "../../helpers/helpers";
 import s from './checkout.module.sass'
 import {CheckoutSchema} from "./CheckoutSchema";
-import {CheckoutType} from "../../helpers/types";
-import Loader from "../../common/Loader";
+import {CheckoutType, OrderFormType} from "../../helpers/types";
 import {CartItemType, removeCart, setMaterials} from "../../store/reducers/generalSlice";
 import CheckoutCart from "./CheckoutCart";
-import ReactPDF, {PDFDownloadLink, Document, Page} from '@react-pdf/renderer';
+import {pdf, PDFViewer} from '@react-pdf/renderer';
 import PDF from "./PDF";
+import {saveAs} from "file-saver";
 
-
-const CheckoutForm: FC<{ cart: CartItemType[] }> = ({cart}) => {
-    const date = new Date().toLocaleString('en-US', {dateStyle: "short"});
+const CheckoutForm: FC<{ cart: CartItemType[], total:number, materials:OrderFormType }> = ({cart, total, materials}) => {
     const initialValues: CheckoutType = {
         company: '',
         project: '',
         email: '',
         phone: ''
     };
+    const choosenMaterials = Object.entries(materials).filter(el => !!el[1]);
+    const roomStr = getSingleStr(choosenMaterials, 'room')
+    const doorStr = getDoorStr(choosenMaterials)
+    const boxMaterialStr = getSingleStr(choosenMaterials, 'Box Material')
+    const drawerStr = getDrawerStr(choosenMaterials);
+    const leatherStr = getSingleStr(choosenMaterials, 'Leather');
+    const str = {roomStr, doorStr, boxMaterialStr,drawerStr,leatherStr};
+    const jpgCart = cart.map(el => ({...el, img: el.img.replace('webp', 'jpg')}))
+
     return (
         <Formik initialValues={initialValues}
-            // onSubmit={(values, {resetForm, setSubmitting, setStatus}) => {
-            //     const cartTotal = getCartTotal(cart);
-            //     const materialsString = localStorage.getItem('materials');
-            //     const materials = materialsString ? JSON.parse(materialsString) : null
-            //     const serviceId: string = process.env.REACT_APP_EMAIL_SERVICE_ID || '';
-            //     const templateId: string = process.env.REACT_APP_EMAIL_TEMPLATE_ID || '';
-            //     const publicKey: string = process.env.REACT_APP_EMAIL_PUBLIC_KEY || '';
-            //     setSubmitting(true);
-            //     const data = {
-            //         ...values,
-            //         materials,
-            //         cart: cart,
-            //         cartTotal: cartTotal
-            //     }
-            //     try {
-            //         emailjs.send(serviceId, templateId, data, publicKey)
-            //             .then(() => {
-            //                 resetForm();
-            //                 setStatus('Order was sent.')
-            //             });
-            //     } catch (e) {
-            //         alert('error')
-            //         setSubmitting(false);
-            //     }
-            // }}
                 validationSchema={CheckoutSchema}
-                onSubmit={() => {
-                    console.log('submitted');
-                    ReactPDF.render(<PDF />, `Milino Order ${date}.pdf`);
+                onSubmit={async (values) => {
+                    const date = new Date().toLocaleString('en-US', {dateStyle: "short"});
+                    const fileName = `Milino order ${date}`;
+
+                    const blob = await pdf(<PDF values={values} cart={jpgCart} str={str} />).toBlob();
+                    saveAs(blob, fileName);
                 }}
         >
-            {({isSubmitting, status}) => {
+            {({isSubmitting, status, values}) => {
                 return (
                     <Form className={[s.form].join(' ')}>
-                        {isSubmitting ? <Loader/> : null}
                         <h1>Checkout</h1>
                         <div className={s.block}>
                             <TextInput type="text" name="company" label="Company name"/>
@@ -64,17 +48,14 @@ const CheckoutForm: FC<{ cart: CartItemType[] }> = ({cart}) => {
                             <TextInput type="email" name="email" label="E-mail"/>
                             <PhoneInput type="text" name="phone" label="Phone number"/>
                         </div>
-                        <CheckoutCart cart={cart}/>
-                        {/*<PDFDownloadLink document={<PDF />} fileName={`Milino Order ${date}.pdf`}>*/}
-                        {/*    {({ blob, url, loading, error }) =>*/}
-                        {/*        loading ? 'Loading document...' : 'Download now!'*/}
-                        {/*    }*/}
-                        {/*</PDFDownloadLink>*/}
+                        <CheckoutCart cart={cart} total={total}/>
                         <button type="submit"
-                                className={['button submit', isSubmitting ? 'disabled' : ''].join(' ')}
-                                disabled={isSubmitting}>Render PDF
+                                className={['button yellow', s.submit].join(' ')}
+                                disabled={isSubmitting}>PDF
                         </button>
-                        {/*{status && <EmailWasSended status={status}/>}*/}
+                        <PDFViewer className={s.viewer}>
+                            <PDF values={values} cart={jpgCart} str={str} />
+                        </PDFViewer>
                     </Form>
                 )
             }}

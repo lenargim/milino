@@ -18,9 +18,8 @@ interface GeneralState {
     product: productType | null,
     customPart: customPartDataType | null,
     cart: CartItemType[]
-    cartTotal: number
+    // cartTotal: number
 }
-
 
 export type CartItemType = {
     id: number,
@@ -102,7 +101,7 @@ const initialState: GeneralState = {
     product: null,
     customPart: null,
     cart: [],
-    cartTotal: 0
+    // cartTotal: 0
 }
 
 type updateProductType = {
@@ -112,11 +111,6 @@ type updateProductType = {
 type updateProductAmountType = {
     uuid: string,
     amount: number,
-}
-
-type updateProductPriceType = {
-    uuid: string,
-    price: number,
 }
 
 export const generalSlice = createSlice({
@@ -134,15 +128,18 @@ export const generalSlice = createSlice({
         },
         addToCart: (state, action: PayloadAction<CartItemType>) => {
             state.cart = [...state.cart, action.payload];
-            state.cartTotal = getCartTotal(state.cart)
+            localStorage.setItem('cart', JSON.stringify(state.cart));
+        },
+        fillCart: (state, action: PayloadAction<CartItemType[]>) => {
+            state.cart = action.payload;
         },
         deleteItemFromCart: (state, action: PayloadAction<string>) => {
             state.cart = state.cart.filter(item => item.uuid !== action.payload);
-            state.cartTotal = getCartTotal(state.cart)
+            localStorage.setItem('cart', JSON.stringify(state.cart));
         },
         removeCart: (state) => {
             state.cart = [];
-            state.cartTotal = 0;
+            localStorage.removeItem('cart');
         },
         updateProduct: (state, action: PayloadAction<updateProductType>) => {
             if (state.product) {
@@ -154,14 +151,7 @@ export const generalSlice = createSlice({
             const product = state.cart.find(el => el.uuid === action.payload.uuid);
             if (product) {
                 product.amount = action.payload.amount
-                state.cartTotal = getCartTotal(state.cart)
-            }
-        },
-        updateProductPrice: (state, action: PayloadAction<updateProductPriceType>) => {
-            const product = state.cart.find(el => el.uuid === action.payload.uuid);
-            if (product) {
-                product.price = action.payload.price;
-                state.cartTotal = getCartTotal(state.cart)
+                localStorage.setItem('cart', JSON.stringify(state.cart));
             }
         }
     }
@@ -175,8 +165,8 @@ export const {
     deleteItemFromCart,
     updateProduct,
     removeCart,
+    fillCart,
     updateProductAmount,
-    updateProductPrice
 } = generalSlice.actions
 
 export default generalSlice.reducer

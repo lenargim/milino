@@ -15,6 +15,7 @@
     "@types/react-phone-number-input": "^3.0.17",
     "@types/sass": "^1.45.0",
     "@types/uuid": "^9.0.8",
+    "file-saver": "^2.0.5",
     "formik": "^2.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -52,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@types/file-saver": "^2",
     "@types/jest": "^29.5.12"
   }
 }

@@ -1,7 +1,7 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import s from './header.module.sass'
-import {useAppDispatch, useAppSelector} from "../../helpers/helpers";
+import {getCartData, useAppDispatch, useAppSelector} from "../../helpers/helpers";
 import CartSVG from "../../assets/img/cart";
 import logo from '../../assets/img/SiteLogo.jpg'
 import {removeCart, setMaterials} from "../../store/reducers/generalSlice";
@@ -14,8 +14,8 @@ const Header: FC<{ resetForm?: (nextState?: Partial<FormikState<OrderFormType>>)
         const materials = localStorage.getItem('materials');
         const location = useLocation();
         const path = location.pathname.slice(1);
-        const cart = useAppSelector(state => state.general.cart);
-        const length = cart.length;
+        const cartState = useAppSelector(state => state.general.cart)
+        const {length} = getCartData(cartState,dispatch);
         const isCabinetsPageShown = !['cabinets', ''].includes(path);
         const isChangeMaterialsPageShown = materials && path !== '';
         const isResetMaterialsShown = materials && path !== 'checkout';

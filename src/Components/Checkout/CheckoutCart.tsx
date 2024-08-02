@@ -2,10 +2,8 @@ import React, {FC} from 'react';
 import {CartItemType} from "../../store/reducers/generalSlice";
 import CheckoutCartItem from "./CheckoutCartItem";
 import s from './checkout.module.sass'
-import {useAppSelector} from "../../helpers/helpers";
 
-const CheckoutCart: FC<{ cart: CartItemType[] }> = ({cart}) => {
-    const total = useAppSelector(state => state.general.cartTotal)
+const CheckoutCart: FC<{ cart: CartItemType[], total:number }> = ({cart, total}) => {
     return (
         <div className={s.cart}>
             <h2 className={s.cartTitle}>Cart</h2>
