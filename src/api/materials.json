@@ -1,5 +1,5 @@
 {
-  "rooms": [
+  "categories": [
     {
       "value": "Kitchen",
       "img": "kitchen.jpg"
@@ -23,1059 +23,1058 @@
   ],
   "doors": [
     {
-      "name": "Slab",
+      "value": "Slab",
       "img": "slab.jpg",
       "finish": [
         {
-          "name": "Luxe",
+          "value": "Luxe",
           "img": "luxe.jpg",
           "colors": [
             {
-              "name": "Agua Marina HG",
+              "value": "Agua Marina HG",
               "isGrain": false,
               "img": "Agua Marina.jpg"
             },
             {
-              "name": "Antracita HG",
+              "value": "Antracita HG",
               "isGrain": false,
               "img": "Antracita.jpg"
-
             },
             {
-              "name": "Azul Indigo HG",
+              "value": "Azul Indigo HG",
               "isGrain": false,
               "img": "Azul Indigo.jpg"
             },
             {
-              "name": "Azul Marino HG",
+              "value": "Azul Marino HG",
               "isGrain": false,
               "img": "Azul Marino.jpg"
             },
             {
-              "name": "Basalto HG",
+              "value": "Basalto HG",
               "isGrain": false,
               "img": "Basalto.jpg"
             },
             {
-              "name": "Black HG",
+              "value": "Black HG",
               "isGrain": false,
               "img": "Black.jpg"
             },
             {
-              "name": "Blanco HG",
+              "value": "Blanco HG",
               "isGrain": false,
               "img": "Blanco.jpg"
             },
             {
-              "name": "Blanco Polar HG",
+              "value": "Blanco Polar HG",
               "isGrain": false,
               "img": "Blanco Polar.jpg"
             },
             {
-              "name": "Cashmere HG",
+              "value": "Cashmere HG",
               "isGrain": false,
               "img": "Cashmere.jpg"
             },
             {
-              "name": "Cotto HG",
+              "value": "Cotto HG",
               "isGrain": false,
               "img": "Cotto.jpg"
             },
             {
-              "name": "Cuzco Oro HG",
+              "value": "Cuzco Oro HG",
               "isGrain": true,
               "img": "Cuzco Oro.jpg"
             },
             {
-              "name": "Euroline 3 HG",
+              "value": "Euroline 3 HG",
               "isGrain": true,
               "img": "Euroline 3.jpg"
             },
             {
-              "name": "Gris Metallic HG",
+              "value": "Gris Metallic HG",
               "isGrain": false,
               "img": "Gris Metallic.jpg"
             },
             {
-              "name": "Gris Nube HG",
+              "value": "Gris Nube HG",
               "isGrain": false,
               "img": "Gris Nube.jpg"
             },
             {
-              "name": "Gris Perla HG",
+              "value": "Gris Perla HG",
               "isGrain": false,
               "img": "Gris Perla.jpg"
             },
             {
-              "name": "Gris Plomo HG",
+              "value": "Gris Plomo HG",
               "isGrain": false,
               "img": "Gris Plomo.jpg"
             },
             {
-              "name": "Guayana HG",
+              "value": "Guayana HG",
               "isGrain": true,
               "img": "Guayana.jpg"
             },
             {
-              "name": "Magnolia HG",
+              "value": "Magnolia HG",
               "isGrain": false,
-              "img":"Magnolia.jpg"
+              "img": "Magnolia.jpg"
             },
             {
-              "name": "Metallo 1 HG",
+              "value": "Metallo 1 HG",
               "isGrain": true,
               "img": "Metallo 1.jpg"
             },
             {
-              "name": "Metallo 4 HG",
+              "value": "Metallo 4 HG",
               "isGrain": true,
-              "img":"Metallo 4.jpg"
+              "img": "Metallo 4.jpg"
             },
             {
-              "name": "Olivo HG",
+              "value": "Olivo HG",
               "isGrain": true,
               "img": "Olivo.jpg"
             },
             {
-              "name": "Olmo HG",
+              "value": "Olmo HG",
               "isGrain": true,
               "img": "Olmo.jpg"
             },
             {
-              "name": "Porcelain 1 HG",
+              "value": "Porcelain 1 HG",
               "isGrain": false,
               "img": "Porcelain 1.jpg"
             },
             {
-              "name": "Roble Frappe HG",
+              "value": "Roble Frappe HG",
               "isGrain": true,
               "img": "Roble Frappe.jpg"
             },
             {
-              "name": "Rojo HG",
+              "value": "Rojo HG",
               "isGrain": false,
               "img": "Rojo.jpg"
             },
             {
-              "name": "Rosales 3 HG",
+              "value": "Rosales 3 HG",
               "isGrain": true,
               "img": "Rosales 3.jpg"
             },
             {
-              "name": "Textil Grafito HG",
+              "value": "Textil Grafito HG",
               "isGrain": true,
               "img": "Textil Grafito.jpg"
             },
             {
-              "name": "Textil Plata HG",
+              "value": "Textil Plata HG",
               "isGrain": true,
               "img": "Textil Plata.jpg"
             },
             {
-              "name": "Verde Salvia HG",
+              "value": "Verde Salvia HG",
               "isGrain": false,
               "img": "Verde Salvia.jpg"
             },
             {
-              "name": "Antracita PE",
+              "value": "Antracita PE",
               "isGrain": false,
               "img": "Antracita Pearl Effect.jpg"
             },
             {
-              "name": "Basalto PE",
+              "value": "Basalto PE",
               "isGrain": false,
               "img": "Basalto Pearl Effect.jpg"
             },
             {
-              "name": "Blanco Colonial PE",
+              "value": "Blanco Colonial PE",
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
           ]
         },
         {
-          "name": "Zenit",
+          "value": "Zenit",
           "img": "zenit.jpg",
           "colors": [
             {
-              "name": "Agua Marina SM",
+              "value": "Agua Marina SM",
               "isGrain": false,
               "img": "Supermatt Agua Marina.jpg"
             },
             {
-              "name": "Almagra SM",
+              "value": "Almagra SM",
               "isGrain": false,
               "img": "SuperMatt Almagra.jpg"
             },
             {
-              "name": "Antracita SM",
+              "value": "Antracita SM",
               "isGrain": false,
               "img": "Supermatt Antracita.jpg"
             },
             {
-              "name": "Azul Índigo SM",
+              "value": "Azul Índigo SM",
               "isGrain": false,
               "img": "Supermatt Azul Índigo.jpg"
             },
             {
-              "name": "Azul Marino SM",
+              "value": "Azul Marino SM",
               "isGrain": false,
               "img": "SuperMatt Azul Marino.jpg"
             },
             {
-              "name": "Basalto SM",
+              "value": "Basalto SM",
               "isGrain": false,
               "img": "Supermatt Basalto.jpg"
             },
             {
-              "name": "Black SM",
+              "value": "Black SM",
               "isGrain": false,
               "img": "Supermatt Black.jpg"
             },
             {
-              "name": "Blanco Polar SM",
+              "value": "Blanco Polar SM",
               "isGrain": false,
               "img": "Supermatt Blanco Polar.jpg"
             },
             {
-              "name": "Blanco SM",
+              "value": "Blanco SM",
               "isGrain": false,
               "img": "Supermatt Blanco.jpg"
             },
             {
-              "name": "Camel SM",
+              "value": "Camel SM",
               "isGrain": false,
               "img": "SuperMatt Camel.jpg"
             },
             {
-              "name": "Cashmere SM",
+              "value": "Cashmere SM",
               "isGrain": false,
               "img": "Supermatt Cashmere.jpg"
             },
             {
-              "name": "Cotto SM",
+              "value": "Cotto SM",
               "isGrain": false,
               "img": "SuperMatt Cotto.jpg"
             },
             {
-              "name": "Gris Nube SM",
+              "value": "Gris Nube SM",
               "isGrain": false,
               "img": "Supermatt Gris Nube.jpg"
             },
             {
-              "name": "Gris Perla SM",
+              "value": "Gris Perla SM",
               "isGrain": false,
               "img": "Supermatt Gris Perla.jpg"
             },
             {
-              "name": "Gris Plomo SM",
+              "value": "Gris Plomo SM",
               "isGrain": false,
               "img": "Supermatt Gris Plomo.jpg"
             },
             {
-              "name": "Titán 1 SM",
+              "value": "Titán 1 SM",
               "isGrain": true,
               "img": "Supermatt Titán 1.jpg"
             },
             {
-              "name": "Tortora SM",
+              "value": "Tortora SM",
               "isGrain": false,
               "img": "SuperMatt Tortora.jpg"
             },
             {
-              "name": "Verde Salvia SM",
+              "value": "Verde Salvia SM",
               "isGrain": false,
               "img": "SuperMatt Verde Salvia.jpg"
             },
             {
-              "name": "MetalDeco Antracita SM",
+              "value": "MetalDeco Antracita SM",
               "isGrain": false,
               "img": "MetalDeco Antracita SM.jpg"
             },
             {
-              "name": "MetalDeco Basalto SM",
+              "value": "MetalDeco Basalto SM",
               "isGrain": false,
               "img": "MetalDeco Basalto SM.jpg"
             },
             {
-              "name": "MetalDeco Black SM",
+              "value": "MetalDeco Black SM",
               "isGrain": false,
               "img": "MetalDeco Black SM.jpg"
             },
             {
-              "name": "MetalDeco Blanco SM",
+              "value": "MetalDeco Blanco SM",
               "isGrain": false,
               "img": "MetalDeco Blanco SM.jpg"
             },
             {
-              "name": "MetalPlus Light Gold",
+              "value": "MetalPlus Light Gold",
               "isGrain": false,
               "img": "Metal Plus Light Gold.jpg"
             },
             {
-              "name": "MetalPlus Titanio SM",
+              "value": "MetalPlus Titanio SM",
               "isGrain": false,
               "img": "Metal Plus Titanio SM.jpg"
             }
           ]
         },
         {
-          "name": "Syncron",
+          "value": "Syncron",
           "img": "syncron.jpg",
           "colors": [
             {
-              "name": "Anniversary 1",
+              "value": "Anniversary 1",
               "isGrain": false,
               "img": "Anniversary Oak 1.jpg"
             },
             {
-              "name": "Anniversary 2",
+              "value": "Anniversary 2",
               "isGrain": false,
               "img": "Anniversary Oak 2.jpg"
             },
             {
-              "name": "Anniversary 3",
+              "value": "Anniversary 3",
               "isGrain": false,
               "img": "Anniversary Oak 3.jpg"
             },
             {
-              "name": "Antracita Solid Wood",
+              "value": "Antracita Solid Wood",
               "isGrain": true,
               "img": "Antracita Solid Wood.jpg"
             },
             {
-              "name": "Blanco Solid Wood",
+              "value": "Blanco Solid Wood",
               "isGrain": true,
               "img": "Blanco Solid Wood.jpg"
             },
             {
-              "name": "Cashmere Solid Wood",
+              "value": "Cashmere Solid Wood",
               "isGrain": true,
               "img": "Cashmere Solid Wood.jpg"
             },
             {
-              "name": "Como Ash 1",
+              "value": "Como Ash 1",
               "isGrain": true,
               "img": "Como Ash 1.jpg"
             },
             {
-              "name": "Como Ash 2",
+              "value": "Como Ash 2",
               "isGrain": true,
               "img": "Como Ash 2.jpg"
             },
             {
-              "name": "Como Ash 3",
+              "value": "Como Ash 3",
               "isGrain": true,
               "img": "Como Ash 3.jpg"
             },
             {
-              "name": "Evora 3",
+              "value": "Evora 3",
               "isGrain": true,
               "img": "Evora 3.jpg"
             },
             {
-              "name": "Evora 4",
+              "value": "Evora 4",
               "isGrain": true,
               "img": "Evora 4.jpg"
             },
             {
-              "name": "Frappe 1",
+              "value": "Frappe 1",
               "isGrain": false,
               "img": "Frappé 1.jpg"
             },
             {
-              "name": "Frappe 2",
+              "value": "Frappe 2",
               "isGrain": false,
               "img": "Frappé 2.jpg"
             },
             {
-              "name": "Frappe 3",
+              "value": "Frappe 3",
               "isGrain": false,
               "img": "Frappé 3.jpg"
             },
             {
-              "name": "Gris Plomo Solid Wood",
+              "value": "Gris Plomo Solid Wood",
               "isGrain": true,
               "img": "Gris Plomo Solid Wood.jpg"
             },
             {
-              "name": "Ice 1",
+              "value": "Ice 1",
               "isGrain": true,
               "img": "Ice 1.jpg"
             },
             {
-              "name": "Ice 2",
+              "value": "Ice 2",
               "isGrain": true,
               "img": "Ice 2.jpg"
             },
             {
-              "name": "Ice 3",
+              "value": "Ice 3",
               "isGrain": true,
               "img": "Ice 3.jpg"
             },
             {
-              "name": "Ice 4",
+              "value": "Ice 4",
               "isGrain": true,
               "img": "Ice 4.jpg"
             },
             {
-              "name": "Ida 1",
+              "value": "Ida 1",
               "isGrain": true,
               "img": "Ida 1.jpg"
             },
             {
-              "name": "Ida 2",
+              "value": "Ida 2",
               "isGrain": true,
               "img": "Ida 2.jpg"
             },
             {
-              "name": "Ida 3",
+              "value": "Ida 3",
               "isGrain": true,
               "img": "Ida 3.jpg"
             },
             {
-              "name": "Ida 4",
+              "value": "Ida 4",
               "isGrain": true,
               "img": "Ida 4.jpg"
             },
             {
-              "name": "Lakeland Oak 1",
+              "value": "Lakeland Oak 1",
               "isGrain": true,
               "img": "Lakeland Oak 1.jpg"
             },
             {
-              "name": "Lakeland Oak 2",
+              "value": "Lakeland Oak 2",
               "isGrain": true,
               "img": "Lakeland Oak 2.jpg"
             },
             {
-              "name": "Lakeland Oak 3",
+              "value": "Lakeland Oak 3",
               "isGrain": true,
               "img": "Lakeland Oak 3.jpg"
             },
             {
-              "name": "Muratti 1",
+              "value": "Muratti 1",
               "isGrain": true,
               "img": "Muratti 1.jpg"
             },
             {
-              "name": "Muratti 2",
+              "value": "Muratti 2",
               "isGrain": true,
               "img": "Muratti 2.jpg"
             },
             {
-              "name": "Muratti 3",
+              "value": "Muratti 3",
               "isGrain": true,
               "img": "Muratti 3.jpg"
             },
             {
-              "name": "Muratti 4",
+              "value": "Muratti 4",
               "isGrain": true,
               "img": "Muratti 4.jpg"
             },
             {
-              "name": "Nocce 1",
+              "value": "Nocce 1",
               "isGrain": true,
               "img": "Nocce 1.jpg"
             },
             {
-              "name": "Nocce 2",
+              "value": "Nocce 2",
               "isGrain": true,
               "img": "Nocce 2.jpg"
             },
             {
-              "name": "Nocce 3",
+              "value": "Nocce 3",
               "isGrain": true,
               "img": "Nocce 3.jpg"
             },
             {
-              "name": "Olmo 2",
+              "value": "Olmo 2",
               "isGrain": true,
               "img": "Olmo 2.jpg"
             },
             {
-              "name": "Olmo 3",
+              "value": "Olmo 3",
               "isGrain": true,
               "img": "Olmo 3.jpg"
             },
             {
-              "name": "Woodline 1",
+              "value": "Woodline 1",
               "isGrain": true,
               "img": "Woodline 1.jpg"
             },
             {
-              "name": "Woodline 3",
+              "value": "Woodline 3",
               "isGrain": true,
               "img": "Woodline 3.jpg"
             }
           ]
         },
         {
-          "name": "Cleaf",
+          "value": "Cleaf",
           "img": "cleaf.jpg",
           "colors": [
             {
-              "name": "Ares Concrete Bianco FB03",
+              "value": "Ares Concrete Bianco FB03",
               "isGrain": false,
               "img": "ares_fb03_1.jpg"
             },
             {
-              "name": "Ares Concrete FB11",
+              "value": "Ares Concrete FB11",
               "isGrain": false,
               "img": "ares_fb11_1.jpg"
             },
             {
-              "name": "Ares Dark Concrete UA49",
+              "value": "Ares Dark Concrete UA49",
               "isGrain": false,
               "img": "ares_ua49_1.jpg"
             },
             {
-              "name": "Ares Glauco FB49",
+              "value": "Ares Glauco FB49",
               "isGrain": false,
               "img": "ares_fb49_1.jpg"
             },
             {
-              "name": "Ares Night UB02",
+              "value": "Ares Night UB02",
               "isGrain": false,
               "img": "ares_ub02_1.jpg"
             },
             {
-              "name": "Ares Rame FB60",
+              "value": "Ares Rame FB60",
               "isGrain": false,
               "img": "ares_fb60_1.jpg"
             },
             {
-              "name": "Ares Valleta FB68",
+              "value": "Ares Valleta FB68",
               "isGrain": false,
               "img": "ares_fb68_1.jpg"
             },
             {
-              "name": "Azimut Fresh Gray SO27",
+              "value": "Azimut Fresh Gray SO27",
               "isGrain": true,
               "img": "azimut_s027_1.jpg"
             },
             {
-              "name": "Azimut Lounge Brown SO28",
+              "value": "Azimut Lounge Brown SO28",
               "isGrain": true,
               "img": "azimut_s028_1.jpg"
             },
             {
-              "name": "Cheope Total White BO73",
+              "value": "Cheope Total White BO73",
               "isGrain": false,
               "img": "cheope_b073_1.jpg"
             },
             {
-              "name": "Engadina Engadina SO61",
+              "value": "Engadina Engadina SO61",
               "isGrain": true,
               "img": "engadina_s061_1.jpg"
             },
             {
-              "name": "Fronda Bardini S164",
+              "value": "Fronda Bardini S164",
               "isGrain": true,
               "img": "fronda_s164_1-1.jpg"
             },
             {
-              "name": "Idea Argento FB81",
+              "value": "Idea Argento FB81",
               "isGrain": false,
               "img": "idea_fb81_1.jpg"
             },
             {
-              "name": "Idea Ottone FB86",
+              "value": "Idea Ottone FB86",
               "isGrain": false,
               "img": "idea_fb86_1.jpg"
             },
             {
-              "name": "Idea Zirconia FB08",
+              "value": "Idea Zirconia FB08",
               "isGrain": false,
               "img": "idea_fb08_1.jpg"
             },
             {
-              "name": "Jiometori Naoshima S191",
+              "value": "Jiometori Naoshima S191",
               "isGrain": true,
               "img": "jiometori_s191_1.jpg"
             },
             {
-              "name": "Jiometori Teshima S192",
+              "value": "Jiometori Teshima S192",
               "isGrain": true,
               "img": "jiometori_s192_1.jpg"
             },
             {
-              "name": "Matrix Aspen Oak LM67",
+              "value": "Matrix Aspen Oak LM67",
               "isGrain": true,
               "img": "matrix_lm67_1.jpg"
             },
             {
-              "name": "Matrix Barn Oak LN27",
+              "value": "Matrix Barn Oak LN27",
               "isGrain": true,
               "img": "matrix_ln27_1.jpg"
             },
             {
-              "name": "Matrix Bianco BO11",
+              "value": "Matrix Bianco BO11",
               "isGrain": true,
               "img": "matrix_b011_1.jpg"
             },
             {
-              "name": "Matrix Carbone LM08",
+              "value": "Matrix Carbone LM08",
               "isGrain": true,
               "img": "matrix_lm08_1.jpg"
             },
             {
-              "name": "Matrix City Oak LM69",
+              "value": "Matrix City Oak LM69",
               "isGrain": true,
               "img": "matrix_lm69_1.jpg"
             },
             {
-              "name": "Matrix Oregon Pine LK84",
+              "value": "Matrix Oregon Pine LK84",
               "isGrain": false
             },
             {
-              "name": "Matrix Stratos LM37",
+              "value": "Matrix Stratos LM37",
               "isGrain": true,
               "img": "matrix_lm37_1.jpg"
             },
             {
-              "name": "Matrix Vineyard Oak LN30",
+              "value": "Matrix Vineyard Oak LN30",
               "isGrain": true,
               "img": "matrix_ln30_1.jpg"
             },
             {
-              "name": "Mosaico Nero U129",
+              "value": "Mosaico Nero U129",
               "isGrain": false,
               "img": "mosaico_u129_1.jpg"
             },
             {
-              "name": "Okobo Meguro S160",
+              "value": "Okobo Meguro S160",
               "isGrain": true
             },
             {
-              "name": "Okobo Nakano S162",
+              "value": "Okobo Nakano S162",
               "isGrain": true
             },
             {
-              "name": "Okobo Shibuya S161",
+              "value": "Okobo Shibuya S161",
               "isGrain": true
             },
             {
-              "name": "Okobo Taito S159",
+              "value": "Okobo Taito S159",
               "isGrain": true
             },
             {
-              "name": "Poro Noce Acerno LS14",
+              "value": "Poro Noce Acerno LS14",
               "isGrain": true,
               "img": "poronoce_ls14_1.jpg"
             },
             {
-              "name": "Poro Noce Giffoni LS13",
+              "value": "Poro Noce Giffoni LS13",
               "isGrain": true,
               "img": "poronoce_ls13_1.jpg"
             },
             {
-              "name": "Primofiore Ardesia UB09",
+              "value": "Primofiore Ardesia UB09",
               "isGrain": false
             },
             {
-              "name": "Primofiore Bianco BO11",
+              "value": "Primofiore Bianco BO11",
               "isGrain": false
             },
             {
-              "name": "Primofiore Maya Bronze FA33",
+              "value": "Primofiore Maya Bronze FA33",
               "isGrain": false,
               "img": "primofiore_fa33_1.jpg"
             },
             {
-              "name": "Primofiore Nebia UB19",
+              "value": "Primofiore Nebia UB19",
               "isGrain": false,
               "img": "primofiore_ub19_1.jpg"
             },
             {
-              "name": "Sable Ascari LR25",
+              "value": "Sable Ascari LR25",
               "isGrain": true,
               "img": "sable_lr25_1.jpg"
             },
             {
-              "name": "Sable Cairo S138",
+              "value": "Sable Cairo S138",
               "isGrain": false
             },
             {
-              "name": "Sable Dublin S135",
+              "value": "Sable Dublin S135",
               "isGrain": false
             },
             {
-              "name": "Sable Fittipaldi LR29",
+              "value": "Sable Fittipaldi LR29",
               "isGrain": true,
               "img": "sable_lr29_1.jpg"
             },
             {
-              "name": "Sable Glasgow S136",
+              "value": "Sable Glasgow S136",
               "isGrain": false
             },
             {
-              "name": "Sable Madrid S133",
+              "value": "Sable Madrid S133",
               "isGrain": false
             },
             {
-              "name": "Sable Pecan LR27",
+              "value": "Sable Pecan LR27",
               "isGrain": true,
               "img": "sable_lr27_1.jpg"
             },
             {
-              "name": "Sherwood Brolio Oak LR09",
+              "value": "Sherwood Brolio Oak LR09",
               "isGrain": true,
               "img": "sherwood_lr09_1.jpg"
             },
             {
-              "name": "Sherwood Gavi Oak LN66",
+              "value": "Sherwood Gavi Oak LN66",
               "isGrain": true,
               "img": "sherwood_ln66_1.jpg"
             },
             {
-              "name": "Sherwood Nadir LN67",
+              "value": "Sherwood Nadir LN67",
               "isGrain": false
             },
             {
-              "name": "Sherwood Peak District SO78",
+              "value": "Sherwood Peak District SO78",
               "isGrain": true,
               "img": "sherwood_s078_1.jpg"
             },
             {
-              "name": "Sherwood Toasted Espresso SO71",
+              "value": "Sherwood Toasted Espresso SO71",
               "isGrain": true,
               "img": "sherwood_s071_1.jpg"
             },
             {
-              "name": "Sherwood Tuscan Cypress SO72",
+              "value": "Sherwood Tuscan Cypress SO72",
               "isGrain": true,
               "img": "sherwood_s072_1.jpg"
             },
             {
-              "name": "Sherwood Volterra Oak SO95",
+              "value": "Sherwood Volterra Oak SO95",
               "isGrain": true,
               "img": "sherwood_s095_1.jpg"
             },
             {
-              "name": "Yosemite Burned SO12",
+              "value": "Yosemite Burned SO12",
               "isGrain": true,
               "img": "yosemite_s012_1.jpg"
             },
             {
-              "name": "Yosemite Cypress Point SO13",
+              "value": "Yosemite Cypress Point SO13",
               "isGrain": true,
               "img": "yosemite_s013_1.jpg"
             },
             {
-              "name": "Yosemite Light Carbon SO15",
+              "value": "Yosemite Light Carbon SO15",
               "isGrain": true,
               "img": "yosemite_s015_1.jpg"
             },
             {
-              "name": "Yosemite Nero U129",
+              "value": "Yosemite Nero U129",
               "isGrain": true,
               "img": "yosemite_u129_1.jpg"
             },
             {
-              "name": "Yosemite Silver Sand SO11",
+              "value": "Yosemite Silver Sand SO11",
               "isGrain": true,
               "img": "yosemite_s011_1.jpg"
             }
           ]
         },
         {
-          "name": "OneSkin",
+          "value": "OneSkin",
           "colors": [
             {
-              "name": "Alentejo Elm HG",
+              "value": "Alentejo Elm HG",
               "isGrain": true,
               "img": "alentejo-elm-high-gloss.jpg"
             },
             {
-              "name": "Alentejo Elm SM",
+              "value": "Alentejo Elm SM",
               "isGrain": true,
               "img": "alentejo-elm-super-mate.jpg"
             },
             {
-              "name": "Arctic White HG",
+              "value": "Arctic White HG",
               "isGrain": false,
               "img": "arctic-white-high-gloss.jpg"
             },
             {
-              "name": "Black HG",
+              "value": "Black HG",
               "isGrain": false,
               "img": "Black.jpg"
             },
             {
-              "name": "Black SM",
+              "value": "Black SM",
               "isGrain": false,
               "img": "Supermatt Black.jpg"
             },
             {
-              "name": "Brown Cement HG",
+              "value": "Brown Cement HG",
               "isGrain": false,
               "img": "brown-cement-high-gloss.jpg"
             },
             {
-              "name": "Brown Cement SM",
+              "value": "Brown Cement SM",
               "isGrain": false,
               "img": "brown-cement-super-mate.jpg"
             },
             {
-              "name": "Calcio HG",
+              "value": "Calcio HG",
               "isGrain": true
             },
             {
-              "name": "Calcio SM",
+              "value": "Calcio SM",
               "isGrain": true
             },
             {
-              "name": "Carbon Oak HG",
+              "value": "Carbon Oak HG",
               "isGrain": true,
               "img": "carbon-oak-high-gloss.jpg"
             },
             {
-              "name": "Carbon Oak SM",
+              "value": "Carbon Oak SM",
               "isGrain": true,
               "img": "carbon-oak-super-mate.jpg"
             },
             {
-              "name": "Cashmere HG",
+              "value": "Cashmere HG",
               "isGrain": false,
               "img": "Cashmere.jpg"
             },
             {
-              "name": "Cashmere SM",
+              "value": "Cashmere SM",
               "isGrain": false,
               "img": "Supermatt Cashmere.jpg"
             },
             {
-              "name": "Copper HG",
+              "value": "Copper HG",
               "isGrain": true
             },
             {
-              "name": "Copper SM",
+              "value": "Copper SM",
               "isGrain": true
             },
             {
-              "name": "Denim Blue HG",
+              "value": "Denim Blue HG",
               "isGrain": false,
               "img": "denim-blue.jpg"
             },
             {
-              "name": "Denim Blue SM",
+              "value": "Denim Blue SM",
               "isGrain": false,
               "img": "denim-blue.jpg"
             },
             {
-              "name": "Fossil Oak HG",
+              "value": "Fossil Oak HG",
               "isGrain": true,
               "img": "fossil-oak-high-gloss.jpg"
             },
             {
-              "name": "Fossil Oak SM",
+              "value": "Fossil Oak SM",
               "isGrain": true,
               "img": "fossil-oak-super-mate.jpg"
             },
             {
-              "name": "Grey HG",
+              "value": "Grey HG",
               "isGrain": false,
               "img": "grey-high-gloss.jpg"
             },
             {
-              "name": "Grey SM",
+              "value": "Grey SM",
               "isGrain": false,
               "img": "grey-super-mate.jpg"
             },
             {
-              "name": "Grey Oak HG",
+              "value": "Grey Oak HG",
               "isGrain": true,
               "img": "grey-oak-high-gloss.jpg"
             },
             {
-              "name": "Grey Oak SM",
+              "value": "Grey Oak SM",
               "isGrain": true,
               "img": "grey-oak-super-mate.jpg"
             },
             {
-              "name": "Ivory Ash HG",
+              "value": "Ivory Ash HG",
               "isGrain": true,
               "img": "ivory-ash-high-gloss.jpg"
             },
             {
-              "name": "Lava Grey HG",
+              "value": "Lava Grey HG",
               "isGrain": false,
               "img": "lava-grey-high-gloss.jpg"
             },
             {
-              "name": "Lava Grey SM",
+              "value": "Lava Grey SM",
               "isGrain": false,
               "img": "lava-grey-super-mate.jpg"
             },
             {
-              "name": "Light Grey HG",
+              "value": "Light Grey HG",
               "isGrain": false,
               "img": "light-grey-high-gloss.jpg"
             },
             {
-              "name": "Light Grey SM",
+              "value": "Light Grey SM",
               "isGrain": false,
               "img": "light-grey-super-mate.jpg"
             },
             {
-              "name": "Luna HG",
+              "value": "Luna HG",
               "isGrain": true
             },
             {
-              "name": "Luna SM",
+              "value": "Luna SM",
               "isGrain": true
             },
             {
-              "name": "Mineral Coffee HG",
+              "value": "Mineral Coffee HG",
               "isGrain": false,
               "img": "mineral-coffee-high-gloss.jpg"
             },
             {
-              "name": "Mineral Coffee SM",
+              "value": "Mineral Coffee SM",
               "isGrain": false,
               "img": "mineral-coffee-super-mate.jpg"
             },
             {
-              "name": "Moka Ash HG",
+              "value": "Moka Ash HG",
               "isGrain": true,
               "img": "moka-ash-high-gloss.jpg"
             },
             {
-              "name": "Moka Cement HG",
+              "value": "Moka Cement HG",
               "isGrain": true,
               "img": "moka-cement-high-gloss.jpg"
             },
             {
-              "name": "Moka Cement SM",
+              "value": "Moka Cement SM",
               "isGrain": true,
               "img": "moka-cement-super-mate.jpg"
             },
             {
-              "name": "Natural Cement HG",
+              "value": "Natural Cement HG",
               "isGrain": false,
               "img": "natural-cement-high-gloss.jpg"
             },
             {
-              "name": "Natural Cement SM",
+              "value": "Natural Cement SM",
               "isGrain": false,
               "img": "natural-cement-super-mate.jpg"
             },
             {
-              "name": "Natural Oak HG",
+              "value": "Natural Oak HG",
               "isGrain": true
             },
             {
-              "name": "Natural Oak SM",
+              "value": "Natural Oak SM",
               "isGrain": true
             },
             {
-              "name": "Old Oak HG",
+              "value": "Old Oak HG",
               "isGrain": true,
               "img": "old-oak.jpg"
             },
             {
-              "name": "Old Oak SM",
+              "value": "Old Oak SM",
               "isGrain": true,
               "img": "old-oak.jpg"
             },
             {
-              "name": "Oyster HG",
+              "value": "Oyster HG",
               "isGrain": false,
               "img": "oyster-high-gloss.jpg"
             },
             {
-              "name": "Petroleo HG",
+              "value": "Petroleo HG",
               "isGrain": false,
               "img": "petroleo-gloss.jpg"
             },
             {
-              "name": "Petroleo SM",
+              "value": "Petroleo SM",
               "isGrain": false
             },
             {
-              "name": "Port Red HG",
+              "value": "Port Red HG",
               "isGrain": false,
               "img": "port-red-gloss.jpg"
             },
             {
-              "name": "Port Red SM",
+              "value": "Port Red SM",
               "isGrain": false,
               "img": "port-red-supermatte.jpg"
             },
             {
-              "name": "Sahara HG",
+              "value": "Sahara HG",
               "isGrain": false,
               "img": "sahara-high-gloss.jpg"
             },
             {
-              "name": "Sahara SM",
+              "value": "Sahara SM",
               "isGrain": false,
               "img": "sahara-super-mate.jpg"
             },
             {
-              "name": "Sunny White HG",
+              "value": "Sunny White HG",
               "isGrain": false,
               "img": "sunny-white-high-gloss.jpg"
             },
             {
-              "name": "Sunny White SM",
+              "value": "Sunny White SM",
               "isGrain": false,
               "img": "sunny-white-super-matte.jpg"
             },
             {
-              "name": "Terracota HG",
+              "value": "Terracota HG",
               "isGrain": true
             },
             {
-              "name": "Terracota SM",
+              "value": "Terracota SM",
               "isGrain": true
             },
             {
-              "name": "Tormenta HG",
+              "value": "Tormenta HG",
               "isGrain": true
             },
             {
-              "name": "Tormenta SM",
+              "value": "Tormenta SM",
               "isGrain": true
             },
             {
-              "name": "Tortora HG",
+              "value": "Tortora HG",
               "isGrain": false,
               "img": "tortora-high-gloss.jpg"
             },
             {
-              "name": "Tortora SM",
+              "value": "Tortora SM",
               "isGrain": false,
               "img": "tortora-super-mate.jpg"
             },
             {
-              "name": "Vision HG",
+              "value": "Vision HG",
               "isGrain": false,
               "img": "vision-high-gloss.jpg"
             },
             {
-              "name": "Vision SM",
+              "value": "Vision SM",
               "isGrain": false,
               "img": "vision-super-mate.jpg"
             },
             {
-              "name": "White Birch HG",
+              "value": "White Birch HG",
               "isGrain": true,
               "img": "white-birch-high-gloss.jpg"
             },
             {
-              "name": "White Birch SM",
+              "value": "White Birch SM",
               "isGrain": true,
               "img": "white-birch-super-mate.jpg"
             },
             {
-              "name": "White Concrete HG",
+              "value": "White Concrete HG",
               "isGrain": false,
               "img": "white-concrete-high-glossmainimage.jpg"
             },
             {
-              "name": "White Concrete SM",
+              "value": "White Concrete SM",
               "isGrain": true,
               "img": "white-concrete-super-mate.jpg"
             }
@@ -1083,348 +1082,347 @@
           "img": "oneskin.png"
         },
         {
-          "name": "Ultrapan PET",
+          "value": "Ultrapan PET",
           "img": "ultrapan.jpg",
           "colors": [
             {
-              "name": "Black UG",
+              "value": "Black UG",
               "isGrain": false,
               "img": "Black-Ultra-Gloss-300x300.jpg"
             },
             {
-              "name": "Bright White UG",
+              "value": "Bright White UG",
               "isGrain": false,
               "img": "bright-white-ultra-gloss-1024x1024.jpg"
             },
             {
-              "name": "Citadel UG",
+              "value": "Citadel UG",
               "isGrain": false,
               "img": "citadel-ultra-gloss-300x300.jpg"
             },
             {
-              "name": "Flint UG",
+              "value": "Flint UG",
               "isGrain": false,
               "img": "flint-ultra-gloss-large-300x300.jpg"
             },
             {
-              "name": "Greystone UG",
+              "value": "Greystone UG",
               "isGrain": false,
               "img": "greystone-ultra-gloss-300x300.jpg"
             },
             {
-              "name": "Ivory UG",
+              "value": "Ivory UG",
               "isGrain": false,
               "img": "ivory-ultra-gloss-300x300.jpg"
             },
             {
-              "name": "London Fog UG",
+              "value": "London Fog UG",
               "isGrain": false
             },
             {
-              "name": "Outer Space UG",
+              "value": "Outer Space UG",
               "isGrain": false,
               "img": "outer-space-ultra-gloss-300x300.jpg"
             },
             {
-              "name": "Red UG",
+              "value": "Red UG",
               "isGrain": false,
               "img": "red-ultra-gloss-300x300.jpg"
             },
             {
-              "name": "Slate Grey UG",
+              "value": "Slate Grey UG",
               "isGrain": false,
               "img": "slate-grey-ultra-gloss-300x300.jpg"
             },
             {
-              "name": "Utaupia UG",
+              "value": "Utaupia UG",
               "isGrain": false,
               "img": "Utaupia-Ultra-Gloss-300x300.jpg"
             },
             {
-              "name": "White UG",
+              "value": "White UG",
               "isGrain": false,
               "img": "white-1024x1024.jpg"
             },
             {
-              "name": "Black UM",
+              "value": "Black UM",
               "isGrain": false,
               "img": "Black-Ultra-Matte-300x300.jpg"
             },
             {
-              "name": "Bright White UM",
+              "value": "Bright White UM",
               "isGrain": false
             },
             {
-              "name": "Citadel UM",
+              "value": "Citadel UM",
               "isGrain": false,
               "img": "citadel-ultra-matte-300x300.jpg"
             },
             {
-              "name": "Flint Grey UM",
+              "value": "Flint Grey UM",
               "isGrain": false
             },
             {
-              "name": "Greystone UM",
+              "value": "Greystone UM",
               "isGrain": false
             },
             {
-              "name": "Ivory UM",
+              "value": "Ivory UM",
               "isGrain": false,
               "img": "ivory-ultra-matte-300x300.jpg"
             },
             {
-              "name": "London Fog UM",
+              "value": "London Fog UM",
               "isGrain": false
             },
             {
-              "name": "Outer Space UM",
+              "value": "Outer Space UM",
               "isGrain": false
             },
             {
-              "name": "Rainstorm UM",
+              "value": "Rainstorm UM",
               "isGrain": false,
               "img": "Rainstorm-ok-300x300.jpg"
             },
             {
-              "name": "Slate Grey UM",
+              "value": "Slate Grey UM",
               "isGrain": false,
               "img": "slate-grey-ultra-matte-300x300.jpg"
             },
             {
-              "name": "Utaupia UM",
+              "value": "Utaupia UM",
               "isGrain": false,
               "img": "Utaupia-Ultra-Matte-300x300.jpg"
             },
             {
-              "name": "White UM",
+              "value": "White UM",
               "isGrain": false,
               "img": "white-matte-300x300.jpg"
             },
             {
-              "name": "Starfire Pearl UG",
+              "value": "Starfire Pearl UG",
               "isGrain": false,
               "img": "starfire-pearl-ultra-gloss-1024x1024.jpg"
             },
             {
-              "name": "Daybreak Pearl",
+              "value": "Daybreak Pearl",
               "isGrain": false,
               "img": "daybreak-pearl-ultra-gloss-300x300.jpg"
             },
             {
-              "name": "Lunar Pearl Surface",
+              "value": "Lunar Pearl Surface",
               "isGrain": false
             },
             {
-              "name": "Twilight Pearl UG",
+              "value": "Twilight Pearl UG",
               "isGrain": false,
               "img": "Twilight-Pearl-Ultra-Gloss-1-300x300.jpg"
             },
             {
-              "name": "Midnight Pearl UG",
+              "value": "Midnight Pearl UG",
               "isGrain": false,
               "img": "mIdnight-pearl-ultra-gloss-300x300.jpg"
             },
             {
-              "name": "Ice Matrix Wood",
+              "value": "Ice Matrix Wood",
               "isGrain": true,
               "img": "ice-matrix-1024x1024.jpg"
             },
             {
-              "name": "Amalfi Wood",
+              "value": "Amalfi Wood",
               "isGrain": true,
               "img": "amalfi-noce-ultra-gloss-large-300x300.jpg"
             },
             {
-              "name": "Ebony Wood",
+              "value": "Ebony Wood",
               "isGrain": true,
               "img": "Ebony-300x300.jpg"
             },
             {
-              "name": "Metallic Elm Wood",
+              "value": "Metallic Elm Wood",
               "isGrain": true
             }
           ]
         },
         {
-          "name": "Ultrapan Acrylic",
+          "value": "Ultrapan Acrylic",
           "img": "ultrapan.jpg",
           "colors": [
             {
-              "name": "Frost White Mettalic",
+              "value": "Frost White Mettalic",
               "isGrain": false,
               "img": "Frost-White-Metallic-Gloss-300x300.jpg"
             },
             {
-              "name": "Champagne Mettalic",
+              "value": "Champagne Mettalic",
               "isGrain": false,
               "img": "Champagne-Metallic-Gloss-300x300.jpg"
             },
             {
-              "name": "Silver Mettalic",
+              "value": "Silver Mettalic",
               "isGrain": false,
               "img": "Silver-Metallic-Gloss-300x300.jpg"
             },
             {
-              "name": "Dark Grey Mettalic",
+              "value": "Dark Grey Mettalic",
               "isGrain": false,
               "img": "Dk-Grey-Metallic-Gloss-300x300.jpg"
             },
             {
-              "name": "Black Mettalic",
+              "value": "Black Mettalic",
               "isGrain": false,
               "img": "Black-Metallic-Gloss-300x300.jpg"
             },
             {
-              "name": "Diamond Mettalic",
+              "value": "Diamond Mettalic",
               "isGrain": false,
               "img": "Diamond-Metallic-Gloss-1024x1024.jpg"
             },
             {
-              "name": "Gold Mettalic",
+              "value": "Gold Mettalic",
               "isGrain": false,
               "img": "Gold-1024x1024.jpg"
             },
             {
-              "name": "Titanium Mettalic",
+              "value": "Titanium Mettalic",
               "isGrain": false,
               "img": "Titanium-300x300.jpg"
             },
             {
-              "name": "Obsidian Mettalic",
+              "value": "Obsidian Mettalic",
               "isGrain": false,
               "img": "Obsidian-1024x1024.jpg"
             },
             {
-              "name": "Pure Arctic White Acrylic",
+              "value": "Pure Arctic White Acrylic",
               "isGrain": false
             },
             {
-              "name": "Polar White Acrylic",
+              "value": "Polar White Acrylic",
               "isGrain": false
             },
             {
-              "name": "Pebble Acrylic",
+              "value": "Pebble Acrylic",
               "isGrain": false
             },
             {
-              "name": "Galactic Grey Acrylic",
+              "value": "Galactic Grey Acrylic",
               "isGrain": false
             },
             {
-              "name": "Comfort Grey",
+              "value": "Comfort Grey",
               "isGrain": false,
               "img": "Comfort-Grey-300x300.jpg"
             },
             {
-              "name": "Seal Grey Acrylic",
+              "value": "Seal Grey Acrylic",
               "isGrain": false
             },
             {
-              "name": "Eclipse Grey Acrylic",
+              "value": "Eclipse Grey Acrylic",
               "isGrain": false
             },
             {
-              "name": "Jet Black Acrylic",
+              "value": "Jet Black Acrylic",
               "isGrain": false
             },
             {
-              "name": "Hot Rod Red Acrylic",
+              "value": "Hot Rod Red Acrylic",
               "isGrain": false
             },
             {
-              "name": "Royal Blue Acrylic",
+              "value": "Royal Blue Acrylic",
               "isGrain": false,
               "img": "Royal-Blue-300x300.jpg"
             },
             {
-              "name": "Burgundy Acrylic",
+              "value": "Burgundy Acrylic",
               "isGrain": false,
               "img": "Burgandy-300x300.jpg"
             }
           ]
         },
         {
-          "name": "Stone",
+          "value": "Stone",
           "colors": [
             {
-              "name": "Silver Grey",
+              "value": "Silver Grey",
               "isGrain": false
             },
             {
-              "name": "Galaxy Black",
+              "value": "Galaxy Black",
               "isGrain": false
             },
             {
-              "name": "Ice Pearl",
+              "value": "Ice Pearl",
               "isGrain": false
             },
             {
-              "name": "Blanco",
+              "value": "Blanco",
               "isGrain": false
             },
             {
-              "name": "Verde",
+              "value": "Verde",
               "isGrain": false
             },
             {
-              "name": "California Gold",
+              "value": "California Gold",
               "isGrain": false
             },
             {
-              "name": "Mare",
+              "value": "Mare",
               "isGrain": false
             },
             {
-              "name": "D.Black",
+              "value": "D.Black",
               "isGrain": false
             },
             {
-              "name": "Green Pearl",
+              "value": "Green Pearl",
               "isGrain": false
             },
             {
-              "name": "Argento",
+              "value": "Argento",
               "isGrain": false
             }
           ]
         },
         {
-          "name": "Milino",
+          "value": "Milino",
           "img": "milino.jpg",
-
           "colors": [
             {
-              "name": "Ash Melamine",
+              "value": "Ash Melamine",
               "img": "Ash-Melamine-1.jpg",
               "isGrain": true
             },
             {
-              "name": "Beige Linen Melamine",
+              "value": "Beige Linen Melamine",
               "img": "Beige-Linen-Melamine.jpg",
               "isGrain": false
             },
             {
-              "name": "Blanco Wood Melamine",
+              "value": "Blanco Wood Melamine",
               "img": "Blanco-Wood-Melamine.jpg",
               "isGrain": true
             },
             {
-              "name": "Grey Linen Melamine",
+              "value": "Grey Linen Melamine",
               "img": "Gray-Linen-Melamine.jpg",
               "isGrain": false
             },
             {
-              "name": "Grey Melamine",
+              "value": "Grey Melamine",
               "img": "Gray-Melamine.jpg",
               "isGrain": false
             },
             {
-              "name": "Walnut Melamine",
+              "value": "Walnut Melamine",
               "img": "Walnut-Melamine.jpg",
               "isGrain": true
             },
             {
-              "name": "White Melamine",
+              "value": "White Melamine",
               "img": "White-Melamine.jpg",
               "isGrain": false
             }
@@ -1433,179 +1431,179 @@
       ]
     },
     {
-      "name": "No Doors",
+      "value": "No Doors",
       "img": "nodoors.jpg",
       "finish": [
         {
-          "name": "No Doors No Hinges",
+          "value": "No Doors No Hinges",
           "img": "nodoors.jpg"
         }
       ]
     },
     {
-      "name": "Three Piece Door",
+      "value": "Three Piece Door",
       "img": "threepeacedoor.jpg",
       "finish": [
         {
-          "name": "Luxe",
+          "value": "Luxe",
           "colors": [
             {
-              "name": "Agua Marina HG",
+              "value": "Agua Marina HG",
               "isGrain": false,
               "img": "Agua Marina.jpg"
             },
             {
-              "name": "Antracita HG",
+              "value": "Antracita HG",
               "isGrain": false,
               "img": "Antracita.jpg"
             },
             {
-              "name": "Azul Indigo HG",
+              "value": "Azul Indigo HG",
               "isGrain": false,
               "img": "Azul Indigo.jpg"
             },
             {
-              "name": "Azul Marino HG",
+              "value": "Azul Marino HG",
               "isGrain": false,
               "img": "Azul Marino.jpg"
             },
             {
-              "name": "Basalto HG",
+              "value": "Basalto HG",
               "isGrain": false,
               "img": "Basalto.jpg"
             },
             {
-              "name": "Black HG",
+              "value": "Black HG",
               "isGrain": false,
               "img": "Black.jpg"
             },
             {
-              "name": "Blanco HG",
+              "value": "Blanco HG",
               "isGrain": false,
               "img": "Blanco.jpg"
             },
             {
-              "name": "Blanco Polar HG",
+              "value": "Blanco Polar HG",
               "isGrain": false,
               "img": "Blanco Polar.jpg"
             },
             {
-              "name": "Cashmere HG",
+              "value": "Cashmere HG",
               "isGrain": false,
               "img": "Cashmere.jpg"
             },
             {
-              "name": "Cotto HG",
+              "value": "Cotto HG",
               "isGrain": false,
               "img": "Cotto.jpg"
             },
             {
-              "name": "Cuzco Oro HG",
+              "value": "Cuzco Oro HG",
               "isGrain": true,
               "img": "Cuzco Oro.jpg"
             },
             {
-              "name": "Euroline 3 HG",
+              "value": "Euroline 3 HG",
               "isGrain": true,
               "img": "Euroline 3.jpg"
             },
             {
-              "name": "Gris Metallic HG",
+              "value": "Gris Metallic HG",
               "isGrain": false,
               "img": "Gris Metallic.jpg"
             },
             {
-              "name": "Gris Nube HG",
+              "value": "Gris Nube HG",
               "isGrain": false,
               "img": "Gris Nube.jpg"
             },
             {
-              "name": "Gris Perla HG",
+              "value": "Gris Perla HG",
               "isGrain": false,
               "img": "Gris Perla.jpg"
             },
             {
-              "name": "Gris Plomo HG",
+              "value": "Gris Plomo HG",
               "isGrain": false,
               "img": "Gris Plomo.jpg"
             },
             {
-              "name": "Guayana HG",
+              "value": "Guayana HG",
               "isGrain": true,
               "img": "Guayana.jpg"
             },
             {
-              "name": "Magnolia HG",
+              "value": "Magnolia HG",
               "isGrain": false,
               "img": "Magnolia.jpg"
             },
             {
-              "name": "Metallo 1 HG",
+              "value": "Metallo 1 HG",
               "isGrain": true,
               "img": "Metallo 1.jpg"
             },
             {
-              "name": "Metallo 4 HG",
+              "value": "Metallo 4 HG",
               "isGrain": true,
               "img": "Metallo 4.jpg"
             },
             {
-              "name": "Olivo HG",
+              "value": "Olivo HG",
               "isGrain": true,
               "img": "Olivo.jpg"
             },
             {
-              "name": "Olmo HG",
+              "value": "Olmo HG",
               "isGrain": true,
               "img": "Olmo.jpg"
             },
             {
-              "name": "Porcelain 1 HG",
+              "value": "Porcelain 1 HG",
               "isGrain": false,
               "img": "Porcelain 1.jpg"
             },
             {
-              "name": "Roble Frappe HG",
+              "value": "Roble Frappe HG",
               "isGrain": true,
               "img": "Roble Frappe.jpg"
             },
             {
-              "name": "Rojo HG",
+              "value": "Rojo HG",
               "isGrain": false,
               "img": "Rojo.jpg"
             },
             {
-              "name": "Rosales 3 HG",
+              "value": "Rosales 3 HG",
               "isGrain": true,
               "img": "Rosales 3.jpg"
             },
             {
-              "name": "Textil Grafito HG",
+              "value": "Textil Grafito HG",
               "isGrain": true,
               "img": "Textil Grafito.jpg"
             },
             {
-              "name": "Textil Plata HG",
+              "value": "Textil Plata HG",
               "isGrain": true,
               "img": "Textil Plata.jpg"
             },
             {
-              "name": "Verde Salvia HG",
+              "value": "Verde Salvia HG",
               "isGrain": false,
               "img": "Verde Salvia.jpg"
             },
             {
-              "name": "Antracita PE",
+              "value": "Antracita PE",
               "isGrain": false,
               "img": "Antracita Pearl Effect.jpg"
             },
             {
-              "name": "Basalto PE",
+              "value": "Basalto PE",
               "isGrain": false,
               "img": "Basalto Pearl Effect.jpg"
             },
             {
-              "name": "Blanco Colonial PE",
+              "value": "Blanco Colonial PE",
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
@@ -1613,220 +1611,220 @@
           "img": "luxe.jpg"
         },
         {
-          "name": "Syncron",
+          "value": "Syncron",
           "colors": [
             {
-              "name": "Anniversary Oak 1",
+              "value": "Anniversary Oak 1",
               "isGrain": true,
               "img": "Anniversary Oak 1.jpg"
             },
             {
-              "name": "Anniversary Oak 2",
+              "value": "Anniversary Oak 2",
               "isGrain": true,
               "img": "Anniversary Oak 2.jpg"
             },
             {
-              "name": "Anniversary Oak 3",
+              "value": "Anniversary Oak 3",
               "isGrain": true,
               "img": "Anniversary Oak 3.jpg"
             },
             {
-              "name": "Antracita Solid Wood",
+              "value": "Antracita Solid Wood",
               "isGrain": true,
               "img": "Antracita Solid Wood.jpg"
             },
             {
-              "name": "Blanco Solid Wood",
+              "value": "Blanco Solid Wood",
               "isGrain": true,
               "img": "Blanco Solid Wood.jpg"
             },
             {
-              "name": "Cashmere Solid Wood",
+              "value": "Cashmere Solid Wood",
               "isGrain": true,
               "img": "Cashmere Solid Wood.jpg"
             },
             {
-              "name": "Como Ash 1",
+              "value": "Como Ash 1",
               "isGrain": true,
               "img": "Como Ash 1.jpg"
             },
             {
-              "name": "Como Ash 2",
+              "value": "Como Ash 2",
               "isGrain": true,
               "img": "Como Ash 2.jpg"
             },
             {
-              "name": "Como Ash 3",
+              "value": "Como Ash 3",
               "isGrain": true,
               "img": "Como Ash 3.jpg"
             },
             {
-              "name": "Evora 3",
+              "value": "Evora 3",
               "isGrain": true,
               "img": "Evora 3.jpg"
             },
             {
-              "name": "Evora 4",
+              "value": "Evora 4",
               "isGrain": true,
               "img": "Evora 4.jpg"
             },
             {
-              "name": "Frappé 1",
+              "value": "Frappé 1",
               "isGrain": true,
               "img": "Frappé 1.jpg"
             },
             {
-              "name": "Frappé 2",
+              "value": "Frappé 2",
               "isGrain": true,
               "img": "Frappé 2.jpg"
             },
             {
-              "name": "Frappé 3",
+              "value": "Frappé 3",
               "isGrain": true,
               "img": "Frappé 3.jpg"
             },
             {
-              "name": "Gris Plomo Solid Wood",
+              "value": "Gris Plomo Solid Wood",
               "isGrain": true,
               "img": "Gris Plomo Solid Wood.jpg"
             },
             {
-              "name": "Ice 1",
+              "value": "Ice 1",
               "isGrain": true,
               "img": "Ice 1.jpg"
             },
             {
-              "name": "Ice 2",
+              "value": "Ice 2",
               "isGrain": true,
               "img": "Ice 2.jpg"
             },
             {
-              "name": "Ice 3",
+              "value": "Ice 3",
               "isGrain": true,
               "img": "Ice 3.jpg"
             },
             {
-              "name": "Ice 4",
+              "value": "Ice 4",
               "isGrain": true,
               "img": "Ice 4.jpg"
             },
             {
-              "name": "Ida 1",
+              "value": "Ida 1",
               "isGrain": true,
               "img": "Ida 1.jpg"
             },
             {
-              "name": "Ida 2",
+              "value": "Ida 2",
               "isGrain": true,
               "img": "Ida 2.jpg"
             },
             {
-              "name": "Ida 3",
+              "value": "Ida 3",
               "isGrain": true,
               "img": "Ida 3.jpg"
             },
             {
-              "name": "Ida 4",
+              "value": "Ida 4",
               "isGrain": true,
               "img": "Ida 4.jpg"
             },
             {
-              "name": "Lakeland Oak 1",
+              "value": "Lakeland Oak 1",
               "isGrain": true,
               "img": "Lakeland Oak 1.jpg"
             },
             {
-              "name": "Lakeland Oak 2",
+              "value": "Lakeland Oak 2",
               "isGrain": true,
               "img": "Lakeland Oak 2.jpg"
             },
             {
-              "name": "Lakeland Oak 3",
+              "value": "Lakeland Oak 3",
               "isGrain": true,
               "img": "Lakeland Oak 3.jpg"
             },
             {
-              "name": "Muratti 1",
+              "value": "Muratti 1",
               "isGrain": true,
               "img": "Muratti 1.jpg"
             },
             {
-              "name": "Muratti 2",
+              "value": "Muratti 2",
               "isGrain": true,
               "img": "Muratti 2.jpg"
             },
             {
-              "name": "Muratti 3",
+              "value": "Muratti 3",
               "isGrain": true,
               "img": "Muratti 3.jpg"
             },
             {
-              "name": "Muratti 4",
+              "value": "Muratti 4",
               "isGrain": true,
               "img": "Muratti 4.jpg"
             },
             {
-              "name": "Nocce 1",
+              "value": "Nocce 1",
               "isGrain": true,
               "img": "Nocce 1.jpg"
             },
             {
-              "name": "Nocce 2",
+              "value": "Nocce 2",
               "isGrain": true,
               "img": "Nocce 2.jpg"
             },
             {
-              "name": "Nocce 3",
+              "value": "Nocce 3",
               "isGrain": true,
               "img": "Nocce 3.jpg"
             },
             {
-              "name": "Olmo 2",
+              "value": "Olmo 2",
               "isGrain": true,
               "img": "Olmo 2.jpg"
             },
             {
-              "name": "Olmo 3",
+              "value": "Olmo 3",
               "isGrain": true,
               "img": "Olmo 3.jpg"
             },
             {
-              "name": "Oxid 1",
+              "value": "Oxid 1",
               "isGrain": true,
               "img": "Oxid 1.jpg"
             },
             {
-              "name": "Oxid 4",
+              "value": "Oxid 4",
               "isGrain": true,
               "img": "Oxid 4.jpg"
             },
             {
-              "name": "Rosales 1",
+              "value": "Rosales 1",
               "isGrain": true,
               "img": "Rosales 1.jpg"
             },
             {
-              "name": "Rosales 2",
+              "value": "Rosales 2",
               "isGrain": true,
               "img": "Rosales 2.jpg"
             },
             {
-              "name": "Rosales 3",
+              "value": "Rosales 3",
               "isGrain": true,
               "img": "Rosales 3.jpg"
             },
             {
-              "name": "Woodline 1",
+              "value": "Woodline 1",
               "isGrain": true,
               "img": "Woodline 1.jpg"
             },
             {
-              "name": "Woodline 3",
+              "value": "Woodline 3",
               "isGrain": true,
               "img": "Woodline 3.jpg"
             },
             {
-              "name": "Woodline 4",
+              "value": "Woodline 4",
               "isGrain": true,
               "img": "Woodline 4.jpg"
             }
@@ -1836,19 +1834,19 @@
       ]
     },
     {
-      "name": "Finger Pull",
+      "value": "Finger Pull",
       "img": "fingerpull.jpg",
       "finish": [
         {
-          "name": "Luxe",
+          "value": "Luxe",
           "colors": [
             {
-              "name": "Antracita HGFP",
+              "value": "Antracita HGFP",
               "isGrain": false,
               "img": "Luxe-Antracita.jpg"
             },
             {
-              "name": "Blanco HGFP",
+              "value": "Blanco HGFP",
               "isGrain": false,
               "img": "Luxe-Blanco.jpg"
             }
@@ -1856,76 +1854,76 @@
           "img": "luxe.jpg"
         },
         {
-          "name": "Zenit",
+          "value": "Zenit",
           "colors": [
             {
-              "name": "Antracita SM FP",
+              "value": "Antracita SM FP",
               "isGrain": false,
               "img": "Zénit-Antracita.jpg"
             },
             {
-              "name": "Blanco SM FP",
+              "value": "Blanco SM FP",
               "isGrain": false,
               "img": "Zénit-Blanco.jpg"
             },
             {
-              "name": "Black SM FP",
+              "value": "Black SM FP",
               "isGrain": false
             },
             {
-              "name": "Cashmere SM FP",
+              "value": "Cashmere SM FP",
               "isGrain": false
             }
           ],
           "img": "zenit.jpg"
         },
         {
-          "name": "Syncron",
+          "value": "Syncron",
           "colors": [
             {
-              "name": "Como Ash 1 FP",
+              "value": "Como Ash 1 FP",
               "isGrain": false
             },
             {
-              "name": "Como Ash 2 FP",
+              "value": "Como Ash 2 FP",
               "isGrain": false
             },
             {
-              "name": "Muratti 1 FP",
+              "value": "Muratti 1 FP",
               "isGrain": false,
               "img": "Syncron Muratti 1.jpg"
             },
             {
-              "name": "Muratti 4 FP",
+              "value": "Muratti 4 FP",
               "isGrain": false,
               "img": "Syncron Muratti 4.jpg"
             },
             {
-              "name": "Nocce 1 FP",
+              "value": "Nocce 1 FP",
               "isGrain": false
             },
             {
-              "name": "Nocce 3 FP",
+              "value": "Nocce 3 FP",
               "isGrain": false
             },
             {
-              "name": "Rosales 2 FP",
+              "value": "Rosales 2 FP",
               "isGrain": false
             },
             {
-              "name": "Rosales 3 FP",
+              "value": "Rosales 3 FP",
               "isGrain": false
             },
             {
-              "name": "Woodline 1 FP",
+              "value": "Woodline 1 FP",
               "isGrain": false
             },
             {
-              "name": "Woodline 3 FP",
+              "value": "Woodline 3 FP",
               "isGrain": false
             },
             {
-              "name": "Olmo 3 FP",
+              "value": "Olmo 3 FP",
               "isGrain": false,
               "img": "Syncron Olmo 3.jpg"
             }
@@ -1935,1434 +1933,1434 @@
       ]
     },
     {
-      "name": "Painted",
+      "value": "Painted",
       "img": "painted.jpg",
       "finish": [
         {
-          "name": "Frame 3/4",
+          "value": "Frame 3/4",
           "img": "frame0.75.jpg",
           "colors": [
             {
-              "name": "White Matte",
+              "value": "White Matte",
               "isGrain": false,
               "img": "painted/White.jpg"
             },
             {
-              "name": "Aqua Marina",
+              "value": "Aqua Marina",
               "isGrain": false,
               "img": "painted/Aqua Marina.jpg"
             },
             {
-              "name": "Azul Indigo",
+              "value": "Azul Indigo",
               "isGrain": false,
               "img": "painted/Azul Indigo.jpg"
             },
             {
-              "name": "Verde Salvia",
+              "value": "Verde Salvia",
               "isGrain": false,
               "img": "painted/Verde Salvia.jpg"
             },
             {
-              "name": "Gris Plomo",
+              "value": "Gris Plomo",
               "isGrain": false,
               "img": "painted/Gris Plomo.jpg"
             },
             {
-              "name": "Antracita",
+              "value": "Antracita",
               "isGrain": false,
               "img": "painted/Antracita.jpg"
             },
             {
-              "name": "SW 0055 Light French Gray",
+              "value": "SW 0055 Light French Gray",
               "isGrain": false,
               "img": "painted/SW0055.f.jpg"
             },
             {
-              "name": "SW 6204 Sea Salt",
+              "value": "SW 6204 Sea Salt",
               "isGrain": false,
               "img": "painted/SW6204.f.jpg"
             },
             {
-              "name": "SW 6211 Rainwashed",
+              "value": "SW 6211 Rainwashed",
               "isGrain": false,
               "img": "painted/SW6211.f.jpg"
             },
             {
-              "name": "SW 6241 Aleutian",
+              "value": "SW 6241 Aleutian",
               "isGrain": false,
               "img": "painted/SW6241.f.jpg"
             },
             {
-              "name": "SW 6244 Naval",
+              "value": "SW 6244 Naval",
               "isGrain": false,
               "img": "painted/SW6244.f.jpg"
             },
             {
-              "name": "SW 6250 Granite Peak",
+              "value": "SW 6250 Granite Peak",
               "isGrain": false,
               "img": "painted/SW6250.f.jpg"
             },
             {
-              "name": "SW 6253 Olympus White",
+              "value": "SW 6253 Olympus White",
               "isGrain": false,
               "img": "painted/SW6253.f.jpg"
             },
             {
-              "name": "SW 6254 Lazy Gray",
+              "value": "SW 6254 Lazy Gray",
               "isGrain": false,
               "img": "painted/SW6254.f.jpg"
             },
             {
-              "name": "SW 6258 Tricorn Black",
+              "value": "SW 6258 Tricorn Black",
               "isGrain": false,
               "img": "painted/SW6258.f.jpg"
             },
             {
-              "name": "SW 6385 Dover White",
+              "value": "SW 6385 Dover White",
               "isGrain": false,
               "img": "painted/SW6385.f.jpg"
             },
             {
-              "name": "SW 7004 Snowbound",
+              "value": "SW 7004 Snowbound",
               "isGrain": false,
               "img": "painted/SW7004.f.jpg"
             },
             {
-              "name": "SW 7005 Pure White",
+              "value": "SW 7005 Pure White",
               "isGrain": false,
               "img": "painted/SW7005.f.jpg"
             },
             {
-              "name": "SW 7006 Extra White",
+              "value": "SW 7006 Extra White",
               "isGrain": false,
               "img": "painted/SW7006.f.jpg"
             },
             {
-              "name": "SW 7007 Ceiling Bright White",
+              "value": "SW 7007 Ceiling Bright White",
               "isGrain": false,
               "img": "painted/SW7007.f.jpg"
             },
             {
-              "name": "SW 7008 Alabaster",
+              "value": "SW 7008 Alabaster",
               "isGrain": false,
               "img": "painted/SW7008.f.jpg"
             },
             {
-              "name": "SW 7009 Pearly White",
+              "value": "SW 7009 Pearly White",
               "isGrain": false,
               "img": "painted/SW7009.f.jpg"
             },
             {
-              "name": "SW 7012 Creamy",
+              "value": "SW 7012 Creamy",
               "isGrain": false,
               "img": "painted/SW7012.f.jpg"
             },
             {
-              "name": "SW 7014 Eider White",
+              "value": "SW 7014 Eider White",
               "isGrain": false,
               "img": "painted/SW7014.f.jpg"
             },
             {
-              "name": "SW 7015 Repose Gray",
+              "value": "SW 7015 Repose Gray",
               "isGrain": false,
               "img": "painted/SW7015.f.jpg"
             },
             {
-              "name": "SW 7016 Mindful Gray",
+              "value": "SW 7016 Mindful Gray",
               "isGrain": false,
               "img": "painted/SW7016.f.jpg"
             },
             {
-              "name": "SW 7019 Gauntlet Gray",
+              "value": "SW 7019 Gauntlet Gray",
               "isGrain": false,
               "img": "painted/SW7019.f.jpg"
             },
             {
-              "name": "SW 7029 Agreeable Gray",
+              "value": "SW 7029 Agreeable Gray",
               "isGrain": false,
               "img": "painted/SW7029.f.jpg"
             },
             {
-              "name": "SW 7035 Aesthetic White",
+              "value": "SW 7035 Aesthetic White",
               "isGrain": false,
               "img": "painted/SW7035.f.jpg"
             },
             {
-              "name": "SW 7036 Accessible Beige",
+              "value": "SW 7036 Accessible Beige",
               "isGrain": false,
               "img": "painted/SW7036.f.jpg"
             },
             {
-              "name": "SW 7042 Shoji White",
+              "value": "SW 7042 Shoji White",
               "isGrain": false,
               "img": "painted/SW7042.f.jpg"
             },
             {
-              "name": "SW 7043 Worldly Gray",
+              "value": "SW 7043 Worldly Gray",
               "isGrain": false,
               "img": "painted/SW7043.f.jpg"
             },
             {
-              "name": "SW 7048 Urbane Bronze",
+              "value": "SW 7048 Urbane Bronze",
               "isGrain": false,
               "img": "painted/SW7048.f.jpg"
             },
             {
-              "name": "SW 7064 Passive",
+              "value": "SW 7064 Passive",
               "isGrain": false,
               "img": "painted/SW7064.f.jpg"
             },
             {
-              "name": "SW 7069 Iron Ore",
+              "value": "SW 7069 Iron Ore",
               "isGrain": false,
               "img": "painted/SW7069.f.jpg"
             },
             {
-              "name": "SW 7071 Gray Screen",
+              "value": "SW 7071 Gray Screen",
               "isGrain": false,
               "img": "painted/SW7071.f.jpg"
             },
             {
-              "name": "SW 7551 Greek Villa",
+              "value": "SW 7551 Greek Villa",
               "isGrain": false,
               "img": "painted/SW7551.jpg"
             },
             {
-              "name": "SW 7566 Westhighland White",
+              "value": "SW 7566 Westhighland White",
               "isGrain": false,
               "img": "painted/SW7566.jpg"
             },
             {
-              "name": "SW 7602 Indigo Batik",
+              "value": "SW 7602 Indigo Batik",
               "isGrain": false,
               "img": "painted/SW7602.jpg"
             },
             {
-              "name": "SW 7631 City Loft",
+              "value": "SW 7631 City Loft",
               "isGrain": false,
               "img": "painted/SW7631.jpg"
             },
             {
-              "name": "SW 7632 Modern Gray",
+              "value": "SW 7632 Modern Gray",
               "isGrain": false,
               "img": "painted/SW7632.jpg"
             },
             {
-              "name": "SW 7636 Origami White",
+              "value": "SW 7636 Origami White",
               "isGrain": false,
               "img": "painted/SW7636.jpg"
             },
             {
-              "name": "SW 7646 First Star",
+              "value": "SW 7646 First Star",
               "isGrain": false,
               "img": "painted/SW7646.jpg"
             },
             {
-              "name": "SW 7647 Crushed Ice",
+              "value": "SW 7647 Crushed Ice",
               "isGrain": false,
               "img": "painted/SW7647.jpg"
             },
             {
-              "name": "SW 7661 Reflection",
+              "value": "SW 7661 Reflection",
               "isGrain": false,
               "img": "painted/SW7661.jpg"
             },
             {
-              "name": "SW 7669 Summit Gray",
+              "value": "SW 7669 Summit Gray",
               "isGrain": false,
               "img": "painted/SW7669.jpg"
             },
             {
-              "name": "SW 7674 Peppercorn",
+              "value": "SW 7674 Peppercorn",
               "isGrain": false,
               "img": "painted/SW7674.jpg"
             },
             {
-              "name": "SW 7730 Forestwood",
+              "value": "SW 7730 Forestwood",
               "isGrain": false,
               "img": "painted/SW7730.jpg"
             },
             {
-              "name": "SW 7757 High Reflective White",
+              "value": "SW 7757 High Reflective White",
               "isGrain": false,
               "img": "painted/SW7757.jpg"
             },
             {
-              "name": "SW 9104 Woven Wicker",
+              "value": "SW 9104 Woven Wicker",
               "isGrain": false,
               "img": "painted/SW9104.jpg"
             },
             {
-              "name": "SW 9109 Natural Linen",
+              "value": "SW 9109 Natural Linen",
               "isGrain": false,
               "img": "painted/SW9101.jpg"
             },
             {
-              "name": "SW 9130 Evergreen Fog",
+              "value": "SW 9130 Evergreen Fog",
               "isGrain": false,
               "img": "painted/SW9130.jpg"
             },
             {
-              "name": "SW 9132 Acacia Haze",
+              "value": "SW 9132 Acacia Haze",
               "isGrain": false,
               "img": "painted/SW9132.jpg"
             },
             {
-              "name": "SW 9144 Moonmist",
+              "value": "SW 9144 Moonmist",
               "isGrain": false,
               "img": "painted/SW9144.jpg"
             },
             {
-              "name": "SW 9165 Gossamer Veil",
+              "value": "SW 9165 Gossamer Veil",
               "isGrain": false,
               "img": "painted/SW9165.jpg"
             },
             {
-              "name": "SW 9166 Drift of Mist",
+              "value": "SW 9166 Drift of Mist",
               "isGrain": false,
               "img": "painted/SW9166.jpg"
             }
           ]
         },
         {
-          "name": "Frame 1",
+          "value": "Frame 1",
           "img": "frame1.jpg",
           "colors": [
             {
-              "name": "White Matte",
+              "value": "White Matte",
               "isGrain": false,
               "img": "painted/White.jpg"
             },
             {
-              "name": "Aqua Marina",
+              "value": "Aqua Marina",
               "isGrain": false,
               "img": "painted/Aqua Marina.jpg"
             },
             {
-              "name": "Azul Indigo",
+              "value": "Azul Indigo",
               "isGrain": false,
               "img": "painted/Azul Indigo.jpg"
             },
             {
-              "name": "Verde Salvia",
+              "value": "Verde Salvia",
               "isGrain": false,
               "img": "painted/Verde Salvia.jpg"
             },
             {
-              "name": "Gris Plomo",
+              "value": "Gris Plomo",
               "isGrain": false,
               "img": "painted/Gris Plomo.jpg"
             },
             {
-              "name": "Antracita",
+              "value": "Antracita",
               "isGrain": false,
               "img": "painted/Antracita.jpg"
             },
             {
-              "name": "SW 0055 Light French Gray",
+              "value": "SW 0055 Light French Gray",
               "isGrain": false,
               "img": "painted/SW0055.f.jpg"
             },
             {
-              "name": "SW 6204 Sea Salt",
+              "value": "SW 6204 Sea Salt",
               "isGrain": false,
               "img": "painted/SW6204.f.jpg"
             },
             {
-              "name": "SW 6211 Rainwashed",
+              "value": "SW 6211 Rainwashed",
               "isGrain": false,
               "img": "painted/SW6211.f.jpg"
             },
             {
-              "name": "SW 6241 Aleutian",
+              "value": "SW 6241 Aleutian",
               "isGrain": false,
               "img": "painted/SW6241.f.jpg"
             },
             {
-              "name": "SW 6244 Naval",
+              "value": "SW 6244 Naval",
               "isGrain": false,
               "img": "painted/SW6244.f.jpg"
             },
             {
-              "name": "SW 6250 Granite Peak",
+              "value": "SW 6250 Granite Peak",
               "isGrain": false,
               "img": "painted/SW6250.f.jpg"
             },
             {
-              "name": "SW 6253 Olympus White",
+              "value": "SW 6253 Olympus White",
               "isGrain": false,
               "img": "painted/SW6253.f.jpg"
             },
             {
-              "name": "SW 6254 Lazy Gray",
+              "value": "SW 6254 Lazy Gray",
               "isGrain": false,
               "img": "painted/SW6254.f.jpg"
             },
             {
-              "name": "SW 6258 Tricorn Black",
+              "value": "SW 6258 Tricorn Black",
               "isGrain": false,
               "img": "painted/SW6258.f.jpg"
             },
             {
-              "name": "SW 6385 Dover White",
+              "value": "SW 6385 Dover White",
               "isGrain": false,
               "img": "painted/SW6385.f.jpg"
             },
             {
-              "name": "SW 7004 Snowbound",
+              "value": "SW 7004 Snowbound",
               "isGrain": false,
               "img": "painted/SW7004.f.jpg"
             },
             {
-              "name": "SW 7005 Pure White",
+              "value": "SW 7005 Pure White",
               "isGrain": false,
               "img": "painted/SW7005.f.jpg"
             },
             {
-              "name": "SW 7006 Extra White",
+              "value": "SW 7006 Extra White",
               "isGrain": false,
               "img": "painted/SW7006.f.jpg"
             },
             {
-              "name": "SW 7007 Ceiling Bright White",
+              "value": "SW 7007 Ceiling Bright White",
               "isGrain": false,
               "img": "painted/SW7007.f.jpg"
             },
             {
-              "name": "SW 7008 Alabaster",
+              "value": "SW 7008 Alabaster",
               "isGrain": false,
               "img": "painted/SW7008.f.jpg"
             },
             {
-              "name": "SW 7009 Pearly White",
+              "value": "SW 7009 Pearly White",
               "isGrain": false,
               "img": "painted/SW7009.f.jpg"
             },
             {
-              "name": "SW 7012 Creamy",
+              "value": "SW 7012 Creamy",
               "isGrain": false,
               "img": "painted/SW7012.f.jpg"
             },
             {
-              "name": "SW 7014 Eider White",
+              "value": "SW 7014 Eider White",
               "isGrain": false,
               "img": "painted/SW7014.f.jpg"
             },
             {
-              "name": "SW 7015 Repose Gray",
+              "value": "SW 7015 Repose Gray",
               "isGrain": false,
               "img": "painted/SW7015.f.jpg"
             },
             {
-              "name": "SW 7016 Mindful Gray",
+              "value": "SW 7016 Mindful Gray",
               "isGrain": false,
               "img": "painted/SW7016.f.jpg"
             },
             {
-              "name": "SW 7019 Gauntlet Gray",
+              "value": "SW 7019 Gauntlet Gray",
               "isGrain": false,
               "img": "painted/SW7019.f.jpg"
             },
             {
-              "name": "SW 7029 Agreeable Gray",
+              "value": "SW 7029 Agreeable Gray",
               "isGrain": false,
               "img": "painted/SW7029.f.jpg"
             },
             {
-              "name": "SW 7035 Aesthetic White",
+              "value": "SW 7035 Aesthetic White",
               "isGrain": false,
               "img": "painted/SW7035.f.jpg"
             },
             {
-              "name": "SW 7036 Accessible Beige",
+              "value": "SW 7036 Accessible Beige",
               "isGrain": false,
               "img": "painted/SW7036.f.jpg"
             },
             {
-              "name": "SW 7042 Shoji White",
+              "value": "SW 7042 Shoji White",
               "isGrain": false,
               "img": "painted/SW7042.f.jpg"
             },
             {
-              "name": "SW 7043 Worldly Gray",
+              "value": "SW 7043 Worldly Gray",
               "isGrain": false,
               "img": "painted/SW7043.f.jpg"
             },
             {
-              "name": "SW 7048 Urbane Bronze",
+              "value": "SW 7048 Urbane Bronze",
               "isGrain": false,
               "img": "painted/SW7048.f.jpg"
             },
             {
-              "name": "SW 7064 Passive",
+              "value": "SW 7064 Passive",
               "isGrain": false,
               "img": "painted/SW7064.f.jpg"
             },
             {
-              "name": "SW 7069 Iron Ore",
+              "value": "SW 7069 Iron Ore",
               "isGrain": false,
               "img": "painted/SW7069.f.jpg"
             },
             {
-              "name": "SW 7071 Gray Screen",
+              "value": "SW 7071 Gray Screen",
               "isGrain": false,
               "img": "painted/SW7071.f.jpg"
             },
             {
-              "name": "SW 7551 Greek Villa",
+              "value": "SW 7551 Greek Villa",
               "isGrain": false,
               "img": "painted/SW7551.jpg"
             },
             {
-              "name": "SW 7566 Westhighland White",
+              "value": "SW 7566 Westhighland White",
               "isGrain": false,
               "img": "painted/SW7566.jpg"
             },
             {
-              "name": "SW 7602 Indigo Batik",
+              "value": "SW 7602 Indigo Batik",
               "isGrain": false,
               "img": "painted/SW7602.jpg"
             },
             {
-              "name": "SW 7631 City Loft",
+              "value": "SW 7631 City Loft",
               "isGrain": false,
               "img": "painted/SW7631.jpg"
             },
             {
-              "name": "SW 7632 Modern Gray",
+              "value": "SW 7632 Modern Gray",
               "isGrain": false,
               "img": "painted/SW7632.jpg"
             },
             {
-              "name": "SW 7636 Origami White",
+              "value": "SW 7636 Origami White",
               "isGrain": false,
               "img": "painted/SW7636.jpg"
             },
             {
-              "name": "SW 7646 First Star",
+              "value": "SW 7646 First Star",
               "isGrain": false,
               "img": "painted/SW7646.jpg"
             },
             {
-              "name": "SW 7647 Crushed Ice",
+              "value": "SW 7647 Crushed Ice",
               "isGrain": false,
               "img": "painted/SW7647.jpg"
             },
             {
-              "name": "SW 7661 Reflection",
+              "value": "SW 7661 Reflection",
               "isGrain": false,
               "img": "painted/SW7661.jpg"
             },
             {
-              "name": "SW 7669 Summit Gray",
+              "value": "SW 7669 Summit Gray",
               "isGrain": false,
               "img": "painted/SW7669.jpg"
             },
             {
-              "name": "SW 7674 Peppercorn",
+              "value": "SW 7674 Peppercorn",
               "isGrain": false,
               "img": "painted/SW7674.jpg"
             },
             {
-              "name": "SW 7730 Forestwood",
+              "value": "SW 7730 Forestwood",
               "isGrain": false,
               "img": "painted/SW7730.jpg"
             },
             {
-              "name": "SW 7757 High Reflective White",
+              "value": "SW 7757 High Reflective White",
               "isGrain": false,
               "img": "painted/SW7757.jpg"
             },
             {
-              "name": "SW 9104 Woven Wicker",
+              "value": "SW 9104 Woven Wicker",
               "isGrain": false,
               "img": "painted/SW9104.jpg"
             },
             {
-              "name": "SW 9109 Natural Linen",
+              "value": "SW 9109 Natural Linen",
               "isGrain": false,
               "img": "painted/SW9101.jpg"
             },
             {
-              "name": "SW 9130 Evergreen Fog",
+              "value": "SW 9130 Evergreen Fog",
               "isGrain": false,
               "img": "painted/SW9130.jpg"
             },
             {
-              "name": "SW 9132 Acacia Haze",
+              "value": "SW 9132 Acacia Haze",
               "isGrain": false,
               "img": "painted/SW9132.jpg"
             },
             {
-              "name": "SW 9144 Moonmist",
+              "value": "SW 9144 Moonmist",
               "isGrain": false,
               "img": "painted/SW9144.jpg"
             },
             {
-              "name": "SW 9165 Gossamer Veil",
+              "value": "SW 9165 Gossamer Veil",
               "isGrain": false,
               "img": "painted/SW9165.jpg"
             },
             {
-              "name": "SW 9166 Drift of Mist",
+              "value": "SW 9166 Drift of Mist",
               "isGrain": false,
               "img": "painted/SW9166.jpg"
             }
           ]
         },
         {
-          "name": "Frame 1 1/2",
+          "value": "Frame 1 1/2",
           "img": "frame1.5.jpg",
           "colors": [
             {
-              "name": "White Matte",
+              "value": "White Matte",
               "isGrain": false,
               "img": "painted/White.jpg"
             },
             {
-              "name": "Aqua Marina",
+              "value": "Aqua Marina",
               "isGrain": false,
               "img": "painted/Aqua Marina.jpg"
             },
             {
-              "name": "Azul Indigo",
+              "value": "Azul Indigo",
               "isGrain": false,
               "img": "painted/Azul Indigo.jpg"
             },
             {
-              "name": "Verde Salvia",
+              "value": "Verde Salvia",
               "isGrain": false,
               "img": "painted/Verde Salvia.jpg"
             },
             {
-              "name": "Gris Plomo",
+              "value": "Gris Plomo",
               "isGrain": false,
               "img": "painted/Gris Plomo.jpg"
             },
             {
-              "name": "Antracita",
+              "value": "Antracita",
               "isGrain": false,
               "img": "painted/Antracita.jpg"
             },
             {
-              "name": "SW 0055 Light French Gray",
+              "value": "SW 0055 Light French Gray",
               "isGrain": false,
               "img": "painted/SW0055.f.jpg"
             },
             {
-              "name": "SW 6204 Sea Salt",
+              "value": "SW 6204 Sea Salt",
               "isGrain": false,
               "img": "painted/SW6204.f.jpg"
             },
             {
-              "name": "SW 6211 Rainwashed",
+              "value": "SW 6211 Rainwashed",
               "isGrain": false,
               "img": "painted/SW6211.f.jpg"
             },
             {
-              "name": "SW 6241 Aleutian",
+              "value": "SW 6241 Aleutian",
               "isGrain": false,
               "img": "painted/SW6241.f.jpg"
             },
             {
-              "name": "SW 6244 Naval",
+              "value": "SW 6244 Naval",
               "isGrain": false,
               "img": "painted/SW6244.f.jpg"
             },
             {
-              "name": "SW 6250 Granite Peak",
+              "value": "SW 6250 Granite Peak",
               "isGrain": false,
               "img": "painted/SW6250.f.jpg"
             },
             {
-              "name": "SW 6253 Olympus White",
+              "value": "SW 6253 Olympus White",
               "isGrain": false,
               "img": "painted/SW6253.f.jpg"
             },
             {
-              "name": "SW 6254 Lazy Gray",
+              "value": "SW 6254 Lazy Gray",
               "isGrain": false,
               "img": "painted/SW6254.f.jpg"
             },
             {
-              "name": "SW 6258 Tricorn Black",
+              "value": "SW 6258 Tricorn Black",
               "isGrain": false,
               "img": "painted/SW6258.f.jpg"
             },
             {
-              "name": "SW 6385 Dover White",
+              "value": "SW 6385 Dover White",
               "isGrain": false,
               "img": "painted/SW6385.f.jpg"
             },
             {
-              "name": "SW 7004 Snowbound",
+              "value": "SW 7004 Snowbound",
               "isGrain": false,
               "img": "painted/SW7004.f.jpg"
             },
             {
-              "name": "SW 7005 Pure White",
+              "value": "SW 7005 Pure White",
               "isGrain": false,
               "img": "painted/SW7005.f.jpg"
             },
             {
-              "name": "SW 7006 Extra White",
+              "value": "SW 7006 Extra White",
               "isGrain": false,
               "img": "painted/SW7006.f.jpg"
             },
             {
-              "name": "SW 7007 Ceiling Bright White",
+              "value": "SW 7007 Ceiling Bright White",
               "isGrain": false,
               "img": "painted/SW7007.f.jpg"
             },
             {
-              "name": "SW 7008 Alabaster",
+              "value": "SW 7008 Alabaster",
               "isGrain": false,
               "img": "painted/SW7008.f.jpg"
             },
             {
-              "name": "SW 7009 Pearly White",
+              "value": "SW 7009 Pearly White",
               "isGrain": false,
               "img": "painted/SW7009.f.jpg"
             },
             {
-              "name": "SW 7012 Creamy",
+              "value": "SW 7012 Creamy",
               "isGrain": false,
               "img": "painted/SW7012.f.jpg"
             },
             {
-              "name": "SW 7014 Eider White",
+              "value": "SW 7014 Eider White",
               "isGrain": false,
               "img": "painted/SW7014.f.jpg"
             },
             {
-              "name": "SW 7015 Repose Gray",
+              "value": "SW 7015 Repose Gray",
               "isGrain": false,
               "img": "painted/SW7015.f.jpg"
             },
             {
-              "name": "SW 7016 Mindful Gray",
+              "value": "SW 7016 Mindful Gray",
               "isGrain": false,
               "img": "painted/SW7016.f.jpg"
             },
             {
-              "name": "SW 7019 Gauntlet Gray",
+              "value": "SW 7019 Gauntlet Gray",
               "isGrain": false,
               "img": "painted/SW7019.f.jpg"
             },
             {
-              "name": "SW 7029 Agreeable Gray",
+              "value": "SW 7029 Agreeable Gray",
               "isGrain": false,
               "img": "painted/SW7029.f.jpg"
             },
             {
-              "name": "SW 7035 Aesthetic White",
+              "value": "SW 7035 Aesthetic White",
               "isGrain": false,
               "img": "painted/SW7035.f.jpg"
             },
             {
-              "name": "SW 7036 Accessible Beige",
+              "value": "SW 7036 Accessible Beige",
               "isGrain": false,
               "img": "painted/SW7036.f.jpg"
             },
             {
-              "name": "SW 7042 Shoji White",
+              "value": "SW 7042 Shoji White",
               "isGrain": false,
               "img": "painted/SW7042.f.jpg"
             },
             {
-              "name": "SW 7043 Worldly Gray",
+              "value": "SW 7043 Worldly Gray",
               "isGrain": false,
               "img": "painted/SW7043.f.jpg"
             },
             {
-              "name": "SW 7048 Urbane Bronze",
+              "value": "SW 7048 Urbane Bronze",
               "isGrain": false,
               "img": "painted/SW7048.f.jpg"
             },
             {
-              "name": "SW 7064 Passive",
+              "value": "SW 7064 Passive",
               "isGrain": false,
               "img": "painted/SW7064.f.jpg"
             },
             {
-              "name": "SW 7069 Iron Ore",
+              "value": "SW 7069 Iron Ore",
               "isGrain": false,
               "img": "painted/SW7069.f.jpg"
             },
             {
-              "name": "SW 7071 Gray Screen",
+              "value": "SW 7071 Gray Screen",
               "isGrain": false,
               "img": "painted/SW7071.f.jpg"
             },
             {
-              "name": "SW 7551 Greek Villa",
+              "value": "SW 7551 Greek Villa",
               "isGrain": false,
               "img": "painted/SW7551.jpg"
             },
             {
-              "name": "SW 7566 Westhighland White",
+              "value": "SW 7566 Westhighland White",
               "isGrain": false,
               "img": "painted/SW7566.jpg"
             },
             {
-              "name": "SW 7602 Indigo Batik",
+              "value": "SW 7602 Indigo Batik",
               "isGrain": false,
               "img": "painted/SW7602.jpg"
             },
             {
-              "name": "SW 7631 City Loft",
+              "value": "SW 7631 City Loft",
               "isGrain": false,
               "img": "painted/SW7631.jpg"
             },
             {
-              "name": "SW 7632 Modern Gray",
+              "value": "SW 7632 Modern Gray",
               "isGrain": false,
               "img": "painted/SW7632.jpg"
             },
             {
-              "name": "SW 7636 Origami White",
+              "value": "SW 7636 Origami White",
               "isGrain": false,
               "img": "painted/SW7636.jpg"
             },
             {
-              "name": "SW 7646 First Star",
+              "value": "SW 7646 First Star",
               "isGrain": false,
               "img": "painted/SW7646.jpg"
             },
             {
-              "name": "SW 7647 Crushed Ice",
+              "value": "SW 7647 Crushed Ice",
               "isGrain": false,
               "img": "painted/SW7647.jpg"
             },
             {
-              "name": "SW 7661 Reflection",
+              "value": "SW 7661 Reflection",
               "isGrain": false,
               "img": "painted/SW7661.jpg"
             },
             {
-              "name": "SW 7669 Summit Gray",
+              "value": "SW 7669 Summit Gray",
               "isGrain": false,
               "img": "painted/SW7669.jpg"
             },
             {
-              "name": "SW 7674 Peppercorn",
+              "value": "SW 7674 Peppercorn",
               "isGrain": false,
               "img": "painted/SW7674.jpg"
             },
             {
-              "name": "SW 7730 Forestwood",
+              "value": "SW 7730 Forestwood",
               "isGrain": false,
               "img": "painted/SW7730.jpg"
             },
             {
-              "name": "SW 7757 High Reflective White",
+              "value": "SW 7757 High Reflective White",
               "isGrain": false,
               "img": "painted/SW7757.jpg"
             },
             {
-              "name": "SW 9104 Woven Wicker",
+              "value": "SW 9104 Woven Wicker",
               "isGrain": false,
               "img": "painted/SW9104.jpg"
             },
             {
-              "name": "SW 9109 Natural Linen",
+              "value": "SW 9109 Natural Linen",
               "isGrain": false,
               "img": "painted/SW9101.jpg"
             },
             {
-              "name": "SW 9130 Evergreen Fog",
+              "value": "SW 9130 Evergreen Fog",
               "isGrain": false,
               "img": "painted/SW9130.jpg"
             },
             {
-              "name": "SW 9132 Acacia Haze",
+              "value": "SW 9132 Acacia Haze",
               "isGrain": false,
               "img": "painted/SW9132.jpg"
             },
             {
-              "name": "SW 9144 Moonmist",
+              "value": "SW 9144 Moonmist",
               "isGrain": false,
               "img": "painted/SW9144.jpg"
             },
             {
-              "name": "SW 9165 Gossamer Veil",
+              "value": "SW 9165 Gossamer Veil",
               "isGrain": false,
               "img": "painted/SW9165.jpg"
             },
             {
-              "name": "SW 9166 Drift of Mist",
+              "value": "SW 9166 Drift of Mist",
               "isGrain": false,
               "img": "painted/SW9166.jpg"
             }
           ]
         },
         {
-          "name": "Frame 2",
+          "value": "Frame 2",
           "img": "frame2.jpg",
           "colors": [
             {
-              "name": "White Matte",
+              "value": "White Matte",
               "isGrain": false,
               "img": "painted/White.jpg"
             },
             {
-              "name": "Aqua Marina",
+              "value": "Aqua Marina",
               "isGrain": false,
               "img": "painted/Aqua Marina.jpg"
             },
             {
-              "name": "Azul Indigo",
+              "value": "Azul Indigo",
               "isGrain": false,
               "img": "painted/Azul Indigo.jpg"
             },
             {
-              "name": "Verde Salvia",
+              "value": "Verde Salvia",
               "isGrain": false,
               "img": "painted/Verde Salvia.jpg"
             },
             {
-              "name": "Gris Plomo",
+              "value": "Gris Plomo",
               "isGrain": false,
               "img": "painted/Gris Plomo.jpg"
             },
             {
-              "name": "Antracita",
+              "value": "Antracita",
               "isGrain": false,
               "img": "painted/Antracita.jpg"
             },
             {
-              "name": "SW 0055 Light French Gray",
+              "value": "SW 0055 Light French Gray",
               "isGrain": false,
               "img": "painted/SW0055.f.jpg"
             },
             {
-              "name": "SW 6204 Sea Salt",
+              "value": "SW 6204 Sea Salt",
               "isGrain": false,
               "img": "painted/SW6204.f.jpg"
             },
             {
-              "name": "SW 6211 Rainwashed",
+              "value": "SW 6211 Rainwashed",
               "isGrain": false,
               "img": "painted/SW6211.f.jpg"
             },
             {
-              "name": "SW 6241 Aleutian",
+              "value": "SW 6241 Aleutian",
               "isGrain": false,
               "img": "painted/SW6241.f.jpg"
             },
             {
-              "name": "SW 6244 Naval",
+              "value": "SW 6244 Naval",
               "isGrain": false,
               "img": "painted/SW6244.f.jpg"
             },
             {
-              "name": "SW 6250 Granite Peak",
+              "value": "SW 6250 Granite Peak",
               "isGrain": false,
               "img": "painted/SW6250.f.jpg"
             },
             {
-              "name": "SW 6253 Olympus White",
+              "value": "SW 6253 Olympus White",
               "isGrain": false,
               "img": "painted/SW6253.f.jpg"
             },
             {
-              "name": "SW 6254 Lazy Gray",
+              "value": "SW 6254 Lazy Gray",
               "isGrain": false,
               "img": "painted/SW6254.f.jpg"
             },
             {
-              "name": "SW 6258 Tricorn Black",
+              "value": "SW 6258 Tricorn Black",
               "isGrain": false,
               "img": "painted/SW6258.f.jpg"
             },
             {
-              "name": "SW 6385 Dover White",
+              "value": "SW 6385 Dover White",
               "isGrain": false,
               "img": "painted/SW6385.f.jpg"
             },
             {
-              "name": "SW 7004 Snowbound",
+              "value": "SW 7004 Snowbound",
               "isGrain": false,
               "img": "painted/SW7004.f.jpg"
             },
             {
-              "name": "SW 7005 Pure White",
+              "value": "SW 7005 Pure White",
               "isGrain": false,
               "img": "painted/SW7005.f.jpg"
             },
             {
-              "name": "SW 7006 Extra White",
+              "value": "SW 7006 Extra White",
               "isGrain": false,
               "img": "painted/SW7006.f.jpg"
             },
             {
-              "name": "SW 7007 Ceiling Bright White",
+              "value": "SW 7007 Ceiling Bright White",
               "isGrain": false,
               "img": "painted/SW7007.f.jpg"
             },
             {
-              "name": "SW 7008 Alabaster",
+              "value": "SW 7008 Alabaster",
               "isGrain": false,
               "img": "painted/SW7008.f.jpg"
             },
             {
-              "name": "SW 7009 Pearly White",
+              "value": "SW 7009 Pearly White",
               "isGrain": false,
               "img": "painted/SW7009.f.jpg"
             },
             {
-              "name": "SW 7012 Creamy",
+              "value": "SW 7012 Creamy",
               "isGrain": false,
               "img": "painted/SW7012.f.jpg"
             },
             {
-              "name": "SW 7014 Eider White",
+              "value": "SW 7014 Eider White",
               "isGrain": false,
               "img": "painted/SW7014.f.jpg"
             },
             {
-              "name": "SW 7015 Repose Gray",
+              "value": "SW 7015 Repose Gray",
               "isGrain": false,
               "img": "painted/SW7015.f.jpg"
             },
             {
-              "name": "SW 7016 Mindful Gray",
+              "value": "SW 7016 Mindful Gray",
               "isGrain": false,
               "img": "painted/SW7016.f.jpg"
             },
             {
-              "name": "SW 7019 Gauntlet Gray",
+              "value": "SW 7019 Gauntlet Gray",
               "isGrain": false,
               "img": "painted/SW7019.f.jpg"
             },
             {
-              "name": "SW 7029 Agreeable Gray",
+              "value": "SW 7029 Agreeable Gray",
               "isGrain": false,
               "img": "painted/SW7029.f.jpg"
             },
             {
-              "name": "SW 7035 Aesthetic White",
+              "value": "SW 7035 Aesthetic White",
               "isGrain": false,
               "img": "painted/SW7035.f.jpg"
             },
             {
-              "name": "SW 7036 Accessible Beige",
+              "value": "SW 7036 Accessible Beige",
               "isGrain": false,
               "img": "painted/SW7036.f.jpg"
             },
             {
-              "name": "SW 7042 Shoji White",
+              "value": "SW 7042 Shoji White",
               "isGrain": false,
               "img": "painted/SW7042.f.jpg"
             },
             {
-              "name": "SW 7043 Worldly Gray",
+              "value": "SW 7043 Worldly Gray",
               "isGrain": false,
               "img": "painted/SW7043.f.jpg"
             },
             {
-              "name": "SW 7048 Urbane Bronze",
+              "value": "SW 7048 Urbane Bronze",
               "isGrain": false,
               "img": "painted/SW7048.f.jpg"
             },
             {
-              "name": "SW 7064 Passive",
+              "value": "SW 7064 Passive",
               "isGrain": false,
               "img": "painted/SW7064.f.jpg"
             },
             {
-              "name": "SW 7069 Iron Ore",
+              "value": "SW 7069 Iron Ore",
               "isGrain": false,
               "img": "painted/SW7069.f.jpg"
             },
             {
-              "name": "SW 7071 Gray Screen",
+              "value": "SW 7071 Gray Screen",
               "isGrain": false,
               "img": "painted/SW7071.f.jpg"
             },
             {
-              "name": "SW 7551 Greek Villa",
+              "value": "SW 7551 Greek Villa",
               "isGrain": false,
               "img": "painted/SW7551.jpg"
             },
             {
-              "name": "SW 7566 Westhighland White",
+              "value": "SW 7566 Westhighland White",
               "isGrain": false,
               "img": "painted/SW7566.jpg"
             },
             {
-              "name": "SW 7602 Indigo Batik",
+              "value": "SW 7602 Indigo Batik",
               "isGrain": false,
               "img": "painted/SW7602.jpg"
             },
             {
-              "name": "SW 7631 City Loft",
+              "value": "SW 7631 City Loft",
               "isGrain": false,
               "img": "painted/SW7631.jpg"
             },
             {
-              "name": "SW 7632 Modern Gray",
+              "value": "SW 7632 Modern Gray",
               "isGrain": false,
               "img": "painted/SW7632.jpg"
             },
             {
-              "name": "SW 7636 Origami White",
+              "value": "SW 7636 Origami White",
               "isGrain": false,
               "img": "painted/SW7636.jpg"
             },
             {
-              "name": "SW 7646 First Star",
+              "value": "SW 7646 First Star",
               "isGrain": false,
               "img": "painted/SW7646.jpg"
             },
             {
-              "name": "SW 7647 Crushed Ice",
+              "value": "SW 7647 Crushed Ice",
               "isGrain": false,
               "img": "painted/SW7647.jpg"
             },
             {
-              "name": "SW 7661 Reflection",
+              "value": "SW 7661 Reflection",
               "isGrain": false,
               "img": "painted/SW7661.jpg"
             },
             {
-              "name": "SW 7669 Summit Gray",
+              "value": "SW 7669 Summit Gray",
               "isGrain": false,
               "img": "painted/SW7669.jpg"
             },
             {
-              "name": "SW 7674 Peppercorn",
+              "value": "SW 7674 Peppercorn",
               "isGrain": false,
               "img": "painted/SW7674.jpg"
             },
             {
-              "name": "SW 7730 Forestwood",
+              "value": "SW 7730 Forestwood",
               "isGrain": false,
               "img": "painted/SW7730.jpg"
             },
             {
-              "name": "SW 7757 High Reflective White",
+              "value": "SW 7757 High Reflective White",
               "isGrain": false,
               "img": "painted/SW7757.jpg"
             },
             {
-              "name": "SW 9104 Woven Wicker",
+              "value": "SW 9104 Woven Wicker",
               "isGrain": false,
               "img": "painted/SW9104.jpg"
             },
             {
-              "name": "SW 9109 Natural Linen",
+              "value": "SW 9109 Natural Linen",
               "isGrain": false,
               "img": "painted/SW9101.jpg"
             },
             {
-              "name": "SW 9130 Evergreen Fog",
+              "value": "SW 9130 Evergreen Fog",
               "isGrain": false,
               "img": "painted/SW9130.jpg"
             },
             {
-              "name": "SW 9132 Acacia Haze",
+              "value": "SW 9132 Acacia Haze",
               "isGrain": false,
               "img": "painted/SW9132.jpg"
             },
             {
-              "name": "SW 9144 Moonmist",
+              "value": "SW 9144 Moonmist",
               "isGrain": false,
               "img": "painted/SW9144.jpg"
             },
             {
-              "name": "SW 9165 Gossamer Veil",
+              "value": "SW 9165 Gossamer Veil",
               "isGrain": false,
               "img": "painted/SW9165.jpg"
             },
             {
-              "name": "SW 9166 Drift of Mist",
+              "value": "SW 9166 Drift of Mist",
               "isGrain": false,
               "img": "painted/SW9166.jpg"
             }
           ]
         },
         {
-          "name": "Frame 2 1/2",
+          "value": "Frame 2 1/2",
           "img": "frame2.5.jpg",
           "colors": [
             {
-              "name": "White Matte",
+              "value": "White Matte",
               "isGrain": false,
               "img": "painted/White.jpg"
             },
             {
-              "name": "Aqua Marina",
+              "value": "Aqua Marina",
               "isGrain": false,
               "img": "painted/Aqua Marina.jpg"
             },
             {
-              "name": "Azul Indigo",
+              "value": "Azul Indigo",
               "isGrain": false,
               "img": "painted/Azul Indigo.jpg"
             },
             {
-              "name": "Verde Salvia",
+              "value": "Verde Salvia",
               "isGrain": false,
               "img": "painted/Verde Salvia.jpg"
             },
             {
-              "name": "Gris Plomo",
+              "value": "Gris Plomo",
               "isGrain": false,
               "img": "painted/Gris Plomo.jpg"
             },
             {
-              "name": "Antracita",
+              "value": "Antracita",
               "isGrain": false,
               "img": "painted/Antracita.jpg"
             },
             {
-              "name": "SW 0055 Light French Gray",
+              "value": "SW 0055 Light French Gray",
               "isGrain": false,
               "img": "painted/SW0055.f.jpg"
             },
             {
-              "name": "SW 6204 Sea Salt",
+              "value": "SW 6204 Sea Salt",
               "isGrain": false,
               "img": "painted/SW6204.f.jpg"
             },
             {
-              "name": "SW 6211 Rainwashed",
+              "value": "SW 6211 Rainwashed",
               "isGrain": false,
               "img": "painted/SW6211.f.jpg"
             },
             {
-              "name": "SW 6241 Aleutian",
+              "value": "SW 6241 Aleutian",
               "isGrain": false,
               "img": "painted/SW6241.f.jpg"
             },
             {
-              "name": "SW 6244 Naval",
+              "value": "SW 6244 Naval",
               "isGrain": false,
               "img": "painted/SW6244.f.jpg"
             },
             {
-              "name": "SW 6250 Granite Peak",
+              "value": "SW 6250 Granite Peak",
               "isGrain": false,
               "img": "painted/SW6250.f.jpg"
             },
             {
-              "name": "SW 6253 Olympus White",
+              "value": "SW 6253 Olympus White",
               "isGrain": false,
               "img": "painted/SW6253.f.jpg"
             },
             {
-              "name": "SW 6254 Lazy Gray",
+              "value": "SW 6254 Lazy Gray",
               "isGrain": false,
               "img": "painted/SW6254.f.jpg"
             },
             {
-              "name": "SW 6258 Tricorn Black",
+              "value": "SW 6258 Tricorn Black",
               "isGrain": false,
               "img": "painted/SW6258.f.jpg"
             },
             {
-              "name": "SW 6385 Dover White",
+              "value": "SW 6385 Dover White",
               "isGrain": false,
               "img": "painted/SW6385.f.jpg"
             },
             {
-              "name": "SW 7004 Snowbound",
+              "value": "SW 7004 Snowbound",
               "isGrain": false,
               "img": "painted/SW7004.f.jpg"
             },
             {
-              "name": "SW 7005 Pure White",
+              "value": "SW 7005 Pure White",
               "isGrain": false,
               "img": "painted/SW7005.f.jpg"
             },
             {
-              "name": "SW 7006 Extra White",
+              "value": "SW 7006 Extra White",
               "isGrain": false,
               "img": "painted/SW7006.f.jpg"
             },
             {
-              "name": "SW 7007 Ceiling Bright White",
+              "value": "SW 7007 Ceiling Bright White",
               "isGrain": false,
               "img": "painted/SW7007.f.jpg"
             },
             {
-              "name": "SW 7008 Alabaster",
+              "value": "SW 7008 Alabaster",
               "isGrain": false,
               "img": "painted/SW7008.f.jpg"
             },
             {
-              "name": "SW 7009 Pearly White",
+              "value": "SW 7009 Pearly White",
               "isGrain": false,
               "img": "painted/SW7009.f.jpg"
             },
             {
-              "name": "SW 7012 Creamy",
+              "value": "SW 7012 Creamy",
               "isGrain": false,
               "img": "painted/SW7012.f.jpg"
             },
             {
-              "name": "SW 7014 Eider White",
+              "value": "SW 7014 Eider White",
               "isGrain": false,
               "img": "painted/SW7014.f.jpg"
             },
             {
-              "name": "SW 7015 Repose Gray",
+              "value": "SW 7015 Repose Gray",
               "isGrain": false,
               "img": "painted/SW7015.f.jpg"
             },
             {
-              "name": "SW 7016 Mindful Gray",
+              "value": "SW 7016 Mindful Gray",
               "isGrain": false,
               "img": "painted/SW7016.f.jpg"
             },
             {
-              "name": "SW 7019 Gauntlet Gray",
+              "value": "SW 7019 Gauntlet Gray",
               "isGrain": false,
               "img": "painted/SW7019.f.jpg"
             },
             {
-              "name": "SW 7029 Agreeable Gray",
+              "value": "SW 7029 Agreeable Gray",
               "isGrain": false,
               "img": "painted/SW7029.f.jpg"
             },
             {
-              "name": "SW 7035 Aesthetic White",
+              "value": "SW 7035 Aesthetic White",
               "isGrain": false,
               "img": "painted/SW7035.f.jpg"
             },
             {
-              "name": "SW 7036 Accessible Beige",
+              "value": "SW 7036 Accessible Beige",
               "isGrain": false,
               "img": "painted/SW7036.f.jpg"
             },
             {
-              "name": "SW 7042 Shoji White",
+              "value": "SW 7042 Shoji White",
               "isGrain": false,
               "img": "painted/SW7042.f.jpg"
             },
             {
-              "name": "SW 7043 Worldly Gray",
+              "value": "SW 7043 Worldly Gray",
               "isGrain": false,
               "img": "painted/SW7043.f.jpg"
             },
             {
-              "name": "SW 7048 Urbane Bronze",
+              "value": "SW 7048 Urbane Bronze",
               "isGrain": false,
               "img": "painted/SW7048.f.jpg"
             },
             {
-              "name": "SW 7064 Passive",
+              "value": "SW 7064 Passive",
               "isGrain": false,
               "img": "painted/SW7064.f.jpg"
             },
             {
-              "name": "SW 7069 Iron Ore",
+              "value": "SW 7069 Iron Ore",
               "isGrain": false,
               "img": "painted/SW7069.f.jpg"
             },
             {
-              "name": "SW 7071 Gray Screen",
+              "value": "SW 7071 Gray Screen",
               "isGrain": false,
               "img": "painted/SW7071.f.jpg"
             },
             {
-              "name": "SW 7551 Greek Villa",
+              "value": "SW 7551 Greek Villa",
               "isGrain": false,
               "img": "painted/SW7551.jpg"
             },
             {
-              "name": "SW 7566 Westhighland White",
+              "value": "SW 7566 Westhighland White",
               "isGrain": false,
               "img": "painted/SW7566.jpg"
             },
             {
-              "name": "SW 7602 Indigo Batik",
+              "value": "SW 7602 Indigo Batik",
               "isGrain": false,
               "img": "painted/SW7602.jpg"
             },
             {
-              "name": "SW 7631 City Loft",
+              "value": "SW 7631 City Loft",
               "isGrain": false,
               "img": "painted/SW7631.jpg"
             },
             {
-              "name": "SW 7632 Modern Gray",
+              "value": "SW 7632 Modern Gray",
               "isGrain": false,
               "img": "painted/SW7632.jpg"
             },
             {
-              "name": "SW 7636 Origami White",
+              "value": "SW 7636 Origami White",
               "isGrain": false,
               "img": "painted/SW7636.jpg"
             },
             {
-              "name": "SW 7646 First Star",
+              "value": "SW 7646 First Star",
               "isGrain": false,
               "img": "painted/SW7646.jpg"
             },
             {
-              "name": "SW 7647 Crushed Ice",
+              "value": "SW 7647 Crushed Ice",
               "isGrain": false,
               "img": "painted/SW7647.jpg"
             },
             {
-              "name": "SW 7661 Reflection",
+              "value": "SW 7661 Reflection",
               "isGrain": false,
               "img": "painted/SW7661.jpg"
             },
             {
-              "name": "SW 7669 Summit Gray",
+              "value": "SW 7669 Summit Gray",
               "isGrain": false,
               "img": "painted/SW7669.jpg"
             },
             {
-              "name": "SW 7674 Peppercorn",
+              "value": "SW 7674 Peppercorn",
               "isGrain": false,
               "img": "painted/SW7674.jpg"
             },
             {
-              "name": "SW 7730 Forestwood",
+              "value": "SW 7730 Forestwood",
               "isGrain": false,
               "img": "painted/SW7730.jpg"
             },
             {
-              "name": "SW 7757 High Reflective White",
+              "value": "SW 7757 High Reflective White",
               "isGrain": false,
               "img": "painted/SW7757.jpg"
             },
             {
-              "name": "SW 9104 Woven Wicker",
+              "value": "SW 9104 Woven Wicker",
               "isGrain": false,
               "img": "painted/SW9104.jpg"
             },
             {
-              "name": "SW 9109 Natural Linen",
+              "value": "SW 9109 Natural Linen",
               "isGrain": false,
               "img": "painted/SW9101.jpg"
             },
             {
-              "name": "SW 9130 Evergreen Fog",
+              "value": "SW 9130 Evergreen Fog",
               "isGrain": false,
               "img": "painted/SW9130.jpg"
             },
             {
-              "name": "SW 9132 Acacia Haze",
+              "value": "SW 9132 Acacia Haze",
               "isGrain": false,
               "img": "painted/SW9132.jpg"
             },
             {
-              "name": "SW 9144 Moonmist",
+              "value": "SW 9144 Moonmist",
               "isGrain": false,
               "img": "painted/SW9144.jpg"
             },
             {
-              "name": "SW 9165 Gossamer Veil",
+              "value": "SW 9165 Gossamer Veil",
               "isGrain": false,
               "img": "painted/SW9165.jpg"
             },
             {
-              "name": "SW 9166 Drift of Mist",
+              "value": "SW 9166 Drift of Mist",
               "isGrain": false,
               "img": "painted/SW9166.jpg"
             }
@@ -3371,39 +3369,39 @@
       ]
     },
     {
-      "name": "Shaker",
+      "value": "Shaker",
       "img": "shaker.jpg",
       "finish": [
         {
-          "name": "Zenit",
+          "value": "Zenit",
           "colors": [
             {
-              "name": "Antracita SM",
+              "value": "Antracita SM",
               "isGrain": false,
               "img": "Supermatt Antracita.jpg"
             },
             {
-              "name": "Azul Marino SM",
+              "value": "Azul Marino SM",
               "isGrain": false,
               "img": "SuperMatt Azul Marino.jpg"
             },
             {
-              "name": "Basalto SM",
+              "value": "Basalto SM",
               "isGrain": false,
               "img": "Supermatt Basalto.jpg"
             },
             {
-              "name": "Blanco SM",
+              "value": "Blanco SM",
               "isGrain": false,
               "img": "Supermatt Blanco.jpg"
             },
             {
-              "name": "Cashmere SM",
+              "value": "Cashmere SM",
               "isGrain": false,
               "img": "Supermatt Cashmere.jpg"
             },
             {
-              "name": "Verde Salvia SM",
+              "value": "Verde Salvia SM",
               "isGrain": false,
               "img": "SuperMatt Verde Salvia.jpg"
             }
@@ -3411,80 +3409,80 @@
           "img": "zenit.jpg"
         },
         {
-          "name": "Syncron",
+          "value": "Syncron",
           "colors": [
             {
-              "name": "Como Ash 1",
+              "value": "Como Ash 1",
               "isGrain": true,
               "img": "Como Ash 1.jpg"
             },
             {
-              "name": "Frappe 1",
+              "value": "Frappe 1",
               "isGrain": true,
               "img": "Frappé 1.jpg"
             },
             {
-              "name": "Frappe 3",
+              "value": "Frappe 3",
               "isGrain": true,
               "img": "Frappé 3.jpg"
             },
             {
-              "name": "Ida 1",
+              "value": "Ida 1",
               "isGrain": true,
               "img": "Ida 1.jpg"
             },
             {
-              "name": "Ida 2",
+              "value": "Ida 2",
               "isGrain": true,
               "img": "Ida 2.jpg"
             },
             {
-              "name": "Muratti 1",
+              "value": "Muratti 1",
               "isGrain": true,
               "img": "Muratti 1.jpg"
             },
             {
-              "name": "Muratti 2",
+              "value": "Muratti 2",
               "isGrain": true,
               "img": "Muratti 2.jpg"
             },
             {
-              "name": "Muratti 3",
+              "value": "Muratti 3",
               "isGrain": true,
               "img": "Muratti 3.jpg"
             },
             {
-              "name": "Muratti 4",
+              "value": "Muratti 4",
               "isGrain": true,
               "img": "Muratti 4.jpg"
             },
             {
-              "name": "Nocce 1",
+              "value": "Nocce 1",
               "isGrain": true,
               "img": "Nocce 1.jpg"
             },
             {
-              "name": "Nocce 2",
+              "value": "Nocce 2",
               "isGrain": true,
               "img": "Nocce 2.jpg"
             },
             {
-              "name": "Nocce 3",
+              "value": "Nocce 3",
               "isGrain": true,
               "img": "Nocce 3.jpg"
             },
             {
-              "name": "Olmo 2",
+              "value": "Olmo 2",
               "isGrain": true,
               "img": "Olmo 2.jpg"
             },
             {
-              "name": "Olmo 3",
+              "value": "Olmo 3",
               "isGrain": true,
               "img": "Olmo 3.jpg"
             },
             {
-              "name": "Woodline 1",
+              "value": "Woodline 1",
               "isGrain": true,
               "img": "Woodline 1.jpg"
             }
@@ -3494,74 +3492,74 @@
       ]
     },
     {
-      "name": "Micro Shaker",
+      "value": "Micro Shaker",
       "img": "microshaker.jpg",
       "finish": [
         {
-          "name": "Luxe",
+          "value": "Luxe",
           "colors": [
             {
-              "name": "Antracita HG",
+              "value": "Antracita HG",
               "isGrain": false,
               "img": "Antracita.jpg"
             },
             {
-              "name": "Azul Indigo HG",
+              "value": "Azul Indigo HG",
               "isGrain": false,
               "img": "Azul Indigo.jpg"
             },
             {
-              "name": "Blanco Polar HG",
+              "value": "Blanco Polar HG",
               "isGrain": false,
               "img": "Blanco Polar.jpg"
             },
             {
-              "name": "Cashmere HG",
+              "value": "Cashmere HG",
               "isGrain": false,
               "img": "Cashmere.jpg"
             },
             {
-              "name": "Euroline 3 HG",
+              "value": "Euroline 3 HG",
               "isGrain": true,
               "img": "Euroline 3.jpg"
             },
             {
-              "name": "Gris Metallic HG",
+              "value": "Gris Metallic HG",
               "isGrain": false,
               "img": "Gris Metallic.jpg"
             },
             {
-              "name": "Gris Nube HG",
+              "value": "Gris Nube HG",
               "isGrain": false,
               "img": "Gris Nube.jpg"
             },
             {
-              "name": "Gris Perla HG",
+              "value": "Gris Perla HG",
               "isGrain": false,
               "img": "Gris Perla.jpg"
             },
             {
-              "name": "Guayana HG",
+              "value": "Guayana HG",
               "isGrain": true,
               "img": "Guayana.jpg"
             },
             {
-              "name": "Metallo 1 HG",
+              "value": "Metallo 1 HG",
               "isGrain": true,
               "img": "Metallo 1.jpg"
             },
             {
-              "name": "Metallo 4 HG",
+              "value": "Metallo 4 HG",
               "isGrain": true,
               "img": "Metallo 4.jpg"
             },
             {
-              "name": "Olmo HG",
+              "value": "Olmo HG",
               "isGrain": true,
               "img": "Olmo.jpg"
             },
             {
-              "name": "Blanco Colonial PE",
+              "value": "Blanco Colonial PE",
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
@@ -3569,40 +3567,40 @@
           "img": "luxe.jpg"
         },
         {
-          "name": "Zenit",
+          "value": "Zenit",
           "colors": [
             {
-              "name": "Antracita SM",
+              "value": "Antracita SM",
               "isGrain": false,
               "img": "Supermatt Antracita.jpg"
             },
             {
-              "name": "Azul Índigo SM",
+              "value": "Azul Índigo SM",
               "isGrain": false,
               "img": "Supermatt Azul Índigo.jpg"
             },
             {
-              "name": "Basalto SM",
+              "value": "Basalto SM",
               "isGrain": false,
               "img": "Supermatt Basalto.jpg"
             },
             {
-              "name": "Black SM",
+              "value": "Black SM",
               "isGrain": false,
               "img": "Supermatt Black.jpg"
             },
             {
-              "name": "Blanco SM",
+              "value": "Blanco SM",
               "isGrain": false,
               "img": "Supermatt Blanco.jpg"
             },
             {
-              "name": "Cashmere SM",
+              "value": "Cashmere SM",
               "isGrain": false,
               "img": "Supermatt Cashmere.jpg"
             },
             {
-              "name": "Gris Nube SM",
+              "value": "Gris Nube SM",
               "isGrain": false,
               "img": "Supermatt Gris Nube.jpg"
             }
@@ -3610,220 +3608,220 @@
           "img": "zenit.jpg"
         },
         {
-          "name": "Syncron",
+          "value": "Syncron",
           "colors": [
             {
-              "name": "Anniversary Oak 1",
+              "value": "Anniversary Oak 1",
               "isGrain": true,
               "img": "Anniversary Oak 1.jpg"
             },
             {
-              "name": "Anniversary Oak 2",
+              "value": "Anniversary Oak 2",
               "isGrain": true,
               "img": "Anniversary Oak 2.jpg"
             },
             {
-              "name": "Anniversary Oak 3",
+              "value": "Anniversary Oak 3",
               "isGrain": true,
               "img": "Anniversary Oak 3.jpg"
             },
             {
-              "name": "Antracita Solid Wood",
+              "value": "Antracita Solid Wood",
               "isGrain": true,
               "img": "Antracita Solid Wood.jpg"
             },
             {
-              "name": "Blanco Solid Wood",
+              "value": "Blanco Solid Wood",
               "isGrain": true,
               "img": "Blanco Solid Wood.jpg"
             },
             {
-              "name": "Cashmere Solid Wood",
+              "value": "Cashmere Solid Wood",
               "isGrain": true,
               "img": "Cashmere Solid Wood.jpg"
             },
             {
-              "name": "Como Ash 1",
+              "value": "Como Ash 1",
               "isGrain": true,
               "img": "Como Ash 1.jpg"
             },
             {
-              "name": "Como Ash 2",
+              "value": "Como Ash 2",
               "isGrain": true,
               "img": "Como Ash 2.jpg"
             },
             {
-              "name": "Como Ash 3",
+              "value": "Como Ash 3",
               "isGrain": true,
               "img": "Como Ash 3.jpg"
             },
             {
-              "name": "Evora 3",
+              "value": "Evora 3",
               "isGrain": true,
               "img": "Evora 3.jpg"
             },
             {
-              "name": "Evora 4",
+              "value": "Evora 4",
               "isGrain": true,
               "img": "Evora 4.jpg"
             },
             {
-              "name": "Frappé 1",
+              "value": "Frappé 1",
               "isGrain": true,
               "img": "Frappé 1.jpg"
             },
             {
-              "name": "Frappé 2",
+              "value": "Frappé 2",
               "isGrain": true,
               "img": "Frappé 2.jpg"
             },
             {
-              "name": "Frappé 3",
+              "value": "Frappé 3",
               "isGrain": true,
               "img": "Frappé 3.jpg"
             },
             {
-              "name": "Gris Plomo Solid Wood",
+              "value": "Gris Plomo Solid Wood",
               "isGrain": true,
               "img": "Gris Plomo Solid Wood.jpg"
             },
             {
-              "name": "Ice 1",
+              "value": "Ice 1",
               "isGrain": true,
               "img": "Ice 1.jpg"
             },
             {
-              "name": "Ice 2",
+              "value": "Ice 2",
               "isGrain": true,
               "img": "Ice 2.jpg"
             },
             {
-              "name": "Ice 3",
+              "value": "Ice 3",
               "isGrain": true,
               "img": "Ice 3.jpg"
             },
             {
-              "name": "Ice 4",
+              "value": "Ice 4",
               "isGrain": true,
               "img": "Ice 4.jpg"
             },
             {
-              "name": "Ida 1",
+              "value": "Ida 1",
               "isGrain": true,
               "img": "Ida 1.jpg"
             },
             {
-              "name": "Ida 2",
+              "value": "Ida 2",
               "isGrain": true,
               "img": "Ida 2.jpg"
             },
             {
-              "name": "Ida 3",
+              "value": "Ida 3",
               "isGrain": true,
               "img": "Ida 3.jpg"
             },
             {
-              "name": "Ida 4",
+              "value": "Ida 4",
               "isGrain": true,
               "img": "Ida 4.jpg"
             },
             {
-              "name": "Lakeland Oak 1",
+              "value": "Lakeland Oak 1",
               "isGrain": true,
               "img": "Lakeland Oak 1.jpg"
             },
             {
-              "name": "Lakeland Oak 2",
+              "value": "Lakeland Oak 2",
               "isGrain": true,
               "img": "Lakeland Oak 2.jpg"
             },
             {
-              "name": "Lakeland Oak 3",
+              "value": "Lakeland Oak 3",
               "isGrain": true,
               "img": "Lakeland Oak 3.jpg"
             },
             {
-              "name": "Muratti 1",
+              "value": "Muratti 1",
               "isGrain": true,
               "img": "Muratti 1.jpg"
             },
             {
-              "name": "Muratti 2",
+              "value": "Muratti 2",
               "isGrain": true,
               "img": "Muratti 2.jpg"
             },
             {
-              "name": "Muratti 3",
+              "value": "Muratti 3",
               "isGrain": true,
               "img": "Muratti 3.jpg"
             },
             {
-              "name": "Muratti 4",
+              "value": "Muratti 4",
               "isGrain": true,
               "img": "Muratti 4.jpg"
             },
             {
-              "name": "Nocce 1",
+              "value": "Nocce 1",
               "isGrain": true,
               "img": "Nocce 1.jpg"
             },
             {
-              "name": "Nocce 2",
+              "value": "Nocce 2",
               "isGrain": true,
               "img": "Nocce 2.jpg"
             },
             {
-              "name": "Nocce 3",
+              "value": "Nocce 3",
               "isGrain": true,
               "img": "Nocce 3.jpg"
             },
             {
-              "name": "Olmo 2",
+              "value": "Olmo 2",
               "isGrain": true,
               "img": "Olmo 2.jpg"
             },
             {
-              "name": "Olmo 3",
+              "value": "Olmo 3",
               "isGrain": true,
               "img": "Olmo 3.jpg"
             },
             {
-              "name": "Oxid 1",
+              "value": "Oxid 1",
               "isGrain": true,
               "img": "Oxid 1.jpg"
             },
             {
-              "name": "Oxid 4",
+              "value": "Oxid 4",
               "isGrain": true,
               "img": "Oxid 4.jpg"
             },
             {
-              "name": "Rosales 1",
+              "value": "Rosales 1",
               "isGrain": true,
               "img": "Rosales 1.jpg"
             },
             {
-              "name": "Rosales 2",
+              "value": "Rosales 2",
               "isGrain": true,
               "img": "Rosales 2.jpg"
             },
             {
-              "name": "Rosales 3",
+              "value": "Rosales 3",
               "isGrain": true,
               "img": "Rosales 3.jpg"
             },
             {
-              "name": "Woodline 1",
+              "value": "Woodline 1",
               "isGrain": true,
               "img": "Woodline 1.jpg"
             },
             {
-              "name": "Woodline 3",
+              "value": "Woodline 3",
               "isGrain": true,
               "img": "Woodline 3.jpg"
             },
             {
-              "name": "Woodline 4",
+              "value": "Woodline 4",
               "isGrain": true,
               "img": "Woodline 4.jpg"
             }
@@ -3831,172 +3829,185 @@
           "img": "syncron.jpg"
         }
       ],
-      "frame": [0.75, 1, 1.25]
+      "frame": [
+        {
+          "value": "0.75",
+          "img": ""
+        },
+        {
+          "value": "1",
+          "img": ""
+        },
+        {
+          "value": "1.25",
+          "img": ""
+        }
+      ]
     },
     {
-      "name": "Slatted",
+      "value": "Slatted",
       "img": "slatted.jpg",
       "finish": [
         {
-          "name": "Luxe",
+          "value": "Luxe",
           "colors": [
             {
-              "name": "Agua Marina HG",
+              "value": "Agua Marina HG",
               "isGrain": false,
               "img": "Agua Marina.jpg"
             },
             {
-              "name": "Antracita HG",
+              "value": "Antracita HG",
               "isGrain": false,
               "img": "Antracita.jpg"
             },
             {
-              "name": "Azul Indigo HG",
+              "value": "Azul Indigo HG",
               "isGrain": false,
               "img": "Azul Indigo.jpg"
             },
             {
-              "name": "Azul Marino HG",
+              "value": "Azul Marino HG",
               "isGrain": false,
               "img": "Azul Marino.jpg"
             },
             {
-              "name": "Basalto HG",
+              "value": "Basalto HG",
               "isGrain": false,
               "img": "Basalto.jpg"
             },
             {
-              "name": "Black HG",
+              "value": "Black HG",
               "isGrain": false,
               "img": "Black.jpg"
             },
             {
-              "name": "Blanco HG",
+              "value": "Blanco HG",
               "isGrain": false,
               "img": "Blanco.jpg"
             },
             {
-              "name": "Blanco Polar HG",
+              "value": "Blanco Polar HG",
               "isGrain": false,
               "img": "Blanco Polar.jpg"
             },
             {
-              "name": "Cashmere HG",
+              "value": "Cashmere HG",
               "isGrain": false,
               "img": "Cashmere.jpg"
             },
             {
-              "name": "Cotto HG",
+              "value": "Cotto HG",
               "isGrain": false,
               "img": "Cotto.jpg"
             },
             {
-              "name": "Cuzco Oro HG",
+              "value": "Cuzco Oro HG",
               "isGrain": true,
               "img": "Cuzco Oro.jpg"
             },
             {
-              "name": "Euroline 3 HG",
+              "value": "Euroline 3 HG",
               "isGrain": true,
               "img": "Euroline 3.jpg"
             },
             {
-              "name": "Gris Metallic HG",
+              "value": "Gris Metallic HG",
               "isGrain": false,
               "img": "Gris Metallic.jpg"
             },
             {
-              "name": "Gris Nube HG",
+              "value": "Gris Nube HG",
               "isGrain": false,
               "img": "Gris Nube.jpg"
             },
             {
-              "name": "Gris Perla HG",
+              "value": "Gris Perla HG",
               "isGrain": false,
               "img": "Gris Perla.jpg"
             },
             {
-              "name": "Gris Plomo HG",
+              "value": "Gris Plomo HG",
               "isGrain": false,
               "img": "Gris Plomo.jpg"
             },
             {
-              "name": "Guayana HG",
+              "value": "Guayana HG",
               "isGrain": true,
               "img": "Guayana.jpg"
             },
             {
-              "name": "Magnolia HG",
+              "value": "Magnolia HG",
               "isGrain": false,
               "img": "Magnolia.jpg"
             },
             {
-              "name": "Metallo 1 HG",
+              "value": "Metallo 1 HG",
               "isGrain": true,
               "img": "Metallo 1.jpg"
             },
             {
-              "name": "Metallo 4 HG",
+              "value": "Metallo 4 HG",
               "isGrain": true,
               "img": "Metallo 4.jpg"
             },
             {
-              "name": "Olivo HG",
+              "value": "Olivo HG",
               "isGrain": true,
               "img": "Olivo.jpg"
             },
             {
-              "name": "Olmo HG",
+              "value": "Olmo HG",
               "isGrain": true,
               "img": "Olmo.jpg"
             },
             {
-              "name": "Porcelain 1 HG",
+              "value": "Porcelain 1 HG",
               "isGrain": false,
               "img": "Porcelain 1.jpg"
             },
             {
-              "name": "Roble Frappe HG",
+              "value": "Roble Frappe HG",
               "isGrain": true,
               "img": "Roble Frappe.jpg"
             },
             {
-              "name": "Rojo HG",
+              "value": "Rojo HG",
               "isGrain": false,
               "img": "Rojo.jpg"
             },
             {
-              "name": "Rosales 3 HG",
+              "value": "Rosales 3 HG",
               "isGrain": true,
               "img": "Rosales 3.jpg"
             },
             {
-              "name": "Textil Grafito HG",
+              "value": "Textil Grafito HG",
               "isGrain": true,
               "img": "Textil Grafito.jpg"
             },
             {
-              "name": "Textil Plata HG",
+              "value": "Textil Plata HG",
               "isGrain": true,
               "img": "Textil Plata.jpg"
             },
             {
-              "name": "Verde Salvia HG",
+              "value": "Verde Salvia HG",
               "isGrain": false,
               "img": "Verde Salvia.jpg"
             },
             {
-              "name": "Antracita PE",
+              "value": "Antracita PE",
               "isGrain": false,
               "img": "Antracita Pearl Effect.jpg"
             },
             {
-              "name": "Basalto PE",
+              "value": "Basalto PE",
               "isGrain": false,
               "img": "Basalto Pearl Effect.jpg"
             },
             {
-              "name": "Blanco Colonial PE",
+              "value": "Blanco Colonial PE",
               "isGrain": false,
               "img": "Blanco Colonial Pearl Effect.jpg"
             }
@@ -4004,125 +4015,125 @@
           "img": "luxe.jpg"
         },
         {
-          "name": "Zenit",
+          "value": "Zenit",
           "colors": [
             {
-              "name": "Agua Marina SM",
+              "value": "Agua Marina SM",
               "isGrain": false,
               "img": "Supermatt Agua Marina.jpg"
             },
             {
-              "name": "Almagra SM",
+              "value": "Almagra SM",
               "isGrain": false,
               "img": "SuperMatt Almagra.jpg"
             },
             {
-              "name": "Antracita SM",
+              "value": "Antracita SM",
               "isGrain": false,
               "img": "Supermatt Antracita.jpg"
             },
             {
-              "name": "Azul Índigo SM",
+              "value": "Azul Índigo SM",
               "isGrain": false,
               "img": "Supermatt Azul Índigo.jpg"
             },
             {
-              "name": "Azul Marino SM",
+              "value": "Azul Marino SM",
               "isGrain": false,
               "img": "SuperMatt Azul Marino.jpg"
             },
             {
-              "name": "Basalto SM",
+              "value": "Basalto SM",
               "isGrain": false,
               "img": "Supermatt Basalto.jpg"
             },
             {
-              "name": "Black SM",
+              "value": "Black SM",
               "isGrain": false,
               "img": "Supermatt Black.jpg"
             },
             {
-              "name": "Blanco Polar SM",
+              "value": "Blanco Polar SM",
               "isGrain": false,
               "img": "Supermatt Blanco Polar.jpg"
             },
             {
-              "name": "Blanco SM",
+              "value": "Blanco SM",
               "isGrain": false,
               "img": "Supermatt Blanco.jpg"
             },
             {
-              "name": "Camel SM",
+              "value": "Camel SM",
               "isGrain": false,
               "img": "SuperMatt Camel.jpg"
             },
             {
-              "name": "Cashmere SM",
+              "value": "Cashmere SM",
               "isGrain": false,
               "img": "Supermatt Cashmere.jpg"
             },
             {
-              "name": "Cotto SM",
+              "value": "Cotto SM",
               "isGrain": false,
               "img": "SuperMatt Cotto.jpg"
             },
             {
-              "name": "Gris Nube SM",
+              "value": "Gris Nube SM",
               "isGrain": false,
               "img": "Supermatt Gris Nube.jpg"
             },
             {
-              "name": "Gris Perla SM",
+              "value": "Gris Perla SM",
               "isGrain": false,
               "img": "Supermatt Gris Perla.jpg"
             },
             {
-              "name": "Gris Plomo SM",
+              "value": "Gris Plomo SM",
               "isGrain": false,
               "img": "Supermatt Gris Plomo.jpg"
             },
             {
-              "name": "Titán 1 SM",
+              "value": "Titán 1 SM",
               "isGrain": true,
               "img": "Supermatt Titán 1.jpg"
             },
             {
-              "name": "Tortora SM",
+              "value": "Tortora SM",
               "isGrain": false,
               "img": "SuperMatt Tortora.jpg"
             },
             {
-              "name": "Verde Salvia SM",
+              "value": "Verde Salvia SM",
               "isGrain": false,
               "img": "SuperMatt Verde Salvia.jpg"
             },
             {
-              "name": "MetalDeco Antracita SM",
+              "value": "MetalDeco Antracita SM",
               "isGrain": false,
               "img": "MetalDeco Antracita SM.jpg"
             },
             {
-              "name": "MetalDeco Basalto SM",
+              "value": "MetalDeco Basalto SM",
               "isGrain": false,
               "img": "MetalDeco Basalto SM.jpg"
             },
             {
-              "name": "MetalDeco Black SM",
+              "value": "MetalDeco Black SM",
               "isGrain": false,
               "img": "MetalDeco Black SM.jpg"
             },
             {
-              "name": "MetalDeco Blanco SM",
+              "value": "MetalDeco Blanco SM",
               "isGrain": false,
               "img": "MetalDeco Blanco SM.jpg"
             },
             {
-              "name": "MetalPlus Light Gold",
+              "value": "MetalPlus Light Gold",
               "isGrain": false,
               "img": "Metal Plus Light Gold.jpg"
             },
             {
-              "name": "MetalPlus Titanio SM",
+              "value": "MetalPlus Titanio SM",
               "isGrain": false,
               "img": "Metal Plus Titanio SM.jpg"
             }
@@ -4130,220 +4141,220 @@
           "img": "zenit.jpg"
         },
         {
-          "name": "Syncron",
+          "value": "Syncron",
           "colors": [
             {
-              "name": "Anniversary Oak 1",
+              "value": "Anniversary Oak 1",
               "isGrain": true,
               "img": "Anniversary Oak 1.jpg"
             },
             {
-              "name": "Anniversary Oak 2",
+              "value": "Anniversary Oak 2",
               "isGrain": true,
               "img": "Anniversary Oak 2.jpg"
             },
             {
-              "name": "Anniversary Oak 3",
+              "value": "Anniversary Oak 3",
               "isGrain": true,
               "img": "Anniversary Oak 3.jpg"
             },
             {
-              "name": "Antracita Solid Wood",
+              "value": "Antracita Solid Wood",
               "isGrain": true,
               "img": "Antracita Solid Wood.jpg"
             },
             {
-              "name": "Blanco Solid Wood",
+              "value": "Blanco Solid Wood",
               "isGrain": true,
               "img": "Blanco Solid Wood.jpg"
             },
             {
-              "name": "Cashmere Solid Wood",
+              "value": "Cashmere Solid Wood",
               "isGrain": true,
               "img": "Cashmere Solid Wood.jpg"
             },
             {
-              "name": "Como Ash 1",
+              "value": "Como Ash 1",
               "isGrain": true,
               "img": "Como Ash 1.jpg"
             },
             {
-              "name": "Como Ash 2",
+              "value": "Como Ash 2",
               "isGrain": true,
               "img": "Como Ash 2.jpg"
             },
             {
-              "name": "Como Ash 3",
+              "value": "Como Ash 3",
               "isGrain": true,
               "img": "Como Ash 3.jpg"
             },
             {
-              "name": "Evora 3",
+              "value": "Evora 3",
               "isGrain": true,
               "img": "Evora 3.jpg"
             },
             {
-              "name": "Evora 4",
+              "value": "Evora 4",
               "isGrain": true,
               "img": "Evora 4.jpg"
             },
             {
-              "name": "Frappé 1",
+              "value": "Frappé 1",
               "isGrain": true,
               "img": "Frappé 1.jpg"
             },
             {
-              "name": "Frappé 2",
+              "value": "Frappé 2",
               "isGrain": true,
               "img": "Frappé 2.jpg"
             },
             {
-              "name": "Frappé 3",
+              "value": "Frappé 3",
               "isGrain": true,
               "img": "Frappé 3.jpg"
             },
             {
-              "name": "Gris Plomo Solid Wood",
+              "value": "Gris Plomo Solid Wood",
               "isGrain": true,
               "img": "Gris Plomo Solid Wood.jpg"
             },
             {
-              "name": "Ice 1",
+              "value": "Ice 1",
               "isGrain": true,
               "img": "Ice 1.jpg"
             },
             {
-              "name": "Ice 2",
+              "value": "Ice 2",
               "isGrain": true,
               "img": "Ice 2.jpg"
             },
             {
-              "name": "Ice 3",
+              "value": "Ice 3",
               "isGrain": true,
               "img": "Ice 3.jpg"
             },
             {
-              "name": "Ice 4",
+              "value": "Ice 4",
               "isGrain": true,
               "img": "Ice 4.jpg"
             },
             {
-              "name": "Ida 1",
+              "value": "Ida 1",
               "isGrain": true,
               "img": "Ida 1.jpg"
             },
             {
-              "name": "Ida 2",
+              "value": "Ida 2",
               "isGrain": true,
               "img": "Ida 2.jpg"
             },
             {
-              "name": "Ida 3",
+              "value": "Ida 3",
               "isGrain": true,
               "img": "Ida 3.jpg"
             },
             {
-              "name": "Ida 4",
+              "value": "Ida 4",
               "isGrain": true,
               "img": "Ida 4.jpg"
             },
             {
-              "name": "Lakeland Oak 1",
+              "value": "Lakeland Oak 1",
               "isGrain": true,
               "img": "Lakeland Oak 1.jpg"
             },
             {
-              "name": "Lakeland Oak 2",
+              "value": "Lakeland Oak 2",
               "isGrain": true,
               "img": "Lakeland Oak 2.jpg"
             },
             {
-              "name": "Lakeland Oak 3",
+              "value": "Lakeland Oak 3",
               "isGrain": true,
               "img": "Lakeland Oak 3.jpg"
             },
             {
-              "name": "Muratti 1",
+              "value": "Muratti 1",
               "isGrain": true,
               "img": "Muratti 1.jpg"
             },
             {
-              "name": "Muratti 2",
+              "value": "Muratti 2",
               "isGrain": true,
               "img": "Muratti 2.jpg"
             },
             {
-              "name": "Muratti 3",
+              "value": "Muratti 3",
               "isGrain": true,
               "img": "Muratti 3.jpg"
             },
             {
-              "name": "Muratti 4",
+              "value": "Muratti 4",
               "isGrain": true,
               "img": "Muratti 4.jpg"
             },
             {
-              "name": "Nocce 1",
+              "value": "Nocce 1",
               "isGrain": true,
               "img": "Nocce 1.jpg"
             },
             {
-              "name": "Nocce 2",
+              "value": "Nocce 2",
               "isGrain": true,
               "img": "Nocce 2.jpg"
             },
             {
-              "name": "Nocce 3",
+              "value": "Nocce 3",
               "isGrain": true,
               "img": "Nocce 3.jpg"
             },
             {
-              "name": "Olmo 2",
+              "value": "Olmo 2",
               "isGrain": true,
               "img": "Olmo 2.jpg"
             },
             {
-              "name": "Olmo 3",
+              "value": "Olmo 3",
               "isGrain": true,
               "img": "Olmo 3.jpg"
             },
             {
-              "name": "Oxid 1",
+              "value": "Oxid 1",
               "isGrain": true,
               "img": "Oxid 1.jpg"
             },
             {
-              "name": "Oxid 4",
+              "value": "Oxid 4",
               "isGrain": true,
               "img": "Oxid 4.jpg"
             },
             {
-              "name": "Rosales 1",
+              "value": "Rosales 1",
               "isGrain": true,
               "img": "Rosales 1.jpg"
             },
             {
-              "name": "Rosales 2",
+              "value": "Rosales 2",
               "isGrain": true,
               "img": "Rosales 2.jpg"
             },
             {
-              "name": "Rosales 3",
+              "value": "Rosales 3",
               "isGrain": true,
               "img": "Rosales 3.jpg"
             },
             {
-              "name": "Woodline 1",
+              "value": "Woodline 1",
               "isGrain": true,
               "img": "Woodline 1.jpg"
             },
             {
-              "name": "Woodline 3",
+              "value": "Woodline 3",
               "isGrain": true,
               "img": "Woodline 3.jpg"
             },
             {
-              "name": "Woodline 4",
+              "value": "Woodline 4",
               "isGrain": true,
               "img": "Woodline 4.jpg"
             }
@@ -4351,35 +4362,35 @@
           "img": "syncron.jpg"
         },
         {
-          "name": "Milino",
+          "value": "Milino",
           "img": "milino.jpg",
           "colors": [
             {
-              "name": "Ash Melamine",
+              "value": "Ash Melamine",
               "isGrain": true
             },
             {
-              "name": "Beige Linen Melamine",
+              "value": "Beige Linen Melamine",
               "isGrain": false
             },
             {
-              "name": "Blanco Wood Melamine",
+              "value": "Blanco Wood Melamine",
               "isGrain": true
             },
             {
-              "name": "Grey Linen Melamine",
+              "value": "Grey Linen Melamine",
               "isGrain": false
             },
             {
-              "name": "Grey Melamine",
+              "value": "Grey Melamine",
               "isGrain": false
             },
             {
-              "name": "Walnut Melamine",
+              "value": "Walnut Melamine",
               "isGrain": true
             },
             {
-              "name": "White Melamine",
+              "value": "White Melamine",
               "isGrain": false
             }
           ]
@@ -4439,11 +4450,11 @@
           "img": "",
           "colors": [
             {
-              "name": "Plywood",
+              "value": "Plywood",
               "img": "Blum Undermount Plywood.jpg"
             },
             {
-              "name": "Melamine",
+              "value": "Melamine",
               "img": "Blum Undermount Melamine.jpg"
             }
           ]
@@ -4453,11 +4464,11 @@
           "img": "",
           "colors": [
             {
-              "name": "Orion Gray",
+              "value": "Orion Gray",
               "img": "Blum Legrabox Orion Gray.jpg"
             },
             {
-              "name": "Stainless Steel",
+              "value": "Stainless Steel",
               "img": "Blum Legrabox Stainless Steel.jpg"
             }
           ]
@@ -4467,11 +4478,11 @@
           "img": "",
           "colors": [
             {
-              "name": "Maple",
+              "value": "Maple",
               "img": "Blum Dovetail Maple.jpg"
             },
             {
-              "name": "Walnut",
+              "value": "Walnut",
               "img": "Blum Dovetail Walnut.jpg"
             }
           ]
@@ -4487,11 +4498,11 @@
           "img": "",
           "colors": [
             {
-              "name": "Plywood",
+              "value": "Plywood",
               "img": "Milino Undermount Plywood.jpg"
             },
             {
-              "name": "Melamine",
+              "value": "Melamine",
               "img": "Milino Undermount Melamine.jpg"
             }
           ]
@@ -4501,15 +4512,15 @@
           "img": "",
           "colors": [
             {
-              "name": "LED",
+              "value": "LED",
               "img": "Milino LED Legrabox.jpg"
             },
             {
-              "name": "Gray",
+              "value": "Gray",
               "img": "Milino Legrabox Gray.jpg"
             },
             {
-              "name": "White",
+              "value": "White",
               "img": "Milino Legrabox White.jpg"
             }
           ]
@@ -4519,11 +4530,11 @@
           "img": "",
           "colors": [
             {
-              "name": "Maple",
+              "value": "Maple",
               "img": "Milino Dovetail Maple.jpg"
             },
             {
-              "name": "Walnut",
+              "value": "Walnut",
               "img": "Milino Dovetail Walnut.jpg"
             }
           ]
@@ -4533,48 +4544,58 @@
   ],
   "leather": [
     {
-      "name": "Goya 1523",
+      "value": "Goya 1523",
       "img": "Goya 1523.jpg"
     },
     {
-      "name": "Bright White 70300",
+      "value": "Bright White 70300",
       "img": "Bright White 70300.jpg"
     },
     {
-      "name": "White Alligator 3263",
+      "value": "White Alligator 3263",
       "img": "White Alligator 3263.jpg"
     },
     {
-      "name": "Bambino 2428",
+      "value": "Bambino 2428",
       "img": "Bambino 2428.jpg"
     },
     {
-      "name": "Titanium 7694",
+      "value": "Titanium 7694",
       "img": "Titanium 7694.jpg"
     },
     {
-      "name": "Monticello Med 7043",
+      "value": "Monticello Med 7043",
       "img": "Monticello Med 7043.jpg"
     },
     {
-      "name": "Almond 70204",
+      "value": "Almond 70204",
       "img": "Almond 70204.jpg"
     },
     {
-      "name": "Silver Alligator 3266",
+      "value": "Silver Alligator 3266",
       "img": "Silver Alligator 3266.jpg"
     },
     {
-      "name": "Brown Croco 2702",
+      "value": "Brown Croco 2702",
       "img": "Brown Croco 2702.jpg"
     },
     {
-      "name": "Rain 3316",
+      "value": "Rain 3316",
       "img": "Rain 3316.jpg"
     },
     {
-      "name": "Dark Graphite 7222",
+      "value": "Dark Graphite 7222",
       "img": "Dark Graphite 7222.jpg"
+    }
+  ],
+  "grain": [
+    {
+      "value": "Gorizontal",
+      "img": ""
+    },
+    {
+      "value": "Vertical",
+      "img": ""
     }
   ]
 }

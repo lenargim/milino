@@ -71,7 +71,7 @@ const CartItemProductExtra: FC<{ productExtra: productExtraType }> = ({productEx
 
                     {options.includes('Glass Shelf') ?
                         <div className={s.itemOption}>
-                            <span>Glass Door:</span>
+                            <span>Glass Shelf:</span>
                             <span>{`${shelfProfile}|${shelfGlassType}|${shelfGlassColor}`}</span>
                         </div> : null
                     }

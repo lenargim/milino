@@ -70,7 +70,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({
         doorValues,
         blindArr, filteredOptions, shelfsQty, drawersQty, rolloutsQty
     } = standartProductPriceData
-    const {room, drawer, boxMaterialCoef} = materialData
+    const {category:materialCat, drawer, boxMaterialCoef} = materialData
     const {widthRange, heightRange, depthRange} = productRange;
 
 
@@ -138,7 +138,7 @@ const CabinetForm: FC<StandartCabinetFormType> = ({
                     glassDoor: chosenOptions.includes('Glass Door') ? addGlassDoorPrice(doorSquare, doorProfile) : 0,
                     ledPrice: getLedPrice(realWidth, realHeight, ledBorders),
                     doorPrice: getDoorPrice(doorSquare, 37.8),
-                    drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, realWidth, room),
+                    drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, realWidth, materialCat),
                     boxMaterialCoef: boxMaterialCoef,
                     doorSquare: doorSquare,
                 }

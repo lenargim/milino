@@ -3,7 +3,6 @@ import {Formik, Form} from "formik";
 import {OrderFormSchema} from "./OrderFormSchems";
 import Main from "./Main";
 import Sidebar from "./Sidebar/Sidebar";
-import s from './OrderForm.module.sass';
 import {useNavigate} from "react-router-dom";
 import {setMaterials} from "../../store/reducers/generalSlice";
 import {getInitialMaterials, useAppDispatch} from "../../helpers/helpers";

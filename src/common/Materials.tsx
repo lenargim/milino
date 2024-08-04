@@ -5,7 +5,7 @@ import {OrderFormType} from "../helpers/types";
 
 const Materials:FC<{data: OrderFormType}> = ({data}) => {
     const choosenMaterials = Object.entries(data).filter(el => !!el[1]);
-    const roomStr = getSingleStr(choosenMaterials, 'room')
+    const categoryStr = getSingleStr(choosenMaterials, 'Category')
     const doorStr = getDoorStr(choosenMaterials)
     const boxMaterialStr = getSingleStr(choosenMaterials, 'Box Material')
     const drawerStr = getDrawerStr(choosenMaterials);
@@ -14,8 +14,8 @@ const Materials:FC<{data: OrderFormType}> = ({data}) => {
     return (
         <div className={s.materials}>
             <h4 className={s.choose}>Materials you choose:</h4>
-            {roomStr ? <span className={s.chooseItem}>
-                     <span>{roomStr}</span>
+            {categoryStr ? <span className={s.chooseItem}>
+                     <span>Category: {categoryStr}</span>
                 </span> : null}
             {doorStr ? <span className={s.chooseItem}>
                     <span>Door:</span> <span>{doorStr}</span>

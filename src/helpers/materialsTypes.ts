@@ -1,49 +1,35 @@
 import materials from "../api/materials.json";
 
-export type roomData = {
+export type OrderFormSelectType = {
+    data: materialsData[],
     value: string,
-    img: string
+    name: string
 }
 
-export type drawer = {
+export type materialsData = {
     value: string,
-    img: string,
+    img?: string
+}
+
+export interface drawer extends materialsData{
     types: drawerType[]
 }
 
-export type drawerColor = {
-    name:string,
-    img:string
+export interface drawerType extends materialsData{
+    colors: materialsData[]
 }
 
-export type drawerType = {
-    value: string,
-    img: string,
-    colors: drawerColor[]
-}
-
-export type doorType = {
-    name: string,
+export interface doorType extends materialsData {
     finish: finishType[]
-    img?: string,
-    frame?: number[]
+    frame?: materialsData[]
 }
 
-export type finishType = {
-    name: string,
+export interface finishType extends materialsData{
     colors?: colorType[],
-    img?: string
 }
 
-export type colorType = {
-    name: string,
-    isGrain: boolean,
-    img?: string
-}
-
-export type grainType = {
-    name: string,
-    img?: string
+export interface colorType extends materialsData{
+    isGrain?: boolean,
 }
 
 export type boxMaterialType = {
@@ -52,9 +38,10 @@ export type boxMaterialType = {
 }
 
 export type MaterialsType = {
-    rooms: roomData[],
+    categories: materialsData[],
     doors: doorType[],
     boxMaterial: typeof materials.boxMaterial,
     drawers: drawer[],
-    leather: {name:string, img:string}[]
+    leather: materialsData[],
+    grain: materialsData[]
 }

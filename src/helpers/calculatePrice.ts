@@ -10,7 +10,7 @@ import {
     productRangeType, productSizesType, productType,
     productTypings,
     profileItem,
-    sizeLimitsType, StandartCabinetType, standartMaterialDataType, valueItemType
+    sizeLimitsType, standartMaterialDataType, valueItemType
 } from "./productTypes";
 import prices from './../api/prices.json';
 import pricesGola from './../api/pricesGola.json'
@@ -18,7 +18,6 @@ import pricesCloset from './../api/pricesClosets.json'
 import settings from './../api/settings.json'
 import {getAttributes, getInitialDepth, isHasLedBlock} from "./helpers";
 import {OrderFormType} from "./types";
-import sizes from "../api/sizes.json";
 import {productChangeMaterialType} from "../store/reducers/generalSlice";
 import baseProductPrices from '../api/standartProductsPrices.json'
 
@@ -369,8 +368,8 @@ export function getDoorPrice(square: number, doorPriceMultiplier: number): numbe
     return +(square * doorPriceMultiplier).toFixed(1);
 }
 
-export function getDrawerPrice(qty: number, drawer: drawerInterface, width: number, room:string): number {
-    const isStandartCabinet = room === "Standart Door";
+export function getDrawerPrice(qty: number, drawer: drawerInterface, width: number, category:string): number {
+    const isStandartCabinet = category === "Standart Door";
     const {drawerBrand, drawerType, drawerColor} = drawer
     if (!qty) return 0
     let price:number = 0;
@@ -576,7 +575,7 @@ export const getProductRange = (priceData: pricePart[] | undefined, category: pr
 
 export const getMaterialData = (materials: OrderFormType): materialDataType => {
     const {
-        room,
+        ['Category']: category,
         ['Door Type']: doorType,
         ['Door Finish Material']: doorFinish,
         ['Door Grain']: doorGrain,
@@ -599,7 +598,7 @@ export const getMaterialData = (materials: OrderFormType): materialDataType => {
         drawerColor
     };
     return {
-        room,
+        category,
         basePriceType,
         baseCoef,
         grainCoef,
@@ -616,7 +615,7 @@ export const getMaterialData = (materials: OrderFormType): materialDataType => {
 
 export const getStandartMaterialData = (materials: OrderFormType):standartMaterialDataType  => {
     const {
-        room,
+        ['Category']: category,
         ['Box Material']: boxMaterial,
         ['Drawer']: drawerBrand,
         ['Drawer Type']: drawerType,
@@ -631,7 +630,7 @@ export const getStandartMaterialData = (materials: OrderFormType):standartMateri
     return {
         boxMaterialCoef,
         drawer,
-        room
+        category
     }
 }
 

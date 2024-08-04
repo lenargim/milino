@@ -30,7 +30,7 @@ import {PVCFormValuesType} from "../Components/CustomPart/PVCForm";
 import {GlassShelfFormValuesType} from "../Components/CustomPart/GlassShelfForm";
 import {StandartDoorFormValuesType} from "../Components/CustomPart/StandartDoorForm";
 import {RoomType} from "./categoriesTypes";
-import {colorType, doorType, finishType} from "./materialsTypes";
+import {colorType, doorType, finishType, materialsData} from "./materialsTypes";
 import {getDoorMinMaxValuesArr, getHingeArr} from "./calculatePrice";
 import s from "../Components/Cabinets/cabinets.module.sass";
 import {OrderFormType} from "./types";
@@ -529,18 +529,27 @@ export const isDoorColorShown = (room:RoomType | '', doorFinishMaterial:string, 
     return (!!doorFinishMaterial && !!colorArr)
 }
 
-export const isDoorFrameWidth = (doorType:string,doorFinishMaterial:string, frameArr:number[]|undefined ):boolean => {
+export const isDoorFrameWidth = (doorType:string,doorFinishMaterial:string, frameArr:materialsData[]|undefined ):boolean => {
     if (!frameArr) return false
     if (doorType !== 'Micro Shaker') return false
     return !!doorFinishMaterial
 }
+
+export const isDoorGrain = (doorFinishMaterial:string, colorArr:colorType[], doorColor?:string):boolean => {
+    if (!doorFinishMaterial) return false;
+    return !!colorArr.find(el => el.value === doorColor)?.isGrain
+}
+
+export const isBoxMaterial = (doorFinishMaterial:string, doorColor:string|undefined, boxMaterialVal:string):boolean => {
+    return !!(doorFinishMaterial === 'No Doors No Hinges' || doorColor || boxMaterialVal)
+}
 export const getDoorColorsArr = (doorFinishMaterial: string, room: RoomType|'',doors: doorType[],doorType:string): colorType[]|undefined => {
-    const finishArr: finishType[] | undefined = doors.find(el => el.name === doorType)?.finish;
+    const finishArr: finishType[] | undefined = doors.find(el => el.value === doorType)?.finish;
     if (!room) return undefined;
     if (room === 'Standart Door') {
-        return doors.find(el => el.name === 'Painted')?.finish[0].colors;
+        return doors.find(el => el.value === 'Painted')?.finish[0].colors;
     }
-    return finishArr?.find(el => el.name === doorFinishMaterial)?.colors
+    return finishArr?.find(el => el.value === doorFinishMaterial)?.colors
 
 }
 
@@ -592,7 +601,7 @@ export const getImgSize = (category:string):'s'|'m'|'l' => {
 export const getInitialMaterials = ():OrderFormType => {
     const storageMaterials = localStorage.getItem('materials');
     return storageMaterials ? JSON.parse(storageMaterials) : {
-        'room': '',
+        'Category': '',
         'Door Type': '',
         'Door Finish Material': '',
         'Door Frame Width': '',

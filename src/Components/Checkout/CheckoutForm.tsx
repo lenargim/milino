@@ -7,7 +7,7 @@ import {CheckoutSchema} from "./CheckoutSchema";
 import {CheckoutType, OrderFormType} from "../../helpers/types";
 import {CartItemType, removeCart, setMaterials} from "../../store/reducers/generalSlice";
 import CheckoutCart from "./CheckoutCart";
-import {pdf, PDFViewer} from '@react-pdf/renderer';
+import {pdf} from '@react-pdf/renderer';
 import PDF from "./PDF";
 import {saveAs} from "file-saver";
 
@@ -19,12 +19,12 @@ const CheckoutForm: FC<{ cart: CartItemType[], total:number, materials:OrderForm
         phone: ''
     };
     const choosenMaterials = Object.entries(materials).filter(el => !!el[1]);
-    const roomStr = getSingleStr(choosenMaterials, 'room')
+    const categoryStr = getSingleStr(choosenMaterials, 'Category')
     const doorStr = getDoorStr(choosenMaterials)
     const boxMaterialStr = getSingleStr(choosenMaterials, 'Box Material')
     const drawerStr = getDrawerStr(choosenMaterials);
     const leatherStr = getSingleStr(choosenMaterials, 'Leather');
-    const str = {roomStr, doorStr, boxMaterialStr,drawerStr,leatherStr};
+    const str = {categoryStr, doorStr, boxMaterialStr,drawerStr,leatherStr};
     const jpgCart = cart.map(el => ({...el, img: el.img.replace('webp', 'jpg')}))
 
     return (
@@ -33,7 +33,6 @@ const CheckoutForm: FC<{ cart: CartItemType[], total:number, materials:OrderForm
                 onSubmit={async (values) => {
                     const date = new Date().toLocaleString('en-US', {dateStyle: "short"});
                     const fileName = `Milino order ${date}`;
-
                     const blob = await pdf(<PDF values={values} cart={jpgCart} str={str} />).toBlob();
                     saveAs(blob, fileName);
                 }}
@@ -49,13 +48,12 @@ const CheckoutForm: FC<{ cart: CartItemType[], total:number, materials:OrderForm
                             <PhoneInput type="text" name="phone" label="Phone number"/>
                         </div>
                         <CheckoutCart cart={cart} total={total}/>
-                        <button type="submit"
-                                className={['button yellow', s.submit].join(' ')}
-                                disabled={isSubmitting}>PDF
-                        </button>
-                        <PDFViewer className={s.viewer}>
-                            <PDF values={values} cart={jpgCart} str={str} />
-                        </PDFViewer>
+                        <div className={s.buttonRow}>
+                            <button type="submit"
+                                    className={['button yellow', s.submit].join(' ')}
+                                    disabled={isSubmitting}>Download PDF
+                            </button>
+                        </div>
                     </Form>
                 )
             }}

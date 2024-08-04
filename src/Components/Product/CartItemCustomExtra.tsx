@@ -15,7 +15,6 @@ const CartItemCustomExtra: FC<{ productExtra: customPartExtraType }> = ({product
                 <span>{material}</span>
               </div>}
         </>
-
     )
 }
 

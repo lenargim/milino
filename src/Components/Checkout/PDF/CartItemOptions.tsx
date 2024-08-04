@@ -1,4 +1,5 @@
-import React, {FC} from 'react';
+import React, {FC} from "react";
+import {CartItemType} from "../../../store/reducers/generalSlice";
 import CartItemProductExtra from "./CartItemProductExtra";
 import CartItemCustomExtra from "./CartItemCustomExtra";
 import CartItemGlassDoorExtra from "./CartItemGlassDoorExtra";
@@ -7,9 +8,8 @@ import CartItemLEDExtra from "./CartItemLEDExtra";
 import CartItemDoorExtra from "./CartItemDoorExtra";
 import CartItemShelfExtra from "./CartItemShelfExtra";
 import CartItemDoor from "./CartItemDoor";
-import {CartItemType} from "../../store/reducers/generalSlice";
 
-const CartItemOptions:FC<{item: CartItemType}> = ({item}) => {
+const CartItemOptions: FC<{ el: CartItemType }> = ({el}) => {
     const {
         productExtra,
         customPartExtra,
@@ -19,8 +19,7 @@ const CartItemOptions:FC<{item: CartItemType}> = ({item}) => {
         glassDoorExtra,
         glassShelfExtra,
         DoorExtra
-    } = item;
-
+    } = el;
     return (
         <>
             {productExtra && <CartItemProductExtra productExtra={productExtra}/>}
@@ -28,11 +27,11 @@ const CartItemOptions:FC<{item: CartItemType}> = ({item}) => {
             {glassDoorExtra && <CartItemGlassDoorExtra glassDoorExtra={glassDoorExtra}/>}
             {PVCExtra && <CartItemPVCExtra productExtra={PVCExtra}/>}
             {LEDAccessories && <CartItemLEDExtra productExtra={LEDAccessories}/>}
-            {DoorAccessories && <CartItemDoorExtra productExtra={DoorAccessories} />}
+            {DoorAccessories && <CartItemDoorExtra productExtra={DoorAccessories}/>}
             {glassShelfExtra && <CartItemShelfExtra productExtra={glassShelfExtra} />}
             {DoorExtra && <CartItemDoor productExtra={DoorExtra?? ''} />}
         </>
-    );
-};
+    )
+}
 
-export default CartItemOptions;
+export default CartItemOptions

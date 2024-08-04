@@ -71,7 +71,7 @@ export interface productType extends productDataType {
 }
 
 export type materialDataType = {
-    room: string,
+    category: string,
     basePriceType: pricesTypings,
     baseCoef: number,
     grainCoef: number,
@@ -188,9 +188,9 @@ export type StandartCabinetType = {
 }
 
 export type standartMaterialDataType = {
+    category: string
     boxMaterialCoef: number,
     drawer: drawerInterface,
-    room: string
 }
 
 export type StandartCabinetFormType = {

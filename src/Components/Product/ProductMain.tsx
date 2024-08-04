@@ -13,13 +13,11 @@ type ProductMainType = {
     materials: OrderFormType
 }
 const ProductMain: FC<ProductMainType> = ({product, materials}) => {
-    const {room, ...data} = Object.assign({}, materials);
     if (!product) return <></>
-    const dataMaterialsArr = Object.entries(data);
     const {type, attributes, name, images, category} = product;
     const img = getProductImage(images, type);
     const imgSize = getImgSize(category);
-    const isStandartCabinet = 'Standart Door' === room;
+    const isStandartCabinet = 'Standart Door' === materials.Category;
 
     return (
         <div className={s.productWrap}>

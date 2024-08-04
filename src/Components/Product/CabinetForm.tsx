@@ -63,7 +63,6 @@ const CabinetForm: FC<CabinetFormType> = ({
         attributes,
         price,
         widthDivider,
-        depth,
         category,
         legsHeight,
         isBlind,
@@ -72,7 +71,7 @@ const CabinetForm: FC<CabinetFormType> = ({
         hasMiddleSection,
         isCornerChoose,
     } = product;
-    const {room, premiumCoef, boxMaterialCoefs, doorPriceMultiplier, isAcrylic, doorType, doorFinish, drawer} = materialData
+    const {category: materialCat, premiumCoef, boxMaterialCoefs, doorPriceMultiplier, isAcrylic, doorType, doorFinish, drawer} = materialData
     const {
         blindArr,
         doorValues,
@@ -96,6 +95,7 @@ const CabinetForm: FC<CabinetFormType> = ({
             onSubmit={(values: FormikValues, {resetForm}) => {
                 if (price) {
                     const cartData = addToCartData(values, type, id, isBlind, images, name, hasMiddleSection, category, price)
+                    console.log(cartData)
                     dispatch(addToCart(cartData))
                     resetForm();
                 }
@@ -149,7 +149,7 @@ const CabinetForm: FC<CabinetFormType> = ({
                     pvcPrice: getPvcPrice(realWidth,realBlindWidth, doorHeight, isAcrylic, doorType, doorFinish),
                     frontSquare:frontSquare,
                     doorPrice: getDoorPrice(frontSquare, doorPriceMultiplier),
-                    drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, realWidth, room),
+                    drawerPrice: getDrawerPrice(drawersQty + rolloutsQty, drawer, realWidth, materialCat),
                     ledPrice: getLedPrice(realWidth, realHeight, ledBorders),
                     boxMaterialCoef: chosenOptions.includes("Box from finish material") ? boxMaterialCoefs.boxMaterialFinishCoef : boxMaterialCoefs.boxMaterialCoef,
                     premiumCoef: premiumCoef,

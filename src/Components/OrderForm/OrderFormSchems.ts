@@ -3,18 +3,18 @@ import {RoomType} from "../../helpers/categoriesTypes";
 import {StringSchema} from "yup";
 
 export const OrderFormSchema = Yup.object({
-    'room': Yup.string()
+    'Category': Yup.string()
         .ensure()
         .required() as StringSchema<RoomType | ''>,
     'Door Type': Yup.string()
         .ensure()
-        .when('room',  {
+        .when('Category',  {
             is: (val:RoomType | '') => val !== 'Standart Door',
             then: schema => schema.required('Please write down door type'),
         }),
     'Door Finish Material': Yup.string()
         .ensure()
-        .when('room',  {
+        .when('Category',  {
             is: (val:RoomType | '') => val !== 'Standart Door',
             then: schema => schema.required('Please write down finish material'),
         }),
@@ -38,7 +38,7 @@ export const OrderFormSchema = Yup.object({
     'Drawer Color': Yup.string()
         .required('Please write color'),
     'Leather': Yup.string()
-        .when('room', {
+        .when('Category', {
             is: 'Leather Closet',
             then: schema => schema.required('Please write Leather')
         })

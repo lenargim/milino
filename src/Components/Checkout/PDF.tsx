@@ -1,45 +1,62 @@
 import React, {FC} from 'react';
 import {Page, Text, View, Document, StyleSheet, Image} from '@react-pdf/renderer';
-import {CheckoutType, OrderFormType} from "../../helpers/types";
+import {CheckoutType} from "../../helpers/types";
 import {CartItemType} from "../../store/reducers/generalSlice";
-import {getImg} from "../../helpers/helpers";
+import {getCartTotal, getImg} from "../../helpers/helpers";
+import logo from './../../assets/img/black-logo.jpg'
+import CartItemOptions from "./PDF/CartItemOptions";
 
-// Create s
-const s = StyleSheet.create({
+export const s = StyleSheet.create({
     page: {
-        padding: '2vh 2vw'
+        padding: '2vh 2vw',
+        display: "flex",
+        flexDirection: "column",
+        gap: "3vh"
     },
-    section: {
-        margin: 10,
-        padding: 10,
-        flexGrow: 1
+    logo: {
+        width: '200px',
+        margin: '30px auto'
     },
     table: {
         display: 'flex',
         flexDirection: "column",
-        border: '1px solid #000',
+        borderTop: '1px solid #000',
+        borderLeft: '1px solid #000',
+        borderRight: '1px solid #000',
         borderRadius: '3px',
     },
     cartItem: {
         display: 'flex',
         flexDirection: 'row',
-        gap: '20px',
-        padding: '3px',
+        justifyContent: "space-between",
+        gap: '15px',
+        padding: '0.5vw',
         borderBottom: "1px solid #000"
     },
     itemPrice: {
         display: "flex",
+        flexDirection: "row",
         justifyContent: 'flex-start',
-        alignItems: 'center',
-        width: '20vw'
+        alignItems: "center",
+        width: '15vw'
+    },
+    img: {
+        display: "flex",
+        maxWidth: "20vw"
+    },
+    data: {
+        width: '50vw'
     },
     itemName: {
-        font: '500 19px/1.2 $mainFont',
-        paddingBottom: '6pt'
+        fontSize: 19,
+        fontWeight: 'semibold'
     },
     category: {
-        fontSize: '12.5px',
-        fontStyle: 'italic'
+        fontSize: 12,
+        fontWeight: "normal",
+        fontStyle: "italic",
+        color: "gray",
+        marginBottom: '3px'
     },
     note: {
         paddingTop: '6pt',
@@ -48,65 +65,121 @@ const s = StyleSheet.create({
     },
     sum: {
         display: "flex",
+        flexDirection: "row",
         justifyContent: "flex-start",
         alignItems: "center",
         fontSize: '18px',
         fontWeight: 600,
-        lineHeight: '1.2',
-        width: '15vw'
+        lineHeight: 1.2,
+        width: '10vw'
     },
-    data: {
-        width: '30vw'
+    th0: {
+        display: "flex",
+        flexDirection: 'row',
+        alignItems: "center",
+        fontSize: 12,
+        width: "2vw",
+        borderRight: '1px solid #000'
     },
-    img: {
+    th1: {
+        fontSize: 12,
         width: '20vw'
+    },
+    th2: {
+        fontSize: 12,
+        width: '50vw'
+    },
+    th3: {
+        fontSize: 12,
+        width: '15vw'
+
+    },
+    th4: {
+        fontSize: 12,
+        width: '10vw'
+    },
+    cartTotal: {
+        fontSize: '20px',
+        flexDirection: "row",
+        justifyContent: "flex-end",
+        height: '30px',
+        width: '100%',
+        textAlign: 'right',
+        paddingRight: '5px'
+    },
+    itemOption: {
+        fontSize: '12px'
+    },
+    blocks: {
+        display: "flex",
+        flexDirection: "column",
+        gap: '5px',
+    },
+    h2: {
+        fontSize: '14px',
+        marginBottom: '5px'
     }
 })
 
 type StrType = {
-    roomStr: string | null,
+    categoryStr: string | null,
     doorStr: string | null,
     boxMaterialStr: string | null,
     drawerStr: string | null,
     leatherStr: string | null,
 }
 
-// Create Document Component
 const PDF: FC<{ values: CheckoutType, cart: CartItemType[], str: StrType }> = ({values, cart, str}) => (
     <Document language="en">
         <Page orientation="landscape" style={s.page}>
-            <View style={s.section}>
-                <Text>Materials:</Text>
-                <Text>{str.roomStr}</Text>
+            <Image style={s.logo} src={logo}/>
+            <View>
+                <Text>Company name: {values.company}</Text>
+                <Text>Project: {values.project}</Text>
+                <Text>Email: {values.email}</Text>
+                <Text>Phone: {values.phone}</Text>
+            </View>
+            <View>
                 <Text>Door: {str.doorStr}</Text>
                 <Text>Box Material: {str.boxMaterialStr}</Text>
                 <Text>Drawer: {str.drawerStr}</Text>
                 {str.leatherStr ? <Text>Leather: {str.leatherStr}</Text> : null}
             </View>
-
+        </Page>
+        <Page orientation="landscape" style={s.page}>
             <View style={s.table}>
+                <View style={s.cartItem}>
+                    <View style={s.th0}><Text>#</Text></View>
+                    <View style={s.th1}><Text>Img</Text></View>
+                    <View style={s.th2}><Text>Description</Text></View>
+                    <View style={s.th3}><Text>Price</Text></View>
+                    <View style={s.th4}><Text>Product total</Text></View>
+                </View>
                 {cart.map((el, index) => {
+                    const image = getImg(el.category === 'Custom Parts' ? 'products-checkout/custom' : 'products-checkout', el.img);
                     return (
-                        <View style={s.cartItem} key={index}>
-                            <View style={s.img} >
-                                <Image src={getImg('products-checkout', el.img)}></Image>
+                        <View wrap={false} style={s.cartItem} key={index}>
+                            <View style={s.th0}><Text>{++index}</Text></View>
+                            <View style={s.img}>
+                                <Image src={image}/>
                             </View>
                             <View style={s.data}>
                                 <Text style={s.itemName}>{el.name}</Text>
                                 <Text style={s.category}>{el.category}</Text>
-                                <View>
-                                    {/*<CartItemOptions item={el}/>*/}
-                                </View>
+                                <View><CartItemOptions el={el}/></View>
                                 {el.note ? <Text style={s.note}>*{el.note}</Text> : null}
                             </View>
-                            <Text style={s.itemPrice}>{el.price}$ x {el.amount}</Text>
-                            <Text style={s.sum}>{(el.price * el.amount).toFixed(1)}$</Text>
+                            <View style={s.itemPrice}>
+                                <Text>{el.price}$ x {el.amount}</Text>
+                            </View>
+                            <View style={s.sum}>
+                                <Text>{(el.price * el.amount).toFixed(1)}$</Text>
+                            </View>
                         </View>
                     )
-
                 })}
-
             </View>
+            <View style={s.cartTotal}><Text>Total ${getCartTotal(cart)}</Text></View>
         </Page>
     </Document>
 );

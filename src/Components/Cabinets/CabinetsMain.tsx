@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import Header from "../../common/Header/Header";
-import s from './cabinets.module.sass'
 import {OrderFormType} from "../../helpers/types";
 import {Navigate} from "react-router-dom";
 import Room from "./Room";
@@ -11,14 +10,13 @@ export type CabinetsMainType = {
 }
 
 const CabinetsMain: FC<CabinetsMainType> = ({values}) => {
-    const {room} = values;
-    if (!room) return <Navigate to={{pathname: '/'}}/>;
-
+    const {Category} = values;
+    if (!Category) return <Navigate to={{pathname: '/'}}/>;
     return (
         <div className="container">
             <Header/>
-            <h1>{room}</h1>
-            <Room room={room}  />
+            <h1>{Category}</h1>
+            <Room room={Category}  />
         </div>
     );
 

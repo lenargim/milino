@@ -12,9 +12,9 @@ const CustomPart: FC = () => {
     const dispatch = useAppDispatch()
     const materialsString = localStorage.getItem('materials');
     const materials: OrderFormType = materialsString ? JSON.parse(materialsString) : <Navigate to={{pathname: '/'}}/>;
-    const {room} = materials;
+    const {Category} = materials;
     let {productId} = useParams();
-    const customParts = room && productId ? getcustomParts() : [];
+    const customParts = Category && productId ? getcustomParts() : [];
     const customPart = customParts.find(part => (part.id).toString() === productId);
     if (!customPart ) return <Navigate to={{pathname: '/cabinets'}}/>;
     localStorage.setItem('category', 'Custom Parts');

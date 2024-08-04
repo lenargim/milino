@@ -25,7 +25,7 @@ const Header: FC<{ resetForm?: (nextState?: Partial<FormikState<OrderFormType>>)
             resetForm ?
                 resetForm({
                     values: {
-                        room: '',
+                        'Category': '',
                         'Door Type': '',
                         'Door Finish Material': '',
                         'Door Frame Width': '',
