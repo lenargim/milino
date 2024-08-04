@@ -9,7 +9,7 @@ import SelectFieldWithImg from "../../common/SelectFieldWithImg";
 const DataType: FC<OrderFormSelectType> = ({data, value, name}) => {
     return (
         <div className={s.orderBlock}>
-            <h2>{name}</h2>
+            <h2>{name}:</h2>
             {value
                 ? <SelectedField value={value} data={data} name={name}/>
                 : <UnSelectedField value={value} data={data} name={name}/>
@@ -33,16 +33,16 @@ const SelectedField: FC<OrderFormSelectType> = ({value, data, name}) => {
     )
 }
 
-const UnSelectedField: FC<OrderFormSelectType> = ({data, value, name}) => {
+const UnSelectedField: FC<OrderFormSelectType> = ({data, name}) => {
     return (
-        <div className={[s.type, value && s.checked].join(' ')} role="group">
+        <div className={s.type} role="group">
             {data.map((el, key) => <RadioInput
                 img={getImg(`materials/${name}`, el.img)}
                 key={key}
                 value={el.value}
                 name={name}
                 className={s.typeItem}
-                checked={el.value === value}/>)}
+                />)}
         </div>
     )
 }
