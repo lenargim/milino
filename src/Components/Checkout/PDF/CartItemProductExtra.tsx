@@ -22,7 +22,7 @@ const CartItemProductExtra: FC<{ productExtra: productExtraType }> = ({productEx
     } = productExtra;
 
     return (
-        <>
+        <View>
             <Dimentions width={width} depth={depth} height={height}/>
 
             {blindWidth ?
@@ -56,7 +56,7 @@ const CartItemProductExtra: FC<{ productExtra: productExtraType }> = ({productEx
                 </View> : null
             }
             {options.length ?
-                <>
+                <View>
                     <View style={s.itemOption}>Options:</View>
                     {options.includes('Glass Door') ?
                         <View style={s.itemOption}>
@@ -74,9 +74,9 @@ const CartItemProductExtra: FC<{ productExtra: productExtraType }> = ({productEx
                         <View style={s.itemOption} key={index}>
                             <Text>{el}</Text>
                         </View>)}
-                </> : null
+                </View> : null
             }
-        </>
+        </View>
     )
 }
 

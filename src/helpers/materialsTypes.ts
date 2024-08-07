@@ -42,6 +42,7 @@ export type MaterialsType = {
     doors: doorType[],
     boxMaterial: typeof materials.boxMaterial,
     drawers: drawer[],
-    leather: materialsData[],
     grain: materialsData[]
+    leatherColor: materialsData[],
+    leatherType: materialsData[]
 }

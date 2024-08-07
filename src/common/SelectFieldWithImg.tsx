@@ -69,7 +69,7 @@ const SelectFieldWithImg: FC<SelectFieldType> = ({options, name, val}) => {
             width: '100%',
             position: 'absolute',
             overflow: 'hidden',
-            zIndex: 2,
+            zIndex: 4,
         })
     }
     return (

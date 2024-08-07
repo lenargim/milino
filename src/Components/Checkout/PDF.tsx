@@ -166,7 +166,7 @@ const PDF: FC<{ values: CheckoutType, cart: CartItemType[], str: StrType }> = ({
                             <View style={s.data}>
                                 <Text style={s.itemName}>{el.name}</Text>
                                 <Text style={s.category}>{el.category}</Text>
-                                <View><CartItemOptions el={el}/></View>
+                                <CartItemOptions el={el}/>
                                 {el.note ? <Text style={s.note}>*{el.note}</Text> : null}
                             </View>
                             <View style={s.itemPrice}>

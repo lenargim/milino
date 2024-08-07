@@ -8,6 +8,7 @@ import CartItemLEDExtra from "./CartItemLEDExtra";
 import CartItemDoorExtra from "./CartItemDoorExtra";
 import CartItemShelfExtra from "./CartItemShelfExtra";
 import CartItemDoor from "./CartItemDoor";
+import {View} from "@react-pdf/renderer";
 
 const CartItemOptions: FC<{ el: CartItemType }> = ({el}) => {
     const {
@@ -21,7 +22,7 @@ const CartItemOptions: FC<{ el: CartItemType }> = ({el}) => {
         DoorExtra
     } = el;
     return (
-        <>
+        <View>
             {productExtra && <CartItemProductExtra productExtra={productExtra}/>}
             {customPartExtra && <CartItemCustomExtra productExtra={customPartExtra}/>}
             {glassDoorExtra && <CartItemGlassDoorExtra glassDoorExtra={glassDoorExtra}/>}
@@ -30,7 +31,7 @@ const CartItemOptions: FC<{ el: CartItemType }> = ({el}) => {
             {DoorAccessories && <CartItemDoorExtra productExtra={DoorAccessories}/>}
             {glassShelfExtra && <CartItemShelfExtra productExtra={glassShelfExtra} />}
             {DoorExtra && <CartItemDoor productExtra={DoorExtra?? ''} />}
-        </>
+        </View>
     )
 }
 

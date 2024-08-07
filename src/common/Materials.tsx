@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import s from "../Components/OrderForm/Sidebar/sidebar.module.sass";
-import {getDoorStr, getDrawerStr, getSingleStr} from "../helpers/helpers";
+import {getDoorStr, getDrawerStr, getLeatherStr, getSingleStr} from "../helpers/helpers";
 import {OrderFormType} from "../helpers/types";
 
 const Materials:FC<{data: OrderFormType}> = ({data}) => {
@@ -9,7 +9,7 @@ const Materials:FC<{data: OrderFormType}> = ({data}) => {
     const doorStr = getDoorStr(choosenMaterials)
     const boxMaterialStr = getSingleStr(choosenMaterials, 'Box Material')
     const drawerStr = getDrawerStr(choosenMaterials);
-    const leatherStr = getSingleStr(choosenMaterials, 'Leather')
+    const leatherStr = getLeatherStr(choosenMaterials)
 
     return (
         <div className={s.materials}>

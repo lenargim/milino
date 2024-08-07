@@ -521,12 +521,12 @@ export const isDoorTypeShown = (room:RoomType | '' ):boolean => {
 
 export const isDoorFinishShown = (room:RoomType | '', doorType:string, finishArr?:finishType[] ):boolean => {
     if (!room || room === 'Standart Door') return false
-    return (!!doorType && !!finishArr)
+    return !!(doorType && finishArr?.length)
 }
 
 export const isDoorColorShown = (room:RoomType | '', doorFinishMaterial:string, finishArr?:finishType[], colorArr?: colorType[] ):boolean => {
     if (room === 'Standart Door') return true;
-    return (!!doorFinishMaterial && !!colorArr)
+    return !!(doorFinishMaterial && colorArr?.length)
 }
 
 export const isDoorFrameWidth = (doorType:string,doorFinishMaterial:string, frameArr:materialsData[]|undefined ):boolean => {
@@ -551,6 +551,17 @@ export const getDoorColorsArr = (doorFinishMaterial: string, room: RoomType|'',d
     }
     return finishArr?.find(el => el.value === doorFinishMaterial)?.colors
 
+}
+
+
+export const isLeatherType = (drawerColor:string, isLeather:boolean, leatherTypeArr:materialsData[]):boolean => {
+    if (!leatherTypeArr.length || !drawerColor ) return false
+    return isLeather
+}
+
+export const isLeatherColor = (leatherType:string|undefined, isLeather:boolean, leatherColorArr:materialsData[]):boolean => {
+    if (!leatherColorArr.length || !leatherType ) return false
+    return isLeather
 }
 
 
@@ -644,6 +655,12 @@ export const getDrawerStr = (choosenMaterials:[string,string][]):string|null => 
         str += part;
     })
     return str;
+}
+
+export const getLeatherStr = (choosenMaterials:[string,string][]):string|null => {
+    const leatherArr = choosenMaterials.filter(el => el[0].includes('Leather'));
+    if (!leatherArr.length) return null;
+    return leatherArr.map(el => el[1]).join(', ');
 }
 
 export const getSquare = (realWidth:number, realHeight:number):number => {

@@ -35,7 +35,8 @@ const Header: FC<{ resetForm?: (nextState?: Partial<FormikState<OrderFormType>>)
                         'Drawer': '',
                         'Drawer Type': '',
                         'Drawer Color': '',
-                        'Leather': ''
+                        'Leather Type': '',
+                        'Leather Color': ''
                     },
                     submitCount: 0
                 }) : navigate('/')

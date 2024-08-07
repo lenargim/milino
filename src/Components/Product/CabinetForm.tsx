@@ -95,7 +95,6 @@ const CabinetForm: FC<CabinetFormType> = ({
             onSubmit={(values: FormikValues, {resetForm}) => {
                 if (price) {
                     const cartData = addToCartData(values, type, id, isBlind, images, name, hasMiddleSection, category, price)
-                    console.log(cartData)
                     dispatch(addToCart(cartData))
                     resetForm();
                 }

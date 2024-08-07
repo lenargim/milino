@@ -583,7 +583,7 @@ export const getMaterialData = (materials: OrderFormType): materialDataType => {
         ['Drawer']: drawerBrand,
         ['Drawer Type']: drawerType,
         ['Drawer Color']: drawerColor,
-        ['Leather']: leather
+        ['Leather Type']: leather
     } = materials;
     const basePriceType: pricesTypings = getBasePriceType(doorType, doorFinish);
     const baseCoef = basePriceType === 3 ? getPremiumCoef(doorType, doorFinish) : 1;
